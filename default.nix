@@ -8,11 +8,9 @@
   ...
 }: {
   imports = [
-    ./alacritty.nix
-    ./git.nix
-    ./oh-my-posh.nix
-    ./python.nix
-    ./sh.nix
-    ./ssh.nix
+    ./fonts.nix
+    ./gnome-pkgs-exclude.nix
+    ./locale.nix
+    ./storage.nix
   ];
 }
