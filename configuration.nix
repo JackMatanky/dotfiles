@@ -14,7 +14,10 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./hosts/surface-pro/surface-pkgs.nix
-    ./system
+    ./system/fonts.nix
+    ./system/gnome-pkgs-exclude.nix
+    ./system/locale.nix
+    ./system/storage.nix
   ];
 
   # Flakes
