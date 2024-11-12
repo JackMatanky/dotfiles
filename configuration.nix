@@ -14,7 +14,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./hosts/surface-pro/surface-pkgs.nix
-    ./system/default.nix
+    ./system
   ];
 
   # Flakes
