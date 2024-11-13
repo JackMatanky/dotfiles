@@ -18,10 +18,10 @@
 
     # Snippets language server for Zed
     # https://github.com/estin/simple-completion-language-server
-    simple-completion-language-server = {
-      url = "github:estin/simple-completion-language-server";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # simple-completion-language-server = {
+    #   url = "github:estin/simple-completion-language-server";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     # hyprland.url = "github:hyprwm/Hyprland";
   };
