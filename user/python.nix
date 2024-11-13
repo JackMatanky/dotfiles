@@ -2,20 +2,40 @@
   config,
   pkgs,
   pkgs-unstable,
-  userSettings,
+  # userSettings,
   ...
-}: {
+}: let
+  # Create the Python environment with Python 3.12 and necessary packages
+  pythonEnv = pkgs.python312.withPackages (pythonPackages:
+    with pythonPackages; [
+      ipykernel
+      # jupyter
+      # ipython-genutils
+    ]);
+in {
+  # Add the created Python environment and other tools to home.packages
+  home.packages =
+    [
+      pythonEnv
+    ]
+    ++ (with pkgs; [
+      pyright # Python LSP
+    ]);
+
   programs = {
+    # Enable pyenv for Python version management
     pyenv = {
       enable = true;
       package = pkgs.pyenv;
     };
 
+    # Enable pylint for Python linting
     pylint = {
       enable = true;
-      package = pkgs.python3Packages.pylint;
+      package = pkgs.python312Packages.pylint;
     };
 
+    # Enable ruff for Python linting
     ruff = {
       enable = true;
       package = pkgs.ruff;

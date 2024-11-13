@@ -53,10 +53,6 @@
         nixd # Nix LSP
         alejandra # Nix Formatter
 
-        python3
-        pyright # Python LSP
-        python3Packages.ipykernel
-
         javascript-typescript-langserver
         nodejs # JavaScript runtime.
 
