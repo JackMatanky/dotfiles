@@ -26,7 +26,7 @@
     username = userSettings.username;
     homeDirectory = "/home/${userSettings.username}";
 
-    #SEGMENT - Environment Packages
+    # Environment Packages
     packages =
       (with pkgs; [
         # Personal Knowledge Management
@@ -77,15 +77,15 @@
       x11.enable = true;
     };
 
-    #SEGMENT - Dotfiles
+    # Dotfiles
     # Building this configuration will create a copy of 'dotfiles/screenrc' in the Nix store.
     # Activating the configuration will then make '~/.screenrc' a symlink to the Nix store copy.
-    # file = {
-    # ".screenrc".source = dotfiles/screenrc;
-    # };
-    #!SEGMENT
+    file = {
+      ".config/zed/settings.json".source = ./.zed/settings.json;
+      ".config/zed/keymap.json".source = ./.zed/keymap.json;
+    };
 
-    #SEGMENT - Environment Variables
+    # Environment Variables
     # These will be explicitly sourced when using a shell provided by Home Manager.
     # If you don't want to manage your shell through Home Manager,
     # then you have to manually source 'hm-session-vars.sh'
@@ -96,7 +96,6 @@
       BROWSER = "firefox";
       TERMINAL = "alacritty";
     };
-    #!SEGMENT
 
     # !!! DO NOT EDIT !!!
     # Keep stateVersion as the version you originally installed.
@@ -104,7 +103,7 @@
     stateVersion = "24.05";
   };
 
-  # SECTION - Programs
+  # User Programs
 
   programs = {
     # Enable Home Manager to install and manage itself.
@@ -130,7 +129,6 @@
     #   enable = true;
     # };
   };
-  #!SECTION
 
   # gtk = {
   #   enable = true;

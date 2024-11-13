@@ -4,12 +4,24 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+
     # nixos-hardware.url = "github:nixos/nixos-hardware";
     # Use the option below until kernel 6.11.5
     nixos-hardware.url = "github:nixos/nixos-hardware/feefc78";
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
     flake-parts.url = "github:hercules-ci/flake-parts";
+
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Snippets language server for Zed
+    # https://github.com/estin/simple-completion-language-server
+    simple-completion-language-server = {
+      url = "github:estin/simple-completion-language-server";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # hyprland.url = "github:hyprwm/Hyprland";
   };

@@ -14,13 +14,13 @@
       simple-scan # document scanner
       totem # video player
       yelp # help viewer
+      gnome-font-viewer
       gnome-maps # maps
       gnome-music # music
     ])
     ++ (with pkgs; [
       gedit # text editor
       gnome-connections
-      gnome-font-viewer
       gnome-text-editor
       gnome-tour # tour app
       yelp # help viewer
