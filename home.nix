@@ -27,44 +27,40 @@
     homeDirectory = "/home/${userSettings.username}";
 
     # Environment Packages
-    packages =
-      (with pkgs; [
-        # Personal Knowledge Management
-        anki-bin
-        # Anki dependencies
-        ffmpeg
-        noto-fonts
+    packages = with pkgs; [
+      # Personal Knowledge Management
+      anki-bin
+      # Anki dependencies
+      ffmpeg
+      noto-fonts
 
-        obsidian
-        zotero
-        xournalpp
+      obsidian
+      zotero
+      xournalpp
 
-        # Office
-        libreoffice
-        # Dictionaries and Spellcheck
-        hunspell
-        hunspellDicts.en-us
-        hunspellDicts.he-il
+      # Office
+      libreoffice
+      # Dictionaries and Spellcheck
+      hunspell
+      hunspellDicts.en-us
+      hunspellDicts.he-il
 
-        vlc # Media Player
+      vlc # Media Player
 
-        # vscode # Visual Studio Code IDE.
+      # vscode # Visual Studio Code IDE.
 
-        nixd # Nix LSP
-        alejandra # Nix Formatter
+      nixd # Nix LSP
+      alejandra # Nix Formatter
 
-        javascript-typescript-langserver
-        nodejs # JavaScript runtime.
+      javascript-typescript-langserver
+      nodejs # JavaScript runtime.
 
-        # rclone
+      # rclone
 
-        # Windows apps
-        # wine
-        # bottles
-      ])
-      ++ (with pkgs-unstable; [
-        zed-editor # Zed IDE
-      ]);
+      # Windows apps
+      # wine
+      # bottles
+    ];
 
     pointerCursor = {
       package = pkgs.bibata-cursors;
@@ -76,10 +72,9 @@
     # Dotfiles
     # Building this configuration will create a copy of 'dotfiles/screenrc' in the Nix store.
     # Activating the configuration will then make '~/.screenrc' a symlink to the Nix store copy.
-    file = {
-      ".config/zed/settings.json".source = ./.zed/settings.json;
-      ".config/zed/keymap.json".source = ./.zed/keymap.json;
-    };
+    # file = {
+    # ".config/zed/settings.json".source = ./.zed/settings.json;
+    # };
 
     # Environment Variables
     # These will be explicitly sourced when using a shell provided by Home Manager.

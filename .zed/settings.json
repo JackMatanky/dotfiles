@@ -700,7 +700,7 @@
       }
     },
     "Python": {
-      "language_servers": ["pyright"], // ["pyright", "ruff"],
+      "language_servers": ["ruff", "pyright"], // ["pyright", "ruff"],
       "tab_size": 4,
       "format_on_save": "on",
       "formatter": {
@@ -798,17 +798,12 @@
           "pythonPath": "/home/jack/.nix-profile/bin/python"
         }
       }
+    },
+    "ruff": {
+      "binary": {
+        "path": "/home/jack/.nix-profile/bin/ruff"
+      }
     }
-    // "ruff": {
-    //   // "binary": {
-    //   //   "arguments": ["server", "--preview"]
-    //   // }
-    //   "initialization_options": {
-    //     "settings": {
-    //       "path": "/home/jack/.nix-profile/bin/ruff"
-    //     }
-    //   }
-    // }
   },
 
   // Jupyter Notebook
