@@ -22,16 +22,16 @@ in {
       zed-editor # Zed IDE
     ];
     file = {
-      "${config}settings.json".source = ./.zed/settings.json;
-      "${config}keymap.json".source = ./.zed/keymap.json;
-      "${snippets}${gitcommit-snip}".source = ./.zed/snippets/${gitcommit-snip};
-      "${snippets}${html-snip}".source = ./.zed/snippets/${html-snip};
-      "${snippets}${javascript-snip}".source = ./.zed/snippets/${javascript-snip};
-      "${snippets}${latex-snip}".source = ./.zed/snippets/${latex-snip};
-      "${snippets}${markdown-snip}".source = ./.zed/snippets/${markdown-snip};
-      "${snippets}${nix-snip}".source = ./.zed/snippets/${nix-snip};
-      "${snippets}${python-snip}".source = ./.zed/snippets/${python-snip};
-      "${snippets}${sql-snip}".source = ./.zed/snippets/${sql-snip};
+      "${config}settings.json".source = ../.zed/settings.json;
+      "${config}keymap.json".source = ../.zed/keymap.json;
+      "${snippets}${gitcommit-snip}".source = ../.zed/snippets/${gitcommit-snip};
+      "${snippets}${html-snip}".source = ../.zed/snippets/${html-snip};
+      "${snippets}${javascript-snip}".source = ../.zed/snippets/${javascript-snip};
+      "${snippets}${latex-snip}".source = ../.zed/snippets/${latex-snip};
+      "${snippets}${markdown-snip}".source = ../.zed/snippets/${markdown-snip};
+      "${snippets}${nix-snip}".source = ../.zed/snippets/${nix-snip};
+      "${snippets}${python-snip}".source = ../.zed/snippets/${python-snip};
+      "${snippets}${sql-snip}".source = ../.zed/snippets/${sql-snip};
     };
   };
 }

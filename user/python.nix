@@ -49,8 +49,8 @@ in {
         preview = false;
         # Whether to show an enumeration of all fixed lint violations.
         show-fixes = true; # Default false
-        per-file-ignores = {"__init__.py" = ["F401"];};
         lint = {
+          per-file-ignores = {"__init__.py" = ["F401"];};
           select = ["E4" "E7" "E9" "F"];
           ignore = [];
           flake8-import-conventions = {

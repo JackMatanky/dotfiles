@@ -700,30 +700,24 @@
       }
     },
     "Python": {
-      "language_servers": ["ruff", "pyright"], // ["pyright", "ruff"],
+      "language_servers": ["pyright", "ruff"], // ["pyright", "ruff"],
       "tab_size": 4,
       "format_on_save": "on",
-      "formatter": {
-        "external": {
-          "command": "ruff", // "/home/jack/.nix-profile/bin/ruff",
-          "arguments": [
-            "--fix",
-            "--preview",
-            "--stdin-filename",
-            "{buffer_path}"
-          ]
+      "formatter": [
+        {
+          "code_actions": {
+            // Fix all auto-fixable lint violations
+            "source.fixAll.ruff": true,
+            // Organize imports
+            "source.organizeImports.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
         }
-      },
-      "code_actions_on_format": {
-        "source.organizeImports.ruff": true,
-        "source.fixAll.ruff": true
-      }
-      //   {
-      //   "external": {
-      //     "command": "ruff",
-      //     "arguments": ["--stdin-filepath", "{buffer_path}"]
-      //   }
-      // }
+      ]
     },
     "Ruby": {
       "language_servers": ["solargraph", "!ruby-lsp", "!rubocop", "..."]
@@ -789,20 +783,28 @@
   // Language Server Protocol (LSP)
   "lsp": {
     "pyright": {
-      "settings": {
-        "python.analysis": {
-          "diagnosticMode": "workspace",
-          "typeCheckingMode": "strict"
-        },
-        "python": {
-          "pythonPath": "/home/jack/.nix-profile/bin/python"
-        }
+      "binary": {
+        "path": "/home/jack/.nix-profile/bin/python"
       }
+      // "settings": {
+      //   "python.analysis": {
+      //     "diagnosticMode": "workspace",
+      //     "typeCheckingMode": "strict"
+      //   },
+      //   "python": {
+      //     "pythonPath": "/home/jack/.nix-profile/bin/python"
+      //   }
+      // }
     },
     "ruff": {
       "binary": {
         "path": "/home/jack/.nix-profile/bin/ruff"
       }
+      // "initialization_options": {
+      //   "settings": {
+      //     "path": "/home/jack/.nix-profile/bin/ruff"
+      //   }
+      // }
     }
   },
 
