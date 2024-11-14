@@ -14,6 +14,6 @@
     ./python.nix
     ./sh.nix
     ./ssh.nix
-    ./zed
+    ./zed.nix
   ];
 }
