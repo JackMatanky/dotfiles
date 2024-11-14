@@ -700,22 +700,30 @@
       }
     },
     "Python": {
-      "language_servers": ["pyright", "ruff"],
+      "language_servers": ["pyright"], // ["pyright", "ruff"],
       "tab_size": 4,
       "format_on_save": "on",
       "formatter": {
-        // "code_actions": {
-        //   "source.organizeImports.ruff": true,
-        //   "source.fixAll.ruff": true
-        // },
-        // "language_server": {
-        //   "name": "ruff"
-        // }
         "external": {
-          "command": "ruff",
-          "arguments": ["--stdin-filepath", "{buffer_path}"]
+          "command": "ruff", // "/home/jack/.nix-profile/bin/ruff",
+          "arguments": [
+            "--fix",
+            "--preview",
+            "--stdin-filename",
+            "{buffer_path}"
+          ]
         }
+      },
+      "code_actions_on_format": {
+        "source.organizeImports.ruff": true,
+        "source.fixAll.ruff": true
       }
+      //   {
+      //   "external": {
+      //     "command": "ruff",
+      //     "arguments": ["--stdin-filepath", "{buffer_path}"]
+      //   }
+      // }
     },
     "Ruby": {
       "language_servers": ["solargraph", "!ruby-lsp", "!rubocop", "..."]
@@ -790,18 +798,17 @@
           "pythonPath": "/home/jack/.nix-profile/bin/python"
         }
       }
-    },
-    "ruff": {
-      "initialization_options": {
-        "settings": {
-          // Ruff server settings goes here
-          "lineLength": 80,
-          "lint": {
-            "extendSelect": ["I"]
-          }
-        }
-      }
     }
+    // "ruff": {
+    //   // "binary": {
+    //   //   "arguments": ["server", "--preview"]
+    //   // }
+    //   "initialization_options": {
+    //     "settings": {
+    //       "path": "/home/jack/.nix-profile/bin/ruff"
+    //     }
+    //   }
+    // }
   },
 
   // Jupyter Notebook
