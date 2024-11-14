@@ -1,0 +1,526 @@
+// Source: https://github.com/rafamadriz/friendly-snippets/
+// Source: https://github.com/cstrap/python-snippets/
+// Base Snippets
+{
+  "#!/usr/bin/env pythonX": {
+    "prefix": "#env",
+    "body": "#!/usr/bin/env python$0",
+    "description": "Shebang line for the first python in PATH"
+  },
+  "#!/usr/bin/env python3": {
+    "prefix": "#env",
+    "body": "#!/usr/bin/env python$0",
+    "description": "Shebang line for default python 3 interpreter"
+  },
+  "pyright ignore line": {
+    "prefix": "#ignore",
+    "body": "# pyright: ignore[$0]",
+    "description": "Ignore specific line diagnostic in pyright (ignore all is unsafe)"
+  },
+  "Multiline string": {
+    "prefix": "#",
+    "body": ["\"\"\"$0", "\"\"\""],
+    "description": "Snippet to avoid autopair plugin annoyances when typing multiple \""
+  },
+  "One-line multiline string": {
+    "prefix": "##",
+    "body": "\"\"\"$0\"\"\"",
+    "description": "Snippet to avoid autopair plugin annoyances when typing multiple \""
+  },
+  "if __name__ == __main__": {
+    "prefix": "ifmain",
+    "body": ["if __name__ == \"__main__\":", "\t${1:main()}$0"],
+    "description": "Execute code if the file is executed directly"
+  },
+
+  // Notebook
+  "Jupyter cell": {
+    "prefix": "#cell",
+    "body": "# %%",
+    "description": "Add a new cell"
+  },
+  "Jupyter markdown cell": {
+    "prefix": "#mark",
+    "body": "# %% [markdown]",
+    "description": "Add a new markdown cell"
+  },
+
+  // Import Statement
+  "import": {
+    "prefix": "import",
+    "body": "import ${1:datetime}$0",
+    "description": "Import a package or module"
+  },
+  "from ... import ...": {
+    "prefix": "fromim",
+    "body": "from ${1:pathlib} import ${2:Path}$0",
+    "description": "Import individual objects directly into the caller’s symbol table"
+  },
+  "from future import ...": {
+    "prefix": "fenc",
+    "body": [
+      "# -*- coding: utf-8 -*-",
+      "from __future__ import absolute_import, division, print_function, unicode_literals"
+    ],
+    "description": "Import future statement definitions for python2.x scripts using utf-8 as encoding."
+  },
+  "from future import ... v1": {
+    "prefix": "fenco",
+    "body": [
+      "# coding: utf-8",
+      "from __future__ import absolute_import, division, print_function, unicode_literals"
+    ],
+    "description": "Import future statement definitions for python3.x scripts using utf-8 as encoding."
+  },
+
+  // Control Flow
+  "if": {
+    "prefix": "if",
+    "body": ["if ${1:condition}:", "\t${2:pass}$0"],
+    "description": "if statement"
+  },
+  "elif": {
+    "prefix": "elif",
+    "body": ["elif ${1:condition}:", "\t${2:pass}$0"],
+    "description": "elif statement"
+  },
+  "else": {
+    "prefix": "else",
+    "body": ["else:", "\t${1:pass}$0"],
+    "description": "else statement"
+  },
+  "if/else": {
+    "prefix": "ifelse",
+    "body": ["if ${1:condition}:", "\t${2:pass}", "else:", "\t${3:pass}$0"],
+    "description": "if statement with else"
+  },
+  "for": {
+    "prefix": "for",
+    "body": ["for ${1:target} in ${2:iterable}:", "\t${3:pass}$0"],
+    "description": "for loop"
+  },
+  "for w/ range": {
+    "prefix": "forr",
+    "body": ["for ${1:value} in range($2):", "\t${3:pass}$0"],
+    "description": "for loop that iterates over range of integers"
+  },
+  "while": {
+    "prefix": "while",
+    "body": ["while ${1:condition}:", "\t${2:pass}$0"],
+    "description": "while loop"
+  },
+  "dowhile": {
+    "prefix": "dowhile",
+    "body": [
+      "do = True",
+      "while do or ${2:condition}:",
+      "\tdo = False",
+      "\t${1:body}$0"
+    ],
+    "description": "Code snippet to create a do-while loop structure."
+  },
+  "match/case": {
+    "prefix": "match",
+    "body": [
+      "match ${1:expression}:",
+      "\tcase ${2:pattern}:",
+      "\t\t${3:pass}$0"
+    ],
+    "description": "match/case statements"
+  },
+  "case": {
+    "prefix": "case",
+    "body": ["case ${2:pattern}:", "\t${3:pass}$0"],
+    "description": "case block"
+  },
+  "case wildcard": {
+    "prefix": "casew",
+    "body": ["case _:", "\t${1:pass}$0"],
+    "description": "case wildcard block if other cases fail"
+  },
+
+  // With Statement
+  "With Statement": {
+    "prefix": "with",
+    "body": ["with ${1:expression} as ${2:target}:", "\t${3:pass}$0"],
+    "description": "'with' statement"
+  },
+
+  // Functions
+  "Function": {
+    "prefix": "def",
+    "body": ["def ${1:fname}($2:arg):", "\t${3:pass}$0"],
+    "description": "Function definition"
+  },
+  "Function w/ return type": {
+    "prefix": "deft",
+    "body": ["def ${1:fname}($2:arg) -> ${3:None}:", "\t${4:pass}$0"],
+    "description": "Function definition with return type"
+  },
+  "async Function": {
+    "prefix": "adef",
+    "body": ["async def ${1:fname}($2:arg):", "\t${3:pass}$0"],
+    "description": "Function definition"
+  },
+  "Lambda Function": {
+    "prefix": "lam",
+    "body": ["lambda ${1:parameters}: ${2:expression}$0"],
+    "description": "lambda function"
+  },
+
+  // Object-Oriented
+  "Class": {
+    "prefix": "class",
+    "body": ["class ${1:classname}:", "\t${2:pass}$0"],
+    "description": "Class definition"
+  },
+  "Derived Class": {
+    "prefix": "classd",
+    "body": ["class ${1:classname}($2):", "\t${3:pass}$0"],
+    "description": "Class definition with inheritance"
+  },
+  "Class Template": {
+    "prefix": "classi",
+    "body": [
+      "class ${1:ClassName}($2):",
+      "\t\"\"\"${3:docstring for $1.}\"\"\"",
+      "\tdef __init__(self, ${4:arg}):",
+      "\t\t${5:super($1, self).__init__()}",
+      "\t\tself.$4 = $4$0"
+    ],
+    "description": "Class definition template"
+  },
+  "Method": {
+    "prefix": "defs",
+    "body": ["def ${1:method_name}(self, ${2:arg}):", "\t${3:pass}$0"],
+    "description": "Class method definition"
+  },
+  "Method w/ Return Type": {
+    "prefix": "defst",
+    "body": [
+      "def ${1:method_name}(self, ${2:arg}) -> ${3:None}:",
+      "\t${4:pass}$0"
+    ],
+    "description": "Class method definition"
+  },
+  "Property Template": {
+    "prefix": "property",
+    "body": [
+      "@property",
+      "def ${1:property_name}(self):",
+      "\t\"\"\"${2:The $1 property.}\"\"\"",
+      "\t${3:return self._$1}",
+      "",
+      "@${4:$1}.setter",
+      "def ${5:$1}(self, value):",
+      "\t${6:self._$1} = value"
+    ],
+    "description": "New property: get and set via decorator"
+  },
+  "enum Class Template": {
+    "prefix": "enum",
+    "body": [
+      "from enum import Enum",
+      "",
+      "",
+      "class ${1:MyEnum}(Enum):",
+      "\t\"\"\"${2:Docstring for $1.}\"\"\"",
+      "\t${3:FIRST_ENUM} = \"some_value\"",
+      "\t${4:SECOND_ENUM} = \"some_other_value\"",
+      "\t$0"
+    ],
+    "description": "enum  definition."
+  },
+  "Dataclass Template": {
+    "prefix": "classd",
+    "body": [
+      "from dataclasses import dataclass\n\n",
+      "@dataclass",
+      "class ${1:ClassName}(${2:object}):",
+      "\t\"\"\"${3:Docstring for $1.}\"\"\"",
+      "\t${4:property}: ${type}",
+      "\t$0"
+    ],
+    "description": "dataclass definition."
+  },
+
+  "self": {
+    "prefix": "s",
+    "body": "self.$0",
+    "description": "Snippet to reference the self property in an object"
+  },
+  "__magic__": {
+    "prefix": "__",
+    "body": "__${1:init}__$0",
+    "description": "Create magic method"
+  },
+
+  // Exception Handling
+  "except": {
+    "prefix": "except",
+    "body": ["except$1:", "\t${2:pass}$0"],
+    "description": "except statement"
+  },
+  "except as": {
+    "prefix": "exceptas",
+    "body": ["except ${1:Exception} as ${2:e}:", "\t${3:raise $2}$0"],
+    "description": "'except as' statement"
+  },
+  "try/except": {
+    "prefix": "try",
+    "body": [
+      "try:",
+      "\t${1:pass}",
+      "except ${2:Exception} as ${3:e}:",
+      "\t${4:raise $3}$0"
+    ],
+    "description": "try/except blocks"
+  },
+  "try/except/else": {
+    "prefix": "trya",
+    "body": [
+      "try:",
+      "\t${1:pass}",
+      "except ${2:Exception} as ${3:e}:",
+      "\t${4:raise $3}",
+      "else:",
+      "\t${5:pass}$0"
+    ],
+    "description": "try/except/else blocks"
+  },
+  "try/except/finally": {
+    "prefix": "tryf",
+    "body": [
+      "try:",
+      "\t${1:pass}",
+      "except ${2:Exception} as ${3:e}:",
+      "\t${4:raise $3}",
+      "finally:",
+      "\t${5:pass}$0"
+    ],
+    "description": "try/except/finally blocks"
+  },
+  "try/except/else/finally": {
+    "prefix": "tryef",
+    "body": [
+      "try:",
+      "\t${1:pass}",
+      "except${2: ${3:Exception} as ${4:e}}:",
+      "\t${5:raise}",
+      "else:",
+      "\t${6:pass}",
+      "finally:",
+      "\t${7:pass}$0"
+    ],
+    "description": "try/except/else/finally blocks"
+  },
+
+  // Comprehensions
+  "List comprehension": {
+    "prefix": "lc",
+    "body": "[${1:value} for ${2:target} in ${3:iterable}]$0",
+    "description": "List comprehension for creating a list based on existing lists."
+  },
+  "List comprehension if else": {
+    "prefix": "lcie",
+    "body": "[${1:value} if ${2:condition} else ${3:condition} for ${4:target} in ${5:iterable}]$0",
+    "description": "List comprehension for creating a list based on existing lists, with conditional if-else statement."
+  },
+  "List comprehension if filter": {
+    "prefix": "lci",
+    "body": "[${1:value} for ${2:target} in ${3:iterable} if ${4:condition}$0]",
+    "description": "List comprehension for creating a list based on existing lists, with conditional if statement."
+  },
+  "Dictionary comprehension": {
+    "prefix": "dc",
+    "body": "{${1:key}: ${2:value} for ${3:key_target}, ${4:value_target} in ${5:iterable}}$0",
+    "description": "Handy and faster way to create dictories based on existing dictionaries."
+  },
+  "Dictionary comprehension if filter": {
+    "prefix": "dci",
+    "body": "{${1:key}: ${2:value} for ${3:key_target}, ${4:value_target} in ${5:iterable} if ${6:condition}}$0",
+    "description": "Handy and faster way to create dictories based on existing dictionaries, with conditional if statement."
+  },
+  "Set comprehension": {
+    "prefix": "sc",
+    "body": "{${1:value} for ${2:target} in ${3:iterable}}$0",
+    "description": "Create a set based on existing iterables."
+  },
+  "Set Comprehension if filter": {
+    "prefix": "sci",
+    "body": "{${1:value} for ${2:target} in ${3:iterable} if ${4:condition}}$0",
+    "description": "Create a set based on existing iterables, with condition if statement."
+  },
+  "Generator comprehension": {
+    "prefix": "gc",
+    "body": "(${1:key} for ${2:target} in ${3:iterable})$0",
+    "description": "Create a generator based on existing iterables."
+  },
+  "Generator comprehension if filter": {
+    "prefix": "gci",
+    "body": "(${1:key} for ${2:target} in ${3:iterable} if ${4:condition})$0",
+    "description": "Create a generator based on existing iterables, with condition if statement."
+  },
+
+  // Docstrings
+  "comment": {
+    "prefix": "###",
+    "body": [
+      "\"\"\"",
+      "${1:A one-line summary.}",
+      "",
+      "${2:Detailed description.}$0",
+      "",
+      "Args:",
+      "    ${4:argument_name}: ${5:type and description.}",
+      "",
+      "Returns:",
+      "    ${3:type and description of the returned object.}",
+      "",
+      "Example:",
+      "    # ${6:Description of my example.}",
+      "    ${7:use_it_this_way(arg1, arg2)}",
+      "\"\"\""
+    ],
+    "description": "A Python docstring for functions and methods, including short summary, details, args, returns, and examples. This docstring is an synonym of \"\"\"function."
+  },
+  "comment simple": {
+    "prefix": "##",
+    "body": [
+      "\"\"\"",
+      "${1:A one-line summary.}",
+      "",
+      "${2:Detailed description.}$0",
+      "\"\"\""
+    ],
+    "description": "A simple Python docstring comment. Useful when you prefer to add the docstrings manually on functions."
+  },
+  "module docstring": {
+    "prefix": "###module",
+    "body": [
+      "\"\"\"",
+      "${1:A one-line summary.}",
+      "",
+      "${2:Detailed description.}$0",
+      "",
+      "Examples:",
+      "    # ${3:Description of my example.}",
+      "    ${4:use_it_this_way(arg1, arg2)}",
+      "\"\"\""
+    ],
+    "description": "A Python docstring for modules, including a one-line summary, details, and example."
+  },
+  "test module docstring": {
+    "prefix": "###test",
+    "body": [
+      "\"\"\"",
+      "${1:A one-line summary.}",
+      "",
+      "${2:Detailed description.}$0",
+      "\"\"\""
+    ],
+    "description": "Module-level docstrings for test files are not required. They should be included only when there is additional information that can be provided.\n\nExamples include some specifics on how the test should be run, an explanation of an unusual setup pattern, dependency on the external environment, and so on. Docstrings that do not provide any new information should not be used, such as \"\"\"Tests for foo.bar.\"\"\""
+  },
+  "function docstring": {
+    "prefix": "###function",
+    "body": [
+      "\"\"\"",
+      "${1:A one-line summary.}",
+      "",
+      "${2:Detailed description.}$0",
+      "",
+      "Args:",
+      "    ${4:argument_name}: ${5:type and description.}",
+      "",
+      "Returns:",
+      "    ${3:type and description of the returned object.}",
+      "",
+      "Example:",
+      "    # ${6:Description of my example.}",
+      "    ${7:use_it_this_way(arg1, arg2)}",
+      "\"\"\""
+    ],
+    "description": "A Python docstring for functions and methods, including short summary, details, args, returns, and example."
+  },
+  "function docstring typed": {
+    "prefix": "###function_typed",
+    "body": [
+      "\"\"\"",
+      "${1:A one-line summary.}",
+      "",
+      "${2:Detailed description.}$0",
+      "",
+      "Args:",
+      "    ${5:argument_name} (${6:type}): ${7:description.}",
+      "",
+      "Returns:",
+      "    ${3:type}: {4:Description of the returned object.}",
+      "",
+      "Example:",
+      "    # ${8:Description of my example.}",
+      "    ${9:use_it_this_way(arg1, arg2)}",
+      "\"\"\""
+    ],
+    "description": "Alternative Python docstring for functions and methods, with a different type syntax. Some teams prefer it."
+  },
+  "generator docstring": {
+    "prefix": "###generator",
+    "body": [
+      "\"\"\"",
+      "${1:A one-line summary.}",
+      "",
+      "${2:Detailed description.}$0",
+      "",
+      "Args:",
+      "    ${4:argument_name}: ${5:type and description.}",
+      "",
+      "Yields:",
+      "    ${3:type and description of the yielded object.}",
+      "",
+      "Example:",
+      "    # ${6:Description of my example.}",
+      "    ${7:use_it_this_way(arg1, arg2)}",
+      "\"\"\""
+    ],
+    "description": "A Python docstring for generator methods, including a one-line summary, details, parameters, yields, and example. It is the same, but it has yields instead of returns."
+  },
+  "class docstring": {
+    "prefix": "###class",
+    "body": [
+      "\"\"\"",
+      "${1:A one-line summary.}",
+      "",
+      "${2:Detailed description.}$0",
+      "",
+      "Attributes:",
+      "    ${3:attribute_name}: ${4:type and description.}",
+      "\"\"\""
+    ],
+    "description": "A Python docstring for classes, including a one-line summary, details, attributes, and returns."
+  },
+  "exception docstring": {
+    "prefix": "###exception",
+    "body": [
+      "\"\"\"",
+      "${1:A one-line summary.}",
+      "",
+      "${2:Detailed description.}$0",
+      "",
+      "Attributes:",
+      "    ${3:attribute_name}: ${4:type and description.}",
+      "\"\"\""
+    ],
+    "description": "A Python docstring for exceptions, including a one-line summary, description, and attributes."
+  },
+  "raises docstring": {
+    "prefix": "###raises",
+    "body": ["Raises:", "    ${1:ErrorName}: ${2:Error description.}$0"],
+    "description": "A Python docstring for methods when we want to be exclicit about the errors it Raises. Use it only when is relevant."
+  },
+
+  "# coding=utf-8": {
+    "prefix": "enco",
+    "body": "# coding=utf-8\n$0",
+    "description": "Set default python3 encoding specification to utf-8, by default this is the encoding for python3.x as it is mentioned in pep-3120."
+  }
+}
