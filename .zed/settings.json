@@ -703,21 +703,27 @@
       "language_servers": ["pyright", "ruff"], // ["pyright", "ruff"],
       "tab_size": 4,
       "format_on_save": "on",
-      "formatter": [
-        {
-          "code_actions": {
-            // Fix all auto-fixable lint violations
-            "source.fixAll.ruff": true,
-            // Organize imports
-            "source.organizeImports.ruff": true
-          }
-        },
-        {
-          "language_server": {
-            "name": "ruff"
-          }
+      "formatter": {
+        "external": {
+          "command": "/home/jack/.nix-profile/bin/ruff",
+          "arguments": ["format", "--stdin-filename", "{buffer_path}"]
         }
-      ]
+      }
+      // [
+      //   {
+      //     "code_actions": {
+      //       // Fix all auto-fixable lint violations
+      //       "source.fixAll.ruff": true,
+      //       // Organize imports
+      //       "source.organizeImports.ruff": true
+      //     }
+      //   },
+      //   {
+      //     "language_server": {
+      //       "name": "ruff"
+      //     }
+      //   }
+      // ]
     },
     "Ruby": {
       "language_servers": ["solargraph", "!ruby-lsp", "!rubocop", "..."]
@@ -795,17 +801,18 @@
       //     "pythonPath": "/home/jack/.nix-profile/bin/python"
       //   }
       // }
-    },
-    "ruff": {
-      "binary": {
-        "path": "/home/jack/.nix-profile/bin/ruff"
-      }
-      // "initialization_options": {
-      //   "settings": {
-      //     "path": "/home/jack/.nix-profile/bin/ruff"
-      //   }
-      // }
     }
+    // "ruff": {
+    //   "binary": {
+    //     "path": "/home/jack/.nix-profile/bin/ruff"
+    //   },
+    //   "arguments": ["server", "--preview"]
+    //   // "initialization_options": {
+    //   //   "settings": {
+    //   //     "path": "/home/jack/.nix-profile/bin/ruff"
+    //   //   }
+    //   // }
+    // }
   },
 
   // Jupyter Notebook
