@@ -53,8 +53,12 @@
     # Dotfiles
     # Symlink configuration files to the user's home directory
     file = {
-      ".config/starship/".source = "${userSettings.username}/starship";
-      ".config/alacritty/alacritty.toml".source = ../.alacritty/alacritty.toml;
+      # Shell Configuration
+      ".config/aliases.sh".source = ./dotfiles/aliases.sh;
+      ".bashrc".source = ./dotfiles/bashrc;
+      ".zshrc".source = ./dotfiles/zshrc;
+      ".config/starship/".source = ./dotfiles/starship;
+      ".config/alacritty/".source = ./dotfiles/alacritty;
     };
 
     # Environment Variables
