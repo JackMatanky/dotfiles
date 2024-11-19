@@ -1,0 +1,41 @@
+[user]
+    name = JackMatanky                  # Replace with your name
+    email = JackMatanky@gmail.com       # Replace with your email
+
+[alias]
+    # Common Git Commands
+    st = status                          # Shortcut for `git status`
+    cm = commit -m                       # Shortcut for `git commit -m`
+    pl = pull                            # Shortcut for `git pull`
+
+    # Aliases from Shell
+    gcm = commit -m                      # Commit with a message
+    gcam = commit -a -m                  # Stage all changes and commit with a message
+    gps = push                           # Push current branch
+    gpso = push origin HEAD              # Push current branch explicitly to `origin`
+    gpl = pull                           # Pull updates from the default remote
+    gplo = pull origin                   # Pull updates explicitly from `origin`
+    gst = status                         # Show Git status
+    gdiff = diff                         # Show Git differences
+    gco = checkout                       # Switch branches
+    gb = branch                          # List branches
+
+[init]
+    defaultBranch = main                 # Set the default branch name to `main`
+
+[pull]
+    rebase = false                       # Disable rebase during pull
+
+[core]
+    autocrlf = input                     # Convert CRLF to LF on input
+    eol = lf                             # Use LF as the end-of-line character
+
+[diff "pdf"]
+    textconv = pdftotext -layout -enc UTF-8 -
+
+[attributes]
+    *.pdf diff=pdf
+    *.gif binary
+    *.jpg binary
+    *.png binary
+    *.webp binary

@@ -22,9 +22,9 @@ in {
       zed-editor # Zed IDE
     ];
     file = {
-      "${config}settings.json".source = ../.zed/settings.json;
-      "${config}keymap.json".source = ../.zed/keymap.json;
-      "${snippets}".source = ../.zed/snippets;
+      "${config}settings.json".source = ../../zed/settings.json;
+      "${config}keymap.json".source = ../../zed/keymap.json;
+      "${snippets}".source = ../../zed/snippets;
       # "${snippets}${gitcommit-snip}".source = ../.zed/snippets/${gitcommit-snip};
       # "${snippets}${html-snip}".source = ../.zed/snippets/${html-snip};
       # "${snippets}${javascript-snip}".source = ../.zed/snippets/${javascript-snip};
