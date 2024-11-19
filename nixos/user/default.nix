@@ -9,10 +9,10 @@
 }: {
   imports = [
     # ./alacritty.nix
-    # ./git.nix
+    ./git.nix
     ./oh-my-posh.nix
     ./python.nix
-    # ./sh.nix
+    ./sh.nix
     ./ssh.nix
     ./zed.nix
   ];

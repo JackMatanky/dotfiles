@@ -5,67 +5,93 @@
   userSettings,
   ...
 }: let
-  myAliases = {
-    dot = "cd .dotfiles";
-    obsidian = "cd /run/media/jack/sdxc_512/obsidian_vault";
-    flake_rebuild = "sudo nixos-rebuild switch --flake .";
-    flake_up = "sudo nix flake update";
-    hm_switch = "home-manager switch --flake .";
+  dotfiles = "../../..";
+  # Centralized definition for the aliases file
+  aliasesConfig = "~/.config/aliases.sh";
 
-    # Shell Commands
-    l = "ls --all";                     # List all files
-    ll = "ls -l";                       # List files in long format
-    clear = "clearscreen";              # Clear the screen
-    code = "code .";                    # Open VS Code in the current directory
-    z = "zed";                          # Open Zed Editor
-
-    # GIT SHORTCUTS
-    gcm = "git commit -m";              # Commit with a message
-    gcam = "git commit -a -m";          # Add and commit with a message
-    gps = "git push";                   # Push current branch
-    gpso = "git push origin HEAD";      # Push current branch
-    gpl = "git pull";                   # Pull updates from the remote
-    gplo = "git pull origin";           # Pull updates from the remote
-    gst = "git status";                 # Show Git status
-    gdiff = "git diff";                 # Show Git differences
-    gco = "git checkout";               # Switch branches
-    gb = "git branch";                  # List branches
+  # Centralized session variables for reuse across Bash and Zsh
+  commonSessionVariables = {
+    PATH = builtins.concatStringsSep ":" [
+      "${config.home.homeDirectory}/.local/bin" # User binaries
+      "/run/current-system/sw/bin" # System binaries
+      "/nix/var/nix/profiles/default/bin" # Nix default profile binaries
+      "${config.home.homeDirectory}/.cargo/bin" # Rust's Cargo binaries
+      "${config.home.homeDirectory}/.node/bin" # Node.js binaries
+      "$PATH" # Preserve existing PATH
+    ];
+    TERMINAL = "${pkgs.alacritty}/bin/alacritty"; # Default terminal emulator
+    EDITOR = "zed"; # Default editor
   };
 in {
   home.file = {
-      ".config/starship/starship.toml".source = ../.starship/starship.toml;
-      ".config/alacritty/alacritty.toml".source = ../.alacritty/alacritty.toml;
+    # Configuration files for shells and other programs
+    ".config/aliases.sh".source = ../../aliases.sh;
+    # ".zshrc".source = ../../zsh/.zshrc;
+    ".config/starship/".source = ../../starship;
+    ".config/alacritty/".source = ../../alacritty;
   };
 
   programs = {
+    # Bash Configuration
     bash = {
-      enable = true;
-      enableCompletion = true;
-      shellAliases = myAliases;
+      enable = true; # Enable Bash as a managed program
+      enableCompletion = true; # Enable Bash command-line completion
+
+      # History configuration
+      historySize = 10000; # Number of commands to keep in memory
+      historyFileSize = 100000; # Number of commands to keep in the history file
+      historyControl = ["ignoredups" "erasedups"]; # Avoid duplicates in history
+
+      # Session variables for Bash
+      sessionVariables = commonSessionVariables;
+
+      # Additional commands appended to ~/.bashrc
+      bashrcExtra = ''
+        # Load custom aliases if present
+        if [ -f ${aliasesConfig} ]; then
+          source ${aliasesConfig}
+        fi
+
+        # Zoxide initialization
+        eval "$(zoxide init bash)"
+
+        # Starship prompt initialization
+        eval "$(starship init bash)"
+      '';
     };
 
+    # Zsh Configuration
     zsh = {
-      enable = true;
-      enableCompletion = true;
-      autosuggestion.enable = true;
-      syntaxHighlighting.enable = true;
-      historySubstringSearch.searchUpKey = ["^[[A"];
-      shellAliases = myAliases;
+      enable = true; # Enable Zsh as a managed program
+      enableCompletion = true; # Enable command-line completion
+      autosuggestion.enable = true; # Enable autosuggestions
+      syntaxHighlighting.enable = true; # Enable syntax highlighting
+      historySubstringSearch.enable = true; # Enable substring history search
 
-      # history = {
-      # size = 10000;
-      # };
-      sessionVariables = {
-        TERMINAL = "${pkgs.alacritty}/bin/alacritty";
-      };
+      # Session variables for Zsh
+      sessionVariables = commonSessionVariables;
+
+      # Use shellInit to source the aliases file and initialize utilities
+      # Use initExtra to source the aliases file and initialize utilities
+      initExtra = ''
+        # Load custom aliases
+        if [ -f ${aliasesConfig} ]; then
+          source ${aliasesConfig}
+        fi
+
+        # Zoxide initialization
+        eval "$(zoxide init zsh)"
+
+        # Starship prompt initialization
+        eval "$(starship init zsh)"
+      '';
     };
 
-    # Nushell: Modern shell
+    # Nushell Configuration
     nushell = {
       enable = true; # Enable Nushell as a managed program
-      configFile.source = ../.nushell/config.nu;
-      envFile.source = ../.nushell/env.nu; # Link to the Nushell environment configuration
-      };
+      configFile.source = ../../nushell/config.nu;
+      envFile.source = ../../nushell/env.nu; # Link to the Nushell environment configuration
     };
 
     # Alacritty: Terminal emulator

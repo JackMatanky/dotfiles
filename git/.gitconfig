@@ -32,10 +32,3 @@
 
 [diff "pdf"]
     textconv = pdftotext -layout -enc UTF-8 -
-
-[attributes]
-    *.pdf diff=pdf
-    *.gif binary
-    *.jpg binary
-    *.png binary
-    *.webp binary

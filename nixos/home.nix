@@ -52,14 +52,8 @@
 
     # Dotfiles
     # Symlink configuration files to the user's home directory
-    file = {
-      # Shell Configuration
-      ".config/aliases.sh".source = ./dotfiles/aliases.sh;
-      ".bashrc".source = ./dotfiles/bashrc;
-      ".zshrc".source = ./dotfiles/zshrc;
-      ".config/starship/".source = ./dotfiles/starship;
-      ".config/alacritty/".source = ./dotfiles/alacritty;
-    };
+    # file = {
+    # };
 
     # Environment Variables
     # Define global variables for the user environment
@@ -84,80 +78,6 @@
       enable = true; # Manage user configuration with Home Manager
       # useGlobalPkgs = true;
       # useUserPackages = true;
-    };
-
-    # Shell and Terminals
-    # Bash Configuration
-    bash = {
-      enable = true; # Enable Bash as a managed program
-      enableCompletion = true; # Enable command-line completion
-      shellAliases = {}; # Do not set aliases in Home Manager
-      # Set the custom .bashrc file location
-      shellInit = ''
-        if [ -f ~/.bashrc ]; then
-          source ~/.bashrc
-        fi
-      '';
-    };
-
-    # Zsh Configuration
-    zsh = {
-      enable = true; # Enable Zsh as a managed program
-      enableCompletion = true; # Enable command-line completion
-      autosuggestion.enable = true; # Enable autosuggestions
-      syntaxHighlighting.enable = true; # Enable syntax highlighting
-      historySubstringSearch.enable = true; # Enable substring history search
-      # Use the existing .zshrc file
-      shellInit = ''
-        if [ -f ~/.zshrc ]; then
-          source ~/.zshrc
-        fi
-      '';
-      # Set additional session variables
-      sessionVariables = {
-        TERMINAL = "${pkgs.alacritty}/bin/alacritty";
-      };
-    };
-
-    # Nushell: Modern shell
-    nushell = {
-      enable = true; # Enable Nushell as a managed program
-      configFile.source = ../nushell/config.nu;
-      envFile.source = ../nushell/env.nu; # Link to the Nushell environment configuration
-    };
-
-    # Alacritty: Terminal emulator
-    alacritty = {
-      enable = true;
-    };
-
-    # Starship: Shell prompt
-    starship = {
-      enable = true;
-      enableZshIntegration = true;
-      enableNushellIntegration = true;
-    };
-
-    # Zoxide: Fast directory navigation
-    zoxide = {
-      enable = true;
-      enableZshIntegration = true;
-      enableNushellIntegration = true;
-    };
-
-    # Carapace: Command-line autocompletion
-    carapace = {
-      enable = true;
-      enableZshIntegration = true;
-      enableNushellIntegration = true;
-    };
-
-    # Git
-    git = {
-      enable = true;
-      extraConfig = {
-        include.path = "${config.home.homeDirectory}/.dotfiles/git/.gitconfig";
-      };
     };
 
     # TeX Live
