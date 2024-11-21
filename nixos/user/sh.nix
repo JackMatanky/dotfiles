@@ -17,21 +17,24 @@
     gc_empty = "sudo nix-garbage-collect -d";
 
     # Git
+    gad = "git add";
+    gad_p = "git add -p";
     gc = "git commit -m";
     gca = "git commit -a -m";
-    # gp = "git push origin HEAD";
-    # gpu = "git pull origin";
-    # gst = "git status";
+    gps = "git push";
+    gps_o = "git push origin";
+    # gps_oh = "git push origin HEAD";
+    gpl = "git pull";
+    gpl_o = "git pull origin";
+    gst = "git status";
     # glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit";
     # gdiff = "git diff";
+    gbr = "git branch";
+    gbra = "git branch -a";
     # gco = "git checkout";
-    # gb = "git branch";
-    # gba = "git branch -a";
-    # gadd = "git add";
-    # ga = "git add -p";
     # gcoall = "git checkout -- .";
-    # gr = "git remote";
-    # gre = "git reset";
+    # grm = "git remote";
+    # grs = "git reset";
 
     # Dirs
     # .. = "cd ..";
