@@ -57,7 +57,7 @@ in {
       enableCompletion = true;
       shellAliases = myAliases;
 
-      extraShellInit = ''
+      initExtra = ''
         eval "$(starship init bash)"
       '';
     };
@@ -74,7 +74,7 @@ in {
       # size = 10000;
       # };
 
-      extraShellInit = ''
+      initExtra = ''
         eval "$(starship init zsh)"
       '';
 
