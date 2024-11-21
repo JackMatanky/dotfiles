@@ -47,15 +47,6 @@
     # ];
   };
 
-  # Bootloader configuration for UEFI systems.
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-  };
-  # boot.loader.grub.enable = true;
-  # boot.loader.grub.device = "/dev/vda";
-  # boot.loader.grub.useOSProber = true;
-
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
