@@ -14,7 +14,7 @@
     flake_rebuild = "sudo nixos-rebuild switch --flake .";
     flake_up = "sudo nix flake update";
     hm_switch = "home-manager switch --flake .";
-    gc_empty = "sudo nix-garbage-collect -d";
+    cg_empty = "sudo nix-collect-garbage -d";
 
     # Git
     gad = "git add";

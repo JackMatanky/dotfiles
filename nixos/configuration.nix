@@ -16,7 +16,7 @@
     ./hosts/surface-pro/surface-pkgs.nix
     ./system/bootloader.nix
     ./system/fonts.nix
-    ./system/gnome-pkgs-exclude.nix
+    ./system/gnome.nix
     ./system/locale.nix
     ./system/storage.nix
   ];
