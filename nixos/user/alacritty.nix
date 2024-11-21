@@ -109,7 +109,7 @@
       # Cursor style
       cursor.style = "Beam";
 
-      # Define a theme (example: dark theme)
+      # Define a theme
       colors = {
         primary = {
           background = "0x282a36"; # Dark background
