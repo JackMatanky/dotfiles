@@ -6,19 +6,11 @@
   ...
 }: let
   zedDir = builtins.path {
-    path = ../../zed;
+    path = ../zed;
     name = "zed";
   };
   configDir = ".config/zed/";
   snippetsDir = "${configDir}snippets/";
-  # gitcommit-snip = "gitcommit.json";
-  # html-snip = "html.json";
-  # javascript-snip = "javascript.json";
-  # latex-snip = "latex.json";
-  # markdown-snip = "markdown.json";
-  # nix-snip = "nix.json";
-  # python-snip = "python.json";
-  # sql-snip = "sql.json";
 in {
   home = {
     packages = with pkgs-unstable; [
