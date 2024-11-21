@@ -19,5 +19,5 @@
     };
   };
   # Previous system generations to retain
-  system.autoUpgrade.keepBoot = 5;
+  # system.autoUpgrade.keepBoot = 5;
 }
