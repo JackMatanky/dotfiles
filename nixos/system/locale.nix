@@ -7,17 +7,21 @@
   time.timeZone = systemSettings.timeZone;
 
   # Select internationalisation properties.
-  i18n.defaultLocale = systemSettings.locale;
+  i18n = {
+    defaultLocale = systemSettings.localeDefault;
+    supportedLocales = [systemSettings.localeDefault systemSettings.localeSecondary];
+  };
+  # i18n.defaultLocale = systemSettings.localeDefault;
 
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = systemSettings.locale;
-    LC_IDENTIFICATION = systemSettings.locale;
-    LC_MEASUREMENT = systemSettings.locale;
-    LC_MONETARY = systemSettings.locale;
-    LC_NAME = systemSettings.locale;
-    LC_NUMERIC = systemSettings.locale;
-    LC_PAPER = systemSettings.locale;
-    LC_TELEPHONE = systemSettings.locale;
-    LC_TIME = systemSettings.locale;
+    LC_ADDRESS = systemSettings.localeDefault;
+    LC_IDENTIFICATION = systemSettings.localeDefault;
+    LC_MEASUREMENT = systemSettings.localeDefault;
+    LC_MONETARY = systemSettings.localeDefault;
+    LC_NAME = systemSettings.localeDefault;
+    LC_NUMERIC = systemSettings.localeDefault;
+    LC_PAPER = systemSettings.localeDefault;
+    LC_TELEPHONE = systemSettings.localeDefault;
+    LC_TIME = systemSettings.localeDefault;
   };
 }
