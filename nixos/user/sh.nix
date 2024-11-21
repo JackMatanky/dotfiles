@@ -28,7 +28,7 @@
     gpl = "git pull";
     gpl_o = "git pull origin";
     gst = "git status";
-    # glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit";
+    # glog = "git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit";
     # gdiff = "git diff";
     gbr = "git branch";
     gbra = "git branch -a";
@@ -56,6 +56,10 @@ in {
       enable = true;
       enableCompletion = true;
       shellAliases = myAliases;
+
+      extraShellInit = ''
+        eval "$(starship init bash)"
+      '';
     };
 
     zsh = {
@@ -69,6 +73,11 @@ in {
       # history = {
       # size = 10000;
       # };
+
+      extraShellInit = ''
+        eval "$(starship init zsh)"
+      '';
+
       sessionVariables = {
         TERMINAL = "${pkgs.alacritty}/bin/alacritty";
       };

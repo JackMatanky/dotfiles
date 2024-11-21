@@ -1,60 +1,130 @@
 # ~/.config/starship.toml
 
 # Inserts a blank line between prompts
-add_newline = true # (Default: true)
+add_newline = false
+
+# Use the color palette
+palette = "dracula"
+
+# Define Dracula color palette
+[palettes.dracula]
+background = "#282a36"
+current_line = "#44475a"
+foreground = "#f8f8f2"
+comment = "#6272a4"
+cyan = "#8be9fd"
+green = "#50fa7b"
+orange = "#ffb86c"
+pink = "#ff79c6"
+purple = "#bd93f9"
+red = "#ff5555"
+yellow = "#f1fa8c"
+
+# move the rest of the prompt to the right
+right_format = """$all"""
+
+[line_break]
+disabled = true
+
+[hostname]
+style = "bold purple"
+ssh_only = true
+disabled = true
+# format = "[$hostname]($style) "
+# trim_at = "."
+
+[username]
+style_user = "bold yellow"
+format = "[$user]($style_user) "
+disabled = true
+# show_always = true
 
 # Enable the use of emojis in the prompt
 [character] # Default prompt character
-success_symbol = "[➜](bold green)" # (Default: "➜") Symbol for successful commands
-error_symbol = "[✗](bold red)"     # (Default: "✗") Symbol for failed commands
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
+
+[time]
+disabled = true
+# format = "[$time]($style) "
+# style = "yellow"
+# use_12hr = false
+
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+discharging_symbol = '💀 '
+disabled = true
+# format = "[$symbol$percentage]($style) "
+
+[[battery.display]]
+threshold = 30
+style = 'bold yellow'
+discharging_symbol = '💦 '
+
+[[battery.display]]
+threshold = 10
+style = 'bold red'
 
 # Show the current directory
 [directory]
-truncation_length = 3                                     # (Default: 3) Truncate directory paths
-truncate_to_repo = true                                   # (Default: false) If in Git repo, only show path within
-style = "bold blue"                                       # (Default: "blue") Color of the directory path
-format = "[$path]($style)[$read_only]($read_only_style) " # Default format
-# read_only = " 🔒"                                  # (Default: " 🔒") Symbol for read-only directories
-# read_only_style = "red"                           # (Default: "red") Color of the read-only symbol
+truncation_length = 3
+truncate_to_repo = true
+style = "bold green"
+format = "[$path]($style)[$read_only]($read_only_style) "
+# read_only = " 🔒"
+# read_only_style = "red"
 
+# Show the time it took to execute the previous command
+[cmd_duration]
+min_time = 1
+show_milliseconds = false
+format = "[$duration]($style) "
+style = "yellow"
+disabled = true
+
+# Show the number of running jobs
+[jobs]
+disabled = true
+# format = "[$symbol$jobs]($style) "
+# symbol = "✦ "
+
+[memory_usage]
+threshold = 75
+disabled = true
+# format = "[$symbol$ram]($style) "
+# symbol = "🐏 "
+
+[direnv]
+disabled = false
+
+# Git
 # Display Git information
 [git_branch]
-style = "bold purple"                # (Default: "purple") Color of the Git branch
-format = "[$symbol$branch]($style) " # Default format
-# symbol = " "                                    # (Default: " ") Symbol for Git branch
+style = "bold pink"
+format = "[$symbol$branch]($style) "
+symbol = " "
 
-[git_commit] # Show the current Git commit hash
-style = "green" # (Default: "green") Color of the Git commit hash
-disabled = true # This module is disabled by default
-# format = '[$hash]($style) '                        # Default format
-# hash_length = 7                                    # (Default: 7) Length of the commit hash to show
+[git_commit]
+style = "green"
+disabled = true
+# format = '[$hash]($style) '
+# hash_length = 7
 
-[git_status] # Show Git status indicators
-style = "red"                                    # (Default: "red") Color of the Git status indicators
-format = '([$all_status$ahead_behind]($style)) ' # Default format
-# untracked = "…"                                    # (Default: "…") Symbol for untracked files
-# modified = "!"                                    # (Default: "!") Symbol for modified files
-# staged = "+"                                      # (Default: "+") Symbol for staged files
-# renamed = "»"                                    # (Default: "»") Symbol for renamed files
-# deleted = "✘"                                    # (Default: "✘") Symbol for deleted files
-# conflicted = "="                                  # (Default: "=") Symbol for conflicted files
-# ahead = "⇡"                                      # (Default: "⇡") Symbol for ahead commits
-# behind = "⇣"                                      # (Default: "⇣") Symbol for behind commits
-# diverged = "⇕"                                    # (Default: "⇕") Symbol for diverged commits
-
-# Show the Python version if a virtual environment is active
-[python]
-symbol = "🐍 "                                          # (Default: "🐍 ") Symbol for Python
-style = "bold yellow"                                  # (Default: "yellow") Color of Python version
-format = "[$symbol$virtualenv$python_version]($style)" # Custom format
-disabled = true                                        # This module is disabled by default
-# virtualenv_indicator = "env: "                   # (Default: "env: ") Indicator for virtual env
-
-# Show Node.js version
-[nodejs]
-symbol = " "        # (Default: " ") Symbol for Node.js
-style = "bold green" # (Default: "green") Color of Node.js version
-disabled = true      # This module is disabled by default
+[git_status]
+style = "red"
+format = '([$all_status$ahead_behind]($style)) '
+conflicted = '🏳'                                 # "="
+ahead = '🏎💨'                                     # "⇡"
+behind = '😰'                                     # "⇣"
+diverged = '😵'                                   # "⇕"
+up_to_date = '✓'
+untracked = '🤷'                                  # "…"
+stashed = '📦'
+modified = '📝'                                   # "!"
+staged = '[++\($count\)](green)'                 # "+"
+renamed = '👅'                                    # "»"
+deleted = '🗑'                                    # "✘"
 
 # Nix Shell
 [nix_shell]
@@ -64,82 +134,101 @@ pure_msg = '[pure shell](bold green)'
 unknown_msg = '[unknown shell](bold yellow)'
 format = 'via [☃️ $state( \($name\))](bold blue) '
 
-# Show the time it took to execute the previous command
-[cmd_duration]
-min_time = 1                    # (Default: 1) Only show if command took longer than 1 second
-show_milliseconds = false       # (Default: false) Don't show milliseconds
-format = "[$duration]($style) " # Default format
-style = "yellow"                # (Default: "yellow") Color of the command duration
-disabled = true                 # This module is disabled by default
+# Programming Languages
+[python]
+symbol = "🐍 "
+style = "bold yellow"
+format = "[$symbol$virtualenv$python_version]($style)"
+disabled = true
+# virtualenv_indicator = "env: "
 
-[line_break] # Add a line break between the prompt and command
-disabled = true # This module is disabled by default
-
-[jobs] # Show the number of running jobs
-disabled = true # This module is disabled by default
-# format = "[$symbol$jobs]($style) "                 # Default format
-# symbol = "✦ "                                    # (Default: "✦ ") Symbol for jobs
-
-[battery] # Show battery information
-full_symbol = '🔋 '        # (Default: "󰁹 ") Symbol for a full battery
-charging_symbol = '⚡️ '   # (Default: "󰢜 ") Symbol for a charging battery
-discharging_symbol = '💀 ' # (Default: "󰂃 ") Symbol for a discharging battery
-disabled = true           # This module is disabled by default
-# format = "[$symbol$percentage]($style) "           # Default format
-
-[hostname] # Show the hostname of the machine
-ssh_only = true # (Default: false) Only show if connected via SSH
-disabled = true # This module is disabled by default
-# format = "[$hostname]($style) "                     # Default format
-# trim_at = "."                                      # (Default: "") Trim hostname at this character
-
-[username] # Show the current username
-style_user = "bold yellow"       # (Default: "yellow") Color of the username
-format = "[$user]($style_user) " # Default format
-disabled = true                  # This module is disabled by default
-# show_always = true                                 # (Default: false) Always show the username
+[nodejs]
+symbol = " "
+style = "bold green"
+disabled = true
 
 [package] # Show package information (e.g., for npm, cargo)
 disabled = true # This module is disabled by default
-# format = "[$symbol$version]($style) "              # Default format
+# format = "[$symbol$version]($style) "
 
-[rust] # Show Rust version and information
-symbol = "🦀 "      # (Default: "🦀 ") Symbol for Rust
-style = "bold red" # (Default: "red") Color of Rust information
-disabled = true    # This module is disabled by default
-# format = "[$symbol$version]($style) "              # Default format
+[rust]
+symbol = "🦀 "
+style = "bold red"
+disabled = true
+# format = "[$symbol$version]($style) "
 
-[java] # Show Java version
-disabled = true # This module is disabled by default
-# format = "[$symbol$version]($style) "              # Default format
-# symbol = "☕ "                                    # (Default: "☕ ") Symbol for Java
+[java]
+disabled = true
+# format = "[$symbol$version]($style) "
+# symbol = "☕ "
 
-[docker_context] # Show the current Docker context
-symbol = "🐳 "       # (Default: "🐳 ") Symbol for Docker
-style = "bold blue" # (Default: "blue") Color of Docker context information
-disabled = true     # This module is disabled by default
-# format = "[$symbol$context]($style) "              # Default format
+# Cloud Platforms
+[docker_context]
+symbol = "🐳 "
+style = "bold blue"
+disabled = true
+# format = "[$symbol$context]($style) "
 
-[aws] # Show AWS information
-disabled = true # This module is disabled by default
-# format = "[$symbol$profile]($style) "              # Default format
-# symbol = "  "                                    # (Default: "  ") Symbol for AWS
+[aws]
+disabled = true
+# format = "[$symbol$profile]($style) "
+# symbol = "  "
 
-[gcloud] # Show Google Cloud Platform information
-disabled = true # This module is disabled by default
-# format = "[$symbol$account]($style) "             # Default format
-# symbol = "󰙠 "                                    # (Default: "󰙠 ") Symbol for GCP
+[gcloud]
+disabled = true
+# format = "[$symbol$account]($style) "
+# symbol = "󰙠 "
 
-[memory_usage] # Show memory usage
-threshold = 75  # (Default: 90) Show in red if memory usage is above this %
-disabled = true # This module is disabled by default
-# format = "[$symbol$ram]($style) "                  # Default format
-# symbol = "🐏 "                                    # (Default: "🐏 ") Symbol for memory usage
+[os]
+format = "on [($name )]($style)"
+style = "bold blue"
+disabled = false
 
-[time] # Show the current time
-disabled = true # This module is disabled by default
-# format = "[$time]($style) "                         # Default format
-# style = "yellow"                                   # (Default: "yellow") Color of the time
-# use_12hr = false                                   # (Default: false) Use 12-hour time format
-
-# ... many more modules are available ...
+[os.symbols]
+AIX = "➿ "
+Alpaquita = "🔔 "
+AlmaLinux = "💠 "
+Alpine = "🏔️ "
+Amazon = "🙂 "
+Android = "🤖 "
+Arch = "🎗️ "
+Artix = "🎗️ "
+CentOS = "💠 "
+Debian = "🌀 "
+DragonFly = "🐉 "
+Emscripten = "🔗 "
+EndeavourOS = "🚀 "
+Fedora = "🎩 "
+FreeBSD = "😈 "
+Garuda = "🦅 "
+Gentoo = "🗜️ "
+HardenedBSD = "🛡️ "
+Illumos = "🐦 "
+Kali = "🐉 "
+Linux = "🐧 "
+Mabox = "📦 "
+Macos = "🍎 "
+Manjaro = "🥭 "
+Mariner = "🌊 "
+MidnightBSD = "🌘 "
+Mint = "🌿 "
+NetBSD = "🚩 "
+NixOS = "❄️ "
+OpenBSD = "🐡 "
+OpenCloudOS = "☁️ "
+openEuler = "🦉 "
+openSUSE = "🦎 "
+OracleLinux = "🦴 "
+Pop = "🍭 "
+Raspbian = "🍓 "
+Redhat = "🎩 "
+RedHatEnterprise = "🎩 "
+RockyLinux = "💠 "
+Redox = "🧪 "
+Solus = "⛵ "
+SUSE = "🦎 "
+Ubuntu = "🎯 "
+Ultramarine = "🔷 "
+Unknown = "❓ "
+Void = "  "
+Windows = "🪟 "
