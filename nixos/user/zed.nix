@@ -6,7 +6,7 @@
   ...
 }: let
   zedDir = builtins.path {
-    path = ../zed;
+    path = ../../zed;
     name = "zed";
   };
   configDir = ".config/zed/";

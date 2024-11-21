@@ -71,8 +71,8 @@
           nixos-hardware.nixosModules.microsoft-surface-common
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
           home-manager.nixosModules.default
-          ./hardware-configuration.nix
-          ./configuration.nix
+          ./nixos/hardware-configuration.nix
+          ./nixos/configuration.nix
           # ./hosts/surface-pro/surface-pkgs.nix
           # (import ./hosts/surface-pro/surface-kernel.nix {
           #   inherit lib pkgs linuxSurfaceRepo;

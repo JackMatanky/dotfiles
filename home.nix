@@ -14,7 +14,7 @@
 # in
 {
   imports = [
-    ./user
+    ./nixos/user
     # ./user/default.nix
     # ./user/alacritty.nix
     # ./user/git.nix
