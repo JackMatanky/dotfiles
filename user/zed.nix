@@ -5,25 +5,29 @@
   # userSettings,
   ...
 }: let
-  config = ".config/zed/";
-  snippets = "${config}snippets/";
-  gitcommit-snip = "gitcommit.json";
-  html-snip = "html.json";
-  javascript-snip = "javascript.json";
-  latex-snip = "latex.json";
-  markdown-snip = "markdown.json";
-  nix-snip = "nix.json";
-  python-snip = "python.json";
-  sql-snip = "sql.json";
+  zedDir = builtins.path {
+    path = ../../zed;
+    name = "zed";
+  };
+  configDir = ".config/zed/";
+  snippetsDir = "${configDir}snippets/";
+  # gitcommit-snip = "gitcommit.json";
+  # html-snip = "html.json";
+  # javascript-snip = "javascript.json";
+  # latex-snip = "latex.json";
+  # markdown-snip = "markdown.json";
+  # nix-snip = "nix.json";
+  # python-snip = "python.json";
+  # sql-snip = "sql.json";
 in {
   home = {
     packages = with pkgs-unstable; [
       zed-editor # Zed IDE
     ];
     file = {
-      "${config}settings.json".source = ../../zed/settings.json;
-      "${config}keymap.json".source = ../../zed/keymap.json;
-      "${snippets}".source = ../../zed/snippets;
+      "${configDir}settings.json".source = "${zedDir}/settings.json";
+      "${configDir}keymap.json".source = "${zedDir}/keymap.json";
+      "${snippetsDir}".source = "${zedDir}/snippets";
     };
   };
 }
