@@ -5,18 +5,19 @@
   pkgs,
   ...
 }: {
-  # Enable automatic garbage collection and nix store optimizltion
   nix = {
+    # Automatic Garbage Collection
     gc = {
       automatic = true;
-      dates = "weekly"; # Frequency can be "daily", "weekly", or "monthly"
-      options = "--delete-older-than 30d"; # Optional: custom age limit for keeping generations (e.g., 30 days)
+      dates = "weekly"; # Frequency: "daily", "weekly", "monthly"
+      options = "--delete-older-than 30d"; # Custom age limit for keeping generations
     };
+    # Nix Store Optimizltion
     optimise = {
       automatic = true;
       dates = ["48hr"];
     };
   };
-  # Retain only the last 5 system generations
-  # system.autoUpgrade.keepBoot = 5;
+  # Previous system generations to retain
+  system.autoUpgrade.keepBoot = 5;
 }
