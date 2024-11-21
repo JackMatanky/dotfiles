@@ -18,6 +18,7 @@
 
     # Git
     gad = "git add";
+    gad_d = "git add .";
     gad_p = "git add -p";
     gc = "git commit -m";
     gca = "git commit -a -m";
@@ -44,6 +45,12 @@
     # ...... = "cd ../../../../..";
   };
 in {
+  home.file = {
+    # Configuration files for shells
+    ".config/starship/".source = ../../starship;
+    # ".config/alacritty/".source = ../../alacritty;
+  };
+
   programs = {
     bash = {
       enable = true;
