@@ -12,7 +12,7 @@
 
     # Nix
     flake_rebuild = "sudo nixos-rebuild switch --flake .";
-    flake_update = "nix flake update";
+    flake_up = "sudo nix flake update";
     hm_switch = "home-manager switch --flake .";
     gc_empty = "sudo nix-garbage-collect -d";
 
@@ -65,6 +65,17 @@ in {
       sessionVariables = {
         TERMINAL = "${pkgs.alacritty}/bin/alacritty";
       };
+    };
+
+    nushell = {
+      enable = true;
+    };
+
+    starship = {
+      enable = true;
+      enableBashIntegration = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
     };
   };
 }
