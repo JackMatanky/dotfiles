@@ -7,10 +7,38 @@
 }: let
   myAliases = {
     dot = "cd .dotfiles";
+    dot_nix = "cd ~/.dotfiles/nixos";
     obsidian = "cd /run/media/jack/sdxc_512/obsidian_vault";
-    rebuild_flake = "sudo nixos-rebuild switch --flake .";
-    update_flake = "nix flake update";
-    switch_home = "home-manager switch --flake .";
+
+    # Nix
+    flake_rebuild = "sudo nixos-rebuild switch --flake .";
+    flake_update = "nix flake update";
+    hm_switch = "home-manager switch --flake .";
+    gc_empty = "sudo nix-garbage-collect -d";
+
+    # Git
+    gc = "git commit -m";
+    gca = "git commit -a -m";
+    # gp = "git push origin HEAD";
+    # gpu = "git pull origin";
+    # gst = "git status";
+    # glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit";
+    # gdiff = "git diff";
+    # gco = "git checkout";
+    # gb = "git branch";
+    # gba = "git branch -a";
+    # gadd = "git add";
+    # ga = "git add -p";
+    # gcoall = "git checkout -- .";
+    # gr = "git remote";
+    # gre = "git reset";
+
+    # Dirs
+    # .. = "cd ..";
+    # ... = "cd ../..";
+    # .... = "cd ../../..";
+    # ..... = "cd ../../../..";
+    # ...... = "cd ../../../../..";
   };
 in {
   programs = {
