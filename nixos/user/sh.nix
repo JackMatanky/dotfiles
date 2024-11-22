@@ -88,7 +88,7 @@ in {
     };
 
     starship = {
-      enable = true;
+      enable = false;
       enableBashIntegration = true;
       enableZshIntegration = true;
       enableNushellIntegration = true;
