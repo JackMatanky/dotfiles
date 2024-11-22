@@ -20,6 +20,18 @@ purple = "#bd93f9"
 red = "#ff5555"
 yellow = "#f1fa8c"
 
+format = """
+$username
+$hostname
+$directory
+$git_branch
+$git_status
+$nix_shell
+$python
+$cmd_duration
+$character
+"""
+
 # move the rest of the prompt to the right
 right_format = """$all"""
 
