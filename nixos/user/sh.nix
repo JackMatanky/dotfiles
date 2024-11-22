@@ -93,9 +93,9 @@ in {
     nushell = {
       enable = true;
 
-      initExtra = ''
-        eval "$(starship init nu)"
-      '';
+      # initExtra = ''
+      #   eval "$(starship init nu)"
+      # '';
     };
 
     starship = {
