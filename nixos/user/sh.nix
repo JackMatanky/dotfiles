@@ -28,14 +28,14 @@
     gpl = "git pull";
     gpl_o = "git pull origin";
     gst = "git status";
-    # glog = "git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit";
-    # gdiff = "git diff";
+    glog = "git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit";
+    gdiff = "git diff";
     gbr = "git branch";
     gbra = "git branch -a";
-    # gco = "git checkout";
-    # gcoall = "git checkout -- .";
-    # grm = "git remote";
-    # grs = "git reset";
+    gco = "git checkout";
+    gcoall = "git checkout -- .";
+    grm = "git remote";
+    grs = "git reset";
 
     # Dirs
     # .. = "cd ..";
