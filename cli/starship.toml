@@ -39,16 +39,16 @@ format = "[$user]($style_user) "
 disabled = true
 # show_always = true
 
-# # Enable the use of emojis in the prompt
-# [character] # Default prompt character
-# success_symbol = "[➜](bold green)"
-# error_symbol = "[✗](bold red)"
+# Enable the use of emojis in the prompt
+[character] # Default prompt character
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
 
-# [time]
-# disabled = true
-# # format = "[$time]($style) "
-# # style = "yellow"
-# # use_12hr = false
+[time]
+disabled = true
+# format = "[$time]($style) "
+# style = "yellow"
+# use_12hr = false
 
 [battery]
 full_symbol = '🔋 '
@@ -66,81 +66,81 @@ discharging_symbol = '💦 '
 threshold = 10
 style = 'bold red'
 
-# # Show the current directory
-# [directory]
-# truncation_length = 3
-# truncate_to_repo = true
-# style = "bold green"
-# format = "[$path]($style)[$read_only]($read_only_style) "
-# # read_only = " 🔒"
-# # read_only_style = "red"
+# Show the current directory
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+style = "bold green"
+format = "[$path]($style)[$read_only]($read_only_style) "
+# read_only = " 🔒"
+# read_only_style = "red"
 
-# # Show the time it took to execute the previous command
-# [cmd_duration]
-# min_time = 1
-# show_milliseconds = false
-# format = "[$duration]($style) "
-# style = "yellow"
-# disabled = true
+# Show the time it took to execute the previous command
+[cmd_duration]
+min_time = 1
+show_milliseconds = false
+format = "[$duration]($style) "
+style = "yellow"
+disabled = true
 
-# # Show the number of running jobs
-# [jobs]
-# disabled = true
-# # format = "[$symbol$jobs]($style) "
-# # symbol = "✦ "
+# Show the number of running jobs
+[jobs]
+disabled = true
+# format = "[$symbol$jobs]($style) "
+# symbol = "✦ "
 
-# [memory_usage]
-# threshold = 75
-# disabled = true
-# # format = "[$symbol$ram]($style) "
-# # symbol = "🐏 "
+[memory_usage]
+threshold = 75
+disabled = true
+# format = "[$symbol$ram]($style) "
+# symbol = "🐏 "
 
-# [direnv]
-# disabled = false
+[direnv]
+disabled = false
 
-# # Git
-# # Display Git information
-# [git_branch]
-# style = "bold pink"
-# format = "[$symbol$branch]($style) "
-# symbol = " "
+# Git
+# Display Git information
+[git_branch]
+style = "bold pink"
+format = "[$symbol$branch]($style) "
+symbol = " "
 
-# [git_commit]
-# style = "green"
-# disabled = true
-# # format = '[$hash]($style) '
-# # hash_length = 7
+[git_commit]
+style = "green"
+disabled = true
+# format = '[$hash]($style) '
+# hash_length = 7
 
-# [git_status]
-# style = "red"
-# format = '([$all_status$ahead_behind]($style)) '
-# conflicted = '🏳'                                 # "="
-# ahead = '🏎💨'                                     # "⇡"
-# behind = '😰'                                     # "⇣"
-# diverged = '😵'                                   # "⇕"
-# up_to_date = '✓'
-# untracked = '🤷'                                  # "…"
-# stashed = '📦'
-# modified = '📝'                                   # "!"
-# staged = '[++\($count\)](green)'                 # "+"
-# renamed = '👅'                                    # "»"
-# deleted = '🗑'                                    # "✘"
+[git_status]
+style = "red"
+format = '([$all_status$ahead_behind]($style)) '
+conflicted = '🏳'                                 # "="
+ahead = '🏎💨'                                     # "⇡"
+behind = '😰'                                     # "⇣"
+diverged = '😵'                                   # "⇕"
+up_to_date = '✓'
+untracked = '🤷'                                  # "…"
+stashed = '📦'
+modified = '📝'                                   # "!"
+staged = '[++\($count\)](green)'                 # "+"
+renamed = '👅'                                    # "»"
+deleted = '🗑'                                    # "✘"
 
-# # Nix Shell
-# [nix_shell]
-# disabled = true
-# impure_msg = '[impure shell](bold red)'
-# pure_msg = '[pure shell](bold green)'
-# unknown_msg = '[unknown shell](bold yellow)'
-# format = 'via [☃️ $state( \($name\))](bold blue) '
+# Nix Shell
+[nix_shell]
+disabled = true
+impure_msg = '[impure shell](bold red)'
+pure_msg = '[pure shell](bold green)'
+unknown_msg = '[unknown shell](bold yellow)'
+format = 'via [☃️ $state( \($name\))](bold blue) '
 
-# # Programming Languages
-# [python]
-# symbol = "🐍 "
-# style = "bold yellow"
-# format = "[$symbol$virtualenv$python_version]($style)"
-# disabled = true
-# # virtualenv_indicator = "env: "
+# Programming Languages
+[python]
+symbol = "🐍 "
+style = "bold yellow"
+format = "[$symbol$virtualenv$python_version]($style)"
+disabled = true
+# virtualenv_indicator = "env: "
 
 # [nodejs]
 # symbol = " "
