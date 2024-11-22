@@ -86,9 +86,9 @@ in {
       };
     };
 
-    # nushell = {
-    #   enable = true;
-    # };
+    nushell = {
+      enable = true;
+    };
 
     starship = {
       enable = true;
