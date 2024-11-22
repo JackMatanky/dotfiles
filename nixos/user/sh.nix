@@ -57,9 +57,9 @@ in {
       enableCompletion = true;
       shellAliases = myAliases;
 
-      initExtra = ''
-        eval "$(starship init bash)"
-      '';
+      # initExtra = ''
+      #   eval "$(starship init bash)"
+      # '';
     };
 
     zsh = {
@@ -74,9 +74,9 @@ in {
       # size = 10000;
       # };
 
-      initExtra = ''
-        eval "$(starship init zsh)"
-      '';
+      # initExtra = ''
+      #   eval "$(starship init zsh)"
+      # '';
 
       sessionVariables = {
         TERMINAL = "${pkgs.alacritty}/bin/alacritty";
@@ -84,7 +84,7 @@ in {
     };
 
     nushell = {
-      enable = true;
+      enable = false;
     };
 
     starship = {
