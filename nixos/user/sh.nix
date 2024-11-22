@@ -11,9 +11,12 @@
     obsidian = "cd /run/media/jack/sdxc_512/obsidian_vault";
 
     # Nix
-    flake_rebuild = "sudo nixos-rebuild switch --flake .";
-    flake_up = "sudo nix flake update";
+    flk_rebuild = "sudo nixos-rebuild switch --flake .";
+    flk_rebuild_trace = "sudo nixos-rebuild switch --flake . --show-trace";
+    flk_up = "sudo nix flake update";
+    flk_up_trace = "sudo nix flake update --show-trace";
     hm_switch = "home-manager switch --flake .";
+    hm_switch_trace = "home-manager switch --flake . --show-trace";
     cg_empty = "sudo nix-collect-garbage -d";
 
     # Git

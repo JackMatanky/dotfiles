@@ -11,7 +11,7 @@
     defaultLocale = systemSettings.localeDefault;
     supportedLocales = [
       systemSettings.localeDefault
-      systemSettings.localeSecondary
+      # systemSettings.localeSecondary
     ];
   };
   # i18n.defaultLocale = systemSettings.localeDefault;

@@ -48,8 +48,8 @@
       hostName = "${userSettings.username}${device}";
       profile = "personal";
       timeZone = "Asia/Jerusalem";
-      localeDefault = "en_IL.utf8"; # "en_IL";
-      localeSecondary = "en_US.utf8";
+      localeDefault = "en_IL"; #"en_IL.UTF-8";
+      # localeSecondary = "en_US.UTF-8";
       # bootMode = "uefi"; # uefi or bios
       # bootMountPath = "/boot"; # mount path for efi boot partition; only used for uefi boot mode
       # grubDevice = ""; # device identifier for grub; only used for legacy (bios) boot mode
