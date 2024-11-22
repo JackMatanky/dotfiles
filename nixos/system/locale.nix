@@ -9,7 +9,10 @@
   # Select internationalisation properties.
   i18n = {
     defaultLocale = systemSettings.localeDefault;
-    supportedLocales = [systemSettings.localeDefault systemSettings.localeSecondary];
+    supportedLocales = [
+      systemSettings.localeDefault
+      systemSettings.localeSecondary
+    ];
   };
   # i18n.defaultLocale = systemSettings.localeDefault;
 

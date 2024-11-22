@@ -4,15 +4,7 @@
   pkgs-unstable,
   userSettings,
   ...
-}:
-# let
-#   zed-fhs = pkgs.buildFHSUserEnv {
-#     name = "zed";
-#     targetPkgs = pkgs: with pkgs-unstable; [zed-editor];
-#     runScript = "zed";
-#   };
-# in
-{
+}: {
   imports = [
     ./nixos/user
     # ./user/default.nix
@@ -95,7 +87,6 @@
   };
 
   # User Programs
-
   programs = {
     # Enable Home Manager to install and manage itself.
     home-manager = {
