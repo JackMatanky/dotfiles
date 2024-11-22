@@ -1,0 +1,70 @@
+env.TERM = "xterm-256color"
+
+[font]
+size = 12
+# draw_bold_text_with_bright_colors = true  # Uncomment if needed
+
+[scrolling]
+multiplier = 5
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+style = "Beam"
+
+[colors]
+[colors.primary]
+background = "0x282a36"
+foreground = "0xf8f8f2"
+bright_foreground = "0xffffff"
+
+[colors.cursor]
+text = "0x282a36"
+cursor = "0xf8f8f2"
+
+[colors.selection]
+text = "CellForeground"
+background = "#44475a"
+
+[colors.normal]
+black = "0x21222C"
+red = "0xFF5555"
+green = "0x50FA7B"
+yellow = "0xF1FA8C"
+blue = "0xBD93F9"
+magenta = "0xFF79C6"
+cyan = "0x8BE9FD"
+white = "0xBFBFBF"
+
+[colors.bright]
+black = "0x6272A4"
+red = "0xFF6E6E"
+green = "0x69FF94"
+yellow = "0xFFFFA5"
+blue = "0xD6ACFF"
+magenta = "0xFF92DF"
+cyan = "0xA4FFFF"
+white = "0xFFFFFF"
+
+[colors.search]
+[colors.search.matches]
+foreground = "0x44475a"
+background = "0x50fa7b"
+
+[colors.search.focused_match]
+foreground = "0x44475a"
+background = "0xffb86c"
+
+[colors.footer_bar]
+background = "0x282a36"
+foreground = "0xf8f8f2"
+
+[colors.hints]
+[colors.hints.start]
+foreground = "0x282a36"
+background = "0xf1fa8c"
+
+[colors.hints.end]
+foreground = "0xf1fa8c"
+background = "0x282a36"

@@ -8,7 +8,7 @@
   ...
 }: {
   imports = [
-    ./alacritty.nix
+    # ./alacritty.nix
     ./git.nix
     # ./gnome.nix
     # ./oh-my-posh.nix

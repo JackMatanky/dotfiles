@@ -5,6 +5,11 @@
   userSettings,
   ...
 }: let
+  cliDir = builtins.path {
+    path = ../../cli;
+    name = "cli";
+  };
+
   myAliases = {
     dot = "cd .dotfiles";
     dot_nix = "cd ~/.dotfiles/nixos";
@@ -54,8 +59,8 @@
 in {
   home.file = {
     # Configuration files for shells
-    ".config/starship/starship.toml".source = ../../cli/starship.toml;
-    # ".config/alacritty/".source = ../../alacritty;
+    ".config/starship/starship.toml".source = "${cliDir}/starship.toml";
+    ".config/alacritty/alacritty.toml".source = "${cliDir}/alacritty.toml";
   };
 
   programs = {
@@ -96,6 +101,10 @@ in {
       # initExtra = ''
       #   eval "$(starship init nu)"
       # '';
+    };
+
+    alacritty = {
+      enable = true;
     };
 
     starship = {
