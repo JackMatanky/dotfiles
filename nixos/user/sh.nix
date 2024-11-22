@@ -90,11 +90,11 @@ in {
     #   enable = true;
     # };
 
-    # starship = {
-    #   enable = true;
-    #   enableBashIntegration = true;
-    #   enableZshIntegration = true;
-    #   enableNushellIntegration = true;
-    # };
+    starship = {
+      enable = true;
+      enableBashIntegration = true;
+      enableZshIntegration = true;
+      # enableNushellIntegration = true;
+    };
   };
 }
