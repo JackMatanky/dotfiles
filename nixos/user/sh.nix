@@ -94,7 +94,14 @@ in {
       enable = true;
       enableBashIntegration = true;
       enableZshIntegration = true;
-      # enableNushellIntegration = true;
+      enableNushellIntegration = true;
+    };
+
+    carapace = {
+      enable = true;
+      enableBashIntegration = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
     };
   };
 }
