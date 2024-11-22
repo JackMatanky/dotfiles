@@ -83,15 +83,15 @@ in {
       };
     };
 
-    nushell = {
-      enable = false;
-    };
+    # nushell = {
+    #   enable = true;
+    # };
 
-    starship = {
-      enable = false;
-      enableBashIntegration = true;
-      enableZshIntegration = true;
-      enableNushellIntegration = true;
-    };
+    # starship = {
+    #   enable = true;
+    #   enableBashIntegration = true;
+    #   enableZshIntegration = true;
+    #   enableNushellIntegration = true;
+    # };
   };
 }
