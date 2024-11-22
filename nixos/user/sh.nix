@@ -54,7 +54,7 @@
 in {
   home.file = {
     # Configuration files for shells
-    # ".config/starship/".source = ../../starship;
+    ".config/starship/".source = ../../starship;
     # ".config/alacritty/".source = ../../alacritty;
   };
 

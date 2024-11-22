@@ -39,196 +39,196 @@ format = "[$user]($style_user) "
 disabled = true
 # show_always = true
 
-# Enable the use of emojis in the prompt
-[character] # Default prompt character
-success_symbol = "[➜](bold green)"
-error_symbol = "[✗](bold red)"
+# # Enable the use of emojis in the prompt
+# [character] # Default prompt character
+# success_symbol = "[➜](bold green)"
+# error_symbol = "[✗](bold red)"
 
-[time]
-disabled = true
-# format = "[$time]($style) "
+# [time]
+# disabled = true
+# # format = "[$time]($style) "
+# # style = "yellow"
+# # use_12hr = false
+
+# [battery]
+# full_symbol = '🔋 '
+# charging_symbol = '⚡️ '
+# discharging_symbol = '💀 '
+# disabled = true
+# # format = "[$symbol$percentage]($style) "
+
+# [[battery.display]]
+# threshold = 30
+# style = 'bold yellow'
+# discharging_symbol = '💦 '
+
+# [[battery.display]]
+# threshold = 10
+# style = 'bold red'
+
+# # Show the current directory
+# [directory]
+# truncation_length = 3
+# truncate_to_repo = true
+# style = "bold green"
+# format = "[$path]($style)[$read_only]($read_only_style) "
+# # read_only = " 🔒"
+# # read_only_style = "red"
+
+# # Show the time it took to execute the previous command
+# [cmd_duration]
+# min_time = 1
+# show_milliseconds = false
+# format = "[$duration]($style) "
 # style = "yellow"
-# use_12hr = false
+# disabled = true
 
-[battery]
-full_symbol = '🔋 '
-charging_symbol = '⚡️ '
-discharging_symbol = '💀 '
-disabled = true
-# format = "[$symbol$percentage]($style) "
+# # Show the number of running jobs
+# [jobs]
+# disabled = true
+# # format = "[$symbol$jobs]($style) "
+# # symbol = "✦ "
 
-[[battery.display]]
-threshold = 30
-style = 'bold yellow'
-discharging_symbol = '💦 '
+# [memory_usage]
+# threshold = 75
+# disabled = true
+# # format = "[$symbol$ram]($style) "
+# # symbol = "🐏 "
 
-[[battery.display]]
-threshold = 10
-style = 'bold red'
+# [direnv]
+# disabled = false
 
-# Show the current directory
-[directory]
-truncation_length = 3
-truncate_to_repo = true
-style = "bold green"
-format = "[$path]($style)[$read_only]($read_only_style) "
-# read_only = " 🔒"
-# read_only_style = "red"
+# # Git
+# # Display Git information
+# [git_branch]
+# style = "bold pink"
+# format = "[$symbol$branch]($style) "
+# symbol = " "
 
-# Show the time it took to execute the previous command
-[cmd_duration]
-min_time = 1
-show_milliseconds = false
-format = "[$duration]($style) "
-style = "yellow"
-disabled = true
+# [git_commit]
+# style = "green"
+# disabled = true
+# # format = '[$hash]($style) '
+# # hash_length = 7
 
-# Show the number of running jobs
-[jobs]
-disabled = true
-# format = "[$symbol$jobs]($style) "
-# symbol = "✦ "
+# [git_status]
+# style = "red"
+# format = '([$all_status$ahead_behind]($style)) '
+# conflicted = '🏳'                                 # "="
+# ahead = '🏎💨'                                     # "⇡"
+# behind = '😰'                                     # "⇣"
+# diverged = '😵'                                   # "⇕"
+# up_to_date = '✓'
+# untracked = '🤷'                                  # "…"
+# stashed = '📦'
+# modified = '📝'                                   # "!"
+# staged = '[++\($count\)](green)'                 # "+"
+# renamed = '👅'                                    # "»"
+# deleted = '🗑'                                    # "✘"
 
-[memory_usage]
-threshold = 75
-disabled = true
-# format = "[$symbol$ram]($style) "
-# symbol = "🐏 "
+# # Nix Shell
+# [nix_shell]
+# disabled = true
+# impure_msg = '[impure shell](bold red)'
+# pure_msg = '[pure shell](bold green)'
+# unknown_msg = '[unknown shell](bold yellow)'
+# format = 'via [☃️ $state( \($name\))](bold blue) '
 
-[direnv]
-disabled = false
+# # Programming Languages
+# [python]
+# symbol = "🐍 "
+# style = "bold yellow"
+# format = "[$symbol$virtualenv$python_version]($style)"
+# disabled = true
+# # virtualenv_indicator = "env: "
 
-# Git
-# Display Git information
-[git_branch]
-style = "bold pink"
-format = "[$symbol$branch]($style) "
-symbol = " "
+# [nodejs]
+# symbol = " "
+# style = "bold green"
+# disabled = true
 
-[git_commit]
-style = "green"
-disabled = true
-# format = '[$hash]($style) '
-# hash_length = 7
+# [package] # Show package information (e.g., for npm, cargo)
+# disabled = true # This module is disabled by default
+# # format = "[$symbol$version]($style) "
 
-[git_status]
-style = "red"
-format = '([$all_status$ahead_behind]($style)) '
-conflicted = '🏳'                                 # "="
-ahead = '🏎💨'                                     # "⇡"
-behind = '😰'                                     # "⇣"
-diverged = '😵'                                   # "⇕"
-up_to_date = '✓'
-untracked = '🤷'                                  # "…"
-stashed = '📦'
-modified = '📝'                                   # "!"
-staged = '[++\($count\)](green)'                 # "+"
-renamed = '👅'                                    # "»"
-deleted = '🗑'                                    # "✘"
+# [rust]
+# symbol = "🦀 "
+# style = "bold red"
+# disabled = true
+# # format = "[$symbol$version]($style) "
 
-# Nix Shell
-[nix_shell]
-disabled = true
-impure_msg = '[impure shell](bold red)'
-pure_msg = '[pure shell](bold green)'
-unknown_msg = '[unknown shell](bold yellow)'
-format = 'via [☃️ $state( \($name\))](bold blue) '
+# [java]
+# disabled = true
+# # format = "[$symbol$version]($style) "
+# # symbol = "☕ "
 
-# Programming Languages
-[python]
-symbol = "🐍 "
-style = "bold yellow"
-format = "[$symbol$virtualenv$python_version]($style)"
-disabled = true
-# virtualenv_indicator = "env: "
+# # Cloud Platforms
+# [docker_context]
+# symbol = "🐳 "
+# style = "bold blue"
+# disabled = true
+# # format = "[$symbol$context]($style) "
 
-[nodejs]
-symbol = " "
-style = "bold green"
-disabled = true
+# [aws]
+# disabled = true
+# # format = "[$symbol$profile]($style) "
+# # symbol = "  "
 
-[package] # Show package information (e.g., for npm, cargo)
-disabled = true # This module is disabled by default
-# format = "[$symbol$version]($style) "
+# [gcloud]
+# disabled = true
+# # format = "[$symbol$account]($style) "
+# # symbol = "󰙠 "
 
-[rust]
-symbol = "🦀 "
-style = "bold red"
-disabled = true
-# format = "[$symbol$version]($style) "
+# [os]
+# format = "on [($name )]($style)"
+# style = "bold blue"
+# disabled = false
 
-[java]
-disabled = true
-# format = "[$symbol$version]($style) "
-# symbol = "☕ "
-
-# Cloud Platforms
-[docker_context]
-symbol = "🐳 "
-style = "bold blue"
-disabled = true
-# format = "[$symbol$context]($style) "
-
-[aws]
-disabled = true
-# format = "[$symbol$profile]($style) "
-# symbol = "  "
-
-[gcloud]
-disabled = true
-# format = "[$symbol$account]($style) "
-# symbol = "󰙠 "
-
-[os]
-format = "on [($name )]($style)"
-style = "bold blue"
-disabled = false
-
-[os.symbols]
-AIX = "➿ "
-Alpaquita = "🔔 "
-AlmaLinux = "💠 "
-Alpine = "🏔️ "
-Amazon = "🙂 "
-Android = "🤖 "
-Arch = "🎗️ "
-Artix = "🎗️ "
-CentOS = "💠 "
-Debian = "🌀 "
-DragonFly = "🐉 "
-Emscripten = "🔗 "
-EndeavourOS = "🚀 "
-Fedora = "🎩 "
-FreeBSD = "😈 "
-Garuda = "🦅 "
-Gentoo = "🗜️ "
-HardenedBSD = "🛡️ "
-Illumos = "🐦 "
-Kali = "🐉 "
-Linux = "🐧 "
-Mabox = "📦 "
-Macos = "🍎 "
-Manjaro = "🥭 "
-Mariner = "🌊 "
-MidnightBSD = "🌘 "
-Mint = "🌿 "
-NetBSD = "🚩 "
-NixOS = "❄️ "
-OpenBSD = "🐡 "
-OpenCloudOS = "☁️ "
-openEuler = "🦉 "
-openSUSE = "🦎 "
-OracleLinux = "🦴 "
-Pop = "🍭 "
-Raspbian = "🍓 "
-Redhat = "🎩 "
-RedHatEnterprise = "🎩 "
-RockyLinux = "💠 "
-Redox = "🧪 "
-Solus = "⛵ "
-SUSE = "🦎 "
-Ubuntu = "🎯 "
-Ultramarine = "🔷 "
-Unknown = "❓ "
-Void = "  "
-Windows = "🪟 "
+# [os.symbols]
+# AIX = "➿ "
+# Alpaquita = "🔔 "
+# AlmaLinux = "💠 "
+# Alpine = "🏔️ "
+# Amazon = "🙂 "
+# Android = "🤖 "
+# Arch = "🎗️ "
+# Artix = "🎗️ "
+# CentOS = "💠 "
+# Debian = "🌀 "
+# DragonFly = "🐉 "
+# Emscripten = "🔗 "
+# EndeavourOS = "🚀 "
+# Fedora = "🎩 "
+# FreeBSD = "😈 "
+# Garuda = "🦅 "
+# Gentoo = "🗜️ "
+# HardenedBSD = "🛡️ "
+# Illumos = "🐦 "
+# Kali = "🐉 "
+# Linux = "🐧 "
+# Mabox = "📦 "
+# Macos = "🍎 "
+# Manjaro = "🥭 "
+# Mariner = "🌊 "
+# MidnightBSD = "🌘 "
+# Mint = "🌿 "
+# NetBSD = "🚩 "
+# NixOS = "❄️ "
+# OpenBSD = "🐡 "
+# OpenCloudOS = "☁️ "
+# openEuler = "🦉 "
+# openSUSE = "🦎 "
+# OracleLinux = "🦴 "
+# Pop = "🍭 "
+# Raspbian = "🍓 "
+# Redhat = "🎩 "
+# RedHatEnterprise = "🎩 "
+# RockyLinux = "💠 "
+# Redox = "🧪 "
+# Solus = "⛵ "
+# SUSE = "🦎 "
+# Ubuntu = "🎯 "
+# Ultramarine = "🔷 "
+# Unknown = "❓ "
+# Void = "  "
+# Windows = "🪟 "
