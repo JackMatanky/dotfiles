@@ -41,6 +41,7 @@
 
       # vscode # Visual Studio Code IDE.
 
+      nil
       nixd # Nix LSP
       alejandra # Nix Formatter
 

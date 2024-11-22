@@ -2,6 +2,7 @@
   config,
   pkgs,
   pkgs-unstable,
+  inputs,
   # userSettings,
   ...
 }: let
@@ -14,7 +15,8 @@
 in {
   home = {
     packages = with pkgs-unstable; [
-      zed-editor # Zed IDE
+      zed-editor
+      # inputs.simple-completion-language-server
     ];
     file = {
       "${configDir}settings.json".source = "${zedDir}/settings.json";
