@@ -131,9 +131,8 @@
     wget
     zsh
     git
+    glibcLocales
     bluez-experimental
-    # bluez
-    # bluez-tools
   ];
 
   # Default Shell: ZSH
