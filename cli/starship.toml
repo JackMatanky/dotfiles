@@ -1,0 +1,234 @@
+# ~/.config/starship.toml
+
+# Inserts a blank line between prompts
+add_newline = false
+
+# Use the color palette
+palette = "dracula"
+
+# Define Dracula color palette
+[palettes.dracula]
+background = "#282a36"
+current_line = "#44475a"
+foreground = "#f8f8f2"
+comment = "#6272a4"
+cyan = "#8be9fd"
+green = "#50fa7b"
+orange = "#ffb86c"
+pink = "#ff79c6"
+purple = "#bd93f9"
+red = "#ff5555"
+yellow = "#f1fa8c"
+
+# move the rest of the prompt to the right
+right_format = """$all"""
+
+[line_break]
+disabled = true
+
+[hostname]
+style = "bold purple"
+ssh_only = true
+disabled = true
+# format = "[$hostname]($style) "
+# trim_at = "."
+
+[username]
+style_user = "bold yellow"
+format = "[$user]($style_user) "
+disabled = true
+# show_always = true
+
+# # Enable the use of emojis in the prompt
+# [character] # Default prompt character
+# success_symbol = "[➜](bold green)"
+# error_symbol = "[✗](bold red)"
+
+# [time]
+# disabled = true
+# # format = "[$time]($style) "
+# # style = "yellow"
+# # use_12hr = false
+
+# [battery]
+# full_symbol = '🔋 '
+# charging_symbol = '⚡️ '
+# discharging_symbol = '💀 '
+# disabled = true
+# # format = "[$symbol$percentage]($style) "
+
+# [[battery.display]]
+# threshold = 30
+# style = 'bold yellow'
+# discharging_symbol = '💦 '
+
+# [[battery.display]]
+# threshold = 10
+# style = 'bold red'
+
+# # Show the current directory
+# [directory]
+# truncation_length = 3
+# truncate_to_repo = true
+# style = "bold green"
+# format = "[$path]($style)[$read_only]($read_only_style) "
+# # read_only = " 🔒"
+# # read_only_style = "red"
+
+# # Show the time it took to execute the previous command
+# [cmd_duration]
+# min_time = 1
+# show_milliseconds = false
+# format = "[$duration]($style) "
+# style = "yellow"
+# disabled = true
+
+# # Show the number of running jobs
+# [jobs]
+# disabled = true
+# # format = "[$symbol$jobs]($style) "
+# # symbol = "✦ "
+
+# [memory_usage]
+# threshold = 75
+# disabled = true
+# # format = "[$symbol$ram]($style) "
+# # symbol = "🐏 "
+
+# [direnv]
+# disabled = false
+
+# # Git
+# # Display Git information
+# [git_branch]
+# style = "bold pink"
+# format = "[$symbol$branch]($style) "
+# symbol = " "
+
+# [git_commit]
+# style = "green"
+# disabled = true
+# # format = '[$hash]($style) '
+# # hash_length = 7
+
+# [git_status]
+# style = "red"
+# format = '([$all_status$ahead_behind]($style)) '
+# conflicted = '🏳'                                 # "="
+# ahead = '🏎💨'                                     # "⇡"
+# behind = '😰'                                     # "⇣"
+# diverged = '😵'                                   # "⇕"
+# up_to_date = '✓'
+# untracked = '🤷'                                  # "…"
+# stashed = '📦'
+# modified = '📝'                                   # "!"
+# staged = '[++\($count\)](green)'                 # "+"
+# renamed = '👅'                                    # "»"
+# deleted = '🗑'                                    # "✘"
+
+# # Nix Shell
+# [nix_shell]
+# disabled = true
+# impure_msg = '[impure shell](bold red)'
+# pure_msg = '[pure shell](bold green)'
+# unknown_msg = '[unknown shell](bold yellow)'
+# format = 'via [☃️ $state( \($name\))](bold blue) '
+
+# # Programming Languages
+# [python]
+# symbol = "🐍 "
+# style = "bold yellow"
+# format = "[$symbol$virtualenv$python_version]($style)"
+# disabled = true
+# # virtualenv_indicator = "env: "
+
+# [nodejs]
+# symbol = " "
+# style = "bold green"
+# disabled = true
+
+# [package] # Show package information (e.g., for npm, cargo)
+# disabled = true # This module is disabled by default
+# # format = "[$symbol$version]($style) "
+
+# [rust]
+# symbol = "🦀 "
+# style = "bold red"
+# disabled = true
+# # format = "[$symbol$version]($style) "
+
+# [java]
+# disabled = true
+# # format = "[$symbol$version]($style) "
+# # symbol = "☕ "
+
+# # Cloud Platforms
+# [docker_context]
+# symbol = "🐳 "
+# style = "bold blue"
+# disabled = true
+# # format = "[$symbol$context]($style) "
+
+# [aws]
+# disabled = true
+# # format = "[$symbol$profile]($style) "
+# # symbol = "  "
+
+# [gcloud]
+# disabled = true
+# # format = "[$symbol$account]($style) "
+# # symbol = "󰙠 "
+
+# [os]
+# format = "on [($name )]($style)"
+# style = "bold blue"
+# disabled = false
+
+# [os.symbols]
+# AIX = "➿ "
+# Alpaquita = "🔔 "
+# AlmaLinux = "💠 "
+# Alpine = "🏔️ "
+# Amazon = "🙂 "
+# Android = "🤖 "
+# Arch = "🎗️ "
+# Artix = "🎗️ "
+# CentOS = "💠 "
+# Debian = "🌀 "
+# DragonFly = "🐉 "
+# Emscripten = "🔗 "
+# EndeavourOS = "🚀 "
+# Fedora = "🎩 "
+# FreeBSD = "😈 "
+# Garuda = "🦅 "
+# Gentoo = "🗜️ "
+# HardenedBSD = "🛡️ "
+# Illumos = "🐦 "
+# Kali = "🐉 "
+# Linux = "🐧 "
+# Mabox = "📦 "
+# Macos = "🍎 "
+# Manjaro = "🥭 "
+# Mariner = "🌊 "
+# MidnightBSD = "🌘 "
+# Mint = "🌿 "
+# NetBSD = "🚩 "
+# NixOS = "❄️ "
+# OpenBSD = "🐡 "
+# OpenCloudOS = "☁️ "
+# openEuler = "🦉 "
+# openSUSE = "🦎 "
+# OracleLinux = "🦴 "
+# Pop = "🍭 "
+# Raspbian = "🍓 "
+# Redhat = "🎩 "
+# RedHatEnterprise = "🎩 "
+# RockyLinux = "💠 "
+# Redox = "🧪 "
+# Solus = "⛵ "
+# SUSE = "🦎 "
+# Ubuntu = "🎯 "
+# Ultramarine = "🔷 "
+# Unknown = "❓ "
+# Void = "  "
+# Windows = "🪟 "

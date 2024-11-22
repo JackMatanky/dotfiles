@@ -54,7 +54,7 @@
 in {
   home.file = {
     # Configuration files for shells
-    ".config/starship/".source = ../../cli/starship.toml;
+    ".config/starship/starship.toml".source = ../../cli/starship.toml;
     # ".config/alacritty/".source = ../../alacritty;
   };
 
