@@ -1,5 +1,6 @@
 # ~/.config/starship.toml
 
+# Jetpack: https://starship.rs/presets/jetpack
 # version: 1.0.0
 
 add_newline = true
