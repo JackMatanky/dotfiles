@@ -50,21 +50,21 @@ disabled = true
 # # style = "yellow"
 # # use_12hr = false
 
-# [battery]
-# full_symbol = '🔋 '
-# charging_symbol = '⚡️ '
-# discharging_symbol = '💀 '
-# disabled = true
-# # format = "[$symbol$percentage]($style) "
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+discharging_symbol = '💀 '
+disabled = true
+# format = "[$symbol$percentage]($style) "
 
-# [[battery.display]]
-# threshold = 30
-# style = 'bold yellow'
-# discharging_symbol = '💦 '
+[[battery.display]]
+threshold = 30
+style = 'bold yellow'
+discharging_symbol = '💦 '
 
-# [[battery.display]]
-# threshold = 10
-# style = 'bold red'
+[[battery.display]]
+threshold = 10
+style = 'bold red'
 
 # # Show the current directory
 # [directory]
