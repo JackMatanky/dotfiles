@@ -81,9 +81,9 @@ in {
       # size = 10000;
       # };
 
-      # initExtra = ''
-      #   eval "$(starship init zsh)"
-      # '';
+      initExtra = ''
+        eval "$(starship init zsh)"
+      '';
 
       sessionVariables = {
         TERMINAL = "${pkgs.alacritty}/bin/alacritty";
@@ -92,6 +92,10 @@ in {
 
     nushell = {
       enable = true;
+
+      initExtra = ''
+        eval "$(starship init nu)"
+      '';
     };
 
     starship = {
