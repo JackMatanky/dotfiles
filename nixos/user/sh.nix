@@ -10,13 +10,17 @@
     dot_nix = "cd ~/.dotfiles/nixos";
     obsidian = "cd /run/media/jack/sdxc_512/obsidian_vault";
 
-    # Nix
+    # Nix - Flakes
     flk_rebuild = "sudo nixos-rebuild switch --flake .";
     flk_rebuild_trace = "sudo nixos-rebuild switch --flake . --show-trace";
     flk_up = "sudo nix flake update";
     flk_up_trace = "sudo nix flake update --show-trace";
+
+    # Nix - Home Manager
     hm_switch = "home-manager switch --flake .";
     hm_switch_trace = "home-manager switch --flake . --show-trace";
+
+    # Nix - Garbage Collector
     cg_empty = "sudo nix-collect-garbage -d";
 
     # Git

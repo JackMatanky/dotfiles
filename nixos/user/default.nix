@@ -10,7 +10,7 @@
   imports = [
     ./alacritty.nix
     ./git.nix
-    ./oh-my-posh.nix
+    # ./oh-my-posh.nix
     ./python.nix
     ./sh.nix
     ./ssh.nix
