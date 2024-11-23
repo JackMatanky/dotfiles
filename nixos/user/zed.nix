@@ -3,7 +3,7 @@
   pkgs,
   pkgs-unstable,
   inputs,
-  # userSettings,
+  systemSettings,
   ...
 }: let
   zedDir = builtins.path {
@@ -19,14 +19,15 @@ in {
       "${configDir}keymap.json".source = "${zedDir}/keymap.json";
       "${snippetsDir}".source = "${zedDir}/snippets";
     };
-    packages = with pkgs-unstable; [
-      zed-editor
-    ];
-    # ++ [
-    #   (pkgs.callPackage inputs.simple-completion-language-server {})
-    # ];
+    packages =
+      (with pkgs-unstable; [
+        zed-editor
+      ])
+      ++ [
+        inputs.simple-completion-language-server.defaultPackage.${systemSettings.system}
+      ];
   };
-  programs = {
-    simple-completion-language-server = pkgs.callPackage inputs.simple-completion-language-server {};
-  };
+  # programs = {
+  #   simple-completion-language-server = pkgs.callPackage inputs.simple-completion-language-server {};
+  # };
 }
