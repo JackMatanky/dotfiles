@@ -99,12 +99,14 @@ in {
     nushell = {
       enable = true;
 
-      configFile = "${cliDir}/nushell/config.nu";
-      envFile = "${cliDir}/nushell/env.nu";
+      # configFile = "${cliDir}/nushell/config.nu";
+      # envFile = "${cliDir}/nushell/env.nu";
 
-      sessionVariables = {
-        EDITOR = "zed";
+      # Set environment variables
+      environmentVariables = {
+        EDITOR = "zed"; # Set the default editor to Zed
         VISUAL = "zed";
+        STARSHIP_CONFIG = "${cliDir}/starship.toml"; # Path to the Starship configuration file
       };
     };
 

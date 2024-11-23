@@ -145,7 +145,7 @@ let-env config = {
     use_ls_colors: true  # Use `LS_COLORS` for coloring `ls` output
     table_mode: rounded  # Use rounded borders for tables
     error_style: "fancy"  # Display detailed error messages
-    edit_mode: vi  # Use vi-style navigation in the command line
+    # edit_mode: vi  # Use vi-style navigation in the command line
     color_config: $dark_theme  # Apply the dark theme
     shell_integration: {
         osc2: true  # Update terminal tab titles with the current directory
@@ -158,12 +158,12 @@ let-env config = {
 # Source external aliases from a shell script
 # This script should contain alias definitions compatible with Nushell
 def source_aliases [] {
-    if (not (path exists ~/.config/nushell/aliases.sh)) {
+    if (not (path exists ~/.dotfiles/cli/aliases.sh)) {
         echo "aliases.sh not found, skipping alias import"
         return
     }
 
-    let lines = (open ~/.config/nushell/aliases.sh | lines)
+    let lines = (open ~/.dotfiles/cli/aliases.sh | lines)
     for line in $lines {
         if ($line | str starts-with '#') or ($line | str trim == '') {
             continue  # Skip comments and empty lines
