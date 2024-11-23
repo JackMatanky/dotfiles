@@ -1,8 +1,11 @@
 # Nushell Config File
-# Docs: https://www.nushell.sh/
+#
+# version = "0.95.0"
 
-# Custom Themes: https://www.nushell.sh/book/coloring_and_theming.html
-# Theme Collection: https://github.com/nushell/nu_scripts/tree/main/themes
+# For more information on defining custom themes, see
+# https://www.nushell.sh/book/coloring_and_theming.html
+# And here is the theme collection
+# https://github.com/nushell/nu_scripts/tree/main/themes
 let dark_theme = {
     # color for nushell primitives
     separator: white
@@ -136,55 +139,64 @@ let light_theme = {
     shape_raw_string: light_purple
 }
 
-# Source aliases from aliases.sh, handling potential differences
+# Environment configuration
+# These settings control the shell's behavior, such as table formatting and error messages
+let-env config = {
+    use_ls_colors: true  # Use `LS_COLORS` for coloring `ls` output
+    table_mode: rounded  # Use rounded borders for tables
+    error_style: "fancy"  # Display detailed error messages
+    edit_mode: vi  # Use vi-style navigation in the command line
+    color_config: $dark_theme  # Apply the dark theme
+    shell_integration: {
+        osc2: true  # Update terminal tab titles with the current directory
+        osc7: true  # Pass the current directory to the terminal
+        osc8: true  # Enable clickable links in ls output
+        osc133: true  # Mark prompt boundaries for better terminal integration
+    }
+}
+
+# Source external aliases from a shell script
+# This script should contain alias definitions compatible with Nushell
 def source_aliases [] {
-  # Check if the aliases.sh file exists
-  if (not (path exists ../aliases.sh)) {
-    return
-  }
-
-  # Read the aliases.sh file line by line
-  let lines = (open aliases.sh | lines)
-
-  # Iterate over each line
-  for line in $lines {
-    # Skip comments and empty lines
-    if ($line | str starts-with '#') {
-      continue
-    }
-    if ($line | str trim == '') {
-      continue
+    if (not (path exists ~/.config/nushell/aliases.sh)) {
+        echo "aliases.sh not found, skipping alias import"
+        return
     }
 
-    # Split the line into alias and command
-    let parts = ($line | str split '=' | str trim)
-    if ($parts | length) != 2 {
-      continue
+    let lines = (open ~/.config/nushell/aliases.sh | lines)
+    for line in $lines {
+        if ($line | str starts-with '#') or ($line | str trim == '') {
+            continue  # Skip comments and empty lines
+        }
+        let parts = ($line | str split '=' | str trim)
+        if ($parts | length) != 2 {
+            continue  # Skip lines that don't match the alias format
+        }
+        let alias_name = ($parts | first)
+        let alias_command = ($parts | last | str replace '"' '' | str replace "'" '')
+        alias $alias_name = $alias_command
     }
-    let alias_name = ($parts | first)
-    let alias_command = ($parts | last)
-
-    # Remove quotes from the alias command
-    let alias_command = ($alias_command | str replace '"' '' | str replace "'" '')
-
-    # Define the alias in Nushell
-    alias $alias_name = $alias_command
-  }
 }
 
 # Call the function to source aliases
 source_aliases
 
-# Customize the table theme
-let-env config = {
-  table_mode: rounded  # basic, compact, compact_double, light, thin, with_love, rounded
-  use_ls_colors: true  # use the same colors as the `ls` command
+# Example custom function
+# Replace or expand this with your own commands
+def ff [] {
+    echo "Custom function example"
 }
 
-# Define custom commands
-def my-command [
-  --arg1: string # An optional string argument
-] {
-  echo "Hello from my-command!"
-  echo "arg1: ($arg1)"
+# Plugins and integrations
+# These integrations are optional and will only be sourced if their files exist
+if (path exists ~/.cache/carapace/init.nu) {
+    source ~/.cache/carapace/init.nu  # Source Carapace integration for command completion
+} else {
+    echo "Carapace integration not found, skipping"
+}
+
+if (path exists ~/.cache/starship/init.nu) {
+    use ~/.cache/starship/init.nu  # Use Starship for prompt customization
+} else {
+    echo "Starship integration not found, skipping"
 }

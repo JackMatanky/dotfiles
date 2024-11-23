@@ -59,8 +59,9 @@
 in {
   home.file = {
     # Configuration files for shells
-    ".config/starship/starship.toml".source = "${cliDir}/starship.toml";
+    ".config/nushell".source = "${cliDir}/nushell";
     ".config/alacritty/alacritty.toml".source = "${cliDir}/alacritty.toml";
+    ".config/starship/starship.toml".source = "${cliDir}/starship.toml";
   };
 
   programs = {
@@ -98,9 +99,13 @@ in {
     nushell = {
       enable = true;
 
-      # initExtra = ''
-      #   eval "$(starship init nu)"
-      # '';
+      configFile = "${cliDir}/nushell/config.nu";
+      envFile = "${cliDir}/nushell/env.nu";
+
+      sessionVariables = {
+        EDITOR = "zed";
+        VISUAL = "zed";
+      };
     };
 
     alacritty = {
