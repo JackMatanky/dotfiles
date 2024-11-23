@@ -99,9 +99,6 @@ in {
     nushell = {
       enable = true;
 
-      # configFile = "${cliDir}/nushell/config.nu";
-      # envFile = "${cliDir}/nushell/env.nu";
-
       # Set environment variables
       environmentVariables = {
         EDITOR = "zed"; # Set the default editor to Zed
