@@ -157,15 +157,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1732123793,
-        "narHash": "sha256-GD/1sJAxoiPHRwR3BLdBQ5tibaNiMHTb25lrl1VIEjA=",
-        "owner": "estin",
+        "lastModified": 1718790072,
+        "narHash": "sha256-1AeBdUu+NMkPmHkoZpcJGKpAqMe0SPjvuLuS93CxoRg=",
+        "owner": "zed-industries",
         "repo": "simple-completion-language-server",
-        "rev": "76762d9e9c65d8b9d0b6f274397cb1ebafd290b0",
+        "rev": "3c098ca0715c0f037240e97cf3a77bef788a36cc",
         "type": "github"
       },
       "original": {
-        "owner": "estin",
+        "owner": "zed-industries",
         "repo": "simple-completion-language-server",
         "type": "github"
       }
