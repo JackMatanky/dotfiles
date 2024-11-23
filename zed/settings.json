@@ -788,7 +788,10 @@
 
   // Language Server Protocol (LSP)
   "lsp": {
-    "simple-language-completion-server": {
+    "simple-completion-language-server": {
+      "binary": {
+        "path": "/home/jack/.nix-profile/bin/simple-completion-language-server"
+      },
       "command": "simple-completion-language-server",
       "languages": ["plaintext"]
     },
