@@ -17,9 +17,10 @@
     };
 
     # Snippets language server for Zed
-    # https://github.com/estin/simple-completion-language-server
+    # Original: https://github.com/estin/simple-completion-language-server
+    # Zed Fork: https://github.com/zed-industries/simple-completion-language-server
     simple-completion-language-server = {
-      url = "github:estin/simple-completion-language-server";
+      url = "github:zed-industries/simple-completion-language-server";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
