@@ -59,12 +59,9 @@
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${systemSettings.system};
     pkgs-unstable = nixpkgs-unstable.legacyPackages.${systemSettings.system};
-    # linuxSurfaceRepo = pkgs.fetchFromGitHub {
-    #   owner = "linux-surface";
-    #   repo = "linux-surface";
-    #   rev = "260b202ade51ae01f4bf5f4a5516559bd5f04973";
-    #   sha256 = "sha256-DmYbfi7scxWDHlqZA7ZidCnpMexC34+T4DA7yTs5GAI=";
-    # };
+
+    # Modules
+    swapModule = import ./nixos/modules/swap.nix;
   in {
     nixosConfigurations = {
       jackSurfacePro = lib.nixosSystem {
@@ -75,6 +72,7 @@
           home-manager.nixosModules.default
           ./nixos/hardware-configuration.nix
           ./nixos/configuration.nix
+          swapModule
           # ./hosts/surface-pro/surface-pkgs.nix
           # (import ./hosts/surface-pro/surface-kernel.nix {
           #   inherit lib pkgs linuxSurfaceRepo;
