@@ -16,10 +16,10 @@
     obsidian = "cd /run/media/jack/sdxc_512/obsidian_vault";
 
     # Nix - Flakes
-    flk_rebuild = "sudo nixos-rebuild switch --flake .";
-    flk_rebuild_trace = "sudo nixos-rebuild switch --flake . --show-trace";
-    flk_up = "sudo nix flake update";
-    flk_up_trace = "sudo nix flake update --show-trace";
+    flake_rebuild = "sudo nixos-rebuild switch --flake .";
+    flake_rebuild_trace = "sudo nixos-rebuild switch --flake . --show-trace";
+    flake_up = "sudo nix flake update";
+    flake_up_trace = "sudo nix flake update --show-trace";
 
     # Nix - Home Manager
     hm_switch = "home-manager switch --flake .";
