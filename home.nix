@@ -21,7 +21,7 @@
     # Environment Packages
     packages = with pkgs; [
       # Personal Knowledge Management
-      anki-bin
+      # anki-bin
       # Anki dependencies
       ffmpeg
       noto-fonts
