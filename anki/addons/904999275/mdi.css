@@ -1,0 +1,37 @@
+/* Styling of interaction with elements surrounding codemirror */
+.cm-scroller {
+    overflow: auto;
+}
+
+.cm-editor .cm-content {
+    padding: 5px;
+}
+
+div.markdown-input:not([hidden]) ~ div.rich-text-input {
+    padding: 5px 0 0 0; /* top right bottom left */
+    border-top: 1px double var(--border);
+}
+
+.cm-editor .cm-panels-top {
+    border: 1px solid var(--border);
+    position: fixed;
+    z-index: 100;
+    top: 30px !important;
+    right: 20px;
+    left: unset;
+}
+
+/* Only relevant for window input */
+body.mdi-window {
+    margin: 0;
+}
+
+#cm-container {
+    height: 100%;
+}
+
+.cm-editor {
+    margin: 0px;
+    height: 100%;
+}
+

@@ -1,8 +1,8 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
-  userSettings,
+  # pkgs-unstable,
+  # userSettings,
   ...
 }: let
   cliDir = builtins.path {
@@ -14,6 +14,7 @@
     dot = "cd .dotfiles";
     dot_nix = "cd ~/.dotfiles/nixos";
     obsidian = "cd /run/media/jack/sdxc_512/obsidian_vault";
+    obsidian_gpl = "cd /run/media/jack/sdxc_512/obsidian_vault; git pull";
 
     # Nix - Flakes
     flake_rebuild = "sudo nixos-rebuild switch --flake .";
@@ -57,13 +58,16 @@
     # ...... = "cd ../../../../..";
   };
 in {
-  home.file = {
-    # Configuration files for shells
-    ".config/nushell".source = "${cliDir}/nushell";
-    ".config/alacritty/alacritty.toml".source = "${cliDir}/alacritty.toml";
-    ".config/starship/starship.toml".source = "${cliDir}/starship.toml";
-  };
+  home = {
+    packages = [pkgs.tree];
 
+    file = {
+      # Configuration files for shells
+      ".config/nushell".source = "${cliDir}/nushell";
+      ".config/alacritty/alacritty.toml".source = "${cliDir}/alacritty.toml";
+      ".config/starship/starship.toml".source = "${cliDir}/starship.toml";
+    };
+  };
   programs = {
     bash = {
       enable = true;
