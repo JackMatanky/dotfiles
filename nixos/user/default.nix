@@ -13,6 +13,7 @@
     # ./gnome.nix
     # ./oh-my-posh.nix
     ./python.nix
+    ./pkm.nix
     ./sh.nix
     ./ssh.nix
     ./zed.nix
