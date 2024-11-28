@@ -513,7 +513,6 @@
 
   // Automatically Installed Extensions
   "auto_install_extensions": {
-    "autocorrect": true,
     "base16": true,
     "basher": false,
     "csv": true,
