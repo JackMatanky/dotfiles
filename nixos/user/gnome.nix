@@ -5,8 +5,6 @@
   ...
 }: {
   dconf.settings = {
-    enable = true;
-
     "org/gnome/desktop/interface" = {
       clock-show-weekday = false;
     };
