@@ -115,6 +115,16 @@
     # };
   };
 
+  services = {
+    espanso = {
+      enable = true;
+    };
+
+    kdeconnect = {
+      enable = true;
+    };
+  };
+
   # gtk = {
   #   enable = true;
   #   theme.name = "adw-gtk3";
