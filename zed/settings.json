@@ -800,13 +800,13 @@
       },
       "settings": {
         "plugins": {
-          "mypy": {
+          "pylsp-mypy": {
             "anabled": true
           },
-          "rope": {
+          "pylsp-rope": {
             "anabled": true
           },
-          "ruff": {
+          "python-lsp-ruff": {
             "anabled": true
           }
         }
