@@ -699,7 +699,7 @@
       }
     },
     "Python": {
-      "language_servers": ["pylsp"], // ["pyright", "ruff"],
+      "language_servers": ["!pyright", "pylsp"], // ["pyright", "ruff"],
       "tab_size": 4,
       "format_on_save": "on",
       "formatter": {
@@ -797,6 +797,19 @@
     "pylsp": {
       "binary": {
         "path": "/home/jack/.nix-profile/bin/pylsp"
+      },
+      "settings": {
+        "plugins": {
+          "mypy": {
+            "anabled": true
+          },
+          "rope": {
+            "anabled": true
+          },
+          "ruff": {
+            "anabled": true
+          }
+        }
       }
     },
     "pyright": {
