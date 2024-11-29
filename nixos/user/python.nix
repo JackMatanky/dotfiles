@@ -8,9 +8,16 @@
   # Create the Python environment with Python 3.12 and necessary packages
   pythonEnv = pkgs.python312.withPackages (pythonPackages:
     with pythonPackages; [
-      ipykernel
-      # jupyter
-      # ipython-genutils
+      python-lsp-server # LSP
+      pylsp-mypy # Type Checker
+      python-lsp-ruff # Linter
+      pylsp-rope # Autocompletion
+
+      ipykernel # Notebooks
+
+      # Libraries
+      pandas
+      numpy
     ]);
 in {
   # Add the created Python environment and other tools to home.packages
@@ -19,7 +26,8 @@ in {
       pythonEnv
     ]
     ++ (with pkgs; [
-      pyright # Python LSP
+      pyright # LSP
+      uv # Package Installer
     ]);
 
   programs = {
