@@ -699,7 +699,7 @@
       }
     },
     "Python": {
-      "language_servers": ["pyright"], // ["pyright", "ruff"],
+      "language_servers": ["pyright", "pylsp"], // ["pyright", "ruff"],
       "tab_size": 4,
       "format_on_save": "on",
       "formatter": {
@@ -794,9 +794,14 @@
       "command": "simple-completion-language-server",
       "languages": ["plaintext"]
     },
+    "pylsp": {
+      "binary": {
+        "path": "/home/jack/.nix-profile/bin/pylsp"
+      }
+    },
     "pyright": {
       "binary": {
-        "path": "/home/jack/.nix-profile/bin/python"
+        "path": "/home/jack/.nix-profile/bin/pyright"
       },
       "settings": {
         "python.analysis": {
