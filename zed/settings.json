@@ -813,6 +813,7 @@
         "path": "/home/jack/.nix-profile/bin/ruff",
         "arguments": ["server", "--preview"]
       }
+    }
     //   // "initialization_options": {
     //   //   "settings": {
     //   //     "path": "/home/jack/.nix-profile/bin/ruff"
