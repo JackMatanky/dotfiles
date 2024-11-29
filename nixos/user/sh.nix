@@ -115,6 +115,10 @@ in {
       enable = true;
     };
 
+    tmux = {
+      enable = true;
+    };
+
     starship = {
       enable = true;
       enableBashIntegration = true;
@@ -127,6 +131,10 @@ in {
       enableBashIntegration = true;
       enableZshIntegration = true;
       enableNushellIntegration = true;
+    };
+
+    zoxide = {
+      enable = true;
     };
   };
 }
