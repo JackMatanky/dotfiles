@@ -53,6 +53,8 @@
       # Windows apps
       # wine
       # bottles
+
+      pcmanfm
     ];
 
     pointerCursor = {
