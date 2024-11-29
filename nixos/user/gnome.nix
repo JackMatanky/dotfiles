@@ -5,6 +5,13 @@
   ...
 }: {
   dconf.settings = {
+    # Enabled GNOME Extensions
+    "org/gnome/shell" = {
+      disable-user-extensions = false;
+      enabled-extensions = {
+        "gsconnect@andyholmes.github.io"
+      };
+    };
     "org/gnome/desktop/interface" = {
       clock-show-weekday = false;
     };
