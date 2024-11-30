@@ -40,8 +40,8 @@ eval "$("$NIX_PROFILE/zoxide" init zsh)"  # Directory jumping
 eval "$("$NIX_PROFILE/pyenv" init -)"   # Python version management
 source <("$NIX_PROFILE/carapace" _carapace zsh) # Shell completion
 
-# --- Import aliases ---
-source ~/aliases.sh
+# --- Import aliases from a separate file ---
+source "$HOME/.dotfiles/cli/aliases.sh"
 
 # --- Named Directory Hashes ---
 # ... (keep this section if needed) ...

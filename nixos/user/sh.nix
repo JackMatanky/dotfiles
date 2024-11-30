@@ -101,9 +101,9 @@ in {
         eval "$(starship init zsh)"
       '';
 
-      # sessionVariables = {
-      #   TERMINAL = "${pkgs.alacritty}/bin/alacritty";
-      # };
+      sessionVariables = {
+        TERMINAL = "${pkgs.alacritty}/bin/alacritty";
+      };
     };
 
     # nushell = {
@@ -117,9 +117,9 @@ in {
     #   };
     # };
 
-    # alacritty = {
-    #   enable = true;
-    # };
+    alacritty = {
+      enable = true;
+    };
 
     tmux = {
       enable = true;
