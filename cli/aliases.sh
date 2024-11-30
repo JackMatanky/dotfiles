@@ -2,12 +2,13 @@
 alias dot='cd .dotfiles'
 alias dot_nix='cd ~/.dotfiles/nixos'
 alias obsidian='cd /run/media/jack/sdxc_512/obsidian_vault'
+alias obsidian_gpl='d /run/media/jack/sdxc_512/obsidian_vault; git pull'
 
 # Nix - Flakes
-alias flk_rebuild='sudo nixos-rebuild switch --flake .'
-alias flk_rebuild_trace='sudo nixos-rebuild switch --flake . --show-trace'
-alias flk_up='sudo nix flake update'
-alias flk_up_trace='sudo nix flake update --show-trace'
+alias flake_rebuild='sudo nixos-rebuild switch --flake .'
+alias flake_rebuild_trace='sudo nixos-rebuild switch --flake . --show-trace'
+alias flake_up='sudo nix flake update'
+alias flake_up_trace='sudo nix flake update --show-trace'
 
 # Nix - Home Manager
 alias hm_switch='home-manager switch --flake .'
