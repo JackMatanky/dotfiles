@@ -25,11 +25,20 @@
         "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com"
       ];
     };
+
+    # Interface
     "org/gnome/desktop/interface" = {
       clock-show-weekday = false;
       clock-show-seconds = false;
       show-battery-percentage = true;
       enable-hot-corners = true;
+    };
+
+    # Custom Shortcuts
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      name = "Home Folder";
+      command = "/usr/bin/env nautilus";
+      binding = "<Super>e";
     };
   };
   # dconf.settings = {
