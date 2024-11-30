@@ -9,9 +9,12 @@
 }: {
   imports = [
     # ./alacritty.nix
+    ./fonts.nix
     ./git.nix
-    ./oh-my-posh.nix
+    ./gnome.nix
+    # ./oh-my-posh.nix
     ./python.nix
+    ./pkm.nix
     ./sh.nix
     ./ssh.nix
     ./zed.nix

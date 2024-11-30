@@ -14,10 +14,12 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./hosts/surface-pro/surface-pkgs.nix
-    ./system/fonts.nix
-    ./system/gnome-pkgs-exclude.nix
+    ./system/bootloader.nix
+    ./system/gnome.nix
     ./system/locale.nix
     ./system/storage.nix
+    # ./system/stylix.nix
+    ./system/swap.nix
   ];
 
   # Flakes
@@ -46,15 +48,6 @@
     # ];
   };
 
-  # Bootloader configuration for UEFI systems.
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-  };
-  # boot.loader.grub.enable = true;
-  # boot.loader.grub.device = "/dev/vda";
-  # boot.loader.grub.useOSProber = true;
-
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -67,6 +60,17 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  # Setting for GSConnect, based on Nix Wiki
+  networking.firewall = rec {
+    allowedTCPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      }
+    ];
+    allowedUDPPortRanges = allowedTCPPortRanges;
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -140,9 +144,8 @@
     nushell
     zsh
     git
+    glibcLocales
     bluez-experimental
-    # bluez
-    # bluez-tools
   ];
 
   # Default Shell: ZSH

@@ -1,123 +1,141 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
-  userSettings,
+  lib,
+  # pkgs-unstable,
+  # userSettings,
   ...
 }: let
-  dotfiles = "../../..";
-  # Centralized definition for the aliases file
-  aliasesConfig = "~/.config/aliases.sh";
+  cliDir = builtins.path {
+    path = ../../cli;
+    name = "cli";
+  };
 
-  # Centralized session variables for reuse across Bash and Zsh
-  commonSessionVariables = {
-    PATH = builtins.concatStringsSep ":" [
-      "${config.home.homeDirectory}/.local/bin" # User binaries
-      "/run/current-system/sw/bin" # System binaries
-      "/nix/var/nix/profiles/default/bin" # Nix default profile binaries
-      "${config.home.homeDirectory}/.cargo/bin" # Rust's Cargo binaries
-      "${config.home.homeDirectory}/.node/bin" # Node.js binaries
-      "$PATH" # Preserve existing PATH
-    ];
-    TERMINAL = "${pkgs.alacritty}/bin/alacritty"; # Default terminal emulator
-    EDITOR = "zed"; # Default editor
+  myAliases = {
+    dot = "cd .dotfiles";
+    dot_nix = "cd ~/.dotfiles/nixos";
+    obsidian = "cd /run/media/jack/sdxc_512/obsidian_vault";
+    obsidian_gpl = "cd /run/media/jack/sdxc_512/obsidian_vault; git pull";
+
+    # Nix - Flakes
+    flake_rebuild = "sudo nixos-rebuild switch --flake .";
+    flake_rebuild_trace = "sudo nixos-rebuild switch --flake . --show-trace";
+    flake_up = "sudo nix flake update";
+    flake_up_trace = "sudo nix flake update --show-trace";
+
+    # Nix - Home Manager
+    hm_switch = "home-manager switch --flake .";
+    hm_switch_trace = "home-manager switch --flake . --show-trace";
+
+    # Nix - Garbage Collector
+    cg_empty = "sudo nix-collect-garbage -d";
+
+    # Git
+    gad = "git add";
+    gad_d = "git add .";
+    gad_p = "git add -p";
+    gc = "git commit -m";
+    gca = "git commit -a -m";
+    gps = "git push";
+    gps_o = "git push origin";
+    # gps_oh = "git push origin HEAD";
+    gpl = "git pull";
+    gpl_o = "git pull origin";
+    gst = "git status";
+    glog = "git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit";
+    gdiff = "git diff";
+    gbr = "git branch";
+    gbra = "git branch -a";
+    gco = "git checkout";
+    gcoall = "git checkout -- .";
+    grm = "git remote";
+    grs = "git reset";
+
+    # Dirs
+    # .. = "cd ..";
+    # ... = "cd ../..";
+    # .... = "cd ../../..";
+    # ..... = "cd ../../../..";
+    # ...... = "cd ../../../../..";
   };
 in {
-  home.file = {
-    # Configuration files for shells and other programs
-    ".config/aliases.sh".source = ../../aliases.sh;
-    # ".zshrc".source = ../../zsh/.zshrc;
-    ".config/starship/".source = ../../starship;
-    ".config/alacritty/".source = ../../alacritty;
+  home = {
+
+    file = {
+      # ".bashrc".source = "${cliDir}/.bashrc";
+      # ".zshrc".source = "${cliDir}/.zshrc";
+      ".config/nushell".source = "${cliDir}/nushell";
+      ".config/alacritty/alacritty.toml".source = "${cliDir}/alacritty.toml";
+      ".config/starship/starship.toml".source = "${cliDir}/starship.toml";
+    };
   };
-
   programs = {
-    # Bash Configuration
     bash = {
-      enable = true; # Enable Bash as a managed program
-      enableCompletion = true; # Enable Bash command-line completion
+      enable = true;
+      enableCompletion = true;
+      shellAliases = myAliases;
 
-      # History configuration
-      historySize = 10000; # Number of commands to keep in memory
-      historyFileSize = 100000; # Number of commands to keep in the history file
-      historyControl = ["ignoredups" "erasedups"]; # Avoid duplicates in history
-
-      # Session variables for Bash
-      sessionVariables = commonSessionVariables;
-
-      # Additional commands appended to ~/.bashrc
-      bashrcExtra = ''
-        # Load custom aliases if present
-        if [ -f ${aliasesConfig} ]; then
-          source ${aliasesConfig}
-        fi
-
-        # Zoxide initialization
-        eval "$(zoxide init bash)"
-
-        # Starship prompt initialization
+      initExtra = ''
         eval "$(starship init bash)"
       '';
     };
 
-    # Zsh Configuration
     zsh = {
-      enable = true; # Enable Zsh as a managed program
-      enableCompletion = true; # Enable command-line completion
-      autosuggestion.enable = true; # Enable autosuggestions
-      syntaxHighlighting.enable = true; # Enable syntax highlighting
-      historySubstringSearch.enable = true; # Enable substring history search
+      enable = true;
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+      historySubstringSearch.searchUpKey = ["^[[A"];
+      shellAliases = myAliases;
 
-      # Session variables for Zsh
-      sessionVariables = commonSessionVariables;
+      # history = {
+      # size = 10000;
+      # };
 
-      # Use shellInit to source the aliases file and initialize utilities
-      # Use initExtra to source the aliases file and initialize utilities
       initExtra = ''
-        # Load custom aliases
-        if [ -f ${aliasesConfig} ]; then
-          source ${aliasesConfig}
-        fi
-
-        # Zoxide initialization
-        eval "$(zoxide init zsh)"
-
-        # Starship prompt initialization
         eval "$(starship init zsh)"
       '';
+
+      sessionVariables = {
+        TERMINAL = "${pkgs.alacritty}/bin/alacritty";
+      };
     };
 
-    # Nushell Configuration
     nushell = {
-      enable = true; # Enable Nushell as a managed program
-      configFile.source = ../../nushell/config.nu;
-      envFile.source = ../../nushell/env.nu; # Link to the Nushell environment configuration
+      enable = true;
+
+      # Set environment variables
+      environmentVariables = {
+        EDITOR = "zed"; # Set the default editor to Zed
+        VISUAL = "zed";
+        STARSHIP_CONFIG = "${cliDir}/starship.toml"; # Path to the Starship configuration file
+      };
     };
 
-    # Alacritty: Terminal emulator
     alacritty = {
       enable = true;
     };
 
-    # Starship: Shell prompt
+    tmux = {
+      enable = true;
+    };
+
     starship = {
       enable = true;
+      enableBashIntegration = true;
       enableZshIntegration = true;
       enableNushellIntegration = true;
     };
 
-    # Zoxide: Fast directory navigation
-    zoxide = {
-      enable = true;
-      enableZshIntegration = true;
-      enableNushellIntegration = true;
-    };
-
-    # Carapace: Command-line autocompletion
     carapace = {
       enable = true;
+      enableBashIntegration = true;
       enableZshIntegration = true;
       enableNushellIntegration = true;
+    };
+
+    zoxide = {
+      enable = true;
     };
   };
 }

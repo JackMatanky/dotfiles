@@ -1,0 +1,92 @@
+{
+	"Field input": {
+		"Shortcut": "Ctrl+M",
+		"Rich text shortcut": "Ctrl+Alt+X",
+		"Next field": "Ctrl+PgDown",
+		"Previous field": "Ctrl+PgUp",
+		"Default field state": "rich text",
+		"Cycle rich text/Markdown": true,
+		"Autohide toolbar": true
+	},
+	"Window input": {
+		"Mode": "note",
+		"Shortcut": "Ctrl+Alt+M",
+		"Shortcut accept": "Ctrl+Return",
+		"Shortcut reject": "Shift+Escape",
+		"Size mode": "parent",
+		"Last geometry": ""
+	},
+	"Converter": {
+		"Markdown format": {
+			"bullet": "-",
+			"listItemIndent": "one",
+			"ruleRepetition": 10,
+			"tightDefinitions": true,
+			"fences": true,
+			"hardBreak": "spaces"
+		},
+		"Markdown extensions": {
+			"Definition lists": true,
+			"Inline media": true,
+			"Tables": "extended",
+			"Table newline": "¨",
+			"Underline": true,
+			"Superscript": true,
+			"Subscript": true,
+			"Strikethrough": "double"
+		}
+	},
+	"CodeMirror": {
+		"keymap": [{
+				"key": "Mod-f",
+				"run": "openSearchPanel",
+				"scope": "editor search-panel",
+				"preventDefault": true
+			},{
+				"key": "Mod-n",
+				"run": "findNext",
+				"shift": "findPrevious",
+				"scope": "editor search-panel",
+				"preventDefault": true
+			},{
+				"key": "Mod-d",
+				"run": "selectNextOccurrence",
+				"preventDefault": true
+			},{
+				"key": "Mod-Shift-l",
+				"run": "selectSelectionMatches",
+				"preventDefault": true
+			},{
+				"key": "Mod-g",
+				"run": "gotoLine",
+				"preventDefault": true
+			},{
+				"key": "Escape",
+				"run": "closeSearchPanel",
+				"scope": "editor search-panel",
+				"preventDefault": true
+			},{
+				"key": "Mod-Shift-z",
+				"run": "clozeCurrent",
+				"preventDefault": true
+			},{
+				"key": "Mod-Shift-c",
+				"run": "clozeNext",
+				"preventDefault": true
+			},
+			{
+				"key": "Mod-Shift-j",
+				"run": "joinLines",
+				"preventDefault": true
+			}
+		],
+		"search": {
+			"caseSensitive": false,
+			"regexp": true,
+			"wholeWord": false
+		}
+	},
+	"General": {
+		"Browser sort field": true
+	}
+}

@@ -17,11 +17,14 @@
     };
 
     # Snippets language server for Zed
-    # https://github.com/estin/simple-completion-language-server
+    # Original: https://github.com/estin/simple-completion-language-server
+    # Zed Fork: https://github.com/zed-industries/simple-completion-language-server
     simple-completion-language-server = {
-      url = "github:estin/simple-completion-language-server";
+      url = "github:zed-industries/simple-completion-language-server";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # stylix.url = "github:danth/stylix";
 
     # hyprland.url = "github:hyprwm/Hyprland";
   };
@@ -48,7 +51,8 @@
       hostName = "${userSettings.username}${device}";
       profile = "personal";
       timeZone = "Asia/Jerusalem";
-      locale = "en_IL"; # "he_IL.UTF-8";
+      localeDefault = "en_IL.UTF-8"; # "en_IL";
+      localeSecondary = "en_US.UTF-8";
       # bootMode = "uefi"; # uefi or bios
       # bootMountPath = "/boot"; # mount path for efi boot partition; only used for uefi boot mode
       # grubDevice = ""; # device identifier for grub; only used for legacy (bios) boot mode
@@ -57,12 +61,9 @@
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${systemSettings.system};
     pkgs-unstable = nixpkgs-unstable.legacyPackages.${systemSettings.system};
-    # linuxSurfaceRepo = pkgs.fetchFromGitHub {
-    #   owner = "linux-surface";
-    #   repo = "linux-surface";
-    #   rev = "260b202ade51ae01f4bf5f4a5516559bd5f04973";
-    #   sha256 = "sha256-DmYbfi7scxWDHlqZA7ZidCnpMexC34+T4DA7yTs5GAI=";
-    # };
+
+    # Modules
+    swapModule = import ./nixos/modules/swap.nix;
   in {
     nixosConfigurations = {
       jackSurfacePro = lib.nixosSystem {
@@ -71,8 +72,10 @@
           nixos-hardware.nixosModules.microsoft-surface-common
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
           home-manager.nixosModules.default
-          ./hardware-configuration.nix
-          ./configuration.nix
+          # inputs.stylix.nixosModules.stylix
+          ./nixos/hardware-configuration.nix
+          ./nixos/configuration.nix
+          swapModule
           # ./hosts/surface-pro/surface-pkgs.nix
           # (import ./hosts/surface-pro/surface-kernel.nix {
           #   inherit lib pkgs linuxSurfaceRepo;

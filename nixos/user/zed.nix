@@ -2,37 +2,32 @@
   config,
   pkgs,
   pkgs-unstable,
-  # userSettings,
+  inputs,
+  systemSettings,
   ...
 }: let
-  # Create the Python environment with Python 3.12 and necessary packages
-  config = ".config/zed/";
-  snippets = "${config}snippets/";
-  gitcommit-snip = "gitcommit.json";
-  html-snip = "html.json";
-  javascript-snip = "javascript.json";
-  latex-snip = "latex.json";
-  markdown-snip = "markdown.json";
-  nix-snip = "nix.json";
-  python-snip = "python.json";
-  sql-snip = "sql.json";
+  zedDir = builtins.path {
+    path = ../../zed;
+    name = "zed";
+  };
+  configDir = ".config/zed/";
+  snippetsDir = "${configDir}snippets/";
 in {
   home = {
-    packages = with pkgs-unstable; [
-      zed-editor # Zed IDE
-    ];
     file = {
-      "${config}settings.json".source = ../../zed/settings.json;
-      "${config}keymap.json".source = ../../zed/keymap.json;
-      "${snippets}".source = ../../zed/snippets;
-      # "${snippets}${gitcommit-snip}".source = ../.zed/snippets/${gitcommit-snip};
-      # "${snippets}${html-snip}".source = ../.zed/snippets/${html-snip};
-      # "${snippets}${javascript-snip}".source = ../.zed/snippets/${javascript-snip};
-      # "${snippets}${latex-snip}".source = ../.zed/snippets/${latex-snip};
-      # "${snippets}${markdown-snip}".source = ../.zed/snippets/${markdown-snip};
-      # "${snippets}${nix-snip}".source = ../.zed/snippets/${nix-snip};
-      # "${snippets}${python-snip}".source = ../.zed/snippets/${python-snip};
-      # "${snippets}${sql-snip}".source = ../.zed/snippets/${sql-snip};
+      "${configDir}settings.json".source = "${zedDir}/settings.json";
+      "${configDir}keymap.json".source = "${zedDir}/keymap.json";
+      "${snippetsDir}".source = "${zedDir}/snippets";
     };
+    packages =
+      (with pkgs-unstable; [
+        zed-editor
+      ])
+      ++ [
+        inputs.simple-completion-language-server.defaultPackage.${systemSettings.system}
+      ];
   };
+  # programs = {
+  #   simple-completion-language-server = pkgs.callPackage inputs.simple-completion-language-server {};
+  # };
 }

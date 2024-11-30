@@ -1,0 +1,419 @@
+# ~/.config/starship.toml
+
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Gruvbox Rainbow
+# https://starship.rs/presets/gruvbox-rainbow
+format = """
+[](color_orange)\
+$os\
+$username\
+[](bg:color_yellow fg:color_orange)\
+$directory\
+[](fg:color_yellow bg:color_aqua)\
+$git_branch\
+$git_status\
+[](fg:color_aqua bg:color_blue)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:color_blue bg:color_bg3)\
+$docker_context\
+$conda\
+[](fg:color_bg3 bg:color_bg1)\
+$time\
+[ ](fg:color_bg1)\
+$line_break$character"""
+
+palette = 'gruvbox_dark'
+
+[palettes.gruvbox_dark]
+color_fg0 = '#fbf1c7'
+color_bg1 = '#3c3836'
+color_bg3 = '#665c54'
+color_blue = '#458588'
+color_aqua = '#689d6a'
+color_green = '#98971a'
+color_orange = '#d65d0e'
+color_purple = '#b16286'
+color_red = '#cc241d'
+color_yellow = '#d79921'
+
+[os]
+disabled = false
+style = "bg:color_orange fg:color_fg0"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
+
+[username]
+show_always = true
+style_user = "bg:color_orange fg:color_fg0"
+style_root = "bg:color_orange fg:color_fg0"
+format = '[ $user ]($style)'
+
+[directory]
+style = "fg:color_fg0 bg:color_yellow"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:color_aqua"
+format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
+
+[git_status]
+style = "bg:color_aqua"
+format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[c]
+symbol = " "
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[php]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[java]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[python]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:color_bg3"
+format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+
+[conda]
+style = "bg:color_bg3"
+format = '[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:color_bg1"
+format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[](bold fg:color_green)'
+error_symbol = '[](bold fg:color_red)'
+vimcmd_symbol = '[](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
+vimcmd_replace_symbol = '[](bold fg:color_purple)'
+vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+
+# # Inserts a blank line between prompts
+# add_newline = false
+
+# # Use the color palette
+# palette = "dracula"
+
+# # Define Dracula color palette
+# [palettes.dracula]
+# background = "#282a36"
+# current_line = "#44475a"
+# foreground = "#f8f8f2"
+# comment = "#6272a4"
+# cyan = "#8be9fd"
+# green = "#50fa7b"
+# orange = "#ffb86c"
+# pink = "#ff79c6"
+# purple = "#bd93f9"
+# red = "#ff5555"
+# yellow = "#f1fa8c"
+
+# format = """
+# $username
+# $hostname
+# $directory
+# $git_branch
+# $git_status
+# $nix_shell
+# $python
+# $cmd_duration
+# $character
+# """
+
+# # move the rest of the prompt to the right
+# right_format = """$all"""
+
+# [line_break]
+# disabled = true
+
+# [hostname]
+# style = "bold purple"
+# ssh_only = true
+# disabled = true
+# # format = "[$hostname]($style) "
+# # trim_at = "."
+
+# [username]
+# style_user = "bold yellow"
+# format = "[$user]($style_user) "
+# disabled = true
+# # show_always = true
+
+# # Enable the use of emojis in the prompt
+# [character] # Default prompt character
+# success_symbol = "[➜](bold green)"
+# error_symbol = "[✗](bold red)"
+
+# [time]
+# disabled = true
+# format = "[$time]($style) "
+# style = "yellow"
+# use_12hr = false
+
+# [battery]
+# full_symbol = '🔋 '
+# charging_symbol = '⚡️ '
+# discharging_symbol = '💀 '
+# disabled = true
+# # format = "[$symbol$percentage]($style) "
+
+# [[battery.display]]
+# threshold = 30
+# style = 'bold yellow'
+# discharging_symbol = '💦 '
+
+# [[battery.display]]
+# threshold = 10
+# style = 'bold red'
+
+# # Show the current directory
+# [directory]
+# truncation_length = 3
+# truncate_to_repo = true
+# style = "bold green"
+# format = "[$path]($style)[$read_only]($read_only_style) "
+# # read_only = " 🔒"
+# # read_only_style = "red"
+
+# # Show the time it took to execute the previous command
+# [cmd_duration]
+# min_time = 1
+# show_milliseconds = false
+# format = "[$duration]($style) "
+# style = "yellow"
+# disabled = true
+
+# # Show the number of running jobs
+# [jobs]
+# disabled = true
+# # format = "[$symbol$jobs]($style) "
+# # symbol = "✦ "
+
+# [memory_usage]
+# threshold = 75
+# disabled = true
+# # format = "[$symbol$ram]($style) "
+# # symbol = "🐏 "
+
+# [direnv]
+# disabled = false
+
+# # Git
+# # Display Git information
+# [git_branch]
+# style = "bold pink"
+# format = "[$symbol$branch]($style) "
+# symbol = " "
+
+# [git_commit]
+# style = "green"
+# disabled = true
+# # format = '[$hash]($style) '
+# # hash_length = 7
+
+# [git_status]
+# style = "red"
+# format = '([$all_status$ahead_behind]($style)) '
+# conflicted = '🏳'                                 # "="
+# ahead = '🏎💨'                                     # "⇡"
+# behind = '😰'                                     # "⇣"
+# diverged = '😵'                                   # "⇕"
+# up_to_date = '✓'
+# untracked = '🤷'                                  # "…"
+# stashed = '📦'
+# modified = '📝'                                   # "!"
+# staged = '[++\($count\)](green)'                 # "+"
+# renamed = '👅'                                    # "»"
+# deleted = '🗑'                                    # "✘"
+
+# # Nix Shell
+# [nix_shell]
+# disabled = true
+# impure_msg = '[impure shell](bold red)'
+# pure_msg = '[pure shell](bold green)'
+# unknown_msg = '[unknown shell](bold yellow)'
+# format = 'via [☃️ $state( \($name\))](bold blue) '
+
+# # Programming Languages
+# [python]
+# symbol = "🐍 "
+# style = "bold yellow"
+# format = "[$symbol$virtualenv$python_version]($style)"
+# disabled = true
+# # virtualenv_indicator = "env: "
+
+# [nodejs]
+# symbol = " "
+# style = "bold green"
+# disabled = true
+
+# [package] # Show package information (e.g., for npm, cargo)
+# disabled = true # This module is disabled by default
+# # format = "[$symbol$version]($style) "
+
+# [rust]
+# symbol = "🦀 "
+# style = "bold red"
+# disabled = true
+# # format = "[$symbol$version]($style) "
+
+# [java]
+# disabled = true
+# # format = "[$symbol$version]($style) "
+# # symbol = "☕ "
+
+# # Cloud Platforms
+# [docker_context]
+# symbol = "🐳 "
+# style = "bold blue"
+# disabled = true
+# # format = "[$symbol$context]($style) "
+
+# [aws]
+# disabled = true
+# # format = "[$symbol$profile]($style) "
+# # symbol = "  "
+
+# [gcloud]
+# disabled = true
+# # format = "[$symbol$account]($style) "
+# # symbol = "󰙠 "
+
+# [os]
+# format = "on [($name )]($style)"
+# style = "bold blue"
+# disabled = false
+
+# [os.symbols]
+# AIX = "➿ "
+# Alpaquita = "🔔 "
+# AlmaLinux = "💠 "
+# Alpine = "🏔️ "
+# Amazon = "🙂 "
+# Android = "🤖 "
+# Arch = "🎗️ "
+# Artix = "🎗️ "
+# CentOS = "💠 "
+# Debian = "🌀 "
+# DragonFly = "🐉 "
+# Emscripten = "🔗 "
+# EndeavourOS = "🚀 "
+# Fedora = "🎩 "
+# FreeBSD = "😈 "
+# Garuda = "🦅 "
+# Gentoo = "🗜️ "
+# HardenedBSD = "🛡️ "
+# Illumos = "🐦 "
+# Kali = "🐉 "
+# Linux = "🐧 "
+# Mabox = "📦 "
+# Macos = "🍎 "
+# Manjaro = "🥭 "
+# Mariner = "🌊 "
+# MidnightBSD = "🌘 "
+# Mint = "🌿 "
+# NetBSD = "🚩 "
+# NixOS = "❄️ "
+# OpenBSD = "🐡 "
+# OpenCloudOS = "☁️ "
+# openEuler = "🦉 "
+# openSUSE = "🦎 "
+# OracleLinux = "🦴 "
+# Pop = "🍭 "
+# Raspbian = "🍓 "
+# Redhat = "🎩 "
+# RedHatEnterprise = "🎩 "
+# RockyLinux = "💠 "
+# Redox = "🧪 "
+# Solus = "⛵ "
+# SUSE = "🦎 "
+# Ubuntu = "🎯 "
+# Ultramarine = "🔷 "
+# Unknown = "❓ "
+# Void = "  "
+# Windows = "🪟 "

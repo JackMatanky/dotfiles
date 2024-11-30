@@ -1,0 +1,38 @@
+matches:
+    - trigger: ":not"
+      replace: "¬"
+    - trigger: ":and"
+      replace: "∧"
+    - trigger: ":or"
+      replace: "∨"
+    - trigger: ":xor"
+      replace: "⊕"
+    - triggers: [":imp", ":if"]
+      replace: "→"
+    - trigger: ":impl"
+      replace: "⇒"
+    - triggers: [":bimp", ":iff"]
+      replace: "↔"
+    - trigger: ":equiv"
+      replace: "⇔"
+    - triggers: [":eq", ":def"]
+      replace: "≡"
+    - triggers: [":true", ":top"]
+      replace: "⊤"
+    - triggers: [":false", ":bot"]
+      replace: "⊥"
+    - trigger: ":forall"
+      replace: "∀"
+    - trigger: ":exists"
+      replace: "∃"
+    - trigger: ":proves"
+      replace: "⊢"
+    - trigger: ":models"
+      replace: "⊨"
+    # Proofs
+    - trigger: ":therefore"
+      replace: "∴"
+    - trigger: ":because"
+      replace: "∵"
+    - trigger: ":qed"
+      replace: "■"
