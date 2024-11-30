@@ -23,6 +23,7 @@
       gnome-connections
       gnome-text-editor
       gnome-tour # tour app
+      nautilus # File Manager
       yelp # help viewer
     ]);
 }
