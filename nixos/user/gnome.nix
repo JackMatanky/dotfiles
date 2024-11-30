@@ -1,3 +1,4 @@
+# GSConnect - NixOS Wiki: https://wiki.nixos.org/wiki/KDE_Connect
 {
   config,
   pkgs,
@@ -21,6 +22,7 @@
     };
     "org/gnome/desktop/interface" = {
       clock-show-weekday = false;
+      enable-hot-corners = true;
     };
   };
   # dconf.settings = {
