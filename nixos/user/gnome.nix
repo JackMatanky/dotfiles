@@ -8,12 +8,6 @@
   home.packages = [
     pkgs.kdeconnect
   ];
-  services = {
-    kdeconnect = {
-      enable = true;
-      package = pkgs.gnomeExtensions.gsconnect;
-    };
-  };
 
   services = {
     kdeconnect = {
