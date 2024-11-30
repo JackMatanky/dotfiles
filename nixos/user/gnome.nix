@@ -5,21 +5,6 @@
   lib,
   ...
 }: {
-  home-manager.users.username.programs.gnome-shell = {
-    enable = true;
-    extensions = [{package = pkgs.gnomeExtensions.gsconnect;}];
-  };
-
-  networking.firewall = rec {
-    allowedTCPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      }
-    ];
-    allowedUDPPortRanges = allowedTCPPortRanges;
-  };
-
   services = {
     kdeconnect = {
       enable = true;
@@ -33,6 +18,11 @@
       disable-user-extensions = false;
       enabled-extensions = [
         "gsconnect@andyholmes.github.io"
+        "system-monitor@gnome-shell-extensions.gcampax.github.com"
+        "apps-menu@gnome-shell-extensions.gcampax.github.com"
+        "places-status-indicator@gnome-shell-extensions.gcampax.github.com"
+        "removable-drive-menu@gnome-shell-extensions.gcampax.github.com"
+        "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com"
       ];
     };
     "org/gnome/desktop/interface" = {
