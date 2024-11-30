@@ -75,15 +75,15 @@ in {
     };
   };
   programs = {
-    bash = {
-      enable = false;
-      # enableCompletion = true;
-      # shellAliases = myAliases;
+    # bash = {
+    #   enable = true;
+    #   enableCompletion = true;
+    #   shellAliases = myAliases;
 
-      # initExtra = ''
-      #   eval "$(starship init bash)"
-      # '';
-    };
+    #   initExtra = ''
+    #     eval "$(starship init bash)"
+    #   '';
+    # };
 
     zsh = {
       enable = true;

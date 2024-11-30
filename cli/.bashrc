@@ -30,14 +30,14 @@ export PYENV_ROOT="$MY_HOME/.local/share/pyenv"
 eval "$("$NIX_PROFILE/pyenv" init -)"
 source <("$NIX_PROFILE/carapace" _carapace bash)
 
-# Bash Completion
-if [[ ! -v BASH_COMPLETION_VERSINFO ]]; then
-  . "/nix/store/x2659ivhdgpgjymf1hcxxr7mz4h84rgi-bash-completion-2.13.0/etc/profile.d/bash_completion.sh"
-fi
-
 # Starship prompt
 eval "$(starship init bash)"
 
 if [[ $TERM != "dumb" ]]; then
   eval "$("$NIX_PROFILE/starship" init bash --print-full-init)"
+fi
+
+# Bash Completion
+if [[ ! -v BASH_COMPLETION_VERSINFO ]]; then
+  . "/nix/store/x2659ivhdgpgjymf1hcxxr7mz4h84rgi-bash-completion-2.13.0/etc/profile.d/bash_completion.sh"
 fi
