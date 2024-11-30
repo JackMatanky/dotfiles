@@ -60,30 +60,25 @@
   };
 in {
   home = {
-    packages = with pkgs; [
-      bash-completion
-      tree
-    ];
 
     file = {
-      # ".bashrc".source = lib.mkForce "${cliDir}/.bashrc";
-      ".bashrc".source = "${cliDir}/.bashrc";
-      ".zshrc".source = "${cliDir}/.zshrc";
-      # ".config/nushell".source = "${cliDir}/nushell";
+      # ".bashrc".source = "${cliDir}/.bashrc";
+      # ".zshrc".source = "${cliDir}/.zshrc";
+      ".config/nushell".source = "${cliDir}/nushell";
       ".config/alacritty/alacritty.toml".source = "${cliDir}/alacritty.toml";
       ".config/starship/starship.toml".source = "${cliDir}/starship.toml";
     };
   };
   programs = {
-    # bash = {
-    #   enable = true;
-    #   enableCompletion = true;
-    #   shellAliases = myAliases;
+    bash = {
+      enable = true;
+      enableCompletion = true;
+      shellAliases = myAliases;
 
-    #   initExtra = ''
-    #     eval "$(starship init bash)"
-    #   '';
-    # };
+      initExtra = ''
+        eval "$(starship init bash)"
+      '';
+    };
 
     zsh = {
       enable = true;
@@ -106,16 +101,16 @@ in {
       };
     };
 
-    # nushell = {
-    #   enable = true;
+    nushell = {
+      enable = true;
 
-    #   # Set environment variables
-    #   environmentVariables = {
-    #     EDITOR = "zed"; # Set the default editor to Zed
-    #     VISUAL = "zed";
-    #     STARSHIP_CONFIG = "${cliDir}/starship.toml"; # Path to the Starship configuration file
-    #   };
-    # };
+      # Set environment variables
+      environmentVariables = {
+        EDITOR = "zed"; # Set the default editor to Zed
+        VISUAL = "zed";
+        STARSHIP_CONFIG = "${cliDir}/starship.toml"; # Path to the Starship configuration file
+      };
+    };
 
     alacritty = {
       enable = true;
