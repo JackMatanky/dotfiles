@@ -62,15 +62,15 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Setting for GSConnect, based on Nix Wiki
-  # networking.firewall = rec {
-  #   allowedTCPPortRanges = [
-  #     {
-  #       from = 1714;
-  #       to = 1764;
-  #     }
-  #   ];
-  #   allowedUDPPortRanges = allowedTCPPortRanges;
-  # };
+  networking.firewall = rec {
+    allowedTCPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      }
+    ];
+    allowedUDPPortRanges = allowedTCPPortRanges;
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
