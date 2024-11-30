@@ -11,6 +11,7 @@
   environment.gnome.excludePackages =
     (with pkgs.gnome; [
       epiphany # web browser
+      nautilus # File Manager
       simple-scan # document scanner
       totem # video player
       yelp # help viewer
@@ -23,7 +24,6 @@
       gnome-connections
       gnome-text-editor
       gnome-tour # tour app
-      nautilus # File Manager
       yelp # help viewer
     ]);
 }

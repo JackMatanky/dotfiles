@@ -24,7 +24,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix.url = "github:danth/stylix";
+    # stylix.url = "github:danth/stylix";
 
     # hyprland.url = "github:hyprwm/Hyprland";
   };
@@ -72,7 +72,7 @@
           nixos-hardware.nixosModules.microsoft-surface-common
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
           home-manager.nixosModules.default
-          inputs.stylix.nixosModules.stylix
+          # inputs.stylix.nixosModules.stylix
           ./nixos/hardware-configuration.nix
           ./nixos/configuration.nix
           swapModule

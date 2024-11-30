@@ -4,6 +4,7 @@
   ...
 }: {
   stylix = {
+    enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
 
     # OR
@@ -30,6 +31,22 @@
     # Don't forget to apply wallpaper
 
     image = ../../assets/background_desktop_cloud_lake_winter_fantasy.jpg;
+
+    fonts.sizes = {
+      applications = 12;
+      terminal = 15;
+      desktop = 10;
+      popups = 10;
+    };
+
+    opacity = {
+      applications = 1.0;
+      terminal = 1.0;
+      desktop = 1.0;
+      popups = 1.0;
+    };
+
+    polarity = "dark"; # "light" or "either"
 
     # cursor.package = pkgs.bibata-cursors;
     #   stylix.cursor.name = "Bibata-Modern-Ice";
