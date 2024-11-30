@@ -5,6 +5,21 @@
   lib,
   ...
 }: {
+  home-manager.users.username.programs.gnome-shell = {
+    enable = true;
+    extensions = [{package = pkgs.gnomeExtensions.gsconnect;}];
+  };
+
+  networking.firewall = rec {
+    allowedTCPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      }
+    ];
+    allowedUDPPortRanges = allowedTCPPortRanges;
+  };
+
   services = {
     kdeconnect = {
       enable = true;
@@ -22,6 +37,8 @@
     };
     "org/gnome/desktop/interface" = {
       clock-show-weekday = false;
+      clock-show-seconds = false;
+      show-battery-percentage = true;
       enable-hot-corners = true;
     };
   };
