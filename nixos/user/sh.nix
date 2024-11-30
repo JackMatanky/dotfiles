@@ -66,9 +66,9 @@ in {
     ];
 
     file = {
-      # Configuration files for shells
-      ".bashrc".source = "${cliDir}/.bashrc";
       # ".bashrc".source = lib.mkForce "${cliDir}/.bashrc";
+      ".bashrc".source = "${cliDir}/.bashrc";
+      ".zshrc".source = "${cliDir}/.zshrc";
       # ".config/nushell".source = "${cliDir}/nushell";
       ".config/alacritty/alacritty.toml".source = "${cliDir}/alacritty.toml";
       ".config/starship/starship.toml".source = "${cliDir}/starship.toml";
@@ -101,9 +101,9 @@ in {
         eval "$(starship init zsh)"
       '';
 
-      sessionVariables = {
-        TERMINAL = "${pkgs.alacritty}/bin/alacritty";
-      };
+      # sessionVariables = {
+      #   TERMINAL = "${pkgs.alacritty}/bin/alacritty";
+      # };
     };
 
     # nushell = {
@@ -117,9 +117,9 @@ in {
     #   };
     # };
 
-    alacritty = {
-      enable = true;
-    };
+    # alacritty = {
+    #   enable = true;
+    # };
 
     tmux = {
       enable = true;
