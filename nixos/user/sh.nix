@@ -63,6 +63,7 @@ in {
 
     file = {
       # Configuration files for shells
+      ".bashrc".source = "${cliDir}/.bashrc";
       ".config/nushell".source = "${cliDir}/nushell";
       ".config/alacritty/alacritty.toml".source = "${cliDir}/alacritty.toml";
       ".config/starship/starship.toml".source = "${cliDir}/starship.toml";
