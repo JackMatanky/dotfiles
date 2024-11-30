@@ -4,6 +4,13 @@
   lib,
   ...
 }: {
+  services = {
+    kdeconnect = {
+      enable = true;
+      package = pkgs.gnomeExtensions.gsconnect;
+    };
+  };
+
   dconf.settings = {
     # Enabled GNOME Extensions
     "org/gnome/shell" = {

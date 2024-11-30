@@ -119,10 +119,6 @@
     espanso = {
       enable = true;
     };
-
-    kdeconnect = {
-      enable = true;
-    };
   };
 
   # gtk = {
