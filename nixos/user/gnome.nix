@@ -21,12 +21,16 @@
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = [
-        "gsconnect@andyholmes.github.io"
-        "system-monitor@gnome-shell-extensions.gcampax.github.com"
         "apps-menu@gnome-shell-extensions.gcampax.github.com"
-        "places-status-indicator@gnome-shell-extensions.gcampax.github.com"
-        "removable-drive-menu@gnome-shell-extensions.gcampax.github.com"
+        "gsconnect@andyholmes.github.io"
+        "native-window-placement@gnome-shell-extensions.gcampax.github.com"
+        "places-menu@gnome-shell-extensions.gcampax.github.com"
+        "drive-menu@gnome-shell-extensions.gcampax.github.com"
         "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com"
+        "status-icons@gnome-shell-extensions.gcampax.github.com"
+        "system-monitor@gnome-shell-extensions.gcampax.github.com"
+        "window-list@gnome-shell-extensions.gcampax.github.com"
+        "windowNavigator@gnome-shell-extensions.gcampax.github.com"
       ];
     };
 
