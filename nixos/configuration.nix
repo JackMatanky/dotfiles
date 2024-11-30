@@ -19,6 +19,7 @@
     ./system/gnome.nix
     ./system/locale.nix
     ./system/storage.nix
+    ./system/stylix.nix
     ./system/swap.nix
   ];
 

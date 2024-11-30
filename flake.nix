@@ -24,6 +24,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix.url = "github:danth/stylix";
+
     # hyprland.url = "github:hyprwm/Hyprland";
   };
 
@@ -49,8 +51,8 @@
       hostName = "${userSettings.username}${device}";
       profile = "personal";
       timeZone = "Asia/Jerusalem";
-      localeDefault = "en_IL.UTF-8"; # "en_IL.utf8"; # "en_IL";
-      localeSecondary = "en_US.UTF-8"; # "en_US.utf8";
+      localeDefault = "en_IL.UTF-8"; # "en_IL";
+      localeSecondary = "en_US.UTF-8";
       # bootMode = "uefi"; # uefi or bios
       # bootMountPath = "/boot"; # mount path for efi boot partition; only used for uefi boot mode
       # grubDevice = ""; # device identifier for grub; only used for legacy (bios) boot mode
@@ -70,6 +72,7 @@
           nixos-hardware.nixosModules.microsoft-surface-common
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
           home-manager.nixosModules.default
+          inputs.stylix.nixosModules.stylix
           ./nixos/hardware-configuration.nix
           ./nixos/configuration.nix
           swapModule
