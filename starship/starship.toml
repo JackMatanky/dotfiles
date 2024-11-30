@@ -1,0 +1,85 @@
+# Base configuration from Omer Hamerman (GitHub: omerxx)
+# Source: https://github.com/omerxx/dotfiles/blob/master/starship/starship.toml
+
+# Starship Configuration for Nushell and Alacritty
+
+# Disable automatic newline before prompt
+add_newline = false
+
+# Minimal left prompt configuration
+format = """$directory$character"""
+
+# Color palette configuration for Catppuccin Mocha
+palette = "catppuccin_mocha"
+
+# Move additional information to the right side
+right_format = """$all"""
+
+# Timeout for commands in milliseconds
+command_timeout = 1000
+
+# Directory configuration with custom substitutions
+[directory]
+substitutions = { '~/tests/starship-custom' = 'work-project' }
+truncation_length = 3                                          # Limit directory segments
+truncate_to_repo = true                                        # Truncate to the Git repository root
+
+# Git Branch Module
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style)'
+style = "bold yellow"                                # Highlight branch names
+symbol = " "                                        # Custom branch symbol
+
+# AWS Module for Cloud Profiles
+# [aws]
+# format = '[$symbol(profile: "$profile" )(\(region: $region\) )]($style)'
+# disabled = false
+# style = 'bold blue'
+# symbol = " "       # Custom AWS symbol
+
+# GoLang Module
+# [golang]
+# format = '[ ](bold cyan)' # Add GoLang symbol
+
+# Kubernetes Module
+# [kubernetes]
+# symbol = '☸ ' # Kubernetes symbol
+# disabled = false # Enable Kubernetes context display
+# detect_files = ['Dockerfile'] # Detect files in the current directory
+# format = '[$symbol$context( \($namespace\))]($style)'
+# contexts = [
+#     { context_pattern = "", style = "green", context_alias = "omerxx", symbol = " " },
+# ]
+
+# Docker Context
+[docker_context]
+disabled = true # Disable Docker context detection
+
+# Catppuccin Mocha Palette
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"

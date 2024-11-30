@@ -141,6 +141,7 @@
   # System Profile Packages
   environment.systemPackages = with pkgs; [
     wget
+    nushell
     zsh
     git
     glibcLocales
@@ -149,8 +150,11 @@
 
   # Default Shell: ZSH
   programs.zsh.enable = true;
-  environment.shells = with pkgs; [zsh];
-  users.defaultUserShell = pkgs.zsh;
+  environment.shells = with pkgs; [
+    zsh
+    nushell
+  ];
+  users.defaultUserShell = pkgs.nushell;
   environment.pathsToLink = ["/share/zsh"];
 
   # Install firefox.

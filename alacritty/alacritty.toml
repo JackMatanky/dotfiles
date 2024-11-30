@@ -1,0 +1,92 @@
+# Alacritty Configuration
+# Matches the Catppuccin Mocha palette and integrates with Nushell and Starship.
+
+# Window Settings
+[window]
+decorations = "none"       # Disable window decorations for a cleaner look
+dynamic_title = true       # Update the terminal title dynamically
+padding = { x = 8, y = 8 } # Add padding around the terminal
+startup_mode = "Windowed"  # Start in windowed mode
+
+# Font Configuration
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" } # Use Nerd Font for icons
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+size = 12.0                                                        # Font size
+offset = { x = 0.0, y = 0.0 }                                      # Adjust font offset
+
+# Cursor Style
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+unfocused_hollow = true                     # Hollow cursor when unfocused
+
+# Colors: Catppuccin Mocha Palette
+[colors]
+[colors.primary]
+background = "#1e1e2e" # Base color for background
+foreground = "#cdd6f4" # Text color (matches Starship `text`)
+
+[colors.normal]
+black = "#45475a"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#cba6f7"
+cyan = "#89dceb"
+white = "#bac2de"
+
+[colors.bright]
+black = "#585b70"
+red = "#eba0ac"
+green = "#94e2d5"
+yellow = "#fab387"
+blue = "#74c7ec"
+magenta = "#f5c2e7"
+cyan = "#b4befe"
+white = "#f2cdcd"
+
+[colors.dim]
+black = "#313244"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#cba6f7"
+cyan = "#89dceb"
+white = "#cdd6f4"
+
+# Visual Bell Colors
+[bell]
+color = "#f38ba8" # Flash red on terminal bell events
+
+# Key Bindings
+[keyboard]
+bindings = [
+    # Paste with Ctrl+V
+    { key = "V", mods = "Control", action = "Paste" },
+    # Copy with Ctrl+C
+    { key = "C", mods = "Control", action = "Copy" },
+    # Clear screen with Ctrl+L
+    { key = "L", mods = "Control", action = "ClearLogNotice" },
+    # Increase font size with Ctrl+=
+    { key = "Equals", mods = "Control", action = "IncreaseFontSize" },
+    # Decrease font size with Ctrl+-
+    { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
+    # Open a new Alacritty window with Ctrl+N
+    { key = "N", mods = "Control", action = "SpawnNewInstance" },
+]
+
+# Scrollback Buffer
+[scrolling]
+history = 10000 # Increase scrollback buffer for command history
+multiplier = 3  # Adjust scroll speed
+
+# Shell Configuration
+[shell]
+program = "nushell" # Use Nushell as the default shell
+args = [
+    "--config",
+    "~/.config/nushell/env.nu",
+] # Specify custom Nushell config file
