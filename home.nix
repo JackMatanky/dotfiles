@@ -54,7 +54,7 @@
       # wine
       # bottles
 
-      lxqt.pcmanfm-qt
+      pcmanfm-qt
     ];
 
     pointerCursor = {
