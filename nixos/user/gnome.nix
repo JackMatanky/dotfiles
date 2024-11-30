@@ -30,7 +30,7 @@
         "status-icons@gnome-shell-extensions.gcampax.github.com"
         "system-monitor@gnome-shell-extensions.gcampax.github.com"
         "window-list@gnome-shell-extensions.gcampax.github.com"
-        "window-navigator@gnome-shell-extensions.gcampax.github.com"
+        "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
       ];
     };
 
