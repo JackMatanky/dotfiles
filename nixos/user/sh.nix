@@ -69,7 +69,7 @@ in {
       # Configuration files for shells
       ".bashrc".source = "${cliDir}/.bashrc";
       # ".bashrc".source = lib.mkForce "${cliDir}/.bashrc";
-      ".config/nushell".source = "${cliDir}/nushell";
+      # ".config/nushell".source = "${cliDir}/nushell";
       ".config/alacritty/alacritty.toml".source = "${cliDir}/alacritty.toml";
       ".config/starship/starship.toml".source = "${cliDir}/starship.toml";
     };
@@ -106,16 +106,16 @@ in {
       };
     };
 
-    nushell = {
-      enable = true;
+    # nushell = {
+    #   enable = true;
 
-      # Set environment variables
-      environmentVariables = {
-        EDITOR = "zed"; # Set the default editor to Zed
-        VISUAL = "zed";
-        STARSHIP_CONFIG = "${cliDir}/starship.toml"; # Path to the Starship configuration file
-      };
-    };
+    #   # Set environment variables
+    #   environmentVariables = {
+    #     EDITOR = "zed"; # Set the default editor to Zed
+    #     VISUAL = "zed";
+    #     STARSHIP_CONFIG = "${cliDir}/starship.toml"; # Path to the Starship configuration file
+    #   };
+    # };
 
     alacritty = {
       enable = true;

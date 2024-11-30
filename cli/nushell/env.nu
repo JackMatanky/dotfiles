@@ -63,8 +63,8 @@ $env.NU_PLUGIN_DIRS = [
 
 # Update PATH dynamically
 # Add commonly used directories to PATH
-path add /run/current-system/sw/bin
-path add /home/$nu.env.USER/.local/bin
+path /run/current-system/sw/bin
+path /home/$nu.env.USER/.local/bin
 
 # Optional integrations
 # Initialize Starship if available
