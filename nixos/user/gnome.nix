@@ -53,11 +53,11 @@
       dynamic-workspaces = true;
     };
 
-    # Multitasking Settings
-    "org/gnome.shell" = {
-      overrides.workspaces-only-on-primary = false;
-      app-switcher.current-workspace-only = false;
-    };
+    # # Multitasking Settings
+    # "org/gnome.shell" = {
+    #   overrides.workspaces-only-on-primary = false;
+    #   app-switcher.current-workspace-only = false;
+    # };
 
     # Custom Shortcuts
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
