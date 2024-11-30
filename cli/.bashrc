@@ -17,14 +17,18 @@ if [[ -z "$HOME" ]]; then
   export HOME="$(eval echo ~)"
 fi
 
+# --- Define variables for commonly used paths ---
+export MY_HOME="$HOME"
+export NIX_PROFILE="$MY_HOME/.nix-profile/bin"
+
 # --- Import aliases from a separate file ---
-source ~/aliases.sh
+source "$HOME/.dotfiles/cli/aliases.sh"
 
 # --- Initialize tools ---
-eval "$(/home/jack/.nix-profile/bin/zoxide init bash)"
-export PYENV_ROOT="/home/jack/.local/share/pyenv"
-eval "$(/home/jack/.nix-profile/bin/pyenv init -)"
-source <(/home/jack/.nix-profile/bin/carapace _carapace bash)
+eval "$("$NIX_PROFILE/zoxide" init bash)"
+export PYENV_ROOT="$MY_HOME/.local/share/pyenv"
+eval "$("$NIX_PROFILE/pyenv" init -)"
+source <("$NIX_PROFILE/carapace" _carapace bash)
 
 # Bash Completion
 if [[ ! -v BASH_COMPLETION_VERSINFO ]]; then
@@ -35,5 +39,5 @@ fi
 eval "$(starship init bash)"
 
 if [[ $TERM != "dumb" ]]; then
-  eval "$(/home/jack/.nix-profile/bin/starship init bash --print-full-init)"
+  eval "$("$NIX_PROFILE/starship" init bash --print-full-init)"
 fi

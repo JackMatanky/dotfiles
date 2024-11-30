@@ -155,28 +155,29 @@ let-env config = {
     }
 }
 
+source ~/.dotfiles/cli/aliases.sh
 # Source external aliases from a shell script
 # This script should contain alias definitions compatible with Nushell
-def source_aliases [] {
-    if (not (path exists ~/.dotfiles/cli/aliases.sh)) {
-        echo "aliases.sh not found, skipping alias import"
-        return
-    }
+# def source_aliases [] {
+#     if (not (path exists ~/.dotfiles/cli/aliases.sh)) {
+#         echo "aliases.sh not found, skipping alias import"
+#         return
+#     }
 
-    let lines = (open ~/.dotfiles/cli/aliases.sh | lines)
-    for line in $lines {
-        if ($line | str starts-with '#') or ($line | str trim == '') {
-            continue  # Skip comments and empty lines
-        }
-        let parts = ($line | str split '=' | str trim)
-        if ($parts | length) != 2 {
-            continue  # Skip lines that don't match the alias format
-        }
-        let alias_name = ($parts | first)
-        let alias_command = ($parts | last | str replace '"' '' | str replace "'" '')
-        alias $alias_name = $alias_command
-    }
-}
+#     let lines = (open ~/.dotfiles/cli/aliases.sh | lines)
+#     for line in $lines {
+#         if ($line | str starts-with '#') or ($line | str trim == '') {
+#             continue  # Skip comments and empty lines
+#         }
+#         let parts = ($line | str split '=' | str trim)
+#         if ($parts | length) != 2 {
+#             continue  # Skip lines that don't match the alias format
+#         }
+#         let alias_name = ($parts | first)
+#         let alias_command = ($parts | last | str replace '"' '' | str replace "'" '')
+#         alias $alias_name = $alias_command
+#     }
+# }
 
 # Call the function to source aliases
 source_aliases

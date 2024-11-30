@@ -67,7 +67,8 @@ in {
 
     file = {
       # Configuration files for shells
-      ".bashrc".source = lib.mkForce "${cliDir}/.bashrc";
+      ".bashrc".source = "${cliDir}/.bashrc";
+      # ".bashrc".source = lib.mkForce "${cliDir}/.bashrc";
       ".config/nushell".source = "${cliDir}/nushell";
       ".config/alacritty/alacritty.toml".source = "${cliDir}/alacritty.toml";
       ".config/starship/starship.toml".source = "${cliDir}/starship.toml";
@@ -75,8 +76,8 @@ in {
   };
   programs = {
     bash = {
-      enable = true;
-      enableCompletion = true;
+      enable = false;
+      # enableCompletion = true;
       # shellAliases = myAliases;
 
       # initExtra = ''
