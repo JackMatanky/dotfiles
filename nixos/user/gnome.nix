@@ -42,6 +42,23 @@
       enable-hot-corners = true;
     };
 
+    # Power Settings
+    "org/gnome/settings-daemon/plugins/power" = {
+      sleep-inactive-battery-type = "suspend";
+      power-button-action = "shutdown";
+    };
+
+    # Workspace Settings
+    "org/gnome/mutter" = {
+      dynamic-workspaces = true;
+    };
+
+    # Multitasking Settings
+    "org/gnome.shell" = {
+      overrides.workspaces-only-on-primary = false;
+      app-switcher.current-workspace-only = false;
+    };
+
     # Custom Shortcuts
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       name = "Home Folder";
@@ -72,30 +89,6 @@
   #             (mkTuple ["xkb" "us"])
   #             (mkTuple ["xkb" "il"])
   #           ];
-
-  #           # Enabled GNOME Extensions
-  #           "org/gnome/shell" = {
-  #             disable-user-extensions = false;
-  #             enabled-extensions = [
-  #               "apps-menu@gnome-shell-extensions.gcampax.github.com"
-  #               "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
-  #               "native-window-placement@gnome-shell-extensions.gcampax.github.com"
-  #               "places-status-indicator@gnome-shell-extensions.gcampax.github.com"
-  #               "removable-drive-menu@gnome-shell-extensions.gcampax.github.com"
-  #               "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com"
-  #               "system-monitor@gnome-shell-extensions.gcampax.github.com"
-  #               "user-themes@gnome-shell-extensions.gcampax.github.com"
-  #               "window-list@gnome-shell-extensions.gcampax.github.com"
-  #               "windowManager@gnome-shell-extensions.gcampax.github.com"
-  #             ];
-  #           };
-
-  #           # Custom Shortcuts
-  #           "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-  #             name = "Home Folder";
-  #             command = "/usr/bin/env nautilus";
-  #             binding = "<Super>e";
-  #           };
 
   #           "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [
   #             "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
