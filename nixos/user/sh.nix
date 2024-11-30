@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   # pkgs-unstable,
   # userSettings,
   ...
@@ -63,7 +64,7 @@ in {
 
     file = {
       # Configuration files for shells
-      ".bashrc".source = "${cliDir}/.bashrc";
+      ".bashrc".source = lib.mkForce "${cliDir}/.bashrc";
       ".config/nushell".source = "${cliDir}/nushell";
       ".config/alacritty/alacritty.toml".source = "${cliDir}/alacritty.toml";
       ".config/starship/starship.toml".source = "${cliDir}/starship.toml";
@@ -73,11 +74,11 @@ in {
     bash = {
       enable = true;
       enableCompletion = true;
-      shellAliases = myAliases;
+      # shellAliases = myAliases;
 
-      initExtra = ''
-        eval "$(starship init bash)"
-      '';
+      # initExtra = ''
+      #   eval "$(starship init bash)"
+      # '';
     };
 
     zsh = {
