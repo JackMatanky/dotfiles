@@ -60,7 +60,10 @@
   };
 in {
   home = {
-    packages = [pkgs.tree];
+    packages = with pkgs; [
+      bash-completion
+      tree
+    ];
 
     file = {
       # Configuration files for shells

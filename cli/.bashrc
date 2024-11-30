@@ -1,6 +1,3 @@
-# Source the aliases.sh file
-source ~/aliases.sh
-
 # Commands that should be applied only for interactive shells.
 [[ $- == *i* ]] || return
 
@@ -15,19 +12,28 @@ shopt -s extglob
 shopt -s globstar
 shopt -s checkjobs
 
+# --- Set $HOME if not already set ---
+if [[ -z "$HOME" ]]; then
+  export HOME="$(eval echo ~)"
+fi
+
+# --- Import aliases from a separate file ---
+source ~/aliases.sh
+
+# --- Initialize tools ---
+eval "$(/home/jack/.nix-profile/bin/zoxide init bash)"
+export PYENV_ROOT="/home/jack/.local/share/pyenv"
+eval "$(/home/jack/.nix-profile/bin/pyenv init -)"
+source <(/home/jack/.nix-profile/bin/carapace _carapace bash)
+
+# Bash Completion
 if [[ ! -v BASH_COMPLETION_VERSINFO ]]; then
   . "/nix/store/x2659ivhdgpgjymf1hcxxr7mz4h84rgi-bash-completion-2.13.0/etc/profile.d/bash_completion.sh"
 fi
 
+# Starship prompt
 eval "$(starship init bash)"
-
-eval "$(/nix/store/35dlmkd4yvsr286zr8l2byv2wybkg5sz-zoxide-0.9.4/bin/zoxide init bash )"
 
 if [[ $TERM != "dumb" ]]; then
   eval "$(/home/jack/.nix-profile/bin/starship init bash --print-full-init)"
 fi
-
-export PYENV_ROOT="/home/jack/.local/share/pyenv"
-eval "$(/nix/store/fzx56sj1mbh4zgw5471hq0calcii4p8c-pyenv-2.4.1/bin/pyenv init - bash)"
-
-source <(/nix/store/ymwrpk2s7d3f1qdqssyj755s8bm5qgak-carapace-1.0.2/bin/carapace _carapace bash)
