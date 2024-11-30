@@ -8,6 +8,12 @@
   home.packages = [
     pkgs.kdeconnect
   ];
+  services = {
+    kdeconnect = {
+      enable = true;
+      package = pkgs.gnomeExtensions.gsconnect;
+    };
+  };
 
   services = {
     kdeconnect = {
@@ -30,7 +36,7 @@
         "status-icons@gnome-shell-extensions.gcampax.github.com"
         "system-monitor@gnome-shell-extensions.gcampax.github.com"
         "window-list@gnome-shell-extensions.gcampax.github.com"
-        "windowNavigator@gnome-shell-extensions.gcampax.github.com"
+        "window-navigator@gnome-shell-extensions.gcampax.github.com"
       ];
     };
 
