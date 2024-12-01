@@ -64,7 +64,7 @@ in {
     file = {
       # ".bashrc".source = "${cliDir}/.bashrc";
       # ".zshrc".source = "${cliDir}/.zshrc";
-      ".config/nushell".source = "${cliDir}/nushell";
+      # ".config/nushell".source = "${cliDir}/nushell";
       ".config/alacritty/alacritty.toml".source = "${cliDir}/alacritty.toml";
       ".config/starship/starship.toml".source = "${cliDir}/starship.toml";
     };

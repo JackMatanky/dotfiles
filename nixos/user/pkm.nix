@@ -12,7 +12,14 @@
 in {
   home = {
     packages = with pkgs; [
-      anki-bin
+      anki-bin # Flashcard program
+      ffmpeg # Video/audio processing (dependency for Anki)
+
+      obsidian # Markdown-based knowledge management
+
+      xournalpp # Handwriting annotation software
+
+      zotero # Reference manager
     ];
 
     file = {

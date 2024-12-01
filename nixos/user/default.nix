@@ -12,7 +12,6 @@
     ./fonts.nix
     ./git.nix
     ./gnome.nix
-    # ./oh-my-posh.nix
     ./python.nix
     ./pkm.nix
     ./sh.nix

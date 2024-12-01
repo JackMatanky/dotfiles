@@ -14,7 +14,7 @@
       fonts = ["FiraCode" "JetBrainsMono"];
     })
     # Anki Fonts
-    noto-fonts
+    noto-fonts # multilingual support
     dejavu_fonts
   ];
 

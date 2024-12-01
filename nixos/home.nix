@@ -18,14 +18,6 @@
     # Environment Packages
     # Packages installed in the user's environment
     packages = with pkgs; [
-      # Personal Knowledge Management
-      anki-bin # Flashcard program
-      ffmpeg # Video/audio processing (dependency for Anki)
-      noto-fonts # Fonts for multilingual support
-      obsidian # Markdown-based knowledge management
-      zotero # Reference manager
-      xournalpp # Handwriting annotation software
-
       # Office and Dictionaries
       libreoffice # Office suite
       hunspell # Spell checker
@@ -37,6 +29,7 @@
 
       # Development Tools
       nixd # Nix language server (LSP)
+      nil
       alejandra # Nix code formatter
       javascript-typescript-langserver # JS/TS LSP
       nodejs # JavaScript runtime
