@@ -8,7 +8,7 @@
   ...
 }: {
   # Firefox
-  firefox = {
+  programs.firefox = {
     enable = true; # Install Firefox browser
   };
 }
