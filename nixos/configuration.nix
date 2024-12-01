@@ -39,10 +39,10 @@
     description = userSettings.fullName;
     extraGroups = ["networkmanager" "wheel" "audio" "video" "surface-control"];
     home = "/home/${userSettings.username}"; # User's home directory.
-    openssh.authorizedKeys.keys = [
-      # "ssh-rsa AAAAB3NzaC1yc2etc/etc/etcjwrsh8e596z6J0l7 ${userSettings.email}"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILgliFd1XFp9mFWwZv8Rv2ilf7hbdIgBe2ezaVdRB4Cw ${userSettings.email}"
-    ];
+    #openssh.authorizedKeys.keys = [
+    #  # "ssh-rsa AAAAB3NzaC1yc2etc/etc/etcjwrsh8e596z6J0l7 ${userSettings.email}"
+    #  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILgliFd1XFp9mFWwZv8Rv2ilf7hbdIgBe2ezaVdRB4Cw ${userSettings.email}"
+    #];
     # packages = with pkgs; [
     #   thunderbird
     # ];
@@ -145,6 +145,7 @@
     zsh
     git
     glibcLocales
+    pcmanfm-qt
     bluez-experimental
   ];
 

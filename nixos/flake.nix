@@ -61,9 +61,6 @@
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${systemSettings.system};
     pkgs-unstable = nixpkgs-unstable.legacyPackages.${systemSettings.system};
-
-    # Modules
-    swapModule = import ./nixos/modules/swap.nix;
   in {
     nixosConfigurations = {
       jackSurfacePro = lib.nixosSystem {
@@ -73,9 +70,9 @@
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
           home-manager.nixosModules.default
           # inputs.stylix.nixosModules.stylix
-          ./nixos/hardware-configuration.nix
-          ./nixos/configuration.nix
-          swapModule
+          ./modules/swap.nix
+          ./hardware-configuration.nix
+          ./configuration.nix
           # ./hosts/surface-pro/surface-pkgs.nix
           # (import ./hosts/surface-pro/surface-kernel.nix {
           #   inherit lib pkgs linuxSurfaceRepo;
