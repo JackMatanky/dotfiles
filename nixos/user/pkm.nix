@@ -33,6 +33,7 @@ in {
     };
   };
 
+  # https://mynixos.com/home-manager/options/programs.mpv
   programs.mpv = {
     enable = true;
   };
