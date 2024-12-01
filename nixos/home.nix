@@ -7,7 +7,7 @@
 }: {
   # Import additional configurations if needed
   imports = [
-    ./user
+    ./user/default.nix
   ];
 
   # Home Manager Configuration
