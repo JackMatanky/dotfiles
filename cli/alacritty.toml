@@ -10,7 +10,7 @@ bold_italic = { family = "Fira Code", style = "Bold Italic" }
 
 [shell]
 program = "/home/jack/.nix-profile/bin/starship"
-args = ["init", "zsh"]
+args = ["init", "/home/jack/.nix-profile/bin/nu"]  # Launch nushell with Starship
 
 [keyboard]
 bindings = [

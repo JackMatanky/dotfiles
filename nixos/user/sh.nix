@@ -28,7 +28,8 @@
     hm_switch_trace = "home-manager switch --flake . --show-trace";
 
     # Nix - Garbage Collector
-    cg_empty = "sudo nix-collect-garbage -d";
+    cg_empty = "sudo nix-collect-garbage";
+    cg_empty_all = "sudo nix-collect-garbage -d";
 
     # Git
     gad = "git add";
@@ -60,7 +61,6 @@
   };
 in {
   home = {
-
     file = {
       # ".bashrc".source = "${cliDir}/.bashrc";
       # ".zshrc".source = "${cliDir}/.zshrc";
