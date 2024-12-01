@@ -23,7 +23,7 @@ in {
     ];
 
     file = {
-      ".local/share/Anki2".source = ankiDir;
+      # ".local/share/Anki2".source = ankiDir;
       # ".local/share/Anki2/addons21/AnkiConnect".source = pkgs.fetchFromGitHub {
       #   owner = "FooSoft";
       #   repo = "anki-connect";
