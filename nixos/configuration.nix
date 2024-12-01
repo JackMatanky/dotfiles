@@ -145,8 +145,8 @@
     zsh
     git
     glibcLocales
-    pcmanfm-qt
-    bluez-experimental
+    pcmanfm-qt # File Manager
+    # bluez-experimental
   ];
 
   # Default Shell: ZSH
@@ -159,7 +159,7 @@
   environment.pathsToLink = ["/share/zsh"];
 
   # Install firefox.
-  programs.firefox.enable = true;
+  # programs.firefox.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
