@@ -104,6 +104,8 @@ in {
     nushell = {
       enable = true;
 
+      shellAliases = myAliases;
+
       # Set environment variables
       environmentVariables = {
         EDITOR = "zed"; # Set the default editor to Zed
