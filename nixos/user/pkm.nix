@@ -32,4 +32,8 @@ in {
       # };
     };
   };
+
+  programs.mpv = {
+    enable = true;
+  };
 }
