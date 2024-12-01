@@ -7,5 +7,8 @@
   # userSettings,
   ...
 }: {
-
-};
+  # Firefox
+  firefox = {
+    enable = true; # Install Firefox browser
+  };
+}

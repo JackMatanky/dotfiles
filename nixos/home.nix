@@ -78,11 +78,6 @@
       enable = true; # Enable LaTeX support
     };
 
-    # Firefox
-    firefox = {
-      enable = true; # Install Firefox browser
-    };
-
     # rTorrent
     rtorrent = {
       enable = true; # Enable rTorrent for downloading torrents

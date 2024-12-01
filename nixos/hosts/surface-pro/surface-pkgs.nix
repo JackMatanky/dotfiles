@@ -14,31 +14,6 @@
     # ./kernel.nix
   ];
 
-  # Create a user group for managing permissions related to Surface hardware
-  # users.groups.surface-control = {};
-
-  # Additional configuration for Surface hardware
-  # hardware.sensor.iio = {
-  #   enable = lib.mkDefault true;
-  # };
-
-  # Install surface-control for managing Surface-specific hardware features
-  # environment.systemPackages = with pkgs; [
-  #   iptsd # touchscreen support
-  #   surface-control # power management
-  #   libwacom-surface
-  # ];
-
-  # Add iptsd and surface-control to the udev and systemd packages
-  # services.udev.packages = with pkgs; [
-  #   iptsd
-  #   surface-control
-  # ];
-
-  # systemd.packages = [
-  #   pkgs.iptsd
-  # ];
-
   # Enable power management for Surface devices
   systemd.user.services.surface-control = {
     enable = true;
@@ -65,3 +40,24 @@
     };
   };
 }
+# Create a user group for managing permissions related to Surface hardware
+# users.groups.surface-control = {};
+# Additional configuration for Surface hardware
+# hardware.sensor.iio = {
+#   enable = lib.mkDefault true;
+# };
+# Install surface-control for managing Surface-specific hardware features
+# environment.systemPackages = with pkgs; [
+#   iptsd # touchscreen support
+#   surface-control # power management
+#   libwacom-surface
+# ];
+# Add iptsd and surface-control to the udev and systemd packages
+# services.udev.packages = with pkgs; [
+#   iptsd
+#   surface-control
+# ];
+# systemd.packages = [
+#   pkgs.iptsd
+# ];
+
