@@ -114,7 +114,7 @@ in {
       environmentVariables = {
         EDITOR = "zed"; # Set the default editor to Zed
         VISUAL = "zed";
-        STARSHIP_CONFIG = "${cliDir}/starship.toml"; # Path to the Starship configuration file
+        STARSHIP_CONFIG = "${starshipDir}/starship.toml"; # Path to the Starship configuration file
       };
     };
 
