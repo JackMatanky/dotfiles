@@ -6,13 +6,17 @@
   # userSettings,
   ...
 }: let
-  cliDir = builtins.path {
-    path = ../../cli;
-    name = "cli";
+  alacrittyDir = builtins.path {
+    path = ../../alacritty;
+    name = "alacritty";
+  };
+  starshipDir = builtins.path {
+    path = ../../starship;
+    name = "starship";
   };
 
   myAliases = {
-    dot = "cd .dotfiles";
+    dot = "cd ~/.dotfiles";
     dot_nix = "cd ~/.dotfiles/nixos";
     obsidian = "cd /run/media/jack/sdxc_512/obsidian_vault";
     obsidian_gpl = "cd /run/media/jack/sdxc_512/obsidian_vault; git pull";
@@ -65,8 +69,8 @@ in {
       # ".bashrc".source = "${cliDir}/.bashrc";
       # ".zshrc".source = "${cliDir}/.zshrc";
       # ".config/nushell".source = "${cliDir}/nushell";
-      ".config/alacritty/alacritty.toml".source = "${cliDir}/alacritty.toml";
-      ".config/starship/starship.toml".source = "${cliDir}/starship.toml";
+      ".config/alacritty/alacritty.toml".source = "${alacrittyDir}/alacritty.toml";
+      ".config/starship/starship.toml".source = "${starshipDir}/starship.toml";
     };
   };
   programs = {
