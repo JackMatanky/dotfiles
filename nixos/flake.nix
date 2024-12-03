@@ -66,13 +66,13 @@
       jackSurfacePro = lib.nixosSystem {
         system = systemSettings.system;
         modules = [
+          ./hardware-configuration.nix
+          ./configuration.nix
+          # ./modules/swap.nix
           nixos-hardware.nixosModules.microsoft-surface-common
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
           home-manager.nixosModules.default
           # inputs.stylix.nixosModules.stylix
-          ./modules/swap.nix
-          ./hardware-configuration.nix
-          ./configuration.nix
           # ./hosts/surface-pro/surface-pkgs.nix
           # (import ./hosts/surface-pro/surface-kernel.nix {
           #   inherit lib pkgs linuxSurfaceRepo;
