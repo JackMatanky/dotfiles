@@ -67,10 +67,10 @@
         system = systemSettings.system;
         modules = [
           ./hardware-configuration.nix
-          ./configuration.nix
-          ./modules/swap.nix
           nixos-hardware.nixosModules.microsoft-surface-common
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
+          ./configuration.nix
+          ./modules/swap.nix
           home-manager.nixosModules.default
           # inputs.stylix.nixosModules.stylix
         ];

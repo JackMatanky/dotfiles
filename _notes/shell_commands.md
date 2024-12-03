@@ -42,6 +42,71 @@ uname
 │ operating-system │ GNU/Linux                                                 │
 ╰──────────────────┴──────────────────────────────╯
 
+List the filenames, sizes, and modification times of items in a directory.
+
+### ls
+
+Usage:
+  > ls {flags} ...(pattern)
+
+Flags:
+  -h, --help - Display the help message for this command
+  -a, --all - Show hidden files
+  -l, --long - Get all available columns for each entry (slower; columns are platform-dependent)
+  -s, --short-names - Only print the file names, and not the path
+  -f, --full-paths - display paths as absolute paths
+  -d, --du - Display the apparent directory size ("disk usage") in place of the directory metadata size
+  -D, --directory - List the specified directory itself instead of its contents
+  -m, --mime-type - Show mime-type in type column instead of 'file' (based on filenames only; files' contents are not examined)
+
+Parameters:
+  ...pattern <one_of(glob, string)>: The glob pattern to use.
+
+Input/output types:
+  ╭───┬─────────┬────────╮
+  │ # │  input  │ output │
+  ├───┼─────────┼────────┤
+  │ 0 │ nothing │ table  │
+  ╰───┴─────────┴────────╯
+
+Examples:
+  List visible files in the current directory
+  > ls
+
+  List visible files in a subdirectory
+  > ls subdir
+
+  List visible files with full path in the parent directory
+  > ls -f ..
+
+  List Rust files
+  > ls *.rs
+
+  List files and directories whose name do not contain 'bar'
+  > ls -s | where name !~ bar
+
+  List all dirs in your home directory
+  > ls -a ~ | where type == dir
+
+  List all dirs in your home directory which have not been modified in 7 days
+  > ls -as ~ | where type == dir and modified < ((date now) - 7day)
+
+  List given paths and show directories themselves
+  > ['/path/to/directory' '/path/to/file'] | each {|| ls -D $in } | flatten
+
+- Find the swapfile with Nushell
+
+```nu
+ls -a / | where name == "swapfile"
+```
+
+This command will:
+
+    1. `ls -a /`: List all files and directories (including hidden ones with `-a`) in the root directory (`/`).
+    2. `where name == "swapfile"`: Filter the output to only show entries where the name column is exactly "swapfile".
+
+If the swapfile exists in your root directory, it will be displayed in the output.
+
 ## General
 
 ### Swapfile
@@ -71,3 +136,26 @@ You got it! Here's a breakdown of common swap-related shell commands in Linux:
 - Important Notes:
     - You'll usually need `sudo` (root privileges) for most of these commands that modify the system.
     - Replace placeholders like `/dev/sdX`, `/path/to/swapfile`, `SIZE`, and `PRIORITY` with your actual values.
+
+
+#### Restart Swapfile in Nixos
+
+1. **Remove the Swap File:**
+   - Since you manually created a swap file before, it's important to remove it to avoid any conflicts:
+     ```bash
+     sudo swapoff /swapfile  # Deactivate the swap file if it's active
+     sudo rm /swapfile       # Remove the swap file
+     ```
+
+2. **Rebuild and Switch:**
+   - Rebuild your NixOS configuration to apply the changes:
+     ```bash
+     sudo nixos-rebuild switch
+     ```
+
+3. **Verify Swap Activation:**
+   - After the rebuild, check if the swap is active:
+     ```nushell
+     swapon -s
+     free -h
+     ```
