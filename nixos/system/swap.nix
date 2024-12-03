@@ -4,6 +4,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ./modules/swap.nix
+  ];
+
   boot = {
     enableSwapDevices = true; # Enable swap devices (optional)
     swapDevices = [
