@@ -7,6 +7,7 @@
 }: {
   programs.ssh = {
     enable = true;
+    hashKnownHosts = true;
     extraConfig = ''
       # GitHub SSH config
       Host github.com
