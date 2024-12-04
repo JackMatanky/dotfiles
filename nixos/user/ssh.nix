@@ -22,14 +22,14 @@
           HostName github.com
           User git
           IdentityFile ~/.ssh/id_ed25519
-          # IdentitiesOnly yes
+          IdentitiesOnly yes
 
       # GitLab SSH config
       Host gitlab.com
           HostName gitlab.com
           User git
           IdentityFile ~/.ssh/id_ed25519
-          # IdentitiesOnly yes
+          IdentitiesOnly yes
     '';
   };
 }
