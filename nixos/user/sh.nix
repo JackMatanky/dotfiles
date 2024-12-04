@@ -18,8 +18,8 @@
   myAliases = {
     dot = "cd ~/.dotfiles";
     dot_nix = "cd ~/.dotfiles/nixos";
-    obsidian = "cd /run/media/jack/sdxc_512/obsidian_vault";
-    obsidian_gpl = "cd /run/media/jack/sdxc_512/obsidian_vault; git pull";
+    obsidian = "cd ~/obsidian_vault";
+    obsidian_gpl = "cd ~/obsidian_vault; git pull";
 
     # Nix - Flakes
     flake_rebuild = "sudo nixos-rebuild switch --flake .";
