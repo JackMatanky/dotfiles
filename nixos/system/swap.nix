@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    ./modules/swap.nix
+    ../modules/swap.nix
   ];
 
   boot = {
