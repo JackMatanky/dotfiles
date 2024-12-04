@@ -3,7 +3,9 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  mibPerGib = 1024; # Define MiB per GiB
+in {
   imports = [
     ../modules/swap.nix
   ];
