@@ -801,13 +801,13 @@
       "settings": {
         "plugins": {
           "pylsp-mypy": {
-            "anabled": true
+            "enabled": true
           },
           "pylsp-rope": {
-            "anabled": true
+            "enabled": true
           },
           "python-lsp-ruff": {
-            "anabled": true
+            "enabled": true
           }
         }
       }
