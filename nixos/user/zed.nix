@@ -1,9 +1,10 @@
 {
   config,
   pkgs,
-  # pkgs-unstable,
-  # inputs,
-  # systemSettings,
+  lib,
+  pkgs-unstable,
+  inputs,
+  systemSettings,
   ...
 }: let
   zedDir = builtins.path {
@@ -11,51 +12,45 @@
     name = "zed";
   };
   configDir = ".config/zed/";
-
-  # Read the settings.json and keymap.json file
-  settingsJson = builtins.fromJSON (builtins.readFile "${zedDir}/settings.json");
-  keymapJson = builtins.fromJSON (builtins.readFile "${zedDir}/keymap.json");
 in {
   home = {
     file = {
-      # "${configDir}settings.json".source = "${zedDir}/settings.json";
-      # "${configDir}keymap.json".source = "${zedDir}/keymap.json";
+      "${configDir}settings.json".source = "${zedDir}/settings.json";
+      "${configDir}keymap.json".source = "${zedDir}/keymap.json";
       "${configDir}snippets/".source = "${zedDir}/snippets";
     };
-    # packages =
-    #   (with pkgs-unstable; [
-    #     zed-editor
-    #   ])
+    packages =
+      with pkgs-unstable; [
+        zed-editor
+      ];
     #   ++ [
     #     inputs.simple-completion-language-server.defaultPackage.${systemSettings.system}
     #   ];
   };
-  programs.zed-editor = {
-    enable = true;
-    extensions = [
-      "base16"
-      "basher"
-      "csv"
-      "dbml"
-      "git-firefly"
-      "html"
-      "just"
-      "latex"
-      "markdown-oxide"
-      "mermaid"
-      "nix"
-      "pylsp"
-      "python-refactoring"
-      "rainbow-csv"
-      "ruff"
-      "sagemath"
-      "snippets"
-      "sql"
-      "toml"
-      "typst"
-    ];
-    userKeymap = keymapJson;
-    userSettings = settingsJson;
+  # programs.zed-editor = {
+  #   enable = true;
+  #   extensions = [
+  #     "base16"
+  #     "basher"
+  #     "csv"
+  #     "dbml"
+  #     "git-firefly"
+  #     "html"
+  #     "just"
+  #     "latex"
+  #     "markdown-oxide"
+  #     "mermaid"
+  #     "nix"
+  #     "pylsp"
+  #     "python-refactoring"
+  #     "rainbow-csv"
+  #     "ruff"
+  #     "sagemath"
+  #     "snippets"
+  #     "sql"
+  #     "toml"
+  #     "typst"
+  #   ];
     # extraPackages = with pkgs; [
     #   nixd
     # ];
