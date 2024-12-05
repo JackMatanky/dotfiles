@@ -4,7 +4,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Gruvbox Dark" // "Base16 Dracula"
+    "dark": "Base16 Dracula" // "Gruvbox Dark"
   },
   // UI Font
   "ui_font_size": 16,
