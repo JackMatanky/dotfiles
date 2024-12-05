@@ -1,9 +1,9 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
-  inputs,
-  systemSettings,
+  # pkgs-unstable,
+  # inputs,
+  # systemSettings,
   ...
 }: let
   zedDir = builtins.path {
@@ -11,13 +11,16 @@
     name = "zed";
   };
   configDir = ".config/zed/";
-  snippetsDir = "${configDir}snippets/";
+
+  # Read the settings.json and keymap.json file
+  settingsJson = builtins.fromJSON (builtins.readFile "${zedDir}/settings.json");
+  keymapJson = builtins.fromJSON (builtins.readFile "${zedDir}/keymap.json");
 in {
   home = {
     file = {
-      "${configDir}settings.json".source = "${zedDir}/settings.json";
-      "${configDir}keymap.json".source = "${zedDir}/keymap.json";
-      "${snippetsDir}".source = "${zedDir}/snippets";
+      # "${configDir}settings.json".source = "${zedDir}/settings.json";
+      # "${configDir}keymap.json".source = "${zedDir}/keymap.json";
+      "${configDir}snippets/".source = "${zedDir}/snippets";
     };
     # packages =
     #   (with pkgs-unstable; [
@@ -51,6 +54,8 @@ in {
       "toml"
       "typst"
     ];
+    userKeymap = keymapJson;
+    userSettings = settingsJson;
     # extraPackages = with pkgs; [
     #   nixd
     # ];
