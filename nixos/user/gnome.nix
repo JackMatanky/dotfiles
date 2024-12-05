@@ -6,7 +6,7 @@
   ...
 }: {
   home.packages = [
-    pkgs.kdeconnect
+    pkgs.plasma5Packages.kdeconnect-kde
   ];
 
   services = {
