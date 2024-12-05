@@ -315,9 +315,9 @@
 
   // Editor's Tabs
   "tabs": {
-    "git_status": false,
+    "git_status": true,
     "close_position": "right", // Button Position
-    "file_icons": false,
+    "file_icons": true,
     // Tab to activate after closing the current tab.
     // 1. The previously tab (default): "History"
     // 2. The neighbour tab: "Neighbour"
@@ -787,7 +787,7 @@
 
   // Language Server Protocol (LSP)
   "lsp": {
-    "simple-completion-language-server": {
+    "snippet-completion-server": {
       "binary": {
         "path": "/home/jack/.nix-profile/bin/simple-completion-language-server"
       },

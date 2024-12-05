@@ -19,15 +19,42 @@ in {
       "${configDir}keymap.json".source = "${zedDir}/keymap.json";
       "${snippetsDir}".source = "${zedDir}/snippets";
     };
-    packages =
-      (with pkgs-unstable; [
-        zed-editor
-      ])
-      ++ [
-        inputs.simple-completion-language-server.defaultPackage.${systemSettings.system}
-      ];
+    # packages =
+    #   (with pkgs-unstable; [
+    #     zed-editor
+    #   ])
+    #   ++ [
+    #     inputs.simple-completion-language-server.defaultPackage.${systemSettings.system}
+    #   ];
   };
-  # programs = {
-  #   simple-completion-language-server = pkgs.callPackage inputs.simple-completion-language-server {};
-  # };
+  programs.zed-editor = {
+    enable = true;
+    extensions = [
+      "base16"
+      "basher"
+      "csv"
+      "dbml"
+      "git-firefly"
+      "html"
+      "just"
+      "latex"
+      "markdown-oxide"
+      "mermaid"
+      "nix"
+      "pylsp"
+      "python-refactoring"
+      "rainbow-csv"
+      "ruff"
+      "sagemath"
+      "snippets"
+      "sql"
+      "toml"
+      "typst"
+    ];
+    # extraPackages = with pkgs; [
+    #   nixd
+    # ];
+
+    # simple-completion-language-server = pkgs.callPackage inputs.simple-completion-language-server {};
+  };
 }
