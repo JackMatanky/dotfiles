@@ -5,7 +5,7 @@
   lib,
   ...
 }: let
-  gnomeExtensionGit = "gnome-shell-extensions.gcampax.github.com";
+  gnomeShellExtensionGit = "gnome-shell-extensions.gcampax.github.com";
 in {
   home.packages = [
     pkgs.plasma5Packages.kdeconnect-kde
@@ -23,16 +23,16 @@ in {
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = [
-        "apps-menu@${gnomeExtensionGit}"
+        "apps-menu@${gnomeShellExtensionGit}"
         "gsconnect@andyholmes.github.io"
-        "native-window-placement@${gnomeExtensionGit}"
-        "places-menu@${gnomeExtensionGit}"
-        "drive-menu@${gnomeExtensionGit}"
-        "screenshot-window-sizer@${gnomeExtensionGit}"
-        "status-icons@${gnomeExtensionGit}"
-        "system-monitor@${gnomeExtensionGit}"
-        "window-list@${gnomeExtensionGit}"
-        "windowsNavigator@${gnomeExtensionGit}"
+        "native-window-placement@${gnomeShellExtensionGit}"
+        "places-menu@${gnomeShellExtensionGit}"
+        "drive-menu@${gnomeShellExtensionGit}"
+        "screenshot-window-sizer@${gnomeShellExtensionGit}"
+        "status-icons@${gnomeShellExtensionGit}"
+        "system-monitor@${gnomeShellExtensionGit}"
+        "window-list@${gnomeShellExtensionGit}"
+        "windowsNavigator@${gnomeShellExtensionGit}"
       ];
     };
 
@@ -67,6 +67,15 @@ in {
       command = "/usr/bin/env nautilus";
       binding = "<Super>e";
     };
+
+    # Extexsions
+    # Window List
+    "org/gnome/shell/extensions/window-list" = {
+      grouping-mode = "auto";
+      display-all-workspaces = true;
+      show-on-all-monitors = true;
+      embed-previews = true;
+    };
   };
   # dconf.settings = {
   #         # settings = with lib.gvariant; {
@@ -95,21 +104,6 @@ in {
   #           "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [
   #             "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
   #           ];
-
-  #           # Power Settings
-  #           "org/gnome/settings-daemon/plugins/power" = {
-  #             sleep-inactive-battery-type = "suspend";
-  #             power-button-action = "shutdown";
-  #           };
-
-  #           # Interface Settings
-  #           "org/gnome/desktop/interface" = {
-  #             clock-show-weekday = false;
-  #             clock-show-seconds = false;
-  #             show-battery-percentage = true;
-  #             gtk-theme = "Adwaita-dark";
-  #             enable-hot-corners = true;
-  #           };
 
   #           # Workspace Settings
   #           "org/gnome/mutter" = {

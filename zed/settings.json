@@ -10,7 +10,7 @@
   "ui_font_size": 16,
   "ui_font_weight": 400,
   "ui_font_family": "Ubuntu", //"Zed Plex Sans",
-  "ui_font_fallbacks": [],
+  "ui_font_fallbacks": ["Source Code Pro"],
   "ui_font_features": {
     // Disable ligatures:
     "calt": false
@@ -22,7 +22,7 @@
   // Text Editor
   "buffer_font_size": 15,
   "buffer_font_weight": 400,
-  "buffer_font_family": "FiraCode Nerd Fonts",
+  "buffer_font_family": "FiraCode Nerd Font",
   "buffer_font_fallbacks": [],
   "buffer_font_features": {
     // Disable ligatures:
