@@ -17,6 +17,6 @@
     ./pkm.nix
     ./sh.nix
     ./ssh.nix
-    ./zed.nix
+    ./zed/zed.nix
   ];
 }

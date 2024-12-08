@@ -6,7 +6,7 @@
   ...
 }:{
 programs.zed-editor = {
-  enable = true;
+  # enable = true;
   userKeymaps =
     [
       # Standard Linux bindings

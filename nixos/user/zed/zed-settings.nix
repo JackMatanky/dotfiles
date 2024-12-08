@@ -1,15 +1,16 @@
 {
   config,
   pkgs,
+  lib,
   pkgs-unstable,
   inputs,
   ...
-}:{
-programs.zed-editor = {
-  enable = true;
-  userSettings = {
-    # Zed settings
-    # https:#zed.dev/docs/configuring-zed
+}: {
+  programs.zed-editor = {
+    # enable = true;
+    userSettings = {
+      # Zed settings
+      # https:#zed.dev/docs/configuring-zed
       "theme" = {
         "mode" = "system";
         "light" = "One Light";
@@ -277,7 +278,7 @@ programs.zed-editor = {
         "default_height" = 320;
         "default_model" = {
           "provider" = "zed.dev";
-          "model" = "claude-3-5-sonnet";
+          "model" = "claude-3-5-sonnet-latest";
         };
       };
       # Slash Commands
@@ -430,8 +431,8 @@ programs.zed-editor = {
         "working_directory" = "current_project_directory";
         # Any key-value pairs added to this list will be added to the terminal's
         # environment. Use `:` to separate multiple values.
-        "env" = {
-          # "KEY" = "value1:value2"
+        env = {
+          TERM = "alacritty";
         };
         # Activate the python virtual environment, if one is found, in the
         # terminal's working directory (as resolved by the working_directory
@@ -461,11 +462,11 @@ programs.zed-editor = {
         # "font_size" = 15;
         # Set the terminal's font family. If this option is not included;
         # the terminal will default to matching the buffer's font family.
-        "font_family" = "Source Code Pro"; #"FiraCode Nerd Fonts"
+        "font_family" = "FiraCode Nerd Font"; #"Source Code Pro";
         # Set the terminal's font fallbacks. If this option is not included;
         # the terminal will default to matching the buffer's font fallbacks.
         # This will be merged with the platform's default font fallbacks
-        # "font_fallbacks" = ["FiraCode Nerd Fonts"];
+        "font_fallbacks" = ["Source Code Pro"];
         # Sets the maximum number of lines in the terminal's scrollback buffer.
         # Default = 10_000, maximum = 100_000 (all bigger values set will be treated as 100_000), 0 disables the scrolling.
         # Existing terminals will not pick up this change until they are recreated.
@@ -510,7 +511,10 @@ programs.zed-editor = {
       #     "ignore_system_version" = true;
       #   }
       # NOTE = changing this setting currently requires restarting Zed.
-      "node" = {};
+      node = {
+        path = lib.getExe pkgs.nodejs;
+        npm_path = lib.getExe' pkgs.nodejs "npm";
+      };
 
       # Automatically Installed Extensions
       "auto_install_extensions" = {
@@ -791,6 +795,11 @@ programs.zed-editor = {
 
       # Language Server Protocol (LSP)
       "lsp" = {
+        nix = {
+          binary = {
+            path_lookup = true;
+          };
+        };
         # "snippet-completion-server" = {
         #   "binary" = {
         #     "path" = "/home/jack/.nix-profile/bin/simple-completion-language-server"
