@@ -61,11 +61,8 @@
   // Key for adding multiple cursors: "alt", "cmd_or_ctrl"
   "multi_cursor_modifier": "alt",
   "cursor_blink": true,
-  // Cursor shape: "bar" (default), "block", "underline", "hollow"
-  "cursor_shape": "bar",
-
-  // Current line highlight: "none", "gutter", "line", "all" (default)
-  "current_line_highlight": "gutter",
+  "cursor_shape": "bar", // "bar" (default), "block", "underline", "hollow"
+  "current_line_highlight": "gutter", // "none", "gutter", "line", "all" (default)
 
   "show_completions_on_input": true,
   "show_completion_documentation": true,
@@ -127,9 +124,7 @@
 
   // Scrollbar
   "scrollbar": {
-    // Show the scrollbar in the editor.
-    // "auto" (default), "system", "always", "never"
-    "show": "auto",
+    "show": "auto", // "auto" (default), "system", "always", "never"
     "cursors": true, // Show cursor positions.
     "git_diff": true, // Show git diff indicators.
     "search_results": true, // Show buffer search results.
@@ -149,7 +144,7 @@
     "runnables": true, // Show runnables buttons.
     "folds": true // Show fold buttons.
   },
-  "relative_line_numbers": false,
+  "relative_line_numbers": true,
 
   // Indent Guides
   "indent_guides": {
@@ -191,7 +186,7 @@
 
   // Inlay Hints
   "inlay_hints": {
-    "enabled": false,
+    "enabled": true,
     "show_type_hints": true,
     "show_parameter_hints": true,
     // Corresponds to null/None LSP hint type value.
@@ -212,9 +207,8 @@
     "folder_icons": true,
     "file_icons": true,
     "git_status": true,
-    "auto_reveal_entries": true, // What is this?
+    "auto_reveal_entries": true,
     "scrollbar": {
-      // When to show the scrollbar in the project panel.
       "show": "auto" // "auto", "system", "always", "never"
     },
     "indent_size": 20,
@@ -280,28 +274,23 @@
   // Slash Commands
   "slash_commands": {
     "docs": {
-      // `/docs`
-      "enabled": false
+      "enabled": true
     },
     "project": {
-      // `/project`
-      "enabled": false
+      "enabled": true
     }
   },
   // Whether the screen sharing icon is shown in the os status bar.
   "show_call_status_icon": true,
 
-  // Whether to use language servers to provide code intelligence.
   "enable_language_server": true,
+  // The list of language servers to use (or disable) for all languages.
+  // This is typically customized on a per-language basis.
+  "language_servers": ["..."],
 
   // Whether to perform linked edits of associated ranges, if the language server supports it.
   // For example, when editing opening <html> tag, the contents of the closing </html> tag will be edited as well.
   "linked_edits": true,
-
-  // The list of language servers to use (or disable) for all languages.
-  //
-  // This is typically customized on a per-language basis.
-  "language_servers": ["..."],
 
   // When to automatically save edited buffers.
   // "off", "on_window_change", "on_focus_change", { "after_delay": {"milliseconds": 500} },
@@ -585,7 +574,7 @@
   //      "soft_wrap": "preferred_line_length",
   // 4. Soft wrap lines at the preferred line length or the editor width (whichever is smaller).
   //      "soft_wrap": "bounded",
-  "soft_wrap": "bounded",
+  "soft_wrap": "editor_width",
   "preferred_line_length": 80,
   "hard_tabs": false,
   "tab_size": 4,
