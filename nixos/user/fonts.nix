@@ -10,6 +10,7 @@
     jetbrains-mono
     source-code-pro
     fira-code
+    fira-code-nerdfont
     (nerdfonts.override {
       fonts = ["FiraCode" "JetBrainsMono"];
     })

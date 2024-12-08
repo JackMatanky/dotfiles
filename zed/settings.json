@@ -9,7 +9,7 @@
   // UI Font
   "ui_font_size": 16,
   "ui_font_weight": 400,
-  "ui_font_family": "Zed Plex Sans",
+  "ui_font_family": "Ubuntu", //"Zed Plex Sans",
   "ui_font_fallbacks": [],
   "ui_font_features": {
     // Disable ligatures:
@@ -22,7 +22,7 @@
   // Text Editor
   "buffer_font_size": 15,
   "buffer_font_weight": 400,
-  "buffer_font_family": "Zed Plex Mono",
+  "buffer_font_family": "FiraCode Nerd Fonts",
   "buffer_font_fallbacks": [],
   "buffer_font_features": {
     // Disable ligatures:
@@ -457,13 +457,13 @@
     "copy_on_select": false,
     "line_height": "comfortable",
     "cursor_shape": "bar",
-    "blinking": "terminal_controlled" // "on" to always blink the cursor
+    "blinking": "terminal_controlled", // "on" to always blink the cursor
     // Set the terminal's font size. If this option is not included,
     // the terminal will default to matching the buffer's font size.
     // "font_size": 15,
     // Set the terminal's font family. If this option is not included,
     // the terminal will default to matching the buffer's font family.
-    // "font_family": "Zed Plex Mono",
+    "font_family": "Source Code Pro" //"FiraCode Nerd Fonts"
     // Set the terminal's font fallbacks. If this option is not included,
     // the terminal will default to matching the buffer's font fallbacks.
     // This will be merged with the platform's default font fallbacks
@@ -475,13 +475,11 @@
   },
   "code_actions_on_format": {},
 
-  // Tasks.
   "tasks": {
     "variables": {}
   },
   "toolchain": { "name": "default", "path": "default" },
 
-  // File Types
   "file_types": {
     "Plain Text": ["txt"],
     "JSON": ["flake.lock"],
@@ -495,23 +493,8 @@
     "TOML": ["uv.lock"]
   },
 
-  // By default use a recent system version of node, or install our own.
-  // You can override this to use a version of node that is not in $PATH with:
-  // {
-  //   "node": {
-  //     "path": "/path/to/node"
-  //     "npm_path": "/path/to/npm" (defaults to node_path/../npm)
-  //   }
-  // }
-  // or to ensure Zed always downloads and installs an isolated version of node:
-  // {
-  //   "node": {
-  //     "ignore_system_version": true,
-  //   }
-  // NOTE: changing this setting currently requires restarting Zed.
   "node": {},
 
-  // Automatically Installed Extensions
   "auto_install_extensions": {
     "base16": true,
     "basher": false,
@@ -535,62 +518,22 @@
     "typst": true
   },
 
-  // Formatter
   "format_on_save": "on",
-  // How to perform a buffer format. This setting can take 4 values:
-  //
-  // 1. Format code using the current language server:
-  //     "formatter": "language_server"
-  // 2. Format code using an external command:
-  //     "formatter": {
-  //       "external": {
-  //         "command": "prettier",
-  //         "arguments": ["--stdin-filepath", "{buffer_path}"]
-  //       }
-  //     }
-  // 3. Format code using Zed's Prettier integration:
-  //     "formatter": "prettier"
-  // 4. Default. Format files using Zed's Prettier integration (if applicable),
-  //    or falling back to formatting via language server:
-  //     "formatter": "auto"
   "formatter": "auto",
-  // Zed's Prettier integration settings.
   "prettier": {
-    // // Whether to consider prettier formatter or not when attempting to format a file.
-    // "allowed": false,
-    //
-    // // Use regular Prettier json configuration.
-    // // If Prettier is allowed, Zed will use this for its Prettier instance for any applicable file, if
-    // // the project has no other Prettier installed.
-    // "plugins": [],
-    //
-    // // Use regular Prettier json configuration.
-    // // If Prettier is allowed, Zed will use this for its Prettier instance for any applicable file, if
-    // // the project has no other Prettier installed.
-    // "trailingComma": "es5",
-    // "tabWidth": 4,
-    // "semi": false,
-    // "singleQuote": true
+    "allowed": true,
+    "plugins": [],
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true
   },
 
-  // How to soft-wrap long lines of text.
-  // Possible values:
-  //
-  // 1. Prefer a single line generally, unless an overly long line is encountered.
-  //      "soft_wrap": "none",
-  //      "soft_wrap": "prefer_line", // (deprecated, same as "none")
-  // 2. Soft wrap lines that overflow the editor.
-  //      "soft_wrap": "editor_width",
-  // 3. Soft wrap lines at the preferred line length.
-  //      "soft_wrap": "preferred_line_length",
-  // 4. Soft wrap lines at the preferred line length or the editor width (whichever is smaller).
-  //      "soft_wrap": "bounded",
-  "soft_wrap": "none",
+  "soft_wrap": "bounded",
   "preferred_line_length": 80,
   "hard_tabs": false,
   "tab_size": 4,
 
-  // Language Settings
   "languages": {
     "Astro": {
       "language_servers": ["astro-language-server", "..."],
@@ -673,6 +616,9 @@
         "allowed": true
       }
     },
+    "LaTeX": {
+      "language_servers": ["textlive"]
+    },
     "Markdown": {
       "format_on_save": "off",
       "use_on_type_format": false,
@@ -699,7 +645,7 @@
       }
     },
     "Python": {
-      "language_servers": ["!pyright", "pylsp"], // ["pyright", "ruff"],
+      "language_servers": ["!pyright", "pylsp", "!ruff"],
       "tab_size": 4,
       "format_on_save": "on",
       "formatter": {
@@ -708,21 +654,6 @@
           "arguments": ["format", "--stdin-filename", "{buffer_path}"]
         }
       }
-      // [
-      //   {
-      //     "code_actions": {
-      //       // Fix all auto-fixable lint violations
-      //       "source.fixAll.ruff": true,
-      //       // Organize imports
-      //       "source.organizeImports.ruff": true
-      //     }
-      //   },
-      //   {
-      //     "language_server": {
-      //       "name": "ruff"
-      //     }
-      //   }
-      // ]
     },
     "Ruby": {
       "language_servers": ["solargraph", "!ruby-lsp", "!rubocop", "..."]
@@ -785,7 +716,6 @@
     }
   },
 
-  // Language Server Protocol (LSP)
   "lsp": {
     "snippet-completion-server": {
       "binary": {
@@ -831,13 +761,12 @@
         "path": "/home/jack/.nix-profile/bin/ruff",
         "arguments": ["server", "--preview"]
       }
+    },
+    "texlive": {
+      "binary": {
+        "path": "/home/jack/.nix-profile/bin/tex"
+      }
     }
-    //   // "initialization_options": {
-    //   //   "settings": {
-    //   //     "path": "/home/jack/.nix-profile/bin/ruff"
-    //   //   }
-    //   // }
-    // }
   },
 
   // Jupyter Notebook
