@@ -10,22 +10,29 @@
     name = "zed";
   };
   configDir = ".config/zed/";
+
+  userSettingsJson = builtins.fromJSON (builtins.readFile "${zedDir}/settings.json");
+  userKeymapJson = builtins.fromJSON (builtins.readFile "${zedDir}/keymap.json");
+  #
 in {
   home = {
     file = {
-      "${configDir}settings.json".source = "${zedDir}/settings.json";
-      "${configDir}keymap.json".source = "${zedDir}/keymap.json";
+      # "${configDir}settings.json".source = "${zedDir}/settings.json";
+      # "${configDir}keymap.json".source = "${zedDir}/keymap.json";
       "${configDir}snippets/".source = "${zedDir}/snippets";
     };
-    packages = with pkgs-unstable; [
-      zed-editor
-    ];
+    # packages = with pkgs-unstable; [
+    #   zed-editor
+    # ];
     #   ++ [
     #     inputs.simple-completion-language-server.defaultPackage.${systemSettings.system}
     #   ];
     # };
-    # programs.zed-editor = {
-    #   enable = true;
+  };
+  programs.zed-editor = {
+    enable = true;
+    userSettings = userSettingsJson;
+    userKeymap = userKeymapJson;
     #   extensions = [
     #     "base16"
     #     "basher"
