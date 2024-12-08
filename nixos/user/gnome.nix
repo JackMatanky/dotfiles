@@ -4,7 +4,9 @@
   pkgs,
   lib,
   ...
-}: {
+}: let
+  gnomeExtensionGit = "gnome-shell-extensions.gcampax.github.com";
+in {
   home.packages = [
     pkgs.plasma5Packages.kdeconnect-kde
   ];
@@ -21,16 +23,16 @@
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = [
-        "apps-menu@gnome-shell-extensions.gcampax.github.com"
+        "apps-menu@${gnomeExtensionGit}"
         "gsconnect@andyholmes.github.io"
-        "native-window-placement@gnome-shell-extensions.gcampax.github.com"
-        "places-menu@gnome-shell-extensions.gcampax.github.com"
-        "drive-menu@gnome-shell-extensions.gcampax.github.com"
-        "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com"
-        "status-icons@gnome-shell-extensions.gcampax.github.com"
-        "system-monitor@gnome-shell-extensions.gcampax.github.com"
-        "window-list@gnome-shell-extensions.gcampax.github.com"
-        "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
+        "native-window-placement@${gnomeExtensionGit}"
+        "places-menu@${gnomeExtensionGit}"
+        "drive-menu@${gnomeExtensionGit}"
+        "screenshot-window-sizer@${gnomeExtensionGit}"
+        "status-icons@${gnomeExtensionGit}"
+        "system-monitor@${gnomeExtensionGit}"
+        "window-list@${gnomeExtensionGit}"
+        "windowsNavigator@${gnomeExtensionGit}"
       ];
     };
 
