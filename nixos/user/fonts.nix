@@ -10,8 +10,9 @@
     jetbrains-mono
     source-code-pro
     fira-code
-    nerd-fonts.fira-code
-    nerd-fonts.jetbrains-mono
+    (nerdfonts.override {
+      fonts = ["FiraCode" "JetBrainsMono"];
+    })
     # Anki Fonts
     noto-fonts # multilingual support
     dejavu_fonts
