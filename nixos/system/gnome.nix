@@ -8,24 +8,20 @@
   ...
 }: {
   # Exclude Core Apps From Being Installed.
-  environment.gnome.excludePackages =
-    (with pkgs.gnome; [
-      epiphany # web browser
-      # nautilus # File Manager
-      simple-scan # document scanner
-      totem # video player
-      yelp # help viewer
-      gnome-font-viewer
-      gnome-maps # maps
-      gnome-music # music
-    ])
-    ++ (with pkgs; [
-      gedit # text editor
-      gnome-connections
-      gnome-text-editor
-      gnome-tour # tour app
-      yelp # help viewer
-    ]);
+  environment.gnome.excludePackages = with pkgs; [
+    epiphany # web browser
+    gedit # text editor
+    gnome-connections
+    gnome-font-viewer
+    gnome-maps # maps
+    gnome-music # music
+    gnome-text-editor
+    gnome-tour # tour app
+    # nautilus # File Manager
+    simple-scan # document scanner
+    totem # video player
+    yelp # help viewer
+  ];
 }
 # All pre-installed Gnome packages
 # pkgs.adwaita-icon-theme
