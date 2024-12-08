@@ -11,7 +11,7 @@
   environment.gnome.excludePackages =
     (with pkgs.gnome; [
       epiphany # web browser
-      nautilus # File Manager
+      # nautilus # File Manager
       simple-scan # document scanner
       totem # video player
       yelp # help viewer
