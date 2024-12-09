@@ -19,6 +19,13 @@
     # Secrets Management
     sops-nix.url = "github:Mic92/sops-nix";
 
+    # stylix.url = "github:danth/stylix";
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Snippets language server for Zed
     # Original: https://github.com/estin/simple-completion-language-server
     # Zed Fork: https://github.com/zed-industries/simple-completion-language-server
@@ -27,7 +34,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # stylix.url = "github:danth/stylix";
 
     # hyprland.url = "github:hyprwm/Hyprland";
   };
@@ -39,6 +45,7 @@
     nixos-hardware,
     home-manager,
     sops-nix,
+    nixvim
     ...
   } @ inputs: let
     userSettings = rec {
