@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   inputs,
   ...
 }: let
@@ -23,6 +22,7 @@
   # userKeymapJson = builtins.fromJSON (stripComments "${zedDir}/keymap.json");
 in {
   imports = [
+    ./zed-extensions.nix
     ./zed-keymap.nix
     ./zed-settings.nix
   ];
@@ -43,8 +43,8 @@ in {
   };
   programs.zed-editor = {
     enable = true;
-  #   userSettings = builtins.fromJSON (stripComments "${zedDir}/settings.json");
-  #   userKeymaps = builtins.fromJSON (stripComments "${zedDir}/keymap.json");
+    #   userSettings = builtins.fromJSON (stripComments "${zedDir}/settings.json");
+    #   userKeymaps = builtins.fromJSON (stripComments "${zedDir}/keymap.json");
     extensions = [
       "base16"
       "basher"
@@ -67,9 +67,9 @@ in {
       "toml"
       "typst"
     ];
-  # extraPackages = with pkgs; [
-  #   nixd
-  # ];
+    # extraPackages = with pkgs; [
+    #   nixd
+    # ];
   };
 
   # simple-completion-language-server = pkgs.callPackage inputs.simple-completion-language-server {};
