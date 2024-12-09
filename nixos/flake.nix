@@ -16,6 +16,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Secrets Management
+    sops-nix.url = "github:Mic92/sops-nix";
+
     # Snippets language server for Zed
     # Original: https://github.com/estin/simple-completion-language-server
     # Zed Fork: https://github.com/zed-industries/simple-completion-language-server
@@ -35,6 +38,7 @@
     nixpkgs-unstable,
     nixos-hardware,
     home-manager,
+    sops-nix,
     ...
   } @ inputs: let
     userSettings = rec {
@@ -72,6 +76,7 @@
           ./configuration.nix
           ./modules/swap.nix
           home-manager.nixosModules.default
+          sops-nix.nixosModules.sops
           # inputs.stylix.nixosModules.stylix
         ];
         specialArgs = {
