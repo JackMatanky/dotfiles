@@ -43,30 +43,6 @@ in {
   };
   programs.zed-editor = {
     enable = true;
-    #   userSettings = builtins.fromJSON (stripComments "${zedDir}/settings.json");
-    #   userKeymaps = builtins.fromJSON (stripComments "${zedDir}/keymap.json");
-    extensions = [
-      "base16"
-      "basher"
-      "csv"
-      "dbml"
-      "git-firefly"
-      "html"
-      "just"
-      "latex"
-      "markdown-oxide"
-      "mermaid"
-      "nix"
-      "pylsp"
-      "python-refactoring"
-      "rainbow-csv"
-      "ruff"
-      "sagemath"
-      "snippets"
-      "sql"
-      "toml"
-      "typst"
-    ];
     # extraPackages = with pkgs; [
     #   nixd
     # ];
