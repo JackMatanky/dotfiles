@@ -34,7 +34,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-
     # hyprland.url = "github:hyprwm/Hyprland";
   };
 
@@ -45,7 +44,7 @@
     nixos-hardware,
     home-manager,
     sops-nix,
-    nixvim
+    nixvim,
     ...
   } @ inputs: let
     userSettings = rec {
