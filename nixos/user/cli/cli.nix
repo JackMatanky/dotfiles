@@ -10,6 +10,12 @@
     name = "starship";
   };
 in {
+  imports = [
+    ./alacritty.nix
+    ./bash.nix
+    ./nushell.nix
+    ./zsh.nix
+  ];
   home = {
     file = {
       # ".bashrc".source = "${cliDir}/.bashrc";
