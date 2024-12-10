@@ -798,13 +798,13 @@
           path_lookup = true;
         };
       };
-      # "snippet-completion-server" = {
-      #   "binary" = {
-      #     "path" = "/home/jack/.nix-profile/bin/simple-completion-language-server"
-      #   };
-      #   "command" = "simple-completion-language-server";
-      #   "languages" = ["plaintext"]
-      # };
+      "snippet-completion-server" = {
+        binary = {
+          path_lookup = true;
+        };
+        "command" = "simple-completion-language-server";
+        "languages" = ["plaintext"];
+      };
       "pylsp" = {
         "binary" = {
           "path" = "/home/jack/.nix-profile/bin/pylsp";
