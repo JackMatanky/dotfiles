@@ -47,6 +47,38 @@
           foreground = "0xf8f8f2";
           bright_foreground = "0xffffff";
         };
+        cursor = {
+          text = "0x282a36";
+          cursor = "0xf8f8f2";
+        };
+        search = {
+          matches = {
+            foreground = "0x44475a";
+            background = "0x50fa7b";
+          };
+          focused_match = {
+            foreground = "0x44475a";
+            background = "0xffb86c";
+          };
+        };
+        hints = {
+          start = {
+            foreground = "0x282a36";
+            background = "0xf1fa8c";
+          };
+          end = {
+            foreground = "0xf1fa8c";
+            background = "0x282a36";
+          };
+        };
+        footer_bar = {
+          background = "0x282a36";
+          foreground = "0xf8f8f2";
+        };
+        selection = {
+          text = "CellForeground";
+          background = "#44475a";
+        };
         normal = {
           black = "0x21222C";
           red = "0xFF5555"; # Red for errors
@@ -67,138 +99,106 @@
           cyan = "0xA4FFFF"; # Bright cyan
           white = "0xFFFFFF"; # Pure white for bright text
         };
-        cursor = {
-          text = "0x282a36";
-          cursor = "0xf8f8f2";
-        };
-        selection = {
-          text = "CellForeground";
-          background = "#44475a";
-        };
-        search = {
-          matches = {
-            foreground = "0x44475a";
-            background = "0x50fa7b";
-          };
-          focused_match = {
-            foreground = "0x44475a";
-            background = "0xffb86c";
-          };
-        };
-        footer_bar = {
-          background = "0x282a36";
-          foreground = "0xf8f8f2";
-        };
-        hints = {
-          start = {
-            foreground = "0x282a36";
-            background = "0xf1fa8c";
-          };
-          end = {
-            foreground = "0xf1fa8c";
-            background = "0x282a36";
-          };
-        };
-        keyboard = {
-          bindings = [
-            {
-              key = "V";
-              mods = "Control|Shift";
-              action = "Paste";
-            }
-            {
-              key = "C";
-              mods = "Control|Shift";
-              action = "Copy";
-            }
-            {
-              key = "Paste";
-              action = "Paste";
-            }
-            {
-              key = "Copy";
-              action = "Copy";
-            }
-            {
-              key = "Insert";
-              mods = "Shift";
-              action = "PasteSelection";
-            }
-            {
-              key = "F";
-              mods = "Control|Shift";
-              action = "SearchForward";
-              mode = "~Search";
-            }
-            {
-              key = "B";
-              mods = "Control|Shift";
-              action = "SearchBackward";
-              mode = "~Search";
-            }
-            {
-              key = "Key0";
-              mods = "Control";
-              action = "ResetFontSize";
-            }
-            {
-              key = "Equals";
-              mods = "Control";
-              action = "IncreaseFontSize";
-            }
-            {
-              key = "Minus";
-              mods = "Control";
-              action = "DecreaseFontSize";
-            }
-            {
-              key = "L";
-              mods = "Control";
-              action = "ClearLogNotice";
-            }
-            {
-              key = "L";
-              mods = "Control";
-              chars = "\f";
-            }
-            {
-              key = "PageUp";
-              mods = "Shift";
-              action = "ScrollPageUp";
-              mode = "~Alt";
-            }
-            {
-              key = "PageDown";
-              mods = "Shift";
-              action = "ScrollPageDown";
-              mode = "~Alt";
-            }
-            {
-              key = "Up";
-              mods = "Shift";
-              action = "ScrollLineUp";
-              mode = "~Alt";
-            }
-            {
-              key = "Down";
-              mods = "Shift";
-              action = "ScrollLineDown";
-              mode = "~Alt";
-            }
-            {
-              key = "Home";
-              mods = "Shift";
-              action = "ScrollToTop";
-              mode = "~Alt";
-            }
-            {
-              key = "End";
-              mods = "Shift";
-              action = "ScrollToBottom";
-              mode = "~Alt";
-            }
-          ];
-        };
+      };
+      keyboard = {
+        bindings = [
+          {
+            key = "V";
+            mods = "Control|Shift";
+            action = "Paste";
+          }
+          {
+            key = "C";
+            mods = "Control|Shift";
+            action = "Copy";
+          }
+          {
+            key = "Paste";
+            action = "Paste";
+          }
+          {
+            key = "Copy";
+            action = "Copy";
+          }
+          {
+            key = "Insert";
+            mods = "Shift";
+            action = "PasteSelection";
+          }
+          {
+            key = "F";
+            mods = "Control|Shift";
+            action = "SearchForward";
+            mode = "~Search";
+          }
+          {
+            key = "B";
+            mods = "Control|Shift";
+            action = "SearchBackward";
+            mode = "~Search";
+          }
+          {
+            key = "Key0";
+            mods = "Control";
+            action = "ResetFontSize";
+          }
+          {
+            key = "Equals";
+            mods = "Control";
+            action = "IncreaseFontSize";
+          }
+          {
+            key = "Minus";
+            mods = "Control";
+            action = "DecreaseFontSize";
+          }
+          {
+            key = "L";
+            mods = "Control";
+            action = "ClearLogNotice";
+          }
+          {
+            key = "L";
+            mods = "Control";
+            chars = "\f";
+          }
+          {
+            key = "PageUp";
+            mods = "Shift";
+            action = "ScrollPageUp";
+            mode = "~Alt";
+          }
+          {
+            key = "PageDown";
+            mods = "Shift";
+            action = "ScrollPageDown";
+            mode = "~Alt";
+          }
+          {
+            key = "Up";
+            mods = "Shift";
+            action = "ScrollLineUp";
+            mode = "~Alt";
+          }
+          {
+            key = "Down";
+            mods = "Shift";
+            action = "ScrollLineDown";
+            mode = "~Alt";
+          }
+          {
+            key = "Home";
+            mods = "Shift";
+            action = "ScrollToTop";
+            mode = "~Alt";
+          }
+          {
+            key = "End";
+            mods = "Shift";
+            action = "ScrollToBottom";
+            mode = "~Alt";
+          }
+        ];
       };
     };
   };
