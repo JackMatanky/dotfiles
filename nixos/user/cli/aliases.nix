@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: let
+let
   myAliases = {
     dot = "cd ~/.dotfiles";
     dot_nix = "cd ~/.dotfiles/nixos";

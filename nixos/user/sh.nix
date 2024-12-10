@@ -13,7 +13,7 @@
     name = "starship";
   };
 
-  myAliases = import ../cli/aliases.nix {inherit pkgs lib;};
+  myAliases = import ./cli/aliases.nix;
   #   {  dot = "cd ~/.dotfiles";
   #     dot_nix = "cd ~/.dotfiles/nixos";
   #     obsidian = "cd ~/obsidian_vault";
