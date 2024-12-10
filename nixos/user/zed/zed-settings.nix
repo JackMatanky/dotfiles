@@ -799,8 +799,11 @@
         };
       };
       "snippet-completion-server" = {
-        binary = {
-          path_lookup = true;
+        # binary = {
+        #   path_lookup = true;
+        # };
+        "binary" = {
+          "path" = "/home/jack/.local/share/zed/extensions/work/snippets/simple-completion-language-server-v0.1.1";
         };
         "command" = "simple-completion-language-server";
         "languages" = ["plaintext"];
