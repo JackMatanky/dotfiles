@@ -10,7 +10,7 @@
     ./fonts.nix
     ./git.nix
     ./gnome.nix
-    ./neovim.nix
+    ./nvim/nvim.nix
     ./python.nix
     ./pkm.nix
     ./ssh.nix
