@@ -50,6 +50,10 @@
         ];
         contact_vars = [
           {
+            trigger = ":fullname";
+            replace = "{{my_full_name}}";
+          }
+          {
             trigger = ":phone";
             replace = "058-555-3200";
           }

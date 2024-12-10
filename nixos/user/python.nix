@@ -1,8 +1,6 @@
 {
   config,
   pkgs,
-  # pkgs-unstable,
-  # userSettings,
   ...
 }: let
   # Create the Python environment with Python 3.12 and necessary packages
