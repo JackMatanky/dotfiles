@@ -99,7 +99,8 @@
             background = "0x282a36";
           };
         };
-        keyboard.bindings = [
+        # keyboard = {
+        bindings = [
           {
             key = "V";
             mods = "Control|Shift";
@@ -197,6 +198,7 @@
             mode = "~Alt";
           }
         ];
+        # };
       };
     };
   };
