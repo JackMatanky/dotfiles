@@ -69,7 +69,7 @@ in {
       # ".bashrc".source = "${cliDir}/.bashrc";
       # ".zshrc".source = "${cliDir}/.zshrc";
       # ".config/nushell".source = "${cliDir}/nushell";
-      ".config/alacritty/alacritty.toml".source = "${alacrittyDir}/alacritty.toml";
+      # ".config/alacritty/alacritty.toml".source = "${alacrittyDir}/alacritty.toml";
       ".config/starship/starship.toml".source = "${starshipDir}/starship.toml";
     };
   };
@@ -116,10 +116,6 @@ in {
         VISUAL = "zed";
         STARSHIP_CONFIG = "${starshipDir}/starship.toml"; # Path to the Starship configuration file
       };
-    };
-
-    alacritty = {
-      enable = true;
     };
 
     tmux = {

@@ -8,7 +8,7 @@
   ...
 }: {
   imports = [
-    # ./alacritty.nix
+    ./alacritty.nix
     ./espanso.nix
     ./firefox.nix
     ./fonts.nix
