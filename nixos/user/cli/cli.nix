@@ -4,9 +4,9 @@
   lib,
   ...
 }: let
-  myAliases = import ./cli/aliases.nix;
+  myAliases = import ./aliases.nix;
   starshipDir = builtins.path {
-    path = ../../starship;
+    path = ../../../starship;
     name = "starship";
   };
 in {

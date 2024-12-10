@@ -5,6 +5,10 @@
   ...
 }: let
   myAliases = import ./aliases.nix;
+  starshipDir = builtins.path {
+    path = ../../../starship;
+    name = "starship";
+  };
 in {
   programs.nushell = {
     enable = true;
