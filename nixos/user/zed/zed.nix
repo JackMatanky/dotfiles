@@ -18,7 +18,7 @@ in {
 
   home = {
     file = {
-      "${configDir}snippets/".source = "./snippets";
+      "${configDir}snippets/".source = ./snippets;
     };
   };
   programs.zed-editor = {

@@ -82,7 +82,7 @@
           ./configuration.nix
           ./modules/swap.nix
           home-manager.nixosModules.default
-          sops-nix.nixosModules.sops
+          inputs.sops-nix.nixosModules.sops
           # inputs.stylix.nixosModules.stylix
         ];
         specialArgs = {
@@ -96,7 +96,10 @@
     homeConfigurations = {
       jack = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [./home.nix];
+        modules = [
+          ./home.nix
+          inputs.nixvim.homeManagerModules.nixvim
+        ];
         extraSpecialArgs = {
           inherit inputs;
           inherit systemSettings;
