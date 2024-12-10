@@ -532,7 +532,7 @@
       "rainbow-csv" = true;
       "ruff" = true;
       "sagemath" = false;
-      # "snippets" = true;
+      "snippets" = true;
       "sql" = true;
       "toml" = false;
       "typst" = true;
