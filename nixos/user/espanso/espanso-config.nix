@@ -8,7 +8,7 @@
 }: {
   services.espanso.configs = {
     default = {
-      show_notifications = false;
+      show_notifications = true;
     };
     # vscode = {
     #   filter_title = "Visual Studio Code$";

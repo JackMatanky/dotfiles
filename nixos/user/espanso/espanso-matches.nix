@@ -41,7 +41,7 @@
       ];
     };
     contact_vars = {
-      contact_vars = [
+      matches = [
         {
           trigger = ":fullname";
           replace = "{{my_full_name}}";
@@ -62,7 +62,7 @@
     };
     # Datetime
     relative_datetime = {
-      relative_datetime = [
+      matches = [
         # Date
         # Print today's date
         {
