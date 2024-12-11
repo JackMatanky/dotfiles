@@ -2,7 +2,7 @@
   description = "JackMatanky Flake Config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     # nixos-hardware.url = "github:nixos/nixos-hardware";
@@ -42,7 +42,7 @@
 
   outputs = {
     self,
-    nixpkgs,
+    nixpkgs-stable,
     nixpkgs-unstable,
     nixos-hardware,
     home-manager,
@@ -71,8 +71,8 @@
       # grubDevice = ""; # device identifier for grub; only used for legacy (bios) boot mode
       # gpuType = "amd"; # amd, intel or nvidia; only makes some slight mods for amd at the moment
     };
-    lib = nixpkgs.lib;
-    pkgs = nixpkgs.legacyPackages.${systemSettings.system};
+    lib = nixpkgs-stable.lib;
+    pkgs = nixpkgs-stable.legacyPackages.${systemSettings.system};
     pkgs-unstable = nixpkgs-unstable.legacyPackages.${systemSettings.system};
   in {
     nixosConfigurations = {
