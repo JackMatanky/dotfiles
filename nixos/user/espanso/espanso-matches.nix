@@ -1,23 +1,13 @@
-# espanso text expander: https://espanso.org/docs/
+# Espanso Text Expander: https://espanso.org/docs/
+# Espanso Matches: https://espanso.org/docs/matches/basics/
 {
   config,
   pkgs,
   lib,
   ...
 }: {
-  services.espanso = {
-    enable = true;
-    package = pkgs.espanso;
-    configs = {
-      default = {
-        show_notifications = false;
-      };
-      # vscode = {
-      #   filter_title = "Visual Studio Code$";
-      #   backend = "Clipboard";
-      # };
-    };
-    matches = {
+  services.espanso.matches = {
+    base = {
       # Global Variables
       global_vars = [
         {
