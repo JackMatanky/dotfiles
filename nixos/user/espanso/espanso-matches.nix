@@ -55,48 +55,52 @@
       {
         trigger = ":today";
         replace = "{{date_var}}";
-        vars = {
-          name = "date_var";
-          type = "date";
-          params.format = "%F";
-        };
+        vars = [
+          {name = "date_var";}
+          {type = "date";}
+          {params.format = "%F";}
+        ];
       }
       {
         trigger = ":tomorrow";
         replace = "{{date_var}}";
         label = "Insert tomorrow's date, such as 5-Jan-2022";
-        vars = {
-          name = "date_var";
-          type = "date";
-          params = {
-            format = "%d.%m.%Y";
-            offset = 86400;
-          };
-        };
+        vars = [
+          {name = "date_var";}
+          {type = "date";}
+          {
+            params = {
+              format = "%d.%m.%Y";
+              offset = 86400;
+            };
+          }
+        ];
       }
       {
         trigger = ":yesterday";
         replace = "{{date_var}}";
         label = "Insert yesterday's date, such as 5-Jan-2022";
-        vars = {
-          name = "date_var";
-          type = "date";
-          params = {
-            format = "%d.%m.%Y";
-            offset = -86400;
-          };
-        };
+        vars = [
+          {name = "date_var";}
+          {type = "date";}
+          {
+            params = {
+              format = "%d.%m.%Y";
+              offset = -86400;
+            };
+          }
+        ];
       }
       # Time
       # Print the current time
       {
         trigger = ":now";
         replace = "{{time_var}}";
-        vars = {
-          name = "time_var";
-          type = "date";
-          params.format = "%H:%M";
-        };
+        vars = [
+          {name = "time_var";}
+          {type = "date";}
+          {params.format = "%H:%M";}
+        ];
       }
     ];
   };
