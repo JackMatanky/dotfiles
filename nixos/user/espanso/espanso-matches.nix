@@ -12,30 +12,22 @@
       {
         name = "my_first_name";
         type = "echo";
-        params = {
-          echo = "Jack";
-        };
+        params.echo = "Jack";
       }
       {
         name = "my_last_name";
         type = "echo";
-        params = {
-          echo = "Matanky";
-        };
+        params.echo = "Matanky";
       }
       {
         name = "my_full_name";
         type = "echo";
-        params = {
-          echo = "{{my_first_name}} {{my_last_name}}";
-        };
+        params.echo = "{{my_first_name}} {{my_last_name}}";
       }
       {
         name = "my_email";
         type = "echo";
-        params = {
-          echo = "{{my_first_name}}{{my_last_name}}@gmail.com";
-        };
+        params.echo = "{{my_first_name}}{{my_last_name}}@gmail.com";
       }
     ];
     contact_vars.matches = [
@@ -66,9 +58,7 @@
         vars = {
           name = "date_var";
           type = "date";
-          params = {
-            format = "%F";
-          };
+          params.format = "%F";
         };
       }
       {
@@ -105,9 +95,7 @@
         vars = {
           name = "time_var";
           type = "date";
-          params = {
-            format = "%H:%M";
-          };
+          params.format = "%H:%M";
         };
       }
     ];
