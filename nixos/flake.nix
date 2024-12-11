@@ -13,29 +13,29 @@
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     # Secrets Management
     sops-nix = {
       url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     # stylix.url = "github:danth/stylix";
 
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     # Snippets language server for Zed
     # Original: https://github.com/estin/simple-completion-language-server
     # Zed Fork: https://github.com/zed-industries/simple-completion-language-server
-    simple-completion-language-server = {
-      url = "github:zed-industries/simple-completion-language-server";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # simple-completion-language-server = {
+    #   url = "github:zed-industries/simple-completion-language-server";
+    #   inputs.nixpkgs.follows = "nixpkgs-stable";
+    # };
 
     # hyprland.url = "github:hyprwm/Hyprland";
   };
