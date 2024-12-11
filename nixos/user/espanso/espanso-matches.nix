@@ -7,8 +7,8 @@
   ...
 }: {
   services.espanso.matches = {
-    base = {
-      # Global Variables
+    # Global Variables
+    global_vars = {
       global_vars = [
         {
           name = "my_first_name";
@@ -39,6 +39,8 @@
           };
         }
       ];
+    };
+    contact_vars = {
       contact_vars = [
         {
           trigger = ":fullname";
@@ -57,7 +59,10 @@
           replace = "All the best,\n{{my_full_name}}";
         }
       ];
-      relative_dates = [
+    };
+    # Datetime
+    relative_datetime = {
+      relative_datetime = [
         # Date
         # Print today's date
         {
@@ -97,8 +102,6 @@
             };
           };
         }
-      ];
-      relative_times = [
         # Time
         # Print the current time
         {
