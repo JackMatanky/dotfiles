@@ -27,9 +27,8 @@ if [[ -d "/nix/var/nix/profiles/default" ]]; then
 
   # --- Syntax Highlighting ---
   source /nix/store/pzs9jwplb4c25qqd8myyxsx4csbqczhv-zsh-syntax-highlighting-0.8.0/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  ZSH_HIGHLIGHT_HIGHLIGHTERS+=() 
+  ZSH_HIGHLIGHT_HIGHLIGHTERS+=()
 fi
-
 
 # --- History ---
 # Set history file size and location.
@@ -54,20 +53,15 @@ source "$HOME/.dotfiles/cli/aliases.sh"
 # --- Named Directory Hashes ---
 # ... (keep this section if needed) ...
 
-
 # --- Aliases ---
 
-# Nix-related aliases
-alias -- cg_empty='sudo nix-collect-garbage'
-alias -- cg_empty_all='sudo nix-collect-garbage -d'
+# Directory aliases
 alias -- dot='cd ~/.dotfiles'
 alias -- dot_nix='cd ~/.dotfiles/nixos'
-alias -- flake_rebuild='sudo nixos-rebuild switch --flake .'
-alias -- flake_rebuild_trace='sudo nixos-rebuild switch --flake . --show-trace'
-alias -- flake_up='sudo nix flake update'
-alias -- flake_up_trace='sudo nix flake update --show-trace'
-alias -- hm_switch='home-manager switch --flake .'
-alias -- hm_switch_trace='home-manager switch --flake . --show-trace'
+alias -- obsidian='cd ~/obsidian_vault'
+alias -- obsidian_gpl='cd ~/obsidian_vault; git pull'
+alias -- vimdiff='nvim -d'
+
 
 # Git aliases
 alias -- gad='git add'
@@ -89,7 +83,12 @@ alias -- grm='git remote'
 alias -- grs='git reset'
 alias -- gst='git status'
 
-# Other aliases
-alias -- obsidian='cd ~/obsidian_vault'
-alias -- obsidian_gpl='cd ~/obsidian_vault; git pull'
-alias -- vimdiff='nvim -d'
+# Nix-related aliases
+alias -- cg_empty='sudo nix-collect-garbage'
+alias -- cg_empty_all='sudo nix-collect-garbage -d'
+alias -- flake_rebuild='sudo nixos-rebuild switch --flake .'
+alias -- flake_rebuild_trace='sudo nixos-rebuild switch --flake . --show-trace'
+alias -- flake_up='sudo nix flake update'
+alias -- flake_up_trace='sudo nix flake update --show-trace'
+alias -- hm_switch='home-manager switch --flake .'
+alias -- hm_switch_trace='home-manager switch --flake . --show-trace'
