@@ -58,7 +58,7 @@ $env.NU_PLUGIN_DIRS = [
 ]
 
 # Update PATH dynamically
-let-env PATH = ["/opt/homebrew/bin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" $env.PATH...]
+let-env PATH = ["/opt/homebrew/bin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" $env.PATH]
 
 # Optional integrations
 if (which starship | is-not-empty) {
