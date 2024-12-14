@@ -7,6 +7,11 @@
     st = status                          # Shortcut for `git status`
     cm = commit -m                       # Shortcut for `git commit -m`
     pl = pull                            # Shortcut for `git pull`
+    pr = pull-request                    # Shortcut for `pull request`
+    co = checkout                        # Shortcut for `git checkout`
+    br = branch                          # Shortcut for `git branch`
+    lg = log --graph --decorate --all    # Shortcut for `git log`
+    last = log -1 HEAD                   # Shortcut to show last commit
 
     # Aliases from Shell
     gcm = commit -m                      # Commit with a message
@@ -29,6 +34,7 @@
 [core]
     autocrlf = input                     # Convert CRLF to LF on input
     eol = lf                             # Use LF as the end-of-line character
+    attributesfile = ~/.config/git/.gitattributes
 
 [diff "pdf"]
     textconv = pdftotext -layout -enc UTF-8 -
