@@ -1,8 +1,9 @@
 # Nushell Environment Config File
 #
-# Tailored for macOS with enhancements for prompt and paths
+# Tailored for NixOS with enhancements for prompt and paths
 
 # Define a custom left prompt
+# Displays the current directory with different colors for separators and admin status
 def create_left_prompt [] {
     let dir = match (do --ignore-shell-errors { $env.PWD | path relative-to $nu.home-path }) {
         null => $env.PWD
@@ -18,11 +19,12 @@ def create_left_prompt [] {
 }
 
 # Define a custom right prompt
+# Displays the date, time, and last exit code in a styled format
 def create_right_prompt [] {
     let time_segment = ([
         (ansi reset)
         (ansi magenta)
-        (date now | format date '%x %X')
+        (date now | format date '%x %X')  # Format date and time
     ] | str join | str replace --regex --all "([/:])" $"(ansi green)${1}(ansi magenta)" |
         str replace --regex --all "([AP]M)" $"(ansi magenta_underline)${1}")
 
@@ -40,6 +42,7 @@ $env.PROMPT_COMMAND = {|| create_left_prompt }
 $env.PROMPT_COMMAND_RIGHT = {|| create_right_prompt }
 
 # Environment Variable Conversions
+# Handles how variables like PATH are formatted and expanded
 $env.ENV_CONVERSIONS = {
     "PATH": {
         from_string: { |s| $s | split row (char esep) | path expand --no-symlink }
@@ -48,6 +51,7 @@ $env.ENV_CONVERSIONS = {
 }
 
 # Directories for scripts and plugins
+# Add default directories for Nushell scripts and plugins
 $env.NU_LIB_DIRS = [
     ($nu.default-config-dir | path join 'scripts')
     ($nu.data-dir | path join 'completions')
@@ -58,21 +62,26 @@ $env.NU_PLUGIN_DIRS = [
 ]
 
 # Update PATH dynamically
-let-env PATH = ["/opt/homebrew/bin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" $env.PATH...]
+# Add commonly used directories to PATH
+path /run/current-system/sw/bin
+path /home/$nu.env.USER/.local/bin
 
 # Optional integrations
+# Initialize Starship if available
 if (which starship | is-not-empty) {
-    mkdir -p ~/.cache/starship
+    mkdir ~/.cache/starship
     starship init nu | save --force ~/.cache/starship/init.nu
-    let-env STARSHIP_CONFIG = "~/.config/starship/starship.toml"
+    $env.STARSHIP_CONFIG = "/home/$nu.env.USER/.config/starship/starship.toml"
 }
 
+# Initialize Zoxide if available
 if (which zoxide | is-not-empty) {
     zoxide init nushell | save --force ~/.zoxide.nu
 }
 
+# Initialize Carapace if available
 if (which carapace | is-not-empty) {
-    mkdir -p ~/.cache/carapace
+    mkdir ~/.cache/carapace
     carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
-    let-env CARAPACE_BRIDGES = "zsh,fish,bash"
+    $env.CARAPACE_BRIDGES = "zsh,fish,bash,inshellisense"
 }

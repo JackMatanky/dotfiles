@@ -3,7 +3,7 @@ TERM = "xterm-256color"
 
 [terminal.shell]
 args = ["--login"]
-program = "/home/jack/.nix-profile/bin/nu"
+program = "/opt/homebrew/bin/nu"
 
 [font]
 size = 12
