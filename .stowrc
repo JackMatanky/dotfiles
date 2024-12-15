@@ -16,6 +16,7 @@
 --ignore=firefox
 --ignore=nixos
 --ignore=xournalpp
+--ignore=zotero
 
 --verbose
 --restow
