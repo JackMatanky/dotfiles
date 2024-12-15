@@ -99,6 +99,9 @@ alias -- flake_up_trace='sudo nix flake update --show-trace'
 alias -- hm_switch='home-manager switch --flake .'
 alias -- hm_switch_trace='home-manager switch --flake . --show-trace'
 
+
+export PATH="/opt/homebrew/bin:$PATH"
+
 # --- XDG_CONFIG_HOME ---
 export XDG_CONFIG_HOME="$HOME/.config"
 
