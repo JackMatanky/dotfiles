@@ -7,6 +7,7 @@
 --ignore='.git/'
 --ignore='^examples'
 --ignore='_notes'
+--ignore='.ropeproject'
 --ignore=anki
 --ignore=assets
 --ignore=cli

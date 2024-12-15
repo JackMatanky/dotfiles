@@ -1,0 +1,14 @@
+$env.PATH
+which nu
+$env.config
+$env.config-dir
+dot
+$nu.env-path
+cd
+$nu.env-path
+ls -l ~/.config/nushell/env.nu<\n>
+rm -rf ~/.cache/nushell<\n>
+echo $env.NU_CONFIG_DIR
+$nu.env-path
+$nu.config-path
+$nu.env-path

@@ -92,3 +92,11 @@ alias -- flake_up='sudo nix flake update'
 alias -- flake_up_trace='sudo nix flake update --show-trace'
 alias -- hm_switch='home-manager switch --flake .'
 alias -- hm_switch_trace='home-manager switch --flake . --show-trace'
+
+# --- XDG_CONFIG_HOME ---
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# --- Nushell NU_CONFIG_HOME ---
+export NU_CONFIG_DIR="$HOME/.config/nushell"
+
+echo "Loaded .zshrc from $ZDOTDIR"

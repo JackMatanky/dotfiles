@@ -10,7 +10,7 @@
   "ui_font_size": 16,
   "ui_font_weight": 400,
   "ui_font_family": "Ubuntu", //"Zed Plex Sans",
-  "ui_font_fallbacks": ["Source Code Pro"],
+  "ui_font_fallbacks": ["Fira Code", "JetBrains Mono", "Source Code Pro"],
   "ui_font_features": {
     // Disable ligatures:
     "calt": false
@@ -268,7 +268,7 @@
     "default_height": 320,
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet"
+      "model": "claude-3-5-sonnet-latest"
     }
   },
   // Slash Commands
@@ -452,7 +452,7 @@
     // "font_size": 15,
     // Set the terminal's font family. If this option is not included,
     // the terminal will default to matching the buffer's font family.
-    "font_family": "Source Code Pro" //"FiraCode Nerd Fonts"
+    "font_family": "JetBrainsMono Nerd Font" //"FiraCode Nerd Fonts"
     // Set the terminal's font fallbacks. If this option is not included,
     // the terminal will default to matching the buffer's font fallbacks.
     // This will be merged with the platform's default font fallbacks
@@ -502,26 +502,65 @@
 
   // Automatically Installed Extensions
   "auto_install_extensions": {
+    // AsciiDoc: https://github.com/andreicek/zed-asciidoc
+    "asciidoc": true,
+    // Autocorrect: https://github.com/huacnlee/zed-autocorrect
+    "autocorrect": true,
+    // Base16 Theme: https://github.com/bswinnerton/base16-zed
     "base16": true,
-    "basher": false,
+    // Bash: https://github.com/d1y/bash.zed
+    "basher": true,
+    // Basedpyright: https://github.com/m1guer/basedpyright-zed
+    "basedpyright": false,
+    // CSV: https://github.com/huacnlee/zed-csv
     "csv": true,
-    "dbml": false,
+    // Database Markup Language (DBML): https://github.com/shuklaayush/zed-dbml
+    "dbml": true,
+    // DeviceTree: https://github.com/anikinmd/zed_devicetree
+    "devicetree": true,
+    // Environment Support: https://github.com/zarifpour/zed-env
+    "env": true,
+    // Gemini Syntax Highlighting
+    "gemini": true,
+    // Git Firefly: https://github.com/d1y/git_firefly
     "git-firefly": true,
     "html": true,
-    "just": false,
+    // Justfile: https://github.com/jackTabsCode/zed-just
+    "just": true,
+    // LaTeX: https://github.com/rzukic/zed-latex
     "latex": true,
-    "markdown-oxide": false,
-    "mermaid": false,
+    // Lua
+    "lua": true,
+    // Makefile: https://github.com/caius/zed-make
+    "make": true,
+    // Markdown Oxide: https://github.com/Feel-ix-343/markdown-oxide-zed
+    "markdown-oxide": true,
+    // Marksman MD: https://github.com/vitallium/zed-marksman
+    "marksman": true,
+    // Mermaid: https://github.com/gabeidx/zed-mermaid
+    "mermaid": true,
+    // Nix
     "nix": true,
+    // Nushell
+    "nu": true,
+    // Python LSP: https://github.com/rgbkrk/python-lsp-zed-extension
     "pylsp": true,
+    // Python Refactoring: https://github.com/rowillia/zed-python-refactoring
     "python-refactoring": true,
+    // Rainbow CSV: https://github.com/weartist/zed-rainbow-csv
     "rainbow-csv": true,
     "ruff": true,
-    "sagemath": false,
-    // "snippets": true,
+    "sagemath": true,
+    "snippets": true,
+    // SQL: https://github.com/zed-extensions/sql
     "sql": true,
-    "toml": false,
-    "typst": true
+    // Tmux: https://github.com/dangh/zed-tmux
+    "tmux": true,
+    "toml": true,
+    // Typos Language Server: https://github.com/BaptisteRoseau/zed-typos
+    "typos": true,
+    "typst": true,
+    "xml": true
   },
 
   // Formatter
@@ -693,13 +732,13 @@
     "Python": {
       "language_servers": ["!pyright", "pylsp"], // ["pyright", "ruff"],
       "tab_size": 4,
-      "format_on_save": "on",
-      "formatter": {
-        "external": {
-          "command": "/home/jack/.nix-profile/bin/ruff",
-          "arguments": ["format", "--stdin-filename", "{buffer_path}"]
-        }
-      }
+      "format_on_save": "on"
+      // "formatter": {
+      //   "external": {
+      //     "command": "/home/jack/.nix-profile/bin/ruff",
+      //     "arguments": ["format", "--stdin-filename", "{buffer_path}"]
+      //   }
+      // }
       // [
       //   {
       //     "code_actions": {
@@ -786,55 +825,55 @@
     //   "command": "simple-completion-language-server",
     //   "languages": ["plaintext"]
     // },
-    "pylsp": {
-      "binary": {
-        "path": "/home/jack/.nix-profile/bin/pylsp"
-      },
-      "settings": {
-        "plugins": {
-          "pylsp-mypy": {
-            "enabled": true
-          },
-          "pylsp-rope": {
-            "enabled": true
-          },
-          "python-lsp-ruff": {
-            "enabled": true
-          }
-        }
-      }
-    },
-    "pyright": {
-      "binary": {
-        "path": "/home/jack/.nix-profile/bin/pyright"
-      },
-      "settings": {
-        "python.analysis": {
-          "diagnosticMode": "workspace",
-          "typeCheckingMode": "strict"
-        },
-        "python": {
-          "pythonPath": "/home/jack/.nix-profile/bin/python"
-        }
-      }
-    },
-    "ruff": {
-      "binary": {
-        "path": "/home/jack/.nix-profile/bin/ruff",
-        "arguments": ["server", "--preview"]
-      }
-    },
+    // "pylsp": {
+    //   "binary": {
+    //     "path": "/home/jack/.nix-profile/bin/pylsp"
+    //   },
+    //   "settings": {
+    //     "plugins": {
+    //       "pylsp-mypy": {
+    //         "enabled": true
+    //       },
+    //       "pylsp-rope": {
+    //         "enabled": true
+    //       },
+    //       "python-lsp-ruff": {
+    //         "enabled": true
+    //       }
+    //     }
+    //   }
+    // },
+    // "pyright": {
+    //   "binary": {
+    //     "path": "/home/jack/.nix-profile/bin/pyright"
+    //   },
+    //   "settings": {
+    //     "python.analysis": {
+    //       "diagnosticMode": "workspace",
+    //       "typeCheckingMode": "strict"
+    //     },
+    //     "python": {
+    //       "pythonPath": "/home/jack/.nix-profile/bin/python"
+    //     }
+    //   }
+    // },
+    // "ruff": {
+    //   "binary": {
+    //     "path": "/home/jack/.nix-profile/bin/ruff",
+    //     "arguments": ["server", "--preview"]
+    //   }
+    // },
     //   // "initialization_options": {
     //   //   "settings": {
     //   //     "path": "/home/jack/.nix-profile/bin/ruff"
     //   //   }
     //   // }
     // }
-    "tex": {
-      "binary": {
-        "path": "/home/jack/.nix-profile/bin/tex"
-      }
-    }
+    // "tex": {
+    //   "binary": {
+    //     "path": "/home/jack/.nix-profile/bin/tex"
+    //   }
+    // }
   },
 
   // Jupyter Notebook

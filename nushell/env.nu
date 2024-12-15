@@ -2,6 +2,9 @@
 # Base Source: Omer Hammerman (omerxx)
 # https://github.com/omerxx/dotfiles/blob/master/nushell/env.nu
 
+$env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
+$env.NU_CONFIG_DIR = ($env.HOME | path join '.config/nushell')
+
 def create_left_prompt [] {
     let dir = match (do --ignore-shell-errors { $env.PWD | path relative-to $nu.home-path }) {
         null => $env.PWD
@@ -96,8 +99,23 @@ use std "path add"
 # path add ($env.CARGO_HOME | path join "bin")
 # path add ($env.HOME | path join ".local" "bin")
 # $env.PATH = ($env.PATH | uniq)
-path add /opt/homebrew/bin
-path add /run/current-system/sw/bin
+
+# # Update PATH dynamically
+# let-env PATH = ["/opt/homebrew/bin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" $env.PATH]
+$env.PATH = (
+  $env.PATH
+  | split row (char esep)
+  | append /bin
+  | append /usr/bin
+  | append /usr/local/bin
+  | append /sbin
+  | append /usr/sbin
+  | append /opt/homebrew/bin
+  | append /run/current-system/sw/bin
+  # | append ($env.CARGO_HOME | path join bin)
+  # | append ($env.HOME | path join .local bin)
+  | uniq # filter so the paths are unique
+)
 
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
@@ -106,14 +124,12 @@ mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
 zoxide init nushell | save -f ~/.zoxide.nu
 
-$env.STARSHIP_CONFIG = /Users/jack/.config/starship/starship.toml
+$env.STARSHIP_CONFIG = ($env.HOME | path join '.config/starship/starship.toml')
 # $env.NIX_CONF_DIR = /Users/jack/.config/nix
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 mkdir ~/.cache/carapace
 carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
 
-# # Update PATH dynamically
-# let-env PATH = ["/opt/homebrew/bin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" $env.PATH]
 
 # # Optional integrations
 # if (which starship | is-not-empty) {

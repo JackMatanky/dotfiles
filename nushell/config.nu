@@ -219,8 +219,8 @@ $env.config = {
     }
 
     color_config: $dark_theme # if you want a more interesting theme, you can replace the empty record with `$dark_theme`, `$light_theme` or another custom record
-    use_grid_icons: true
-    footer_mode: "25" # always, never, number_of_rows, auto
+    # use_grid_icons: true
+    footer_mode: 25 # always, never, number_of_rows, auto
     float_precision: 2 # the precision for displaying floats in tables
     buffer_editor: "" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
     use_ansi_coloring: true
@@ -924,38 +924,38 @@ def ff [] {
 # --- Aliases ---
 
 # Source External Aliases
-if (path exists ~/dotfiles/cli/aliases.sh) {
-    source ~/dotfiles/cli/aliases.sh
-} else {
-    echo "aliases.sh not found, skipping alias import"
-}
+# if (path exists ~/dotfiles/cli/aliases.sh) {
+#     source ~/dotfiles/cli/aliases.sh
+# } else {
+#     echo "aliases.sh not found, skipping alias import"
+# }
 
 # Directory aliases
-alias dot = cd ~/.dotfiles
-alias dot_nix = cd ~/.dotfiles/nixos
+alias dot = cd ~/dotfiles
+alias dot_nix = cd ~/dotfiles/nixos
 alias obsidian = cd ~/obsidian_vault
 alias obsidian_gpl = cd ~/obsidian_vault; git pull
 alias vimdiff = nvim -d
 
-# Git aliases
-alias gad = git add
-alias gad_d = git add .
-alias gad_p = git add -p
-alias gc = git commit -m
-alias gca = git commit -a -m
-alias gpl = git pull
-alias gpl_o = git pull origin
-alias gps = git push
-alias gps_o = git push origin
-alias gst = git status
-alias gbr = git branch
-alias gbra = git branch -a
-alias gco = git checkout
-alias gcoall = git checkout -- .
-alias gdiff = git diff
-alias glog = git log --graph --topo-order --pretty='\''%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N'\'' --abbrev-commit
-alias grm = git remote
-alias grs = git reset
+# Git
+# alias gad = git add
+# alias gad_d = git add .
+# alias gad_p = git add -p
+# alias gc = git commit -m
+# alias gca = git commit -a -m
+# alias gpl = git pull
+# alias gpl_o = git pull origin
+# alias gps = git push
+# alias gps_o = git push origin
+# alias gst = git status
+# alias gbr = git branch
+# alias gbra = git branch -a
+# alias gco = git checkout
+# alias gcoall = git checkout -- .
+# alias gdiff = git diff
+# alias glog = git log --graph --topo-order --pretty='\''%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N'\'' --abbrev-commit
+# alias grm = git remote
+# alias grs = git reset
 
 # Nix-related aliases
 # alias cg_empty = sudo nix-collect-garbage
@@ -972,3 +972,5 @@ source ~/.zoxide.nu
 source ~/.cache/carapace/init.nu
 # source ~/.local/share/atuin/init.nu
 use ~/.cache/starship/init.nu
+
+echo "Nushell config loaded from $NU_CONFIG_DIR"

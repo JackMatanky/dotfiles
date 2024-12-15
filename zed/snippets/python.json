@@ -29,7 +29,7 @@
   },
   "if __name__ == __main__": {
     "prefix": "ifmain",
-    "body": ["if __name__ == \"__main__\":", "\t${1:main()}$0"],
+    "body": ["if __name__ == \"__main__\":", "\t$0"],
     "description": "Execute code if the file is executed directly"
   },
 
@@ -95,8 +95,8 @@
     "description": "if statement with else"
   },
   "for": {
-    "prefix": "for",
-    "body": ["for ${1} in ${2}:", "\t${3}$0"],
+    "prefix": "py_for",
+    "body": ["for $1 in $2:", "\t$0"],
     "description": "for loop"
   },
   "for w/ range": {
@@ -145,7 +145,7 @@
   },
   "Function w/ return type": {
     "prefix": "deft",
-    "body": ["def $1($2:arg) -> $3:", "\t$0"],
+    "body": ["def $1($2) -> $3:", "\t$0"],
     "description": "Function definition with return type"
   },
   "async Function": {
@@ -167,7 +167,7 @@
   },
   "Derived Class": {
     "prefix": "classd",
-    "body": ["class $1($2):", "\t${3:pass}$0"],
+    "body": ["class $1($2):", "\t$0"],
     "description": "Class definition with inheritance"
   },
   "Class Template": {
@@ -212,7 +212,7 @@
       "",
       "",
       "class $1(Enum):",
-      "\t\"\"\"${2:Docstring for $1.}\"\"\"",
+      "\t\"\"\"$2\"\"\"",
       "\t$3 = \"some_value\"",
       "\t$4 = \"some_other_value\"",
       "\t$0"
@@ -356,39 +356,27 @@
   },
   "comment simple": {
     "prefix": "##",
-    "body": [
-      "\"\"\"",
-      "${1:A one-line summary.}",
-      "",
-      "${2:Detailed description.}$0",
-      "\"\"\""
-    ],
+    "body": ["\"\"\"", "$1", "", "$0", "\"\"\""],
     "description": "A simple Python docstring comment. Useful when you prefer to add the docstrings manually on functions."
   },
   "module docstring": {
     "prefix": "###module",
     "body": [
       "\"\"\"",
-      "${1:A one-line summary.}",
+      "$1",
       "",
-      "${2:Detailed description.}$0",
+      "$2$0",
       "",
       "Examples:",
-      "    # ${3:Description of my example.}",
-      "    ${4:use_it_this_way(arg1, arg2)}",
+      "    # $3",
+      "    $4",
       "\"\"\""
     ],
     "description": "A Python docstring for modules, including a one-line summary, details, and example."
   },
   "test module docstring": {
     "prefix": "###test",
-    "body": [
-      "\"\"\"",
-      "${1:A one-line summary.}",
-      "",
-      "${2:Detailed description.}$0",
-      "\"\"\""
-    ],
+    "body": ["\"\"\"", "$1", "", "$2", "\"\"\"", "$0"],
     "description": "Module-level docstrings for test files are not required. They should be included only when there is additional information that can be provided.\n\nExamples include some specifics on how the test should be run, an explanation of an unusual setup pattern, dependency on the external environment, and so on. Docstrings that do not provide any new information should not be used, such as \"\"\"Tests for foo.bar.\"\"\""
   },
   "function docstring": {
