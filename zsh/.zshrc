@@ -102,8 +102,11 @@ alias -- hm_switch_trace='home-manager switch --flake . --show-trace'
 # --- XDG_CONFIG_HOME ---
 export XDG_CONFIG_HOME="$HOME/.config"
 
-# --- Nushell NU_CONFIG_HOME ---
-export NU_CONFIG_DIR="$HOME/.config/nushell"
+# --- SSH Config ---
+export SSH_CONFIG_DIR="$CONFIG/ssh/config"
+
+# --- Nushell Config ---
+export NU_CONFIG_DIR="$CONFIG/nushell"
 
 # echo "Loaded .zshrc from $ZDOTDIR"
 
