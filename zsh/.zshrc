@@ -48,7 +48,7 @@ unsetopt EXTENDED_HISTORY    # Disable extended history (timestamps, etc.).
 
 
 # --- Import aliases from a separate file ---
-source "$HOME/.dotfiles/cli/aliases.sh"
+source "$HOME/dotfiles/cli/aliases.sh"
 
 # --- Named Directory Hashes ---
 # ... (keep this section if needed) ...
@@ -56,8 +56,8 @@ source "$HOME/.dotfiles/cli/aliases.sh"
 # --- Aliases ---
 
 # Directory aliases
-alias -- dot='cd ~/.dotfiles'
-alias -- dot_nix='cd ~/.dotfiles/nixos'
+alias -- dot='cd ~/dotfiles'
+alias -- dot_nix='cd ~/dotfiles/nixos'
 alias -- obsidian='cd ~/obsidian_vault'
 alias -- obsidian_gpl='cd ~/obsidian_vault; git pull'
 alias -- vimdiff='nvim -d'
