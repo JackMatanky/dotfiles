@@ -30,6 +30,12 @@ if [[ -d "/nix/var/nix/profiles/default" ]]; then
   ZSH_HIGHLIGHT_HIGHLIGHTERS+=()
 fi
 
+# --- Path Configuration ---
+export CONFIG="$HOME/.config"
+export BREW_DIR="/opt/homebrew"
+export BREW_BIN="/opt/homebrew/bin"
+export BREW_SHARE="/opt/homebrew/share"
+
 # --- History ---
 # Set history file size and location.
 HISTSIZE="10000"
@@ -99,4 +105,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # --- Nushell NU_CONFIG_HOME ---
 export NU_CONFIG_DIR="$HOME/.config/nushell"
 
-echo "Loaded .zshrc from $ZDOTDIR"
+# echo "Loaded .zshrc from $ZDOTDIR"
+
+# --- Initialize tools ---
+eval "$("$BREW_BIN/starship" init zsh)" # Starship prompt
+source <(carapace _carapace zsh) # Carapace Shell completion
+source "$BREW_SHARE/zsh-autosuggestions/zsh-autosuggestions.zsh"
