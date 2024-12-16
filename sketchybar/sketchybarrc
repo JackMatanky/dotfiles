@@ -59,4 +59,4 @@ source "$ITEM_DIR/calendar.sh"
 ############## FINALIZING THE SETUP ##############
 sketchybar --update
 
-echo "sketchybar configuation loaded.."
+echo "sketchybar configuration loaded.."
