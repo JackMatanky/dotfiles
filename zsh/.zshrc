@@ -1,134 +1,115 @@
 # --- Path Configuration ---
-# Set up paths for Zsh.
 typeset -U path cdpath fpath manpath
 
-# Conditional loading for Nix
+# XDG Base Directory
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# Add Homebrew paths (macOS-specific)
+export PATH="/opt/homebrew/bin:$PATH"
+
+# Add Nix paths (NixOS-specific)
 if [[ -d "/nix/var/nix/profiles/default" ]]; then
-  # Add Nix profile paths.
   for profile in ${(z)NIX_PROFILES}; do
     fpath+=($profile/share/zsh/site-functions $profile/share/zsh/$ZSH_VERSION/functions $profile/share/zsh/vendor-completions)
   done
-
-  # Set help directory.
-  HELPDIR="/nix/store/nw0648r93knk287wi8xga9jhhpm35g6g-zsh-5.9/share/zsh/$ZSH_VERSION/help"
-
-  # Load autosuggestions (adjust path if necessary).
-  source /nix/store/zjwhkkgmgmaki5lijrkfnfa7l54c8487-zsh-autosuggestions-0.7.0/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-  # --- Define variables for paths ---
-  export MY_HOME="$HOME"
-  export NIX_PROFILE="$MY_HOME/.nix-profile/bin"
-
-  # --- Initialize tools ---
-  eval "$("$NIX_PROFILE/starship" init zsh)" # Starship prompt
-  eval "$("$NIX_PROFILE/zoxide" init zsh)"  # Directory jumping
-  eval "$("$NIX_PROFILE/pyenv" init -)"    # Python version management
-  source <("$NIX_PROFILE/carapace" _carapace zsh) # Shell completion
-
-  # --- Syntax Highlighting ---
-  source /nix/store/pzs9jwplb4c25qqd8myyxsx4csbqczhv-zsh-syntax-highlighting-0.8.0/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  ZSH_HIGHLIGHT_HIGHLIGHTERS+=()
+  export PATH="/nix/var/nix/profiles/default/bin:$PATH"
+  export HELPDIR="/nix/store/nw0648r93knk287wi8xga9jhhpm35g6g-zsh-5.9/share/zsh/$ZSH_VERSION/help"
 fi
 
-# --- Path Configuration ---
-export CONFIG="$HOME/.config"
-export BREW_DIR="/opt/homebrew"
-export BREW_BIN="/opt/homebrew/bin"
-export BREW_SHARE="/opt/homebrew/share"
+# --- Language and Locale ---
+export LANG="en_US.UTF-8"
 
-# --- Language Environment ---
-export LANG=en_US.UTF-8
+# --- Plugin Management ---
+# ZSH Autosuggestions
+if [[ "$(uname)" == "Darwin" ]]; then
+  source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+elif [[ -d "/nix/store" ]]; then
+  source /nix/store/*zsh-autosuggestions*/zsh-autosuggestions.zsh
+fi
 
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# ZSH Syntax Highlighting
+if [[ "$(uname)" == "Darwin" ]]; then
+  SYNTAX_HIGHLIGHTING_PATH="$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  [[ -f "$SYNTAX_HIGHLIGHTING_PATH" ]] && source "$SYNTAX_HIGHLIGHTING_PATH"
+elif [[ -d "/nix/store" ]]; then
+  source /nix/store/*zsh-syntax-highlighting*/zsh-syntax-highlighting.zsh
+fi
+
+# Carapace Shell Completion
+if command -v carapace &> /dev/null; then
+  source <(carapace _carapace zsh)
+fi
+
+# --- Starship Prompt ---
+if command -v starship &> /dev/null; then
+  eval "$(starship init zsh)"
+  export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+fi
+
+# --- History Configuration ---
+export HISTSIZE=10000                # Number of commands kept in memory
+export SAVEHIST=10000                # Number of commands saved to the file
+export HISTFILE="$HOME/.zsh_history"  # Location of the history file
+mkdir -p "$(dirname "$HISTFILE")"
+
+setopt HIST_FCNTL_LOCK               # Prevent simultaneous history writes
+setopt HIST_IGNORE_DUPS              # Ignore consecutive duplicates
+setopt HIST_IGNORE_SPACE             # Ignore commands starting with a space
+setopt SHARE_HISTORY                 # Share history across Zsh instances
+
+# --- Aliases ---
+# Import aliases from a separate file
+# source "$HOME/dotfiles/cli/aliases.sh"
+
+# Directory aliases
+alias dot='cd ~/dotfiles'
+alias dot_nix='cd ~/dotfiles/nixos'
+alias obsidian='cd ~/obsidian_vault'
+alias obsidian_gpl='cd ~/obsidian_vault; git pull'
+alias vimdiff='nvim -d'
+
+# Git aliases
+alias gad='git add'
+alias gad_d='git add .'
+alias gad_p='git add -p'
+alias gbr='git branch'
+alias gbra='git branch -a'
+alias gc='git commit -m'
+alias gca='git commit -a -m'
+alias gco='git checkout'
+alias gcoall='git checkout -- .'
+alias gdiff='git diff'
+alias glog='git log --graph --topo-order --pretty='\''%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N'\'' --abbrev-commit'
+alias gpl='git pull'
+alias gpl_o='git pull origin'
+alias gps='git push'
+alias gps_o='git push origin'
+alias grm='git remote'
+alias grs='git reset'
+alias gst='git status'
+
+# Nix-specific aliases (only on NixOS)
+if [[ -d "/nix/var/nix/profiles/default" ]]; then
+  alias flake_rebuild='sudo nixos-rebuild switch --flake .'
+  alias flake_rebuild_trace='sudo nixos-rebuild switch --flake . --show-trace'
+  alias flake_up='sudo nix flake update'
+  alias flake_up_trace='sudo nix flake update --show-trace'
+  alias hm_switch='home-manager switch --flake .'
+  alias hm_switch_trace='home-manager switch --flake . --show-trace'
+  alias cg_empty='sudo nix-collect-garbage'
+  alias cg_empty_all='sudo nix-collect-garbage -d'
+fi
+
+# --- SSH Config ---
+export SSH_CONFIG_DIR="$XDG_CONFIG_HOME/ssh/config"
+
+# --- Nushell Config ---
+export NU_CONFIG_DIR="$XDG_CONFIG_HOME/nushell"
+
+# --- Keybindings ---
 bindkey '^w' autosuggest-execute
 bindkey '^e' autosuggest-accept
 bindkey '^u' autosuggest-toggle
 bindkey '^L' vi-forward-word
 bindkey '^k' up-line-or-search
 bindkey '^j' down-line-or-search
-
-# --- Starship ---
-eval "$(starship init zsh)"
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-
-# --- History ---
-# Set history file size and location.
-HISTSIZE="10000"
-SAVEHIST="10000"
-HISTFILE="$HOME/.zsh_history"
-mkdir -p "$(dirname "$HISTFILE")"
-
-# Configure history options.
-setopt HIST_FCNTL_LOCK     # Prevent multiple shells from writing to history simultaneously.
-setopt HIST_IGNORE_DUPS    # Ignore duplicate entries in history.
-unsetopt HIST_IGNORE_ALL_DUPS  # Do not ignore all duplicates (keep the most recent).
-setopt HIST_IGNORE_SPACE   # Ignore commands that start with a space.
-unsetopt HIST_EXPIRE_DUPS_FIRST # Keep the first occurrence of a duplicate command in history.
-setopt SHARE_HISTORY       # Share history between shell instances.
-unsetopt EXTENDED_HISTORY    # Disable extended history (timestamps, etc.).
-
-# --- Aliases ---
-# --- Import aliases from a separate file ---
-# source "$HOME/dotfiles/cli/aliases.sh"
-
-# Directory aliases
-alias -- dot='cd ~/dotfiles'
-alias -- dot_nix='cd ~/dotfiles/nixos'
-alias -- obsidian='cd ~/obsidian_vault'
-alias -- obsidian_gpl='cd ~/obsidian_vault; git pull'
-alias -- vimdiff='nvim -d'
-
-
-# Git aliases
-alias -- gad='git add'
-alias -- gad_d='git add .'
-alias -- gad_p='git add -p'
-alias -- gbr='git branch'
-alias -- gbra='git branch -a'
-alias -- gc='git commit -m'
-alias -- gca='git commit -a -m'
-alias -- gco='git checkout'
-alias -- gcoall='git checkout -- .'
-alias -- gdiff='git diff'
-alias -- glog='git log --graph --topo-order --pretty='\''%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N'\'' --abbrev-commit'
-alias -- gpl='git pull'
-alias -- gpl_o='git pull origin'
-alias -- gps='git push'
-alias -- gps_o='git push origin'
-alias -- grm='git remote'
-alias -- grs='git reset'
-alias -- gst='git status'
-
-# Nix-related aliases
-alias -- cg_empty='sudo nix-collect-garbage'
-alias -- cg_empty_all='sudo nix-collect-garbage -d'
-alias -- flake_rebuild='sudo nixos-rebuild switch --flake .'
-alias -- flake_rebuild_trace='sudo nixos-rebuild switch --flake . --show-trace'
-alias -- flake_up='sudo nix flake update'
-alias -- flake_up_trace='sudo nix flake update --show-trace'
-alias -- hm_switch='home-manager switch --flake .'
-alias -- hm_switch_trace='home-manager switch --flake . --show-trace'
-
-
-export PATH="/opt/homebrew/bin:$PATH"
-
-# --- XDG_CONFIG_HOME ---
-export XDG_CONFIG_HOME="$HOME/.config"
-
-# --- SSH Config ---
-export SSH_CONFIG_DIR="$CONFIG/ssh/config"
-
-# --- Nushell Config ---
-export NU_CONFIG_DIR="$CONFIG/nushell"
-
-# echo "Loaded .zshrc from $ZDOTDIR"
-
-# # --- Initialize tools ---
-# eval "$("$BREW_BIN/starship" init zsh)" # Starship prompt
-
-# # --- Starship ---
-# eval "$(starship init zsh)"
-# export STARSHIP_CONFIG=~/.config/starship/starship.toml
-
-source <(carapace _carapace zsh) # Carapace Shell completion
-# source "$BREW_SHARE/zsh-autosuggestions/zsh-autosuggestions.zsh"
