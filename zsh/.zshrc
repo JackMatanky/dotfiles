@@ -36,6 +36,21 @@ export BREW_DIR="/opt/homebrew"
 export BREW_BIN="/opt/homebrew/bin"
 export BREW_SHARE="/opt/homebrew/share"
 
+# --- Language Environment ---
+export LANG=en_US.UTF-8
+
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^w' autosuggest-execute
+bindkey '^e' autosuggest-accept
+bindkey '^u' autosuggest-toggle
+bindkey '^L' vi-forward-word
+bindkey '^k' up-line-or-search
+bindkey '^j' down-line-or-search
+
+# --- Starship ---
+eval "$(starship init zsh)"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
 # --- History ---
 # Set history file size and location.
 HISTSIZE="10000"
@@ -52,14 +67,9 @@ unsetopt HIST_EXPIRE_DUPS_FIRST # Keep the first occurrence of a duplicate comma
 setopt SHARE_HISTORY       # Share history between shell instances.
 unsetopt EXTENDED_HISTORY    # Disable extended history (timestamps, etc.).
 
-
-# --- Import aliases from a separate file ---
-source "$HOME/dotfiles/cli/aliases.sh"
-
-# --- Named Directory Hashes ---
-# ... (keep this section if needed) ...
-
 # --- Aliases ---
+# --- Import aliases from a separate file ---
+# source "$HOME/dotfiles/cli/aliases.sh"
 
 # Directory aliases
 alias -- dot='cd ~/dotfiles'
@@ -113,7 +123,12 @@ export NU_CONFIG_DIR="$CONFIG/nushell"
 
 # echo "Loaded .zshrc from $ZDOTDIR"
 
-# --- Initialize tools ---
-eval "$("$BREW_BIN/starship" init zsh)" # Starship prompt
+# # --- Initialize tools ---
+# eval "$("$BREW_BIN/starship" init zsh)" # Starship prompt
+
+# # --- Starship ---
+# eval "$(starship init zsh)"
+# export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
 source <(carapace _carapace zsh) # Carapace Shell completion
-source "$BREW_SHARE/zsh-autosuggestions/zsh-autosuggestions.zsh"
+# source "$BREW_SHARE/zsh-autosuggestions/zsh-autosuggestions.zsh"
