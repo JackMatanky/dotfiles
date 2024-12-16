@@ -1,3 +1,6 @@
+# Suppress "Last login" message
+touch ~/.hushlogin
+
 # --- Path Configuration ---
 typeset -U path cdpath fpath manpath
 
@@ -20,6 +23,11 @@ fi
 export LANG="en_US.UTF-8"
 
 # --- Plugin Management ---
+
+# ZSH Completion System
+autoload -U compinit
+compinit
+
 # ZSH Autosuggestions
 if [[ "$(uname)" == "Darwin" ]]; then
   source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
