@@ -12,3 +12,31 @@ echo $env.NU_CONFIG_DIR
 $nu.env-path
 $nu.config-path
 $nu.env-path
+$nu.config-path
+ls -l ~/.config/nushell
+exit
+pwd
+exit
+$nu.config-path
+$nu.env-path
+exit
+ll
+l
+rm test_file
+l
+la
+exit
+la
+exit
+la
+exit
+la
+exit
+stow
+stow .
+dot
+~/dotfiles
+stow .
+exit
+exis
+exit

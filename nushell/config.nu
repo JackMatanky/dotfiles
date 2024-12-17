@@ -896,81 +896,63 @@ def --env cx [arg] {
     ls -l
 }
 
+# >>> Aliases <<<
+# --- Shell Commands ---
 alias l = ls --all
 alias c = clear
 alias ll = ls -l
 alias lt = eza --tree --level=2 --long --icons --git
+
+# --- Directories ---
+alias dot = cd ~/dotfiles
+alias dot_nix = cd ~/dotfiles/nixos
+alias obsidian = cd ~/obsidian_vault
+def obsidian_gpl [] {
+  cd ~/obsidian_vault
+  git pull
+}
+
+# --- Git ---
+alias gad = git add
+alias gad_d = git add .
+alias gad_p = git add -p
+alias gc = git commit -m
+alias gca = git commit -a -m
+alias gpl = git pull
+alias gpl_o = git pull origin
+alias gps = git push
+alias gps_o = git push origin
+alias gst = git status
+alias gbr = git branch
+alias gbra = git branch -a
+alias gco = git checkout
+alias gcoall = git checkout -- .
+alias gdiff = git diff
+alias glog = git log --graph --topo-order --pretty='\''%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N'\'' --abbrev-commit
+alias grm = git remote
+alias grs = git reset
+
+# --- Nix ---
+alias flake_rebuild = sudo nixos-rebuild switch --flake .
+alias flake_rebuild_trace = sudo nixos-rebuild switch --flake . --show-trace
+alias flake_up = sudo nix flake update
+alias flake_up_trace = sudo nix flake update --show-trace
+alias hm_switch = home-manager switch --flake .
+alias hm_switch_trace = home-manager switch --flake . --show-trace
+alias cg_empty = sudo nix-collect-garbage
+alias cg_empty_all = sudo nix-collect-garbage -d
+
+# --- Applications ---
 alias v = nvim
+alias vimdiff = nvim -d
 alias as = aerospace
 
 def ff [] {
     aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
 }
 
-
-# Plugins and Integrations
-# if (path exists ~/.cache/carapace/init.nu) {
-#     source ~/.cache/carapace/init.nu
-# } else {
-#     echo "Carapace integration not found, skipping"
-# }
-
-# if (path exists ~/.cache/starship/init.nu) {
-#     use ~/.cache/starship/init.nu
-# } else {
-#     echo "Starship integration not found, skipping"
-# }
-
-# --- Aliases ---
-
-# Source External Aliases
-# if (path exists ~/dotfiles/cli/aliases.sh) {
-#     source ~/dotfiles/cli/aliases.sh
-# } else {
-#     echo "aliases.sh not found, skipping alias import"
-# }
-
-# Directory aliases
-alias dot = cd ~/dotfiles
-alias dot_nix = cd ~/dotfiles/nixos
-alias obsidian = cd ~/obsidian_vault
-alias obsidian_gpl = cd ~/obsidian_vault; git pull
-alias vimdiff = nvim -d
-
-# Git
-# alias gad = git add
-# alias gad_d = git add .
-# alias gad_p = git add -p
-# alias gc = git commit -m
-# alias gca = git commit -a -m
-# alias gpl = git pull
-# alias gpl_o = git pull origin
-# alias gps = git push
-# alias gps_o = git push origin
-# alias gst = git status
-# alias gbr = git branch
-# alias gbra = git branch -a
-# alias gco = git checkout
-# alias gcoall = git checkout -- .
-# alias gdiff = git diff
-# alias glog = git log --graph --topo-order --pretty='\''%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N'\'' --abbrev-commit
-# alias grm = git remote
-# alias grs = git reset
-
-# Nix-related aliases
-# alias cg_empty = sudo nix-collect-garbage
-# alias cg_empty_all = sudo nix-collect-garbage -d
-# alias flake_rebuild = sudo nixos-rebuild switch --flake .
-# alias flake_rebuild_trace = sudo nixos-rebuild switch --flake . --show-trace
-# alias flake_up = sudo nix flake update
-# alias flake_up_trace = sudo nix flake update --show-trace
-# alias hm_switch = home-manager switch --flake .
-# alias hm_switch_trace = home-manager switch --flake . --show-trace
-
+# >>> Plugin Management <<<
 source ~/.config/nushell/env.nu
 source ~/.zoxide.nu
 source ~/.cache/carapace/init.nu
-# source ~/.local/share/atuin/init.nu
 use ~/.cache/starship/init.nu
-
-echo "Nushell config loaded from $NU_CONFIG_DIR"

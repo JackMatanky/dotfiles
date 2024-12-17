@@ -19,23 +19,22 @@ if [[ -d "/nix/var/nix/profiles/default" ]]; then
   export HELPDIR="/nix/store/nw0648r93knk287wi8xga9jhhpm35g6g-zsh-5.9/share/zsh/$ZSH_VERSION/help"
 fi
 
-# --- Language and Locale ---
+# >>> Language and Locale <<<
 export LANG="en_US.UTF-8"
 
-# --- Plugin Management ---
-
-# ZSH Completion System
+# >>> Plugin Management <<<
+# --- ZSH Completion System ---
 autoload -U compinit
 compinit
 
-# ZSH Autosuggestions
+# --- ZSH Autosuggestions ---
 if [[ "$(uname)" == "Darwin" ]]; then
   source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 elif [[ -d "/nix/store" ]]; then
   source /nix/store/*zsh-autosuggestions*/zsh-autosuggestions.zsh
 fi
 
-# ZSH Syntax Highlighting
+# --- ZSH Syntax Highlighting ---
 if [[ "$(uname)" == "Darwin" ]]; then
   SYNTAX_HIGHLIGHTING_PATH="$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
   [[ -f "$SYNTAX_HIGHLIGHTING_PATH" ]] && source "$SYNTAX_HIGHLIGHTING_PATH"
@@ -43,7 +42,7 @@ elif [[ -d "/nix/store" ]]; then
   source /nix/store/*zsh-syntax-highlighting*/zsh-syntax-highlighting.zsh
 fi
 
-# Carapace Shell Completion
+# --- Carapace Shell Completion ---
 if command -v carapace &> /dev/null; then
   source <(carapace _carapace zsh)
 fi
@@ -65,18 +64,18 @@ setopt HIST_IGNORE_DUPS              # Ignore consecutive duplicates
 setopt HIST_IGNORE_SPACE             # Ignore commands starting with a space
 setopt SHARE_HISTORY                 # Share history across Zsh instances
 
-# --- Aliases ---
+# >>> Aliases <<<
 # Import aliases from a separate file
 # source "$HOME/dotfiles/cli/aliases.sh"
 
-# Directory aliases
+# --- Directories ---
 alias dot='cd ~/dotfiles'
 alias dot_nix='cd ~/dotfiles/nixos'
 alias obsidian='cd ~/obsidian_vault'
 alias obsidian_gpl='cd ~/obsidian_vault; git pull'
 alias vimdiff='nvim -d'
 
-# Git aliases
+# --- Git ---
 alias gad='git add'
 alias gad_d='git add .'
 alias gad_p='git add -p'
@@ -96,7 +95,7 @@ alias grm='git remote'
 alias grs='git reset'
 alias gst='git status'
 
-# Nix-specific aliases (only on NixOS)
+# --- Nix ---
 if [[ -d "/nix/var/nix/profiles/default" ]]; then
   alias flake_rebuild='sudo nixos-rebuild switch --flake .'
   alias flake_rebuild_trace='sudo nixos-rebuild switch --flake . --show-trace'

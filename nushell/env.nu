@@ -101,7 +101,6 @@ use std "path add"
 # $env.PATH = ($env.PATH | uniq)
 
 # # Update PATH dynamically
-# let-env PATH = ["/opt/homebrew/bin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" $env.PATH]
 $env.PATH = (
   $env.PATH
   | split row (char esep)
@@ -116,37 +115,28 @@ $env.PATH = (
   # | append ($env.HOME | path join .local bin)
   | uniq # filter so the paths are unique
 )
+path add /opt/homebrew/bin
+path add /run/current-system/sw/bin
 
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
 
-mkdir ~/.cache/starship
-starship init nu | save -f ~/.cache/starship/init.nu
-zoxide init nushell | save -f ~/.zoxide.nu
+# integrations
+if (which starship | is-not-empty) {
+    mkdir ~/.cache/starship
+    starship init nu | save --force ~/.cache/starship/init.nu
+    $env.STARSHIP_CONFIG = ($env.HOME | path join '.config/starship/starship.toml')
+}
 
-$env.STARSHIP_CONFIG = ($env.HOME | path join '.config/starship/starship.toml')
-# $env.NIX_CONF_DIR = /Users/jack/.config/nix
-$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
-mkdir ~/.cache/carapace
-carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+if (which zoxide | is-not-empty) {
+    zoxide init nushell | save --force ~/.zoxide.nu
+}
 
+if (which carapace | is-not-empty) {
+    mkdir ~/.cache/carapace
+    carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+    $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
+}
 
-# # Optional integrations
-# if (which starship | is-not-empty) {
-#     mkdir -p ~/.cache/starship
-#     starship init nu | save --force ~/.cache/starship/init.nu
-#     let-env STARSHIP_CONFIG = "~/.config/starship/starship.toml"
-# }
-
-# if (which zoxide | is-not-empty) {
-#     zoxide init nushell | save --force ~/.zoxide.nu
-# }
-
-# if (which carapace | is-not-empty) {
-#     mkdir -p ~/.cache/carapace
-#     carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
-#     let-env CARAPACE_BRIDGES = "zsh,fish,bash"
-# }
-# Nushell Environment Config File
-#
-# version = "0.95.0"
+# Optional: Keep Last Exit Code Variable for prompt display
+$env.LAST_EXIT_CODE = 0
