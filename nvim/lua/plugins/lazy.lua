@@ -42,17 +42,17 @@ require('lazy').setup({
     },
     config = true
   },
-  {
-    'Exafunction/codeium.vim',
-    event = "InsertEnter",
-    config = function ()
-      -- Change '<C-g>' here to any keycode you like.
-      vim.keymap.set('i', '<C-e>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-      vim.keymap.set('i', '<c-n>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
-      vim.keymap.set('i', '<c-p>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
-      vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
-    end
-  },
+  -- {
+  --   'Exafunction/codeium.vim',
+  --   event = "InsertEnter",
+  --   config = function ()
+  --     -- Change '<C-g>' here to any keycode you like.
+  --     vim.keymap.set('i', '<C-e>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+  --     vim.keymap.set('i', '<c-n>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+  --     vim.keymap.set('i', '<c-p>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+  --     vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+  --   end
+  -- },
   'onsails/lspkind.nvim',
   {
     "iamcco/markdown-preview.nvim",
@@ -82,10 +82,10 @@ require('lazy').setup({
   --   },
   --   config = function()
   --     require("nvim-tree").setup({
-  --       vim.api.nvim_set_keymap("n", "ff", ":NvimTreeToggle<enter>", { noremap=false }) 
-  --       -- vim.keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" }) 
-  --       -- vim.keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" }) 
-  --       -- vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" }) 
+  --       vim.api.nvim_set_keymap("n", "ff", ":NvimTreeToggle<enter>", { noremap=false })
+  --       -- vim.keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" })
+  --       -- vim.keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" })
+  --       -- vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })
   --     })
   --   end,
   -- },
@@ -114,7 +114,7 @@ require('lazy').setup({
         force_close = true, -- passed into vim.api.nvim_win_close's second argument. See :h nvim_win_close
         bufhidden = "wipe", -- the bufhidden option to set on the floating window. See :h bufhidden
         stack_floating_preview_windows = true, -- Whether to nest floating windows
-        preview_window_title = { enable = true, position = "left" }, -- Whether 
+        preview_window_title = { enable = true, position = "left" }, -- Whether
       }
     end
   },
@@ -282,7 +282,7 @@ require('lazy').setup({
   'nvim-lualine/lualine.nvim', -- Fancier statusline
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   {
-    'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines 
+    'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
     event = { "BufRead", "BufNewFile" },
     config = true
   },
