@@ -1,0 +1,35 @@
+# espanso match file, docs at: https://espanso.org/docs/
+
+matches:
+    - trigger: ">ques"
+      replace: "> [!Question]\n> \n> $|$"
+
+    - trigger: ">info"
+      replace: "> [!Info]\n> \n> $|$"
+
+    - trigger: ">warn"
+      replace: "> [!Warning]\n> \n> $|$"
+
+    - trigger: ">tip"
+      replace: "> [!Tip]\n> \n> $|$"
+
+    - trigger: ">exam"
+      replace: "> [!Example]\n> \n> $|$"
+
+    - trigger: ">quot"
+      replace: "> [!Quote]\n> \n> $|$"
+
+    - trigger: ">proj"
+      replace: "> [!Project]\n> \n> $|$"
+
+    - trigger: ">paren"
+      replace: "> [!parent_task] Parent Task\n> \n> $|$"
+
+    - trigger: ">act"
+      replace: "> [!action_item] Action Item\n> \n> $|$"
+
+    - trigger: ">meet"
+      replace: "> [!Meeting]\n> \n> $|$"
+
+    - trigger: ">def"
+      replace: "> [!Definition]\n> \n> $|$"

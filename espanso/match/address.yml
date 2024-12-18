@@ -1,0 +1,9 @@
+name: address
+parent: base
+
+matches:
+    - trigger: ":address_en"
+      replace: "David Marcus 10, Jerusalem, Israel 9223305"
+
+    - trigger: ":address_he"
+      replace: "דוד מרכוס 10, ירושלים 9223305"

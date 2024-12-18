@@ -1,47 +1,49 @@
--- require('telescope').load_extension('harpoon')
-require('telescope').load_extension('git_worktree')
+-- Load Telescope extensions
+require('telescope').load_extension('harpoon') -- Adds harpoon integration for quick file navigation
+require('telescope').load_extension('git_worktree') -- Adds git worktree integration
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
   defaults = {
-    layout_strategy = "horizontal",
+    layout_strategy = "horizontal", -- Use horizontal layout by default
     layout_config = {
-      preview_width = 0.65,
+      preview_width = 0.65, -- Set preview window width
       horizontal = {
         size = {
-          width = "95%",
-          height = "95%",
+          width = "95%", -- Set width of the Telescope window
+          height = "95%", -- Set height of the Telescope window
         },
       },
     },
   pickers = {
     find_files = {
-      theme = "dropdown",
+      theme = "dropdown", -- Use dropdown theme for find_files picker
     }
   },
     mappings = {
       i = {
-        ['<C-u>'] = false,
-        ['<C-d>'] = false,
-        ["<C-j>"] = require('telescope.actions').move_selection_next,
-        ["<C-k>"] = require('telescope.actions').move_selection_previous,
-        ["<C-d>"] = require('telescope.actions').move_selection_previous,
+        ['<C-u>'] = false, -- Disable default <C-u> mapping
+        ['<C-d>'] = false, -- Disable default <C-d> mapping
+        ["<C-j>"] = require('telescope.actions').move_selection_next, -- Move to next selection with <C-j>
+        ["<C-k>"] = require('telescope.actions').move_selection_previous, -- Move to previous selection with <C-k>
+        ["<C-d>"] = require('telescope.actions').move_selection_previous, -- Move to previous selection with <C-d>
       },
     },
   },
 }
 
 -- Enable telescope fzf native, if installed
-pcall(require('telescope').load_extension, 'fzf')
+pcall(require('telescope').load_extension, 'fzf') -- Use fzf for fuzzy finding if available
 
+-- Key mappings for Telescope
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = true,
+    winblend = 10, -- Set window blend level
+    previewer = true, -- Enable previewer
   })
 end, { desc = '[/] Fuzzily search in current buffer]' })
 
@@ -57,5 +59,5 @@ vim.keymap.set("n", "<Leader>sr", "<CMD>lua require('telescope').extensions.git_
 vim.keymap.set("n", "<Leader>sR", "<CMD>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>", silent)
 vim.keymap.set("n", "<Leader>sn", "<CMD>lua require('telescope').extensions.notify.notify()<CR>", silent)
 
-vim.api.nvim_set_keymap("n", "st", ":TodoTelescope<CR>", {noremap=true})
-vim.api.nvim_set_keymap("n", "<Leader><tab>", "<Cmd>lua require('telescope.builtin').commands()<CR>", {noremap=false})
+vim.api.nvim_set_keymap("n", "st", ":TodoTelescope<CR>", {noremap=true}) -- Open TODO comments with Telescope
+vim.api.nvim_set_keymap("n", "<Leader><tab>", "<Cmd>lua require('telescope.builtin').commands()<CR>", {noremap=false}) -- List available commands with Telescope

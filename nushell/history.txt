@@ -40,3 +40,9 @@ stow .
 exit
 exis
 exit
+brew install zathura
+brew tap zegervdv/zathura
+brew install zathura
+exit
+nvim
+exit

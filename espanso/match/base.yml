@@ -39,6 +39,9 @@ matches:
             params:
                 cmd: "echo 'Hello from your shell'"
 
+    - trigger: ":fullname"
+      replace: "{{my_full_name}}"
+
     - trigger: ":phone"
       replace: "058-555-3200"
 
@@ -47,6 +50,9 @@ matches:
 
     - trigger: ":atb"
       replace: "All the best,\n{{my_full_name}}"
+
+    - trigger: ":bty"
+      replace: "Thank you,\n{{my_full_name}}"
 
     # trigger match if surrounded by word separators ( such as spaces, commas and newlines).
     # - trigger: ther

@@ -1,15 +1,18 @@
---target=~/.config
+--target=$HOME/.config
 --dir=~/dotfiles
 
 --ignore=.stowrc
 --ignore=DS_Store
 
 --ignore='.git/'
---ignore='^examples'
---ignore='_notes'
 --ignore='.ropeproject'
+
+--ignore='_assets'
+--ignore='_notes'
+--ignore='^example'
+
+--ignore='history.txt'
 --ignore=anki
---ignore=assets
 --ignore=cli
 --ignore=devtools
 --ignore=file-manager
