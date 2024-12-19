@@ -83,7 +83,7 @@ disabled = false
 
 [cmd_duration]
 min_time = 500
-format = '[─](fg:current_line)[](fg:orange)[ ](fg:primary bg:orange)[](fg:orange bg:box)[ $duration ](fg:foreground bg:box)[](fg:box)'
+format = '[─](fg:current_line)[](fg:peach)[ ](fg:primary bg:peach)[](fg:peach bg:box)[ $duration ](fg:foreground bg:box)[](fg:box)'
 
 [os.symbols]
 Alpine = ''

@@ -23,16 +23,16 @@ fi
 export LANG="en_US.UTF-8"
 
 # >>> Session & Completion Files <<<
-export ZSH_SESSION="$HOME/.zsh_sessions"
+export ZSH_SESSION="$XDG_CONFIG_HOME/.zsh_sessions"
 mkdir -p "$(dirname "$ZSH_SESSION")"
 
-export ZCOMPFILE="$HOME/.zcompdump"
+export ZCOMPFILE="$XDG_CONFIG_HOME/.zcompdump"
 mkdir -p "$(dirname "$ZCOMPFILE")"
 
 # >>> History Configuration <<<
-export HISTSIZE=10000                # Number of commands kept in memory
-export SAVEHIST=10000                # Number of commands saved to the file
-export HISTFILE="$HOME/.zsh_history"  # Location of the history file
+export HISTSIZE=10000                           # Number of commands kept in memory
+export SAVEHIST=10000                           # Number of commands saved to the file
+export HISTFILE="$XDG_CONFIG_HOME/.zsh_history" # Location of the history file
 mkdir -p "$(dirname "$HISTFILE")"
 
 setopt HIST_FCNTL_LOCK               # Prevent simultaneous history writes
@@ -117,7 +117,7 @@ fi
 # >>> Specialized Configs <<<
 # --- SSH ---
 export SSH_CONFIG_DIR="$XDG_CONFIG_HOME/ssh"
-export SSH_CONFIG_FILE="$XDG_CONFIG_HOME/ssh/ssh-config"
+export SSH_CONFIG_FILE="$SSH_CONFIG_DIR/ssh-config"
 
 # --- Nushell ---
 export NU_CONFIG_DIR="$XDG_CONFIG_HOME/nushell"

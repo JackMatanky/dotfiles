@@ -99,3 +99,10 @@ spawn ssh-agent | save-agent
 brew install keychain
 keychain --eval --quiet -f ~/.config/ssh/ssh-config id_ed25519
 gad_d
+gca 'add keychain and a corresponding part to env.nu'
+gps
+compinit
+echo $ZDOTDIR
+$env.ZDOTDIR
+stow .
+gad_d
