@@ -122,3 +122,13 @@ sketchybar reload
 sketchybar --reload
 brew install --cask vlc
 gad_d
+gca 'copy sketchybar from felix kratz and put omerxx config in examples'
+gps
+stow .
+ls -l
+stow .
+sketchybar --reload
+open -a 'Notion Calendar'
+sketchybar --reload
+exit
+gad_d

@@ -10,6 +10,16 @@ echo "Installing Brew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew analytics off
 
+## Taps
+echo "Tapping Brew..."
+brew tap FelixKratz/formulae
+
+## Formulae
+echo "Installing Brew Formulae..."
+brew install wget
+brew install sketchybar
+brew install borders
+
 ### Terminal
 brew install neovim
 brew install nushell
@@ -18,6 +28,9 @@ brew install zsh-fast-syntax-highlighting
 brew install zoxide
 brew install starship
 brew install carapace
+
+### Nice to have
+brew install lazygit
 
 ## Casks
 echo "Installing Brew Casks..."

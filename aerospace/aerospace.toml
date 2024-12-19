@@ -12,7 +12,7 @@ exec-on-workspace-change = [
 ]
 
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -73,7 +73,7 @@ inner.horizontal = 30
 inner.vertical = 30
 outer.left = 30
 outer.bottom = 30
-outer.top = 30
+outer.top = 50
 outer.right = 80
 
 # 'main' binding mode declaration
@@ -144,6 +144,10 @@ alt-6 = 'workspace 6'
 alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
+alt-0 = 'workspace 10'
+
+alt-left = 'workspace prev'
+alt-right = 'workspace next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
@@ -155,21 +159,22 @@ alt-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
 alt-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
 alt-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
 alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
+alt-shift-0 = 'move-node-to-workspace 10 --focus-follows-window'
 
-alt-tab = 'workspace-back-and-forth'
-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+# alt-shift-left = 'move-node-to-workspace prev --focus-follows-window'
+# alt-shift-right = 'move-node-to-workspace next --focus-follows-window'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
 alt-shift-enter = 'mode apps'
 
-alt-o = 'exec-and-forget open -a /Applications/Obsidian.app'
-# alt-t = 'exec-and-forget open -a /Applications/Telegram.app'
-# alt-a = 'exec-and-forget open -a /Applications/Arc.app'
-# alt-g = 'exec-and-forget open -a /Applications/Ghostty.app'
-# alt-s = 'exec-and-forget open -a /Applications/Safari.app'
-# alt-q = 'exec-and-forget open -a /System/Applications/QuickTime Player.app'
 
+#####################   app launcher   #####################
+
+alt-n = 'exec-and-forget open /Applications/Obsidian.app'           # Notes
+alt-t = 'exec-and-forget open /Applications/WezTerm.app'            # Terminal
+alt-c = 'exec-and-forget open /Applications/Zed.app'                # Code
+alt-b = 'exec-and-forget open /Applications/Firefox.app'            # Browser
 
 # See: https://nikitabobko.github.io/AeroSpace/guide#multiple-monitors
 [workspace-to-monitor-force-assignment]
@@ -182,6 +187,8 @@ alt-o = 'exec-and-forget open -a /Applications/Obsidian.app'
 # 7 = ['secondary', 'main']
 # 8 = ['secondary', 'main']
 # 9 = ['secondary', 'main']
+
+###################   layout tree services   ###################
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes

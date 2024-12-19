@@ -11,6 +11,7 @@
 --ignore='_notes'
 --ignore='_examples'
 
+--ignore='install.sh'
 --ignore='history.txt'
 --ignore=anki
 --ignore=cli
