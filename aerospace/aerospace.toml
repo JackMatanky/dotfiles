@@ -50,11 +50,7 @@ automatically-unhide-macos-hidden-apps = false
 # if.workspace = 'workspace-name'
 # if.during-aerospace-startup = true
 # check-further-callbacks = true
-# run = ['layout floating', 'move-node-to-workspace S']  # The callback itself
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'telegram'
-run = 'layout floating'
+# run = ['layout floating', 'move-node-to-workspace S']  # The callback itsel
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'finder'
