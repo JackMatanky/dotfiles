@@ -106,3 +106,19 @@ echo $ZDOTDIR
 $env.ZDOTDIR
 stow .
 gad_d
+gca 'update starship and zed shell'
+gps
+git clone https://github.com/LazyVim/LazyVim.git ~/dotfiles/_examples/nvim
+git clone https://github.com/LazyVim/LazyVim.git ~/dotfiles/_examples/nvim/lazyvim
+nvim
+stow .
+git clone https://github.com/LazyVim/starter ~/dotfiles/nvim
+rm -rf ~/dotfiles/nvim/.git
+brew uninstall --cask alacritty
+nvim
+sketchybar
+sketchybar restart
+sketchybar reload
+sketchybar --reload
+brew install --cask vlc
+gad_d
