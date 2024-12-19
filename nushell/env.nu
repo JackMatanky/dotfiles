@@ -137,6 +137,19 @@ if (which carapace | is-not-empty) {
 
 $env.NU_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'nushell')
 $env.SSH_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'ssh')
+$env.SSH_CONFIG_FILE = ($env.SSH_CONFIG_DIR | path join 'ssh-config')
+
+$env.SSH_KEY_PATH = ($env.HOME | path join '.ssh' 'id_ed25519')
+
+# Run keychain to load the SSH key and environment variables
+keychain --eval --quiet $env.SSH_KEY_PATH
+    | lines
+    | where not ($it | is-empty)
+    | parse "{k}={v}; export {k2};"
+    | select k v
+    | transpose --header-row
+    | into record
+    | load-env
 
 # Optional: Keep Last Exit Code Variable for prompt display
 $env.LAST_EXIT_CODE = 0
