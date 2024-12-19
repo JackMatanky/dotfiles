@@ -9,6 +9,9 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
 - Replace `"your_email@example.com"` with the email address you use for GitHub/GitLab.
+    ```bash
+    ssh-keygen -t ed25519 -C "JackMatanky@gmail.com"
+    ```
 - When prompted to "Enter a file in which to save the key," you can press Enter to accept the default location (`~/.ssh/id_ed25519`).
 - You can optionally set a passphrase for added security.
 

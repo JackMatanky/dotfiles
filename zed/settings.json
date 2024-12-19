@@ -397,7 +397,12 @@
     //           "args": ["--login"]
     //         }
     //     }
-    "shell": "system",
+    "shell": {
+      // "with_arguments": {
+      "program": "/opt/homebrew/bin/nu"
+      //   "args": ["--login"]
+      // }
+    },
     "dock": "bottom", // `left`, `right`, `bottom`.
     "default_width": 640, // For side docking
     "default_height": 320, // For bottom docking

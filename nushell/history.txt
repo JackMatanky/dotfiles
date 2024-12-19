@@ -46,3 +46,28 @@ brew install zathura
 exit
 nvim
 exit
+la
+l
+ll
+alias
+hint
+help
+ls -l
+lt
+brew install eza
+lt
+ls -l ~/.ssh/config
+ls -l ~/ssh/ssh-config
+ls -ld ~/.ssh
+l ~/.ssh
+$nu.env-path
+$env.config-dir
+$env.PATH
+$env.SSH_CONFIG_DIR
+$env.XDG_CONFIG_HOME
+$env.SSH_CONFIG_DIR
+$env.HOME
+$env.SSH_CONFIG_DIR
+stow .
+$env.SSH_CONFIG_DIR
+gad_d

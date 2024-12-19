@@ -3,7 +3,6 @@
 # https://github.com/omerxx/dotfiles/blob/master/nushell/env.nu
 
 $env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
-$env.NU_CONFIG_DIR = ($env.HOME | path join '.config/nushell')
 
 def create_left_prompt [] {
     let dir = match (do --ignore-shell-errors { $env.PWD | path relative-to $nu.home-path }) {
@@ -115,8 +114,6 @@ $env.PATH = (
   # | append ($env.HOME | path join .local bin)
   | uniq # filter so the paths are unique
 )
-path add /opt/homebrew/bin
-path add /run/current-system/sw/bin
 
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
@@ -125,7 +122,7 @@ path add /run/current-system/sw/bin
 if (which starship | is-not-empty) {
     mkdir ~/.cache/starship
     starship init nu | save --force ~/.cache/starship/init.nu
-    $env.STARSHIP_CONFIG = ($env.HOME | path join '.config/starship/starship.toml')
+    $env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join 'starship/starship.toml')
 }
 
 if (which zoxide | is-not-empty) {
@@ -137,6 +134,9 @@ if (which carapace | is-not-empty) {
     carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
     $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 }
+
+$env.NU_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'nushell')
+$env.SSH_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'ssh')
 
 # Optional: Keep Last Exit Code Variable for prompt display
 $env.LAST_EXIT_CODE = 0
