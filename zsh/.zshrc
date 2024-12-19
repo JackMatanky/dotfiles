@@ -116,7 +116,7 @@ fi
 
 # >>> Specialized Configs <<<
 # --- SSH ---
-export SSH_CONFIG_DIR="$XDG_CONFIG_HOME/.ssh/ssh-config"
+export SSH_CONFIG_DIR="$XDG_CONFIG_HOME/ssh/ssh-config"
 
 # --- Nushell ---
 export NU_CONFIG_DIR="$XDG_CONFIG_HOME/nushell"
