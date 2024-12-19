@@ -1,10 +1,10 @@
 # Suppress "Last login" message
 touch ~/.hushlogin
 
-# --- Path Configuration ---
+# >>> Path Configuration <<<
 typeset -U path cdpath fpath manpath
 
-# XDG Base Directory
+# >>> XDG Base Directory <<<
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # Add Homebrew paths (macOS-specific)
@@ -21,6 +21,24 @@ fi
 
 # >>> Language and Locale <<<
 export LANG="en_US.UTF-8"
+
+# >>> Session & Completion Files <<<
+export ZSH_SESSION="$HOME/.zsh_sessions"
+mkdir -p "$(dirname "$ZSH_SESSION")"
+
+export ZCOMPFILE="$HOME/.zcompdump"
+mkdir -p "$(dirname "$ZCOMPFILE")"
+
+# >>> History Configuration <<<
+export HISTSIZE=10000                # Number of commands kept in memory
+export SAVEHIST=10000                # Number of commands saved to the file
+export HISTFILE="$HOME/.zsh_history"  # Location of the history file
+mkdir -p "$(dirname "$HISTFILE")"
+
+setopt HIST_FCNTL_LOCK               # Prevent simultaneous history writes
+setopt HIST_IGNORE_DUPS              # Ignore consecutive duplicates
+setopt HIST_IGNORE_SPACE             # Ignore commands starting with a space
+setopt SHARE_HISTORY                 # Share history across Zsh instances
 
 # >>> Plugin Management <<<
 # --- ZSH Completion System ---
@@ -52,17 +70,6 @@ if command -v starship &> /dev/null; then
   eval "$(starship init zsh)"
   export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 fi
-
-# --- History Configuration ---
-export HISTSIZE=10000                # Number of commands kept in memory
-export SAVEHIST=10000                # Number of commands saved to the file
-export HISTFILE="$HOME/.zsh_history"  # Location of the history file
-mkdir -p "$(dirname "$HISTFILE")"
-
-setopt HIST_FCNTL_LOCK               # Prevent simultaneous history writes
-setopt HIST_IGNORE_DUPS              # Ignore consecutive duplicates
-setopt HIST_IGNORE_SPACE             # Ignore commands starting with a space
-setopt SHARE_HISTORY                 # Share history across Zsh instances
 
 # >>> Aliases <<<
 # Import aliases from a separate file
@@ -107,13 +114,14 @@ if [[ -d "/nix/var/nix/profiles/default" ]]; then
   alias cg_empty_all='sudo nix-collect-garbage -d'
 fi
 
-# --- SSH Config ---
-export SSH_CONFIG_DIR="$XDG_CONFIG_HOME/ssh/config"
+# >>> Specialized Configs <<<
+# --- SSH ---
+export SSH_CONFIG_DIR="$XDG_CONFIG_HOME/.ssh/ssh-config"
 
-# --- Nushell Config ---
+# --- Nushell ---
 export NU_CONFIG_DIR="$XDG_CONFIG_HOME/nushell"
 
-# --- Keybindings ---
+# >>> Keybindings <<<
 bindkey '^w' autosuggest-execute
 bindkey '^e' autosuggest-accept
 bindkey '^u' autosuggest-toggle
