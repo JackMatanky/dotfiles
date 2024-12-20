@@ -170,3 +170,9 @@ gad_d
 gca 'add obsidan callouts to espanso'
 gps
 gad_d
+gca 'add obsidian abstract callout to espanso'
+gps
+stow .
+exit
+stow .
+gad_d

@@ -1,244 +1,136 @@
-# Inserts a blank line between prompts
-add_newline = false
-
-# Use the color palette
-palette = "dracula"
-
-# Define Dracula color palette
-[palettes.dracula]
-background = "#282a36"
-current_line = "#44475a"
-foreground = "#f8f8f2"
-comment = "#6272a4"
-cyan = "#8be9fd"
-green = "#50fa7b"
-orange = "#ffb86c"
-pink = "#ff79c6"
-purple = "#bd93f9"
-red = "#ff5555"
-yellow = "#f1fa8c"
-
 format = """
-$username
-$hostname
-$directory
-$git_branch
-$git_status
-$nix_shell
-$python
-$cmd_duration
-$character
+[╭](fg:current_line)\
+$os\
+$directory\
+$git_branch\
+$fill\
+$nodejs\
+$dotnet\
+$python\
+$java\
+$c\
+$cmd_duration\
+$shell\
+$time\
+$username\
+$line_break\
+$character\
 """
 
-# move the rest of the prompt to the right
-right_format = """$all"""
+palette = 'dracula'
+add_newline = true
 
-[line_break]
-disabled = true
-
-[hostname]
-style = "bold purple"
-ssh_only = true
-disabled = true
-# format = "[$hostname]($style) "
-# trim_at = "."
-
-[username]
-style_user = "bold yellow"
-format = "[$user]($style_user) "
-disabled = true
-# show_always = true
-
-# Enable the use of emojis in the prompt
-[character] # Default prompt character
-success_symbol = "[➜](bold green)"
-error_symbol = "[✗](bold red)"
-
-[time]
-disabled = true
-format = "[$time]($style) "
-style = "yellow"
-use_12hr = false
-
-[battery]
-full_symbol = '🔋 '
-charging_symbol = '⚡️ '
-discharging_symbol = '💀 '
-disabled = true
-# format = "[$symbol$percentage]($style) "
-
-[[battery.display]]
-threshold = 30
-style = 'bold yellow'
-discharging_symbol = '💦 '
-
-[[battery.display]]
-threshold = 10
-style = 'bold red'
-
-# Show the current directory
-[directory]
-truncation_length = 3
-truncate_to_repo = true
-style = "bold green"
-format = "[$path]($style)[$read_only]($read_only_style) "
-# read_only = " 🔒"
-# read_only_style = "red"
-
-# Show the time it took to execute the previous command
-[cmd_duration]
-min_time = 1
-show_milliseconds = false
-format = "[$duration]($style) "
-style = "yellow"
-disabled = true
-
-# Show the number of running jobs
-[jobs]
-disabled = true
-# format = "[$symbol$jobs]($style) "
-# symbol = "✦ "
-
-[memory_usage]
-threshold = 75
-disabled = true
-# format = "[$symbol$ram]($style) "
-# symbol = "🐏 "
-
-[direnv]
-disabled = false
-
-# Git
-# Display Git information
-[git_branch]
-style = "bold pink"
-format = "[$symbol$branch]($style) "
-symbol = " "
-
-[git_commit]
-style = "green"
-disabled = true
-# format = '[$hash]($style) '
-# hash_length = 7
-
-[git_status]
-style = "red"
-format = '([$all_status$ahead_behind]($style)) '
-conflicted = '🏳'                                 # "="
-ahead = '🏎💨'                                     # "⇡"
-behind = '😰'                                     # "⇣"
-diverged = '😵'                                   # "⇕"
-up_to_date = '✓'
-untracked = '🤷'                                  # "…"
-stashed = '📦'
-modified = '📝'                                   # "!"
-staged = '[++\($count\)](green)'                 # "+"
-renamed = '👅'                                    # "»"
-deleted = '🗑'                                    # "✘"
-
-# Nix Shell
-[nix_shell]
-disabled = true
-impure_msg = '[impure shell](bold red)'
-pure_msg = '[pure shell](bold green)'
-unknown_msg = '[unknown shell](bold yellow)'
-format = 'via [☃️ $state( \($name\))](bold blue) '
-
-# Programming Languages
-[python]
-symbol = "🐍 "
-style = "bold yellow"
-format = "[$symbol$virtualenv$python_version]($style)"
-disabled = true
-# virtualenv_indicator = "env: "
-
-[nodejs]
-symbol = " "
-style = "bold green"
-disabled = true
-
-[package] # Show package information (e.g., for npm, cargo)
-disabled = true # This module is disabled by default
-# format = "[$symbol$version]($style) "
-
-[rust]
-symbol = "🦀 "
-style = "bold red"
-disabled = true
-# format = "[$symbol$version]($style) "
-
-[java]
-disabled = true
-# format = "[$symbol$version]($style) "
-# symbol = "☕ "
-
-# Cloud Platforms
-[docker_context]
-symbol = "🐳 "
-style = "bold blue"
-disabled = true
-# format = "[$symbol$context]($style) "
-
-[aws]
-disabled = true
-# format = "[$symbol$profile]($style) "
-# symbol = "  "
-
-[gcloud]
-disabled = true
-# format = "[$symbol$account]($style) "
-# symbol = "󰙠 "
+[palettes.dracula]
+foreground = '#F8F8F2'
+background = '#282A36'
+current_line = '#44475A'
+primary = '#1E1F29'
+box = '#44475A'
+blue	= '#6272A4'
+cyan = '#8BE9FD'
+green	= '#50FA7B'
+orange = '#FFB86C'
+pink = '#FF79C6'
+purple = '#BD93F9'
+red	= '#FF5555'
+yellow = '#F1FA8C'
 
 [os]
-format = "on [($name )]($style)"
-style = "bold blue"
+format = '(fg:current_line)[](fg:red)[$symbol ](fg:primary bg:red)[](fg:red)'
 disabled = false
 
 [os.symbols]
-AIX = "➿ "
-Alpaquita = "🔔 "
-AlmaLinux = "💠 "
-Alpine = "🏔️ "
-Amazon = "🙂 "
-Android = "🤖 "
-Arch = "🎗️ "
-Artix = "🎗️ "
-CentOS = "💠 "
-Debian = "🌀 "
-DragonFly = "🐉 "
-Emscripten = "🔗 "
-EndeavourOS = "🚀 "
-Fedora = "🎩 "
-FreeBSD = "😈 "
-Garuda = "🦅 "
-Gentoo = "🗜️ "
-HardenedBSD = "🛡️ "
-Illumos = "🐦 "
-Kali = "🐉 "
-Linux = "🐧 "
-Mabox = "📦 "
-Macos = "🍎 "
-Manjaro = "🥭 "
-Mariner = "🌊 "
-MidnightBSD = "🌘 "
-Mint = "🌿 "
-NetBSD = "🚩 "
-NixOS = "❄️ "
-OpenBSD = "🐡 "
-OpenCloudOS = "☁️ "
-openEuler = "🦉 "
-openSUSE = "🦎 "
-OracleLinux = "🦴 "
-Pop = "🍭 "
-Raspbian = "🍓 "
-Redhat = "🎩 "
-RedHatEnterprise = "🎩 "
-RockyLinux = "💠 "
-Redox = "🧪 "
-Solus = "⛵ "
-SUSE = "🦎 "
-Ubuntu = "🎯 "
-Ultramarine = "🔷 "
-Unknown = "❓ "
-Void = "  "
-Windows = "🪟 "
+Alpine = ''
+Amazon = ''
+Android = ''
+Arch = ''
+CentOS = ''
+Debian = ''
+EndeavourOS = ''
+Fedora = ''
+FreeBSD = ''
+Garuda = ''
+Gentoo = ''
+Linux = ''
+Macos = ''
+Manjaro = ''
+Mariner = ''
+Mint = ''
+NetBSD = ''
+NixOS = ''
+OpenBSD = ''
+OpenCloudOS = ''
+openEuler = ''
+openSUSE = ''
+OracleLinux = '⊂⊃'
+Pop = ''
+Raspbian = ''
+Redhat = ''
+RedHatEnterprise = ''
+Solus = ''
+SUSE = ''
+Ubuntu = ''
+Unknown = ''
+Windows = ''
+
+[directory]
+format = '[─](fg:current_line)[](fg:pink)[󰷏 ](fg:primary bg:pink)[](fg:pink bg:box)[ $read_only$truncation_symbol$path](fg:foreground bg:box)[](fg:box)'
+home_symbol = " ~/"
+truncation_symbol = ' '
+truncation_length = 2
+read_only = '󱧵 '
+read_only_style = ''
+
+[git_branch]
+format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $branch](fg:foreground bg:box)[](fg:box)'
+symbol = ' '
+
+[nodejs]
+format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = '󰎙 Node.js'
+
+[dotnet]
+format = '[─](fg:current_line)[](fg:purple)[$symbol](fg:primary bg:purple)[](fg:purple bg:box)[ $tfm](fg:foreground bg:box)[](fg:box)'
+symbol = ' .NET'
+
+[python]
+format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = ' python'
+
+[java]
+format = '[─](fg:current_line)[](fg:red)[$symbol](fg:primary bg:red)[](fg:red bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = ' Java'
+
+[c]
+format = '[─](fg:current_line)[](fg:blue)[$symbol](fg:primary bg:blue)[](fg:blue bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = ' C'
+
+[fill]
+symbol = '─'
+style = 'fg:current_line'
+
+[cmd_duration]
+min_time = 500
+format = '[─](fg:current_line)[](fg:orange)[ ](fg:primary bg:orange)[](fg:orange bg:box)[ $duration ](fg:foreground bg:box)[](fg:box)'
+
+[shell]
+format = '[─](fg:current_line)[](fg:blue)[ ](fg:primary bg:blue)[](fg:blue bg:box)[ $indicator](fg:foreground bg:box)[](fg:box)'
+unknown_indicator = 'shell'
+powershell_indicator = 'powershell'
+fish_indicator = 'fish'
+disabled = false
+
+[time]
+format = '[─](fg:current_line)[](fg:purple)[󰦖 ](fg:primary bg:purple)[](fg:purple bg:box)[ $time](fg:foreground bg:box)[](fg:box)'
+time_format = '%H:%M'
+disabled = false
+
+[username]
+format = '[─](fg:current_line)[](fg:yellow)[ ](fg:primary bg:yellow)[](fg:yellow bg:box)[ $user](fg:foreground bg:box)[](fg:box) '
+show_always = true
+
+[character]
+format = """
+[╰─$symbol](fg:current_line) """
+success_symbol = '[λ](fg:bold white)'
+error_symbol = '[×](fg:bold red)'
