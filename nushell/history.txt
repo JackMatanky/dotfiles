@@ -176,3 +176,8 @@ stow .
 exit
 stow .
 gad_d
+gca 'update obsidian callouts for espanso'
+gps
+sketchybar --reload
+exit
+gad_d
