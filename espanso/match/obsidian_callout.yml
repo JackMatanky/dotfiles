@@ -1,35 +1,145 @@
 # espanso match file, docs at: https://espanso.org/docs/
 
 matches:
-    - trigger: ">ques"
-      replace: "> [!Question]\n> \n> $|$"
-
+    # SECT: GENERAL
     - trigger: ">info"
       replace: "> [!Info]\n> \n> $|$"
-
     - trigger: ">warn"
       replace: "> [!Warning]\n> \n> $|$"
-
     - trigger: ">tip"
       replace: "> [!Tip]\n> \n> $|$"
-
     - trigger: ">exam"
       replace: "> [!Example]\n> \n> $|$"
 
-    - trigger: ">quot"
-      replace: "> [!Quote]\n> \n> $|$"
+    # SECT: 10_CALENDAR
+    - trigger: ">year"
+      replace: "> [!Year]\n> \n> $|$"
+    - trigger: ">quarter"
+      replace: "> [!Quarter]\n> \n> $|$"
+    - trigger: ">month"
+      replace: "> [!Month]\n> \n> $|$"
+    - trigger: ">week"
+      replace: "> [!Week]\n> \n> $|$"
+    - trigger: ">day"
+      replace: "> [!Day]\n> \n> $|$"
 
+    # SECT: 30_GOALS
+    - trigger: ">value_goal"
+      replace: "> [!value_goal]\n> \n> $|$"
+    - trigger: ">outcome_goal"
+      replace: "> [!outcome_goal]\n> \n> $|$"
+
+    # SECT: 40_PROJECTS
+    - trigger: ">task"
+      replace: "> [!task]\n> \n> $|$"
     - trigger: ">proj"
       replace: "> [!Project]\n> \n> $|$"
-
     - trigger: ">paren"
       replace: "> [!parent_task] Parent Task\n> \n> $|$"
-
     - trigger: ">act"
       replace: "> [!action_item] Action Item\n> \n> $|$"
-
     - trigger: ">meet"
       replace: "> [!Meeting]\n> \n> $|$"
 
+    - trigger: ">habit_ritual"
+      replace: "> [!habit_ritual]\n> \n> $|$"
+    - trigger: ">habit"
+      replace: "> [!habit]\n> \n> $|$"
+    - trigger: ">morning_ritual"
+      replace: "> [!morning_ritual]\n> \n> $|$"
+    - trigger: ">workday_startup_ritual"
+      replace: "> [!workday_startup_ritual]\n> \n> $|$"
+    - trigger: ">workday_shutdown_ritual"
+      replace: "> [!workday_shutdown_ritual]\n> \n> $|$"
+    - trigger: ">evening_ritual"
+      replace: "> [!evening_ritual]\n> \n> $|$"
+
+    - trigger: ">task_preview"
+      replace: "> [!task_preview]\n> \n> $|$"
+    - trigger: ">task_plan"
+      replace: "> [!task_plan]\n> \n> $|$"
+    - trigger: ">task_review"
+      replace: "> [!task_review]\n> \n> $|$"
+
+    # SECT: 50_DIRECTORY
+    - trigger: ">contact"
+      replace: "> [!contact]\n> \n> $|$"
+    - trigger: ">organization"
+      replace: "> [!organization]\n> \n> $|$"
+
+    # SECT: 60_LIBRARY
+    - trigger: ">video"
+      replace: "> [!video]\n> \n> $|$"
+    - trigger: ">book"
+      replace: "> [!book]\n> \n> $|$"
+    - trigger: ">book_chapter"
+      replace: "> [!book_chapter]\n> \n> $|$"
+
+    # SECT: 70_PKM
+    - trigger: ">pkm"
+      replace: "> [!pkm]\n> \n> $|$"
+
+    # SECT: 71_PKM_TREE
+    - trigger: ">tree"
+      replace: "> [!tree]\n> \n> $|$"
+
+    # SECT: 72_PKM_LAB
+    - trigger: ">note_relation"
+      replace: "> [!note_relation]\n> \n> $|$"
+
+    - trigger: ">quot"
+      replace: "> [!Quote]\n> \n> $|$"
+    - trigger: ">thought"
+      replace: "> [!thought]\n> \n> $|$"
+
+    - trigger: ">ques"
+      replace: "> [!Question]\n> \n> $|$"
+    - trigger: ">evidence"
+      replace: "> [!evidence]\n> \n> $|$"
+    - trigger: ">conclusion"
+      replace: "> [!conclusion]\n> \n> $|$"
+
+    - trigger: ">problem"
+      replace: "> [!problem]\n> \n> $|$"
+    - trigger: ">step"
+      replace: "> [!step]\n> \n> $|$"
+    - trigger: ">answer"
+      replace: "> [!answer]\n> \n> $|$"
+
     - trigger: ">def"
       replace: "> [!Definition]\n> \n> $|$"
+    - trigger: ">concept"
+      replace: "> [!concept]\n> \n> $|$"
+
+    - trigger: ">north"
+      replace: "> [!north]\n> \n> $|$"
+    - trigger: ">west"
+      replace: "> [!west]\n> \n> $|$"
+    - trigger: ">east"
+      replace: "> [!east]\n> \n> $|$"
+    - trigger: ">south"
+      replace: "> [!south]\n> \n> $|$"
+
+    - trigger: ">code"
+      replace: "> [!code]\n> \n> $|$"
+    - trigger: ">function"
+      replace: "> [!function]\n> \n> $|$"
+    - trigger: ">snippet"
+      replace: "> [!snippet]\n> \n> $|$"
+    - trigger: ">param"
+      replace: "> [!param]\n> \n> $|$"
+
+    - trigger: ">math_problem"
+      replace: "> [!math_problem]\n> \n> $|$"
+    - trigger: ">theorem"
+      replace: "> [!theorem]\n> \n> $|$"
+    - trigger: ">example"
+      replace: "> [!example]\n> \n> $|$"
+    - trigger: ">corollary"
+      replace: "> [!corollary]\n> \n> $|$"
+    - trigger: ">proposition"
+      replace: "> [!proposition]\n> \n> $|$"
+
+    # SECT: 80_INSIGHT
+    - trigger: ">insight"
+      replace: "> [!insight]\n> \n> $|$"

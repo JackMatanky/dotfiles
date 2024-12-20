@@ -165,3 +165,5 @@ gca 'add global git ignore for MacOS files'
 gps
 stow .
 find . -name ".DS_Store" -delete
+exit
+gad_d
