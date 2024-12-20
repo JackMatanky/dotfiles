@@ -167,3 +167,6 @@ stow .
 find . -name ".DS_Store" -delete
 exit
 gad_d
+gca 'add obsidan callouts to espanso'
+gps
+gad_d
