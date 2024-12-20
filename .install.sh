@@ -20,6 +20,8 @@ brew install wget
 brew install sketchybar
 brew install borders
 
+brew install keychain
+
 ### Terminal
 brew install neovim
 brew install nushell
@@ -28,6 +30,8 @@ brew install zsh-fast-syntax-highlighting
 brew install zoxide
 brew install starship
 brew install carapace
+brew install eza
+brew install fzf
 
 ### Nice to have
 brew install lazygit
@@ -55,3 +59,6 @@ brew install --cask font-sf-pro
 brew install --cask font-hack-nerd-font
 brew install --cask font-jetbrains-mono
 brew install --cask font-fira-code
+
+### PKM
+brew install --cask obsidian

@@ -42,6 +42,18 @@ My dotfiles repo managed with GNU Stow on MacOS.
 brew install carapace
 ```
 
+- (eza)[https://eza.rocks/]
+
+```bash
+brew install eza
+```
+
+- (fzf)[https://junegunn.github.io/fzf/]
+
+```bash
+brew install fzf
+```
+
 #### Terminal Emulator
 
 - (Wezterm)[https://wezfurlong.org/wezterm/]
@@ -80,7 +92,6 @@ brew install lazygit
 ```
 
 ```bash
-brew install fzf
 brew install keychain
 ```
 

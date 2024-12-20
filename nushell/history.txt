@@ -132,3 +132,13 @@ open -a 'Notion Calendar'
 sketchybar --reload
 exit
 gad_d
+gca 'copy sketchybar from logicsec'
+gps
+stow .
+nvim
+stow .
+nvim
+exit
+sketchybar --reload
+exit
+gad_d
