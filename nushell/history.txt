@@ -147,3 +147,17 @@ gps
 sketchybar --reload
 stow .
 gad_d
+gca 'update starship to catppuccin'
+gps
+obsidian
+git add .gitignore
+gca 'update gitignore'
+touch .gitignore
+git add .gitignore
+gca 'update gitignore'
+gps
+~
+cd
+touch -/.gitignore_global
+touch ~/.gitignore_global
+gad_d

@@ -35,6 +35,7 @@
     autocrlf = input                     # Convert CRLF to LF on input
     eol = lf                             # Use LF as the end-of-line character
     attributesfile = ~/.config/git/.gitattributes
+    excludesfile = ~/.config/git/.gitignore_global
 
 [diff "pdf"]
     textconv = pdftotext -layout -enc UTF-8 -
