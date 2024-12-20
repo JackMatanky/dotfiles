@@ -142,3 +142,8 @@ exit
 sketchybar --reload
 exit
 gad_d
+gca 'use typecraft neovim for newbs setup'
+gps
+sketchybar --reload
+stow .
+gad_d

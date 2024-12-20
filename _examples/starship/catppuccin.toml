@@ -1,6 +1,3 @@
-# ~/.config/starship.toml
-# Community Developed Catppuccin: https://github.com/nataziel/starship
-
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
@@ -9,12 +6,7 @@ $os\
 $username\
 [](bg:peach fg:red)\
 $directory\
-[ ](peach)\
-$cmd_duration\
-$character"""
-
-right_format = """
-[](yellow)\
+[](bg:yellow fg:peach)\
 $git_branch\
 $git_status\
 [](fg:yellow bg:green)\
@@ -30,53 +22,38 @@ $python\
 [](fg:green bg:sapphire)\
 $conda\
 [](fg:sapphire bg:lavender)\
-$battery\
 $time\
-[ ](fg:lavender)
-"""
+[ ](fg:lavender)\
+$cmd_duration\
+$line_break\
+$character"""
 
-palette = 'catppuccin_macchiato'
-
-[line_break]
-disabled = true
+palette = 'catppuccin_mocha'
 
 [os]
 disabled = false
 style = "bg:red fg:crust"
 
 [os.symbols]
-Alpine = ''
-Amazon = ''
-Android = ''
-Arch = ''
-CentOS = ''
-Debian = ''
-EndeavourOS = ''
-Fedora = ''
-FreeBSD = ''
-Garuda = ''
-Gentoo = ''
-Linux = ''
-Macos = ''
-Manjaro = ''
-Mariner = ''
-Mint = ''
-NetBSD = ''
-NixOS = ''
-OpenBSD = ''
-OpenCloudOS = ''
-openEuler = ''
-openSUSE = ''
-OracleLinux = '⊂⊃'
-Pop = ''
-Raspbian = ''
-Redhat = ''
-RedHatEnterprise = ''
-Solus = ''
-SUSE = ''
-Ubuntu = ''
-Unknown = ''
-Windows = ''
+Windows = ""
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
 
 [username]
 show_always = true
@@ -87,12 +64,8 @@ format = '[ $user]($style)'
 [directory]
 style = "bg:peach fg:crust"
 format = "[ $path ]($style)"
-home_symbol = " ~/"
-truncation_symbol = '' #' '
 truncation_length = 3
-read_only = '󱧵 '
-read_only_style = 'red'
-use_os_path_sep = true
+truncation_symbol = "…/"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
@@ -100,12 +73,6 @@ use_os_path_sep = true
 "Music" = "󰝚 "
 "Pictures" = " "
 "Developer" = "󰲋 "
-"obsidian_vault" = "󰪶 Obsidian "
-"dotfiles" = " Dotfiles"
-
-# [fill]
-# symbol = '─'
-# style = 'fg:current_line'
 
 [git_branch]
 symbol = ""
@@ -172,38 +139,14 @@ style = "fg:crust bg:sapphire"
 format = '[$symbol$environment ]($style)'
 ignore_base = false
 
-# [shell]
-# format = '[─](fg:current_line)[](fg:blue)[ ](fg:primary bg:blue)[](fg:blue bg:box)[ $indicator](fg:foreground bg:box)[](fg:box)'
-# unknown_indicator = 'shell'
-# powershell_indicator = 'powershell'
-# fish_indicator = 'fish'
-# disabled = false
-
 [time]
 disabled = false
 time_format = "%R"
 style = "bg:lavender"
 format = '[[  $time ](fg:crust bg:lavender)]($style)'
 
-# [battery]
-# format = "[ $percentage $symbol]($style)"
-# full_symbol = "█"
-# charging_symbol = "[↑](bold fg:green)"
-# discharging_symbol = "↓"
-# unknown_symbol = "░"
-# empty_symbol = "▃"
-
-# [[battery.display]]
-# threshold = 20
-# style = "italic bold red"
-
-# [[battery.display]]
-# threshold = 60
-# style = "italic dimmed bright-purple"
-
-# [[battery.display]]
-# threshold = 70
-# style = "bold fg:yellow"
+[line_break]
+disabled = true
 
 [character]
 disabled = false

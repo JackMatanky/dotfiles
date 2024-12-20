@@ -76,7 +76,7 @@ outer.bottom = 30
 outer.top = 50
 outer.right = 80
 
-# 'main' binding mode declaration
+# >>> Main Binding Mode <<<
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
@@ -164,33 +164,27 @@ alt-shift-0 = 'move-node-to-workspace 10 --focus-follows-window'
 # alt-shift-left = 'move-node-to-workspace prev --focus-follows-window'
 # alt-shift-right = 'move-node-to-workspace next --focus-follows-window'
 
+alt-tab = 'workspace-back-and-forth'
+alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
 alt-shift-enter = 'mode apps'
 
+# >>> App Launcher <<<
+alt-n = 'exec-and-forget open /Applications/Obsidian.app'       # Notes
+alt-t = 'exec-and-forget open /Applications/WezTerm.app'        # Terminal
+alt-c = 'exec-and-forget open /Applications/Zed.app'            # Code
+alt-b = 'exec-and-forget open /Applications/Firefox.app'        # Browser
 
-#####################   app launcher   #####################
-
-alt-n = 'exec-and-forget open /Applications/Obsidian.app'           # Notes
-alt-t = 'exec-and-forget open /Applications/WezTerm.app'            # Terminal
-alt-c = 'exec-and-forget open /Applications/Zed.app'                # Code
-alt-b = 'exec-and-forget open /Applications/Firefox.app'            # Browser
-
+# >>> Multiple Monitors <<<
 # See: https://nikitabobko.github.io/AeroSpace/guide#multiple-monitors
 [workspace-to-monitor-force-assignment]
 1 = 'main'
-# 2 = 'main'
-# 3 = 'main'
-# 4 = 'main'
-# 5 = ['secondary', 'main']
-# 6 = ['secondary', 'main']
-# 7 = ['secondary', 'main']
-# 8 = ['secondary', 'main']
-# 9 = ['secondary', 'main']
+# 2 = ['secondary', 'main']
 
-###################   layout tree services   ###################
-
-# 'service' binding mode declaration.
+# >>> Layout Tree Services <<<
+# --- Service Binding Mode ---
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
