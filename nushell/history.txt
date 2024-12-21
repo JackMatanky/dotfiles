@@ -235,3 +235,28 @@ gca 'update karabiner'
 gps
 stow .
 gad_d
+gca 'update stowrc after unistalling karabiner'
+gps
+zmk
+kb_zmk
+gad_d
+gca 'try something similar to the convenience C macro in combos and macros'
+gps
+kb_zmk
+gad_d
+gca 'switch ctrl and gui references'
+gps
+gad_d
+gca 'fix typo in combos'
+gps
+cd
+kb_ergogen
+gst
+gpl
+kb_zmk
+gad_d
+gca 'add combos'
+gps
+nvim
+exit
+gad_d
