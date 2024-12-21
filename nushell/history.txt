@@ -226,3 +226,8 @@ stow .
 nvim
 exit
 gad_d
+gca 'change zed keybindings to mac default'
+gps
+stow .
+gaI
+gad_d
