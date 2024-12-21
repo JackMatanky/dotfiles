@@ -4,14 +4,13 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
+[╭](fg:overlay1)\
 $os\
 $username\
 $directory\
 [](peach)\
-$cmd_duration\
-\
 $fill\
-\
+$cmd_duration\
 [](yellow)\
 $git_branch\
 $git_status\
@@ -31,8 +30,7 @@ $conda\
 $shell\
 [](fg:lavender bg:blue)\
 $battery\
-$time\
-[ ](fg:lavender)
+$time
 $character"""
 
 palette = 'catppuccin_macchiato'
@@ -103,6 +101,7 @@ use_os_path_sep = true
 "Developer" = "󰲋 "
 "obsidian_vault" = "󰪶 Obsidian "
 "dotfiles" = " Dotfiles"
+".config" = ". Config"
 
 [fill]
 symbol = ' '
@@ -188,7 +187,7 @@ disabled = false
 time_format = "%R"
 # symbol = "  "
 style = "bg:lavender"
-format = '[[ $time   ](fg:crust bg:lavender)]($style)'
+format = '[[ $time   ](fg:crust bg:lavender)]($style)[](fg:lavender)'
 
 # [battery]
 # format = "[ $percentage $symbol]($style)"
@@ -211,8 +210,8 @@ format = '[[ $time   ](fg:crust bg:lavender)]($style)'
 # style = "bold fg:yellow"
 
 [character]
-# format = """
-# [╰─$symbol](fg:current_line) """
+format = """
+[╰─$symbol](bold fg:overlay1) """
 success_symbol = '[❯](bold fg:green)'
 error_symbol = '[❯](bold fg:red)'
 vimcmd_symbol = '[](bold fg:green)'

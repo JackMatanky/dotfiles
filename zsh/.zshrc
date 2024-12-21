@@ -75,12 +75,35 @@ fi
 # Import aliases from a separate file
 # source "$HOME/dotfiles/cli/aliases.sh"
 
+# --- Shell Commands ---
+alias ll='ls -l'
+alias l="eza -l --icons --git -a"
+alias lt="eza --tree --level=2 --long --icons --git"
+alias ltree="eza --tree --level=2  --icons --git"
+
 # --- Directories ---
 alias dot='cd ~/dotfiles'
 alias dot_nix='cd ~/dotfiles/nixos'
 alias obsidian='cd ~/obsidian_vault'
 alias obsidian_gpl='cd ~/obsidian_vault; git pull'
-alias vimdiff='nvim -d'
+alias conf_dir='cd ~/.config'
+alias docs='cd ~/Documents'
+alias kb_dev='cd ~/Documents/keyboard_dev'
+alias kb_ergogen='cd ~/Documents/keyboard_dev/ergogen'
+alias kb_zmk='cd ~/Documents/keyboard_dev/zmk-config'
+alias kb_snak_dir='cd ~/Documents/keyboard_dev/kb_snak'
+
+# --- Nix ---
+if [[ -d "/nix/var/nix/profiles/default" ]]; then
+  alias flake_rebuild='sudo nixos-rebuild switch --flake .'
+  alias flake_rebuild_trace='sudo nixos-rebuild switch --flake . --show-trace'
+  alias flake_up='sudo nix flake update'
+  alias flake_up_trace='sudo nix flake update --show-trace'
+  alias hm_switch='home-manager switch --flake .'
+  alias hm_switch_trace='home-manager switch --flake . --show-trace'
+  alias cg_empty='sudo nix-collect-garbage'
+  alias cg_empty_all='sudo nix-collect-garbage -d'
+fi
 
 # --- Git ---
 alias gad='git add'
@@ -102,17 +125,8 @@ alias grm='git remote'
 alias grs='git reset'
 alias gst='git status'
 
-# --- Nix ---
-if [[ -d "/nix/var/nix/profiles/default" ]]; then
-  alias flake_rebuild='sudo nixos-rebuild switch --flake .'
-  alias flake_rebuild_trace='sudo nixos-rebuild switch --flake . --show-trace'
-  alias flake_up='sudo nix flake update'
-  alias flake_up_trace='sudo nix flake update --show-trace'
-  alias hm_switch='home-manager switch --flake .'
-  alias hm_switch_trace='home-manager switch --flake . --show-trace'
-  alias cg_empty='sudo nix-collect-garbage'
-  alias cg_empty_all='sudo nix-collect-garbage -d'
-fi
+# --- Vim ---
+alias vimdiff='nvim -d'
 
 # >>> Specialized Configs <<<
 # --- SSH ---

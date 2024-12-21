@@ -181,3 +181,16 @@ gps
 sketchybar --reload
 exit
 gad_d
+gca 'change aerospace gaps to match sketchybar top position'
+gps
+stow .
+cd ~/Documents
+cd ~/Documents/keyboard_dev
+git clone git@github.com:JackMatanky/ergogen.git
+git clone git@github.com:JackMatanky/kb_snak.git
+git clone git@github.com:JackMatanky/zmk-config.git
+exit
+diskutil list
+exit
+stow .
+gad_d

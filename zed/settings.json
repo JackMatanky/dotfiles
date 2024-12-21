@@ -398,10 +398,7 @@
     //         }
     //     }
     "shell": {
-      // "with_arguments": {
-      "program": "/opt/homebrew/bin/nu"
-      //   "args": ["--login"]
-      // }
+      "program": "nu"
     },
     "dock": "bottom", // `left`, `right`, `bottom`.
     "default_width": 640, // For side docking
@@ -427,7 +424,7 @@
     // Any key-value pairs added to this list will be added to the terminal's
     // environment. Use `:` to separate multiple values.
     "env": {
-      // "KEY": "XDG_CONFIG_HOME: $HOME/.config"
+      "KEY": "XDG_CONFIG_HOME: $HOME/.config"
     },
     // Activate the python virtual environment, if one is found, in the
     // terminal's working directory (as resolved by the working_directory

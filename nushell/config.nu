@@ -898,10 +898,11 @@ def --env cx [arg] {
 
 # >>> Aliases <<<
 # --- Shell Commands ---
-alias l = ls --all
 alias c = clear
 alias ll = ls -l
+alias l = eza --l --icons --git -a
 alias lt = eza --tree --level=2 --long --icons --git
+alias ltree = eza --tree --level=2 --icons --git
 
 # --- Directories ---
 alias dot = cd ~/dotfiles
@@ -911,6 +912,12 @@ def obsidian_gpl [] {
   cd ~/obsidian_vault
   git pull
 }
+alias conf_dir = cd ~/.config
+alias docs = cd ~/Documents
+alias kb_dev = cd ~/Documents/keyboard_dev
+alias kb_ergogen = cd ~/Documents/keyboard_dev/ergogen
+alias kb_zmk = cd ~/Documents/keyboard_dev/zmk-config
+alias kb_snak_dir = cd ~/Documents/keyboard_dev/kb_snak
 
 # --- Git ---
 alias gad = git add
@@ -928,7 +935,7 @@ alias gbra = git branch -a
 alias gco = git checkout
 alias gcoall = git checkout -- .
 alias gdiff = git diff
-alias glog = git log --graph --topo-order --pretty='\''%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N'\'' --abbrev-commit
+alias glog = git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit
 alias grm = git remote
 alias grs = git reset
 
@@ -942,14 +949,18 @@ alias hm_switch_trace = home-manager switch --flake . --show-trace
 alias cg_empty = sudo nix-collect-garbage
 alias cg_empty_all = sudo nix-collect-garbage -d
 
-# --- Applications ---
+# --- Vim ---
 alias v = nvim
 alias vimdiff = nvim -d
-alias as = aerospace
 
+# --- Aerospace ---
+alias as = aerospace
 def ff [] {
     aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
 }
+
+# --- Sketchybar ---
+alias bar_reload = sketchybar --reload
 
 # >>> Plugin Management <<<
 source ~/.config/nushell/env.nu
