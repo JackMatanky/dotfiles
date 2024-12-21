@@ -260,3 +260,11 @@ gps
 nvim
 exit
 gad_d
+gca 'add lualine, blink, noice, and render markdown to neovim'
+gps
+stow .
+nvim
+exit
+nvim
+exit
+gad_d
