@@ -220,3 +220,9 @@ exit
 brew install ripgrep
 brew install fd
 gad_d
+gca 'add fzf to neovim'
+gps
+stow .
+nvim
+exit
+gad_d
