@@ -8,27 +8,27 @@ My dotfiles repo managed with GNU Stow on MacOS.
 
 #### Shell
 
-- (Nushell)[https://www.nushell.sh/]
+- [Nushell](https://www.nushell.sh/)
 
     ```bash
     brew install nushell
     ```
 
-- (ZSH)[https://zsh.sourceforge.io/]
+- [ZSH](https://zsh.sourceforge.io/)
 
-    - (ZSH Autosuggestions)[https://github.com/zsh-users/zsh-autosuggestions]
+    - [ZSH Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 
     ```bash
     brew install zsh-autosuggestions
     ```
 
-    - (ZSH Syntax Highlighting)[https://github.com/zsh-users/zsh-syntax-highlighting]
+    - [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
     ```bash
     brew install zsh-syntax-highlighting
     ```
 
-    - (ZSH Autocomplete)[https://github.com/marlonrichert/zsh-autocomplete]
+    - [ZSH Autocomplete](https://github.com/marlonrichert/zsh-autocomplete)
 
     ```bash
     brew install zsh-autocomplete
@@ -36,27 +36,39 @@ My dotfiles repo managed with GNU Stow on MacOS.
 
 ##### Plugins
 
-- (Carapace)[https://carapace.sh/]
+- [Carapace](https://carapace.sh/)
 
 ```bash
 brew install carapace
 ```
 
-- (eza)[https://eza.rocks/]
+- [eza](https://eza.rocks/)
 
 ```bash
 brew install eza
 ```
 
-- (fzf)[https://junegunn.github.io/fzf/]
+- [fzf](https://junegunn.github.io/fzf/)
 
 ```bash
 brew install fzf
 ```
 
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+
+```bash
+brew install ripgrep
+```
+
+- [fd](https://github.com/sharkdp/fd)
+
+```bash
+brew install fd
+```
+
 #### Terminal Emulator
 
-- (Wezterm)[https://wezfurlong.org/wezterm/]
+- [Wezterm](https://wezfurlong.org/wezterm/)
 
 ```bash
 brew install --cask wezterm
@@ -64,7 +76,7 @@ brew install --cask wezterm
 
 #### Prompt
 
-- (Starship)[https://starship.rs/]
+- [Starship](https://starship.rs/)
 
 ```bash
 brew install starship
@@ -72,13 +84,13 @@ brew install starship
 
 ### Development
 
-#### (Neovim)[https://neovim.io/]
+#### [Neovim](https://neovim.io/)
 
 ```bash
 brew install neovim
 ```
 
-#### (Zed)[https://zed.dev/]
+#### [Zed](https://zed.dev/)
 
 ```bash
 brew install --cask zed
@@ -97,7 +109,7 @@ brew install keychain
 
 ### Brower
 
-- (Firefox)[https://www.mozilla.org/firefox/]
+- [Firefox](https://www.mozilla.org/firefox/)
 
 ```bash
 brew install --cask firefox
@@ -105,7 +117,7 @@ brew install --cask firefox
 
 ### PKM
 
-- (Obsidian)[https://obsidian.md/]
+- [Obsidian](https://obsidian.md/)
 
 ```bash
 brew install --cask obsidian

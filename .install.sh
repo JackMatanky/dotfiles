@@ -32,6 +32,8 @@ brew install starship
 brew install carapace
 brew install eza
 brew install fzf
+brew install ripgrep
+brew install fd
 
 ### Nice to have
 brew install lazygit

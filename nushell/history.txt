@@ -206,3 +206,17 @@ nvim
 exit
 stow .
 gad_d
+gca 'add tmux'
+gps
+stow .
+nvim
+exit
+nvim
+exit
+nvim
+exit
+nvim
+exit
+brew install ripgrep
+brew install fd
+gad_d
