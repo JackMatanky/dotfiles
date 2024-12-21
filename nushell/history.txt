@@ -194,3 +194,15 @@ diskutil list
 exit
 stow .
 gad_d
+gca 'update nushell config and zshrc to add new directory aliases'
+gps
+bar_reload
+nvim
+exit
+nvim
+exit
+brew install tmux
+nvim
+exit
+stow .
+gad_d
