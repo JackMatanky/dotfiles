@@ -231,3 +231,7 @@ gps
 stow .
 gaI
 gad_d
+gca 'update karabiner'
+gps
+stow .
+gad_d

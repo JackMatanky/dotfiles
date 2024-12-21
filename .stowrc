@@ -18,6 +18,7 @@
 --ignore=devtools
 --ignore=file-manager
 --ignore=firefox
+--ignore=karabiner
 --ignore=nixos
 --ignore=xournalpp
 --ignore=zotero
