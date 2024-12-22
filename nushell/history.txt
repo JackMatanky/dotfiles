@@ -282,3 +282,9 @@ gad_d
 gca 'add too much to nvim without committing in between'
 gps
 gad_d
+gca 'add colorscheme folder to stowrc'
+gps
+stow .
+nvim
+exit
+gad_d
