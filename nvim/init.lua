@@ -20,7 +20,7 @@ require("config.keymaps")
 require("config.autocmds")
 
 -- Load theme
-require("config.colorscheme.catppuccin")
+-- require("config.theme.catppuccin")
 
 -- Initialize lazy.nvim and load plugins
 require("lazy").setup("plugins")

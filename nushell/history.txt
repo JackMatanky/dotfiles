@@ -288,3 +288,8 @@ stow .
 nvim
 exit
 gad_d
+gca 'fix nvim init require catppuccin'
+gps
+nvim
+exit
+gad_d
