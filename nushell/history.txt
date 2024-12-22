@@ -276,3 +276,6 @@ stow .
 espanso --reload
 stow .
 gad_d
+gca 'remove alt-shift aerospace shortcuts until I figure out an alternative that will not use the mac select word shortcuts'
+gps
+gad_d

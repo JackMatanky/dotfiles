@@ -14,5 +14,13 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("options")
+-- Load configuration modules
+require("config.options")
+require("config.keymaps")
+require("config.autocmds")
+
+-- Load theme
+require("themes.catppuccin")
+
+-- Initialize lazy.nvim and load plugins
 require("lazy").setup("plugins")

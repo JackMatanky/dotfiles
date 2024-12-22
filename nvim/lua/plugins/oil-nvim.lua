@@ -1,3 +1,6 @@
+-- Filename: ~/dotfiles/nvim/lua/plugins/oil-nvim.lua
+--
+-- GitHub Repo: https://github.com/stevearc/oil.nvim
 return {
   "stevearc/oil.nvim",
   config = function()

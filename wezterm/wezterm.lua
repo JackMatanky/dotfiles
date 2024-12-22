@@ -1,6 +1,9 @@
+-- Filename: ~/dotfiles/wezterm/wezterm.lua
+
+-- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
-return {
+config = {
     default_prog = { "/opt/homebrew/bin/nu" },
     set_environment_variables = {
         XDG_CONFIG_HOME = "/Users/jack/.config",
@@ -17,7 +20,10 @@ return {
     hide_tab_bar_if_only_one_tab = true,
     tab_bar_at_bottom = false,
     use_fancy_tab_bar = false,
-    window_decorations = 'RESIZE',
+
+    -- Removes the macos bar at the top with the 3 buttons
+	window_decorations = "RESIZE",
+
     macos_window_background_blur = 30,
     window_background_opacity = 0.92,
 
@@ -73,3 +79,6 @@ return {
     --     hover_tab_bar = fa,
     -- },
 }
+
+-- Return the configuration to wezterm
+return config
