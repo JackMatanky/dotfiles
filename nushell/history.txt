@@ -268,3 +268,11 @@ exit
 nvim
 exit
 gad_d
+gca 'fix lualine and render markdown'
+gps
+stow .
+exit
+stow .
+espanso --reload
+stow .
+gad_d
