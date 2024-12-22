@@ -293,3 +293,9 @@ gps
 nvim
 exit
 gad_d
+gca 'comment load theme from init.lua for nvim'
+gps
+stow .
+nvim
+exit
+gad_d
