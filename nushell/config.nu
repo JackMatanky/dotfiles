@@ -953,8 +953,12 @@ alias cg_empty_all = sudo nix-collect-garbage -d
 alias v = nvim
 alias vimdiff = nvim -d
 
+# --- Tmux ---
+alias tmx source = tmux source-file ~/.config/tmux/tmux.conf
+
 # --- Aerospace ---
 alias as = aerospace
+alias as reload = aerospace reload-config
 def ff [] {
     aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
 }

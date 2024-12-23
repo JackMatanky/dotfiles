@@ -318,3 +318,22 @@ exit
 tmux -V
 stow .
 gad_d
+gca 'restart tmux config to install plugins'
+gps
+stow .
+aa
+nvim
+exit
+tmux
+exit
+stow .
+cd
+tmux kill-session
+tmux info
+tmux -V
+tmux kill-server
+exit
+ff
+as
+as list-monitors
+gad_d

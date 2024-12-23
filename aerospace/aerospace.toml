@@ -180,8 +180,10 @@ alt-b = 'exec-and-forget open /Applications/Firefox.app'        # Browser
 # >>> Multiple Monitors <<<
 # See: https://nikitabobko.github.io/AeroSpace/guide#multiple-monitors
 [workspace-to-monitor-force-assignment]
-1 = 'main'
-# 2 = ['secondary', 'main']
+1 = ['VC279', 'main']
+2 = ['ASUS VA27EHE', 'secondary']
+3 = ['VC279', 'main']
+4 = ['ASUS VA27EHE', 'secondary']
 
 # >>> Layout Tree Services <<<
 # --- Service Binding Mode ---
