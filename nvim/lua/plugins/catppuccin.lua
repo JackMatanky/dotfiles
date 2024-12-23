@@ -5,7 +5,7 @@ return {
     name = "catppuccin",
     priority = 1000,
     config = function()
-        require("config.colorschemes.catppuccin") -- Load from lua/config/colorschemes/
+        require("config.theme.catppuccin") -- Load from lua/config/colorschemes/
     end,
   }
 }

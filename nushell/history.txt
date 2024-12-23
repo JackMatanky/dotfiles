@@ -299,3 +299,22 @@ stow .
 nvim
 exit
 gad_d
+gca 'update graphic in snacks dashboard'
+gps
+stow .
+nvim
+exit
+nvim
+stow .
+exit
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+stow .
+tmux
+exit
+tmux
+tmux kill-session
+tmux
+exit
+tmux -V
+stow .
+gad_d
