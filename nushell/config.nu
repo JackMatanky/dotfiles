@@ -921,14 +921,14 @@ alias kb_snak_dir = cd ~/Documents/keyboard_dev/kb_snak
 
 # --- Git ---
 alias gad = git add
-alias gad_d = git add .
-alias gad_p = git add -p
+alias gadall = git add .
+alias gadp = git add -p
 alias gc = git commit -m
 alias gca = git commit -a -m
 alias gpl = git pull
-alias gpl_o = git pull origin
+alias gplog = git pull origin
 alias gps = git push
-alias gps_o = git push origin
+alias gpsog = git push origin
 alias gst = git status
 alias gbr = git branch
 alias gbra = git branch -a
@@ -954,11 +954,11 @@ alias v = nvim
 alias vimdiff = nvim -d
 
 # --- Tmux ---
-alias tmx source = tmux source-file ~/.config/tmux/tmux.conf
+alias tmx_src = tmux source-file ~/dotfiles/tmux/tmux.conf
 
 # --- Aerospace ---
 alias as = aerospace
-alias as reload = aerospace reload-config
+alias as_load = aerospace reload-config
 def ff [] {
     aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
 }

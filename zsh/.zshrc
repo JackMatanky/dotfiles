@@ -71,6 +71,20 @@ if command -v starship &> /dev/null; then
   export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 fi
 
+# --- Zoxide ---
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh)"
+fi
+
+# --- FZF: Fuzzy File Finder ---
+if command -v fd &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
+
+  if [ -f ~/.fzf.zsh ]; then
+    source ~/.fzf.zsh
+  fi
+fi
+
 # >>> Aliases <<<
 # Import aliases from a separate file
 # source "$HOME/dotfiles/cli/aliases.sh"
@@ -107,8 +121,8 @@ fi
 
 # --- Git ---
 alias gad='git add'
-alias gad_d='git add .'
-alias gad_p='git add -p'
+alias gadall='git add .'
+alias gadp='git add -p'
 alias gbr='git branch'
 alias gbra='git branch -a'
 alias gc='git commit -m'
@@ -118,9 +132,9 @@ alias gcoall='git checkout -- .'
 alias gdiff='git diff'
 alias glog='git log --graph --topo-order --pretty='\''%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N'\'' --abbrev-commit'
 alias gpl='git pull'
-alias gpl_o='git pull origin'
+alias gplog='git pull origin'
 alias gps='git push'
-alias gps_o='git push origin'
+alias gpsog='git push origin'
 alias grm='git remote'
 alias grs='git reset'
 alias gst='git status'
@@ -135,6 +149,31 @@ export SSH_CONFIG_FILE="$SSH_CONFIG_DIR/ssh-config"
 
 # --- Nushell ---
 export NU_CONFIG_DIR="$XDG_CONFIG_HOME/nushell"
+
+# >>> Navigation Functions <<<
+# cx: cd into a directory and list its contents.
+# Example: cx Documents/Projects
+cx() {
+  cd "$@" && l
+}
+
+# fcd: Fuzzy search for a directory and cd into it.
+# Example: fcd
+fcd() {
+  cd "$(find . -type d -not -path '*/.*' | fzf)" && l
+}
+
+# f: Fuzzy search for a file and copy its path to the clipboard.
+# Example: f
+f() {
+  echo "$(find . -type f -not -path '*/.*' | fzf)" | pbcopy
+}
+
+# fv: Fuzzy search for a file and open it in Neovim.
+# Example: fv
+fv() {
+  nvim "$(find . -type f -not -path '*/.*' | fzf)"
+}
 
 # >>> Keybindings <<<
 bindkey '^w' autosuggest-execute

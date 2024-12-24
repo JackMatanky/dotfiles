@@ -337,3 +337,25 @@ ff
 as
 as list-monitors
 gad_d
+gca 'update aerospace workspace monitor assignment with monitor names and add aliases to config.nu'
+gps
+stow .
+tmux source
+tmx source
+stow .
+tmx_src
+stow .
+tmx_src
+stow .
+tmx_src
+tmux source ~/.config/tmux/tmux.conf
+tmux source ~/dotfiles/tmux/tmux.conf
+stow .
+as_load
+tmx_src
+brew uninstall tmux --force
+brew install tmux
+tmx_src
+tmux
+stow .
+git add .
