@@ -402,3 +402,9 @@ exit
 gadall
 git rm --cached tmux/plugins/tmux
 git rm -f --cached tmux/plugins/tmux
+gca 'update neovim plugins: snacks, catppuccin, and blink'
+gps
+stow .
+tmux
+stow .
+gadall
