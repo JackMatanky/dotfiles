@@ -408,3 +408,11 @@ stow .
 tmux
 stow .
 gadall
+gca 'update tmux conf to make sure plugins are downloaded to .tmux'
+gps
+stow .
+nvim
+nI
+stow .
+nvim
+gadall
