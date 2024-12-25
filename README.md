@@ -96,6 +96,20 @@ brew install neovim
 brew install --cask zed
 ```
 
+- [Java Development Kit]()
+
+used for zotero libreoffice plugin
+
+```bash
+brew install openjdk
+```
+
+If you need to have openjdk first in your PATH, run:
+  echo 'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"' >> /Users/jack/.config/zsh/.zshrc
+
+For compilers to find openjdk you may need to set:
+  export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+
 #### Version Control
 
 ```bash

@@ -1,4 +1,4 @@
--- Filename: nvim/lua/plugins/lsp.lua
+-- Filename: ~/dotfiles/nvim/lua/plugins/lsp.lua
 return {
   {
     "williamboman/mason.nvim",
@@ -22,14 +22,29 @@ return {
       "hrsh7th/vim-vsnip-integ",
     },
     lazy = false,
-    config = function()
-      local capabilities = require("blink.cmp").get_lsp_capabilities()
+    opts = {
+        servers = {
+            html = {},
+            lua_ls = {},
+            pyright = {},
+            ts_ls = {}
 
+        }
+    },
+    config = function(_, opts)
       local lspconfig = require("lspconfig")
-      lspconfig.html.setup({ capabilities = capabilities })
-      lspconfig.lua_ls.setup({ capabilities = capabilities })
-      lspconfig.pyright.setup({ capabilities = capabilities })
-      lspconfig.tsserver.setup({ capabilities = capabilities })
+      for server, config in pairs(opts.servers) do
+        -- passing config.capabilities to blink.cmp merges with the capabilities in your
+        -- `opts[server].capabilities, if you've defined it
+        config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+              lspconfig[server].setup(config)
+      end
+      -- local capabilities = require("blink.cmp").get_lsp_capabilities()
+
+      -- lspconfig.html.setup({ capabilities = capabilities })
+      -- lspconfig.lua_ls.setup({ capabilities = capabilities })
+      -- lspconfig.pyright.setup({ capabilities = capabilities })
+      -- lspconfig.tsserver.setup({ capabilities = capabilities })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})

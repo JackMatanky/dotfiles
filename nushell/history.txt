@@ -416,3 +416,13 @@ nI
 stow .
 nvim
 gadall
+gca 'add blink config from linkarzu'
+gps
+stow .
+nvim
+stow .
+nvim
+exit
+brew install openjdk
+stow .
+gadall
