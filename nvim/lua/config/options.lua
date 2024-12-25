@@ -1,4 +1,7 @@
--- lua/config/options.lua
+-- Filename: ~dotfiles/nvim/lua/config/options.lua
+
+-- Leader Key
+vim.g.mapleader = " "
 
 -- Indentation
 vim.o.tabstop = 4         -- Number of spaces a tab counts for

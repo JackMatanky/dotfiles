@@ -954,7 +954,7 @@ alias v = nvim
 alias vimdiff = nvim -d
 
 # --- Tmux ---
-alias tmx_src = tmux source-file ~/dotfiles/tmux/tmux.conf
+alias tmx_src = tmux source ~/.tmux.conf
 
 # --- Aerospace ---
 alias as = aerospace

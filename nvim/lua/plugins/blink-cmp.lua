@@ -1,4 +1,6 @@
--- lua/plugins/lsp/vsnip-integ.lua
+-- Filename: ~/dotfiles/nvim/lua/plugins/blink-cmp.lua.lua
+--
+-- GitHub Repo: https://github.com/saghen/blink.cmp
 return {
   {
     "saghen/blink.cmp",

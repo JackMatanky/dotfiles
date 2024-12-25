@@ -49,6 +49,7 @@ brew install --cask zed
 ### Office
 brew install --cask inkscape
 brew install --cask libreoffice
+brew install --cask libreoffice-language-pack
 brew install --cask zoom
 brew install --cask meetingbar
 brew install --cask skim

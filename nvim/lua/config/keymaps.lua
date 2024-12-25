@@ -1,15 +1,12 @@
 local map = vim.keymap.set
 
--- Set leader key to space
-vim.g.mapleader = " "
-
 -- Normal mode
-map("n", "<leader>w", ":w<CR>")      -- Save file
-map("n", "<leader>q", ":q<CR>")      -- Quit
-map("n", "<leader>Q", ":qa!<CR>")    -- Force quit
-map("n", "<leader>h", ":nohlsearch<CR>") -- Clear search highlights
-map("n", "<C-s>", ":w<CR>")          -- Save file with Ctrl+S
-map("n", "<C-p>", ":FZF<CR>")        -- Open FZF (file finder)
+map("n", "<leader>w", ":w<CR>")             -- Save file
+map("n", "<leader>q", ":q<CR>")             -- Quit
+map("n", "<leader>Q", ":qa!<CR>")           -- Force quit
+map("n", "<leader>h", ":nohlsearch<CR>")    -- Clear search highlights
+map("n", "<C-s>", ":w<CR>")                 -- Save file with Ctrl+S
+map("n", "<C-p>", ":FZF<CR>")               -- Open FZF (file finder)
 
 -- Navigate splits
 map("n", "<C-h>", "<C-w>h")

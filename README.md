@@ -122,3 +122,15 @@ brew install --cask firefox
 ```bash
 brew install --cask obsidian
 ```
+
+- [LibreOffice](https://www.libreoffice.org/)
+
+```bash
+brew install --cask libreoffice
+```
+
+- LibreOffice Language Pack
+
+```bash
+brew install --cask libreoffice-language-pack
+```

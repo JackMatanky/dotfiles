@@ -359,3 +359,46 @@ tmx_src
 tmux
 stow .
 git add .
+gca 'update aerospace to open apps with meh; update zsh to include zoxide and fzf; update git add . alias to gadall; generally removed underscores from aliases'
+gps
+stow .
+as_load
+exit
+stow .
+tmx_src
+stow .
+tmux
+tmx_src
+tmux
+stow .
+tmux show-options -g | grep conf
+tmux
+exit
+tmux show-environment
+stow .
+tmux
+exit
+stow .
+tmux
+exit
+brew install --cask libreoffice
+brew install --cask libreoffice-language-pack
+which zathura
+stow .
+tmux
+exit
+tmux
+tmux list-keys
+nvim
+exit
+stow .
+nvim
+stow .
+nvim
+ex
+exit
+nvim
+exit
+gadall
+git rm --cached tmux/plugins/tmux
+git rm -f --cached tmux/plugins/tmux
