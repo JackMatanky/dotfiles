@@ -7,7 +7,7 @@
     "dark": "Catppuccin Macchiato" // "Gruvbox Dark"
   },
   // UI Font
-  "ui_font_size": 16,
+  "ui_font_size": 15,
   "ui_font_weight": 400,
   "ui_font_family": "Ubuntu", //"Zed Plex Sans",
   "ui_font_fallbacks": ["Fira Code", "JetBrains Mono", "Source Code Pro"],
@@ -17,13 +17,13 @@
   },
   "base_keymap": "VSCode",
   "features": {
-    "inline_completion_provider": "copilot"
+    "inline_completion_provider": "copilot" // "supermaven"
   },
   // Text Editor
-  "buffer_font_size": 15,
+  "buffer_font_size": 16,
   "buffer_font_weight": 400,
   "buffer_font_family": "FiraCode Nerd Font",
-  "buffer_font_fallbacks": [],
+  "buffer_font_fallbacks": ["Fira Code", "JetBrains Mono", "Source Code Pro"],
   "buffer_font_features": {
     // Disable ligatures:
     // "calt": false
@@ -190,7 +190,7 @@
     "show_type_hints": true,
     "show_parameter_hints": true,
     // Corresponds to null/None LSP hint type value.
-    "show_other_hints": true,
+    "show_other_hints": false,
     // If `true`, the current theme's `hint.background` color is applied.
     "show_background": false,
     // Time to wait before requesting the hints. 0 disables debouncing.
@@ -446,7 +446,7 @@
     "alternate_scroll": "off",
     "option_as_meta": false,
     "copy_on_select": false,
-    "line_height": "comfortable",
+    "line_height": "standard",
     "cursor_shape": "bar",
     "blinking": "terminal_controlled", // "on" to always blink the cursor
     "font_size": 15, // Default to matching the buffer's font size
@@ -729,11 +729,6 @@
       "tab_size": 4,
       "format_on_save": "on",
       "formatter": [
-        //   "external": {
-        //     "command": "/home/jack/.nix-profile/bin/ruff",
-        //     "arguments": ["format", "--stdin-filename", "{buffer_path}"]
-        //   }
-        // }
         {
           "code_actions": {
             "source.organizeImports.ruff": true,
@@ -810,13 +805,6 @@
 
   // Language Server Protocol (LSP)
   "lsp": {
-    // "snippet-completion-server": {
-    //   "binary": {
-    //     "path": "/home/jack/.nix-profile/bin/simple-completion-language-server"
-    //   },
-    //   "command": "simple-completion-language-server",
-    //   "languages": ["plaintext"]
-    // },
     // "pylsp": {
     //   "binary": {
     //     "path": "/home/jack/.nix-profile/bin/pylsp"

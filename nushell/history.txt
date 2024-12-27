@@ -464,3 +464,9 @@ stow .
 uv init
 stow .
 gadall
+gca 'put python snippets back in snippets folder'
+gps
+which tex
+which texlab
+find tex
+gadall
