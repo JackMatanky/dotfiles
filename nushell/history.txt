@@ -426,3 +426,24 @@ exit
 brew install openjdk
 stow .
 gadall
+gca 'update nushell history.txt source'
+gps
+stow .
+exit
+stow .
+nvim
+stow .
+nvim
+stow .
+nvim
+stow .
+brew install helix
+which helix
+whixh hx
+which hx
+hx
+exit
+hx
+stow .
+exit
+gadall

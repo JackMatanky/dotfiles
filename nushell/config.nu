@@ -968,7 +968,7 @@ alias bar_reload = sketchybar --reload
 
 # >>> Plugin Management <<<
 source ~/.config/nushell/env.nu
-source ~/history.txt
+# source ~/history.txt
 source ~/.zoxide.nu
 source ~/.cache/carapace/init.nu
 use ~/.cache/starship/init.nu
