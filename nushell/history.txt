@@ -454,3 +454,7 @@ gca 'move python snippet file into main zed directory to see  if that will work'
 gps
 stow .
 gadall
+gca 'update stowrc to remove ropeproject'
+gps
+stow .
+gadall
