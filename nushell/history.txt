@@ -470,3 +470,13 @@ which tex
 which texlab
 find tex
 gadall
+gca 'update zed settings to hopefully remove unnecessary hints'
+gps
+stow .
+uv add --dev ipykernel
+uv run ipython kernel install --user --name=problem_set_05
+uv run ipython kernel install --user
+stow .
+source /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate
+stow .
+gadall

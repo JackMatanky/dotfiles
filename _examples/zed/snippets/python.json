@@ -1,3 +1,6 @@
+// Source: https://github.com/rafamadriz/friendly-snippets/
+// Source: https://github.com/cstrap/python-snippets/
+// Base Snippets
 {
   "#!/usr/bin/env pythonX": {
     "prefix": "#env",
@@ -17,12 +20,12 @@
   "Multiline string": {
     "prefix": "#",
     "body": ["\"\"\"$0", "\"\"\""],
-    "description": "Avoid autopair plugin annoyances when typing multiple \""
+    "description": "Snippet to avoid autopair plugin annoyances when typing multiple \""
   },
   "One-line multiline string": {
     "prefix": "##",
     "body": "\"\"\"$0\"\"\"",
-    "description": "Avoid autopair plugin annoyances when typing multiple \""
+    "description": "Snippet to avoid autopair plugin annoyances when typing multiple \""
   },
   "if __name__ == __main__": {
     "prefix": "ifmain",
@@ -30,21 +33,23 @@
     "description": "Execute code if the file is executed directly"
   },
 
+  // Notebook
   "Jupyter cell": {
     "prefix": "#cell",
     "body": "# %%",
-    "description": "Add new REPL code cell"
+    "description": "Add a new cell"
   },
   "Jupyter markdown cell": {
     "prefix": "#mark",
     "body": "# %% [markdown]",
-    "description": "Add a new REPL markdown cell"
+    "description": "Add a new markdown cell"
   },
 
+  // Import Statement
   "import": {
     "prefix": "import",
     "body": "import $0",
-    "description": "Import Package or Module"
+    "description": "Import a package or module"
   },
   "from ... import ...": {
     "prefix": "fromim",
@@ -68,6 +73,7 @@
     "description": "Import future statement definitions for python3.x scripts using utf-8 as encoding."
   },
 
+  // Control Flow
   "if": {
     "prefix": "if",
     "body": ["if $1:", "\t$0"],
@@ -89,7 +95,7 @@
     "description": "if statement with else"
   },
   "for": {
-    "prefix": "for",
+    "prefix": "py_for",
     "body": ["for $1 in $2:", "\t$0"],
     "description": "for loop"
   },
@@ -124,12 +130,14 @@
     "description": "case wildcard block if other cases fail"
   },
 
+  // With Statement
   "With Statement": {
     "prefix": "with",
     "body": ["with $1 as $2:", "\t$0"],
     "description": "'with' statement"
   },
 
+  // Functions
   "Function": {
     "prefix": "def",
     "body": ["def $1($2):", "\t$0"],
@@ -151,6 +159,7 @@
     "description": "lambda function"
   },
 
+  // Object-Oriented
   "Class": {
     "prefix": "class",
     "body": ["class $1:", "\t$0"],
@@ -234,6 +243,7 @@
     "description": "Create magic method"
   },
 
+  // Exception Handling
   "except": {
     "prefix": "except",
     "body": ["except$1:", "\t$0"],
@@ -274,6 +284,7 @@
     "description": "try/except/else/finally blocks"
   },
 
+  // Comprehensions
   "List comprehension": {
     "prefix": "lc",
     "body": "[$1 for $2 in $3]$0",
@@ -320,6 +331,7 @@
     "description": "Create a generator based on existing iterables, with condition if statement."
   },
 
+  // Docstrings
   "comment": {
     "prefix": "###",
     "body": [
