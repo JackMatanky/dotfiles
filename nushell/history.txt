@@ -450,3 +450,7 @@ gadall
 gca 'add helix config'
 gps
 gadall
+gca 'move python snippet file into main zed directory to see  if that will work'
+gps
+stow .
+gadall

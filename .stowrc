@@ -6,6 +6,7 @@
 
 --ignore='.git/'
 --ignore='.ropeproject/'
+--ignore='.ropeproject'
 
 --ignore='_assets'
 --ignore='_notes'
