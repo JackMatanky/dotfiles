@@ -436,7 +436,7 @@
         // in your project's settings, rather than globally.
         "directories": [".env", "env", ".venv", "venv"],
         // Can also be `csh`, `fish`, `nushell` and `power_shell`
-        "activate_script": "default"
+        "activate_script": "nushell"
       }
     },
     "button": true,

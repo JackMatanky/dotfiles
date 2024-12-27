@@ -480,3 +480,9 @@ stow .
 source /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate
 stow .
 gadall
+gca 'remove comments from zed snippets'
+gps
+stow .
+source .venv/bin/activate
+stow .
+gadall
