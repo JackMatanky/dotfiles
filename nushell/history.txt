@@ -458,3 +458,9 @@ gca 'update stowrc to remove ropeproject'
 gps
 stow .
 gadall
+gca 'delete ropeproject'
+gps
+stow .
+uv init
+stow .
+gadall
