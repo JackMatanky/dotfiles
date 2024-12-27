@@ -839,7 +839,10 @@
         "settings": {
           // Ruff server settings goes here
           "lineLength": 80,
+          "organizeImports": true,
+          "showSyntaxErrors": true,
           "lint": {
+            "select": ["E", "F"],
             "extendSelect": ["I"]
           }
         }
