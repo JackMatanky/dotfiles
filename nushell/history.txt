@@ -505,3 +505,42 @@ stow .
 overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu
 stow .
 gadall
+gca 'add md code block to espanso'
+gps
+stow .
+overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu
+zip ex5.zip ngrams.py language_classifier.py
+> ^zip ex5.zip ngrams.py language_classifier.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+stow .
+as_load
+stow .
+as_load
+gadall
