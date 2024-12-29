@@ -544,3 +544,36 @@ as_load
 stow .
 as_load
 gadall
+gca 'remove mode app binding from aerospace'
+gps
+overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+which luarocks
+overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+^zip ex5.zip ngrams.py language_classifier.py
+uv run test_my_file.py
+overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu
+^zip ex5.zip ngrams.py language_classifier.py
+which ffmpeg
+brew install ffmpeg
+brew install webp
+gadall

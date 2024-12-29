@@ -148,3 +148,11 @@ brew install --cask libreoffice
 ```bash
 brew install --cask libreoffice-language-pack
 ```
+
+- [Anki](https://apps.ankiweb.net/)
+
+```bash
+brew install --cask anki
+brew install webp
+brew install avif
+```

@@ -65,3 +65,4 @@ brew install --cask font-fira-code
 
 ### PKM
 brew install --cask obsidian
+brew install --cask anki
