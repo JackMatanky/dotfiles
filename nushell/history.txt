@@ -577,3 +577,6 @@ which ffmpeg
 brew install ffmpeg
 brew install webp
 gadall
+gca 'update readme and install brew'
+gps
+gadall
