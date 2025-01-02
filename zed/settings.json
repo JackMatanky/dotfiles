@@ -45,7 +45,7 @@
     "right_padding": 0.2
   },
 
-  "vim_mode": false,
+  "vim_mode": true,
 
   "hover_popover_enabled": true,
   "confirm_quit": false,

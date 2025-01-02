@@ -580,3 +580,29 @@ gadall
 gca 'update readme and install brew'
 gps
 gadall
+gca 'add weekday name file to espanso'
+gps
+stow .
+exit
+kb_zmk
+git add .gitignore
+gca 'update gitignore to include google drive temp files'
+gps
+kb_zmk
+gadall
+gca 'update keybindings for mac'
+gps
+gadall
+gca 'update behavior file import in base keymaps'
+gps
+gadall
+gca 'update 28 combo file name'
+gps
+gadall
+gca 'add files for mac and pc'
+gps
+stow .
+hx
+exit
+stow .
+gadall

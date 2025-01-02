@@ -1,5 +1,5 @@
-// Standard macOS bindings
 [
+  // Standard macOS bindings
   {
     "use_key_equivalents": true,
     "bindings": {
@@ -84,25 +84,33 @@
       "end": "editor::MoveToEndOfLine",
       "left": "editor::MoveLeft",
       "right": "editor::MoveRight",
+      "ctrl-p": "editor::MoveUp",
+      "ctrl-n": "editor::MoveDown",
+      "ctrl-b": "editor::MoveLeft",
+      "ctrl-f": "editor::MoveRight",
       "ctrl-l": "editor::ScrollCursorCenter",
       "alt-left": "editor::MoveToPreviousWordStart",
       "alt-right": "editor::MoveToNextWordEnd",
       "cmd-left": "editor::MoveToBeginningOfLine",
+      "ctrl-a": "editor::MoveToBeginningOfLine",
       "cmd-right": "editor::MoveToEndOfLine",
+      "ctrl-e": "editor::MoveToEndOfLine",
       "cmd-up": "editor::MoveToBeginning",
       "cmd-down": "editor::MoveToEnd",
       "shift-up": "editor::SelectUp",
+      "ctrl-shift-p": "editor::SelectUp",
       "shift-down": "editor::SelectDown",
+      "ctrl-shift-n": "editor::SelectDown",
       "shift-left": "editor::SelectLeft",
+      "ctrl-shift-b": "editor::SelectLeft",
       "shift-right": "editor::SelectRight",
+      "ctrl-shift-f": "editor::SelectRight",
       "alt-shift-left": "editor::SelectToPreviousWordStart", // cursorWordLeftSelect
       "alt-shift-right": "editor::SelectToNextWordEnd", // cursorWordRightSelect
-      "ctrl-alt-shift-left": "editor::SelectToPreviousWordStart", // cursorWordLeftSelect
-      "ctrl-alt-shift-right": "editor::SelectToNextWordEnd", // cursorWordRightSelect
       "ctrl-shift-up": "editor::SelectToStartOfParagraph",
       "ctrl-shift-down": "editor::SelectToEndOfParagraph",
-      "cmd-shift-home": "editor::SelectToBeginning",
-      "cmd-shift-end": "editor::SelectToEnd",
+      "cmd-shift-up": "editor::SelectToBeginning",
+      "cmd-shift-down": "editor::SelectToEnd",
       "cmd-a": "editor::SelectAll",
       "cmd-l": "editor::SelectLine",
       "cmd-shift-i": "editor::Format",
@@ -114,11 +122,19 @@
         "editor::SelectToBeginningOfLine",
         { "stop_at_soft_wraps": true }
       ],
+      "ctrl-shift-a": [
+        "editor::SelectToBeginningOfLine",
+        { "stop_at_soft_wraps": true }
+      ],
       "cmd-shift-right": [
         "editor::SelectToEndOfLine",
         { "stop_at_soft_wraps": true }
       ],
       "shift-end": [
+        "editor::SelectToEndOfLine",
+        { "stop_at_soft_wraps": true }
+      ],
+      "ctrl-shift-e": [
         "editor::SelectToEndOfLine",
         { "stop_at_soft_wraps": true }
       ],
@@ -355,12 +371,14 @@
       "cmd-[": "editor::Outdent",
       "cmd-]": "editor::Indent",
       "cmd-alt-up": "editor::AddSelectionAbove", // Insert cursor above
+      "cmd-ctrl-p": "editor::AddSelectionAbove",
       "cmd-alt-down": "editor::AddSelectionBelow", // Insert cursor below
+      "cmd-ctrl-n": "editor::AddSelectionBelow",
       "cmd-shift-k": "editor::DeleteLine",
-      "cmd-up": "editor::MoveLineUp",
-      "cmd-down": "editor::MoveLineDown",
-      "ctrl-alt-up": "editor::DuplicateLineUp",
-      "ctrl-alt-down": "editor::DuplicateLineDown",
+      "alt-up": "editor::MoveLineUp",
+      "alt-down": "editor::MoveLineDown",
+      "alt-shift-up": "editor::DuplicateLineUp",
+      "alt-shift-down": "editor::DuplicateLineDown",
       "ctrl-shift-right": "editor::SelectLargerSyntaxNode", // Expand Selection
       "ctrl-shift-left": "editor::SelectSmallerSyntaxNode", // Shrink Selection
       "cmd-d": ["editor::SelectNext", { "replace_newest": false }], // Add selection to Next Find Match
@@ -522,9 +540,9 @@
       "ctrl-alt-b": "editor::MoveToPreviousSubwordStart",
       "ctrl-alt-right": "editor::MoveToNextSubwordEnd",
       "ctrl-alt-f": "editor::MoveToNextSubwordEnd",
-      // "ctrl-alt-shift-left": "editor::SelectToPreviousSubwordStart",
+      "ctrl-alt-shift-left": "editor::SelectToPreviousSubwordStart",
       "ctrl-alt-shift-b": "editor::SelectToPreviousSubwordStart",
-      // "ctrl-alt-shift-right": "editor::SelectToNextSubwordEnd",
+      "ctrl-alt-shift-right": "editor::SelectToNextSubwordEnd",
       "ctrl-alt-shift-f": "editor::SelectToNextSubwordEnd"
     }
   },
