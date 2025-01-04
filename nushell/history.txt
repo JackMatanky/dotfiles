@@ -611,3 +611,7 @@ gps
 hx
 exit
 gadall
+gca 'update aerospace config layout keybindings to not conflict with helix'
+gps
+stow .
+gadall

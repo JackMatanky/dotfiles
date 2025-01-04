@@ -1,13 +1,13 @@
 matches:
-    - trigger: ":not"
+    - trigger: ":lnot"
       replace: "¬"
-    - trigger: ":and"
+    - trigger: ":land"
       replace: "∧"
-    - trigger: ":or"
+    - trigger: ":lor"
       replace: "∨"
-    - trigger: ":xor"
+    - trigger: ":lxor"
       replace: "⊕"
-    - triggers: [":imp", ":if"]
+    - triggers: [":limp", ":lif", ":lto"]
       replace: "→"
     - trigger: ":impl"
       replace: "⇒"
@@ -17,18 +17,24 @@ matches:
       replace: "⇔"
     - triggers: [":eq", ":def"]
       replace: "≡"
-    - triggers: [":true", ":top"]
-      replace: "⊤"
-    - triggers: [":false", ":bot"]
-      replace: "⊥"
+
+    # Quantifiers
     - trigger: ":forall"
       replace: "∀"
-    - trigger: ":exists"
+    - trigger: ":lall"
+      replace: "∀"
+    - trigger: ":lsome"
       replace: "∃"
+    - trigger: ":lsome"
+      replace: "∃"
+    - trigger: ":not_exists:"
+      replace: "∄"
+
     - trigger: ":proves"
       replace: "⊢"
     - trigger: ":models"
       replace: "⊨"
+
     # Proofs
     - trigger: ":therefore"
       replace: "∴"
@@ -36,3 +42,9 @@ matches:
       replace: "∵"
     - trigger: ":qed"
       replace: "■"
+
+    # True/False
+    - triggers: [":true", ":top"]
+      replace: "⊤"
+    - triggers: [":false", ":bot"]
+      replace: "⊥"
