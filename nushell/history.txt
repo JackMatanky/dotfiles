@@ -606,3 +606,8 @@ hx
 exit
 stow .
 gadall
+gca 'add helix keybindings to zed'
+gps
+hx
+exit
+gadall
