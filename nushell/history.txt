@@ -615,3 +615,24 @@ gca 'update aerospace config layout keybindings to not conflict with helix'
 gps
 stow .
 gadall
+gca 'update espanso logic'
+gps
+hx
+which pylsp
+which python
+which py
+cd
+which nu
+which uv
+which python3
+brew install python-lsp-server
+brew install zellij
+$env.ZELLIJ
+echo $ZELLIJ
+exit
+$env.ZELLIJ
+which zellij
+zellij
+exit
+stow .
+gadall
