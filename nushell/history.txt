@@ -654,3 +654,5 @@ which ffmpeg
 which zoxide
 yazi
 gadall
+gca 'add yazi config'
+git rm --cached .DS_Store
