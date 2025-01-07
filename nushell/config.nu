@@ -900,7 +900,7 @@ def --env cx [arg] {
 # --- Shell Commands ---
 alias c = clear
 alias ll = ls -l
-alias l = eza --l --icons --git -a
+alias l = eza -l --icons --git -a
 alias lt = eza --tree --level=2 --long --icons --git
 alias ltree = eza --tree --level=2 --icons --git
 
@@ -964,7 +964,7 @@ def ff [] {
 }
 
 # --- Sketchybar ---
-alias bar_reload = sketchybar --reload
+alias bar_load = sketchybar --reload
 
 # >>> Plugin Management <<<
 source ~/.config/nushell/env.nu

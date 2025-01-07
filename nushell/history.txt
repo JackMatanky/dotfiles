@@ -656,3 +656,14 @@ yazi
 gadall
 gca 'add yazi config'
 git rm --cached .DS_Store
+gca 'remove ds_store'
+gps
+git config --get core.excludefile
+git config --get core.excludesfile
+cat ~/.config/git/.gitignore_global
+l
+stow .
+l
+ff
+l
+stow .
