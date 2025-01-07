@@ -896,9 +896,13 @@ source $"($nu_conf)/aliases.nu"
 # use ~/.config/nushell/themes.nu
 # source ~/history.txt
 
+# >>> Custom Completions <<<
+const nu_comp = $nu_conf | path join "completions"
+source $"($nu_comp)/eza_completions.nu"
+source $"($nu_comp)/git_completions.nu"
+source $"($nu_comp)/zellij_completions.nu"
+
 # >>> Plugin Management <<<
 source ~/.zoxide.nu
 source ~/.cache/carapace/init.nu
 use ~/.cache/starship/init.nu
-
-# >>> Custom Completions <<<

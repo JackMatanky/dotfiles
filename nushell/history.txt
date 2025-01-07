@@ -715,3 +715,8 @@ gaa
 gcam 'update nushell config'
 gps
 stow .
+gcam 'update nushell config'
+gps
+stow .
+v
+gaa
