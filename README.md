@@ -73,6 +73,13 @@ brew install fd
 ```bash
 brew install --cask wezterm
 ```
+#### Multiplexxer
+
+- [Zellij](https://zellij.dev/)
+
+```bash
+brew install zellij
+```
 
 #### Prompt
 
@@ -82,19 +89,58 @@ brew install --cask wezterm
 brew install starship
 ```
 
+#### File Manager
+
+- [Yazi](https://github.com/sxyazi/yaz)
+    - [docs](https://yazi-rs.github.io/)
+
+```bash
+brew install yazi
+```
+
 ### Development
 
-#### [Neovim](https://neovim.io/)
+- [Neovim](https://neovim.io/)
 
 ```bash
 brew install neovim
 ```
 
-#### [Zed](https://zed.dev/)
+- [Helix](https://helix-editor.com/)
+
+```bash
+brew install helix
+```
+
+- [Zed](https://zed.dev/)
 
 ```bash
 brew install --cask zed
 ```
+
+#### Languages
+
+##### Python
+
+- [Python](https://www.python.org/)
+
+```bash
+brew install python@3.13
+```
+
+- [uv](https://github.com/astral-sh/uv)
+
+```bash
+brew install uv
+```
+
+- [iPython](https://ipython.org/)
+
+```bash
+brew install ipython
+```
+
+##### Java
 
 - [Java Development Kit]()
 

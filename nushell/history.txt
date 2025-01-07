@@ -636,3 +636,21 @@ zellij
 exit
 stow .
 gadall
+gca 'add zellij config'
+gps
+stow .
+zellij
+exit
+exit
+zellij
+brew install yazi
+brew update
+brew upgrade
+q
+exit
+zellij
+which file
+which ffmpeg
+which zoxide
+yazi
+gadall

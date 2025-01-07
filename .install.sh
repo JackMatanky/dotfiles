@@ -25,18 +25,29 @@ brew install keychain
 ### Terminal
 brew install neovim
 brew install nushell
+brew install zellij
 brew install zsh-autosuggestions
 brew install zsh-fast-syntax-highlighting
 brew install zoxide
 brew install starship
+brew install yazi
 brew install carapace
 brew install eza
 brew install fzf
 brew install ripgrep
 brew install fd
 
+### Development
+brew install neovim
+brew install helix
+brew install python
+
 ### Nice to have
 brew install lazygit
+
+### Anki Media Converter
+brew install webp
+brew install avif
 
 ## Casks
 echo "Installing Brew Casks..."
