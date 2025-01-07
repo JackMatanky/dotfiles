@@ -697,3 +697,6 @@ z dot
 zoxide
 zoxide query
 stow .
+gcam 'add and update git aliases'
+gps
+stow .

@@ -891,106 +891,123 @@ $env.config = {
     ]
 }
 
-def --env cx [arg] {
-    cd $arg
-    ls -l
-}
+# def --env cx [arg] {
+#     cd $arg
+#     ls -l
+# }
 
-# >>> Aliases <<<
-# --- Shell Commands ---
-alias c = clear
-alias ll = ls -l
-alias l = eza --long --icons --git --all --group-directories-first # Detailed File List
-alias lt = eza --tree --level=2 --long --icons --git # Tree View - Full
-alias ltree = eza --tree --level=2 --icons --git # Tree View - Compact
+# # >>> Aliases <<<
+# # --- Shell Commands ---
+# alias c = clear
+# alias ll = ls -l
+# # --- eza ---
+# alias l = eza --long --icons --git --all --group-directories-first # Detailed File List
+# alias lt = eza --tree --level=2 --long --icons --git # Tree View - Full
+# alias ltree = eza --tree --level=2 --icons --git # Tree View - Compact
 
-# --- Directories ---
-alias za = zoxide add
-alias zq = zoxide query
+# # --- Directories ---
+# # --- zoxide ---
+# alias za = zoxide add
+# alias zq = zoxide query
 
-alias dot = cd ~/dotfiles
-alias dot_nix = cd ~/dotfiles/nixos
-alias obsidian = cd ~/obsidian_vault
-def obsidian_gpl [] {
-  cd ~/obsidian_vault
-  git pull
-}
-alias conf_dir = cd ~/.config
-alias docs = cd ~/Documents
-alias kb_dev = cd ~/Documents/keyboard_dev
-alias kb_ergogen = cd ~/Documents/keyboard_dev/ergogen
-alias kb_zmk = cd ~/Documents/keyboard_dev/zmk-config
-alias kb_snak_dir = cd ~/Documents/keyboard_dev/kb_snak
+# alias dot = cd ~/dotfiles
+# alias dot_nix = cd ~/dotfiles/nixos
+# alias obsidian = cd ~/obsidian_vault
+# def obsidian_gpl [] {
+#   cd ~/obsidian_vault
+#   git pull
+# }
+# alias conf_dir = cd ~/.config
+# alias docs = cd ~/Documents
+# alias kb_dev = cd ~/Documents/keyboard_dev
+# alias kb_ergogen = cd ~/Documents/keyboard_dev/ergogen
+# alias kb_zmk = cd ~/Documents/keyboard_dev/zmk-config
+# alias kb_snak_dir = cd ~/Documents/keyboard_dev/kb_snak
 
-# --- Git ---
-def git_current_branch [] {
-    (gstat).branch
-}
+# # --- Git ---
+# # Source: https://github.com/nushell/nu_scripts/blob/main/aliases/git/git-aliases.nu
+# def git_current_branch [] {
+#     (gstat).branch
+# }
 
-def git_main_branch [] {
-    git remote show origin
-        | lines
-        | str trim
-        | find --regex 'HEAD .*?[：: ].+'
-        | first
-        | str replace --regex 'HEAD .*?[：: ]\s*(.+)' '$1'
-}
+# def git_main_branch [] {
+#     git remote show origin
+#         | lines
+#         | str trim
+#         | find --regex 'HEAD .*?[：: ].+'
+#         | first
+#         | str replace --regex 'HEAD .*?[：: ]\s*(.+)' '$1'
+# }
 
-alias ga = git add
-alias gaa = git add --all
-alias gapa = git add --patch
-alias gau = git add --update
+# alias ga = git add
+# alias gaa = git add --all
+# alias gapa = git add --patch
+# alias gau = git add --update
 
-alias gc = git commit -m
-alias gcam = git commit --all --message
+# alias gc = git commit -m
+# alias gcam = git commit --all --message
 
-alias gpl = git pull
-alias gplog = git pull origin
+# alias gps = git push
+# alias gpsog = git push origin
 
-alias gps = git push
-alias gpsog = git push origin
+# alias gpl = git pull
+# alias gplog = git pull origin
 
-alias gst = git status
-alias gbr = git branch
-alias gbra = git branch --all
-alias gco = git checkout
-alias gcoall = git checkout -- .
-alias gdiff = git diff
-alias glog = git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit
-alias grm = git remote
-alias grs = git reset
-alias grsh = git reset --hard
-alias gcf = git config --list
+# alias gf = git fetch
+# alias gfo = git fetch origin
 
-# --- Nix ---
-alias flake_rebuild = sudo nixos-rebuild switch --flake .
-alias flake_rebuild_trace = sudo nixos-rebuild switch --flake . --show-trace
-alias flake_up = sudo nix flake update
-alias flake_up_trace = sudo nix flake update --show-trace
-alias hm_switch = home-manager switch --flake .
-alias hm_switch_trace = home-manager switch --flake . --show-trace
-alias cg_empty = sudo nix-collect-garbage
-alias cg_empty_all = sudo nix-collect-garbage -d
+# alias gb = git branch
+# alias gbra = git branch --all
+# alias gbd = git branch --delete
+# alias gbD = git branch --delete --force
 
-# --- Vim ---
-alias v = nvim
-alias vimdiff = nvim -d
+# alias gco = git checkout
+# alias gcm = git checkout (git_main_branch)
+# alias gcb = git checkout -b
+# alias gcoa = git checkout -- .
 
-# --- Tmux ---
-alias tmx_src = tmux source ~/.tmux.conf
+# alias gr = git remote
+# alias gra = git remote add
+# alias grset = git remote set-url
 
-# --- Aerospace ---
-alias as = aerospace
-alias as_load = aerospace reload-config
-def ff [] {
-    aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
-}
+# alias grs = git reset
+# alias grsh = git reset --hard
+# alias gdiff = git diff
+# alias gst = git status
+# alias glog = git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit
+# alias gcf = git config --list
 
-# --- Sketchybar ---
-alias bar_load = sketchybar --reload
+# # --- Nix ---
+# alias flake_rebuild = sudo nixos-rebuild switch --flake .
+# alias flake_rebuild_trace = sudo nixos-rebuild switch --flake . --show-trace
+# alias flake_up = sudo nix flake update
+# alias flake_up_trace = sudo nix flake update --show-trace
+# alias hm_switch = home-manager switch --flake .
+# alias hm_switch_trace = home-manager switch --flake . --show-trace
+# alias cg_empty = sudo nix-collect-garbage
+# alias cg_empty_all = sudo nix-collect-garbage -d
+
+# # --- Vim ---
+# alias v = nvim
+# alias vimdiff = nvim -d
+
+# # --- Tmux ---
+# alias tmx_src = tmux source ~/.tmux.conf
+
+# # --- Aerospace ---
+# alias as = aerospace
+# alias as_load = aerospace reload-config
+# def ff [] {
+#     aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
+# }
+
+# # --- Sketchybar ---
+# alias bar_load = sketchybar --reload
 
 # >>> Plugin Management <<<
 source ~/.config/nushell/env.nu
+# use ~/.config/nushell/themes.nu
+use ~/.config/nushell/aliases.nu
 # source ~/history.txt
 source ~/.zoxide.nu
 source ~/.cache/carapace/init.nu
