@@ -91,9 +91,14 @@ fi
 
 # --- Shell Commands ---
 alias ll='ls -l'
-alias l="eza -l --icons --git -a"
+# Detailed list of all files (hidden included), with icons and Git info
+alias l="eza --long --icons --git --all --group-directories-first"
+
+# Tree view with details, 2 levels deep
 alias lt="eza --tree --level=2 --long --icons --git"
-alias ltree="eza --tree --level=2  --icons --git"
+
+# Compact tree view, 2 levels deep
+alias ltree="eza --tree --level=2 --icons --git"
 
 # --- Directories ---
 alias dot='cd ~/dotfiles'

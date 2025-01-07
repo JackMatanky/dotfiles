@@ -677,3 +677,23 @@ gca 'update eza aliases'
 gps
 stow .
 gca 'fix new eza alias syntax to match nushell'
+git add .
+git commit -m 'fix new eza aliases to match nushell syntax'
+git push
+stow .
+l
+lt
+stow .
+$env.config-dir
+$env.config
+stow .
+$env.data-dir
+data-dir
+$nu.env-path
+zoxide add ~/dotfiles
+zoxide add ~/obsidian_vault
+z obs
+z dot
+zoxide
+zoxide query
+stow .

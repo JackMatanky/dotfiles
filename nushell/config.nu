@@ -900,16 +900,14 @@ def --env cx [arg] {
 # --- Shell Commands ---
 alias c = clear
 alias ll = ls -l
-# Detailed list of all files (hidden included), with icons and Git info
-alias l = eza --long --icons --git --all --group-directories-first
-
-# Tree view with details, 2 levels deep
-alias lt = eza --tree --level=2 --long --icons --git
-
-# Compact tree view, 2 levels deep
-alias ltree = eza --tree --level=2 --icons --git
+alias l = eza --long --icons --git --all --group-directories-first # Detailed File List
+alias lt = eza --tree --level=2 --long --icons --git # Tree View - Full
+alias ltree = eza --tree --level=2 --icons --git # Tree View - Compact
 
 # --- Directories ---
+alias za = zoxide add
+alias zq = zoxide query
+
 alias dot = cd ~/dotfiles
 alias dot_nix = cd ~/dotfiles/nixos
 alias obsidian = cd ~/obsidian_vault
@@ -925,24 +923,44 @@ alias kb_zmk = cd ~/Documents/keyboard_dev/zmk-config
 alias kb_snak_dir = cd ~/Documents/keyboard_dev/kb_snak
 
 # --- Git ---
-alias gad = git add
-alias gadall = git add .
-alias gadp = git add -p
+def git_current_branch [] {
+    (gstat).branch
+}
+
+def git_main_branch [] {
+    git remote show origin
+        | lines
+        | str trim
+        | find --regex 'HEAD .*?[：: ].+'
+        | first
+        | str replace --regex 'HEAD .*?[：: ]\s*(.+)' '$1'
+}
+
+alias ga = git add
+alias gaa = git add --all
+alias gapa = git add --patch
+alias gau = git add --update
+
 alias gc = git commit -m
-alias gca = git commit -a -m
+alias gcam = git commit --all --message
+
 alias gpl = git pull
 alias gplog = git pull origin
+
 alias gps = git push
 alias gpsog = git push origin
+
 alias gst = git status
 alias gbr = git branch
-alias gbra = git branch -a
+alias gbra = git branch --all
 alias gco = git checkout
 alias gcoall = git checkout -- .
 alias gdiff = git diff
 alias glog = git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit
 alias grm = git remote
 alias grs = git reset
+alias grsh = git reset --hard
+alias gcf = git config --list
 
 # --- Nix ---
 alias flake_rebuild = sudo nixos-rebuild switch --flake .
@@ -977,3 +995,5 @@ source ~/.config/nushell/env.nu
 source ~/.zoxide.nu
 source ~/.cache/carapace/init.nu
 use ~/.cache/starship/init.nu
+
+# >>> Custom Completions <<<

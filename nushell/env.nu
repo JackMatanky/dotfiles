@@ -5,7 +5,7 @@
 $env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
 
 def create_left_prompt [] {
-    let dir = match (do --ignore-errors(-i) { $env.PWD | path relative-to $nu.home-path }) {
+    let dir = match (do --ignore-errors { $env.PWD | path relative-to $nu.home-path }) {
         null => $env.PWD
         '' => '~'
         $relative_pwd => ([~ $relative_pwd] | path join)
