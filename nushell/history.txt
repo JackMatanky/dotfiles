@@ -708,3 +708,7 @@ sto
 stow .
 gaa
 stow .
+gaa
+gc 'modualarize aliases from nushell config'
+gps
+gaa
