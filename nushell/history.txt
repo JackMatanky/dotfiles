@@ -712,3 +712,6 @@ gaa
 gc 'modualarize aliases from nushell config'
 gps
 gaa
+gcam 'update nushell config'
+gps
+stow .
