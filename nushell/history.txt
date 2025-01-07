@@ -667,3 +667,9 @@ l
 ff
 l
 stow .
+gadall
+gc 'update eza alias'
+gps
+stow .
+l
+eza -l
