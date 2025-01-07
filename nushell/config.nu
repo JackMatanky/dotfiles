@@ -1007,7 +1007,7 @@ $env.config = {
 # >>> Plugin Management <<<
 source ~/.config/nushell/env.nu
 # use ~/.config/nushell/themes.nu
-use ~/.config/nushell/aliases.nu
+source ~/.config/nushell/aliases.nu
 # source ~/history.txt
 source ~/.zoxide.nu
 source ~/.cache/carapace/init.nu

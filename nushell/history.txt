@@ -700,3 +700,11 @@ stow .
 gcam 'add and update git aliases'
 gps
 stow .
+gaa
+gc 'modualarize aliases from nushell config'
+gps
+gaa
+sto
+stow .
+gaa
+stow .
