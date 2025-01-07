@@ -901,13 +901,13 @@ def --env cx [arg] {
 alias c = clear
 alias ll = ls -l
 # Detailed list of all files (hidden included), with icons and Git info
-alias l="eza --long --icons --git --all --group-directories-first"
+alias l = eza --long --icons --git --all --group-directories-first
 
 # Tree view with details, 2 levels deep
-alias lt="eza --tree --level=2 --long --icons --git"
+alias lt = eza --tree --level=2 --long --icons --git
 
 # Compact tree view, 2 levels deep
-alias ltree="eza --tree --level=2 --icons --git"
+alias ltree = eza --tree --level=2 --icons --git
 
 # --- Directories ---
 alias dot = cd ~/dotfiles

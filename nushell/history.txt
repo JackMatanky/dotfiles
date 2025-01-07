@@ -673,3 +673,7 @@ gps
 stow .
 l
 eza -l
+gca 'update eza aliases'
+gps
+stow .
+gca 'fix new eza alias syntax to match nushell'
