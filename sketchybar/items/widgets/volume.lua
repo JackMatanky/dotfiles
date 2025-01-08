@@ -24,6 +24,7 @@ local volume_icon = sbar.add("item", "widgets.volume2", {
     color = colors.grey,
     font = {
       style = settings.font.style_map["Regular"],
+      size = 14.0,
     },
   },
   label = {
@@ -137,7 +138,9 @@ local function volume_toggle_details(env)
 end
 
 local function volume_scroll(env)
-  local delta = env.SCROLL_DELTA
+  local delta = env.INFO.delta
+  if not (env.INFO.modifier == "ctrl") then delta = delta * 10.0 end
+
   sbar.exec('osascript -e "set volume output volume (output volume of (get volume settings) + ' .. delta .. ')"')
 end
 

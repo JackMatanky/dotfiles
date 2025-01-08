@@ -720,3 +720,24 @@ gps
 stow .
 v
 gaa
+gcam 'update nushell config'
+gps
+exit
+hx
+ze
+zellij
+exit
+exip
+exit
+dot
+obsidian
+which luarocks
+brew install luarocks
+luarocks install lunajson
+uv pip install yfinance
+uv pip install yfinance --system
+cd
+brew install yfinance
+uv pip install --system yfinance
+stow .
+bar_load
