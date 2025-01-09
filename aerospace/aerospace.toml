@@ -172,10 +172,11 @@ alt-shift-comma = 'mode service'
 # alt-shift-enter = 'mode apps'
 
 # >>> App Launcher <<<
-alt-ctrl-shift-n = 'exec-and-forget open /Applications/Obsidian.app'       # Notes
-alt-ctrl-shift-t = 'exec-and-forget open /Applications/WezTerm.app'        # Terminal
-alt-ctrl-shift-c = 'exec-and-forget open /Applications/Zed.app'            # Code
-alt-ctrl-shift-b = 'exec-and-forget open /Applications/Firefox.app'        # Browser
+alt-ctrl-shift-n = 'exec-and-forget open /Applications/Obsidian.app'        # Notes
+alt-ctrl-shift-f = 'exec-and-forget open /Applications/Anki.app'            # Flashcards
+alt-ctrl-shift-t = 'exec-and-forget open /Applications/WezTerm.app'         # Terminal
+alt-ctrl-shift-c = 'exec-and-forget open /Applications/Zed.app'             # Code
+alt-ctrl-shift-b = 'exec-and-forget open /Applications/Firefox.app'         # Browser
 
 # >>> Multiple Monitors <<<
 # See: https://nikitabobko.github.io/AeroSpace/guide#multiple-monitors

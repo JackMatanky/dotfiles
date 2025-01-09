@@ -741,3 +741,12 @@ brew install yfinance
 uv pip install --system yfinance
 stow .
 bar_load
+gcam 'change sketchybarr config to felix kratz'
+gps
+curl -L https://raw.githubusercontent.com/FelixKratz/dotfiles/master/install_sketchybar.sh | sh
+exit
+hx
+exit
+which anki
+which anki2
+stow .
