@@ -850,3 +850,6 @@ which isort
 which mypy
 uv pip install --system python-lsp-ruff
 stow .
+gcam 'update python helix config'
+brew uninstall isort
+stow .

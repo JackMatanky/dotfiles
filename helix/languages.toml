@@ -1,121 +1,187 @@
 #--------------------------------------------------------------------
-# Filename: ~/dotfiles/helix/config.toml
+# Filename: ~/dotfiles/helix/languages.toml
 #
 # Helix Docs: https://docs.helix-editor.com/languages.html
 #--------------------------------------------------------------------
 
-# >>> Language Servers <<<
-
-# --- Python ---
-# PyLSP
-[language-server.pylsp]
-command = "pylsp"
-
-[language-server.pylsp.config.pylsp.plugins]
-flake8 = {enabled = true, ignore = ["E501", "E305", "E302", "W293"]}
-yapf = {enabled = false}
-ruff = { enabled = true }
-pylsp_mypy = {
-    enabled = true,
-    live_mode = true
-}
-pylsp-rope = { enabled = true }
-autopep8 = {enabled = false}
-mccabe = {enabled = false}
-pycodestyle = {enabled = false}
-pyflakes = {enabled = false}
-pylint = {enabled = false}
-
+# >>> Python <<<
 [[language]]
 name = "python"
 file-types = ["py"]
 shebangs = ["python"]
+roots = [".", "pyproject.toml", "pyrightconfig.json"]
+comment-token = "#"
 language-servers = [
-    { name = "pylsp" },
+    { name = "basedpyright" },
     { name = "ruff" },
+    { name = "pylyzer" }
 ]
-formatter = {command = "ruff", args = ["--quiet", "-"]}
 auto-format = true
+formatter = {
+    command = "ruff",
+    args = ["format", "-"]
+}
 indent = {
     tab-width = 4,
     unit = "    "
 }
 
-# --- HTML ---
-# VS Code HTML Language Server
-[language-server.vscode-html-language-server]
-command = "vscode-html-language-server"
-
-# EMMET-LSP / github.com/olrtg
-[language-server.emmet-lsp]
-command = "emmet-language-server"
+# --- BasedPyright Configuration ---
+[language-server.basedpyright]
+command = "basedpyright-langserver"
 args = ["--stdio"]
 
+[language-server.basedpyright.config]
+typeCheckingMode = "strict"         # Strict type checking (off | basic | strict)
+reportMissingImports = true         # Report unresolved imports
+reportUnusedVariable = false        # Disable unused variable checks (handled by Ruff or Pylyzer)
+exclude = ["tests/**/*.py"]         # Exclude specific files or directories
+
+# --- Pylyzer Configuration ---
+[language-server.pylyzer]
+command = "pylyzer"
+args = ["--server"]
+
+[language-server.pylyzer.config]
+typeChecking = false
+reportUnusedVariables = true         # Enable unused variable checks
+reportUnusedImports = false          # Disable (handled by Ruff)
+venvPath = ".venv"                  # Path to virtual environments
+venv = "myenv"                       # Default virtual environment name
+
+# --- Ruff Configuration ---
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[language-server.ruff.config.settings]
+line-length = 80
+indent-width = 4
+output-format = "concise";
+show-fixes = true
+
+[language-server.ruff.config.settings.lint]
+# Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
+# Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
+# McCabe complexity (`C901`) by default.
+select = ["E4", "E7", "E9", "F"]
+ignore = []
+per-file-ignores = {"__init__.py" = ["F401"]}
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+preview = false
+
+[language-server.ruff.config.settings.lint.isort]
+force-single-line = false
+combine-as-imports = true
+order-by-type = true
+known-first-party = ["myproject"]
+default-section = "THIRDPARTY"
+sections = [
+    "FUTURE",
+    "STDLIB",
+    "THIRDPARTY",
+    "FIRSTPARTY",
+    "LOCALFOLDER"
+]
+
+[language-server.ruff.config.settings.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+preview = true
+ignore = ["W503"]                    # Ignore specific warnings
+fixable = true                       # Enable fixable rules
+
+# >>> HTML <<<
 [[language]]
 name = "html"
 auto-format = true
 language-servers = [ "vscode-html-language-server", "emmet-lsp" ]
 formatter = { command = "prettier", args = ["--parser", "html"]}
 file-types = ["html", "gohtml"]
-indent = {tab-width = 2, unit = "  "}
+indent = {
+    tab-width = 2,
+    unit = "  "
+}
 
-# --- CSS ---
-# VS Code CSS Language Server
-[language-server.vscode-css-language-server]
-command = "vscode-css-language-server"
+# --- VS Code HTML Language Server ---
+[language-server.vscode-html-language-server]
+command = "vscode-html-language-server"
 
+# --- EMMET-LSP / github.com/olrtg ---
+[language-server.emmet-lsp]
+command = "emmet-language-server"
+args = ["--stdio"]
+
+# >>> CSS <<<
 [[language]]
 name = "css"
 auto-format = true
 language-servers = [{name = "vscode-css-language-server"}]
 formatter = { command = "prettier", args = ["--parser", "css"]}
-indent = {tab-width = 2, unit = "  "}
+indent = {
+    tab-width = 2,
+    unit = "  "
+}
 
-# --- JavaScript and TypeScript ---
-# TypeScript Language Server
-[language-server.typescript-language-server]
-command = "typescript-language-server"
-args = ["--stdio"]
+# --- VS Code CSS Language Server ---
+[language-server.vscode-css-language-server]
+command = "vscode-css-language-server"
 
+# >>> JavaScript and TypeScript <<<
 # JavaScript
 [[language]]
 name = "javascript"
 auto-format = true
 language-servers = [{name = "typescript-language-server"}]
 formatter = { command = "prettier", args = ["--parser", "typescript"]}
-indent = {tab-width = 2, unit = "  "}
+indent = {
+    tab-width = 2,
+    unit = "  "
+}
 
 # TypeScript
 [[language]]
 name = "typescript"
 auto-format = false
 language-servers = [{name = "typescript-language-server"}]
-indent = {tab-width = 4, unit = "    "}
+indent = {
+    tab-width = 4,
+    unit = "    "
+}
 
-# --- JSON ---
-# VS Code JSON Language Server
-[language-server.vscode-json-language-server]
-command = "vscode-json-language-server"
+# --- TypeScript Language Server ---
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
 
+# >>> JSON <<<
 [[language]]
 name = "json"
 auto-format = true
 language-servers = [{name = "vscode-json-language-server"}]
 formatter = { command = "prettier", args = ["--parser", "json"]}
-indent = {tab-width = 2, unit = "  "}
+indent = {
+    tab-width = 2,
+    unit = "  "
+}
 
-# --- TOML ---
+# --- VS Code JSON Language Server ---
+[language-server.vscode-json-language-server]
+command = "vscode-json-language-server"
+
+# >>> TOML <<<
 [[language]]
 name = "toml"
 auto-format = true
 # https://github.com/bd82/toml-tools/tree/master/packages/prettier-plugin-toml
 formatter = { command = "prettier", args = ["--parser", "toml"] }
 
-# --- Markdown ---
-# Marksman
-[language-server.marksman]
-command = "marksman"
-
+# >>> Markdown <<<
 [[language]]
 name = "markdown"
 language-servers = ["marksman"]
@@ -127,3 +193,7 @@ name = "markdown"
 language-servers = ["marksman"]
 auto-format = false
 formatter = { command = "prettier", args = ["--parser", "markdown"] }
+
+# --- Marksman ---
+[language-server.marksman]
+command = "marksman"

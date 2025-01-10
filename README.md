@@ -120,11 +120,6 @@ brew install --cask zed
 
 #### Language Server Protocol
 
-- [Python Language Server](https://github.com/python-lsp/python-lsp-server)
-
-```bash
-brew install python-lsp-server
-```
 
 - [VS Code Language Servers](https://github.com/hrsh7th/vscode-langservers-extracted)
 
@@ -154,12 +149,31 @@ brew install texlab
 ```bash
 brew install yaml-language-server
 ```
+
 #### Python
 
 - [Python](https://www.python.org/)
 
 ```bash
 brew install python@3.13
+```
+
+- [Python Language Server](https://github.com/python-lsp/python-lsp-server)
+
+```bash
+brew install python-lsp-server
+```
+
+- [BasedPyright](https://github.com/DetachHead/basedpyright)
+
+```bash
+brew install basedpyright
+```
+
+- [Pylyzer](https://github.com/mtshiba/pylyzer)
+
+```bash
+brew install pylyzer
 ```
 
 - [uv](https://github.com/astral-sh/uv)

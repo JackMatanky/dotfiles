@@ -46,10 +46,11 @@ brew install python
 brew install uv
 brew install ipython
 brew install ruff
-brew install isort
 
 #### LSP
 brew install python-lsp-server
+brew install basedpyright
+brew install pylyzer
 brew install vscode-langservers-extracted
 brew install typescript-language-server
 brew install marksman

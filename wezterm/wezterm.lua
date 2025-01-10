@@ -1,6 +1,5 @@
 -- ------------------------------------------------------------------
--- Filename: ~/dotfiles/wezterm/wezterm.lua
-
+-- Filename: ~/dotfiles/wezterm/wezterm.lu
 -- WezTerm Docs: https://wezfurlong.org/wezterm/config/files.html
 -- ------------------------------------------------------------------
 -- Pull in the wezterm API
