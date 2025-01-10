@@ -897,3 +897,13 @@ stow .
 gcam 'add catppuccin theme to yazi'
 gps
 stow .
+gcam 'move yazi files outside sidebar folder'
+gps
+cargo --version
+brew install rust
+brew upgrade
+cargo install --git https://github.com/estin/simple-completion-language-server.git
+stow .
+$nu.env-path
+$env
+env 

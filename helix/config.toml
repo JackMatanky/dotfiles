@@ -34,6 +34,8 @@ cursorcolumn = true
 cursorline = true
 # Use LF as the default line ending
 default-line-ending = "lf"
+# Minimum severity to show a diagnostic after the end of a line:
+end-of-line-diagnostics = "hint"
 # Timeout for idle actions
 idle-timeout = 5
 # Use hybrid indenting
@@ -105,6 +107,14 @@ layout = [
 character = "|"
 render = true
 skip-levels = 0
+
+# --- Inline Diagnostics ---
+[editor.inline-diagnostics]
+# Minimum severity to show a diagnostic on the primary cursor's line.
+# Note that `cursor-line` diagnostics are hidden in insert mode.
+cursor-line = "error"
+# Minimum severity to show a diagnostic on other lines:
+# other-lines = "error"
 
 # --- LSP Configuration ---
 [editor.lsp]

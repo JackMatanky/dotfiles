@@ -230,6 +230,14 @@ brew install marksman
 brew install markdownlint-cli
 ```
 
+#### Rust
+
+- [Rust](https://www.rust-lang.org/)
+
+```bash
+brew install rust
+```
+
 #### Formatters
 
 - [Pretties](https://prettier.io/)
@@ -237,6 +245,8 @@ brew install markdownlint-cli
 ```bash
 brew install prettier
 ```
+
+
 
 ### Version Control
 

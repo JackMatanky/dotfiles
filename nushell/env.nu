@@ -1,11 +1,12 @@
-#------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------
 # Filename: ~/dotfiles/nushell/env.nu
-#
+# Docs:
 # Source Author: Omer Hammerman (omerxx)
 # Source Link: https://github.com/omerxx/dotfiles/blob/master/nushell/env.nu
-#------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------
 
 $env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
+$env.CARGO_HOME = ($env.HOME | path join '.cargo')
 
 def create_left_prompt [] {
     let dir = match (do --ignore-errors { $env.PWD | path relative-to $nu.home-path }) {
@@ -102,7 +103,7 @@ use std "path add"
 # path add ($env.HOME | path join ".local" "bin")
 # $env.PATH = ($env.PATH | uniq)
 
-# # Update PATH dynamically
+# Update PATH dynamically
 $env.PATH = (
   $env.PATH
   | split row (char esep)
@@ -113,7 +114,7 @@ $env.PATH = (
   | append /usr/sbin
   | append /opt/homebrew/bin
   | append /run/current-system/sw/bin
-  # | append ($env.CARGO_HOME | path join bin)
+  | append ($env.CARGO_HOME | path join bin)
   # | append ($env.HOME | path join .local bin)
   | uniq # filter so the paths are unique
 )

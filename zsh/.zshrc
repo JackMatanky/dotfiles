@@ -10,6 +10,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # Add Homebrew paths (macOS-specific)
 export PATH="/opt/homebrew/bin:$PATH"
 
+# Add Homebrew paths (macOS-specific)
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # Add Nix paths (NixOS-specific)
 if [[ -d "/nix/var/nix/profiles/default" ]]; then
   for profile in ${(z)NIX_PROFILES}; do
