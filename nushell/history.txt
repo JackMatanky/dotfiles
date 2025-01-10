@@ -887,3 +887,10 @@ hx ex6.py
 exit
 gcam 'move yazi files outside sidebar folder'
 stow .
+gcam 'add catppuccin theme to yazi'
+gps
+hx ex6.py
+exit
+y
+exit
+stow .
