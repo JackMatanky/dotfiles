@@ -13,24 +13,33 @@ command = "pylsp"
 
 [language-server.pylsp.config.pylsp.plugins]
 flake8 = {enabled = true, ignore = ["E501", "E305", "E302", "W293"]}
+yapf = {enabled = false}
+ruff = { enabled = true }
+pylsp_mypy = {
+    enabled = true,
+    live_mode = true
+}
+pylsp-rope = { enabled = true }
 autopep8 = {enabled = false}
 mccabe = {enabled = false}
 pycodestyle = {enabled = false}
 pyflakes = {enabled = false}
 pylint = {enabled = false}
-yapf = {enabled = false}
-pylsp-mypy = { enabled = true },
-pylsp-rope = { enabled = true },
-python-lsp-ruff = { enabled = true }
 
 [[language]]
 name = "python"
 file-types = ["py"]
 shebangs = ["python"]
-language-servers = [{name = "pylsp"}]
+language-servers = [
+    { name = "pylsp" },
+    { name = "ruff" },
+]
 formatter = {command = "ruff", args = ["--quiet", "-"]}
 auto-format = true
-indent = {tab-width = 4, unit = "    "}
+indent = {
+    tab-width = 4,
+    unit = "    "
+}
 
 # --- HTML ---
 # VS Code HTML Language Server

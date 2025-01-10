@@ -805,3 +805,48 @@ hx --health
 sops --version
 exit
 stow .
+gcam 'update helix config and language config and add yazelix command to wezterm'
+gps
+stow .
+hx --health
+hx
+z programming problem_set_06
+fd programming
+fd huji programming
+fd huji_programming
+z add obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/
+za obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/
+programming
+z programming
+l
+za obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_06
+za problem_set_06
+z problem_set_06
+hx
+stow .
+bar_load
+stow .
+bar_load
+stow .
+bar_load
+ff
+aerospace list-monitors
+stow .
+bar_load
+stow .
+bar_load
+stow .
+bar_load
+stow .
+bar_load
+as_load
+stow .
+as_load
+stow .
+exit
+exit
+which ruff
+which isort
+which mypy
+uv pip install --system python-lsp-ruff
+stow .
