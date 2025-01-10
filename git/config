@@ -1,3 +1,8 @@
+#------------------------------------------------------------------------------#
+# Filename: ~/dotfiles/git/config
+#
+# Git Docs: https://git-scm.com/docs/git-config
+#------------------------------------------------------------------------------#
 [user]
     name = JackMatanky                  # Replace with your name
     email = JackMatanky@gmail.com       # Replace with your email

@@ -91,9 +91,19 @@ alias grset = git remote set-url
 alias grs = git reset
 alias grsh = git reset --hard
 
+# Diff
 alias gdiff = git diff
+
+# Status
 alias gst = git status
+
+# Log
+alias gl = git log
 alias glog = git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit
+# alias glogtb = git log --pretty=%h»¦«%aN»¦«%s»¦«%aD | lines | split column "»¦«" sha1 committer desc merged_at | first 20
+
+
+# Config
 alias gcf = git config --list
 
 # --- Nix ---

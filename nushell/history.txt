@@ -752,3 +752,19 @@ which anki2
 stow .
 gcam 'add anki shortcut to aerospace'
 gps
+gaa
+gc 'add yazi shell wrapper to nushell'
+find . -name .DS_Store -print0 | xargs -0 git rm --cached
+find . -name ".DS_Store" | each { git rm --cached $it }
+glog
+find ".DS_Store" | each { git rm --cached $it }
+find ".DS_Store"
+ls | find ".DS_Store"
+ls -l | find ".DS_Store"
+git rm --cached -r .DS_Store<\n>git commit -m "Remove .DS_Store files from tracking"
+gps
+glogtb
+stow .
+glogtb
+stow .
+glogtb

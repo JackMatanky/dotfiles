@@ -1,7 +1,9 @@
+#------------------------------------------------------------------------------#
 # Filename: ~/dotfiles/espanso/match/obsidian_callout.yml
 #
-# espanso match file, docs at: https://espanso.org/docs/
-
+# Espanso Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------#
+---
 matches:
     # SECT: GENERAL
     - trigger: ">abst"
