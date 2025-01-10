@@ -885,3 +885,5 @@ stow .
 exit
 hx ex6.py
 exit
+gcam 'move yazi files outside sidebar folder'
+stow .
