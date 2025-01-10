@@ -879,3 +879,9 @@ dot
 za zsh
 z zsh
 hx zshrc
+gcam 'add environment variables for editor (helix) and visual (zed)'
+gps
+stow .
+exit
+hx ex6.py
+exit
