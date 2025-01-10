@@ -768,3 +768,6 @@ stow .
 glogtb
 stow .
 glogtb
+gcam 'add file headers'
+gps
+stow .

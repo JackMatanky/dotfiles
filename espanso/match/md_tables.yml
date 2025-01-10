@@ -1,3 +1,9 @@
+#------------------------------------------------------------------------------#
+# Filename: ~/dotfiles/espanso/match/md_tables.yml
+#
+# Espanso Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------#
+---
 matches:
     - trigger: "mdt2"
       label: "Markdown - Two Column Table"

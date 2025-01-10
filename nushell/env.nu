@@ -1,6 +1,9 @@
-# Nushell Environment Config File
-# Base Source: Omer Hammerman (omerxx)
-# https://github.com/omerxx/dotfiles/blob/master/nushell/env.nu
+#------------------------------------------------------------------------------#
+# Filename: ~/dotfiles/nushell/env.nu
+#
+# Source Author: Omer Hammerman (omerxx)
+# Source Link: https://github.com/omerxx/dotfiles/blob/master/nushell/env.nu
+#------------------------------------------------------------------------------#
 
 $env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
 
