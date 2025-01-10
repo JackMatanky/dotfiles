@@ -139,7 +139,7 @@ smart-case = false
 
 # --- Smart Tab ---
 [editor.smart-tab]
-enable = false
+enable = true
 
 # --- Soft Wrap ---
 [editor.soft-wrap]

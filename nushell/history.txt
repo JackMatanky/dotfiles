@@ -907,3 +907,48 @@ stow .
 $nu.env-path
 $env
 env 
+gcam 'add cargo to env'
+gps
+simple-completion-language-server validate-snippets
+stow .
+hx --health
+simple-completion-language-server validate-snippets
+stow .
+hx --health
+simple-completion-language-server validate-snippets
+stow .
+simple-completion-language-server validate-snippets
+stow .
+simple-completion-language-server validate-snippets
+stow .
+simple-completion-language-server validate-snippets
+cd /Users/jack/dotfiles/helix/snippetscd /Users/jack/obsidian_vault
+exit
+exit
+hx ex6.py
+cd
+cd /Users/jack/dotfiles/helix/snippetscd /Users/jack/obsidian_vault
+exit
+exit
+exit
+z problem_set_06
+stow .
+simple-completion-language-server validate-snippets
+stow .
+simple-completion-language-server validate-snippets
+stow .
+simple-completion-language-server validate-snippets
+stow .
+simple-completion-language-server validate-snippets
+stow .
+simple-completion-language-server validate-snippets
+stow .
+simple-completion-language-server validate-snippets
+stow .
+simple-completion-language-server validate-snippets
+stow .
+simple-completion-language-server validate-snippets
+hx ex6.py
+exit
+exit
+stow .
