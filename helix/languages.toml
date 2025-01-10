@@ -94,12 +94,12 @@ pycodestyle = {enabled = false}
 pyflakes = {enabled = false}
 pylint = {enabled = false}
 yapf = {enabled = false}
-ruff = { enabled = false}
+ruff = { enabled = true}
 
 [[language]]
 name = "python"
 auto-format = false
 language-servers = [{name = "pylsp"}]
-formatter = {command = "black", args = ["--quiet", "-"]}
+formatter = {command = "ruff", args = ["--quiet", "-"]}
 indent = {tab-width = 4, unit = "    "}
 shebangs = ["python"]

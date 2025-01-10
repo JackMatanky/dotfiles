@@ -782,3 +782,13 @@ brew install ruff
 brew install isort
 which rope
 which pylsp-rope
+gcam 'update helix config to match my file style'
+gps
+stow .
+hx
+hx --health
+brew install vscode-langservers-extracted
+brew install marksman
+brew install texlab
+brew install yaml-language-server
+stow .

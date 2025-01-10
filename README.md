@@ -2,11 +2,9 @@
 
 My dotfiles repo managed with GNU Stow on MacOS.
 
-## Apps
+## CLI
 
-### CLI
-
-#### Shell
+### Shell
 
 - [Nushell](https://www.nushell.sh/)
 
@@ -34,7 +32,7 @@ My dotfiles repo managed with GNU Stow on MacOS.
     brew install zsh-autocomplete
     ```
 
-##### Plugins
+#### Plugins
 
 - [Carapace](https://carapace.sh/)
 
@@ -66,14 +64,14 @@ brew install ripgrep
 brew install fd
 ```
 
-#### Terminal Emulator
+### Terminal Emulator
 
 - [Wezterm](https://wezfurlong.org/wezterm/)
 
 ```bash
 brew install --cask wezterm
 ```
-#### Multiplexxer
+### Multiplexxer
 
 - [Zellij](https://zellij.dev/)
 
@@ -81,7 +79,7 @@ brew install --cask wezterm
 brew install zellij
 ```
 
-#### Prompt
+### Prompt
 
 - [Starship](https://starship.rs/)
 
@@ -89,7 +87,7 @@ brew install zellij
 brew install starship
 ```
 
-#### File Manager
+### File Manager
 
 - [Yazi](https://github.com/sxyazi/yaz)
     - [docs](https://yazi-rs.github.io/)
@@ -98,7 +96,7 @@ brew install starship
 brew install yazi
 ```
 
-### Development
+## Development
 
 - [Neovim](https://neovim.io/)
 
@@ -118,20 +116,56 @@ brew install helix
 brew install --cask zed
 ```
 
-#### Languages
+### Languages
 
-##### Python
-
-- [Python](https://www.python.org/)
-
-```bash
-brew install python@3.13
-```
+#### Language Server Protocol
 
 - [Python Language Server](https://github.com/python-lsp/python-lsp-server)
 
 ```bash
 brew install python-lsp-server
+```
+
+- [VS Code Language Servers](https://github.com/hrsh7th/vscode-langservers-extracted)
+
+```bash
+brew install vscode-langservers-extracted
+```
+Includes:
+    - `vscode-html-language-server`
+    - `vscode-css-language-server`
+    - `vscode-json-language-server`
+    - `vscode-eslint-language-server`
+
+- [TypeScript Language Server](https://github.com/typescript-language-server/typescript-language-server)
+
+```bash
+brew install typescript-language-server
+```
+
+- [Marksman](https://github.com/python-lsp/python-lsp-server)
+
+```bash
+brew install marksman
+```
+
+- [TexLab](https://github.com/latex-lsp/texlab)
+
+```bash
+brew install texlab
+```
+
+- [Yaml Language Server](https://github.com/redhat-developer/yaml-language-server)
+
+```bash
+brew install yaml-language-server
+```
+#### Python
+
+- [Python](https://www.python.org/)
+
+```bash
+brew install python@3.13
 ```
 
 - [uv](https://github.com/astral-sh/uv)
@@ -158,7 +192,7 @@ brew install ruff
 brew install isort
 ```
 
-##### Java
+#### Java
 
 - [Java Development Kit]()
 
@@ -174,7 +208,7 @@ If you need to have openjdk first in your PATH, run:
 For compilers to find openjdk you may need to set:
   export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
-#### Version Control
+### Version Control
 
 ```bash
 brew install git
@@ -185,7 +219,7 @@ brew install lazygit
 brew install keychain
 ```
 
-### Brower
+## Brower
 
 - [Firefox](https://www.mozilla.org/firefox/)
 
@@ -193,7 +227,7 @@ brew install keychain
 brew install --cask firefox
 ```
 
-### PKM
+## PKM
 
 - [Obsidian](https://obsidian.md/)
 

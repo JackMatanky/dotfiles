@@ -43,11 +43,19 @@ brew install helix
 
 #### Python
 brew install python
-brew install python-lsp-server
 brew install uv
 brew install ipython
 brew install ruff
 brew install isort
+
+#### LSP
+brew install python-lsp-server
+brew install vscode-langservers-extracted
+brew install typescript-language-server
+brew install marksman
+brew install texlab
+brew install yaml-language-server
+
 
 ### Nice to have
 brew install lazygit
