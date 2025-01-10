@@ -143,12 +143,6 @@ Includes:
 brew install typescript-language-server
 ```
 
-- [Marksman](https://github.com/python-lsp/python-lsp-server)
-
-```bash
-brew install marksman
-```
-
 - [TexLab](https://github.com/latex-lsp/texlab)
 
 ```bash
@@ -207,6 +201,28 @@ If you need to have openjdk first in your PATH, run:
 
 For compilers to find openjdk you may need to set:
   export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+
+#### Markdown
+
+- [Marksman](https://github.com/python-lsp/python-lsp-server)
+
+```bash
+brew install marksman
+```
+
+- [Markdown Lint](https://github.com/igorshubovych/markdownlint-cli)
+
+```bash
+brew install markdownlint-cli
+```
+
+#### Formatters
+
+- [Pretties](https://prettier.io/)
+
+```bash
+brew install prettier
+```
 
 ### Version Control
 

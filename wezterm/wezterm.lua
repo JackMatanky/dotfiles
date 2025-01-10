@@ -1,10 +1,14 @@
+-- ------------------------------------------------------------------
 -- Filename: ~/dotfiles/wezterm/wezterm.lua
 
+-- WezTerm Docs: https://wezfurlong.org/wezterm/config/files.html
+-- ------------------------------------------------------------------
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
 config = {
-    default_prog = { "/opt/homebrew/bin/nu" },
+    default_prog = { 'nu', '-c', "zellij -l welcome --config-dir ~/.config/zellij options --layout-dir ~/.config/zellij/layouts" },
+    -- { "/opt/homebrew/bin/nu" },
     set_environment_variables = {
         XDG_CONFIG_HOME = "/Users/jack/.config",
     },

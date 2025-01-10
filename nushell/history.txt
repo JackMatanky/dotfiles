@@ -792,3 +792,16 @@ brew install marksman
 brew install texlab
 brew install yaml-language-server
 stow .
+gcam 'download lsp with brew and update readme and install script'
+exit
+exI
+exit
+hx --health
+brew install typescript-language-server
+brew install markdownlint-cli
+brew install prettier
+exit
+hx --health
+sops --version
+exit
+stow .

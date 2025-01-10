@@ -1,34 +1,36 @@
-#--------------------------------------------------------------------#
+#--------------------------------------------------------------------
 # Filename: ~/dotfiles/helix/config.toml
 #
 # Helix Docs: https://docs.helix-editor.com/languages.html
-#--------------------------------------------------------------------#
+#--------------------------------------------------------------------
 
 # >>> Language Servers <<<
 
-# --- Markdown ---
-# Marksman
-[language-server.marksman]
-command = "marksman"
+# --- Python ---
+# PyLSP
+[language-server.pylsp]
+command = "pylsp"
+
+[language-server.pylsp.config.pylsp.plugins]
+flake8 = {enabled = true, ignore = ["E501", "E305", "E302", "W293"]}
+autopep8 = {enabled = false}
+mccabe = {enabled = false}
+pycodestyle = {enabled = false}
+pyflakes = {enabled = false}
+pylint = {enabled = false}
+yapf = {enabled = false}
+pylsp-mypy = { enabled = true },
+pylsp-rope = { enabled = true },
+python-lsp-ruff = { enabled = true }
 
 [[language]]
-name = "markdown"
-language-servers = [ "marksman" ]
+name = "python"
+file-types = ["py"]
+shebangs = ["python"]
+language-servers = [{name = "pylsp"}]
+formatter = {command = "ruff", args = ["--quiet", "-"]}
 auto-format = true
-formatter = { command = "prettier", args = ["--parser", "markdown"]}
-
-# --- JSON ---
-# VS Code JSON Language Server
-[language-server.vscode-json-language-server]
-command = "vscode-json-language-server"
-
-[[language]]
-name = "json"
-auto-format = true
-language-servers = [{name = "vscode-json-language-server"}]
-formatter = { command = "prettier", args = ["--parser", "json"]}
-indent = {tab-width = 2, unit = "  "}
-
+indent = {tab-width = 4, unit = "    "}
 
 # --- HTML ---
 # VS Code HTML Language Server
@@ -81,25 +83,38 @@ auto-format = false
 language-servers = [{name = "typescript-language-server"}]
 indent = {tab-width = 4, unit = "    "}
 
-# --- Python ---
-# PyLSP
-[language-server.pylsp]
-command = "pylsp"
-
-[language-server.pylsp.config.pylsp.plugins]
-flake8 = {enabled = true, ignore = ["E501", "E305", "E302", "W293"]}
-autopep8 = {enabled = false}
-mccabe = {enabled = false}
-pycodestyle = {enabled = false}
-pyflakes = {enabled = false}
-pylint = {enabled = false}
-yapf = {enabled = false}
-ruff = { enabled = true}
+# --- JSON ---
+# VS Code JSON Language Server
+[language-server.vscode-json-language-server]
+command = "vscode-json-language-server"
 
 [[language]]
-name = "python"
+name = "json"
+auto-format = true
+language-servers = [{name = "vscode-json-language-server"}]
+formatter = { command = "prettier", args = ["--parser", "json"]}
+indent = {tab-width = 2, unit = "  "}
+
+# --- TOML ---
+[[language]]
+name = "toml"
+auto-format = true
+# https://github.com/bd82/toml-tools/tree/master/packages/prettier-plugin-toml
+formatter = { command = "prettier", args = ["--parser", "toml"] }
+
+# --- Markdown ---
+# Marksman
+[language-server.marksman]
+command = "marksman"
+
+[[language]]
+name = "markdown"
+language-servers = ["marksman"]
+auto-format = true
+formatter = { command = "markdownlint", args = ["--fix"] }
+
+[[language]]
+name = "markdown"
+language-servers = ["marksman"]
 auto-format = false
-language-servers = [{name = "pylsp"}]
-formatter = {command = "ruff", args = ["--quiet", "-"]}
-indent = {tab-width = 4, unit = "    "}
-shebangs = ["python"]
+formatter = { command = "prettier", args = ["--parser", "markdown"] }

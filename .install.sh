@@ -53,12 +53,14 @@ brew install python-lsp-server
 brew install vscode-langservers-extracted
 brew install typescript-language-server
 brew install marksman
+brew install markdownlint-cli
 brew install texlab
 brew install yaml-language-server
 
 
 ### Nice to have
 brew install lazygit
+brew install prettier
 
 ### Anki Media Converter
 brew install webp
