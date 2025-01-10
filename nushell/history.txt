@@ -894,3 +894,6 @@ exit
 y
 exit
 stow .
+gcam 'add catppuccin theme to yazi'
+gps
+stow .
