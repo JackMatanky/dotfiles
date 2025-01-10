@@ -771,3 +771,14 @@ glogtb
 gcam 'add file headers'
 gps
 stow .
+gcam 'add file headers'
+gps
+stow .
+exit
+which marksman
+which pylsp
+which ruff
+brew install ruff
+brew install isort
+which rope
+which pylsp-rope

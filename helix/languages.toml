@@ -1,18 +1,37 @@
-#------------------------------------------------------------------------------#
+#--------------------------------------------------------------------#
 # Filename: ~/dotfiles/helix/config.toml
 #
 # Helix Docs: https://docs.helix-editor.com/languages.html
-#------------------------------------------------------------------------------#
+#--------------------------------------------------------------------#
 
-# MARKSMAN
+# >>> Language Servers <<<
+
+# --- Markdown ---
+# Marksman
 [language-server.marksman]
 command = "marksman"
 
-# VSCODE-JSON-LANGUAGE-SERVER
+[[language]]
+name = "markdown"
+language-servers = [ "marksman" ]
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "markdown"]}
+
+# --- JSON ---
+# VS Code JSON Language Server
 [language-server.vscode-json-language-server]
 command = "vscode-json-language-server"
 
-# VSCODE-HTML-LANGUAGE-SERVER
+[[language]]
+name = "json"
+auto-format = true
+language-servers = [{name = "vscode-json-language-server"}]
+formatter = { command = "prettier", args = ["--parser", "json"]}
+indent = {tab-width = 2, unit = "  "}
+
+
+# --- HTML ---
+# VS Code HTML Language Server
 [language-server.vscode-html-language-server]
 command = "vscode-html-language-server"
 
@@ -21,16 +40,49 @@ command = "vscode-html-language-server"
 command = "emmet-language-server"
 args = ["--stdio"]
 
-# VSCODE-CSS-LANGUAGE-SERVER
+[[language]]
+name = "html"
+auto-format = true
+language-servers = [ "vscode-html-language-server", "emmet-lsp" ]
+formatter = { command = "prettier", args = ["--parser", "html"]}
+file-types = ["html", "gohtml"]
+indent = {tab-width = 2, unit = "  "}
+
+# --- CSS ---
+# VS Code CSS Language Server
 [language-server.vscode-css-language-server]
 command = "vscode-css-language-server"
 
-# TYPESCRIPT-LANGUAGE-SERVER
+[[language]]
+name = "css"
+auto-format = true
+language-servers = [{name = "vscode-css-language-server"}]
+formatter = { command = "prettier", args = ["--parser", "css"]}
+indent = {tab-width = 2, unit = "  "}
+
+# --- JavaScript and TypeScript ---
+# TypeScript Language Server
 [language-server.typescript-language-server]
 command = "typescript-language-server"
 args = ["--stdio"]
 
-# PYLSP
+# JavaScript
+[[language]]
+name = "javascript"
+auto-format = true
+language-servers = [{name = "typescript-language-server"}]
+formatter = { command = "prettier", args = ["--parser", "typescript"]}
+indent = {tab-width = 2, unit = "  "}
+
+# TypeScript
+[[language]]
+name = "typescript"
+auto-format = false
+language-servers = [{name = "typescript-language-server"}]
+indent = {tab-width = 4, unit = "    "}
+
+# --- Python ---
+# PyLSP
 [language-server.pylsp]
 command = "pylsp"
 
@@ -44,58 +96,6 @@ pylint = {enabled = false}
 yapf = {enabled = false}
 ruff = { enabled = false}
 
-##################################################################
-# LANGUAGES CONFIG
-##################################################################
-
-# MARKDOWN
-[[language]]
-name = "markdown"
-language-servers = [ "marksman" ]
-auto-format = true
-formatter = { command = "prettier", args = ["--parser", "markdown"]}
-
-# JSON
-[[language]]
-name = "json"
-auto-format = true
-language-servers = [{name = "vscode-json-language-server"}]
-formatter = { command = "prettier", args = ["--parser", "json"]}
-indent = {tab-width = 2, unit = "  "}
-
-# HTML
-[[language]]
-name = "html"
-auto-format = true
-language-servers = [ "vscode-html-language-server", "emmet-lsp" ]
-formatter = { command = "prettier", args = ["--parser", "html"]}
-file-types = ["html", "gohtml"]
-indent = {tab-width = 2, unit = "  "}
-
-# CSS
-[[language]]
-name = "css"
-auto-format = true
-language-servers = [{name = "vscode-css-language-server"}]
-formatter = { command = "prettier", args = ["--parser", "css"]}
-indent = {tab-width = 2, unit = "  "}
-
-# JAVASCRIPT
-[[language]]
-name = "javascript"
-auto-format = true
-language-servers = [{name = "typescript-language-server"}]
-formatter = { command = "prettier", args = ["--parser", "typescript"]}
-indent = {tab-width = 2, unit = "  "}
-
-# TYPESCRIPT
-[[language]]
-name = "typescript"
-auto-format = false
-language-servers = [{name = "typescript-language-server"}]
-indent = {tab-width = 4, unit = "    "}
-
-# PYTHON
 [[language]]
 name = "python"
 auto-format = false

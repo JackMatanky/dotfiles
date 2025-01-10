@@ -40,7 +40,14 @@ brew install fd
 ### Development
 brew install neovim
 brew install helix
+
+#### Python
 brew install python
+brew install python-lsp-server
+brew install uv
+brew install ipython
+brew install ruff
+brew install isort
 
 ### Nice to have
 brew install lazygit

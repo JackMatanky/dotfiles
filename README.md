@@ -128,6 +128,12 @@ brew install --cask zed
 brew install python@3.13
 ```
 
+- [Python Language Server](https://github.com/python-lsp/python-lsp-server)
+
+```bash
+brew install python-lsp-server
+```
+
 - [uv](https://github.com/astral-sh/uv)
 
 ```bash
@@ -138,6 +144,18 @@ brew install uv
 
 ```bash
 brew install ipython
+```
+
+- [ruff Formatter](https://docs.astral.sh/ruff/)
+
+```bash
+brew install ruff
+```
+
+- [isort](https://pycqa.github.io/isort/)
+
+```bash
+brew install isort
 ```
 
 ##### Java
