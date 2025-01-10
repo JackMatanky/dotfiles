@@ -48,39 +48,49 @@ def git_main_branch [] {
         | str replace --regex 'HEAD .*?[：: ]\s*(.+)' '$1'
 }
 
+# Add
 alias ga = git add
 alias gaa = git add --all
 alias gapa = git add --patch
 alias gau = git add --update
 
+# Commit
 alias gc = git commit -m
 alias gcam = git commit --all --message
 
+# Push
 alias gps = git push
 alias gpsog = git push origin
 
+# Pull
 alias gpl = git pull
 alias gplog = git pull origin
 
+# Fetch
 alias gf = git fetch
 alias gfo = git fetch origin
 
+# Branch
 alias gb = git branch
 alias gbra = git branch --all
 alias gbd = git branch --delete
 alias gbD = git branch --delete --force
 
+# Checkout
 alias gco = git checkout
 alias gcm = git checkout (git_main_branch)
 alias gcb = git checkout -b
 alias gcoa = git checkout -- .
 
+# Remote
 alias gr = git remote
 alias gra = git remote add
 alias grset = git remote set-url
 
+# Reset
 alias grs = git reset
 alias grsh = git reset --hard
+
 alias gdiff = git diff
 alias gst = git status
 alias glog = git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit

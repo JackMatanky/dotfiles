@@ -750,3 +750,5 @@ exit
 which anki
 which anki2
 stow .
+gcam 'add anki shortcut to aerospace'
+gps

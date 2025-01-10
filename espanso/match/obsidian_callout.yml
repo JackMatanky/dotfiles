@@ -1,3 +1,5 @@
+# Filename: ~/dotfiles/espanso/match/obsidian_callout.yml
+#
 # espanso match file, docs at: https://espanso.org/docs/
 
 matches:
@@ -10,6 +12,8 @@ matches:
       replace: "> [!Important]\n> \n"
     - trigger: ">info"
       replace: "> [!Info]\n> \n"
+    - trigger: ">note"
+      replace: "> [!Note]\n> \n"
     - trigger: ">tip"
       replace: "> [!Tip]\n> \n"
     - trigger: ">warn"
