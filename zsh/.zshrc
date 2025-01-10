@@ -155,6 +155,11 @@ export SSH_CONFIG_FILE="$SSH_CONFIG_DIR/ssh-config"
 # --- Nushell ---
 export NU_CONFIG_DIR="$XDG_CONFIG_HOME/nushell"
 
+
+# --- Default Editors ---
+export EDITOR="hx"         # Helix
+export VISUAL="zed"        # Zed
+
 # >>> Navigation Functions <<<
 # cx: cd into a directory and list its contents.
 # Example: cx Documents/Projects

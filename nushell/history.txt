@@ -853,3 +853,29 @@ stow .
 gcam 'update python helix config'
 brew uninstall isort
 stow .
+gcam 'update python helix config'
+gps
+hx --health
+stow .
+exit
+exI
+exit
+z problem_set_06
+y
+hx ex6.py
+hx --health
+stow .
+hx --health
+stow .
+hx --health
+stow .
+which basedpyright
+brew install basedpyright
+hx --health
+exit
+y
+exit
+dot
+za zsh
+z zsh
+hx zshrc

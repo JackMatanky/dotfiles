@@ -17,14 +17,8 @@ language-servers = [
     { name = "pylyzer" }
 ]
 auto-format = true
-formatter = {
-    command = "ruff",
-    args = ["format", "-"]
-}
-indent = {
-    tab-width = 4,
-    unit = "    "
-}
+formatter = { command = "ruff", args = ["format", "-"] }
+indent = { tab-width = 4, unit = "    " }
 
 # --- BasedPyright Configuration ---
 [language-server.basedpyright]
@@ -57,7 +51,7 @@ args = ["server"]
 [language-server.ruff.config.settings]
 line-length = 80
 indent-width = 4
-output-format = "concise";
+output-format = "concise"
 show-fixes = true
 
 [language-server.ruff.config.settings.lint]
@@ -103,10 +97,7 @@ auto-format = true
 language-servers = [ "vscode-html-language-server", "emmet-lsp" ]
 formatter = { command = "prettier", args = ["--parser", "html"]}
 file-types = ["html", "gohtml"]
-indent = {
-    tab-width = 2,
-    unit = "  "
-}
+indent = { tab-width = 2,  unit = "  " }
 
 # --- VS Code HTML Language Server ---
 [language-server.vscode-html-language-server]
@@ -123,10 +114,7 @@ name = "css"
 auto-format = true
 language-servers = [{name = "vscode-css-language-server"}]
 formatter = { command = "prettier", args = ["--parser", "css"]}
-indent = {
-    tab-width = 2,
-    unit = "  "
-}
+indent = { tab-width = 2, unit = "  " }
 
 # --- VS Code CSS Language Server ---
 [language-server.vscode-css-language-server]
@@ -139,20 +127,14 @@ name = "javascript"
 auto-format = true
 language-servers = [{name = "typescript-language-server"}]
 formatter = { command = "prettier", args = ["--parser", "typescript"]}
-indent = {
-    tab-width = 2,
-    unit = "  "
-}
+indent = { tab-width = 2, unit = "  " }
 
 # TypeScript
 [[language]]
 name = "typescript"
 auto-format = false
 language-servers = [{name = "typescript-language-server"}]
-indent = {
-    tab-width = 4,
-    unit = "    "
-}
+indent = { tab-width = 4, unit = "    " }
 
 # --- TypeScript Language Server ---
 [language-server.typescript-language-server]
@@ -165,10 +147,7 @@ name = "json"
 auto-format = true
 language-servers = [{name = "vscode-json-language-server"}]
 formatter = { command = "prettier", args = ["--parser", "json"]}
-indent = {
-    tab-width = 2,
-    unit = "  "
-}
+indent = { tab-width = 2, unit = "  " }
 
 # --- VS Code JSON Language Server ---
 [language-server.vscode-json-language-server]
