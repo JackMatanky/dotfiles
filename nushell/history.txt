@@ -990,3 +990,28 @@ exit
 cd /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_06
 exit
 stow .
+gcam 'add directory substitutions for obsidian in starship'
+exit
+z problem_set_06
+dot
+z starship
+hx starship.toml
+exit
+exit
+hx starship.toml
+dot
+stow .
+exit
+y
+exit
+dot
+cd
+cd /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_06
+stow .
+z problem_set_06
+stow .
+dot
+stow .
+z problem_set_06
+cd
+stow .
