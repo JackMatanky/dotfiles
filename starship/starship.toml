@@ -1,5 +1,8 @@
-# ~/.config/starship.toml
-# Community Developed Catppuccin: https://github.com/nataziel/starship
+# -----------------------------------------------------------------------------
+# Filename: ~/dotfiles/starship.toml
+# Source: Community Developed Catppuccin Theme
+# Source Link: https://github.com/nataziel/starship
+# -----------------------------------------------------------------------------
 
 "$schema" = 'https://starship.rs/config-schema.json'
 
@@ -99,9 +102,14 @@ use_os_path_sep = true
 "Music" = "󰝚 "
 "Pictures" = " "
 "Developer" = "󰲋 "
-"obsidian_vault" = "󰪶 Obsidian "
 "dotfiles" = " Dotfiles"
 ".config" = ". Config"
+"obsidian_vault" = "󰪶 Obsidian"
+"obsidian_vault/42_education" = "󰪶 Obsidian/󱛊 42_Education"
+"obsidian_vault/42_education/course_huji_programming_intro" = "󰪶 Obs/󱛊 42_Ed/HUJI Programming Intro"
+"obsidian_vault/42_education/course_mit_compsci_and_programming_intro" = "󰪶 Obs/󱛊 42_Ed/MIT CS-Programming Intro"
+"obsidian_vault/60_library" = "󰪶 Obsidian Library 󱨢"
+"obsidian_vault/70_pkm" = "󰪶 Obsidian PKM 󰧑"
 
 [fill]
 symbol = ' '
@@ -189,25 +197,25 @@ time_format = "%R"
 style = "bg:lavender"
 format = '[[ $time   ](fg:crust bg:lavender)]($style)[](fg:lavender)'
 
-# [battery]
-# format = "[ $percentage $symbol]($style)"
-# full_symbol = "█"
-# charging_symbol = "[↑](bold fg:green)"
-# discharging_symbol = "↓"
-# unknown_symbol = "░"
-# empty_symbol = "▃"
+[battery]
+format = "[ $percentage $symbol]($style)"
+full_symbol = "█"
+charging_symbol = "[↑](bold fg:green)"
+discharging_symbol = "↓"
+unknown_symbol = "░"
+empty_symbol = "▃"
 
-# [[battery.display]]
-# threshold = 20
-# style = "italic bold red"
+[[battery.display]]
+threshold = 20
+style = "italic bold red"
 
-# [[battery.display]]
-# threshold = 60
-# style = "italic dimmed bright-purple"
+[[battery.display]]
+threshold = 60
+style = "italic dimmed bright-purple"
 
-# [[battery.display]]
-# threshold = 70
-# style = "bold fg:yellow"
+[[battery.display]]
+threshold = 70
+style = "bold fg:yellow"
 
 [character]
 format = """

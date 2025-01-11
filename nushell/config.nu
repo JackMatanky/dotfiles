@@ -1,6 +1,8 @@
+# -----------------------------------------------------------------------------
 # Nushell Config File
 # Base Source: Omer Hammerman (omerxx)
 # Link: https://github.com/omerxx/dotfiles/blob/master/nushell/config.nu
+# -----------------------------------------------------------------------------
 
 # For more information on defining custom themes, see
 # https://www.nushell.sh/book/coloring_and_theming.html
