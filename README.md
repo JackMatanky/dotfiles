@@ -294,3 +294,9 @@ brew install --cask anki
 brew install webp
 brew install avif
 ```
+
+- [tesseract OCR](https://github.com/tesseract-ocr/)
+
+```bash
+brew install tesseract
+```

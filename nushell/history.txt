@@ -1060,3 +1060,11 @@ uv run test_my_file.py
 uv run test_my_file.py
 ^zip ex6.zip ex6.py README
 uv run test_my_file.py
+gcam 'update gap between windows in aerospace'
+gps
+exit
+hx ex6.py
+exit
+brew install tesseract
+brew update
+brew upgrade
