@@ -1015,3 +1015,48 @@ stow .
 z problem_set_06
 cd
 stow .
+gcam 'add directory substitutions for obsidian in starship'
+gps
+z problem_set_06
+dot
+stow .
+z problem_set_06
+dot
+stow .
+z problem_set_06
+dot
+stow .
+z problem_set_06
+dot
+stow .
+z problem_set_06
+exit
+exit
+y
+cd /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_06
+uv run ex6.py
+exit
+uv run ex6.py
+exit
+uv run ex6.py
+exit
+uv run ex6.py
+hx /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_06
+^zip ex6.zip ex6.py README
+uv run test_my_file.py
+^zip ex6.zip ex6.py README
+uv run test_my_file.py
+hx ex6.py
+uv run ex6.py
+^zip ex6.zip ex6.py README
+uv run test_my_file.py
+^zip ex6.zip ex6.py README
+uv run test_my_file.py
+^zip ex6.zip ex6.py README
+uv run test_my_file.py
+^zip ex6.zip ex6.py README
+uv run test_my_file.py
+^zip ex6.zip ex6.py README
+uv run test_my_file.py
+^zip ex6.zip ex6.py README
+uv run test_my_file.py
