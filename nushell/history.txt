@@ -1068,3 +1068,5 @@ exit
 brew install tesseract
 brew update
 brew upgrade
+gcam 'update'
+gps
