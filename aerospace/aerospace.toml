@@ -201,6 +201,8 @@ alt-ctrl-shift-b = 'exec-and-forget open /Applications/Firefox.app'         # Br
 2 = ['ASUS VA27EHE', 'secondary']
 3 = ['VC279', 'main']
 4 = ['ASUS VA27EHE', 'secondary']
+5 = ['VC279', 'main']
+6 = ['ASUS VA27EHE', 'secondary']
 
 # >>> Layout Tree Services <<<
 # --- Service Binding Mode ---

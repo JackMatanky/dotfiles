@@ -1,6 +1,3 @@
-from typing import Any, List
-
-iterable: List[Any] = []
-
-for item in iterable:
-    pass
+def palindrome_test(phrase: str) -> bool:
+    alpha_num_list = [char.lower() for char in phrase if char.isalnum()]
+    return alpha_num_list == alpha_num_list[::-1]

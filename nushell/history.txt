@@ -1070,3 +1070,24 @@ brew update
 brew upgrade
 gcam 'update'
 gps
+gcam 'update'
+gps
+stow .
+ls
+cd /Users/jack/obsidian_vault/60_library/61_books/cummings_2019_real_analysis/notes
+cd
+brew install --cask sioyek
+sioyek
+zathura
+exit
+hx /Users/jack/obsidian_vault/60_library/61_books/cummings_2019_real_analysis/notes/sum_03_sequences_real_analysis_full.md
+exit
+exit
+ff
+as list-apps
+as list-apps --all
+ff
+aerospace list-apps
+stow .
+as_load
+brew update

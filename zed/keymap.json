@@ -67,7 +67,6 @@
       "cmd-v": "editor::Paste",
       "cmd-z": "editor::Undo",
       "cmd-shift-z": "editor::Redo",
-      "ctrl-shift-z": "zeta::RateCompletions",
       "up": "editor::MoveUp",
       "ctrl-up": "editor::MoveToStartOfParagraph",
       "pageup": "editor::MovePageUp",
@@ -805,7 +804,8 @@
     "context": "RateCompletionModal",
     "use_key_equivalents": true,
     "bindings": {
-      "cmd-enter": "zeta::ThumbsUp",
+      "cmd-shift-enter": "zeta::ThumbsUpActiveCompletion",
+      "cmd-shift-backspace": "zeta::ThumbsDownActiveCompletion",
       "shift-down": "zeta::NextEdit",
       "shift-up": "zeta::PreviousEdit",
       "right": "zeta::PreviewCompletion"
@@ -832,7 +832,6 @@
   },
   {
     "context": "vim_mode == helix_normal && !menu",
-    "use_layout_keys": true,
     "bindings": {
       "space": "vim::Space",
       "$": "vim::EndOfLine",
@@ -1081,13 +1080,6 @@
       "shift-u": "editor::Redo",
       "ctrl-c": "editor::ToggleComments",
       "d": "editor::Delete" // TODO: yank first
-    }
-  },
-
-  {
-    "context": "Editor && vim_mode == visual || vim_mode == helix_normal && !VimWaiting && !VimObject",
-    "bindings": {
-      "x": "editor::SelectLine"
     }
   },
   {
