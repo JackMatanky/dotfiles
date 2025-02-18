@@ -1143,3 +1143,6 @@ gps
 stow .
 gcam 'fix inconsistencies in espanso math shortcuts'
 gps
+gcam 'separate espanso autocorrect to files by letter'
+gps
+stow .

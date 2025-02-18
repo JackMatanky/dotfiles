@@ -67,62 +67,69 @@
       "cmd-v": "editor::Paste",
       "cmd-z": "editor::Undo",
       "cmd-shift-z": "editor::Redo",
+
+      // Movements
       "up": "editor::MoveUp",
-      "ctrl-up": "editor::MoveToStartOfParagraph",
-      "pageup": "editor::MovePageUp",
-      "shift-pageup": "editor::SelectPageUp",
-      "cmd-pageup": "editor::PageUp",
-      "ctrl-pageup": "editor::LineUp",
-      "home": "editor::MoveToBeginningOfLine",
       "down": "editor::MoveDown",
-      "ctrl-down": "editor::MoveToEndOfParagraph",
-      "pagedown": "editor::MovePageDown",
-      "shift-pagedown": "editor::SelectPageDown",
-      "cmd-pagedown": "editor::PageDown",
-      "ctrl-pagedown": "editor::LineDown",
-      "end": "editor::MoveToEndOfLine",
       "left": "editor::MoveLeft",
       "right": "editor::MoveRight",
-      "ctrl-l": "editor::ScrollCursorCenter",
       "alt-left": "editor::MoveToPreviousWordStart",
       "alt-right": "editor::MoveToNextWordEnd",
       "cmd-left": "editor::MoveToBeginningOfLine",
       "cmd-right": "editor::MoveToEndOfLine",
+      "home": "editor::MoveToBeginningOfLine",
+      "end": "editor::MoveToEndOfLine",
+      "cmd-home": "editor::MoveToBeginning",
+      "cmd-end": "editor::MoveToEnd",
       "cmd-up": "editor::MoveToBeginning",
       "cmd-down": "editor::MoveToEnd",
+      "ctrl-up": "editor::MoveToStartOfParagraph",
+      "ctrl-down": "editor::MoveToEndOfParagraph",
+      "pageup": "editor::MovePageUp",
+      "pagedown": "editor::MovePageDown",
+      "ctrl-v": ["editor::MovePageDown", { "center_cursor": true }],
+      "ctrl-shift-v": ["editor::MovePageUp", { "center_cursor": true }],
+      "cmd-pageup": "editor::PageUp",
+      "cmd-pagedown": "editor::PageDown",
+      "ctrl-pageup": "editor::LineUp",
+      "ctrl-pagedown": "editor::LineDown",
+
+      // Selections
+      "cmd-a": "editor::SelectAll",
+      "cmd-l": "editor::SelectLine",
       "shift-up": "editor::SelectUp",
       "shift-down": "editor::SelectDown",
       "shift-left": "editor::SelectLeft",
       "shift-right": "editor::SelectRight",
+      "shift-pageup": "editor::SelectPageUp",
+      "shift-pagedown": "editor::SelectPageDown",
+      "ctrl-l": "editor::ScrollCursorCenter",
       "alt-shift-left": "editor::SelectToPreviousWordStart", // cursorWordLeftSelect
       "alt-shift-right": "editor::SelectToNextWordEnd", // cursorWordRightSelect
-      "ctrl-alt-shift-left": "editor::SelectToPreviousWordStart", // cursorWordLeftSelect
-      "ctrl-alt-shift-right": "editor::SelectToNextWordEnd", // cursorWordRightSelect
+      // "ctrl-alt-shift-left": "editor::SelectToPreviousWordStart", // cursorWordLeftSelect
+      // "ctrl-alt-shift-right": "editor::SelectToNextWordEnd", // cursorWordRightSelect
       "ctrl-shift-up": "editor::SelectToStartOfParagraph",
       "ctrl-shift-down": "editor::SelectToEndOfParagraph",
       "cmd-shift-home": "editor::SelectToBeginning",
       "cmd-shift-end": "editor::SelectToEnd",
-      "cmd-a": "editor::SelectAll",
-      "cmd-l": "editor::SelectLine",
-      "cmd-shift-i": "editor::Format",
       "cmd-shift-left": [
         "editor::SelectToBeginningOfLine",
-        { "stop_at_soft_wraps": true }
-      ],
-      "shift-home": [
-        "editor::SelectToBeginningOfLine",
-        { "stop_at_soft_wraps": true }
-      ],
-      "cmd-shift-right": [
-        "editor::SelectToEndOfLine",
         { "stop_at_soft_wraps": true }
       ],
       "shift-end": [
         "editor::SelectToEndOfLine",
         { "stop_at_soft_wraps": true }
       ],
-      "ctrl-v": ["editor::MovePageDown", { "center_cursor": true }],
-      "ctrl-shift-v": ["editor::MovePageUp", { "center_cursor": true }],
+      "cmd-shift-right": [
+        "editor::SelectToEndOfLine",
+        { "stop_at_soft_wraps": true }
+      ],
+      "shift-home": [
+        "editor::SelectToBeginningOfLine",
+        { "stop_at_soft_wraps": true }
+      ],
+
+      "cmd-shift-i": "editor::Format",
       "ctrl-cmd-space": "editor::ShowCharacterPalette",
       "cmd-;": "editor::ToggleLineNumbers",
       "cmd-alt-z": "editor::RevertSelectedHunks",
