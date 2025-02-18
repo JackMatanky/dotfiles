@@ -1141,3 +1141,5 @@ gps
 gcam 'fix hebrew layer (lgui for lctrl) on 23331_2 mac keymap'
 gps
 stow .
+gcam 'fix inconsistencies in espanso math shortcuts'
+gps

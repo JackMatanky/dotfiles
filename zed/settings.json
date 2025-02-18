@@ -50,7 +50,7 @@
 
   "hover_popover_enabled": true,
   "confirm_quit": false,
-  "restore_on_startup": "last_session",
+  "restore_on_startup": "last_workspace", //"last_session",
 
   // May take 3 values: "platform_default", "close_window", "keep_window_open",
   "when_closing_with_no_tabs": "platform_default",

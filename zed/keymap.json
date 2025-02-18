@@ -285,8 +285,10 @@
     "bindings": {
       "escape": "project_search::ToggleFocus",
       "cmd-shift-j": "project_search::ToggleFilters",
-      "cmd-shift-f": "search::FocusSearch",
-      "cmd-shift-h": "search::ToggleReplace",
+      // "cmd-shift-f": "search::FocusSearch",
+      // "cmd-shift-h": "search::ToggleReplace",
+      "cmd-shift-h": "project_search::ToggleFocus",
+      "cmd-alt-h": ["project_search::ToggleFocus", { "replace_enabled": true }],
       "alt-cmd-g": "search::ToggleRegex",
       "alt-cmd-x": "search::ToggleRegex"
     }
@@ -336,7 +338,9 @@
       "cmd-f": "project_search::ToggleFocus",
       "cmd-g": "search::SelectNextMatch",
       "cmd-shift-g": "search::SelectPrevMatch",
-      "cmd-shift-h": "search::ToggleReplace",
+      // "cmd-shift-h": "search::ToggleReplace",
+      "cmd-shift-h": "project_search::ToggleFocus",
+      "cmd-alt-h": ["project_search::ToggleFocus", { "replace_enabled": true }],
       "cmd-alt-l": "search::ToggleSelection",
       "alt-enter": "search::SelectAllMatches",
       "alt-cmd-c": "search::ToggleCaseSensitive",
