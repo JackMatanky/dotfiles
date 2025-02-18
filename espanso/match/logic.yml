@@ -12,8 +12,6 @@ matches:
     - trigger: ":impl"
       replace: "⇒"
     - triggers: [":bimp", ":iff"]
-      replace: "↔"
-    - trigger: ":equiv"
       replace: "⇔"
     - triggers: [":eq", ":def"]
       replace: "≡"

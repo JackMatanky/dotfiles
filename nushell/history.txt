@@ -1091,3 +1091,53 @@ aerospace list-apps
 stow .
 as_load
 brew update
+gcam 'update zed keymap'
+gps
+stow .
+brew upgrade
+stow .
+ls -l ~/.config | grep starship
+ls -l ~/.config/starship
+rm ~/.config/starship.toml
+stow -D starship
+stow -t ~/.config starship
+stow -D starship
+stow .
+ls -l ~/.config/starship/starship.toml
+ls -l ~/.config
+starship prompt
+which starship
+ls -l ~/.cache/starship/init.nu
+use ~/.cache/starship/init.nu
+stow .
+use ~/.cache/starship/init.nu
+gcam 'update try fixing nu prompt'
+$nu.config-path
+ls -l ~/.config/nushell/config.nu
+$nu.config-path
+stow -t ~/.config nushell
+stow .
+stow -t ~/.config nushell
+stow -D nushell -t ~/.config
+ls -l ~/.config/nushell<\n>ls -l ~/dotfiles/nushell
+ls -l ~/.config/nushell
+$nu.config-path
+source ~/.config/nushell/config.nu
+stow .
+source ~/.config/nushell/config.nu
+gcam 'create pc version for 23331_2'
+zmk
+z zmk
+gcam 'create pc version for 23331_2'
+gps
+gcam 'fix shield files for 23331_2_pc'
+gaa
+gcam 'fix shield files for 23331_2_pc'
+gps
+gcam 'fix build file for 23331_2_pc'
+gps
+gcam 'fix kconfig file for 23331_2_pc'
+gps
+gcam 'fix hebrew layer (lgui for lctrl) on 23331_2 mac keymap'
+gps
+stow .

@@ -1,6 +1,7 @@
 // Zed settings
 // https://zed.dev/docs/configuring-zed
 {
+  "icon_theme": "Catppuccin Macchiato",
   "theme": {
     "mode": "system",
     "light": "One Light",
@@ -17,7 +18,7 @@
   },
   "base_keymap": "VSCode",
   "features": {
-    "inline_completion_provider": "copilot" // "supermaven"
+    "edit_prediction_provider": "zed" // "supermaven"
   },
   // Text Editor
   "buffer_font_size": 16,

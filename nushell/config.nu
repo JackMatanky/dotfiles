@@ -208,10 +208,22 @@ $env.config = {
         }
         use_ls_colors: true # set this to true to enable file/path/directory completions using LS_COLORS
     }
-
+    # ----------------
+    # Filesize Display
+    # ----------------
     filesize: {
-        metric: false # true => KB, MB, GB (ISO standard), false => KiB, MiB, GiB (Windows standard)
-        format: "auto" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, auto
+        # filesize.unit (string): One of either:
+        # - A filesize unit: "B", "kB", "KiB", "MB", "MiB", "GB", "GiB", "TB", "TiB", "PB", "PiB", "EB", or "EiB".
+        # - An automatically scaled unit: "metric" or "binary".
+        # "metric" will use units with metric (SI) prefixes like kB, MB, or GB.
+        # "binary" will use units with binary prefixes like KiB, MiB, or GiB.
+        # Otherwise, setting this to one of the filesize units will use that particular unit when displaying all file sizes.
+        unit: 'metric'
+
+        # filesize.precision (int or nothing):
+        # The number of digits to display after the decimal point for file sizes.
+        # When set to `null`, all digits after the decimal point will be displayed.
+        precision: 1
     }
 
     cursor_shape: {
@@ -925,6 +937,11 @@ def --env y [...args] {
     # Remove the temporary file
     rm -fp $tmp
 }
+
 source ~/.zoxide.nu
 source ~/.cache/carapace/init.nu
-use ~/.cache/starship/init.nu
+
+# Load Starship only if it exists
+if (which starship | is-not-empty) {
+    use ~/.cache/starship/init.nu
+}
