@@ -8,6 +8,9 @@
 $env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
 $env.CARGO_HOME = ($env.HOME | path join '.cargo')
 
+# Load OpenAI API Key from macOS Keychain (Best Placement)
+$env.OPENAI_API_KEY = (security find-generic-password -s "openai_api_key" -a $env.USER -w | str trim)
+
 def create_left_prompt [] {
     let dir = match (do --ignore-errors { $env.PWD | path relative-to $nu.home-path }) {
         null => $env.PWD
@@ -113,6 +116,7 @@ $env.PATH = (
   | append /sbin
   | append /usr/sbin
   | append /opt/homebrew/bin
+  | append /opt/homebrew/sbin
   | append /run/current-system/sw/bin
   | append ($env.CARGO_HOME | path join bin)
   # | append ($env.HOME | path join .local bin)
@@ -121,6 +125,13 @@ $env.PATH = (
 
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
+
+# pyenv
+if (which pyenv | is-not-empty) {
+    $env.PYENV_ROOT = ($env.HOME | path join ".pyenv")
+    $env.PATH = ($env.PATH | append ($env.PYENV_ROOT | path join "bin"))
+    $env.PATH = ($env.PATH | append ($env.PYENV_ROOT | path join "shims"))
+}
 
 # integrations
 if (which starship | is-not-empty) {

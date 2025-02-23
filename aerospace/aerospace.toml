@@ -65,12 +65,24 @@ if.app-id = 'org.mozilla.firefox'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'zed'
+if.app-id = 'dev.zed.Zed'
 run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'anki'
+if.app-id = 'net.ankiweb.dtop'
 run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = 'move-node-to-workspace 5'
+
+# [[on-window-detected]]
+# if.app-name-regex-substring = 'anki|browse'
+# run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+run = 'move-node-to-workspace 7'
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -188,11 +200,12 @@ alt-shift-comma = 'mode service'
 # alt-shift-enter = 'mode apps'
 
 # >>> App Launcher <<<
-alt-ctrl-shift-n = 'exec-and-forget open /Applications/Obsidian.app'        # Notes
-alt-ctrl-shift-a = 'exec-and-forget open /Applications/Anki.app'            # Anki
-alt-ctrl-shift-t = 'exec-and-forget open /Applications/WezTerm.app'         # Terminal
-alt-ctrl-shift-c = 'exec-and-forget open /Applications/Zed.app'             # Code
-alt-ctrl-shift-b = 'exec-and-forget open /Applications/Firefox.app'         # Browser
+alt-ctrl-shift-n = 'exec-and-forget open /Applications/Obsidian.app'            # Notes
+alt-ctrl-shift-a = 'exec-and-forget open /Applications/Anki.app'                # Anki
+alt-ctrl-shift-t = 'exec-and-forget open /Applications/WezTerm.app'             # Terminal
+alt-ctrl-shift-z = 'exec-and-forget open /Applications/Zed.app'                 # Zed Code Editor
+alt-ctrl-shift-c = 'exec-and-forget open /Applications/Visual Studio Code.app'  # Visual Studio Code
+alt-ctrl-shift-b = 'exec-and-forget open /Applications/Firefox.app'             # Browser
 
 # >>> Multiple Monitors <<<
 # See: https://nikitabobko.github.io/AeroSpace/guide#multiple-monitors

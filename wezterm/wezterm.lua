@@ -6,7 +6,7 @@
 local wezterm = require 'wezterm'
 
 config = {
-    default_prog = { 'nu', '-c', "zellij -l welcome --config-dir ~/.config/zellij options --layout-dir ~/.config/zellij/layouts" },
+    default_prog = { "/opt/homebrew/bin/nu", "-c", "zellij -l welcome --config-dir ~/.config/zellij options --layout-dir ~/.config/zellij/layouts" },
     -- { "/opt/homebrew/bin/nu" },
     set_environment_variables = {
         XDG_CONFIG_HOME = "/Users/jack/.config",

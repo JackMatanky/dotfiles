@@ -10,8 +10,14 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # Add Homebrew paths (macOS-specific)
 export PATH="/opt/homebrew/bin:$PATH"
 
-# Add Homebrew paths (macOS-specific)
+# Add Cargo binaries
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Pyenv Configuration
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 
 # Add Nix paths (NixOS-specific)
 if [[ -d "/nix/var/nix/profiles/default" ]]; then

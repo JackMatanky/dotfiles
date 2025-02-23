@@ -906,7 +906,7 @@ cargo install --git https://github.com/estin/simple-completion-language-server.g
 stow .
 $nu.env-path
 $env
-env 
+env
 gcam 'add cargo to env'
 gps
 simple-completion-language-server validate-snippets
@@ -1146,3 +1146,140 @@ gps
 gcam 'separate espanso autocorrect to files by letter'
 gps
 stow .
+gcam 'update move to top of page keybinding in zed'
+gps
+python3 --version
+z anki2
+zoxide query
+ls
+fzf addons21
+brew upgrade
+which nvim
+which curl
+which lazygit
+cd
+brew install jesseduffield/lazygit/lazygit
+which lazygit
+which fzf
+which ripgrep
+which fd
+brew install ripgrep
+which ripgrep
+config.path
+config
+env
+env.config
+help
+help commands
+which nu
+brew --prefix nushell
+stow .
+as_load
+as list-apps --all
+as list-apps
+as list-windows
+as list-windows --all
+as list-apps
+as_load
+stow .
+as_load
+as list-apps
+stow .
+as list-apps
+as list-windows --all
+as_load
+l
+ls
+cd 1915225457
+ls
+touch macos-install.sh
+hz
+which pyenv
+which py
+brew install pyenv
+hx macos-install.sh
+xcode-select --install
+which pyenv
+pyenv --version
+stow .
+env.PATH
+nu.path
+path
+env.path
+help commands
+$env.PATH
+stow .
+pyenv --version
+pyenv versions
+pyenv install --list | grep 3.9.13
+pyenv install 3.9.13
+pyenv versions
+cd "/Users/jack/Library/Application Support/Anki2/addons21/1915225457"
+ls
+pyenv local 3.9.13
+pyenv versions
+python --version
+python -m venv venv
+source venv/bin/activate.nu
+ls venv/bin
+rm -rf venv
+python -m venv venv
+ls venv/bin
+source venv/bin/activate
+let-env VIRTUAL_ENV = (pwd | path join "venv")<\n>let-env PATH = ($env.VIRTUAL_ENV | path join "bin") + $env.PATH
+rm -rf venv
+uv venv venv
+overlay use venv/bin/activate.nu
+which python
+uv pip install -r linux_requirements.txt
+uv pip list
+ls
+ls venv/bin
+which python
+ls -d venv
+uv venv list
+rm -rf list
+overlay use venv/bin/activate.nu
+deactivate
+ls venv/bin
+ls
+uv venv list
+ls -d venv
+ls -d .venv
+uv python list
+uv tool list
+uv pip list
+overlay use venv/bin/activate.nu
+python -c "import sys; print(sys.prefix)"
+ls -d venv
+ls -d .venv
+ls -d list
+mv list venv
+ls -d venv
+ls venv/bin
+overlay use venv/bin/activate.nu
+deactivate
+rm -rf venv
+ls
+ls -d venv
+ls
+uv venv venv
+overlay use venv/bin/activate.nu
+ls -d venv
+which python
+uv pip install -r linux_requirements.txt
+ls -d venv
+ls
+macos-install.sh
+dos2unix macos-install.sh
+exit
+cd
+deactivate
+cd
+dot
+stow .
+gcam 'update'
+gps
+gcam 'update'
+gps
+git reset --soft HEAD~2
