@@ -1286,3 +1286,7 @@ git reset --soft HEAD~2
 gcam 'update'
 gps
 stow .
+gcam 'update zed keymap for cursor movement to match obsidian and vs code'
+gps
+stow .
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519

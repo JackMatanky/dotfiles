@@ -129,7 +129,7 @@
       "shift-pageup": "editor::SelectPageUp",
       "shift-pagedown": "editor::SelectPageDown",
 
-      "cmd-shift-i": "editor::Format",
+      "alt-shift-f": "editor::Format",
       "ctrl-cmd-space": "editor::ShowCharacterPalette",
       "cmd-;": "editor::ToggleLineNumbers",
       "cmd-alt-z": "editor::RevertSelectedHunks",
@@ -1125,9 +1125,9 @@
       "i": "vim::InsertBefore",
       "a": "vim::InsertAtPrevious",
       // visual, visual line & visual block modes
-      "b": ["workspace::SendKeystrokes", "v v ctrl-shift-alt-b"],
-      "w": ["workspace::SendKeystrokes", "v v ctrl-shift-alt-w"],
-      "e": ["workspace::SendKeystrokes", "v v ctrl-shift-alt-e"],
+      "b": ["workspace::SendKeystrokes", "v v ctrl-alt-shift-b"],
+      "w": ["workspace::SendKeystrokes", "v v ctrl-alt-shift-w"],
+      "e": ["workspace::SendKeystrokes", "v v ctrl-alt-shift-e"],
       // "w": "editor::SelectToNextWordEnd",
       // "b": "editor::SelectToPreviousWordStart",
       // "e": "editor::SelectToNextSubwordEnd",
