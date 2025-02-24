@@ -1283,3 +1283,6 @@ gps
 gcam 'update'
 gps
 git reset --soft HEAD~2
+gcam 'update'
+gps
+stow .

@@ -79,12 +79,12 @@
       "cmd-right": "editor::MoveToEndOfLine",
       "home": "editor::MoveToBeginningOfLine",
       "end": "editor::MoveToEndOfLine",
+      "ctrl-home": "editor::MoveToStartOfParagraph",
+      "ctrl-end": "editor::MoveToEndOfParagraph",
       "cmd-home": "editor::MoveToBeginning",
       "cmd-end": "editor::MoveToEnd",
-      "cmd-up": "editor::MoveToBeginning",
-      "cmd-down": "editor::MoveToEnd",
-      "ctrl-up": "editor::MoveToStartOfParagraph",
-      "ctrl-down": "editor::MoveToEndOfParagraph",
+      // "cmd-up": "editor::MoveToBeginning",
+      // "cmd-down": "editor::MoveToEnd",
       "pageup": "editor::MovePageUp",
       "pagedown": "editor::MovePageDown",
       "ctrl-v": ["editor::MovePageDown", { "center_cursor": true }],
@@ -93,6 +93,7 @@
       "cmd-pagedown": "editor::PageDown",
       "ctrl-pageup": "editor::LineUp",
       "ctrl-pagedown": "editor::LineDown",
+      "ctrl-l": "editor::ScrollCursorCenter",
 
       // Selections
       "cmd-a": "editor::SelectAll",
@@ -101,17 +102,10 @@
       "shift-down": "editor::SelectDown",
       "shift-left": "editor::SelectLeft",
       "shift-right": "editor::SelectRight",
-      "shift-pageup": "editor::SelectPageUp",
-      "shift-pagedown": "editor::SelectPageDown",
-      "ctrl-l": "editor::ScrollCursorCenter",
       "alt-shift-left": "editor::SelectToPreviousWordStart", // cursorWordLeftSelect
       "alt-shift-right": "editor::SelectToNextWordEnd", // cursorWordRightSelect
       // "ctrl-alt-shift-left": "editor::SelectToPreviousWordStart", // cursorWordLeftSelect
       // "ctrl-alt-shift-right": "editor::SelectToNextWordEnd", // cursorWordRightSelect
-      "ctrl-shift-up": "editor::SelectToStartOfParagraph",
-      "ctrl-shift-down": "editor::SelectToEndOfParagraph",
-      "cmd-shift-home": "editor::SelectToBeginning",
-      "cmd-shift-end": "editor::SelectToEnd",
       "cmd-shift-left": [
         "editor::SelectToBeginningOfLine",
         { "stop_at_soft_wraps": true }
@@ -128,6 +122,12 @@
         "editor::SelectToBeginningOfLine",
         { "stop_at_soft_wraps": true }
       ],
+      "ctrl-shift-home": "editor::SelectToStartOfParagraph",
+      "ctrl-shift-end": "editor::SelectToEndOfParagraph",
+      "cmd-shift-home": "editor::SelectToBeginning",
+      "cmd-shift-end": "editor::SelectToEnd",
+      "shift-pageup": "editor::SelectPageUp",
+      "shift-pagedown": "editor::SelectPageDown",
 
       "cmd-shift-i": "editor::Format",
       "ctrl-cmd-space": "editor::ShowCharacterPalette",
@@ -364,11 +364,11 @@
     "bindings": {
       "cmd-[": "editor::Outdent",
       "cmd-]": "editor::Indent",
+      "cmd-shift-k": "editor::DeleteLine",
+      "alt-up": "editor::MoveLineUp",
+      "alt-down": "editor::MoveLineDown",
       "cmd-alt-up": "editor::AddSelectionAbove", // Insert cursor above
       "cmd-alt-down": "editor::AddSelectionBelow", // Insert cursor below
-      "cmd-shift-k": "editor::DeleteLine",
-      "cmd-up": "editor::MoveLineUp",
-      "cmd-down": "editor::MoveLineDown",
       "ctrl-alt-up": "editor::DuplicateLineUp",
       "ctrl-alt-down": "editor::DuplicateLineDown",
       "ctrl-shift-right": "editor::SelectLargerSyntaxNode", // Expand Selection
