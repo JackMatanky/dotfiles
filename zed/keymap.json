@@ -104,8 +104,6 @@
       "shift-right": "editor::SelectRight",
       "alt-shift-left": "editor::SelectToPreviousWordStart", // cursorWordLeftSelect
       "alt-shift-right": "editor::SelectToNextWordEnd", // cursorWordRightSelect
-      // "ctrl-alt-shift-left": "editor::SelectToPreviousWordStart", // cursorWordLeftSelect
-      // "ctrl-alt-shift-right": "editor::SelectToNextWordEnd", // cursorWordRightSelect
       "cmd-shift-left": [
         "editor::SelectToBeginningOfLine",
         { "stop_at_soft_wraps": true }

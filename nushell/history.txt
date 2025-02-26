@@ -1307,3 +1307,6 @@ yazi
 exit
 nvim
 exit
+gcam 'add lazyvim to dotfiles'
+gps
+stow .
