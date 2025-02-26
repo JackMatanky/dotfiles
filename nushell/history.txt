@@ -1296,3 +1296,14 @@ stow .
 brew install pandoc
 as list-windows --all
 as list-apps
+gcam 'update vs code exec and forget in aerospace'
+gps
+stow .
+as_load
+rm -rf nvim
+git clone https://github.com/LazyVim/starter ~/dotfiles/nvim
+rm -rf nvim/.git
+yazi
+exit
+nvim
+exit

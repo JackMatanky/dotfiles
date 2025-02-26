@@ -1,19 +1,4 @@
-# Neovim
+# 💤 LazyVim
 
-## Directory Structure
-
-```md
-~/.config/nvim/
-├── init.lua
-└── lua/
-    ├── config/
-    │   ├── autocmds.lua
-    │   ├── keymaps.lua
-    │   ├── options.lua
-    │   └── colorschemes/
-    │       └── catppuccin.lua
-    └── plugins/
-        ├── core.lua
-        ├── lsp.lua
-        └── ui.lua
-```
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
