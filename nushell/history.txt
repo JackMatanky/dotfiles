@@ -1290,3 +1290,9 @@ gcam 'update zed keymap for cursor movement to match obsidian and vs code'
 gps
 stow .
 ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+gcam 'update zed keymap for document formatter to match obsidian and vs code'
+gps
+stow .
+brew install pandoc
+as list-windows --all
+as list-apps
