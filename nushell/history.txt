@@ -1326,3 +1326,6 @@ as_load
 stow .
 gcam 'edit ghostty config to try to get nushell as login shell'
 gps
+gcam 'edit ghostty config to try to get nushell as login shell, again'
+gps
+stow .
