@@ -1319,3 +1319,8 @@ brew install --cask ghostty
 brew update
 brew upgrade
 stow .
+gcam 'add ghostty config'
+gps
+stow .
+as_load
+stow .
