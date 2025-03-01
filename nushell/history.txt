@@ -1363,3 +1363,6 @@ stow .
 gcam 'move yazi and zellij files from zide into yazi and zellij folders'
 gps
 stow .
+gcam 'add zide layout dir environment variable'
+gps
+stow .

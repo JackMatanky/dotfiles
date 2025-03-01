@@ -1,3 +1,9 @@
+// --------------------------------------------------------------------
+//  Filename: ~/dotfiles/zellij/config.kdl
+//  Zellij Docs: https://zellij.dev/documentation/configuration
+//  Zellij Github: https://github.com/zellij-org/zellij
+// --------------------------------------------------------------------
+
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds clear-defaults=true{
     normal {
@@ -436,11 +442,11 @@ theme_dir "/Users/jack/dotfiles/zellij/themes"
 //
 theme "catppuccin-macchiato"
 
-// The name of the default layout to load on startup
-// Default: "default"
-//
-default_layout "yazelix"
-
 // The folder in which Zellij will look for layouts
 // here you can set the absolute path to layout dir
 layout_dir "/Users/jack/dotfiles/zellij/layouts"
+
+// The name of the default layout to load on startup
+// Default: "default"
+//
+default_layout "default"
