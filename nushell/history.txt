@@ -1336,3 +1336,7 @@ as_load
 which borders
 stow .
 as_load
+gcam 'update ghostty config with macos title option'
+gps
+stow .
+git clone git@github.com:josephschmitt/zide.git
