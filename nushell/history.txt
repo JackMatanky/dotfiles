@@ -1347,3 +1347,10 @@ stow .
 gcam 'add markdown related plugins to nvim'
 gps
 stow .
+gcam 'add bufferline and lualine ui plugins to nvim'
+gps
+stow .
+yazi
+exit
+zide
+brew install bash

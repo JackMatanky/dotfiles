@@ -119,6 +119,7 @@ $env.PATH = (
   | append /opt/homebrew/sbin
   | append /run/current-system/sw/bin
   | append ($env.CARGO_HOME | path join bin)
+  | append ($env.XDG_CONFIG_HOME | path join 'zide/bin')
   # | append ($env.HOME | path join .local bin)
   | uniq # filter so the paths are unique
 )
