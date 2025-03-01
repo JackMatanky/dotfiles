@@ -1354,3 +1354,6 @@ yazi
 exit
 zide
 brew install bash
+gcam 'add zide to nushell env path'
+gps
+stow .

@@ -166,8 +166,8 @@ export NU_CONFIG_DIR="$XDG_CONFIG_HOME/nushell"
 
 
 # --- Default Editors ---
-export EDITOR="hx"         # Helix
-export VISUAL="zed"        # Zed
+export EDITOR="nvim"    # NeoVim, 'hx' Helix
+export VISUAL="zed"     # Zed
 
 # >>> Navigation Functions <<<
 # cx: cd into a directory and list its contents.

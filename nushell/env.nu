@@ -151,8 +151,8 @@ if (which carapace | is-not-empty) {
     $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 }
 
-$env.EDITOR = "hx"   #  Helix
-$env.VISUAL = "zed"  #  Zed
+$env.EDITOR = "nvim" # NeoVim, 'hx' Helix
+$env.VISUAL = "zed"  # Zed
 
 $env.NU_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'nushell')
 $env.SSH_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'ssh')
