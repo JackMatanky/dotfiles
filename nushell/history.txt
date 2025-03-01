@@ -1329,3 +1329,10 @@ gps
 gcam 'edit ghostty config to try to get nushell as login shell, again'
 gps
 stow .
+gcam 'comment out sketchybar from aerospace'
+gps
+stow .
+as_load
+which borders
+stow .
+as_load
