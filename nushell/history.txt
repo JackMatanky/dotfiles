@@ -1360,3 +1360,6 @@ stow .
 gcam 'update env editor variable to nvim'
 gps
 stow .
+gcam 'move yazi and zellij files from zide into yazi and zellij folders'
+gps
+stow .

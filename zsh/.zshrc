@@ -19,6 +19,9 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
+# ZIDE Configuration
+export ZIDE_LAYOUT_DIR="$XDG_CONFIG_HOME/zellij/layouts"
+
 # Add Nix paths (NixOS-specific)
 if [[ -d "/nix/var/nix/profiles/default" ]]; then
   for profile in ${(z)NIX_PROFILES}; do

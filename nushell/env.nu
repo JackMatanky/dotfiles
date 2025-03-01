@@ -134,6 +134,9 @@ if (which pyenv | is-not-empty) {
     $env.PATH = ($env.PATH | append ($env.PYENV_ROOT | path join "shims"))
 }
 
+# ZIDE
+$env.ZIDE_LAYOUT_DIR = ($env.XDG_CONFIG_HOME | path join 'zellij/layouts')
+
 # integrations
 if (which starship | is-not-empty) {
     mkdir ~/.cache/starship
@@ -155,10 +158,12 @@ $env.EDITOR = "nvim"        # NeoVim, 'hx' Helix
 $env.VISUAL = "zed"         # Zed
 $env.FILE_PICKER = "yazi"   # Yazi
 
+# Nushell
 $env.NU_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'nushell')
+
+# SSH
 $env.SSH_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'ssh')
 $env.SSH_CONFIG_FILE = ($env.SSH_CONFIG_DIR | path join 'ssh-config')
-
 $env.SSH_KEY_PATH = ($env.HOME | path join '.ssh' 'id_ed25519')
 
 # Run keychain to load the SSH key and environment variables
