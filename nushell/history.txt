@@ -1357,3 +1357,6 @@ brew install bash
 gcam 'add zide to nushell env path'
 gps
 stow .
+gcam 'update env editor variable to nvim'
+gps
+stow .
