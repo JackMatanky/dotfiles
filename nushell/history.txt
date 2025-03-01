@@ -1340,3 +1340,4 @@ gcam 'update ghostty config with macos title option'
 gps
 stow .
 git clone git@github.com:josephschmitt/zide.git
+gcam 'add flash plugin lua file to Neovim config'
