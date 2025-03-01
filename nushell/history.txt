@@ -1366,3 +1366,7 @@ stow .
 gcam 'add zide layout dir environment variable'
 gps
 stow .
+gcam 'review and edit zide zellij layouts'
+gps
+stow .
+exit
