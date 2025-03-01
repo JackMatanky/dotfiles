@@ -1370,3 +1370,6 @@ gcam 'review and edit zide zellij layouts'
 gps
 stow .
 exit
+gcam 'revise default zellij layout'
+gps
+stow .
