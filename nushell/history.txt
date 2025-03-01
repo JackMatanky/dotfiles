@@ -1344,3 +1344,6 @@ gcam 'add flash plugin lua file to Neovim config'
 gcam 'add mini surround plugin lua file to Neovim config'
 gps
 stow .
+gcam 'add markdown related plugins to nvim'
+gps
+stow .
