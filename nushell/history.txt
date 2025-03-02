@@ -1379,3 +1379,5 @@ stow .
 exit
 zellij setup --clean
 exit
+gcam 'add zide environment variables'
+gps
