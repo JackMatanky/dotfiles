@@ -1387,3 +1387,5 @@ stow .
 gcam 'update default zellij layout'
 gps
 stow .
+gcam 'update default zellij layout'
+gps
