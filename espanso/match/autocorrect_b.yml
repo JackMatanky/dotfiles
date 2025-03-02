@@ -1,0 +1,465 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- B ---
+    # ---------
+    - trigger: baceause
+      replace: because
+      propagate_case: true
+      word: true
+    - trigger: backgorund
+      replace: background
+      propagate_case: true
+      word: true
+    - trigger: backrounds
+      replace: backgrounds
+      propagate_case: true
+      word: true
+    - trigger: bakc
+      replace: back
+      propagate_case: true
+      word: true
+    - trigger: banannas
+      replace: bananas
+      propagate_case: true
+      word: true
+    - trigger: bandwith
+      replace: bandwidth
+      propagate_case: true
+      word: true
+    - trigger: bankrupcy
+      replace: bankruptcy
+      propagate_case: true
+      word: true
+    - trigger: banruptcy
+      replace: bankruptcy
+      propagate_case: true
+      word: true
+    - trigger: baout
+      replace: "about\x2C\x20bout"
+      propagate_case: true
+      word: true
+    - trigger: basicaly
+      replace: basically
+      propagate_case: true
+      word: true
+    - trigger: basicly
+      replace: basically
+      propagate_case: true
+      word: true
+    - trigger: bcak
+      replace: back
+      propagate_case: true
+      word: true
+    - trigger: beachead
+      replace: beachhead
+      propagate_case: true
+      word: true
+    - trigger: beacuse
+      replace: because
+      propagate_case: true
+      word: true
+    - trigger: beastiality
+      replace: bestiality
+      propagate_case: true
+      word: true
+    - trigger: beatiful
+      replace: beautiful
+      propagate_case: true
+      word: true
+    - trigger: beaurocracy
+      replace: bureaucracy
+      propagate_case: true
+      word: true
+    - trigger: beaurocratic
+      replace: bureaucratic
+      propagate_case: true
+      word: true
+    - trigger: beautyfull
+      replace: beautiful
+      propagate_case: true
+      word: true
+    - trigger: becamae
+      replace: became
+      propagate_case: true
+      word: true
+    - trigger: becames
+      replace: "becomes\x2C\x20became"
+      propagate_case: true
+      word: true
+    - trigger: becasue
+      replace: because
+      propagate_case: true
+      word: true
+    - trigger: beccause
+      replace: because
+      propagate_case: true
+      word: true
+    - trigger: becomeing
+      replace: becoming
+      propagate_case: true
+      word: true
+    - trigger: becomming
+      replace: becoming
+      propagate_case: true
+      word: true
+    - trigger: becouse
+      replace: because
+      propagate_case: true
+      word: true
+    - trigger: becuase
+      replace: because
+      propagate_case: true
+      word: true
+    - trigger: bedore
+      replace: before
+      propagate_case: true
+      word: true
+    - trigger: beeing
+      replace: being
+      propagate_case: true
+      word: true
+    - trigger: befoer
+      replace: before
+      propagate_case: true
+      word: true
+    - trigger: beggin
+      replace: "begin\x2C\x20begging"
+      propagate_case: true
+      word: true
+    - trigger: begginer
+      replace: beginner
+      propagate_case: true
+      word: true
+    - trigger: begginers
+      replace: beginners
+      propagate_case: true
+      word: true
+    - trigger: beggining
+      replace: beginning
+      propagate_case: true
+      word: true
+    - trigger: begginings
+      replace: beginnings
+      propagate_case: true
+      word: true
+    - trigger: beggins
+      replace: begins
+      propagate_case: true
+      word: true
+    - trigger: begining
+      replace: beginning
+      propagate_case: true
+      word: true
+    - trigger: beginnig
+      replace: beginning
+      propagate_case: true
+      word: true
+    - trigger: behavour
+      replace: "behavior\x2C\x20behaviour"
+      propagate_case: true
+      word: true
+    - trigger: beleagured
+      replace: beleaguered
+      propagate_case: true
+      word: true
+    - trigger: beleif
+      replace: belief
+      propagate_case: true
+      word: true
+    - trigger: beleive
+      replace: believe
+      propagate_case: true
+      word: true
+    - trigger: beleived
+      replace: believed
+      propagate_case: true
+      word: true
+    - trigger: beleives
+      replace: believes
+      propagate_case: true
+      word: true
+    - trigger: beleiving
+      replace: believing
+      propagate_case: true
+      word: true
+    - trigger: beligum
+      replace: belgium
+      propagate_case: true
+      word: true
+    - trigger: belive
+      replace: believe
+      propagate_case: true
+      word: true
+    - trigger: belived
+      replace: "believed\x2C\x20beloved"
+      propagate_case: true
+      word: true
+    - trigger: belives
+      replace: "believes\x2C\x20beliefs"
+      propagate_case: true
+      word: true
+    - trigger: belligerant
+      replace: belligerent
+      propagate_case: true
+      word: true
+    - trigger: bellweather
+      replace: bellwether
+      propagate_case: true
+      word: true
+    - trigger: bemusemnt
+      replace: bemusement
+      propagate_case: true
+      word: true
+    - trigger: beneficary
+      replace: beneficiary
+      propagate_case: true
+      word: true
+    - trigger: beng
+      replace: being
+      propagate_case: true
+      word: true
+    - trigger: benificial
+      replace: beneficial
+      propagate_case: true
+      word: true
+    - trigger: benifit
+      replace: benefit
+      propagate_case: true
+      word: true
+    - trigger: benifits
+      replace: benefits
+      propagate_case: true
+      word: true
+    - trigger: bergamont
+      replace: bergamot
+      propagate_case: true
+      word: true
+    - trigger: Bernouilli
+      replace: Bernoulli
+      propagate_case: true
+      word: true
+    - trigger: beseige
+      replace: besiege
+      propagate_case: true
+      word: true
+    - trigger: beseiged
+      replace: besieged
+      propagate_case: true
+      word: true
+    - trigger: beseiging
+      replace: besieging
+      propagate_case: true
+      word: true
+    - trigger: beteen
+      replace: between
+      propagate_case: true
+      word: true
+    - trigger: betwen
+      replace: between
+      propagate_case: true
+      word: true
+    - trigger: beween
+      replace: between
+      propagate_case: true
+      word: true
+    - trigger: bewteen
+      replace: between
+      propagate_case: true
+      word: true
+    - trigger: bigining
+      replace: beginning
+      propagate_case: true
+      word: true
+    - trigger: biginning
+      replace: beginning
+      propagate_case: true
+      word: true
+    - trigger: bilateraly
+      replace: bilaterally
+      propagate_case: true
+      word: true
+    - trigger: billingualism
+      replace: bilingualism
+      propagate_case: true
+      word: true
+    - trigger: binominal
+      replace: binomial
+      propagate_case: true
+      word: true
+    - trigger: bizzare
+      replace: bizarre
+      propagate_case: true
+      word: true
+    - trigger: blaim
+      replace: blame
+      propagate_case: true
+      word: true
+    - trigger: blaimed
+      replace: blamed
+      propagate_case: true
+      word: true
+    - trigger: blessure
+      replace: blessing
+      propagate_case: true
+      word: true
+    - trigger: Blitzkreig
+      replace: Blitzkrieg
+      propagate_case: true
+      word: true
+    - trigger: boaut
+      replace: "bout\x2C\x20boat\x2C\x20about"
+      propagate_case: true
+      word: true
+    - trigger: bodydbuilder
+      replace: bodybuilder
+      propagate_case: true
+      word: true
+    - trigger: bombardement
+      replace: bombardment
+      propagate_case: true
+      word: true
+    - trigger: bombarment
+      replace: bombardment
+      propagate_case: true
+      word: true
+    - trigger: bondary
+      replace: boundary
+      propagate_case: true
+      word: true
+    - trigger: Bonnano
+      replace: Bonanno
+      propagate_case: true
+      word: true
+    - trigger: boook
+      replace: book
+      propagate_case: true
+      word: true
+    - trigger: borke
+      replace: broke
+      propagate_case: true
+      word: true
+    - trigger: boundry
+      replace: boundary
+      propagate_case: true
+      word: true
+    - trigger: bouyancy
+      replace: buoyancy
+      propagate_case: true
+      word: true
+    - trigger: bouyant
+      replace: buoyant
+      propagate_case: true
+      word: true
+    - trigger: boyant
+      replace: buoyant
+      propagate_case: true
+      word: true
+    - trigger: bradcast
+      replace: broadcast
+      propagate_case: true
+      word: true
+    - trigger: Brasillian
+      replace: Brazilian
+      propagate_case: true
+      word: true
+    - trigger: breakthough
+      replace: breakthrough
+      propagate_case: true
+      word: true
+    - trigger: breakthroughts
+      replace: breakthroughs
+      propagate_case: true
+      word: true
+    - trigger: breif
+      replace: brief
+      propagate_case: true
+      word: true
+    - trigger: breifly
+      replace: briefly
+      propagate_case: true
+      word: true
+    - trigger: brethen
+      replace: brethren
+      propagate_case: true
+      word: true
+    - trigger: bretheren
+      replace: brethren
+      propagate_case: true
+      word: true
+    - trigger: briliant
+      replace: brilliant
+      propagate_case: true
+      word: true
+    - trigger: brillant
+      replace: brilliant
+      propagate_case: true
+      word: true
+    - trigger: brimestone
+      replace: brimstone
+      propagate_case: true
+      word: true
+    - trigger: Britian
+      replace: Britain
+      propagate_case: true
+      word: true
+    - trigger: Brittish
+      replace: British
+      propagate_case: true
+      word: true
+    - trigger: broacasted
+      replace: broadcast
+      propagate_case: true
+      word: true
+    - trigger: broadacasting
+      replace: broadcasting
+      propagate_case: true
+      word: true
+    - trigger: broady
+      replace: broadly
+      propagate_case: true
+      word: true
+    - trigger: Buddah
+      replace: Buddha
+      propagate_case: true
+      word: true
+    - trigger: Buddist
+      replace: Buddhist
+      propagate_case: true
+      word: true
+    - trigger: buisness
+      replace: business
+      propagate_case: true
+      word: true
+    - trigger: buisnessman
+      replace: businessman
+      propagate_case: true
+      word: true
+    - trigger: buoancy
+      replace: buoyancy
+      propagate_case: true
+      word: true
+    - trigger: buring
+      replace: "burying\x2C\x20burning\x2C\x20burin\x2C\x20during"
+      propagate_case: true
+      word: true
+    - trigger: burried
+      replace: buried
+      propagate_case: true
+      word: true
+    - trigger: busines
+      replace: business
+      propagate_case: true
+      word: true
+    - trigger: busineses
+      replace: "business\x2C\x20businesses"
+      propagate_case: true
+      word: true
+    - trigger: busness
+      replace: business
+      propagate_case: true
+      word: true
+    - trigger: bussiness
+      replace: business
+      propagate_case: true
+      word: true

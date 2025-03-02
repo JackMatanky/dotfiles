@@ -1,0 +1,1729 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- P ---
+    # ----------
+    - trigger: paide
+      replace: paid
+      propagate_case: true
+      word: true
+    - trigger: paitience
+      replace: patience
+      propagate_case: true
+      word: true
+    - trigger: palce
+      replace: "place\x2C\x20palace"
+      propagate_case: true
+      word: true
+    - trigger: paleolitic
+      replace: paleolithic
+      propagate_case: true
+      word: true
+    - trigger: paliamentarian
+      replace: parliamentarian
+      propagate_case: true
+      word: true
+    - trigger: Palistian
+      replace: Palestinian
+      propagate_case: true
+      word: true
+    - trigger: Palistinian
+      replace: Palestinian
+      propagate_case: true
+      word: true
+    - trigger: Palistinians
+      replace: Palestinians
+      propagate_case: true
+      word: true
+    - trigger: pallete
+      replace: palette
+      propagate_case: true
+      word: true
+    - trigger: pamflet
+      replace: pamphlet
+      propagate_case: true
+      word: true
+    - trigger: pamplet
+      replace: pamphlet
+      propagate_case: true
+      word: true
+    - trigger: pantomine
+      replace: pantomime
+      propagate_case: true
+      word: true
+    - trigger: Papanicalou
+      replace: Papanicolaou
+      propagate_case: true
+      word: true
+    - trigger: paralel
+      replace: parallel
+      propagate_case: true
+      word: true
+    - trigger: paralell
+      replace: parallel
+      propagate_case: true
+      word: true
+    - trigger: paralelly
+      replace: parallelly
+      propagate_case: true
+      word: true
+    - trigger: paralely
+      replace: parallelly
+      propagate_case: true
+      word: true
+    - trigger: parallely
+      replace: parallelly
+      propagate_case: true
+      word: true
+    - trigger: paranthesis
+      replace: parenthesis
+      propagate_case: true
+      word: true
+    - trigger: paraphenalia
+      replace: paraphernalia
+      propagate_case: true
+      word: true
+    - trigger: parellels
+      replace: parallels
+      propagate_case: true
+      word: true
+    - trigger: parisitic
+      replace: parasitic
+      propagate_case: true
+      word: true
+    - trigger: parituclar
+      replace: particular
+      propagate_case: true
+      word: true
+    - trigger: parliment
+      replace: parliament
+      propagate_case: true
+      word: true
+    - trigger: parrakeets
+      replace: parakeets
+      propagate_case: true
+      word: true
+    - trigger: parralel
+      replace: parallel
+      propagate_case: true
+      word: true
+    - trigger: parrallel
+      replace: parallel
+      propagate_case: true
+      word: true
+    - trigger: parrallell
+      replace: parallel
+      propagate_case: true
+      word: true
+    - trigger: parrallelly
+      replace: parallelly
+      propagate_case: true
+      word: true
+    - trigger: parrallely
+      replace: parallelly
+      propagate_case: true
+      word: true
+    - trigger: partialy
+      replace: partially
+      propagate_case: true
+      word: true
+    - trigger: particually
+      replace: particularly
+      propagate_case: true
+      word: true
+    - trigger: particualr
+      replace: particular
+      propagate_case: true
+      word: true
+    - trigger: particuarly
+      replace: particularly
+      propagate_case: true
+      word: true
+    - trigger: particularily
+      replace: particularly
+      propagate_case: true
+      word: true
+    - trigger: particulary
+      replace: particularly
+      propagate_case: true
+      word: true
+    - trigger: pary
+      replace: party
+      propagate_case: true
+      word: true
+    - trigger: pased
+      replace: passed
+      propagate_case: true
+      word: true
+    - trigger: pasengers
+      replace: passengers
+      propagate_case: true
+      word: true
+    - trigger: passerbys
+      replace: passersby
+      propagate_case: true
+      word: true
+    - trigger: pasttime
+      replace: pastime
+      propagate_case: true
+      word: true
+    - trigger: pastural
+      replace: pastoral
+      propagate_case: true
+      word: true
+    - trigger: paticular
+      replace: particular
+      propagate_case: true
+      word: true
+    - trigger: pattented
+      replace: patented
+      propagate_case: true
+      word: true
+    - trigger: pavillion
+      replace: pavilion
+      propagate_case: true
+      word: true
+    - trigger: payed
+      replace: paid
+      propagate_case: true
+      word: true
+    - trigger: pblisher
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: pbulisher
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: peacefuland
+      replace: "peaceful\x20and"
+      propagate_case: true
+      word: true
+    - trigger: peageant
+      replace: pageant
+      propagate_case: true
+      word: true
+    - trigger: peaple
+      replace: people
+      propagate_case: true
+      word: true
+    - trigger: peaples
+      replace: peoples
+      propagate_case: true
+      word: true
+    - trigger: peculure
+      replace: peculiar
+      propagate_case: true
+      word: true
+    - trigger: pedestrain
+      replace: pedestrian
+      propagate_case: true
+      word: true
+    - trigger: peformed
+      replace: performed
+      propagate_case: true
+      word: true
+    - trigger: peice
+      replace: piece
+      propagate_case: true
+      word: true
+    - trigger: Peloponnes
+      replace: Peloponnesus
+      propagate_case: true
+      word: true
+    - trigger: penatly
+      replace: penalty
+      propagate_case: true
+      word: true
+    - trigger: penerator
+      replace: penetrator
+      propagate_case: true
+      word: true
+    - trigger: penisula
+      replace: peninsula
+      propagate_case: true
+      word: true
+    - trigger: penisular
+      replace: peninsular
+      propagate_case: true
+      word: true
+    - trigger: penninsula
+      replace: peninsula
+      propagate_case: true
+      word: true
+    - trigger: penninsular
+      replace: peninsular
+      propagate_case: true
+      word: true
+    - trigger: pennisula
+      replace: peninsula
+      propagate_case: true
+      word: true
+    - trigger: Pennyslvania
+      replace: Pennsylvania
+      propagate_case: true
+      word: true
+    - trigger: pensinula
+      replace: peninsula
+      propagate_case: true
+      word: true
+    - trigger: pensle
+      replace: pencil
+      propagate_case: true
+      word: true
+    - trigger: peom
+      replace: poem
+      propagate_case: true
+      word: true
+    - trigger: peoms
+      replace: poems
+      propagate_case: true
+      word: true
+    - trigger: peopel
+      replace: people
+      propagate_case: true
+      word: true
+    - trigger: peopels
+      replace: peoples
+      propagate_case: true
+      word: true
+    - trigger: peotry
+      replace: poetry
+      propagate_case: true
+      word: true
+    - trigger: perade
+      replace: parade
+      propagate_case: true
+      word: true
+    - trigger: percepted
+      replace: perceived
+      propagate_case: true
+      word: true
+    - trigger: percieve
+      replace: perceive
+      propagate_case: true
+      word: true
+    - trigger: percieved
+      replace: perceived
+      propagate_case: true
+      word: true
+    - trigger: pereguine
+      replace: peregrine
+      propagate_case: true
+      word: true
+    - trigger: perenially
+      replace: perennially
+      propagate_case: true
+      word: true
+    - trigger: peretrator
+      replace: perpetrator
+      propagate_case: true
+      word: true
+    - trigger: perfomance
+      replace: performance
+      propagate_case: true
+      word: true
+    - trigger: perfomers
+      replace: performers
+      propagate_case: true
+      word: true
+    - trigger: performence
+      replace: performance
+      propagate_case: true
+      word: true
+    - trigger: performes
+      replace: "performed\x2C\x20performs"
+      propagate_case: true
+      word: true
+    - trigger: perhasp
+      replace: perhaps
+      propagate_case: true
+      word: true
+    - trigger: perheaps
+      replace: perhaps
+      propagate_case: true
+      word: true
+    - trigger: perhpas
+      replace: perhaps
+      propagate_case: true
+      word: true
+    - trigger: peripathetic
+      replace: peripatetic
+      propagate_case: true
+      word: true
+    - trigger: peristent
+      replace: persistent
+      propagate_case: true
+      word: true
+    - trigger: perjery
+      replace: perjury
+      propagate_case: true
+      word: true
+    - trigger: perjorative
+      replace: pejorative
+      propagate_case: true
+      word: true
+    - trigger: permanant
+      replace: permanent
+      propagate_case: true
+      word: true
+    - trigger: permenant
+      replace: permanent
+      propagate_case: true
+      word: true
+    - trigger: permenantly
+      replace: permanently
+      propagate_case: true
+      word: true
+    - trigger: permissable
+      replace: permissible
+      propagate_case: true
+      word: true
+    - trigger: perogative
+      replace: prerogative
+      propagate_case: true
+      word: true
+    - trigger: peronal
+      replace: personal
+      propagate_case: true
+      word: true
+    - trigger: perosnality
+      replace: personality
+      propagate_case: true
+      word: true
+    - trigger: perpertrated
+      replace: perpetrated
+      propagate_case: true
+      word: true
+    - trigger: perphas
+      replace: perhaps
+      propagate_case: true
+      word: true
+    - trigger: perpindicular
+      replace: perpendicular
+      propagate_case: true
+      word: true
+    - trigger: persan
+      replace: person
+      propagate_case: true
+      word: true
+    - trigger: perseverence
+      replace: perseverance
+      propagate_case: true
+      word: true
+    - trigger: persistance
+      replace: persistence
+      propagate_case: true
+      word: true
+    - trigger: persistant
+      replace: persistent
+      propagate_case: true
+      word: true
+    - trigger: personel
+      replace: "personnel\x2C\x20personal"
+      propagate_case: true
+      word: true
+    - trigger: personell
+      replace: personnel
+      propagate_case: true
+      word: true
+    - trigger: personnell
+      replace: personnel
+      propagate_case: true
+      word: true
+    - trigger: persuded
+      replace: persuaded
+      propagate_case: true
+      word: true
+    - trigger: persue
+      replace: pursue
+      propagate_case: true
+      word: true
+    - trigger: persued
+      replace: pursued
+      propagate_case: true
+      word: true
+    - trigger: persuing
+      replace: pursuing
+      propagate_case: true
+      word: true
+    - trigger: persuit
+      replace: pursuit
+      propagate_case: true
+      word: true
+    - trigger: persuits
+      replace: pursuits
+      propagate_case: true
+      word: true
+    - trigger: pertubation
+      replace: perturbation
+      propagate_case: true
+      word: true
+    - trigger: pertubations
+      replace: perturbations
+      propagate_case: true
+      word: true
+    - trigger: pessiary
+      replace: pessary
+      propagate_case: true
+      word: true
+    - trigger: petetion
+      replace: petition
+      propagate_case: true
+      word: true
+    - trigger: Pharoah
+      replace: Pharaoh
+      propagate_case: true
+      word: true
+    - trigger: phenomenom
+      replace: phenomenon
+      propagate_case: true
+      word: true
+    - trigger: phenomenonal
+      replace: phenomenal
+      propagate_case: true
+      word: true
+    - trigger: phenomenonly
+      replace: phenomenally
+      propagate_case: true
+      word: true
+    - trigger: phenomonenon
+      replace: phenomenon
+      propagate_case: true
+      word: true
+    - trigger: phenomonon
+      replace: phenomenon
+      propagate_case: true
+      word: true
+    - trigger: phenonmena
+      replace: phenomena
+      propagate_case: true
+      word: true
+    - trigger: Philipines
+      replace: Philippines
+      propagate_case: true
+      word: true
+    - trigger: philisopher
+      replace: philosopher
+      propagate_case: true
+      word: true
+    - trigger: philisophical
+      replace: philosophical
+      propagate_case: true
+      word: true
+    - trigger: philisophy
+      replace: philosophy
+      propagate_case: true
+      word: true
+    - trigger: Phillipine
+      replace: Philippine
+      propagate_case: true
+      word: true
+    - trigger: Phillipines
+      replace: Philippines
+      propagate_case: true
+      word: true
+    - trigger: Phillippines
+      replace: Philippines
+      propagate_case: true
+      word: true
+    - trigger: phillosophically
+      replace: philosophically
+      propagate_case: true
+      word: true
+    - trigger: philospher
+      replace: philosopher
+      propagate_case: true
+      word: true
+    - trigger: philosphies
+      replace: philosophies
+      propagate_case: true
+      word: true
+    - trigger: philosphy
+      replace: philosophy
+      propagate_case: true
+      word: true
+    - trigger: Phonecian
+      replace: Phoenecian
+      propagate_case: true
+      word: true
+    - trigger: phongraph
+      replace: phonograph
+      propagate_case: true
+      word: true
+    - trigger: phylosophical
+      replace: philosophical
+      propagate_case: true
+      word: true
+    - trigger: physicaly
+      replace: physically
+      propagate_case: true
+      word: true
+    - trigger: piblisher
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: pich
+      replace: pitch
+      propagate_case: true
+      word: true
+    - trigger: pilgrimmage
+      replace: pilgrimage
+      propagate_case: true
+      word: true
+    - trigger: pilgrimmages
+      replace: pilgrimages
+      propagate_case: true
+      word: true
+    - trigger: pinapple
+      replace: pineapple
+      propagate_case: true
+      word: true
+    - trigger: pinnaple
+      replace: pineapple
+      propagate_case: true
+      word: true
+    - trigger: pinoneered
+      replace: pioneered
+      propagate_case: true
+      word: true
+    - trigger: plagarism
+      replace: plagiarism
+      propagate_case: true
+      word: true
+    - trigger: planation
+      replace: plantation
+      propagate_case: true
+      word: true
+    - trigger: planed
+      replace: planned
+      propagate_case: true
+      word: true
+    - trigger: plantiff
+      replace: plaintiff
+      propagate_case: true
+      word: true
+    - trigger: plateu
+      replace: plateau
+      propagate_case: true
+      word: true
+    - trigger: plausable
+      replace: plausible
+      propagate_case: true
+      word: true
+    - trigger: playright
+      replace: playwright
+      propagate_case: true
+      word: true
+    - trigger: playwrite
+      replace: playwright
+      propagate_case: true
+      word: true
+    - trigger: playwrites
+      replace: playwrights
+      propagate_case: true
+      word: true
+    - trigger: pleasent
+      replace: pleasant
+      propagate_case: true
+      word: true
+    - trigger: plebicite
+      replace: plebiscite
+      propagate_case: true
+      word: true
+    - trigger: plesant
+      replace: pleasant
+      propagate_case: true
+      word: true
+    - trigger: poenis
+      replace: penis
+      propagate_case: true
+      word: true
+    - trigger: poeoples
+      replace: peoples
+      propagate_case: true
+      word: true
+    - trigger: poety
+      replace: poetry
+      propagate_case: true
+      word: true
+    - trigger: poisin
+      replace: poison
+      propagate_case: true
+      word: true
+    - trigger: polical
+      replace: political
+      propagate_case: true
+      word: true
+    - trigger: polinator
+      replace: pollinator
+      propagate_case: true
+      word: true
+    - trigger: polinators
+      replace: pollinators
+      propagate_case: true
+      word: true
+    - trigger: politican
+      replace: politician
+      propagate_case: true
+      word: true
+    - trigger: politicans
+      replace: politicians
+      propagate_case: true
+      word: true
+    - trigger: poltical
+      replace: political
+      propagate_case: true
+      word: true
+    - trigger: polute
+      replace: pollute
+      propagate_case: true
+      word: true
+    - trigger: poluted
+      replace: polluted
+      propagate_case: true
+      word: true
+    - trigger: polutes
+      replace: pollutes
+      propagate_case: true
+      word: true
+    - trigger: poluting
+      replace: polluting
+      propagate_case: true
+      word: true
+    - trigger: polution
+      replace: pollution
+      propagate_case: true
+      word: true
+    - trigger: polyphonyic
+      replace: polyphonic
+      propagate_case: true
+      word: true
+    - trigger: polysaccaride
+      replace: polysaccharide
+      propagate_case: true
+      word: true
+    - trigger: polysaccharid
+      replace: polysaccharide
+      propagate_case: true
+      word: true
+    - trigger: pomegranite
+      replace: pomegranate
+      propagate_case: true
+      word: true
+    - trigger: pomotion
+      replace: promotion
+      propagate_case: true
+      word: true
+    - trigger: poportional
+      replace: proportional
+      propagate_case: true
+      word: true
+    - trigger: popoulation
+      replace: population
+      propagate_case: true
+      word: true
+    - trigger: popularaty
+      replace: popularity
+      propagate_case: true
+      word: true
+    - trigger: populare
+      replace: popular
+      propagate_case: true
+      word: true
+    - trigger: populer
+      replace: popular
+      propagate_case: true
+      word: true
+    - trigger: porshan
+      replace: portion
+      propagate_case: true
+      word: true
+    - trigger: porshon
+      replace: portion
+      propagate_case: true
+      word: true
+    - trigger: portait
+      replace: portrait
+      propagate_case: true
+      word: true
+    - trigger: portayed
+      replace: portrayed
+      propagate_case: true
+      word: true
+    - trigger: portraing
+      replace: portraying
+      propagate_case: true
+      word: true
+    - trigger: Portugese
+      replace: Portuguese
+      propagate_case: true
+      word: true
+    - trigger: portuguease
+      replace: portuguese
+      propagate_case: true
+      word: true
+    - trigger: portugues
+      replace: Portuguese
+      propagate_case: true
+      word: true
+    - trigger: posess
+      replace: possess
+      propagate_case: true
+      word: true
+    - trigger: posessed
+      replace: possessed
+      propagate_case: true
+      word: true
+    - trigger: posesses
+      replace: possesses
+      propagate_case: true
+      word: true
+    - trigger: posessing
+      replace: possessing
+      propagate_case: true
+      word: true
+    - trigger: posession
+      replace: possession
+      propagate_case: true
+      word: true
+    - trigger: posessions
+      replace: possessions
+      propagate_case: true
+      word: true
+    - trigger: posion
+      replace: poison
+      propagate_case: true
+      word: true
+    - trigger: positon
+      replace: "position\x2C\x20positron"
+      propagate_case: true
+      word: true
+    - trigger: possable
+      replace: possible
+      propagate_case: true
+      word: true
+    - trigger: possably
+      replace: possibly
+      propagate_case: true
+      word: true
+    - trigger: posseses
+      replace: possesses
+      propagate_case: true
+      word: true
+    - trigger: possesing
+      replace: possessing
+      propagate_case: true
+      word: true
+    - trigger: possesion
+      replace: possession
+      propagate_case: true
+      word: true
+    - trigger: possessess
+      replace: possesses
+      propagate_case: true
+      word: true
+    - trigger: possibile
+      replace: possible
+      propagate_case: true
+      word: true
+    - trigger: possibilty
+      replace: possibility
+      propagate_case: true
+      word: true
+    - trigger: possiblility
+      replace: possibility
+      propagate_case: true
+      word: true
+    - trigger: possiblilty
+      replace: possibility
+      propagate_case: true
+      word: true
+    - trigger: possiblities
+      replace: possibilities
+      propagate_case: true
+      word: true
+    - trigger: possiblity
+      replace: possibility
+      propagate_case: true
+      word: true
+    - trigger: possition
+      replace: position
+      propagate_case: true
+      word: true
+    - trigger: Postdam
+      replace: Potsdam
+      propagate_case: true
+      word: true
+    - trigger: posthomous
+      replace: posthumous
+      propagate_case: true
+      word: true
+    - trigger: postion
+      replace: position
+      propagate_case: true
+      word: true
+    - trigger: postive
+      replace: positive
+      propagate_case: true
+      word: true
+    - trigger: potatos
+      replace: potatoes
+      propagate_case: true
+      word: true
+    - trigger: potrait
+      replace: portrait
+      propagate_case: true
+      word: true
+    - trigger: potrayed
+      replace: portrayed
+      propagate_case: true
+      word: true
+    - trigger: poulations
+      replace: populations
+      propagate_case: true
+      word: true
+    - trigger: poverful
+      replace: powerful
+      propagate_case: true
+      word: true
+    - trigger: poweful
+      replace: powerful
+      propagate_case: true
+      word: true
+    - trigger: powerfull
+      replace: powerful
+      propagate_case: true
+      word: true
+    - trigger: ppublisher
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: practial
+      replace: practical
+      propagate_case: true
+      word: true
+    - trigger: practially
+      replace: practically
+      propagate_case: true
+      word: true
+    - trigger: practicaly
+      replace: practically
+      propagate_case: true
+      word: true
+    - trigger: practicioner
+      replace: practitioner
+      propagate_case: true
+      word: true
+    - trigger: practicioners
+      replace: practitioners
+      propagate_case: true
+      word: true
+    - trigger: practicly
+      replace: practically
+      propagate_case: true
+      word: true
+    - trigger: practioner
+      replace: practitioner
+      propagate_case: true
+      word: true
+    - trigger: practioners
+      replace: practitioners
+      propagate_case: true
+      word: true
+    - trigger: prairy
+      replace: prairie
+      propagate_case: true
+      word: true
+    - trigger: prarie
+      replace: prairie
+      propagate_case: true
+      word: true
+    - trigger: praries
+      replace: prairies
+      propagate_case: true
+      word: true
+    - trigger: pratice
+      replace: practice
+      propagate_case: true
+      word: true
+    - trigger: preample
+      replace: preamble
+      propagate_case: true
+      word: true
+    - trigger: precedessor
+      replace: predecessor
+      propagate_case: true
+      word: true
+    - trigger: preceed
+      replace: precede
+      propagate_case: true
+      word: true
+    - trigger: preceeded
+      replace: preceded
+      propagate_case: true
+      word: true
+    - trigger: preceeding
+      replace: preceding
+      propagate_case: true
+      word: true
+    - trigger: preceeds
+      replace: precedes
+      propagate_case: true
+      word: true
+    - trigger: precentage
+      replace: percentage
+      propagate_case: true
+      word: true
+    - trigger: precice
+      replace: precise
+      propagate_case: true
+      word: true
+    - trigger: precisly
+      replace: precisely
+      propagate_case: true
+      word: true
+    - trigger: precurser
+      replace: precursor
+      propagate_case: true
+      word: true
+    - trigger: predecesors
+      replace: predecessors
+      propagate_case: true
+      word: true
+    - trigger: predicatble
+      replace: predictable
+      propagate_case: true
+      word: true
+    - trigger: predicitons
+      replace: predictions
+      propagate_case: true
+      word: true
+    - trigger: predomiantly
+      replace: predominately
+      propagate_case: true
+      word: true
+    - trigger: prefered
+      replace: preferred
+      propagate_case: true
+      word: true
+    - trigger: prefering
+      replace: preferring
+      propagate_case: true
+      word: true
+    - trigger: preferrably
+      replace: preferably
+      propagate_case: true
+      word: true
+    - trigger: pregancies
+      replace: pregnancies
+      propagate_case: true
+      word: true
+    - trigger: preiod
+      replace: period
+      propagate_case: true
+      word: true
+    - trigger: preliferation
+      replace: proliferation
+      propagate_case: true
+      word: true
+    - trigger: premeire
+      replace: premiere
+      propagate_case: true
+      word: true
+    - trigger: premeired
+      replace: premiered
+      propagate_case: true
+      word: true
+    - trigger: premillenial
+      replace: premillennial
+      propagate_case: true
+      word: true
+    - trigger: preminence
+      replace: preeminence
+      propagate_case: true
+      word: true
+    - trigger: premission
+      replace: permission
+      propagate_case: true
+      word: true
+    - trigger: Premonasterians
+      replace: Premonstratensians
+      propagate_case: true
+      word: true
+    - trigger: preocupation
+      replace: preoccupation
+      propagate_case: true
+      word: true
+    - trigger: prepair
+      replace: prepare
+      propagate_case: true
+      word: true
+    - trigger: prepartion
+      replace: preparation
+      propagate_case: true
+      word: true
+    - trigger: prepatory
+      replace: preparatory
+      propagate_case: true
+      word: true
+    - trigger: preperation
+      replace: preparation
+      propagate_case: true
+      word: true
+    - trigger: preperations
+      replace: preparations
+      propagate_case: true
+      word: true
+    - trigger: preriod
+      replace: period
+      propagate_case: true
+      word: true
+    - trigger: presedential
+      replace: presidential
+      propagate_case: true
+      word: true
+    - trigger: presense
+      replace: presence
+      propagate_case: true
+      word: true
+    - trigger: presidenital
+      replace: presidential
+      propagate_case: true
+      word: true
+    - trigger: presidental
+      replace: presidential
+      propagate_case: true
+      word: true
+    - trigger: presitgious
+      replace: prestigious
+      propagate_case: true
+      word: true
+    - trigger: prespective
+      replace: perspective
+      propagate_case: true
+      word: true
+    - trigger: prestigeous
+      replace: prestigious
+      propagate_case: true
+      word: true
+    - trigger: prestigous
+      replace: prestigious
+      propagate_case: true
+      word: true
+    - trigger: presumabely
+      replace: presumably
+      propagate_case: true
+      word: true
+    - trigger: presumibly
+      replace: presumably
+      propagate_case: true
+      word: true
+    - trigger: pretection
+      replace: protection
+      propagate_case: true
+      word: true
+    - trigger: prevelant
+      replace: prevalent
+      propagate_case: true
+      word: true
+    - trigger: preverse
+      replace: perverse
+      propagate_case: true
+      word: true
+    - trigger: previvous
+      replace: previous
+      propagate_case: true
+      word: true
+    - trigger: pricipal
+      replace: principal
+      propagate_case: true
+      word: true
+    - trigger: priciple
+      replace: principle
+      propagate_case: true
+      word: true
+    - trigger: priestood
+      replace: priesthood
+      propagate_case: true
+      word: true
+    - trigger: primarly
+      replace: primarily
+      propagate_case: true
+      word: true
+    - trigger: primative
+      replace: primitive
+      propagate_case: true
+      word: true
+    - trigger: primatively
+      replace: primitively
+      propagate_case: true
+      word: true
+    - trigger: primatives
+      replace: primitives
+      propagate_case: true
+      word: true
+    - trigger: primordal
+      replace: primordial
+      propagate_case: true
+      word: true
+    - trigger: principaly
+      replace: principality
+      propagate_case: true
+      word: true
+    - trigger: principial
+      replace: principal
+      propagate_case: true
+      word: true
+    - trigger: principlaity
+      replace: principality
+      propagate_case: true
+      word: true
+    - trigger: principly
+      replace: principally
+      propagate_case: true
+      word: true
+    - trigger: prinicipal
+      replace: principal
+      propagate_case: true
+      word: true
+    - trigger: privalege
+      replace: privilege
+      propagate_case: true
+      word: true
+    - trigger: privaleges
+      replace: privileges
+      propagate_case: true
+      word: true
+    - trigger: priveledges
+      replace: privileges
+      propagate_case: true
+      word: true
+    - trigger: privelege
+      replace: privilege
+      propagate_case: true
+      word: true
+    - trigger: priveleged
+      replace: privileged
+      propagate_case: true
+      word: true
+    - trigger: priveleges
+      replace: privileges
+      propagate_case: true
+      word: true
+    - trigger: privelige
+      replace: privilege
+      propagate_case: true
+      word: true
+    - trigger: priveliged
+      replace: privileged
+      propagate_case: true
+      word: true
+    - trigger: priveliges
+      replace: privileges
+      propagate_case: true
+      word: true
+    - trigger: privelleges
+      replace: privileges
+      propagate_case: true
+      word: true
+    - trigger: privilage
+      replace: privilege
+      propagate_case: true
+      word: true
+    - trigger: priviledge
+      replace: privilege
+      propagate_case: true
+      word: true
+    - trigger: priviledges
+      replace: privileges
+      propagate_case: true
+      word: true
+    - trigger: privledge
+      replace: privilege
+      propagate_case: true
+      word: true
+    - trigger: privte
+      replace: private
+      propagate_case: true
+      word: true
+    - trigger: probabilaty
+      replace: probability
+      propagate_case: true
+      word: true
+    - trigger: probablistic
+      replace: probabilistic
+      propagate_case: true
+      word: true
+    - trigger: probablly
+      replace: probably
+      propagate_case: true
+      word: true
+    - trigger: probalibity
+      replace: probability
+      propagate_case: true
+      word: true
+    - trigger: probaly
+      replace: probably
+      propagate_case: true
+      word: true
+    - trigger: probelm
+      replace: problem
+      propagate_case: true
+      word: true
+    - trigger: proccess
+      replace: process
+      propagate_case: true
+      word: true
+    - trigger: proccessing
+      replace: processing
+      propagate_case: true
+      word: true
+    - trigger: procede
+      replace: "proceed\x2C\x20precede"
+      propagate_case: true
+      word: true
+    - trigger: proceded
+      replace: "proceeded\x2C\x20preceded"
+      propagate_case: true
+      word: true
+    - trigger: procedes
+      replace: "proceeds\x2C\x20precedes"
+      propagate_case: true
+      word: true
+    - trigger: procedger
+      replace: procedure
+      propagate_case: true
+      word: true
+    - trigger: proceding
+      replace: "proceeding\x2C\x20preceding"
+      propagate_case: true
+      word: true
+    - trigger: procedings
+      replace: proceedings
+      propagate_case: true
+      word: true
+    - trigger: proceedure
+      replace: procedure
+      propagate_case: true
+      word: true
+    - trigger: proces
+      replace: process
+      propagate_case: true
+      word: true
+    - trigger: processer
+      replace: processor
+      propagate_case: true
+      word: true
+    - trigger: proclaimation
+      replace: proclamation
+      propagate_case: true
+      word: true
+    - trigger: proclamed
+      replace: proclaimed
+      propagate_case: true
+      word: true
+    - trigger: proclaming
+      replace: proclaiming
+      propagate_case: true
+      word: true
+    - trigger: proclomation
+      replace: proclamation
+      propagate_case: true
+      word: true
+    - trigger: profesion
+      replace: "profusion\x2C\x20profession"
+      propagate_case: true
+      word: true
+    - trigger: profesor
+      replace: professor
+      propagate_case: true
+      word: true
+    - trigger: professer
+      replace: professor
+      propagate_case: true
+      word: true
+    - trigger: proffesed
+      replace: professed
+      propagate_case: true
+      word: true
+    - trigger: proffesion
+      replace: profession
+      propagate_case: true
+      word: true
+    - trigger: proffesional
+      replace: professional
+      propagate_case: true
+      word: true
+    - trigger: proffesor
+      replace: professor
+      propagate_case: true
+      word: true
+    - trigger: proffession
+      replace: profession
+      propagate_case: true
+      word: true
+    - trigger: proffessional
+      replace: professional
+      propagate_case: true
+      word: true
+    - trigger: proffessor
+      replace: professor
+      propagate_case: true
+      word: true
+    - trigger: profilic
+      replace: prolific
+      propagate_case: true
+      word: true
+    - trigger: progessed
+      replace: progressed
+      propagate_case: true
+      word: true
+    - trigger: progidy
+      replace: prodigy
+      propagate_case: true
+      word: true
+    - trigger: programable
+      replace: programmable
+      propagate_case: true
+      word: true
+    - trigger: progrom
+      replace: "pogrom\x2C\x20program"
+      propagate_case: true
+      word: true
+    - trigger: progroms
+      replace: "pogroms\x2C\x20programs"
+      propagate_case: true
+      word: true
+    - trigger: prohabition
+      replace: prohibition
+      propagate_case: true
+      word: true
+    - trigger: prologomena
+      replace: prolegomena
+      propagate_case: true
+      word: true
+    - trigger: prominance
+      replace: prominence
+      propagate_case: true
+      word: true
+    - trigger: prominant
+      replace: prominent
+      propagate_case: true
+      word: true
+    - trigger: prominantly
+      replace: prominently
+      propagate_case: true
+      word: true
+    - trigger: prominately
+      replace: "prominently\x2C\x20predominately"
+      propagate_case: true
+      word: true
+    - trigger: promiscous
+      replace: promiscuous
+      propagate_case: true
+      word: true
+    - trigger: promotted
+      replace: promoted
+      propagate_case: true
+      word: true
+    - trigger: pronomial
+      replace: pronominal
+      propagate_case: true
+      word: true
+    - trigger: pronouced
+      replace: pronounced
+      propagate_case: true
+      word: true
+    - trigger: pronounched
+      replace: pronounced
+      propagate_case: true
+      word: true
+    - trigger: pronounciation
+      replace: pronunciation
+      propagate_case: true
+      word: true
+    - trigger: proove
+      replace: prove
+      propagate_case: true
+      word: true
+    - trigger: prooved
+      replace: proved
+      propagate_case: true
+      word: true
+    - trigger: prophacy
+      replace: prophecy
+      propagate_case: true
+      word: true
+    - trigger: propietary
+      replace: proprietary
+      propagate_case: true
+      word: true
+    - trigger: propmted
+      replace: prompted
+      propagate_case: true
+      word: true
+    - trigger: propoganda
+      replace: propaganda
+      propagate_case: true
+      word: true
+    - trigger: propogate
+      replace: propagate
+      propagate_case: true
+      word: true
+    - trigger: propogates
+      replace: propagates
+      propagate_case: true
+      word: true
+    - trigger: propogation
+      replace: propagation
+      propagate_case: true
+      word: true
+    - trigger: propostion
+      replace: proposition
+      propagate_case: true
+      word: true
+    - trigger: propotions
+      replace: proportions
+      propagate_case: true
+      word: true
+    - trigger: propper
+      replace: proper
+      propagate_case: true
+      word: true
+    - trigger: propperly
+      replace: properly
+      propagate_case: true
+      word: true
+    - trigger: proprietory
+      replace: proprietary
+      propagate_case: true
+      word: true
+    - trigger: proseletyzing
+      replace: proselytizing
+      propagate_case: true
+      word: true
+    - trigger: protaganist
+      replace: protagonist
+      propagate_case: true
+      word: true
+    - trigger: protaganists
+      replace: protagonists
+      propagate_case: true
+      word: true
+    - trigger: protocal
+      replace: protocol
+      propagate_case: true
+      word: true
+    - trigger: protoganist
+      replace: protagonist
+      propagate_case: true
+      word: true
+    - trigger: protrayed
+      replace: portrayed
+      propagate_case: true
+      word: true
+    - trigger: protruberance
+      replace: protuberance
+      propagate_case: true
+      word: true
+    - trigger: protruberances
+      replace: protuberances
+      propagate_case: true
+      word: true
+    - trigger: prouncements
+      replace: pronouncements
+      propagate_case: true
+      word: true
+    - trigger: provacative
+      replace: provocative
+      propagate_case: true
+      word: true
+    - trigger: provded
+      replace: provided
+      propagate_case: true
+      word: true
+    - trigger: provicial
+      replace: provincial
+      propagate_case: true
+      word: true
+    - trigger: provinicial
+      replace: provincial
+      propagate_case: true
+      word: true
+    - trigger: provisiosn
+      replace: provision
+      propagate_case: true
+      word: true
+    - trigger: provisonal
+      replace: provisional
+      propagate_case: true
+      word: true
+    - trigger: proximty
+      replace: proximity
+      propagate_case: true
+      word: true
+    - trigger: pseudononymous
+      replace: pseudonymous
+      propagate_case: true
+      word: true
+    - trigger: pseudonyn
+      replace: pseudonym
+      propagate_case: true
+      word: true
+    - trigger: psuedo
+      replace: pseudo
+      propagate_case: true
+      word: true
+    - trigger: psycology
+      replace: psychology
+      propagate_case: true
+      word: true
+    - trigger: psyhic
+      replace: psychic
+      propagate_case: true
+      word: true
+    - trigger: pubilsher
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: pubisher
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: publiaher
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: publically
+      replace: publicly
+      propagate_case: true
+      word: true
+    - trigger: publicaly
+      replace: publicly
+      propagate_case: true
+      word: true
+    - trigger: publicher
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: publihser
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: publisehr
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: publiser
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: publisger
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: publisheed
+      replace: published
+      propagate_case: true
+      word: true
+    - trigger: publisherr
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: publishher
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: publishor
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: publishre
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: publissher
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: publlisher
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: publsiher
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: publusher
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: puchasing
+      replace: purchasing
+      propagate_case: true
+      word: true
+    - trigger: Pucini
+      replace: Puccini
+      propagate_case: true
+      word: true
+    - trigger: Puertorrican
+      replace: "Puerto\x20Rican"
+      propagate_case: true
+      word: true
+    - trigger: Puertorricans
+      replace: "Puerto\x20Ricans"
+      propagate_case: true
+      word: true
+    - trigger: pulisher
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: pumkin
+      replace: pumpkin
+      propagate_case: true
+      word: true
+    - trigger: puplisher
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: puritannical
+      replace: puritanical
+      propagate_case: true
+      word: true
+    - trigger: purposedly
+      replace: purposely
+      propagate_case: true
+      word: true
+    - trigger: purpotedly
+      replace: purportedly
+      propagate_case: true
+      word: true
+    - trigger: pursuade
+      replace: persuade
+      propagate_case: true
+      word: true
+    - trigger: pursuaded
+      replace: persuaded
+      propagate_case: true
+      word: true
+    - trigger: pursuades
+      replace: persuades
+      propagate_case: true
+      word: true
+    - trigger: pususading
+      replace: persuading
+      propagate_case: true
+      word: true
+    - trigger: puting
+      replace: putting
+      propagate_case: true
+      word: true
+    - trigger: pwoer
+      replace: power
+      propagate_case: true
+      word: true
+    - trigger: pyscic
+      replace: psychic
+      propagate_case: true
+      word: true

@@ -1,0 +1,497 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- H ---
+    # ----------
+    - trigger: habaeus
+      replace: habeas
+      propagate_case: true
+      word: true
+    - trigger: habeus
+      replace: habeas
+      propagate_case: true
+      word: true
+    - trigger: Habsbourg
+      replace: Habsburg
+      propagate_case: true
+      word: true
+    - trigger: haemorrage
+      replace: haemorrhage
+      propagate_case: true
+      word: true
+    - trigger: haev
+      replace: "have\x2C\x20heave"
+      propagate_case: true
+      word: true
+    - trigger: halarious
+      replace: hilarious
+      propagate_case: true
+      word: true
+    - trigger: Hallowean
+      replace: "Hallowe\x27en\x2C\x20Halloween"
+      propagate_case: true
+      word: true
+    - trigger: halp
+      replace: help
+      propagate_case: true
+      word: true
+    - trigger: hapen
+      replace: happen
+      propagate_case: true
+      word: true
+    - trigger: hapened
+      replace: happened
+      propagate_case: true
+      word: true
+    - trigger: hapening
+      replace: happening
+      propagate_case: true
+      word: true
+    - trigger: happend
+      replace: happened
+      propagate_case: true
+      word: true
+    - trigger: happended
+      replace: happened
+      propagate_case: true
+      word: true
+    - trigger: happenned
+      replace: happened
+      propagate_case: true
+      word: true
+    - trigger: harased
+      replace: harassed
+      propagate_case: true
+      word: true
+    - trigger: harases
+      replace: harasses
+      propagate_case: true
+      word: true
+    - trigger: harasment
+      replace: harassment
+      propagate_case: true
+      word: true
+    - trigger: harasments
+      replace: harassments
+      propagate_case: true
+      word: true
+    - trigger: harassement
+      replace: harassment
+      propagate_case: true
+      word: true
+    - trigger: harras
+      replace: harass
+      propagate_case: true
+      word: true
+    - trigger: harrased
+      replace: harassed
+      propagate_case: true
+      word: true
+    - trigger: harrases
+      replace: harasses
+      propagate_case: true
+      word: true
+    - trigger: harrasing
+      replace: harassing
+      propagate_case: true
+      word: true
+    - trigger: harrasment
+      replace: harassment
+      propagate_case: true
+      word: true
+    - trigger: harrasments
+      replace: harassments
+      propagate_case: true
+      word: true
+    - trigger: harrassed
+      replace: harassed
+      propagate_case: true
+      word: true
+    - trigger: harrasses
+      replace: harassed
+      propagate_case: true
+      word: true
+    - trigger: harrassing
+      replace: harassing
+      propagate_case: true
+      word: true
+    - trigger: harrassment
+      replace: harassment
+      propagate_case: true
+      word: true
+    - trigger: harrassments
+      replace: harassments
+      propagate_case: true
+      word: true
+    - trigger: hasnt
+      replace: "hasn\x27t"
+      propagate_case: true
+      word: true
+    - trigger: Hatian
+      replace: Haitian
+      propagate_case: true
+      word: true
+    - trigger: haviest
+      replace: heaviest
+      propagate_case: true
+      word: true
+    - trigger: headquarer
+      replace: headquarter
+      propagate_case: true
+      word: true
+    - trigger: headquater
+      replace: headquarter
+      propagate_case: true
+      word: true
+    - trigger: headquatered
+      replace: headquartered
+      propagate_case: true
+      word: true
+    - trigger: headquaters
+      replace: headquarters
+      propagate_case: true
+      word: true
+    - trigger: healthercare
+      replace: healthcare
+      propagate_case: true
+      word: true
+    - trigger: heared
+      replace: heard
+      propagate_case: true
+      word: true
+    - trigger: heathy
+      replace: healthy
+      propagate_case: true
+      word: true
+    - trigger: Heidelburg
+      replace: Heidelberg
+      propagate_case: true
+      word: true
+    - trigger: heigher
+      replace: higher
+      propagate_case: true
+      word: true
+    - trigger: heirarchy
+      replace: hierarchy
+      propagate_case: true
+      word: true
+    - trigger: heiroglyphics
+      replace: hieroglyphics
+      propagate_case: true
+      word: true
+    - trigger: helment
+      replace: helmet
+      propagate_case: true
+      word: true
+    - trigger: helpfull
+      replace: helpful
+      propagate_case: true
+      word: true
+    - trigger: helpped
+      replace: helped
+      propagate_case: true
+      word: true
+    - trigger: hemmorhage
+      replace: hemorrhage
+      propagate_case: true
+      word: true
+    - trigger: herad
+      replace: "heard\x2C\x20Hera"
+      propagate_case: true
+      word: true
+    - trigger: heridity
+      replace: heredity
+      propagate_case: true
+      word: true
+    - trigger: heroe
+      replace: hero
+      propagate_case: true
+      word: true
+    - trigger: heros
+      replace: heroes
+      propagate_case: true
+      word: true
+    - trigger: hertiage
+      replace: heritage
+      propagate_case: true
+      word: true
+    - trigger: hertzs
+      replace: hertz
+      propagate_case: true
+      word: true
+    - trigger: hesistant
+      replace: hesitant
+      propagate_case: true
+      word: true
+    - trigger: heterogenous
+      replace: heterogeneous
+      propagate_case: true
+      word: true
+    - trigger: hieght
+      replace: height
+      propagate_case: true
+      word: true
+    - trigger: hierachical
+      replace: hierarchical
+      propagate_case: true
+      word: true
+    - trigger: hierachies
+      replace: hierarchies
+      propagate_case: true
+      word: true
+    - trigger: hierachy
+      replace: hierarchy
+      propagate_case: true
+      word: true
+    - trigger: hierarcical
+      replace: hierarchical
+      propagate_case: true
+      word: true
+    - trigger: hierarcy
+      replace: hierarchy
+      propagate_case: true
+      word: true
+    - trigger: hieroglph
+      replace: hieroglyph
+      propagate_case: true
+      word: true
+    - trigger: hieroglphs
+      replace: hieroglyphs
+      propagate_case: true
+      word: true
+    - trigger: higer
+      replace: higher
+      propagate_case: true
+      word: true
+    - trigger: higest
+      replace: highest
+      propagate_case: true
+      word: true
+    - trigger: higway
+      replace: highway
+      propagate_case: true
+      word: true
+    - trigger: hillarious
+      replace: hilarious
+      propagate_case: true
+      word: true
+    - trigger: himselv
+      replace: himself
+      propagate_case: true
+      word: true
+    - trigger: hinderance
+      replace: hindrance
+      propagate_case: true
+      word: true
+    - trigger: hinderence
+      replace: hindrance
+      propagate_case: true
+      word: true
+    - trigger: hindrence
+      replace: hindrance
+      propagate_case: true
+      word: true
+    - trigger: hipopotamus
+      replace: hippopotamus
+      propagate_case: true
+      word: true
+    - trigger: hismelf
+      replace: himself
+      propagate_case: true
+      word: true
+    - trigger: histocompatability
+      replace: histocompatibility
+      propagate_case: true
+      word: true
+    - trigger: historicians
+      replace: historians
+      propagate_case: true
+      word: true
+    - trigger: hitsingles
+      replace: "hit\x20singles"
+      propagate_case: true
+      word: true
+    - trigger: holf
+      replace: hold
+      propagate_case: true
+      word: true
+    - trigger: holliday
+      replace: holiday
+      propagate_case: true
+      word: true
+    - trigger: homestate
+      replace: "home\x20state"
+      propagate_case: true
+      word: true
+    - trigger: homogeneize
+      replace: homogenize
+      propagate_case: true
+      word: true
+    - trigger: homogeneized
+      replace: homogenized
+      propagate_case: true
+      word: true
+    - trigger: honory
+      replace: honorary
+      propagate_case: true
+      word: true
+    - trigger: horrifing
+      replace: horrifying
+      propagate_case: true
+      word: true
+    - trigger: hosited
+      replace: hoisted
+      propagate_case: true
+      word: true
+    - trigger: hospitible
+      replace: hospitable
+      propagate_case: true
+      word: true
+    - trigger: hounour
+      replace: honour
+      propagate_case: true
+      word: true
+    - trigger: housr
+      replace: "hours\x2C\x20house"
+      propagate_case: true
+      word: true
+    - trigger: howver
+      replace: however
+      propagate_case: true
+      word: true
+    - trigger: hsitorians
+      replace: historians
+      propagate_case: true
+      word: true
+    - trigger: hstory
+      replace: history
+      propagate_case: true
+      word: true
+    - trigger: hten
+      replace: "then\x2C\x20hen\x2C\x20the"
+      propagate_case: true
+      word: true
+    - trigger: htere
+      replace: "there\x2C\x20here"
+      propagate_case: true
+      word: true
+    - trigger: htey
+      replace: they
+      propagate_case: true
+      word: true
+    - trigger: htikn
+      replace: think
+      propagate_case: true
+      word: true
+    - trigger: hting
+      replace: thing
+      propagate_case: true
+      word: true
+    - trigger: htink
+      replace: think
+      propagate_case: true
+      word: true
+    - trigger: htis
+      replace: this
+      propagate_case: true
+      word: true
+    - trigger: humer
+      replace: "humor\x2C\x20humour"
+      propagate_case: true
+      word: true
+    - trigger: humerous
+      replace: "humorous\x2C\x20humerus"
+      propagate_case: true
+      word: true
+    - trigger: huminoid
+      replace: humanoid
+      propagate_case: true
+      word: true
+    - trigger: humoural
+      replace: humoral
+      propagate_case: true
+      word: true
+    - trigger: humurous
+      replace: humorous
+      propagate_case: true
+      word: true
+    - trigger: husban
+      replace: husband
+      propagate_case: true
+      word: true
+    - trigger: hvae
+      replace: have
+      propagate_case: true
+      word: true
+    - trigger: hvaing
+      replace: having
+      propagate_case: true
+      word: true
+    - trigger: hvea
+      replace: "have\x2C\x20heave"
+      propagate_case: true
+      word: true
+    - trigger: hwihc
+      replace: which
+      propagate_case: true
+      word: true
+    - trigger: hwile
+      replace: while
+      propagate_case: true
+      word: true
+    - trigger: hwole
+      replace: whole
+      propagate_case: true
+      word: true
+    - trigger: hydogen
+      replace: hydrogen
+      propagate_case: true
+      word: true
+    - trigger: hydropile
+      replace: hydrophile
+      propagate_case: true
+      word: true
+    - trigger: hydropilic
+      replace: hydrophilic
+      propagate_case: true
+      word: true
+    - trigger: hydropobe
+      replace: hydrophobe
+      propagate_case: true
+      word: true
+    - trigger: hydropobic
+      replace: hydrophobic
+      propagate_case: true
+      word: true
+    - trigger: hygeine
+      replace: hygiene
+      propagate_case: true
+      word: true
+    - trigger: hyjack
+      replace: hijack
+      propagate_case: true
+      word: true
+    - trigger: hyjacking
+      replace: hijacking
+      propagate_case: true
+      word: true
+    - trigger: hypocracy
+      replace: hypocrisy
+      propagate_case: true
+      word: true
+    - trigger: hypocrasy
+      replace: hypocrisy
+      propagate_case: true
+      word: true
+    - trigger: hypocricy
+      replace: hypocrisy
+      propagate_case: true
+      word: true
+    - trigger: hypocrit
+      replace: hypocrite
+      propagate_case: true
+      word: true
+    - trigger: hypocrits
+      replace: hypocrites
+      propagate_case: true
+      word: true

@@ -1,0 +1,369 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- G ---
+    # ----------
+    - trigger: gae
+      replace: "game\x2C\x20Gael\x2C\x20gale"
+      propagate_case: true
+      word: true
+    - trigger: galatic
+      replace: galactic
+      propagate_case: true
+      word: true
+    - trigger: Galations
+      replace: Galatians
+      propagate_case: true
+      word: true
+    - trigger: gallaxies
+      replace: galaxies
+      propagate_case: true
+      word: true
+    - trigger: galvinized
+      replace: galvanized
+      propagate_case: true
+      word: true
+    - trigger: Gameboy
+      replace: "Game\x20Boy"
+      propagate_case: true
+      word: true
+    - trigger: ganerate
+      replace: generate
+      propagate_case: true
+      word: true
+    - trigger: ganes
+      replace: games
+      propagate_case: true
+      word: true
+    - trigger: ganster
+      replace: gangster
+      propagate_case: true
+      word: true
+    - trigger: garantee
+      replace: guarantee
+      propagate_case: true
+      word: true
+    - trigger: garanteed
+      replace: guaranteed
+      propagate_case: true
+      word: true
+    - trigger: garantees
+      replace: guarantees
+      propagate_case: true
+      word: true
+    - trigger: gardai
+      replace: "garda\xED"
+      propagate_case: true
+      word: true
+    - trigger: garnison
+      replace: garrison
+      propagate_case: true
+      word: true
+    - trigger: gauarana
+      replace: "guaran\xE1"
+      propagate_case: true
+      word: true
+    - trigger: gaurantee
+      replace: guarantee
+      propagate_case: true
+      word: true
+    - trigger: gauranteed
+      replace: guaranteed
+      propagate_case: true
+      word: true
+    - trigger: gaurantees
+      replace: guarantees
+      propagate_case: true
+      word: true
+    - trigger: gaurd
+      replace: "guard\x2C\x20gourd"
+      propagate_case: true
+      word: true
+    - trigger: gaurentee
+      replace: guarantee
+      propagate_case: true
+      word: true
+    - trigger: gaurenteed
+      replace: guaranteed
+      propagate_case: true
+      word: true
+    - trigger: gaurentees
+      replace: guarantees
+      propagate_case: true
+      word: true
+    - trigger: geneological
+      replace: genealogical
+      propagate_case: true
+      word: true
+    - trigger: geneologies
+      replace: genealogies
+      propagate_case: true
+      word: true
+    - trigger: geneology
+      replace: genealogy
+      propagate_case: true
+      word: true
+    - trigger: generaly
+      replace: generally
+      propagate_case: true
+      word: true
+    - trigger: generatting
+      replace: generating
+      propagate_case: true
+      word: true
+    - trigger: genialia
+      replace: genitalia
+      propagate_case: true
+      word: true
+    - trigger: geographicial
+      replace: geographical
+      propagate_case: true
+      word: true
+    - trigger: geometrician
+      replace: geometer
+      propagate_case: true
+      word: true
+    - trigger: geometricians
+      replace: geometers
+      propagate_case: true
+      word: true
+    - trigger: gerat
+      replace: great
+      propagate_case: true
+      word: true
+    - trigger: Ghandi
+      replace: Gandhi
+      propagate_case: true
+      word: true
+    - trigger: glamourous
+      replace: glamorous
+      propagate_case: true
+      word: true
+    - trigger: glight
+      replace: flight
+      propagate_case: true
+      word: true
+    - trigger: gnawwed
+      replace: gnawed
+      propagate_case: true
+      word: true
+    - trigger: godess
+      replace: goddess
+      propagate_case: true
+      word: true
+    - trigger: godesses
+      replace: goddesses
+      propagate_case: true
+      word: true
+    - trigger: Godounov
+      replace: Godunov
+      propagate_case: true
+      word: true
+    - trigger: gogin
+      replace: "going\x2C\x20Gauguin"
+      propagate_case: true
+      word: true
+    - trigger: goign
+      replace: going
+      propagate_case: true
+      word: true
+    - trigger: gonig
+      replace: going
+      propagate_case: true
+      word: true
+    - trigger: Gothenberg
+      replace: Gothenburg
+      propagate_case: true
+      word: true
+    - trigger: Gottleib
+      replace: Gottlieb
+      propagate_case: true
+      word: true
+    - trigger: gouvener
+      replace: governor
+      propagate_case: true
+      word: true
+    - trigger: govement
+      replace: government
+      propagate_case: true
+      word: true
+    - trigger: govenment
+      replace: government
+      propagate_case: true
+      word: true
+    - trigger: govenrment
+      replace: government
+      propagate_case: true
+      word: true
+    - trigger: goverance
+      replace: governance
+      propagate_case: true
+      word: true
+    - trigger: goverment
+      replace: government
+      propagate_case: true
+      word: true
+    - trigger: govermental
+      replace: governmental
+      propagate_case: true
+      word: true
+    - trigger: governer
+      replace: governor
+      propagate_case: true
+      word: true
+    - trigger: governmnet
+      replace: government
+      propagate_case: true
+      word: true
+    - trigger: govorment
+      replace: government
+      propagate_case: true
+      word: true
+    - trigger: govormental
+      replace: governmental
+      propagate_case: true
+      word: true
+    - trigger: govornment
+      replace: government
+      propagate_case: true
+      word: true
+    - trigger: gracefull
+      replace: graceful
+      propagate_case: true
+      word: true
+    - trigger: graet
+      replace: great
+      propagate_case: true
+      word: true
+    - trigger: grafitti
+      replace: graffiti
+      propagate_case: true
+      word: true
+    - trigger: gramatically
+      replace: grammatically
+      propagate_case: true
+      word: true
+    - trigger: grammaticaly
+      replace: grammatically
+      propagate_case: true
+      word: true
+    - trigger: grammer
+      replace: grammar
+      propagate_case: true
+      word: true
+    - trigger: grat
+      replace: great
+      propagate_case: true
+      word: true
+    - trigger: gratuitious
+      replace: gratuitous
+      propagate_case: true
+      word: true
+    - trigger: greatful
+      replace: grateful
+      propagate_case: true
+      word: true
+    - trigger: greatfully
+      replace: gratefully
+      propagate_case: true
+      word: true
+    - trigger: greif
+      replace: grief
+      propagate_case: true
+      word: true
+    - trigger: gridles
+      replace: griddles
+      propagate_case: true
+      word: true
+    - trigger: gropu
+      replace: group
+      propagate_case: true
+      word: true
+    - trigger: grwo
+      replace: grow
+      propagate_case: true
+      word: true
+    - trigger: Guaduloupe
+      replace: "Guadalupe\x2C\x20Guadeloupe"
+      propagate_case: true
+      word: true
+    - trigger: Guadulupe
+      replace: "Guadalupe\x2C\x20Guadeloupe"
+      propagate_case: true
+      word: true
+    - trigger: guage
+      replace: gauge
+      propagate_case: true
+      word: true
+    - trigger: guarentee
+      replace: guarantee
+      propagate_case: true
+      word: true
+    - trigger: guarenteed
+      replace: guaranteed
+      propagate_case: true
+      word: true
+    - trigger: guarentees
+      replace: guarantees
+      propagate_case: true
+      word: true
+    - trigger: Guatamala
+      replace: Guatemala
+      propagate_case: true
+      word: true
+    - trigger: Guatamalan
+      replace: Guatemalan
+      propagate_case: true
+      word: true
+    - trigger: guerrila
+      replace: guerrilla
+      propagate_case: true
+      word: true
+    - trigger: guerrilas
+      replace: guerrillas
+      propagate_case: true
+      word: true
+    - trigger: guidence
+      replace: guidance
+      propagate_case: true
+      word: true
+    - trigger: Guilia
+      replace: Giulia
+      propagate_case: true
+      word: true
+    - trigger: Guilio
+      replace: Giulio
+      propagate_case: true
+      word: true
+    - trigger: Guiness
+      replace: Guinness
+      propagate_case: true
+      word: true
+    - trigger: Guiseppe
+      replace: Giuseppe
+      propagate_case: true
+      word: true
+    - trigger: gunanine
+      replace: guanine
+      propagate_case: true
+      word: true
+    - trigger: gurantee
+      replace: guarantee
+      propagate_case: true
+      word: true
+    - trigger: guranteed
+      replace: guaranteed
+      propagate_case: true
+      word: true
+    - trigger: gurantees
+      replace: guarantees
+      propagate_case: true
+      word: true
+    - trigger: guttaral
+      replace: guttural
+      propagate_case: true
+      word: true
+    - trigger: gutteral
+      replace: guttural
+      propagate_case: true
+      word: true

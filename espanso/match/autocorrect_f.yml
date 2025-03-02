@@ -1,0 +1,425 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- F ---
+    # ----------
+    - trigger: faciliate
+      replace: facilitate
+      propagate_case: true
+      word: true
+    - trigger: faciliated
+      replace: facilitated
+      propagate_case: true
+      word: true
+    - trigger: faciliates
+      replace: facilitates
+      propagate_case: true
+      word: true
+    - trigger: facilites
+      replace: facilities
+      propagate_case: true
+      word: true
+    - trigger: facillitate
+      replace: facilitate
+      propagate_case: true
+      word: true
+    - trigger: facinated
+      replace: fascinated
+      propagate_case: true
+      word: true
+    - trigger: facist
+      replace: fascist
+      propagate_case: true
+      word: true
+    - trigger: familes
+      replace: families
+      propagate_case: true
+      word: true
+    - trigger: familliar
+      replace: familiar
+      propagate_case: true
+      word: true
+    - trigger: famoust
+      replace: famous
+      propagate_case: true
+      word: true
+    - trigger: fanatism
+      replace: fanaticism
+      propagate_case: true
+      word: true
+    - trigger: Farenheit
+      replace: Fahrenheit
+      propagate_case: true
+      word: true
+    - trigger: fatc
+      replace: fact
+      propagate_case: true
+      word: true
+    - trigger: faught
+      replace: fought
+      propagate_case: true
+      word: true
+    - trigger: favoutrable
+      replace: favourable
+      propagate_case: true
+      word: true
+    - trigger: feasable
+      replace: feasible
+      propagate_case: true
+      word: true
+    - trigger: Febuary
+      replace: February
+      propagate_case: true
+      word: true
+    - trigger: Feburary
+      replace: February
+      propagate_case: true
+      word: true
+    - trigger: fedreally
+      replace: federally
+      propagate_case: true
+      word: true
+    - trigger: femminist
+      replace: feminist
+      propagate_case: true
+      word: true
+    - trigger: feromone
+      replace: pheromone
+      propagate_case: true
+      word: true
+    - trigger: fertily
+      replace: fertility
+      propagate_case: true
+      word: true
+    - trigger: fianite
+      replace: finite
+      propagate_case: true
+      word: true
+    - trigger: fianlly
+      replace: finally
+      propagate_case: true
+      word: true
+    - trigger: ficticious
+      replace: fictitious
+      propagate_case: true
+      word: true
+    - trigger: fictious
+      replace: fictitious
+      propagate_case: true
+      word: true
+    - trigger: fidn
+      replace: find
+      propagate_case: true
+      word: true
+    - trigger: fiel
+      replace: "feel\x2C\x20field\x2C\x20file\x2C\x20phial"
+      propagate_case: true
+      word: true
+    - trigger: fiels
+      replace: "feels\x2C\x20fields\x2C\x20files\x2C\x20phials"
+      propagate_case: true
+      word: true
+    - trigger: fiercly
+      replace: fiercely
+      propagate_case: true
+      word: true
+    - trigger: fightings
+      replace: fighting
+      propagate_case: true
+      word: true
+    - trigger: filiament
+      replace: filament
+      propagate_case: true
+      word: true
+    - trigger: fimilies
+      replace: families
+      propagate_case: true
+      word: true
+    - trigger: finacial
+      replace: financial
+      propagate_case: true
+      word: true
+    - trigger: finaly
+      replace: finally
+      propagate_case: true
+      word: true
+    - trigger: financialy
+      replace: financially
+      propagate_case: true
+      word: true
+    - trigger: firends
+      replace: friends
+      propagate_case: true
+      word: true
+    - trigger: firts
+      replace: "flirts\x2C\x20first"
+      propagate_case: true
+      word: true
+    - trigger: fisionable
+      replace: fissionable
+      propagate_case: true
+      word: true
+    - trigger: flamable
+      replace: flammable
+      propagate_case: true
+      word: true
+    - trigger: flawess
+      replace: flawless
+      propagate_case: true
+      word: true
+    - trigger: fleed
+      replace: "fled\x2C\x20freed"
+      propagate_case: true
+      word: true
+    - trigger: Flemmish
+      replace: Flemish
+      propagate_case: true
+      word: true
+    - trigger: florescent
+      replace: fluorescent
+      propagate_case: true
+      word: true
+    - trigger: flourescent
+      replace: fluorescent
+      propagate_case: true
+      word: true
+    - trigger: flourine
+      replace: fluorine
+      propagate_case: true
+      word: true
+    - trigger: flourishment
+      replace: flourishing
+      propagate_case: true
+      word: true
+    - trigger: fluorish
+      replace: flourish
+      propagate_case: true
+      word: true
+    - trigger: follwoing
+      replace: following
+      propagate_case: true
+      word: true
+    - trigger: folowing
+      replace: following
+      propagate_case: true
+      word: true
+    - trigger: fomed
+      replace: formed
+      propagate_case: true
+      word: true
+    - trigger: fomr
+      replace: "from\x2C\x20form"
+      propagate_case: true
+      word: true
+    - trigger: fonetic
+      replace: phonetic
+      propagate_case: true
+      word: true
+    - trigger: fontrier
+      replace: fontier
+      propagate_case: true
+      word: true
+    - trigger: foootball
+      replace: football
+      propagate_case: true
+      word: true
+    - trigger: forbad
+      replace: forbade
+      propagate_case: true
+      word: true
+    - trigger: forbiden
+      replace: forbidden
+      propagate_case: true
+      word: true
+    - trigger: foreward
+      replace: foreword
+      propagate_case: true
+      word: true
+    - trigger: forfiet
+      replace: forfeit
+      propagate_case: true
+      word: true
+    - trigger: forhead
+      replace: forehead
+      propagate_case: true
+      word: true
+    - trigger: foriegn
+      replace: foreign
+      propagate_case: true
+      word: true
+    - trigger: Formalhaut
+      replace: Fomalhaut
+      propagate_case: true
+      word: true
+    - trigger: formallize
+      replace: formalize
+      propagate_case: true
+      word: true
+    - trigger: formallized
+      replace: formalized
+      propagate_case: true
+      word: true
+    - trigger: formaly
+      replace: "formally\x2C\x20formerly"
+      propagate_case: true
+      word: true
+    - trigger: formelly
+      replace: formerly
+      propagate_case: true
+      word: true
+    - trigger: formidible
+      replace: formidable
+      propagate_case: true
+      word: true
+    - trigger: formost
+      replace: foremost
+      propagate_case: true
+      word: true
+    - trigger: forsaw
+      replace: foresaw
+      propagate_case: true
+      word: true
+    - trigger: forseeable
+      replace: foreseeable
+      propagate_case: true
+      word: true
+    - trigger: fortelling
+      replace: foretelling
+      propagate_case: true
+      word: true
+    - trigger: forunner
+      replace: forerunner
+      propagate_case: true
+      word: true
+    - trigger: foucs
+      replace: focus
+      propagate_case: true
+      word: true
+    - trigger: foudn
+      replace: found
+      propagate_case: true
+      word: true
+    - trigger: fougth
+      replace: fought
+      propagate_case: true
+      word: true
+    - trigger: foundaries
+      replace: foundries
+      propagate_case: true
+      word: true
+    - trigger: foundary
+      replace: foundry
+      propagate_case: true
+      word: true
+    - trigger: Foundland
+      replace: Newfoundland
+      propagate_case: true
+      word: true
+    - trigger: fourties
+      replace: forties
+      propagate_case: true
+      word: true
+    - trigger: fourty
+      replace: forty
+      propagate_case: true
+      word: true
+    - trigger: fouth
+      replace: fourth
+      propagate_case: true
+      word: true
+    - trigger: foward
+      replace: forward
+      propagate_case: true
+      word: true
+    - trigger: Fransiscan
+      replace: Franciscan
+      propagate_case: true
+      word: true
+    - trigger: Fransiscans
+      replace: Franciscans
+      propagate_case: true
+      word: true
+    - trigger: freind
+      replace: friend
+      propagate_case: true
+      word: true
+    - trigger: freindly
+      replace: friendly
+      propagate_case: true
+      word: true
+    - trigger: frequentily
+      replace: frequently
+      propagate_case: true
+      word: true
+    - trigger: frome
+      replace: from
+      propagate_case: true
+      word: true
+    - trigger: fromed
+      replace: formed
+      propagate_case: true
+      word: true
+    - trigger: froniter
+      replace: frontier
+      propagate_case: true
+      word: true
+    - trigger: fucntion
+      replace: function
+      propagate_case: true
+      word: true
+    - trigger: fucntioning
+      replace: functioning
+      propagate_case: true
+      word: true
+    - trigger: fufill
+      replace: fulfill
+      propagate_case: true
+      word: true
+    - trigger: fufilled
+      replace: fulfilled
+      propagate_case: true
+      word: true
+    - trigger: fulfiled
+      replace: fulfilled
+      propagate_case: true
+      word: true
+    - trigger: fullfill
+      replace: fulfill
+      propagate_case: true
+      word: true
+    - trigger: fullfilled
+      replace: fulfilled
+      propagate_case: true
+      word: true
+    - trigger: fundametal
+      replace: fundamental
+      propagate_case: true
+      word: true
+    - trigger: fundametals
+      replace: fundamentals
+      propagate_case: true
+      word: true
+    - trigger: funguses
+      replace: fungi
+      propagate_case: true
+      word: true
+    - trigger: funtion
+      replace: function
+      propagate_case: true
+      word: true
+    - trigger: furuther
+      replace: further
+      propagate_case: true
+      word: true
+    - trigger: futher
+      replace: further
+      propagate_case: true
+      word: true
+    - trigger: futhermore
+      replace: furthermore
+      propagate_case: true
+      word: true
+    - trigger: futhroc
+      replace: "futhark\x2C\x20futhorc"
+      propagate_case: true
+      word: true

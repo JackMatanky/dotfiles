@@ -1,0 +1,313 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- N ---
+    # ----------
+    - trigger: naieve
+      replace: naive
+      propagate_case: true
+      word: true
+    - trigger: Naploeon
+      replace: Napoleon
+      propagate_case: true
+      word: true
+    - trigger: Napolean
+      replace: Napoleon
+      propagate_case: true
+      word: true
+    - trigger: Napoleonian
+      replace: Napoleonic
+      propagate_case: true
+      word: true
+    - trigger: naturaly
+      replace: naturally
+      propagate_case: true
+      word: true
+    - trigger: naturely
+      replace: naturally
+      propagate_case: true
+      word: true
+    - trigger: naturual
+      replace: natural
+      propagate_case: true
+      word: true
+    - trigger: naturually
+      replace: naturally
+      propagate_case: true
+      word: true
+    - trigger: Nazereth
+      replace: Nazareth
+      propagate_case: true
+      word: true
+    - trigger: neccesarily
+      replace: necessarily
+      propagate_case: true
+      word: true
+    - trigger: neccesary
+      replace: necessary
+      propagate_case: true
+      word: true
+    - trigger: neccessarily
+      replace: necessarily
+      propagate_case: true
+      word: true
+    - trigger: neccessary
+      replace: necessary
+      propagate_case: true
+      word: true
+    - trigger: neccessities
+      replace: necessities
+      propagate_case: true
+      word: true
+    - trigger: necesarily
+      replace: necessarily
+      propagate_case: true
+      word: true
+    - trigger: necesary
+      replace: necessary
+      propagate_case: true
+      word: true
+    - trigger: necessiate
+      replace: necessitate
+      propagate_case: true
+      word: true
+    - trigger: neglible
+      replace: negligible
+      propagate_case: true
+      word: true
+    - trigger: negligable
+      replace: negligible
+      propagate_case: true
+      word: true
+    - trigger: negociate
+      replace: negotiate
+      propagate_case: true
+      word: true
+    - trigger: negociation
+      replace: negotiation
+      propagate_case: true
+      word: true
+    - trigger: negociations
+      replace: negotiations
+      propagate_case: true
+      word: true
+    - trigger: negotation
+      replace: negotiation
+      propagate_case: true
+      word: true
+    - trigger: neice
+      replace: "niece\x2C\x20nice"
+      propagate_case: true
+      word: true
+    - trigger: neigborhood
+      replace: neighborhood
+      propagate_case: true
+      word: true
+    - trigger: neigbour
+      replace: "neighbour\x2C\x20neighbor"
+      propagate_case: true
+      word: true
+    - trigger: neigbourhood
+      replace: neighbourhood
+      propagate_case: true
+      word: true
+    - trigger: neigbouring
+      replace: "neighbouring\x2C\x20neighboring"
+      propagate_case: true
+      word: true
+    - trigger: neigbours
+      replace: "neighbours\x2C\x20neighbors"
+      propagate_case: true
+      word: true
+    - trigger: neolitic
+      replace: neolithic
+      propagate_case: true
+      word: true
+    - trigger: nessasarily
+      replace: necessarily
+      propagate_case: true
+      word: true
+    - trigger: nessecary
+      replace: necessary
+      propagate_case: true
+      word: true
+    - trigger: nestin
+      replace: nesting
+      propagate_case: true
+      word: true
+    - trigger: neverthless
+      replace: nevertheless
+      propagate_case: true
+      word: true
+    - trigger: newletters
+      replace: newsletters
+      propagate_case: true
+      word: true
+    - trigger: nickle
+      replace: nickel
+      propagate_case: true
+      word: true
+    - trigger: nightime
+      replace: nighttime
+      propagate_case: true
+      word: true
+    - trigger: nineth
+      replace: ninth
+      propagate_case: true
+      word: true
+    - trigger: ninteenth
+      replace: nineteenth
+      propagate_case: true
+      word: true
+    - trigger: ninties
+      replace: 1990s
+      propagate_case: true
+      word: true
+    - trigger: ninty
+      replace: ninety
+      propagate_case: true
+      word: true
+    - trigger: nkow
+      replace: know
+      propagate_case: true
+      word: true
+    - trigger: nkwo
+      replace: know
+      propagate_case: true
+      word: true
+    - trigger: nmae
+      replace: name
+      propagate_case: true
+      word: true
+    - trigger: noncombatents
+      replace: noncombatants
+      propagate_case: true
+      word: true
+    - trigger: nonsence
+      replace: nonsense
+      propagate_case: true
+      word: true
+    - trigger: nontheless
+      replace: nonetheless
+      propagate_case: true
+      word: true
+    - trigger: noone
+      replace: "no\x20one"
+      propagate_case: true
+      word: true
+    - trigger: norhern
+      replace: northern
+      propagate_case: true
+      word: true
+    - trigger: northen
+      replace: northern
+      propagate_case: true
+      word: true
+    - trigger: northereastern
+      replace: northeastern
+      propagate_case: true
+      word: true
+    - trigger: notabley
+      replace: notably
+      propagate_case: true
+      word: true
+    - trigger: noteable
+      replace: notable
+      propagate_case: true
+      word: true
+    - trigger: noteably
+      replace: notably
+      propagate_case: true
+      word: true
+    - trigger: noteriety
+      replace: notoriety
+      propagate_case: true
+      word: true
+    - trigger: noth
+      replace: north
+      propagate_case: true
+      word: true
+    - trigger: nothern
+      replace: northern
+      propagate_case: true
+      word: true
+    - trigger: noticable
+      replace: noticeable
+      propagate_case: true
+      word: true
+    - trigger: noticably
+      replace: noticeably
+      propagate_case: true
+      word: true
+    - trigger: noticeing
+      replace: noticing
+      propagate_case: true
+      word: true
+    - trigger: noticible
+      replace: noticeable
+      propagate_case: true
+      word: true
+    - trigger: notwhithstanding
+      replace: notwithstanding
+      propagate_case: true
+      word: true
+    - trigger: noveau
+      replace: nouveau
+      propagate_case: true
+      word: true
+    - trigger: Novermber
+      replace: November
+      propagate_case: true
+      word: true
+    - trigger: nowdays
+      replace: nowadays
+      propagate_case: true
+      word: true
+    - trigger: nowe
+      replace: now
+      propagate_case: true
+      word: true
+    - trigger: nto
+      replace: not
+      propagate_case: true
+      word: true
+    - trigger: nucular
+      replace: nuclear
+      propagate_case: true
+      word: true
+    - trigger: nuculear
+      replace: nuclear
+      propagate_case: true
+      word: true
+    - trigger: nuisanse
+      replace: nuisance
+      propagate_case: true
+      word: true
+    - trigger: Nullabour
+      replace: Nullarbor
+      propagate_case: true
+      word: true
+    - trigger: numberous
+      replace: numerous
+      propagate_case: true
+      word: true
+    - trigger: Nuremburg
+      replace: Nuremberg
+      propagate_case: true
+      word: true
+    - trigger: nusance
+      replace: nuisance
+      propagate_case: true
+      word: true
+    - trigger: nutritent
+      replace: nutrient
+      propagate_case: true
+      word: true
+    - trigger: nutritents
+      replace: nutrients
+      propagate_case: true
+      word: true
+    - trigger: nuturing
+      replace: nurturing
+      propagate_case: true
+      word: true

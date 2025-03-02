@@ -1,0 +1,989 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- D ---
+    # ---------
+    - trigger: dacquiri
+      replace: daiquiri
+      propagate_case: true
+      word: true
+    - trigger: daed
+      replace: dead
+      propagate_case: true
+      word: true
+    - trigger: dael
+      replace: "deal\x2C\x20dial\x2C\x20dahl"
+      propagate_case: true
+      word: true
+    - trigger: dalmation
+      replace: dalmatian
+      propagate_case: true
+      word: true
+    - trigger: damenor
+      replace: demeanor
+      propagate_case: true
+      word: true
+    - trigger: dammage
+      replace: damage
+      propagate_case: true
+      word: true
+    - trigger: Dardenelles
+      replace: Dardanelles
+      propagate_case: true
+      word: true
+    - trigger: daugher
+      replace: daughter
+      propagate_case: true
+      word: true
+    - trigger: debateable
+      replace: debatable
+      propagate_case: true
+      word: true
+    - trigger: decendant
+      replace: descendant
+      propagate_case: true
+      word: true
+    - trigger: decendants
+      replace: descendants
+      propagate_case: true
+      word: true
+    - trigger: decendent
+      replace: descendant
+      propagate_case: true
+      word: true
+    - trigger: decendents
+      replace: descendants
+      propagate_case: true
+      word: true
+    - trigger: decideable
+      replace: decidable
+      propagate_case: true
+      word: true
+    - trigger: decidely
+      replace: decidedly
+      propagate_case: true
+      word: true
+    - trigger: decieved
+      replace: deceived
+      propagate_case: true
+      word: true
+    - trigger: decison
+      replace: decision
+      propagate_case: true
+      word: true
+    - trigger: decomissioned
+      replace: decommissioned
+      propagate_case: true
+      word: true
+    - trigger: decomposit
+      replace: decompose
+      propagate_case: true
+      word: true
+    - trigger: decomposited
+      replace: decomposed
+      propagate_case: true
+      word: true
+    - trigger: decompositing
+      replace: decomposing
+      propagate_case: true
+      word: true
+    - trigger: decomposits
+      replace: decomposes
+      propagate_case: true
+      word: true
+    - trigger: decress
+      replace: decrees
+      propagate_case: true
+      word: true
+    - trigger: decribe
+      replace: describe
+      propagate_case: true
+      word: true
+    - trigger: decribed
+      replace: described
+      propagate_case: true
+      word: true
+    - trigger: decribes
+      replace: describes
+      propagate_case: true
+      word: true
+    - trigger: decribing
+      replace: describing
+      propagate_case: true
+      word: true
+    - trigger: dectect
+      replace: detect
+      propagate_case: true
+      word: true
+    - trigger: defendent
+      replace: defendant
+      propagate_case: true
+      word: true
+    - trigger: defendents
+      replace: defendants
+      propagate_case: true
+      word: true
+    - trigger: deffensively
+      replace: defensively
+      propagate_case: true
+      word: true
+    - trigger: deffine
+      replace: define
+      propagate_case: true
+      word: true
+    - trigger: deffined
+      replace: defined
+      propagate_case: true
+      word: true
+    - trigger: definance
+      replace: defiance
+      propagate_case: true
+      word: true
+    - trigger: definate
+      replace: definite
+      propagate_case: true
+      word: true
+    - trigger: definately
+      replace: definitely
+      propagate_case: true
+      word: true
+    - trigger: definatly
+      replace: definitely
+      propagate_case: true
+      word: true
+    - trigger: definetly
+      replace: definitely
+      propagate_case: true
+      word: true
+    - trigger: definining
+      replace: defining
+      propagate_case: true
+      word: true
+    - trigger: definit
+      replace: definite
+      propagate_case: true
+      word: true
+    - trigger: definitly
+      replace: definitely
+      propagate_case: true
+      word: true
+    - trigger: definiton
+      replace: definition
+      propagate_case: true
+      word: true
+    - trigger: defintion
+      replace: definition
+      propagate_case: true
+      word: true
+    - trigger: degrate
+      replace: degrade
+      propagate_case: true
+      word: true
+    - trigger: delagates
+      replace: delegates
+      propagate_case: true
+      word: true
+    - trigger: delapidated
+      replace: dilapidated
+      propagate_case: true
+      word: true
+    - trigger: delerious
+      replace: delirious
+      propagate_case: true
+      word: true
+    - trigger: delevopment
+      replace: development
+      propagate_case: true
+      word: true
+    - trigger: deliberatly
+      replace: deliberately
+      propagate_case: true
+      word: true
+    - trigger: delusionally
+      replace: delusively
+      propagate_case: true
+      word: true
+    - trigger: demenor
+      replace: demeanor
+      propagate_case: true
+      word: true
+    - trigger: demographical
+      replace: demographic
+      propagate_case: true
+      word: true
+    - trigger: demolision
+      replace: demolition
+      propagate_case: true
+      word: true
+    - trigger: demorcracy
+      replace: democracy
+      propagate_case: true
+      word: true
+    - trigger: demostration
+      replace: demonstration
+      propagate_case: true
+      word: true
+    - trigger: denegrating
+      replace: denigrating
+      propagate_case: true
+      word: true
+    - trigger: densly
+      replace: densely
+      propagate_case: true
+      word: true
+    - trigger: deparment
+      replace: department
+      propagate_case: true
+      word: true
+    - trigger: deparmental
+      replace: departmental
+      propagate_case: true
+      word: true
+    - trigger: deparments
+      replace: departments
+      propagate_case: true
+      word: true
+    - trigger: dependance
+      replace: dependence
+      propagate_case: true
+      word: true
+    - trigger: dependancy
+      replace: dependency
+      propagate_case: true
+      word: true
+    - trigger: deram
+      replace: "dram\x2C\x20dream"
+      propagate_case: true
+      word: true
+    - trigger: deriviated
+      replace: derived
+      propagate_case: true
+      word: true
+    - trigger: derivitive
+      replace: derivative
+      propagate_case: true
+      word: true
+    - trigger: derogitory
+      replace: derogatory
+      propagate_case: true
+      word: true
+    - trigger: descendands
+      replace: descendants
+      propagate_case: true
+      word: true
+    - trigger: descibed
+      replace: described
+      propagate_case: true
+      word: true
+    - trigger: descision
+      replace: decision
+      propagate_case: true
+      word: true
+    - trigger: descisions
+      replace: decisions
+      propagate_case: true
+      word: true
+    - trigger: descriibes
+      replace: describes
+      propagate_case: true
+      word: true
+    - trigger: descripters
+      replace: descriptors
+      propagate_case: true
+      word: true
+    - trigger: descripton
+      replace: description
+      propagate_case: true
+      word: true
+    - trigger: desctruction
+      replace: destruction
+      propagate_case: true
+      word: true
+    - trigger: descuss
+      replace: discuss
+      propagate_case: true
+      word: true
+    - trigger: desgined
+      replace: designed
+      propagate_case: true
+      word: true
+    - trigger: deside
+      replace: decide
+      propagate_case: true
+      word: true
+    - trigger: desigining
+      replace: designing
+      propagate_case: true
+      word: true
+    - trigger: desinations
+      replace: destinations
+      propagate_case: true
+      word: true
+    - trigger: desintegrated
+      replace: disintegrated
+      propagate_case: true
+      word: true
+    - trigger: desintegration
+      replace: disintegration
+      propagate_case: true
+      word: true
+    - trigger: desireable
+      replace: desirable
+      propagate_case: true
+      word: true
+    - trigger: desitned
+      replace: destined
+      propagate_case: true
+      word: true
+    - trigger: desktiop
+      replace: desktop
+      propagate_case: true
+      word: true
+    - trigger: desorder
+      replace: disorder
+      propagate_case: true
+      word: true
+    - trigger: desoriented
+      replace: disoriented
+      propagate_case: true
+      word: true
+    - trigger: desparate
+      replace: "desperate\x2C\x20disparate"
+      propagate_case: true
+      word: true
+    - trigger: despict
+      replace: depict
+      propagate_case: true
+      word: true
+    - trigger: despiration
+      replace: desperation
+      propagate_case: true
+      word: true
+    - trigger: dessicated
+      replace: desiccated
+      propagate_case: true
+      word: true
+    - trigger: dessigned
+      replace: designed
+      propagate_case: true
+      word: true
+    - trigger: destablized
+      replace: destabilized
+      propagate_case: true
+      word: true
+    - trigger: destory
+      replace: destroy
+      propagate_case: true
+      word: true
+    - trigger: detailled
+      replace: detailed
+      propagate_case: true
+      word: true
+    - trigger: detatched
+      replace: detached
+      propagate_case: true
+      word: true
+    - trigger: deteoriated
+      replace: deteriorated
+      propagate_case: true
+      word: true
+    - trigger: deteriate
+      replace: deteriorate
+      propagate_case: true
+      word: true
+    - trigger: deterioriating
+      replace: deteriorating
+      propagate_case: true
+      word: true
+    - trigger: determinining
+      replace: determining
+      propagate_case: true
+      word: true
+    - trigger: detremental
+      replace: detrimental
+      propagate_case: true
+      word: true
+    - trigger: devasted
+      replace: devastated
+      propagate_case: true
+      word: true
+    - trigger: develope
+      replace: develop
+      propagate_case: true
+      word: true
+    - trigger: developement
+      replace: development
+      propagate_case: true
+      word: true
+    - trigger: developped
+      replace: developed
+      propagate_case: true
+      word: true
+    - trigger: develpment
+      replace: development
+      propagate_case: true
+      word: true
+    - trigger: devels
+      replace: delves
+      propagate_case: true
+      word: true
+    - trigger: devestated
+      replace: devastated
+      propagate_case: true
+      word: true
+    - trigger: devestating
+      replace: devastating
+      propagate_case: true
+      word: true
+    - trigger: devide
+      replace: divide
+      propagate_case: true
+      word: true
+    - trigger: devided
+      replace: divided
+      propagate_case: true
+      word: true
+    - trigger: devistating
+      replace: devastating
+      propagate_case: true
+      word: true
+    - trigger: devolopement
+      replace: development
+      propagate_case: true
+      word: true
+    - trigger: diablical
+      replace: diabolical
+      propagate_case: true
+      word: true
+    - trigger: diamons
+      replace: diamonds
+      propagate_case: true
+      word: true
+    - trigger: diaster
+      replace: disaster
+      propagate_case: true
+      word: true
+    - trigger: dichtomy
+      replace: dichotomy
+      propagate_case: true
+      word: true
+    - trigger: diconnects
+      replace: disconnects
+      propagate_case: true
+      word: true
+    - trigger: dicover
+      replace: discover
+      propagate_case: true
+      word: true
+    - trigger: dicovered
+      replace: discovered
+      propagate_case: true
+      word: true
+    - trigger: dicovering
+      replace: discovering
+      propagate_case: true
+      word: true
+    - trigger: dicovers
+      replace: discovers
+      propagate_case: true
+      word: true
+    - trigger: dicovery
+      replace: discovery
+      propagate_case: true
+      word: true
+    - trigger: dictionarys
+      replace: dictionaries
+      propagate_case: true
+      word: true
+    - trigger: dicussed
+      replace: discussed
+      propagate_case: true
+      word: true
+    - trigger: didnt
+      replace: "didn\x27t"
+      propagate_case: true
+      word: true
+    - trigger: diea
+      replace: "idea\x2C\x20die"
+      propagate_case: true
+      word: true
+    - trigger: dieing
+      replace: "dying\x2C\x20dyeing"
+      propagate_case: true
+      word: true
+    - trigger: dieties
+      replace: deities
+      propagate_case: true
+      word: true
+    - trigger: diety
+      replace: deity
+      propagate_case: true
+      word: true
+    - trigger: diferent
+      replace: different
+      propagate_case: true
+      word: true
+    - trigger: diferrent
+      replace: different
+      propagate_case: true
+      word: true
+    - trigger: differentiatiations
+      replace: differentiations
+      propagate_case: true
+      word: true
+    - trigger: differnt
+      replace: different
+      propagate_case: true
+      word: true
+    - trigger: difficulity
+      replace: difficulty
+      propagate_case: true
+      word: true
+    - trigger: diffrent
+      replace: different
+      propagate_case: true
+      word: true
+    - trigger: dificulties
+      replace: difficulties
+      propagate_case: true
+      word: true
+    - trigger: dificulty
+      replace: difficulty
+      propagate_case: true
+      word: true
+    - trigger: dimenions
+      replace: dimensions
+      propagate_case: true
+      word: true
+    - trigger: dimention
+      replace: dimension
+      propagate_case: true
+      word: true
+    - trigger: dimentional
+      replace: dimensional
+      propagate_case: true
+      word: true
+    - trigger: dimentions
+      replace: dimensions
+      propagate_case: true
+      word: true
+    - trigger: dimesnional
+      replace: dimensional
+      propagate_case: true
+      word: true
+    - trigger: diminuitive
+      replace: diminutive
+      propagate_case: true
+      word: true
+    - trigger: dimunitive
+      replace: diminutive
+      propagate_case: true
+      word: true
+    - trigger: diosese
+      replace: diocese
+      propagate_case: true
+      word: true
+    - trigger: diphtong
+      replace: diphthong
+      propagate_case: true
+      word: true
+    - trigger: diphtongs
+      replace: diphthongs
+      propagate_case: true
+      word: true
+    - trigger: diplomancy
+      replace: diplomacy
+      propagate_case: true
+      word: true
+    - trigger: dipthong
+      replace: diphthong
+      propagate_case: true
+      word: true
+    - trigger: dipthongs
+      replace: diphthongs
+      propagate_case: true
+      word: true
+    - trigger: directoty
+      replace: directory
+      propagate_case: true
+      word: true
+    - trigger: dirived
+      replace: derived
+      propagate_case: true
+      word: true
+    - trigger: disagreeed
+      replace: disagreed
+      propagate_case: true
+      word: true
+    - trigger: disapeared
+      replace: disappeared
+      propagate_case: true
+      word: true
+    - trigger: disapointing
+      replace: disappointing
+      propagate_case: true
+      word: true
+    - trigger: disappearred
+      replace: disappeared
+      propagate_case: true
+      word: true
+    - trigger: disaproval
+      replace: disapproval
+      propagate_case: true
+      word: true
+    - trigger: disasterous
+      replace: disastrous
+      propagate_case: true
+      word: true
+    - trigger: disatisfaction
+      replace: dissatisfaction
+      propagate_case: true
+      word: true
+    - trigger: disatisfied
+      replace: dissatisfied
+      propagate_case: true
+      word: true
+    - trigger: disatrous
+      replace: disastrous
+      propagate_case: true
+      word: true
+    - trigger: discontentment
+      replace: discontent
+      propagate_case: true
+      word: true
+    - trigger: discribe
+      replace: describe
+      propagate_case: true
+      word: true
+    - trigger: discribed
+      replace: described
+      propagate_case: true
+      word: true
+    - trigger: discribes
+      replace: describes
+      propagate_case: true
+      word: true
+    - trigger: discribing
+      replace: describing
+      propagate_case: true
+      word: true
+    - trigger: disctinction
+      replace: distinction
+      propagate_case: true
+      word: true
+    - trigger: disctinctive
+      replace: distinctive
+      propagate_case: true
+      word: true
+    - trigger: disemination
+      replace: dissemination
+      propagate_case: true
+      word: true
+    - trigger: disenchanged
+      replace: disenchanted
+      propagate_case: true
+      word: true
+    - trigger: disiplined
+      replace: disciplined
+      propagate_case: true
+      word: true
+    - trigger: disobediance
+      replace: disobedience
+      propagate_case: true
+      word: true
+    - trigger: disobediant
+      replace: disobedient
+      propagate_case: true
+      word: true
+    - trigger: disolved
+      replace: dissolved
+      propagate_case: true
+      word: true
+    - trigger: disover
+      replace: discover
+      propagate_case: true
+      word: true
+    - trigger: dispair
+      replace: despair
+      propagate_case: true
+      word: true
+    - trigger: disparingly
+      replace: disparagingly
+      propagate_case: true
+      word: true
+    - trigger: dispence
+      replace: dispense
+      propagate_case: true
+      word: true
+    - trigger: dispenced
+      replace: dispensed
+      propagate_case: true
+      word: true
+    - trigger: dispencing
+      replace: dispensing
+      propagate_case: true
+      word: true
+    - trigger: dispicable
+      replace: despicable
+      propagate_case: true
+      word: true
+    - trigger: dispite
+      replace: despite
+      propagate_case: true
+      word: true
+    - trigger: dispostion
+      replace: disposition
+      propagate_case: true
+      word: true
+    - trigger: disproportiate
+      replace: disproportionate
+      propagate_case: true
+      word: true
+    - trigger: disputandem
+      replace: disputandum
+      propagate_case: true
+      word: true
+    - trigger: disricts
+      replace: districts
+      propagate_case: true
+      word: true
+    - trigger: dissagreement
+      replace: disagreement
+      propagate_case: true
+      word: true
+    - trigger: dissapear
+      replace: disappear
+      propagate_case: true
+      word: true
+    - trigger: dissapearance
+      replace: disappearance
+      propagate_case: true
+      word: true
+    - trigger: dissapeared
+      replace: disappeared
+      propagate_case: true
+      word: true
+    - trigger: dissapearing
+      replace: disappearing
+      propagate_case: true
+      word: true
+    - trigger: dissapears
+      replace: disappears
+      propagate_case: true
+      word: true
+    - trigger: dissappear
+      replace: disappear
+      propagate_case: true
+      word: true
+    - trigger: dissappears
+      replace: disappears
+      propagate_case: true
+      word: true
+    - trigger: dissappointed
+      replace: disappointed
+      propagate_case: true
+      word: true
+    - trigger: dissarray
+      replace: disarray
+      propagate_case: true
+      word: true
+    - trigger: dissobediance
+      replace: disobedience
+      propagate_case: true
+      word: true
+    - trigger: dissobediant
+      replace: disobedient
+      propagate_case: true
+      word: true
+    - trigger: dissobedience
+      replace: disobedience
+      propagate_case: true
+      word: true
+    - trigger: dissobedient
+      replace: disobedient
+      propagate_case: true
+      word: true
+    - trigger: distiction
+      replace: distinction
+      propagate_case: true
+      word: true
+    - trigger: distingish
+      replace: distinguish
+      propagate_case: true
+      word: true
+    - trigger: distingished
+      replace: distinguished
+      propagate_case: true
+      word: true
+    - trigger: distingishes
+      replace: distinguishes
+      propagate_case: true
+      word: true
+    - trigger: distingishing
+      replace: distinguishing
+      propagate_case: true
+      word: true
+    - trigger: distingquished
+      replace: distinguished
+      propagate_case: true
+      word: true
+    - trigger: distrubution
+      replace: distribution
+      propagate_case: true
+      word: true
+    - trigger: distruction
+      replace: destruction
+      propagate_case: true
+      word: true
+    - trigger: distructive
+      replace: destructive
+      propagate_case: true
+      word: true
+    - trigger: ditributed
+      replace: distributed
+      propagate_case: true
+      word: true
+    - trigger: diversed
+      replace: "diverse\x2C\x20diverged"
+      propagate_case: true
+      word: true
+    - trigger: divice
+      replace: device
+      propagate_case: true
+      word: true
+    - trigger: divinition
+      replace: divination
+      propagate_case: true
+      word: true
+    - trigger: divison
+      replace: division
+      propagate_case: true
+      word: true
+    - trigger: divisons
+      replace: divisions
+      propagate_case: true
+      word: true
+    - trigger: doccument
+      replace: document
+      propagate_case: true
+      word: true
+    - trigger: doccumented
+      replace: documented
+      propagate_case: true
+      word: true
+    - trigger: doccuments
+      replace: documents
+      propagate_case: true
+      word: true
+    - trigger: docrines
+      replace: doctrines
+      propagate_case: true
+      word: true
+    - trigger: doctines
+      replace: doctrines
+      propagate_case: true
+      word: true
+    - trigger: documenatry
+      replace: documentary
+      propagate_case: true
+      word: true
+    - trigger: doens
+      replace: does
+      propagate_case: true
+      word: true
+    - trigger: doesnt
+      replace: "doesn\x27t"
+      propagate_case: true
+      word: true
+    - trigger: doign
+      replace: doing
+      propagate_case: true
+      word: true
+    - trigger: dominaton
+      replace: domination
+      propagate_case: true
+      word: true
+    - trigger: dominent
+      replace: dominant
+      propagate_case: true
+      word: true
+    - trigger: dominiant
+      replace: dominant
+      propagate_case: true
+      word: true
+    - trigger: donig
+      replace: doing
+      propagate_case: true
+      word: true
+    - trigger: "dosen\x27t"
+      replace: "doesn\x27t"
+      propagate_case: true
+      word: true
+    - trigger: doub
+      replace: "doubt\x2C\x20daub"
+      propagate_case: true
+      word: true
+    - trigger: doulbe
+      replace: double
+      propagate_case: true
+      word: true
+    - trigger: dowloads
+      replace: downloads
+      propagate_case: true
+      word: true
+    - trigger: dramtic
+      replace: dramatic
+      propagate_case: true
+      word: true
+    - trigger: draughtman
+      replace: draughtsman
+      propagate_case: true
+      word: true
+    - trigger: Dravadian
+      replace: Dravidian
+      propagate_case: true
+      word: true
+    - trigger: dreasm
+      replace: dreams
+      propagate_case: true
+      word: true
+    - trigger: driectly
+      replace: directly
+      propagate_case: true
+      word: true
+    - trigger: drnik
+      replace: drink
+      propagate_case: true
+      word: true
+    - trigger: druming
+      replace: drumming
+      propagate_case: true
+      word: true
+    - trigger: drummless
+      replace: drumless
+      propagate_case: true
+      word: true
+    - trigger: dum
+      replace: dumb
+      propagate_case: true
+      word: true
+    - trigger: dupicate
+      replace: duplicate
+      propagate_case: true
+      word: true
+    - trigger: durig
+      replace: during
+      propagate_case: true
+      word: true
+    - trigger: durring
+      replace: during
+      propagate_case: true
+      word: true
+    - trigger: duting
+      replace: during
+      propagate_case: true
+      word: true
+    - trigger: dyas
+      replace: dryas
+      propagate_case: true
+      word: true

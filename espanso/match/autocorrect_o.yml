@@ -1,0 +1,497 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- O ---
+    # ----------
+    - trigger: obediance
+      replace: obedience
+      propagate_case: true
+      word: true
+    - trigger: obediant
+      replace: obedient
+      propagate_case: true
+      word: true
+    - trigger: obession
+      replace: obsession
+      propagate_case: true
+      word: true
+    - trigger: obssessed
+      replace: obsessed
+      propagate_case: true
+      word: true
+    - trigger: obstacal
+      replace: obstacle
+      propagate_case: true
+      word: true
+    - trigger: obstancles
+      replace: obstacles
+      propagate_case: true
+      word: true
+    - trigger: obstruced
+      replace: obstructed
+      propagate_case: true
+      word: true
+    - trigger: ocasion
+      replace: occasion
+      propagate_case: true
+      word: true
+    - trigger: ocasional
+      replace: occasional
+      propagate_case: true
+      word: true
+    - trigger: ocasionally
+      replace: occasionally
+      propagate_case: true
+      word: true
+    - trigger: ocasionaly
+      replace: occasionally
+      propagate_case: true
+      word: true
+    - trigger: ocasioned
+      replace: occasioned
+      propagate_case: true
+      word: true
+    - trigger: ocasions
+      replace: occasions
+      propagate_case: true
+      word: true
+    - trigger: ocassion
+      replace: occasion
+      propagate_case: true
+      word: true
+    - trigger: ocassional
+      replace: occasional
+      propagate_case: true
+      word: true
+    - trigger: ocassionally
+      replace: occasionally
+      propagate_case: true
+      word: true
+    - trigger: ocassionaly
+      replace: occasionally
+      propagate_case: true
+      word: true
+    - trigger: ocassioned
+      replace: occasioned
+      propagate_case: true
+      word: true
+    - trigger: ocassions
+      replace: occasions
+      propagate_case: true
+      word: true
+    - trigger: occaison
+      replace: occasion
+      propagate_case: true
+      word: true
+    - trigger: occassion
+      replace: occasion
+      propagate_case: true
+      word: true
+    - trigger: occassional
+      replace: occasional
+      propagate_case: true
+      word: true
+    - trigger: occassionally
+      replace: occasionally
+      propagate_case: true
+      word: true
+    - trigger: occassionaly
+      replace: occasionally
+      propagate_case: true
+      word: true
+    - trigger: occassioned
+      replace: occasioned
+      propagate_case: true
+      word: true
+    - trigger: occassions
+      replace: occasions
+      propagate_case: true
+      word: true
+    - trigger: occationally
+      replace: occasionally
+      propagate_case: true
+      word: true
+    - trigger: occour
+      replace: occur
+      propagate_case: true
+      word: true
+    - trigger: occurance
+      replace: occurrence
+      propagate_case: true
+      word: true
+    - trigger: occurances
+      replace: occurrences
+      propagate_case: true
+      word: true
+    - trigger: occured
+      replace: occurred
+      propagate_case: true
+      word: true
+    - trigger: occurence
+      replace: occurrence
+      propagate_case: true
+      word: true
+    - trigger: occurences
+      replace: occurrences
+      propagate_case: true
+      word: true
+    - trigger: occuring
+      replace: occurring
+      propagate_case: true
+      word: true
+    - trigger: occurr
+      replace: occur
+      propagate_case: true
+      word: true
+    - trigger: occurrance
+      replace: occurrence
+      propagate_case: true
+      word: true
+    - trigger: occurrances
+      replace: occurrences
+      propagate_case: true
+      word: true
+    - trigger: octohedra
+      replace: octahedra
+      propagate_case: true
+      word: true
+    - trigger: octohedral
+      replace: octahedral
+      propagate_case: true
+      word: true
+    - trigger: octohedron
+      replace: octahedron
+      propagate_case: true
+      word: true
+    - trigger: ocuntries
+      replace: countries
+      propagate_case: true
+      word: true
+    - trigger: ocuntry
+      replace: country
+      propagate_case: true
+      word: true
+    - trigger: ocurr
+      replace: occur
+      propagate_case: true
+      word: true
+    - trigger: ocurrance
+      replace: occurrence
+      propagate_case: true
+      word: true
+    - trigger: ocurred
+      replace: occurred
+      propagate_case: true
+      word: true
+    - trigger: ocurrence
+      replace: occurrence
+      propagate_case: true
+      word: true
+    - trigger: offcers
+      replace: officers
+      propagate_case: true
+      word: true
+    - trigger: offcially
+      replace: officially
+      propagate_case: true
+      word: true
+    - trigger: offereings
+      replace: offerings
+      propagate_case: true
+      word: true
+    - trigger: offical
+      replace: official
+      propagate_case: true
+      word: true
+    - trigger: offically
+      replace: officially
+      propagate_case: true
+      word: true
+    - trigger: officals
+      replace: officials
+      propagate_case: true
+      word: true
+    - trigger: officaly
+      replace: officially
+      propagate_case: true
+      word: true
+    - trigger: officialy
+      replace: officially
+      propagate_case: true
+      word: true
+    - trigger: offred
+      replace: offered
+      propagate_case: true
+      word: true
+    - trigger: oftenly
+      replace: often
+      propagate_case: true
+      word: true
+    - trigger: oging
+      replace: "going\x2C\x20ogling"
+      propagate_case: true
+      word: true
+    - trigger: olther
+      replace: other
+      propagate_case: true
+      word: true
+    - trigger: omision
+      replace: omission
+      propagate_case: true
+      word: true
+    - trigger: omited
+      replace: omitted
+      propagate_case: true
+      word: true
+    - trigger: omiting
+      replace: omitting
+      propagate_case: true
+      word: true
+    - trigger: omlette
+      replace: omelette
+      propagate_case: true
+      word: true
+    - trigger: ommision
+      replace: omission
+      propagate_case: true
+      word: true
+    - trigger: ommited
+      replace: omitted
+      propagate_case: true
+      word: true
+    - trigger: ommiting
+      replace: omitting
+      propagate_case: true
+      word: true
+    - trigger: ommitted
+      replace: omitted
+      propagate_case: true
+      word: true
+    - trigger: ommitting
+      replace: omitting
+      propagate_case: true
+      word: true
+    - trigger: omniverous
+      replace: omnivorous
+      propagate_case: true
+      word: true
+    - trigger: omniverously
+      replace: omnivorously
+      propagate_case: true
+      word: true
+    - trigger: omre
+      replace: more
+      propagate_case: true
+      word: true
+    - trigger: onot
+      replace: "note\x2C\x20not"
+      propagate_case: true
+      word: true
+    - trigger: onyl
+      replace: only
+      propagate_case: true
+      word: true
+    - trigger: openess
+      replace: openness
+      propagate_case: true
+      word: true
+    - trigger: oponent
+      replace: opponent
+      propagate_case: true
+      word: true
+    - trigger: oportunity
+      replace: opportunity
+      propagate_case: true
+      word: true
+    - trigger: opose
+      replace: oppose
+      propagate_case: true
+      word: true
+    - trigger: oposite
+      replace: opposite
+      propagate_case: true
+      word: true
+    - trigger: oposition
+      replace: opposition
+      propagate_case: true
+      word: true
+    - trigger: oppenly
+      replace: openly
+      propagate_case: true
+      word: true
+    - trigger: oppinion
+      replace: opinion
+      propagate_case: true
+      word: true
+    - trigger: opponant
+      replace: opponent
+      propagate_case: true
+      word: true
+    - trigger: oppononent
+      replace: opponent
+      propagate_case: true
+      word: true
+    - trigger: oppositition
+      replace: opposition
+      propagate_case: true
+      word: true
+    - trigger: oppossed
+      replace: opposed
+      propagate_case: true
+      word: true
+    - trigger: opprotunity
+      replace: opportunity
+      propagate_case: true
+      word: true
+    - trigger: opression
+      replace: oppression
+      propagate_case: true
+      word: true
+    - trigger: opressive
+      replace: oppressive
+      propagate_case: true
+      word: true
+    - trigger: opthalmic
+      replace: ophthalmic
+      propagate_case: true
+      word: true
+    - trigger: opthalmologist
+      replace: ophthalmologist
+      propagate_case: true
+      word: true
+    - trigger: opthalmology
+      replace: ophthalmology
+      propagate_case: true
+      word: true
+    - trigger: opthamologist
+      replace: ophthalmologist
+      propagate_case: true
+      word: true
+    - trigger: optmizations
+      replace: optimizations
+      propagate_case: true
+      word: true
+    - trigger: optomism
+      replace: optimism
+      propagate_case: true
+      word: true
+    - trigger: orded
+      replace: ordered
+      propagate_case: true
+      word: true
+    - trigger: organim
+      replace: organism
+      propagate_case: true
+      word: true
+    - trigger: organistion
+      replace: organisation
+      propagate_case: true
+      word: true
+    - trigger: organiztion
+      replace: organization
+      propagate_case: true
+      word: true
+    - trigger: orgin
+      replace: "origin\x2C\x20organ"
+      propagate_case: true
+      word: true
+    - trigger: orginal
+      replace: original
+      propagate_case: true
+      word: true
+    - trigger: orginally
+      replace: originally
+      propagate_case: true
+      word: true
+    - trigger: orginize
+      replace: organise
+      propagate_case: true
+      word: true
+    - trigger: oridinarily
+      replace: ordinarily
+      propagate_case: true
+      word: true
+    - trigger: origanaly
+      replace: originally
+      propagate_case: true
+      word: true
+    - trigger: originall
+      replace: "original\x2C\x20originally"
+      propagate_case: true
+      word: true
+    - trigger: originaly
+      replace: originally
+      propagate_case: true
+      word: true
+    - trigger: originially
+      replace: originally
+      propagate_case: true
+      word: true
+    - trigger: originnally
+      replace: originally
+      propagate_case: true
+      word: true
+    - trigger: origional
+      replace: original
+      propagate_case: true
+      word: true
+    - trigger: orignally
+      replace: originally
+      propagate_case: true
+      word: true
+    - trigger: orignially
+      replace: originally
+      propagate_case: true
+      word: true
+    - trigger: otehr
+      replace: other
+      propagate_case: true
+      word: true
+    - trigger: otherwordly
+      replace: otherworldly
+      propagate_case: true
+      word: true
+    - trigger: oublisher
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: ouevre
+      replace: oeuvre
+      propagate_case: true
+      word: true
+    - trigger: oustanding
+      replace: outstanding
+      propagate_case: true
+      word: true
+    - trigger: overshaddowed
+      replace: overshadowed
+      propagate_case: true
+      word: true
+    - trigger: overthere
+      replace: "over\x20there"
+      propagate_case: true
+      word: true
+    - trigger: overwelming
+      replace: overwhelming
+      propagate_case: true
+      word: true
+    - trigger: overwheliming
+      replace: overwhelming
+      propagate_case: true
+      word: true
+    - trigger: owrk
+      replace: work
+      propagate_case: true
+      word: true
+    - trigger: owudl
+      replace: would
+      propagate_case: true
+      word: true
+    - trigger: oxigen
+      replace: oxygen
+      propagate_case: true
+      word: true
+    - trigger: oximoron
+      replace: oxymoron
+      propagate_case: true
+      word: true

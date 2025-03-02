@@ -1,0 +1,143 @@
+// --------------------------------------------------------------------
+//  Filename: ~/dotfiles/zellij/layouts/default.kdl
+//  Zellij Docs: https://zellij.dev/documentation/configuration
+//  Zellij Github: https://github.com/zellij-org/zellij
+// --------------------------------------------------------------------
+
+// >>> LAYOUT DEFINITIONS <<<
+layout {
+    // Defines the default tab layout when Zide starts
+    tab {
+        floating_panes {
+            zide_rename
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="vertical" {  // Main pane split vertically
+            filepicker size=40 name="picker"  // File picker (e.g., Yazi) takes 40% of the space
+            editor  // Editor (e.g., Neovim) takes the remaining space
+        }
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        // Compact bar plugin at the bottom for minimal UI
+        // compact_bar size=1
+    }
+
+    // Defines a tiled layout named "compact" that adjusts dynamically
+    swap_tiled_layout name="compact" {
+        // Layout when exactly 4 panes are present
+        tab exact_panes=4 {
+            pane size=1 borderless=true {
+                plugin location="zellij:tab-bar"
+            }
+            pane split_direction="vertical" {
+                filepicker size=40 name="picker"
+                pane split_direction="horizontal" {
+                    editor size="75%"
+                    pane
+                }
+            }
+            pane size=2 borderless=true {
+                plugin location="zellij:status-bar"
+            }
+            // compact_bar size=1  // Status bar at the bottom
+        }
+
+        // Layout when at least 5 panes are present
+        tab min_panes=5 {
+            pane size=1 borderless=true {
+                plugin location="zellij:tab-bar"
+            }
+            pane split_direction="vertical" {
+                filepicker size=40 name="picker"
+                pane split_direction="horizontal" {
+                    editor size="50%"
+                    pane split_direction="vertical" {
+                        pane
+                        pane
+                    }
+                }
+            }
+            pane size=2 borderless=true {
+                plugin location="zellij:status-bar"
+            }
+            // compact_bar size=1  // Status bar at the bottom
+        }
+    }
+
+    // Defines a tiled layout named "wide" that focuses on a wider editor space
+    swap_tiled_layout name="wide" {
+        // Layout when exactly 4 panes are present
+        tab exact_panes=4 {
+            pane size=1 borderless=true {
+                plugin location="zellij:tab-bar"
+            }
+            pane split_direction="vertical" {
+                filepicker size=40 name="picker"
+                editor // Editor takes remaining vertical space
+                pane split_direction="horizontal" size=80 {
+                    pane
+                }
+            }
+            pane size=2 borderless=true {
+                plugin location="zellij:status-bar"
+            }
+            // compact_bar size=1  // Status bar at the bottom
+        }
+
+        // Layout when at least 5 panes are present
+        tab min_panes=5 {
+            pane size=1 borderless=true {
+                plugin location="zellij:tab-bar"
+            }
+            pane split_direction="vertical" {
+                filepicker size=40 name="picker"
+                editor // Editor takes remaining vertical space
+                pane split_direction="horizontal" size=80 {
+                    pane
+                    pane
+                }
+            }
+            pane size=2 borderless=true {
+                plugin location="zellij:status-bar"
+            }
+            // compact_bar size=1  // Status bar at the bottom
+        }
+    }
+
+    // >>> TEMPLATE DEFINITIONS <<<
+    // These define reusable templates for common components.
+
+    // Runs the file picker command (e.g., Yazi)
+    pane_template name="filepicker" {
+        command "zide-pick"
+    }
+
+    // Uses the default system editor (e.g., Neovim, Helix)
+    pane_template name="editor" {
+        command "$EDITOR"
+    }
+
+    // pane_template name="compact_bar" {
+    //     borderless true  // No borders for the status bar
+    //     plugin location="compact-bar"  // Uses the compact-bar plugin
+    // }
+
+    // Floating pane to rename the Zide session,
+    // closes automatically after execution
+    pane_template name="zide_rename" command="zide-rename" close_on_exit=true
+
+    // Defines the default structure for a new tab
+    new_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane // Default pane for the new tab
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        // compact_bar size=1  // Status bar in new tabs
+    }
+}

@@ -1,0 +1,627 @@
+#--------------------------------------------------------------------
+# Filename: ~/dotfiles/helix/snippets/python.toml
+# Snippets Source: https://github.com/rafamadriz/friendly-snippets/tree/main/snippets/python
+# Source Docs: https://github.com/estin/simple-completion-language-server
+#--------------------------------------------------------------------
+
+[[snippets]]
+prefix = "#env"
+scope = ["python"]
+body = '''
+#!/usr/bin/env python$0
+'''
+description = "Shebang line for the first python in PATH"
+
+[[snippets]]
+prefix = "#ignore"
+scope = ["python"]
+body = '''
+# pyright: ignore[$0]
+'''
+description = "Ignore specific line diagnostic in pyright (ignore all is unsafe)"
+
+[[snippets]]
+prefix = "#"
+scope = ["python"]
+body = '''
+"""
+$0
+"""
+'''
+description = "Snippet to avoid autopair plugin annoyances when typing multiple \""
+
+[[snippets]]
+prefix = "##"
+scope = ["python"]
+body = '''
+"""$0"""
+'''
+description = "Snippet to avoid autopair plugin annoyances when typing multiple \""
+
+# Notebook
+[[snippets]]
+prefix = "#cell"
+scope = ["python"]
+body = '''
+# %%
+'''
+description = "Add a new cell"
+
+[[snippets]]
+prefix = "#mark"
+scope = ["python"]
+body = '''
+# %% [markdown]
+'''
+description = "Add a new markdown cell"
+
+[[snippets]]
+prefix = "ifmain"
+scope = ["python"]
+body = '''
+if __name__ == "__main__":
+    ${1:main()}
+'''
+description = "Execute code if the file is executed directly"
+
+# Import Statement
+[[snippets]]
+prefix = "import"
+scope = ["python"]
+body = '''
+import ${1:datetime}
+'''
+description = "Import a package or module"
+
+[[snippets]]
+prefix = "fromim"
+scope = ["python"]
+body = '''
+from ${1:pathlib} import ${2:Path}
+'''
+description = "Import individual objects directly into the caller’s symbol table"
+
+# >>> Control Flow <<<
+# --- if-elif-else ---
+[[snippets]]
+prefix = "if"
+scope = ["python"]
+body = '''
+if ${1:condition}:
+    ${2:pass}
+'''
+description = "if statement"
+
+[[snippets]]
+prefix = "elif"
+scope = ["python"]
+body = '''
+elif ${1:expression}:
+    ${2:pass}
+'''
+description = "elif statement"
+
+[[snippets]]
+prefix = "else"
+scope = ["python"]
+body = '''
+else:
+    ${1:pass}
+'''
+description = "else statement"
+
+[[snippets]]
+prefix = "ifelse"
+scope = ["python"]
+body = '''
+if ${1:condition}:
+    ${2:pass}
+else:
+    ${3:pass}
+'''
+description = "if statement with else"
+
+# --- match-case ---
+[[snippets]]
+prefix = "match"
+scope = ["python"]
+body = '''
+match ${1:expression}:
+    case ${2:pattern}:
+        ${3:pass}
+'''
+description = "match/case statements"
+
+[[snippets]]
+prefix = "case"
+scope = ["python"]
+body = '''
+case ${2:pattern}:
+    ${3:pass}
+'''
+description = "case block"
+
+[[snippets]]
+prefix = "casew"
+scope = ["python"]
+body = '''
+case _:
+    ${1:pass}
+'''
+description = "case wildcard block if other cases fail"
+
+# --- loop ---
+[[snippets]]
+prefix = "while"
+scope = ["python"]
+body = '''
+while ${1:condition}:
+    ${2:pass}
+'''
+description = "while loop"
+
+[[snippets]]
+prefix = "for"
+scope = ["python"]
+body = '''
+for ${1:value} in ${2:iterable}:
+    ${3:pass}
+'''
+description = "for loop"
+
+[[snippets]]
+prefix = "forr"
+scope = ["python"]
+body = '''
+for ${1:value} in range(${2:10}):
+    ${3:pass}
+'''
+description = "for loop that iterates over range of integers"
+
+# >>> Comprehensions <<<
+[[snippets]]
+prefix = "lc"
+scope = ["python"]
+body = '''
+[${3:value} for ${2:value} in ${1:iterable}]$0
+'''
+description = "List comprehension for creating a list based on existing lists."
+
+[[snippets]]
+prefix = "lcie"
+scope = ["python"]
+body = '''
+[${3:value} if ${4:condition} else ${5:condition} for ${2:value} in ${1:iterable}]$0
+'''
+description = "List comprehension for creating a list based on existing lists, with conditional if-else statement."
+
+[[snippets]]
+prefix = "lci"
+scope = ["python"]
+body = '''
+[${3:value} for ${2:value} in ${1:iterable} if ${4:condition}$0]
+'''
+description = "List comprehension for creating a list based on existing lists, with conditional if statement."
+
+[[snippets]]
+prefix = "dc"
+scope = ["python"]
+body = '''
+{${4:key}: ${5:value} for ${2:key}, ${3:value} in ${1:iterable}}$0
+'''
+description = "Handy and faster way to create dictionaries based on existing dictionaries."
+
+[[snippets]]
+prefix = "dci"
+scope = ["python"]
+body = '''
+{${4:key}: ${5:value} for ${2:key}, ${3:value} in ${1:iterable} if ${6:condition}}$0
+'''
+description = "Handy and faster way to create dictionaries based on existing dictionaries, with conditional if statement."
+
+[[snippets]]
+prefix = "sc"
+scope = ["python"]
+body = '''
+{${3:value} for ${2:value} in ${1:iterable}}$0
+'''
+description = "Create a set based on existing iterables."
+
+[[snippets]]
+prefix = "sci"
+scope = ["python"]
+body = '''
+{${3:value} for ${2:value} in ${1:iterable} if ${4:condition}}$0
+'''
+description = "Create a set based on existing iterables, with condition if statement."
+
+[[snippets]]
+prefix = "gc"
+scope = ["python"]
+body = '''
+(${3:key} for ${2:value} in ${1:iterable})$0
+'''
+description = "Create a generator based on existing iterables."
+
+[[snippets]]
+prefix = "gci"
+scope = ["python"]
+body = '''
+(${3:key} for ${2:value} in ${1:iterable} if ${4:condition})$0
+'''
+description = "Create a generator based on existing iterables, with condition if statement."
+
+# --- with ---
+[[snippets]]
+prefix = "with"
+scope = ["python"]
+body = '''
+with ${1:expression} as ${2:target}:
+    ${3:pass}
+'''
+description = "'with' statement"
+
+# >>> Functions <<<
+[[snippets]]
+prefix = "def"
+scope = ["python"]
+body = '''
+def ${1:fname}(${2:args}):
+    ${3:pass}
+'''
+description = "Function definition"
+
+[[snippets]]
+prefix = "deft"
+scope = ["python"]
+body = '''
+def ${1:fname}(${2:args}) -> ${3:None}:
+    ${4:pass}
+'''
+description = "Function definition with return type"
+
+[[snippets]]
+prefix = "lambda"
+scope = ["python"]
+body = '''
+lambda ${1:parameter_list}: ${2:expression}
+'''
+description = "lambda statement"
+
+# >>> Object-Oriented <<<
+[[snippets]]
+prefix = "class"
+scope = ["python"]
+body = '''
+class ${1:classname}:
+    ${2:pass}
+'''
+description = "Class definition"
+
+[[snippets]]
+prefix = "classd"
+scope = ["python"]
+body = '''
+class ${1:classname}(${2:BaseClass}):
+    ${3:pass}
+'''
+description = "Class definition with inheritance"
+
+[[snippets]]
+prefix = "classi"
+scope = ["python"]
+body = '''
+class ${1:ClassName}(${2:BaseClass}):
+    """
+    ${3:docstring for $1.}
+    """
+    def __init__(self, ${4:arg}):
+        ${5:super().__init__()}
+        self.${4} = ${4}
+        $0
+'''
+description = "Class definition template"
+
+[[snippets]]
+prefix = "defs"
+scope = ["python"]
+body = '''
+def ${1:mname}(self, ${2:args}):
+    ${3:pass}
+'''
+description = "Class method definition"
+
+[[snippets]]
+prefix = "s"
+scope = ["python"]
+body = '''
+self.$0
+'''
+description = "Snippet to reference the self property in an object"
+
+[[snippets]]
+prefix = "__"
+scope = ["python"]
+body = '''
+__${1:init}__$0
+'''
+description = "Create magic method"
+
+# --- try-except ---
+[[snippets]]
+prefix = "try"
+scope = ["python"]
+body = '''
+try:
+    ${1:pass}
+except ${2:Exception} as ${3:e}:
+    ${4:raise $3}
+'''
+description = "try/except blocks"
+
+# >>> Docstrings <<<
+[[snippets]]
+prefix = "doc_str"
+scope = ["python"]
+body = '''
+"""
+${1:A one-line summary.}
+
+${2:Detailed description.}$0
+
+Args:
+    ${4:argument_name}: ${5:type and description.
+Returns:
+    ${3:type and description of the returned object.
+Example:
+    # ${6:Description of my example.}
+    ${7:use_it_this_way(arg1, arg2)}
+"""
+'''
+description = "A Python docstring for functions and methods, including short summary, details, args, returns, and examples. This docstring is a synonym of \"\"\"function."
+
+[[snippets]]
+prefix = "doc_short"
+scope = ["python"]
+body = '''
+"""
+${1:A one-line summary.}
+
+${2:Detailed description.}$0
+"""
+'''
+description = "A simple Python docstring comment. Useful when you prefer to add the docstrings manually on functions."
+
+[[snippets]]
+prefix = "doc_module"
+scope = ["python"]
+body = '''
+"""
+${1:A one-line summary.}
+
+${2:Detailed description.}$0
+
+Examples:
+    # ${3:Description of my example.}
+    ${4:use_it_this_way(arg1, arg2)}
+"""
+'''
+description = "A Python docstring for modules, including a one-line summary, details, and example."
+
+[[snippets]]
+prefix = "doc_test"
+scope = ["python"]
+body = '''
+"""
+${1:A one-line summary.}
+
+${2:Detailed description.}$0
+"""
+'''
+description = "Module-level docstrings for test files are not required. They should be included only when there is additional information that can be provided. Examples include specifics on how the test should be run, an explanation of an unusual setup pattern, dependency on the external environment, and so on."
+
+[[snippets]]
+prefix = "doc_func"
+scope = ["python"]
+body = '''
+"""
+${1:A one-line summary.}
+
+${2:Detailed description.}$0
+
+Args:
+    ${4:argument_name}: ${5:type and description}
+Returns:
+    ${3:type and description of the returned object}
+Example:
+    # ${6:Description of my example.}
+    ${7:use_it_this_way(arg1, arg2)}
+"""
+'''
+description = "A Python docstring for functions and methods, including short summary, details, args, returns, and example."
+
+[[snippets]]
+prefix = "doc_functy"
+scope = ["python"]
+body = '''
+"""
+${1:A one-line summary.}
+
+${2:Detailed description.}$0
+
+Args:
+    ${5:argument_name} (${6:type}): ${7:description}
+Returns:
+    ${3:type}: ${4:Description of the returned object}
+Example:
+    # ${8:Description of my example.}
+    ${9:use_it_this_way(arg1, arg2)}
+"""
+'''
+description = "Alternative Python docstring for functions and methods, with a different type syntax. Some teams prefer it."
+
+[[snippets]]
+prefix = "doc_generator"
+scope = ["python"]
+body = '''
+"""
+${1:A one-line summary.}
+
+${2:Detailed description.}$0
+
+Args:
+    ${4:argument_name}: ${5:type and description.
+Yields:
+    ${3:type and description of the yielded object.
+Example:
+    # ${6:Description of my example.}
+    ${7:use_it_this_way(arg1, arg2)}
+"""
+'''
+description = "A Python docstring for generator methods, including a one-line summary, details, parameters, yields, and example."
+
+[[snippets]]
+prefix = "###class"
+scope = ["python"]
+body = '''
+"""
+${1:A one-line summary.}
+
+${2:Detailed description.}$0
+
+Attributes:
+    ${3:attribute_name}: ${4:type and description.}
+"""
+'''
+description = "A Python docstring for classes, including a one-line summary, details, attributes, and returns."
+
+[[snippets]]
+prefix = "doc_exception"
+scope = ["python"]
+body = '''
+"""
+${1:A one-line summary.}
+
+${2:Detailed description.}$0
+
+Attributes:
+    ${3:attribute_name}: ${4:type and description.}
+"""
+'''
+description = "A Python docstring for exceptions, including a one-line summary, description, and attributes."
+
+[[snippets]]
+prefix = "doc_raises"
+scope = ["python"]
+body = '''
+Raises:
+    ${1:ErrorName}: ${2:Error description.}$0
+'''
+description = "A Python docstring for methods when we want to be explicit about the errors it raises. Use it only when it is relevant."
+
+# >>> Unit Test <<<
+# Python Unit Test Snippets
+
+[[snippets]]
+prefix = "ase"
+scope = ["python"]
+body = '''
+self.assertEqual(${1:expected}, ${2:actual}${3:, '${4:message}'})$0
+'''
+description = "Assert equal"
+
+[[snippets]]
+prefix = "asne"
+scope = ["python"]
+body = '''
+self.assertNotEqual(${1:expected}, ${2:actual}${3:, '${4:message}'})$0
+'''
+description = "Assert not equal"
+
+[[snippets]]
+prefix = "asr"
+scope = ["python"]
+body = '''
+self.assertRaises(${1:exception}, ${2:callable}, ${3:args})$0
+'''
+description = "Assert raises"
+
+[[snippets]]
+prefix = "ast"
+scope = ["python"]
+body = '''
+self.assertTrue(${1:actual}${2:, '${3:message}'})$0
+'''
+description = "Assert True"
+
+[[snippets]]
+prefix = "asf"
+scope = ["python"]
+body = '''
+self.assertFalse(${1:actual}${2:, '${3:message}'})$0
+'''
+description = "Assert False"
+
+[[snippets]]
+prefix = "asi"
+scope = ["python"]
+body = '''
+self.assertIs(${1:expected}, ${2:actual}${3:, '${4:message}'})$0
+'''
+description = "Assert is"
+
+[[snippets]]
+prefix = "asint"
+scope = ["python"]
+body = '''
+self.assertIsNot(${1:expected}, ${2:actual}${3:, '${4:message}'})$0
+'''
+description = "Assert is not"
+
+[[snippets]]
+prefix = "asino"
+scope = ["python"]
+body = '''
+self.assertIsNone(${1:actual}${2:, '${3:message}'})$0
+'''
+description = "Assert is None"
+
+[[snippets]]
+prefix = "asinno"
+scope = ["python"]
+body = '''
+self.assertIsNotNone(${1:actual}${2:, '${3:message}'})$0
+'''
+description = "Assert is not None"
+
+[[snippets]]
+prefix = "asin"
+scope = ["python"]
+body = '''
+self.assertIn(${1:needle}, ${2:haystack}${3:, '${4:message}'})$0
+'''
+description = "Assert in"
+
+[[snippets]]
+prefix = "asni"
+scope = ["python"]
+body = '''
+self.assertNotIn(${1:needle}, ${2:haystack}${3:, '${4:message}'})$0
+'''
+description = "Assert not in"
+
+[[snippets]]
+prefix = "as"
+scope = ["python"]
+body = '''
+self.assert_(${1:boolean expression}${2:, '${3:message}'})$0
+'''
+description = "Assert"
+
+[[snippets]]
+prefix = "fail"
+scope = ["python"]
+body = '''
+self.fail('${1:message}')$0
+'''
+description = "Fail (a test)"

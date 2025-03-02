@@ -1,0 +1,49 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- Q ---
+    # ----------
+    - trigger: qtuie
+      replace: "quite\x2C\x20quiet"
+      propagate_case: true
+      word: true
+    - trigger: quantaty
+      replace: quantity
+      propagate_case: true
+      word: true
+    - trigger: quantitiy
+      replace: quantity
+      propagate_case: true
+      word: true
+    - trigger: quarantaine
+      replace: quarantine
+      propagate_case: true
+      word: true
+    - trigger: Queenland
+      replace: Queensland
+      propagate_case: true
+      word: true
+    - trigger: questonable
+      replace: questionable
+      propagate_case: true
+      word: true
+    - trigger: quicklyu
+      replace: quickly
+      propagate_case: true
+      word: true
+    - trigger: quinessential
+      replace: quintessential
+      propagate_case: true
+      word: true
+    - trigger: quitted
+      replace: quit
+      propagate_case: true
+      word: true
+    - trigger: quizes
+      replace: quizzes
+      propagate_case: true
+      word: true
+    - trigger: qutie
+      replace: "quite\x2C\x20quiet"
+      propagate_case: true
+      word: true

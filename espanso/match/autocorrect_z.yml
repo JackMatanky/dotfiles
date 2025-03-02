@@ -1,0 +1,9 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- Z ---
+    # ---------
+    - trigger: zeebra
+      replace: zebra
+      propagate_case: true
+      word: true

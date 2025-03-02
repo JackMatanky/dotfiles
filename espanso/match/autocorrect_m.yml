@@ -1,0 +1,825 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- M ---
+    # ----------
+    - trigger: maching
+      replace: "machine\x2C\x20marching\x2C\x20matching"
+      propagate_case: true
+      word: true
+    - trigger: mackeral
+      replace: mackerel
+      propagate_case: true
+      word: true
+    - trigger: magasine
+      replace: magazine
+      propagate_case: true
+      word: true
+    - trigger: magincian
+      replace: magician
+      propagate_case: true
+      word: true
+    - trigger: magisine
+      replace: magazine
+      propagate_case: true
+      word: true
+    - trigger: magizine
+      replace: magazine
+      propagate_case: true
+      word: true
+    - trigger: magnificient
+      replace: magnificent
+      propagate_case: true
+      word: true
+    - trigger: magolia
+      replace: magnolia
+      propagate_case: true
+      word: true
+    - trigger: mailny
+      replace: mainly
+      propagate_case: true
+      word: true
+    - trigger: maintainance
+      replace: maintenance
+      propagate_case: true
+      word: true
+    - trigger: maintainence
+      replace: maintenance
+      propagate_case: true
+      word: true
+    - trigger: maintance
+      replace: maintenance
+      propagate_case: true
+      word: true
+    - trigger: maintenence
+      replace: maintenance
+      propagate_case: true
+      word: true
+    - trigger: maintinaing
+      replace: maintaining
+      propagate_case: true
+      word: true
+    - trigger: maintioned
+      replace: mentioned
+      propagate_case: true
+      word: true
+    - trigger: majoroty
+      replace: majority
+      propagate_case: true
+      word: true
+    - trigger: maked
+      replace: "marked\x2C\x20made"
+      propagate_case: true
+      word: true
+    - trigger: makse
+      replace: makes
+      propagate_case: true
+      word: true
+    - trigger: Malcom
+      replace: Malcolm
+      propagate_case: true
+      word: true
+    - trigger: maltesian
+      replace: Maltese
+      propagate_case: true
+      word: true
+    - trigger: mamal
+      replace: mammal
+      propagate_case: true
+      word: true
+    - trigger: mamalian
+      replace: mammalian
+      propagate_case: true
+      word: true
+    - trigger: managable
+      replace: "manageable\x2C\x20manageably"
+      propagate_case: true
+      word: true
+    - trigger: managment
+      replace: management
+      propagate_case: true
+      word: true
+    - trigger: maneouvre
+      replace: manoeuvre
+      propagate_case: true
+      word: true
+    - trigger: maneouvred
+      replace: manoeuvred
+      propagate_case: true
+      word: true
+    - trigger: maneouvres
+      replace: manoeuvres
+      propagate_case: true
+      word: true
+    - trigger: maneouvring
+      replace: manoeuvring
+      propagate_case: true
+      word: true
+    - trigger: manisfestations
+      replace: manifestations
+      propagate_case: true
+      word: true
+    - trigger: manoeuverability
+      replace: maneuverability
+      propagate_case: true
+      word: true
+    - trigger: manouver
+      replace: "maneuver\x2C\x20manoeuvre"
+      propagate_case: true
+      word: true
+    - trigger: manouverability
+      replace: "maneuverability\x2C\x20manoeuvrability\x2C\x20manoeuverability"
+      propagate_case: true
+      word: true
+    - trigger: manouverable
+      replace: "maneuverable\x2C\x20manoeuvrable"
+      propagate_case: true
+      word: true
+    - trigger: manouvers
+      replace: "maneuvers\x2C\x20manoeuvres"
+      propagate_case: true
+      word: true
+    - trigger: mantained
+      replace: maintained
+      propagate_case: true
+      word: true
+    - trigger: manuever
+      replace: "maneuver\x2C\x20manoeuvre"
+      propagate_case: true
+      word: true
+    - trigger: manuevers
+      replace: "maneuvers\x2C\x20manoeuvres"
+      propagate_case: true
+      word: true
+    - trigger: manufacturedd
+      replace: manufactured
+      propagate_case: true
+      word: true
+    - trigger: manufature
+      replace: manufacture
+      propagate_case: true
+      word: true
+    - trigger: manufatured
+      replace: manufactured
+      propagate_case: true
+      word: true
+    - trigger: manufaturing
+      replace: manufacturing
+      propagate_case: true
+      word: true
+    - trigger: manuver
+      replace: maneuver
+      propagate_case: true
+      word: true
+    - trigger: mariage
+      replace: marriage
+      propagate_case: true
+      word: true
+    - trigger: marjority
+      replace: majority
+      propagate_case: true
+      word: true
+    - trigger: markes
+      replace: marks
+      propagate_case: true
+      word: true
+    - trigger: marketting
+      replace: marketing
+      propagate_case: true
+      word: true
+    - trigger: marmelade
+      replace: marmalade
+      propagate_case: true
+      word: true
+    - trigger: marrage
+      replace: marriage
+      propagate_case: true
+      word: true
+    - trigger: marraige
+      replace: marriage
+      propagate_case: true
+      word: true
+    - trigger: marrtyred
+      replace: martyred
+      propagate_case: true
+      word: true
+    - trigger: marryied
+      replace: married
+      propagate_case: true
+      word: true
+    - trigger: Massachussets
+      replace: Massachusetts
+      propagate_case: true
+      word: true
+    - trigger: Massachussetts
+      replace: Massachusetts
+      propagate_case: true
+      word: true
+    - trigger: massmedia
+      replace: "mass\x20media"
+      propagate_case: true
+      word: true
+    - trigger: masterbation
+      replace: masturbation
+      propagate_case: true
+      word: true
+    - trigger: mataphysical
+      replace: metaphysical
+      propagate_case: true
+      word: true
+    - trigger: materalists
+      replace: materialist
+      propagate_case: true
+      word: true
+    - trigger: mathamatics
+      replace: mathematics
+      propagate_case: true
+      word: true
+    - trigger: mathematican
+      replace: mathematician
+      propagate_case: true
+      word: true
+    - trigger: mathematicas
+      replace: mathematics
+      propagate_case: true
+      word: true
+    - trigger: matheticians
+      replace: mathematicians
+      propagate_case: true
+      word: true
+    - trigger: mathmatically
+      replace: mathematically
+      propagate_case: true
+      word: true
+    - trigger: mathmatician
+      replace: mathematician
+      propagate_case: true
+      word: true
+    - trigger: mathmaticians
+      replace: mathematicians
+      propagate_case: true
+      word: true
+    - trigger: mccarthyst
+      replace: mccarthyist
+      propagate_case: true
+      word: true
+    - trigger: mchanics
+      replace: mechanics
+      propagate_case: true
+      word: true
+    - trigger: meaninng
+      replace: meaning
+      propagate_case: true
+      word: true
+    - trigger: mear
+      replace: "wear\x2C\x20mere\x2C\x20mare"
+      propagate_case: true
+      word: true
+    - trigger: mechandise
+      replace: merchandise
+      propagate_case: true
+      word: true
+    - trigger: medacine
+      replace: medicine
+      propagate_case: true
+      word: true
+    - trigger: medeival
+      replace: medieval
+      propagate_case: true
+      word: true
+    - trigger: medevial
+      replace: medieval
+      propagate_case: true
+      word: true
+    - trigger: mediciney
+      replace: mediciny
+      propagate_case: true
+      word: true
+    - trigger: medievel
+      replace: medieval
+      propagate_case: true
+      word: true
+    - trigger: mediterainnean
+      replace: mediterranean
+      propagate_case: true
+      word: true
+    - trigger: Mediteranean
+      replace: Mediterranean
+      propagate_case: true
+      word: true
+    - trigger: meerkrat
+      replace: meerkat
+      propagate_case: true
+      word: true
+    - trigger: melieux
+      replace: milieux
+      propagate_case: true
+      word: true
+    - trigger: membranaphone
+      replace: membranophone
+      propagate_case: true
+      word: true
+    - trigger: memeber
+      replace: member
+      propagate_case: true
+      word: true
+    - trigger: menally
+      replace: mentally
+      propagate_case: true
+      word: true
+    - trigger: meranda
+      replace: "veranda\x2C\x20Miranda"
+      propagate_case: true
+      word: true
+    - trigger: mercentile
+      replace: mercantile
+      propagate_case: true
+      word: true
+    - trigger: messanger
+      replace: messenger
+      propagate_case: true
+      word: true
+    - trigger: messenging
+      replace: messaging
+      propagate_case: true
+      word: true
+    - trigger: metalic
+      replace: metallic
+      propagate_case: true
+      word: true
+    - trigger: metalurgic
+      replace: metallurgic
+      propagate_case: true
+      word: true
+    - trigger: metalurgical
+      replace: metallurgical
+      propagate_case: true
+      word: true
+    - trigger: metalurgy
+      replace: metallurgy
+      propagate_case: true
+      word: true
+    - trigger: metamorphysis
+      replace: metamorphosis
+      propagate_case: true
+      word: true
+    - trigger: metaphoricial
+      replace: metaphorical
+      propagate_case: true
+      word: true
+    - trigger: meterologist
+      replace: meteorologist
+      propagate_case: true
+      word: true
+    - trigger: meterology
+      replace: meteorology
+      propagate_case: true
+      word: true
+    - trigger: methaphor
+      replace: metaphor
+      propagate_case: true
+      word: true
+    - trigger: methaphors
+      replace: metaphors
+      propagate_case: true
+      word: true
+    - trigger: Michagan
+      replace: Michigan
+      propagate_case: true
+      word: true
+    - trigger: micoscopy
+      replace: microscopy
+      propagate_case: true
+      word: true
+    - trigger: midwifes
+      replace: midwives
+      propagate_case: true
+      word: true
+    - trigger: mileau
+      replace: milieu
+      propagate_case: true
+      word: true
+    - trigger: milennia
+      replace: millennia
+      propagate_case: true
+      word: true
+    - trigger: milennium
+      replace: millennium
+      propagate_case: true
+      word: true
+    - trigger: mileu
+      replace: milieu
+      propagate_case: true
+      word: true
+    - trigger: miliary
+      replace: military
+      propagate_case: true
+      word: true
+    - trigger: miligram
+      replace: milligram
+      propagate_case: true
+      word: true
+    - trigger: milion
+      replace: million
+      propagate_case: true
+      word: true
+    - trigger: miliraty
+      replace: military
+      propagate_case: true
+      word: true
+    - trigger: millenia
+      replace: millennia
+      propagate_case: true
+      word: true
+    - trigger: millenial
+      replace: millennial
+      propagate_case: true
+      word: true
+    - trigger: millenialism
+      replace: millennialism
+      propagate_case: true
+      word: true
+    - trigger: millenium
+      replace: millennium
+      propagate_case: true
+      word: true
+    - trigger: millepede
+      replace: millipede
+      propagate_case: true
+      word: true
+    - trigger: millioniare
+      replace: millionaire
+      propagate_case: true
+      word: true
+    - trigger: millitant
+      replace: militant
+      propagate_case: true
+      word: true
+    - trigger: millitary
+      replace: military
+      propagate_case: true
+      word: true
+    - trigger: millon
+      replace: million
+      propagate_case: true
+      word: true
+    - trigger: miltary
+      replace: military
+      propagate_case: true
+      word: true
+    - trigger: minature
+      replace: miniature
+      propagate_case: true
+      word: true
+    - trigger: minerial
+      replace: mineral
+      propagate_case: true
+      word: true
+    - trigger: ministery
+      replace: ministry
+      propagate_case: true
+      word: true
+    - trigger: minsitry
+      replace: ministry
+      propagate_case: true
+      word: true
+    - trigger: minstries
+      replace: ministries
+      propagate_case: true
+      word: true
+    - trigger: minstry
+      replace: ministry
+      propagate_case: true
+      word: true
+    - trigger: minumum
+      replace: minimum
+      propagate_case: true
+      word: true
+    - trigger: mirrorred
+      replace: mirrored
+      propagate_case: true
+      word: true
+    - trigger: miscelaneous
+      replace: miscellaneous
+      propagate_case: true
+      word: true
+    - trigger: miscellanious
+      replace: miscellaneous
+      propagate_case: true
+      word: true
+    - trigger: miscellanous
+      replace: miscellaneous
+      propagate_case: true
+      word: true
+    - trigger: mischeivous
+      replace: mischievous
+      propagate_case: true
+      word: true
+    - trigger: mischevious
+      replace: mischievous
+      propagate_case: true
+      word: true
+    - trigger: mischievious
+      replace: mischievous
+      propagate_case: true
+      word: true
+    - trigger: misdameanor
+      replace: misdemeanor
+      propagate_case: true
+      word: true
+    - trigger: misdameanors
+      replace: misdemeanors
+      propagate_case: true
+      word: true
+    - trigger: misdemenor
+      replace: misdemeanor
+      propagate_case: true
+      word: true
+    - trigger: misdemenors
+      replace: misdemeanors
+      propagate_case: true
+      word: true
+    - trigger: misfourtunes
+      replace: misfortunes
+      propagate_case: true
+      word: true
+    - trigger: misile
+      replace: missile
+      propagate_case: true
+      word: true
+    - trigger: Misouri
+      replace: Missouri
+      propagate_case: true
+      word: true
+    - trigger: mispell
+      replace: misspell
+      propagate_case: true
+      word: true
+    - trigger: mispelled
+      replace: misspelled
+      propagate_case: true
+      word: true
+    - trigger: mispelling
+      replace: misspelling
+      propagate_case: true
+      word: true
+    - trigger: missen
+      replace: mizzen
+      propagate_case: true
+      word: true
+    - trigger: Missisipi
+      replace: Mississippi
+      propagate_case: true
+      word: true
+    - trigger: Missisippi
+      replace: Mississippi
+      propagate_case: true
+      word: true
+    - trigger: missle
+      replace: missile
+      propagate_case: true
+      word: true
+    - trigger: missonary
+      replace: missionary
+      propagate_case: true
+      word: true
+    - trigger: misterious
+      replace: mysterious
+      propagate_case: true
+      word: true
+    - trigger: mistery
+      replace: mystery
+      propagate_case: true
+      word: true
+    - trigger: misteryous
+      replace: mysterious
+      propagate_case: true
+      word: true
+    - trigger: mkae
+      replace: make
+      propagate_case: true
+      word: true
+    - trigger: mkaes
+      replace: makes
+      propagate_case: true
+      word: true
+    - trigger: mkaing
+      replace: making
+      propagate_case: true
+      word: true
+    - trigger: mkea
+      replace: make
+      propagate_case: true
+      word: true
+    - trigger: moderm
+      replace: modem
+      propagate_case: true
+      word: true
+    - trigger: modle
+      replace: model
+      propagate_case: true
+      word: true
+    - trigger: moent
+      replace: moment
+      propagate_case: true
+      word: true
+    - trigger: moeny
+      replace: money
+      propagate_case: true
+      word: true
+    - trigger: mohammedans
+      replace: muslims
+      propagate_case: true
+      word: true
+    - trigger: moleclues
+      replace: molecules
+      propagate_case: true
+      word: true
+    - trigger: momento
+      replace: memento
+      propagate_case: true
+      word: true
+    - trigger: monestaries
+      replace: monasteries
+      propagate_case: true
+      word: true
+    - trigger: monestary
+      replace: "monastery\x2C\x20monetary"
+      propagate_case: true
+      word: true
+    - trigger: monickers
+      replace: monikers
+      propagate_case: true
+      word: true
+    - trigger: monolite
+      replace: monolithic
+      propagate_case: true
+      word: true
+    - trigger: Monserrat
+      replace: Montserrat
+      propagate_case: true
+      word: true
+    - trigger: montains
+      replace: mountains
+      propagate_case: true
+      word: true
+    - trigger: montanous
+      replace: mountainous
+      propagate_case: true
+      word: true
+    - trigger: Montnana
+      replace: Montana
+      propagate_case: true
+      word: true
+    - trigger: monts
+      replace: months
+      propagate_case: true
+      word: true
+    - trigger: montypic
+      replace: monotypic
+      propagate_case: true
+      word: true
+    - trigger: moreso
+      replace: "more\x2C\x20more\x20so"
+      propagate_case: true
+      word: true
+    - trigger: morgage
+      replace: mortgage
+      propagate_case: true
+      word: true
+    - trigger: Morisette
+      replace: Morissette
+      propagate_case: true
+      word: true
+    - trigger: Morrisette
+      replace: Morissette
+      propagate_case: true
+      word: true
+    - trigger: morroccan
+      replace: moroccan
+      propagate_case: true
+      word: true
+    - trigger: morrocco
+      replace: morocco
+      propagate_case: true
+      word: true
+    - trigger: morroco
+      replace: morocco
+      propagate_case: true
+      word: true
+    - trigger: mortage
+      replace: mortgage
+      propagate_case: true
+      word: true
+    - trigger: mosture
+      replace: moisture
+      propagate_case: true
+      word: true
+    - trigger: motiviated
+      replace: motivated
+      propagate_case: true
+      word: true
+    - trigger: mounth
+      replace: month
+      propagate_case: true
+      word: true
+    - trigger: movei
+      replace: movie
+      propagate_case: true
+      word: true
+    - trigger: movment
+      replace: movement
+      propagate_case: true
+      word: true
+    - trigger: mroe
+      replace: more
+      propagate_case: true
+      word: true
+    - trigger: mucuous
+      replace: mucous
+      propagate_case: true
+      word: true
+    - trigger: muder
+      replace: murder
+      propagate_case: true
+      word: true
+    - trigger: mudering
+      replace: murdering
+      propagate_case: true
+      word: true
+    - trigger: muhammadan
+      replace: muslim
+      propagate_case: true
+      word: true
+    - trigger: multicultralism
+      replace: multiculturalism
+      propagate_case: true
+      word: true
+    - trigger: multipled
+      replace: multiplied
+      propagate_case: true
+      word: true
+    - trigger: multiplers
+      replace: multipliers
+      propagate_case: true
+      word: true
+    - trigger: munbers
+      replace: numbers
+      propagate_case: true
+      word: true
+    - trigger: muncipalities
+      replace: municipalities
+      propagate_case: true
+      word: true
+    - trigger: muncipality
+      replace: municipality
+      propagate_case: true
+      word: true
+    - trigger: munnicipality
+      replace: municipality
+      propagate_case: true
+      word: true
+    - trigger: muscels
+      replace: "mussels\x2C\x20muscles"
+      propagate_case: true
+      word: true
+    - trigger: muscial
+      replace: musical
+      propagate_case: true
+      word: true
+    - trigger: muscician
+      replace: musician
+      propagate_case: true
+      word: true
+    - trigger: muscicians
+      replace: musicians
+      propagate_case: true
+      word: true
+    - trigger: mutiliated
+      replace: mutilated
+      propagate_case: true
+      word: true
+    - trigger: myraid
+      replace: myriad
+      propagate_case: true
+      word: true
+    - trigger: mysef
+      replace: myself
+      propagate_case: true
+      word: true
+    - trigger: mysogynist
+      replace: misogynist
+      propagate_case: true
+      word: true
+    - trigger: mysogyny
+      replace: misogyny
+      propagate_case: true
+      word: true
+    - trigger: mysterous
+      replace: mysterious
+      propagate_case: true
+      word: true
+    - trigger: Mythraic
+      replace: Mithraic
+      propagate_case: true
+      word: true
