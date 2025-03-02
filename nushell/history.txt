@@ -1429,3 +1429,7 @@ stow .
 gcam 'add obsidian to nvim'
 gps
 stow .
+gcam 'revise espanso files and add obsidian config file'
+gps
+stow .
+which nvim

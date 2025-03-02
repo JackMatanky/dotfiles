@@ -13,6 +13,9 @@ export PATH="/opt/homebrew/bin:$PATH"
 # >>> Cargo binaries <<<
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# >>> Neovim binary <<<
+export PATH="/opt/homebrew/bin/nvim:$PATH"
+
 # >>> Pyenv <<<
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
