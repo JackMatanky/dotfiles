@@ -213,7 +213,8 @@ alt-shift-comma = 'mode service'
 # >>> App Launcher <<<
 alt-ctrl-shift-n = 'exec-and-forget open /Applications/Obsidian.app'                # Notes - Obsidian
 alt-ctrl-shift-a = 'exec-and-forget open /Applications/Anki.app'                    # SRS - Anki
-alt-ctrl-shift-t = 'exec-and-forget open /Applications/WezTerm.app'                 # Terminal - WezTerm
+alt-ctrl-shift-t = 'exec-and-forget open /Applications/Ghostty.app'                 # Terminal - Ghostty
+# alt-ctrl-shift-t = 'exec-and-forget open /Applications/WezTerm.app'                 # Terminal - WezTerm
 alt-ctrl-shift-z = 'exec-and-forget open /Applications/Zed.app'                     # IDE - Zed Code Editor
 alt-ctrl-shift-c = '''exec-and-forget open /Applications/Visual Studio Code.app'''  # IDE - Visual Studio Code
 alt-ctrl-shift-b = 'exec-and-forget open /Applications/Firefox.app'                 # Browser - Firefox
