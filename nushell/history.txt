@@ -1423,3 +1423,6 @@ markdownlint-cli2 --config /Users/jack/.config/formatters/.markdownlint.jsonc my
 gcam 'add conform for markdown to nvim'
 gps
 stow .
+gcam 'add obsidian to nvim'
+gps
+stow .
