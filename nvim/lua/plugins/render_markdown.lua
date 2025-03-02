@@ -5,71 +5,67 @@
 -- --------------------------------------------------------------------
 
 return {
-  "MeanderingProgrammer/render-markdown.nvim",
-  enabled = true,
-  opts = {
-    heading = {
-      sign = false,
-      icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
+    "MeanderingProgrammer/render-markdown.nvim",
+    enabled = true,
+    opts = {
+        heading = {
+            sign = false, -- Disable signs in the gutter
+            icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
+        },
+        bullet = {
+            enabled = true,
+        },
+        checkbox = {
+            enabled = true, -- Enable checkbox state rendering
+            position = "inline", -- Checkbox icon replaces text inline
+            unchecked = {
+                icon = "   󰄱 ", -- Icon for unchecked checkboxes
+                highlight = "RenderMarkdownUnchecked", -- Highlight for unchecked checkboxes
+                scope_highlight = nil,
+            },
+            checked = {
+                icon = "   󰱒 ", -- Icon for checked checkboxes
+                highlight = "RenderMarkdownChecked", -- Highlight for checked checkboxes
+                scope_highlight = nil,
+            },
+        },
+        code = {
+            sign = false, -- Disable sign column for code blocks
+            width = "block", -- Full-width code block
+            right_pad = 1, -- Padding for right-aligned code blocks
+        },
+        html = {
+            enabled = true, -- Enable HTML rendering
+            comment = {
+                conceal = false, -- Show HTML comments instead of concealing them
+            },
+        },
+        latex = {
+            enabled = true, -- Enable LaTeX rendering
+            render_modes = false, -- Disable different render modes (use default)
+            converter = "latex2text", -- Use latex2text for rendering
+            highlight = "RenderMarkdownMath", -- Set syntax highlighting for math
+            position = "above", -- Render math above its original position
+            top_pad = 0, -- No extra padding above equations
+            bottom_pad = 0, -- No extra padding below equations
+        },
     },
-    bullet = {
-      -- Turn on / off list bullet rendering
-      enabled = true,
-    },
-    checkbox = {
-      -- Turn on / off checkbox state rendering
-      enabled = true,
-      -- Determines how icons fill the available space:
-      --  inline:  underlying text is concealed resulting in a left aligned icon
-      --  overlay: result is left padded with spaces to hide any additional text
-      position = "inline",
-      unchecked = {
-        -- Replaces '[ ]' of 'task_list_marker_unchecked'
-        icon = "   󰄱 ",
-        -- Highlight for the unchecked icon
-        highlight = "RenderMarkdownUnchecked",
-        -- Highlight for item associated with unchecked checkbox
-        scope_highlight = nil,
-      },
-      checked = {
-        -- Replaces '[x]' of 'task_list_marker_checked'
-        icon = "   󰱒 ",
-        -- Highlight for the checked icon
-        highlight = "RenderMarkdownChecked",
-        -- Highlight for item associated with checked checkbox
-        scope_highlight = nil,
-      },
-    },
-    code = {
-      sign = false,
-      width = "block",
-      right_pad = 1,
-    },
-    html = {
-      -- Turn on / off all HTML rendering
-      enabled = true,
-      comment = {
-        -- Turn on / off HTML comment concealing
-        conceal = false,
-      },
-    },
-  },
-  ft = { "markdown", "norg", "rmd", "org", "codecompanion" },
-  config = function(_, opts)
-    require("render-markdown").setup(opts)
+    ft = { "markdown", "norg", "rmd", "org", "codecompanion" }, -- Supported file types
+    config = function(_, opts)
+    require("render-markdown").setup(opts) -- Apply the configuration
     Snacks.toggle({
-      name = "Render Markdown",
-      get = function()
+        name = "Render Markdown",
+        get = function()
         return require("render-markdown.state").enabled
-      end,
-      set = function(enabled)
+        end,
+        set = function(enabled)
         local m = require("render-markdown")
         if enabled then
-          m.enable()
-        else
-          m.disable()
+            m.enable() -- Enable Markdown rendering
+            else
+            m.disable() -- Disable Markdown rendering
         end
-      end,
-    }):map("<leader>um")
-  end,
+        end,
+    }):map("<leader>um") -- Toggle rendering with <leader>um
+    end,
 }

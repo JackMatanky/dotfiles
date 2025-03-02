@@ -1420,3 +1420,6 @@ which markdownlint-cli2
 brew install markdownlint-cli2
 brew uninstall markdownlint
 markdownlint-cli2 --config /Users/jack/.config/formatters/.markdownlint.jsonc myfile.md
+gcam 'add conform for markdown to nvim'
+gps
+stow .
