@@ -1397,3 +1397,7 @@ gps
 stow .
 gcam 'update yazi toml to open pdf files in sioyek'
 gps
+gcam 'update aerospace config: change app launcher to remove wezterm and include ghostty'
+gps
+stow .
+as_load
