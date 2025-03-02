@@ -1392,3 +1392,6 @@ gps
 gcam 'update yazi toml to open pdf files in sioyek'
 gps
 stow .
+gcam 'update default zellij layout'
+gps
+stow .
