@@ -1404,3 +1404,10 @@ as_load
 gcam 'remove pdf capability from yazi'
 gaa
 gaa 
+gcam 'remove pdf capability from yazi'
+git filter-branch --force --index-filter \<\n>  'git rm --cached --ignore-unmatch .DS_Store' \<\n>  --prune-empty --tag-name-filter cat -- --all
+git rm --cached -r .DS_Store<\n>git commit -m "Remove .DS_Store files from tracking"
+git rm --cached -r "**/.DS_Store"<\n>git commit -m "Remove all .DS_Store files from tracking"
+gps
+stow .
+gaa

@@ -10,7 +10,7 @@
 
 return {
   "L3MON4D3/LuaSnip", -- Main snippet engine
-  lazy = true, -- Load only when needed (LazyVim optimization)
+  lazy = false, -- Load only when needed (LazyVim optimization)
 
   -- Build LuaSnip with optional jsregexp support (not required but useful)
   build = (not LazyVim.is_win())
