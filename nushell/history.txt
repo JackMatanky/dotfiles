@@ -1381,3 +1381,6 @@ zellij setup --clean
 exit
 gcam 'add zide environment variables'
 gps
+gcam 'update default zellij layout'
+gps
+stow .
