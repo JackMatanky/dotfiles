@@ -177,6 +177,7 @@ export NU_CONFIG_DIR="$XDG_CONFIG_HOME/nushell"
 # --- Default Editors ---
 export EDITOR="nvim"        # NeoVim, 'hx' Helix
 export VISUAL="zed"         # Zed
+export TERMINAL="ghostty"   # Ghostty
 export FILE_PICKER="yazi"   # Yazi
 
 # >>> Navigation Functions <<<

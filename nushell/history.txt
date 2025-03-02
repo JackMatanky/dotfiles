@@ -1433,3 +1433,6 @@ gcam 'revise espanso files and add obsidian config file'
 gps
 stow .
 which nvim
+gcam 'add nvim binary to path in nushell and zsh'
+gps
+stow .

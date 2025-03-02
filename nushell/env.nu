@@ -161,7 +161,9 @@ if (which carapace | is-not-empty) {
 
 $env.EDITOR = "nvim"        # NeoVim, 'hx' Helix
 $env.VISUAL = "zed"         # Zed
+$env.TERMINAL = "ghostty"   # Ghostty
 $env.FILE_PICKER = "yazi"   # Yazi
+
 
 # Nushell
 $env.NU_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'nushell')
