@@ -1426,3 +1426,6 @@ stow .
 gcam 'add obsidian to nvim'
 gps
 stow .
+gcam 'add obsidian to nvim'
+gps
+stow .

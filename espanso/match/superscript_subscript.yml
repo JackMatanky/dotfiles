@@ -1,3 +1,9 @@
+#------------------------------------------------------------------------------
+# Filename: ~/dotfiles/espanso/match/superscript_subscript.yml
+#
+# Espanso Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------
+---
 matches:
     # -----------------------------
     # Superscript: Fractions

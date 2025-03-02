@@ -1,3 +1,9 @@
+#------------------------------------------------------------------------------
+# Filename: ~/dotfiles/espanso/match/math_set_theory.yml
+#
+# Espanso Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------
+---
 matches:
     # Sets
     - trigger: ":inset"

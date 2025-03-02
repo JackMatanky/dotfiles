@@ -1,3 +1,8 @@
+#------------------------------------------------------------------------------
+# Filename: ~/dotfiles/espanso/match/default.yml
+#
+# Espanso Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------
 # espanso configuration file
 
 # You can use this file to define the global configuration options for espanso.
@@ -5,8 +10,7 @@
 # but you can also override them on a per-application basis.
 # For a complete introduction, visit the official docs at: https://espanso.org/docs/
 
-###############################################################################
-
+---
 # If true, instructs the daemon process to restart the worker
 # after a configuration file change is detected on disk.
 auto_restart: true

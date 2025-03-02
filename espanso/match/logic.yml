@@ -1,3 +1,9 @@
+#------------------------------------------------------------------------------
+# Filename: ~/dotfiles/espanso/match/logic.yml
+#
+# Espanso Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------
+---
 matches:
     - trigger: ":lnot"
       replace: "¬"

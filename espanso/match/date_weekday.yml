@@ -1,7 +1,9 @@
+#------------------------------------------------------------------------------
 # Filename: ~/dotfiles/espanso/match/date_weekday.yml
 #
-# Espanso Match File Docs: https://espanso.org/docs/
-
+# Espanso Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------
+---
 matches:
     - trigger: sunday
       replace: Sunday

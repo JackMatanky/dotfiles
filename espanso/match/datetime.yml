@@ -1,7 +1,9 @@
+#------------------------------------------------------------------------------
 # Filename: ~/dotfiles/espanso/match/datetime.yml
 #
-# Espanso Match File Docs: https://espanso.org/docs/
-
+# Espanso Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------
+---
 matches:
     # Date
     # Print today's date
