@@ -135,7 +135,11 @@ if (which pyenv | is-not-empty) {
 }
 
 # ZIDE
+# # Source: https://github.com/josephschmitt/zide
 $env.ZIDE_LAYOUT_DIR = ($env.XDG_CONFIG_HOME | path join 'zellij/layouts')
+$env.ZIDE_ALWAYS_NAME = "true"
+$env.ZIDE_FILE_PICKER = "yazi"
+$env.ZIDE_USE_YAZI_CONFIG = ($env.XDG_CONFIG_HOME | path join 'yazi')
 
 # integrations
 if (which starship | is-not-empty) {

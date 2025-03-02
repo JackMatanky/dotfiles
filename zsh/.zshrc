@@ -7,20 +7,24 @@ typeset -U path cdpath fpath manpath
 # >>> XDG Base Directory <<<
 export XDG_CONFIG_HOME="$HOME/.config"
 
-# Add Homebrew paths (macOS-specific)
+# >>> Homebrew paths (macOS-specific) <<<
 export PATH="/opt/homebrew/bin:$PATH"
 
-# Add Cargo binaries
+# >>> Cargo binaries <<<
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# Pyenv Configuration
+# >>> Pyenv <<<
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
-# ZIDE Configuration
+# >>> ZIDE <<<
+# Source: https://github.com/josephschmitt/zide
 export ZIDE_LAYOUT_DIR="$XDG_CONFIG_HOME/zellij/layouts"
+export ZIDE_ALWAYS_NAME="true"
+export ZIDE_FILE_PICKER="yazi"
+export ZIDE_USE_YAZI_CONFIG="$XDG_CONFIG_HOME/yazi"
 
 # Add Nix paths (NixOS-specific)
 if [[ -d "/nix/var/nix/profiles/default" ]]; then

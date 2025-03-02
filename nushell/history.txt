@@ -1373,3 +1373,9 @@ exit
 gcam 'revise default zellij layout'
 gps
 stow .
+gcam 'revise default zellij layout: switched compact bar for tab and status bar'
+gps
+stow .
+exit
+zellij setup --clean
+exit
