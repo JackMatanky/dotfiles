@@ -1411,3 +1411,12 @@ git rm --cached -r "**/.DS_Store"<\n>git commit -m "Remove all .DS_Store files f
 gps
 stow .
 gaa
+gcam 'change lazy definition of luasnip plugin'
+git rm --cached -r "**/.DS_Store"<\n>git commit -m "Remove all .DS_Store files from tracking"
+gps
+stow .
+which markdownlint
+which markdownlint-cli2
+brew install markdownlint-cli2
+brew uninstall markdownlint
+markdownlint-cli2 --config /Users/jack/.config/formatters/.markdownlint.jsonc myfile.md
