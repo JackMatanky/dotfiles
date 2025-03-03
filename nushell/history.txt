@@ -1441,3 +1441,6 @@ gcam 'add reciprical to espanso'
 gps
 stow .
 exit
+gcam 'add recipricals to espanso'
+gps
+stow .
