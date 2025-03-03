@@ -211,6 +211,10 @@ matches:
     replace: reciprical
     propagate_case: true
     word: true
+  - trigger: recipricols
+    replace: recipricals
+    propagate_case: true
+    word: true
   - trigger: recipiants
     replace: recipients
     propagate_case: true

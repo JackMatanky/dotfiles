@@ -1437,3 +1437,7 @@ gcam 'add nvim binary to path in nushell and zsh'
 gps
 stow .
 exit
+gcam 'add reciprical to espanso'
+gps
+stow .
+exit
