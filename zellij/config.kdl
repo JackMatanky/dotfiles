@@ -450,4 +450,4 @@ layout_dir "/Users/jack/dotfiles/zellij/layouts"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "default"
+// default_layout "default"

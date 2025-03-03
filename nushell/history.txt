@@ -1460,3 +1460,8 @@ gcam 'update'
 yazi
 gps
 stow .
+gcam 'change all zide zellij layouts to start with zide_'
+gps
+stow .
+dot
+nvim
