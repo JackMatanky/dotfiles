@@ -1,0 +1,40 @@
+#------------------------------------------------------------------------------
+# Filename: ~/dotfiles/espanso/match/obsidian.yml
+#
+# Espanso Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------
+---
+filter_class: md.obsidian
+
+extra_includes:
+  - "../match/md_code_block.yml"
+  - "../match/md_headings.yml"
+  - "../match/md_tables.yml"
+  - "../match/obsidian_callout.yml"
+  # Autocorrect
+  - "../match/autocorrect_a.yml"
+  - "../match/autocorrect_b.yml"
+  - "../match/autocorrect_c.yml"
+  - "../match/autocorrect_d.yml"
+  - "../match/autocorrect_e.yml"
+  - "../match/autocorrect_f.yml"
+  - "../match/autocorrect_g.yml"
+  - "../match/autocorrect_h.yml"
+  - "../match/autocorrect_i.yml"
+  - "../match/autocorrect_j.yml"
+  - "../match/autocorrect_k.yml"
+  - "../match/autocorrect_l.yml"
+  - "../match/autocorrect_m.yml"
+  - "../match/autocorrect_n.yml"
+  - "../match/autocorrect_o.yml"
+  - "../match/autocorrect_p.yml"
+  - "../match/autocorrect_q.yml"
+  - "../match/autocorrect_r.yml"
+  - "../match/autocorrect_s.yml"
+  - "../match/autocorrect_t.yml"
+  - "../match/autocorrect_u.yml"
+  - "../match/autocorrect_v.yml"
+  - "../match/autocorrect_w.yml"
+  - "../match/autocorrect_x.yml"
+  - "../match/autocorrect_y.yml"
+  - "../match/autocorrect_z.yml"

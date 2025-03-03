@@ -1453,3 +1453,6 @@ stow .
 which lazygit
 nvim
 exit
+gcam 'create lazygit config based on default config'
+gps
+stow .
