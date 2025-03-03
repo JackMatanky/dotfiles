@@ -1465,3 +1465,15 @@ gps
 stow .
 dot
 nvim
+obsidian
+nvim
+zellij --session obsidian_vault
+zellij --help
+which ghostty
+which wezterm
+brew upgrade
+brew install --cask ghostty
+which ghostty
+cd
+which ghostty
+dot

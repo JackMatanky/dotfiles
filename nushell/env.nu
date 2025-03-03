@@ -119,6 +119,7 @@ $env.PATH = (
   | append /opt/homebrew/sbin
   | append /opt/homebrew/bin/nvim
   | append /run/current-system/sw/bin
+  | append /Applications/Ghostty.app/Contents/MacOS/ghostty
   | append ($env.CARGO_HOME | path join bin)
   | append ($env.XDG_CONFIG_HOME | path join 'zide/bin')
   # | append ($env.HOME | path join .local bin)
@@ -161,7 +162,7 @@ if (which carapace | is-not-empty) {
 
 $env.EDITOR = "nvim"        # NeoVim, 'hx' Helix
 $env.VISUAL = "zed"         # Zed
-$env.TERMINAL = "ghostty"   # Ghostty
+$env.TERMINAL = "/Applications/Ghostty.app/Contents/MacOS/ghostty" # Ghostty
 $env.FILE_PICKER = "yazi"   # Yazi
 
 
