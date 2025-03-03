@@ -1456,3 +1456,7 @@ exit
 gcam 'create lazygit config based on default config'
 gps
 stow .
+gcam 'update'
+yazi
+gps
+stow .
