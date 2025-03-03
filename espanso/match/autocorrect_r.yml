@@ -207,7 +207,7 @@ matches:
     replace: recipient
     propagate_case: true
     word: true
-  - trigger: reciprical
+  - trigger: recipricol
     replace: reciprocal
     propagate_case: true
     word: true

@@ -46,6 +46,7 @@ return {
       "luap",
       "markdown",
       "markdown_inline",
+      "nu",
       "printf",
       "python",
       "query",

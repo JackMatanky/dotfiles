@@ -1447,3 +1447,9 @@ stow .
 gcam 'add recipricals to espanso'
 gps
 stow .
+gcam 'add espanso autocorrect to obsidian'
+gps
+stow .
+which lazygit
+nvim
+exit
