@@ -362,7 +362,7 @@ plugins {
         datetime          "{format}"
         datetime_format   "%Y-%m-%d 󰅐 %H:%M"
         datetime_timezone "Europe/Stockholm"
-  }
+    }
 }
 
 // Plugins to load in the background when a new session starts
