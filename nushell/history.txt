@@ -1515,3 +1515,6 @@ gcam 'add zellij env variables to env.nu'
 gps
 stow .
 which zellij
+gcam 'add full zellij path to ghostty'
+gps
+stow .
