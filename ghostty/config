@@ -62,4 +62,4 @@ command = /opt/homebrew/bin/nu
 shell-integration = none
 
 # Open Zellij with the welcome screen
-command = "zellij -l welcome --config-dir ~/.config/yazelix/zellij options --layout-dir ~/.config/yazelix/zellij/layouts"
+command = zellij -l welcome --config-dir ~/.config/yazelix/zellij options --layout-dir ~/.config/yazelix/zellij/layouts

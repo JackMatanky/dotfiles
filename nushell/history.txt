@@ -1503,3 +1503,6 @@ ga zellij/zjstatus/
 gcam 'stage untracked dotfiles'
 gps
 stow .
+gcam 'add local wasm for zjstatus'
+gps
+stow .
