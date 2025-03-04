@@ -1497,3 +1497,6 @@ gcam 'add zjstatus config to layout to zellij'
 ga zellij/layouts/
 gcam 'add zjstatus config to layout to zellij'
 ga nvim/lua/plugins
+gcam 'stage nvim plugins'
+ga lazygit/
+ga zellij/zjstatus/
