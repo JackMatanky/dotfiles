@@ -1493,3 +1493,5 @@ dot
 gcam 'add zjstatus to zellij'
 gps
 stow .
+gcam 'add zjstatus config to layout to zellij'
+ga zellij/layouts/
