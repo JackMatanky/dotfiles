@@ -1598,3 +1598,6 @@ stow .
 gcam 'fix zellij aliases for nushell'
 gps
 stow .
+gcam 'change datetime format zellij'
+gps
+stow .
