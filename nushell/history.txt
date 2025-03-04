@@ -1557,3 +1557,7 @@ gps
 stow .
 zellij
 exit
+gcam 'add zellij aliases to nushell and removed zellij command from ghostty'
+gps
+stow .
+yes

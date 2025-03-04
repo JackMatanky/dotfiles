@@ -918,8 +918,8 @@ source $"($nu_comp)/zellij_completions.nu"
 
 # >>> Plugin Management <<<
 # --- Yazi ---
-# Shell wrapper function "y"
-def --env y [...args] {
+# Shell wrapper function "yz"
+def --env yz [...args] {
     # Create a temporary file for storing Yazi's current working directory
     let tmp = (mktemp -t "yazi-cwd.XXXXXX")
 
