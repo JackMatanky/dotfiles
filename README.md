@@ -8,29 +8,29 @@ My dotfiles repo managed with GNU Stow on MacOS.
 
 - [Nushell](https://www.nushell.sh/)
 
-    ```bash
-    brew install nushell
-    ```
+  ```bash
+  brew install nushell
+  ```
 
 - [ZSH](https://zsh.sourceforge.io/)
 
-    - [ZSH Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+  - [ZSH Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 
-    ```bash
-    brew install zsh-autosuggestions
-    ```
+  ```bash
+  brew install zsh-autosuggestions
+  ```
 
-    - [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+  - [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
-    ```bash
-    brew install zsh-syntax-highlighting
-    ```
+  ```bash
+  brew install zsh-syntax-highlighting
+  ```
 
-    - [ZSH Autocomplete](https://github.com/marlonrichert/zsh-autocomplete)
+  - [ZSH Autocomplete](https://github.com/marlonrichert/zsh-autocomplete)
 
-    ```bash
-    brew install zsh-autocomplete
-    ```
+  ```bash
+  brew install zsh-autocomplete
+  ```
 
 #### Plugins
 
@@ -71,6 +71,7 @@ brew install fd
 ```bash
 brew install --cask wezterm
 ```
+
 ### Multiplexxer
 
 - [Zellij](https://zellij.dev/)
@@ -90,7 +91,7 @@ brew install starship
 ### File Manager
 
 - [Yazi](https://github.com/sxyazi/yaz)
-    - [docs](https://yazi-rs.github.io/)
+  - [docs](https://yazi-rs.github.io/)
 
 ```bash
 brew install yazi
@@ -120,17 +121,13 @@ brew install --cask zed
 
 #### Language Server Protocol
 
-
 - [VS Code Language Servers](https://github.com/hrsh7th/vscode-langservers-extracted)
 
 ```bash
 brew install vscode-langservers-extracted
 ```
-Includes:
-    - `vscode-html-language-server`
-    - `vscode-css-language-server`
-    - `vscode-json-language-server`
-    - `vscode-eslint-language-server`
+
+Includes: - `vscode-html-language-server` - `vscode-css-language-server` - `vscode-json-language-server` - `vscode-eslint-language-server`
 
 - [TypeScript Language Server](https://github.com/typescript-language-server/typescript-language-server)
 
@@ -211,10 +208,10 @@ brew install openjdk
 ```
 
 If you need to have openjdk first in your PATH, run:
-  echo 'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"' >> /Users/jack/.config/zsh/.zshrc
+echo 'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"' >> /Users/jack/.config/zsh/.zshrc
 
 For compilers to find openjdk you may need to set:
-  export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
 #### Markdown
 
@@ -240,13 +237,11 @@ brew install rust
 
 #### Formatters
 
-- [Pretties](https://prettier.io/)
+- [Prettier](https://prettier.io/)
 
 ```bash
 brew install prettier
 ```
-
-
 
 ### Version Control
 
@@ -299,4 +294,18 @@ brew install avif
 
 ```bash
 brew install tesseract
+```
+
+- [Zathura Document Viewer](https://pwmt.org/projects/zathura/)
+
+```bash
+brew install zathura
+```
+
+- MuPDF Plugin
+
+```bash
+brew install zathura-pdf-mupdf
+mkdir -p $(brew --prefix zathura)/lib/zathura
+ln -s $(brew --prefix zathura-pdf-mupdf)/libpdf-mupdf.dylib $(brew --prefix zathura)/lib/zathura/libpdf-mupdf.dylib
 ```

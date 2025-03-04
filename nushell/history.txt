@@ -1605,3 +1605,13 @@ gcam 'change aerospace tiling boundaries'
 gps
 stow .
 as_load
+gcam 'add autocmd to open pdf from neovim in zathura'
+gps
+stow .
+obsidian
+obsidian
+which zathura
+brew install zathura
+brew install zathura-pdf-mupdf
+mkdir -p $(brew --prefix zathura)/lib/zathura
+brew install zathura-pdf-mupdf
