@@ -1518,3 +1518,6 @@ which zellij
 gcam 'add full zellij path to ghostty'
 gps
 stow .
+gcam 'define default layout as zjstatus for zellij'
+gps
+stow .
