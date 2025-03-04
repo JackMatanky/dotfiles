@@ -60,3 +60,6 @@ macos-option-as-alt = true
 # Use Nushell as default shell
 command = /opt/homebrew/bin/nu
 shell-integration = none
+
+# Open Zellij with the welcome screen
+command = "zellij -l welcome --config-dir ~/.config/yazelix/zellij options --layout-dir ~/.config/yazelix/zellij/layouts"

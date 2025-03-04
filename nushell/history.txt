@@ -1477,3 +1477,6 @@ which ghostty
 cd
 which ghostty
 dot
+gcam 'add ghostty to terminal path'
+gps
+stow .
