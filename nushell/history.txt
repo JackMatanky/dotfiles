@@ -1536,3 +1536,6 @@ ga nushell/ -- ':!**/.DS_Store'
 ga nvim/ -- ':!**/.DS_Store'
 ga yazi/ -- ':!**/.DS_Store'
 ga zed/ -- ':!**/.DS_Store'
+gcam 'track files'
+gps
+stow .
