@@ -1521,3 +1521,7 @@ stow .
 gcam 'define default layout as zjstatus for zellij'
 gps
 stow .
+gcam 'revise zjstatus in zellij'
+gps
+stow .
+ga zellij/plugins/
