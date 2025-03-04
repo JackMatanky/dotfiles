@@ -1621,3 +1621,6 @@ stow .
 gcam 'add set before definitions in zathurarc'
 gps
 stow .
+gcam 'remove non-existent settings for zathura'
+gps
+stow .
