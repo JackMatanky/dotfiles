@@ -1495,3 +1495,5 @@ gps
 stow .
 gcam 'add zjstatus config to layout to zellij'
 ga zellij/layouts/
+gcam 'add zjstatus config to layout to zellij'
+ga nvim/lua/plugins
