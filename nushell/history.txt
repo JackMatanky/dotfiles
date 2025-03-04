@@ -1624,3 +1624,6 @@ stow .
 gcam 'remove non-existent settings for zathura'
 gps
 stow .
+gcam 'remove non-existent settings for zathura'
+gps
+stow .
