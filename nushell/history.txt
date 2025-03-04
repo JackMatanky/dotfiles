@@ -1511,3 +1511,7 @@ gcam 'update ghostty config with command for zellij welcome screen, but with the
 gps
 stow .
 exit
+gcam 'add zellij env variables to env.nu'
+gps
+stow .
+which zellij
