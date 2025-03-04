@@ -1580,3 +1580,11 @@ zellij kill-all-sessions
 y
 zellij
 request_permission
+gcam 'add tab bar to zellij layout'
+gps
+stow .
+dot
+exit
+nvim
+dot
+dot
