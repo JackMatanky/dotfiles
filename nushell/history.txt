@@ -1506,3 +1506,4 @@ stow .
 gcam 'add local wasm for zjstatus'
 gps
 stow .
+gcam 'update ghostty config with command for zellij welcome screen'
