@@ -1525,3 +1525,5 @@ gcam 'revise zjstatus in zellij'
 gps
 stow .
 ga zellij/plugins/
+gcam 'revise zjstatus in zellij'
+ga zellij/layouts/
