@@ -63,4 +63,4 @@ shell-integration = none
 
 # Open Zellij with the welcome screen
 # command = "/opt/homebrew/bin/zellij -l welcome --config-dir ~/.config/zellij options --layout-dir ~/.config/zellij/layouts"
-command = "/opt/homebrew/bin/zellij -l welcome"
+# command = "/opt/homebrew/bin/zellij -l welcome"

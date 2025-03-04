@@ -1552,3 +1552,8 @@ stow .
 gcam 'fix zjstatus path to wasm file'
 gps
 stow .
+gcam 'fix zjstatus path to wasm file to use dotfiles/ instead of .config/'
+gps
+stow .
+zellij
+exit

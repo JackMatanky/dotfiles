@@ -123,6 +123,10 @@ alias vimdiff = nvim -d
 # --- Tmux ---
 alias tmx_src = tmux source ~/.tmux.conf
 
+# --- Zellij ---
+alias zj = zellij
+alias zj_welcome = zellij -l welcome
+
 # --- Aerospace ---
 alias as = aerospace
 alias as_load = aerospace reload-config
