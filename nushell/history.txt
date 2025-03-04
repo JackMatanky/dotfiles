@@ -1539,3 +1539,7 @@ ga zed/ -- ':!**/.DS_Store'
 gcam 'track files'
 gps
 stow .
+gcam 'update ghostty config with shorter command for zellij welcome screen, but with the correct command and not yazelix'
+gps
+stow .
+zellij
