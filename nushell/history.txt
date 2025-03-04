@@ -1615,3 +1615,6 @@ brew install zathura
 brew install zathura-pdf-mupdf
 mkdir -p $(brew --prefix zathura)/lib/zathura
 brew install zathura-pdf-mupdf
+gcam 'add config files for zathura'
+gps
+stow .
