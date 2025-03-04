@@ -1500,3 +1500,6 @@ ga nvim/lua/plugins
 gcam 'stage nvim plugins'
 ga lazygit/
 ga zellij/zjstatus/
+gcam 'stage untracked dotfiles'
+gps
+stow .
