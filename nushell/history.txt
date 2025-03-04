@@ -1588,3 +1588,7 @@ exit
 nvim
 dot
 dot
+gcam 'change position of status and tab bar in zellij layout'
+gps
+stow .
+dot

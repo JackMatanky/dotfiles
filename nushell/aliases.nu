@@ -1,33 +1,42 @@
+# -----------------------------------------------------------------------------
 # Filename: ~/dotfiles/nushell/aliases.nu
+# -----------------------------------------------------------------------------
 
 def --env cx [arg] {
     cd $arg
     ls -l
 }
 
-# >>> Aliases <<<
-# --- Shell Commands ---
+# >>> Shell Commands <<<
 alias c = clear
 alias ll = ls -l
-# --- eza ---
+
+# >>> eza <<<
 alias l = eza --long --icons --git --all --group-directories-first # Detailed File List
 alias lt = eza --tree --level=2 --long --icons --git # Tree View - Full
 alias ltree = eza --tree --level=2 --icons --git # Tree View - Compact
 
-# --- Directories ---
-# --- zoxide ---
+# >>> zoxide <<<
 alias za = zoxide add
 alias zq = zoxide query
 
+# >>> Directories <<<
+
+alias conf_dir = cd ~/.config
+alias docs = cd ~/Documents
+
+# --- Dotfiles ---
 alias dot = cd ~/dotfiles
 alias dot_nix = cd ~/dotfiles/nixos
+
+# --- Obsidian Vault ---
 alias obsidian = cd ~/obsidian_vault
 def obsidian_gpl [] {
   cd ~/obsidian_vault
   git pull
 }
-alias conf_dir = cd ~/.config
-alias docs = cd ~/Documents
+
+# --- Keyboard Dev ---
 alias kb_dev = cd ~/Documents/keyboard_dev
 alias kb_ergogen = cd ~/Documents/keyboard_dev/ergogen
 alias kb_zmk = cd ~/Documents/keyboard_dev/zmk-config
@@ -124,8 +133,19 @@ alias vimdiff = nvim -d
 alias tmx_src = tmux source ~/.tmux.conf
 
 # --- Zellij ---
-alias zj = zellij
+def zj [dir: string = "~/"] {
+  cd $dir
+  zellij
+}
 alias zj_welcome = zellij -l welcome
+def zj_dot [] {
+  cd ~/dotfiles
+  zellij
+} 
+def zj_obsidian [] {
+  cd ~/obsidian_vault/
+  zellij
+} 
 
 # --- Aerospace ---
 alias as = aerospace
