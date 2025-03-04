@@ -136,6 +136,11 @@ if (which pyenv | is-not-empty) {
     $env.PATH = ($env.PATH | append ($env.PYENV_ROOT | path join "shims"))
 }
 
+# Zellij
+$env.ZELLIJ_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'zellij')
+$env.ZELLIJ_LAYOUT_DIR = ($env.ZELLIJ_CONFIG_DIR | path join 'layouts')
+$env.ZELLIJ_THEME_DIR = ($env.ZELLIJ_CONFIG_DIR | path join 'themes')
+
 # ZIDE
 # # Source: https://github.com/josephschmitt/zide
 $env.ZIDE_LAYOUT_DIR = ($env.XDG_CONFIG_HOME | path join 'zellij/layouts')
@@ -162,7 +167,7 @@ if (which carapace | is-not-empty) {
 
 $env.EDITOR = "nvim"        # NeoVim, 'hx' Helix
 $env.VISUAL = "zed"         # Zed
-$env.TERMINAL = "/Applications/Ghostty.app/Contents/MacOS/ghostty" # Ghostty
+$env.TERMINAL = "ghostty"   # Ghostty  "/Applications/Ghostty.app/Contents/MacOS/ghostty"
 $env.FILE_PICKER = "yazi"   # Yazi
 
 

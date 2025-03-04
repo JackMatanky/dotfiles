@@ -1507,3 +1507,7 @@ gcam 'add local wasm for zjstatus'
 gps
 stow .
 gcam 'update ghostty config with command for zellij welcome screen'
+gcam 'update ghostty config with command for zellij welcome screen, but with the correct command and not yazelix'
+gps
+stow .
+exit
