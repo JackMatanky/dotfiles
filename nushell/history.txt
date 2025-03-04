@@ -1480,3 +1480,13 @@ dot
 gcam 'add ghostty to terminal path'
 gps
 stow .
+gcam 'add command to ghostty config to open Zellij with welcome screen' 
+gps
+stow .
+exit
+cd zellij
+fzf catppuccin.kdl
+fzf
+cd
+fzf
+dot
