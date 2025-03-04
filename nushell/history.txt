@@ -1546,3 +1546,6 @@ zellij
 gcam 'add children block to zjstatus layout'
 gps
 stow .
+gcam 'again try to fix zjstatus layout'
+gps
+stow .
