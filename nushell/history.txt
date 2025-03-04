@@ -1549,3 +1549,6 @@ stow .
 gcam 'again try to fix zjstatus layout'
 gps
 stow .
+gcam 'fix zjstatus path to wasm file'
+gps
+stow .

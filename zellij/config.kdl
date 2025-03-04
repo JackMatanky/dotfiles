@@ -274,7 +274,7 @@ plugins {
     // --------------------------------------------------------------
 
     // zjstatus
-    zjstatus location="file:~/.config/zellij/plugins/zjstatus/zjstatus.wasm" {
+    zjstatus location="file:~/dotfiles/zellij/plugins/zjstatus/zjstatus.wasm" {
 
         // -- Catppuccin Macchiato --
         color_rosewater "#f4dbd6"
