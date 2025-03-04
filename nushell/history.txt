@@ -1618,3 +1618,6 @@ brew install zathura-pdf-mupdf
 gcam 'add config files for zathura'
 gps
 stow .
+gcam 'add set before definitions in zathurarc'
+gps
+stow .
