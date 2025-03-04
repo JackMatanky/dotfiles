@@ -275,6 +275,7 @@ plugins {
 
     // zjstatus
     zjstatus location="file:~/dotfiles/zellij/plugins/zjstatus/zjstatus.wasm" {
+        first_start true // Enable navigation to the status bar
 
         // -- Catppuccin Macchiato --
         color_rosewater "#f4dbd6"

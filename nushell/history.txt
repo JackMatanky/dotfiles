@@ -1561,3 +1561,11 @@ gcam 'add zellij aliases to nushell and removed zellij command from ghostty'
 gps
 stow .
 yes
+gcam 'update config.nu to rename yazi shell wrapper to yz'
+gps
+stow .
+y
+exit
+y
+exit
+zellij
