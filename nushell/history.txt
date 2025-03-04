@@ -1527,3 +1527,12 @@ stow .
 ga zellij/plugins/
 gcam 'revise zjstatus in zellij'
 ga zellij/layouts/
+gcam 'revise zjstatus in zellij'
+ga dotfiles/ -- ':!**/.DS_Store'
+ga espanso/ -- ':!**/.DS_Store'
+ga devtools/ -- ':!**/.DS_Store'
+ga helix/ -- ':!**/.DS_Store'
+ga nushell/ -- ':!**/.DS_Store'
+ga nvim/ -- ':!**/.DS_Store'
+ga yazi/ -- ':!**/.DS_Store'
+ga zed/ -- ':!**/.DS_Store'
