@@ -1569,3 +1569,14 @@ exit
 y
 exit
 zellij
+gcam 'add first start parameter for zjstatus'
+gps
+stow .
+y
+zellij
+y
+zellij options --disable-plugins
+zellij kill-all-sessions
+y
+zellij
+request_permission
