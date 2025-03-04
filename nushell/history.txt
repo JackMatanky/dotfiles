@@ -1595,3 +1595,6 @@ dot
 gcam 'update zellig aliases for nushell' 
 gps
 stow .
+gcam 'fix zellij aliases for nushell'
+gps
+stow .
