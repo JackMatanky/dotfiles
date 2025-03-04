@@ -268,14 +268,13 @@ plugins {
     configuration location="zellij:configuration"
     plugin-manager location="zellij:plugin-manager"
 
-    
+
     // --------------------------------------------------------------
     // Extra Plugins
     // --------------------------------------------------------------
 
     // zjstatus
-    zjstatus location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm"
-
+    zjstatus location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm" {
 
         // -- Catppuccin Macchiato --
         color_rosewater "#f4dbd6"
@@ -311,14 +310,14 @@ plugins {
         format_space  "#[bg=$surface0]"
         format_hide_on_overlength "true"
         format_precedence "lrc"
-    
+
         border_enabled  "false"
         border_char     "─"
         border_format   "#[bg=$surface0]{char}"
         border_position "top"
-    
+
         hide_frame_for_single_pane "true"
-    
+
         mode_normal        "#[bg=$green,fg=$crust,bold] NORMAL#[bg=$surface0,fg=$green]"
         mode_tmux          "#[bg=$mauve,fg=$crust,bold] TMUX#[bg=$surface0,fg=$mauve]"
         mode_locked        "#[bg=$red,fg=$crust,bold] LOCKED#[bg=$surface0,fg=$red]"
@@ -333,7 +332,7 @@ plugins {
         mode_move          "#[bg=$yellow,fg=$crust,bold] MOVE#[bg=$surface0,fg=$yellow]"
         mode_session       "#[bg=$pink,fg=$crust,bold] SESSION#[bg=$surface0,fg=$pink]"
         mode_prompt        "#[bg=$pink,fg=$crust,bold] PROMPT#[bg=$surface0,fg=$pink]"
-    
+
         tab_normal              "#[bg=$surface0,fg=$blue]#[bg=$blue,fg=$crust,bold]{index} #[bg=$surface1,fg=$blue,bold] {name}{floating_indicator}#[bg=$surface0,fg=$surface1]"
         tab_normal_fullscreen   "#[bg=$surface0,fg=$blue]#[bg=$blue,fg=$crust,bold]{index} #[bg=$surface1,fg=$blue,bold] {name}{fullscreen_indicator}#[bg=$surface0,fg=$surface1]"
         tab_normal_sync         "#[bg=$surface0,fg=$blue]#[bg=$blue,fg=$crust,bold]{index} #[bg=$surface1,fg=$blue,bold] {name}{sync_indicator}#[bg=$surface0,fg=$surface1]"
@@ -341,25 +340,25 @@ plugins {
         tab_active_fullscreen   "#[bg=$surface0,fg=$peach]#[bg=$peach,fg=$crust,bold]{index} #[bg=$surface1,fg=$peach,bold] {name}{fullscreen_indicator}#[bg=$surface0,fg=$surface1]"
         tab_active_sync         "#[bg=$surface0,fg=$peach]#[bg=$peach,fg=$crust,bold]{index} #[bg=$surface1,fg=$peach,bold] {name}{sync_indicator}#[bg=$surface0,fg=$surface1]"
         tab_separator           "#[bg=$surface0] "
-    
+
         tab_sync_indicator       " "
         tab_fullscreen_indicator " 󰊓"
         tab_floating_indicator   " 󰹙"
-    
+
         notification_format_unread "#[bg=surface0,fg=$yellow]#[bg=$yellow,fg=$crust] #[bg=$surface1,fg=$yellow] {message}#[bg=$surface0,fg=$yellow]"
         notification_format_no_notifications ""
         notification_show_interval "10"
-    
+
         command_host_command    "uname -n"
         command_host_format     "{stdout}"
         command_host_interval   "0"
         command_host_rendermode "static"
-    
+
         command_user_command    "whoami"
         command_user_format     "{stdout}"
         command_user_interval   "10"
         command_user_rendermode "static"
-    
+
         datetime          "{format}"
         datetime_format   "%Y-%m-%d 󰅐 %H:%M"
         datetime_timezone "Europe/Stockholm"

@@ -1490,3 +1490,6 @@ fzf
 cd
 fzf
 dot
+gcam 'add zjstatus to zellij'
+gps
+stow .
