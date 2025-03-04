@@ -1592,3 +1592,6 @@ gcam 'change position of status and tab bar in zellij layout'
 gps
 stow .
 dot
+gcam 'update zellig aliases for nushell' 
+gps
+stow .

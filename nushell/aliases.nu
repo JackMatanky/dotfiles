@@ -21,7 +21,6 @@ alias za = zoxide add
 alias zq = zoxide query
 
 # >>> Directories <<<
-
 alias conf_dir = cd ~/.config
 alias docs = cd ~/Documents
 
@@ -139,13 +138,13 @@ def zj [dir: string = "~/"] {
 }
 alias zj_welcome = zellij -l welcome
 def zj_dot [] {
-  cd ~/dotfiles
+  cd ~/dotfiles/
   zellij
-} 
+}
 def zj_obsidian [] {
   cd ~/obsidian_vault/
   zellij
-} 
+}
 
 # --- Aerospace ---
 alias as = aerospace
