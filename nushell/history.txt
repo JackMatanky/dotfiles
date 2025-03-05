@@ -1634,3 +1634,6 @@ v
 gcam 'disable autoformat in neovim'
 gps
 stow .
+gcam 'move yazi shell wrapper function for nushell to aliases.nu'
+gps
+stow .
