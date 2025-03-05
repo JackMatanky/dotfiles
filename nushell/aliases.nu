@@ -132,11 +132,19 @@ alias vimdiff = nvim -d
 alias tmx_src = tmux source ~/.tmux.conf
 
 # --- Zellij ---
+# Run Zellij in a particular directory
 def zj [dir: string = "~/"] {
-  cd $dir
-  zellij
+  if $dir == "dot" {
+    cd ~/dotfiles/
+    zellij
+  } else if $dir == "obsidian" {
+    cd ~/obsidian_vault/
+    zellij
+  } else {
+    cd $dir
+    zellij
+  }
 }
-alias zj_welcome = zellij -l welcome
 def zj_dot [] {
   cd ~/dotfiles/
   zellij
@@ -144,6 +152,28 @@ def zj_dot [] {
 def zj_obsidian [] {
   cd ~/obsidian_vault/
   zellij
+}
+alias zj_welcome = zellij -l welcome
+
+# --- Yazi ---
+# Shell wrapper function "yz"
+def --env yz [...args] {
+    # Create a temporary file for storing Yazi's current working directory
+    let tmp = (mktemp -t "yazi-cwd.XXXXXX")
+
+    # Run Yazi with arguments and save the CWD to the temporary file
+    yazi ...$args --cwd-file $tmp
+
+    # Read the saved CWD from the temporary file
+    let cwd = (open $tmp)
+
+    # Change to the saved directory if it's valid and different from the current one
+    if $cwd != "" and $cwd != $env.PWD {
+        cd $cwd
+    }
+
+    # Remove the temporary file
+    rm -fp $tmp
 }
 
 # --- Aerospace ---

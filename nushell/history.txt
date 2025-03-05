@@ -1631,3 +1631,6 @@ gcam 'remove non-existent settings for zathura'
 gps
 stow .
 v
+gcam 'disable autoformat in neovim'
+gps
+stow .

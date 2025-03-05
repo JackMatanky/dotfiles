@@ -917,26 +917,6 @@ source $"($nu_comp)/git_completions.nu"
 source $"($nu_comp)/zellij_completions.nu"
 
 # >>> Plugin Management <<<
-# --- Yazi ---
-# Shell wrapper function "yz"
-def --env yz [...args] {
-    # Create a temporary file for storing Yazi's current working directory
-    let tmp = (mktemp -t "yazi-cwd.XXXXXX")
-
-    # Run Yazi with arguments and save the CWD to the temporary file
-    yazi ...$args --cwd-file $tmp
-
-    # Read the saved CWD from the temporary file
-    let cwd = (open $tmp)
-
-    # Change to the saved directory if it's valid and different from the current one
-    if $cwd != "" and $cwd != $env.PWD {
-        cd $cwd
-    }
-
-    # Remove the temporary file
-    rm -fp $tmp
-}
 
 # zellij
 # Source: https://www.grailbox.com/2023/07/autostart-zellij-in-nushell/
