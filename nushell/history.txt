@@ -1660,3 +1660,12 @@ gps
 gcam 'replace sym for sys layer from shortcuts combos'
 gps
 gaa
+gcam 'update'
+find . -name ".DS_Store" -delete<\n>
+find . -name ".DS_Store" -delete<\n>git rm --cached $(git ls-files -i --exclude-standard)
+ls **/.DS_Store | each { rm $it }
+git rm --cached $(git ls-files -i --exclude-standard --ignored)
+git ls-files -i --exclude-standard --ignored | lines | each { git rm --cached $it }
+ls **/.DS_Store | each {|f| rm $f }
+git ls-files -o -i --exclude-standard | each {|f| git rm --cached $f }
+git rm --cached '*.DS_Store'
