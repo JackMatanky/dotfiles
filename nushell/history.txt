@@ -1637,3 +1637,26 @@ stow .
 gcam 'move yazi shell wrapper function for nushell to aliases.nu'
 gps
 stow .
+gcam 'change zed keymap to completely vim'
+gps
+stow .
+kb_zmk
+gcam 'update 23332_2 files for mac'
+gps
+gcam 'specify mac files in config'
+gps
+gcam 'fix missing colon in keymap'
+gps
+gaa
+glog
+gcam 'try to figure out why keymap cannot find 23332_2_base_mac'
+gps
+gcam 'remove duplicate escape combo'
+gps
+gcam 'remove layer from shortcuts combos'
+gps
+gcam 'replace sym for sys layer from shortcuts combos'
+gps
+gcam 'replace sym for sys layer from shortcuts combos'
+gps
+gaa
