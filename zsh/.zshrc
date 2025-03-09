@@ -16,6 +16,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # >>> Neovim binary <<<
 export PATH="/opt/homebrew/bin/nvim:$PATH"
 
+# >>> Java <<<
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
 # >>> Pyenv <<<
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -173,6 +176,9 @@ export SSH_CONFIG_FILE="$SSH_CONFIG_DIR/ssh-config"
 
 # --- Nushell ---
 export NU_CONFIG_DIR="$XDG_CONFIG_HOME/nushell"
+
+# --- Java ---
+export JAVA_HOME=$(/usr/libexec/java_home -v 23)
 
 # --- Default Editors ---
 export EDITOR="nvim"        # NeoVim, 'hx' Helix

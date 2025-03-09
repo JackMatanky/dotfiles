@@ -1669,3 +1669,16 @@ git ls-files -i --exclude-standard --ignored | lines | each { git rm --cached $i
 ls **/.DS_Store | each {|f| rm $f }
 git ls-files -o -i --exclude-standard | each {|f| git rm --cached $f }
 git rm --cached '*.DS_Store'
+gcam 'remove ds_store'
+gps
+defaults read -g | grep -i "Key"
+showkey -a
+defaults read -g | grep -i "Key"
+showkey -a
+gcam 'fix find combo'
+gps
+gcam 'fix letter combo positions'
+gps
+gaa
+gcam 'fix letter combo positions'
+gps

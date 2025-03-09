@@ -118,6 +118,7 @@ $env.PATH = (
   | append /opt/homebrew/bin
   | append /opt/homebrew/sbin
   | append /opt/homebrew/bin/nvim
+  | append /opt/homebrew/opt/openjdk/bin
   | append /run/current-system/sw/bin
   | append /Applications/Ghostty.app/Contents/MacOS/ghostty
   | append ($env.CARGO_HOME | path join bin)
@@ -170,6 +171,8 @@ $env.VISUAL = "zed"         # Zed
 $env.TERMINAL = "ghostty"   # Ghostty  "/Applications/Ghostty.app/Contents/MacOS/ghostty"
 $env.FILE_PICKER = "yazi"   # Yazi
 
+# Java
+$env.JAVA_HOME = '/usr/libexec/java_home -v 23'
 
 # Nushell
 $env.NU_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'nushell')
