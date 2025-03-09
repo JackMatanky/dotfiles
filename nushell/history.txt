@@ -1682,3 +1682,7 @@ gps
 gaa
 gcam 'fix letter combo positions'
 gps
+gcam 'add openjdk to zshrc and nushell'
+gps
+stow .
+gaa
