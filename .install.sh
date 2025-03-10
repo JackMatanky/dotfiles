@@ -45,6 +45,7 @@ brew install helix
 brew install python
 brew install uv
 brew install ipython
+brew install jupytext
 brew install ruff
 
 #### LSP

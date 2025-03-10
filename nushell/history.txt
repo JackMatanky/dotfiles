@@ -1686,3 +1686,13 @@ gcam 'add openjdk to zshrc and nushell'
 gps
 stow .
 gaa
+gcam 'add libreoffice files'
+grmds
+gps
+stow .
+gcam 'add combos for lte and gte and add control to nav side of num-sys layer'
+gaa
+grmds
+gcam 'add combos for lte and gte and add control to nav side of num-sys layer'
+gps
+brew install jupytext

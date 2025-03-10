@@ -185,6 +185,12 @@ brew install uv
 brew install ipython
 ```
 
+- [Jupytext](https://jupytext.readthedocs.io/)
+
+```bash
+brew install jupytext
+```
+
 - [ruff Formatter](https://docs.astral.sh/ruff/)
 
 ```bash
