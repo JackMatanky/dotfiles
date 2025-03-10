@@ -2,47 +2,47 @@
 {
   "conventional commit": {
     "prefix": "cc",
-    "body": ["${1:type}(${2:scope}): ${3:title}", "", "$0"]
+    "body": ["$1($2): $3", "", "$0"]
   },
   "fix conventional commit": {
     "prefix": "fix",
-    "body": ["fix(${1:scope}): ${2:title}", "", "$0"]
+    "body": ["fix($1): $2", "", "$0"]
   },
   "feat conventional commit": {
     "prefix": "feat",
-    "body": ["feat(${1:scope}): ${2:title}", "", "$0"]
+    "body": ["feat($1): $2", "", "$0"]
   },
   "build conventional commit": {
     "prefix": "build",
-    "body": ["build(${1:scope}): ${2:title}", "", "$0"]
+    "body": ["build($1): $2", "", "$0"]
   },
   "chore conventional commit": {
     "prefix": "chore",
-    "body": ["chore(${1:scope}): ${2:title}", "", "$0"]
+    "body": ["chore($1): $2", "", "$0"]
   },
   "ci conventional commit": {
     "prefix": "ci",
-    "body": ["ci(${1:scope}): ${2:title}", "", "$0"]
+    "body": ["ci($1): $2", "", "$0"]
   },
   "docs conventional commit": {
     "prefix": "docs",
-    "body": ["docs(${1:scope}): ${2:title}", "", "$0"]
+    "body": ["docs($1): $2", "", "$0"]
   },
   "style conventional commit": {
     "prefix": "style",
-    "body": ["style(${1:scope}): ${2:title}", "", "$0"]
+    "body": ["style($1): $2", "", "$0"]
   },
   "refactor conventional commit": {
     "prefix": "refactor",
-    "body": ["refactor(${1:scope}): ${2:title}", "", "$0"]
+    "body": ["refactor($1): $2", "", "$0"]
   },
   "perf conventional commit": {
     "prefix": "perf",
-    "body": ["perf(${1:scope}): ${2:title}", "", "$0"]
+    "body": ["perf($1): $2", "", "$0"]
   },
   "test conventional commit": {
     "prefix": "test",
-    "body": ["test(${1:scope}): ${2:title}", "", "$0"]
+    "body": ["test($1): $2", "", "$0"]
   },
   "breaking change conventional commit footer": {
     "prefix": "BREAK",
@@ -50,14 +50,14 @@
   },
   "co-authored by": {
     "prefix": "co",
-    "body": ["Co-authored-by: ${1:name} <${2:email}>", "$0"]
+    "body": ["Co-authored-by: $1 <$2>", "$0"]
   },
   "signed off by": {
     "prefix": "si",
-    "body": ["Signed-off-by: ${1:name} <${2:email}>", "$0"]
+    "body": ["Signed-off-by: $1 <$2>", "$0"]
   },
   "on behalf of": {
     "prefix": "on",
-    "body": ["On-behalf-of: ${1:org} <${2:email}>", "$0"]
+    "body": ["On-behalf-of: $1 <$2>", "$0"]
   }
 }

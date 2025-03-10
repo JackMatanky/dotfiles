@@ -1696,3 +1696,8 @@ grmds
 gcam 'add combos for lte and gte and add control to nav side of num-sys layer'
 gps
 brew install jupytext
+gcam 'add jupytext info to readme'
+gps
+stow .
+gcam 'fix position of right side parentheses in combos'
+gps

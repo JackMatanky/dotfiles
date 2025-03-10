@@ -2,31 +2,34 @@
 {
   "setImmediate": {
     "prefix": "sim",
-    "body": "setImmediate(() => {\n\t${0}\n})"
+    "body": ["setImmediate(() => {", "\t$0", "})"]
   },
   "await": {
     "prefix": "a",
-    "body": "await ${0}"
+    "body": "await $0"
   },
   "await Promise.all": {
     "prefix": "apa",
-    "body": "await Promise.all(${1:value})"
+    "body": "await Promise.all($1)"
+    // await Promise.all(value)
   },
   "await Promise.all with destructuring": {
     "prefix": "apad",
-    "body": "const [${0}] = await Promise.all(${1:value})"
+    "body": "const [$0] = await Promise.all($1)"
+    // const [value] = await Promise.all(value)
   },
   "await Promise.all map": {
     "prefix": "apm",
-    "body": "await Promise.all(${1:array}.map(async (${2:value}) => {\n\t${0}\n}))"
+    "body": ["await Promise.all($1.map(async ($2) => {", "\t$0", "}))"] // await Promise.all(array.map(async (value) => {}))
   },
   "await sleep": {
     "prefix": "ast",
-    "body": "await new Promise((r) => setTimeout(r, ${0}))"
+    "body": "await new Promise((r) => setTimeout(r, $0))"
+    // await new Promise((r) => setTimeout(r, value))
   },
   "Node callback": {
     "prefix": "cb",
-    "body": "function (err, ${1:value}) {\n\tif (err) throw err\n\t${0}\n}"
+    "body": ["function (err, $1) {", "\tif (err) throw err", "\t$0", "}"] // function (err, value) { if (err) throw err; value }
   },
   "process.env": {
     "prefix": "pe",
@@ -34,15 +37,15 @@
   },
   "Promise.all": {
     "prefix": "pa",
-    "body": "Promise.all(${1:value})"
+    "body": "Promise.all($1)" // Promise.all(value)
   },
   "Promise.resolve": {
     "prefix": "prs",
-    "body": "Promise.resolve(${1:value})"
+    "body": "Promise.resolve($1)" // Promise.resolve(value)
   },
   "Promise.reject": {
     "prefix": "prj",
-    "body": "Promise.reject(${1:value})"
+    "body": "Promise.reject($1)" // Promise.reject(value)
   },
   "Promise": {
     "prefix": "p",
@@ -50,291 +53,415 @@
   },
   "new Promise": {
     "prefix": "np",
-    "body": "new Promise((resolve, reject) => {\n\t${0}\n})"
+    "body": ["new Promise((resolve, reject) => {", "\t$0", "})"]
+    // new Promise((resolve, reject) => {value})
   },
   "Promise.then": {
     "prefix": "pt",
-    "body": "${1:promise}.then((${2:value}) => {\n\t${0}\n})"
+    "body": ["$1.then(($2) => {", "\t$0", "})"]
+    // Promise.then((value) => {value})
   },
   "Promise.catch": {
     "prefix": "pc",
-    "body": "${1:promise}.catch(error => {\n\t${0}\n})"
+    "body": ["$1.catch(error => {", "\t$0", "})"]
+    // Promise.catch(error => {error})
   },
   "describe": {
     "prefix": "desc",
-    "body": "describe('${1:description}', () => {\n\t${0}\n})"
+    "body": ["describe('$1', () => {", "\t$0", "})"]
+    // describe(description, () => {value})
   },
-  "describe top level": {
-    "prefix": "dt",
-    "body": "describe('${TM_FILENAME_BASE}', () => {\n\t${0}\n})"
-  },
+  // "describe top level": {
+  //   "prefix": "dt",
+  //   "body": ["describe('${TM_FILENAME_BASE}', () => {", "\t$0", "})"]
+  // },
   "it asynchronous": {
     "prefix": "it",
-    "body": "it('${1:description}', async () => {\n\t${0}\n})"
+    "body": ["it('$1', async () => {", "\t$0", "})"]
+    // it(description, async () => {value})
   },
   "it.todo": {
     "prefix": "itt",
-    "body": "it.todo('${1:description}')"
+    "body": "it.todo('$1')"
+    // it.todo(description)
   },
   "it with a callback": {
     "prefix": "itd",
-    "body": "it('${1:description}', (done) => {\n\t${0}\n})"
+    "body": ["it('$1', (done) => {", "\t$0", "})"]
+    // it(description, (done) => {value})
   },
   "it synchronous": {
     "prefix": "its",
-    "body": "it('${1:description}', () => {\n\t${0}\n})"
+    "body": ["it('$1', () => {", "\t$0", "})"]
+    // it(description, () => {value})
   },
   "before": {
     "prefix": "bf",
-    "body": "before(async () => {\n\t${0}\n})"
+    "body": ["before(async () => {", "\t$0", "})"]
+    // before(async () => {value})
   },
   "beforeAll": {
     "prefix": "ba",
-    "body": "beforeAll(async () => {\n\t${0}\n})"
+    "body": ["beforeAll(async () => {", "\t$0", "})"]
+    // beforeAll(async () => {value})
   },
   "beforeEach": {
     "prefix": "bfe",
-    "body": "beforeEach(async () => {\n\t${0}\n})"
+    "body": ["beforeEach(async () => {", "\t$0", "})"]
+    // beforeEach(async () => {value})
   },
   "after": {
     "prefix": "aft",
-    "body": "after(() => {\n\t${0}\n})"
+    "body": ["after(() => {", "\t$0", "})"]
+    // after(() => {value})
   },
   "afterEach": {
     "prefix": "afe",
-    "body": "afterEach(() => {\n\t${0}\n})"
+    "body": ["afterEach(() => {", "\t$0", "})"]
+    // afterEach(() => {value})
   },
   "require": {
     "prefix": "rq",
-    "body": "require('${1:module}')"
+    "body": "require('$1')"
+    // require(module)
   },
   "const module = require('module')": {
     "prefix": "cr",
-    "body": "const ${1:module} = require('${1:module}')"
+    "body": "const $1 = require('$1')"
+    // const module = require(module)
   },
   "exports.member": {
     "prefix": "em",
-    "body": "exports.${1:member} = ${2:value}"
+    "body": "exports.$1 = $2"
+    // exports.member = value
   },
   "module.exports": {
     "prefix": "me",
-    "body": "module.exports = ${1:name}"
+    "body": "module.exports = $1"
+    // module.exports = name
   },
   "module as class": {
     "prefix": "mec",
-    "body": "class ${1:name} {\n\tconstructor (${2:arguments}) {\n\t\t${0}\n\t}\n}\n\nmodule.exports = ${1:name}\n"
+    "body": [
+      "class $1 {",
+      "\tconstructor ($2) {",
+      "\t\t$0",
+      "\t}",
+      "}",
+      "",
+      "module.exports = $1",
+      ""
+    ]
+    // class name {
+    //     constructor (arguments) {
+    //          value
+    //     }
+    // }
+    // module.exports = name
   },
   "event handler": {
     "prefix": "on",
-    "body": "${1:emitter}.on('${2:event}', (${3:arguments}) => {\n\t${0}\n})"
+    "body": ["$1.on('$2', ($3) => {", "\t$0", "})"]
+    // emitter.on(event, (arguments) => {
+    //     value
+    // })
   },
   "dom event cancel default and propagation": {
     "prefix": "evc",
-    "body": "ev.preventDefault()\nev.stopPropagation()\nreturn false"
+    "body": ["ev.preventDefault()", "ev.stopPropagation()", "return false"]
+    // ev.preventDefault()
+    // ev.stopPropagation()
+    // return false
   },
   "addEventListener": {
     "prefix": "ae",
-    "body": "${1:document}.addEventListener('${2:event}', ${3:ev} => {\n\t${0}\n})"
+    "body": ["$1.addEventListener('$2', $3 => {", "\t$0", "})"]
+    // document.addEventListener(event, ev => {
+    //     value
+    // })
   },
   "removeEventListener": {
     "prefix": "rel",
-    "body": "${1:document}.removeEventListener('${2:event}', ${3:listener})"
+    "body": "$1.removeEventListener('$2', $3)"
+    // document.removeEventListener(event, listener)
   },
   "getElementById": {
     "prefix": "gi",
-    "body": "${1:document}.getElementById('${2:id}')"
+    "body": "$1.getElementById('$2')"
+    // document.getElementById(id)
   },
   "getElementsByClassName": {
     "prefix": "gc",
-    "body": "Array.from(${1:document}.getElementsByClassName('${2:class}'))"
+    "body": "Array.from($1.getElementsByClassName('$2'))"
+    // Array.from(document.getElementsByClassName(class))
   },
   "getElementsByTagName": {
     "prefix": "gt",
-    "body": "Array.from(${1:document}.getElementsByTagName('${2:tag}'))"
+    "body": "Array.from($1.getElementsByTagName('$2'))"
+    // Array.from(document.getElementsByTagName(tag))
   },
   "querySelector": {
     "prefix": "qs",
-    "body": "${1:document}.querySelector('${2:selector}')"
+    "body": "$1.querySelector('$2')"
+    // document.querySelector(selector)
   },
   "querySelectorAll": {
     "prefix": "qsa",
-    "body": "Array.from(${1:document}.querySelectorAll('${2:selector}'))"
+    "body": "Array.from($1.querySelectorAll('$2'))"
+    // Array.from(document.querySelectorAll(selector))
   },
   "createDocumentFragment": {
     "prefix": "cdf",
-    "body": "${1:document}.createDocumentFragment(${2:elem})"
+    "body": "$1.createDocumentFragment($2)"
+    // document.createDocumentFragment(elem)
   },
   "createElement": {
     "prefix": "cel",
-    "body": "${1:document}.createElement(${2:elem})"
+    "body": "$1.createElement($2)"
+    // document.createElement(elem)
   },
   "classList.add": {
     "prefix": "hecla",
-    "body": "${1:el}.classList.add('${2:class}')"
+    "body": "$1.classList.add('$2')"
+    // el.classList.add(class)
   },
   "classList.remove": {
     "prefix": "heclr",
-    "body": "${1:el}.classList.remove('${2:class}')"
+    "body": "$1.classList.remove('$2')"
+    // el.classList.remove(class)
   },
   "classList.toggle": {
     "prefix": "hect",
-    "body": "${1:el}.classList.toggle('${2:class}')"
+    "body": "$1.classList.toggle('$2')"
+    // el.classList.toggle(class)
   },
   "getAttribute": {
     "prefix": "hega",
-    "body": "${1:el}.getAttribute('${2:attr}')"
+    "body": "$1.getAttribute('$2')"
   },
   "removeAttribute": {
     "prefix": "hera",
-    "body": "${1:el}.removeAttribute('${2:attr}')"
+    "body": "$1.removeAttribute('$2')"
+    // el.removeAttribute(attr)
   },
   "setAttribute": {
     "prefix": "hesa",
-    "body": "${1:el}.setAttribute('${2:attr}', ${3:value})"
+    "body": "$1.setAttribute('$2', $3)"
+    // el.setAttribute(attr, value)
   },
   "appendChild": {
     "prefix": "heac",
-    "body": "${1:el}.appendChild(${2:elem})"
+    "body": "$1.appendChild($2)"
+    // el.appendChild(elem)
   },
   "removeChild": {
     "prefix": "herc",
-    "body": "${1:el}.removeChild(${2:elem})"
+    "body": "$1.removeChild($2)"
+    // el.removeChild(elem)
   },
   "forEach loop": {
     "prefix": "fe",
-    "body": "${1:iterable}.forEach((${2:item}) => {\n\t${0}\n})"
+    "body": ["$1.forEach(($2) => {", "\t$0", "})"]
+    // iterable.forEach(item => {
+    //   // code here
+    // })
   },
   "map": {
     "prefix": "map",
-    "body": "${1:iterable}.map((${2:item}) => {\n\t${0}\n})"
+    "body": ["$1.map(($2) => {", "\t$0", "})"]
+    // iterable.map(item => {
+    //   // code here
+    // })
   },
   "reduce": {
     "prefix": "reduce",
-    "body": "${1:iterable}.reduce((${2:previous}, ${3:current}) => {\n\t${0}\n}${4:, initial})"
+    "body": ["$1.reduce(($2, $3) => {", "\t$0", "}${4:, initial})"]
+    // iterable.reduce((previous, current) => {
+    //   // code here
+    // }, initial)
   },
   "filter": {
     "prefix": "filter",
-    "body": "${1:iterable}.filter((${2:item}) => {\n\t${0}\n})"
+    "body": ["$1.filter(($2) => {", "\t$0", "})"]
+    // iterable.filter(item => {
+    //   // code here
+    // })
   },
   "find": {
     "prefix": "find",
-    "body": "${1:iterable}.find((${2:item}) => {\n\t${0}\n})"
+    "body": ["$1.find(($2) => {", "\t$0", "})"]
   },
   "every": {
     "prefix": "every",
-    "body": "${1:iterable}.every((${2:item}) => {\n\t${0}\n})"
+    "body": ["$1.every(($2) => {", "\t$0", "})"]
+    // iterable.every(item => {
+    //   // code here
+    // })
   },
   "some": {
     "prefix": "some",
-    "body": "${1:iterable}.some((${2:item}) => {\n\t${0}\n})"
+    "body": ["$1.some(($2) => {", "\t$0", "})"]
+    // iterable.some(item => {
+    //   // code here
+    // })
   },
   "var statement": {
     "prefix": "v",
-    "body": "var ${1:name}"
+    "body": "var $1"
   },
   "var assignment": {
     "prefix": "va",
-    "body": "var ${1:name} = ${2:value}"
+    "body": "var $1 = $2"
+    // var name = value
   },
   "let statement": {
     "prefix": "l",
-    "body": "let ${1:name}"
+    "body": "let $1"
   },
   "const statement": {
     "prefix": "c",
-    "body": "const ${1:name}"
+    "body": "const $1"
   },
   "const statement from destructuring": {
     "prefix": "cd",
-    "body": "const { ${2:prop} } = ${1:value}"
+    "body": "const { $2 } = $1"
+    // const { prop } = value
   },
   "const statement from array destructuring": {
     "prefix": "cad",
-    "body": "const [ ${2:prop} ] = ${1:value}"
+    "body": "const [ $2 ] = $1"
+    // const [ prop ] = value
   },
   "const assignment awaited": {
     "prefix": "ca",
-    "body": "const ${1:name} = await ${2:value}"
+    "body": "const $1 = await $2"
+    // const name = await value
   },
   "const destructuring assignment awaited": {
     "prefix": "cda",
-    "body": "const { ${1:name} } = await ${2:value}"
+    "body": "const { $1 } = await $2"
+    // const { name } = await value
   },
   "const arrow function assignment": {
     "prefix": "cf",
-    "body": "const ${1:name} = (${2:arguments}) => {\n\treturn ${0}\n}"
+    "body": ["const $1 = ($2) => {", "\treturn $0", "}"]
+    // const name = (arguments) => {
+    //   return 0;
+    // }
   },
   "let assignment awaited": {
     "prefix": "la",
-    "body": "let ${1:name} = await ${2:value}"
+    "body": "let $1 = await $2"
+    // let name = await value
   },
   "const assignment yielded": {
     "prefix": "cy",
-    "body": "const ${1:name} = yield ${2:value}"
+    "body": "const $1 = yield $2"
+    // const name = yield value
   },
   "let assignment yielded": {
     "prefix": "ly",
-    "body": "let ${1:name} = yield ${2:value}"
+    "body": "let $1 = yield $2"
+    // let name = yield value
   },
   "const object": {
     "prefix": "co",
-    "body": "const ${1:name} = {\n\t${0}\n}"
+    "body": ["const $1 = {", "\t$0", "}"]
+    // const name = {
+    //   key: value,
+    // }
   },
   "const array": {
     "prefix": "car",
-    "body": "const ${1:name} = [\n\t${0}\n]"
+    "body": ["const $1 = [", "\t$0", "]"]
+    // const name = [
+    //   value,
+    // ]
   },
   "generate array of integers starting with 1": {
     "prefix": "gari",
-    "body": "Array.from({ length: ${1:length} }, (v, k) => k + 1)"
+    "body": "Array.from({ length: $1 }, (v, k) => k + 1)"
+    // Array.from({ length: length }, (v, k) => k + 1)
   },
   "generate array of integers starting with 0": {
     "prefix": "gari0",
-    "body": "[...Array(${1:length}).keys()]"
+    "body": "[...Array($1).keys()]"
+    // [...Array(length).keys()]
   },
   "class": {
     "prefix": "cs",
-    "body": "class ${1:name} {\n\tconstructor (${2:arguments}) {\n\t\t${0}\n\t}\n}"
+    "body": ["class $1 {", "\tconstructor ($2) {", "\t\t$0", "\t}", "}"]
+    // class name {
+    //   constructor (arguments) {
+    //     this.arguments = arguments;
+    //   }
+    // }
   },
   "class extends": {
     "prefix": "csx",
-    "body": "class ${1:name} extends ${2:base} {\n\tconstructor (${3:arguments}) {\n\t\tsuper(${3:arguments})\n\t\t${0}\n\t}\n}"
+    "body": [
+      "class $1 extends $2 {",
+      "\tconstructor ($3) {",
+      "\t\tsuper($3)",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ]
+    // class name extends base {
+    //   constructor (arguments) {
+    //     super(arguments);
+    //     this.arguments = arguments;
+    //   }
+    // }
   },
   "module export": {
     "prefix": "e",
-    "body": "export ${1:member}"
+    "body": "export $1"
+    // export member
   },
   "module export const": {
     "prefix": "ec",
-    "body": "export const ${1:member} = ${2:value}"
+    "body": "export const $1 = $2"
+    // export const member = value
   },
   "export named function": {
     "prefix": "ef",
-    "body": "export function ${1:member} (${2:arguments}) {\n\t${0}\n}"
+    "body": ["export function $1 ($2) {", "\t$0", "}"]
+    // export function member (arguments) {
+    //   $0
+    // }
   },
   "module default export": {
     "prefix": "ed",
-    "body": "export default ${1:member}"
+    "body": "export default $1"
+    // export default member
   },
   "module default export function": {
     "prefix": "edf",
-    "body": "export default function ${1:name} (${2:arguments}) {\n\t${0}\n}"
+    "body": ["export default function $1 ($2) {", "\t$0", "}"]
+    // export default function name (arguments) {
+    //   $0
+    // }
   },
   "import module": {
     "prefix": "im",
-    "body": "import ${2:*} from '${1:module}'"
+    "body": "import ${2:*} from '$1'"
+    // import * from 'module'
   },
   "import module as": {
     "prefix": "ia",
-    "body": "import ${2:*} as ${3:name} from '${1:module}'"
+    "body": "import ${2:*} as $3 from '$1'"
+    // import * as name from 'module'
   },
   "import module destructured": {
     "prefix": "id",
-    "body": "import {$2} from '${1:module}'"
+    "body": "import {$2} from '$1'"
+    // import {member} from 'module'
   },
   "typeof": {
     "prefix": "to",
-    "body": "typeof ${1:source} === '${2:undefined}'"
+    "body": "typeof $1 === '$2'"
+    // typeof source === 'undefined'
   },
   "this": {
     "prefix": "t",
@@ -342,119 +469,193 @@
   },
   "instanceof": {
     "prefix": "iof",
-    "body": "${1:source} instanceof ${2:Object}"
+    "body": "$1 instanceof $2"
+    // source instanceof Object
   },
   "let and if statement": {
     "prefix": "lif",
-    "body": "let ${0} \n if (${2:condition}) {\n\t${1}\n}"
+    "body": ["let $0 ", " if ($2) {", "\t$1", "}"]
+    // let name if (condition) {
+    //   name
+    // }
   },
   "else statement": {
     "prefix": "el",
-    "body": "else {\n\t${0}\n}"
+    "body": ["else {", "\t$0", "}"]
+    // else {
+    //   0
+    // }
   },
   "else if statement": {
     "prefix": "ei",
-    "body": "else if (${1:condition}) {\n\t${0}\n}"
+    "body": ["else if ($1) {", "\t$0", "}"]
+    // else if (condition) {
+    //   0
+    // }
   },
   "while iteration decrementing": {
     "prefix": "wid",
-    "body": "let ${1:array}Index = ${1:array}.length\nwhile (${1:array}Index--) {\n\t${0}\n}"
+    "body": ["let $1Index = $1.length", "while ($1Index--) {", "\t$0", "}"]
+    // let arrayIndex = array.length
+    // while (arrayIndex--) {
+    //   0
+    // }
   },
   "throw new Error": {
     "prefix": "tn",
-    "body": "throw new ${0:error}"
+    "body": "throw new $0"
+    // throw new Error('message')
   },
   "try/catch": {
     "prefix": "tc",
-    "body": "try {\n\t${0}\n} catch (${1:err}) {\n\t\n}"
+    "body": ["try {", "\t$0", "} catch ($1) {", "\t", "}"]
+    // try {
+    //   0
+    // } catch (err) {
+    // }
   },
   "try/finally": {
     "prefix": "tf",
-    "body": "try {\n\t${0}\n} finally {\n\t\n}"
+    "body": ["try {", "\t$0", "} finally {", "\t", "}"]
+    // try {
+    //   0
+    // } finally {
+    // }
   },
   "try/catch/finally": {
     "prefix": "tcf",
-    "body": "try {\n\t${0}\n} catch (${1:err}) {\n\t\n} finally {\n\t\n}"
+    "body": [
+      "try {",
+      "\t$2",
+      "} catch ($1) {",
+      "\t$1",
+      "} finally {",
+      "\t$0",
+      "}"
+    ]
+    // try {
+    //   2
+    // } catch (err) {
+    //   1
+    // } finally {
+    //   0
+    // }
   },
   "anonymous function": {
     "prefix": "fan",
-    "body": "function (${1:arguments}) {${0}}"
+    "body": "function ($1) {$0}"
+    // function (arguments) {suite}
   },
   "named function": {
     "prefix": "fn",
-    "body": "function ${1:name} (${2:arguments}) {\n\t${0}\n}"
+    "body": ["function $1 ($2) {", "\t$0", "}"]
+    // function name (arguments) {
+    //   suite
+    // }
   },
   "async function": {
     "prefix": "asf",
-    "body": "async function (${1:arguments}) {\n\t${0}\n}"
+    "body": ["async function ($1) {", "\t$0", "}"]
+    // async function (arguments) {
+    //   suite
+    // }
   },
   "async arrow function": {
     "prefix": "aa",
-    "body": "async (${1:arguments}) => {\n\t${0}\n}"
+    "body": ["async ($1) => {", "\t$0", "}"]
+    // async (arguments) => {
+    //   suite
+    // }
   },
   "immediately-invoked function expression": {
     "prefix": "iife",
-    "body": ";(function (${1:arguments}) {\n\t${0}\n})(${2})"
+    "body": [";(function ($1) {", "\t$0", "})($2)"]
+    // ;(function (arguments) {
+    //   suite
+    // })()
   },
   "async immediately-invoked function expression": {
     "prefix": "aiife",
-    "body": ";(async (${1:arguments}) => {\n\t${0}\n})(${2})"
+    "body": [";(async ($1) => {", "\t$0", "})($2)"]
+    // ;(async (arguments) => {
+    //   suite
+    // })()
   },
   "arrow function": {
     "prefix": "af",
-    "body": "(${1:arguments}) => ${2:statement}"
+    "body": "($1) => $2"
+    // (arguments) => {statement}
   },
   "arrow function with destructuring": {
     "prefix": "fd",
-    "body": "({${1:arguments}}) => ${2:statement}"
+    "body": "({$1}) => $2"
+    // ({arguments}) => {statement}
   },
   "arrow function with destructuring returning destructured": {
     "prefix": "fdr",
-    "body": "({${1:arguments}}) => ${1:arguments}"
+    "body": "({$1}) => $1"
+    // ({arguments}) => {arguments}
   },
   "arrow function with body": {
     "prefix": "f",
-    "body": "(${1:arguments}) => {\n\t${0}\n}"
+    "body": ["($1) => {", "\t$0", "}"]
+    // (arguments) => {
+    //   suite
+    // }
   },
   "arrow function with return": {
     "prefix": "fr",
-    "body": "(${1:arguments}) => {\n\treturn ${0}\n}"
+    "body": ["($1) => {", "\treturn $0", "}"]
+    // (arguments) => {
+    //   return suite
+    // }
   },
   "generator function": {
     "prefix": "gf",
-    "body": "function* (${1:arguments}) {\n\t${0}\n}"
+    "body": ["function* ($1) {", "\t$0", "}"]
+    // function* (arguments) {
+    //   suite
+    // }
   },
   "named generator": {
     "prefix": "gfn",
-    "body": "function* ${1:name}(${2:arguments}) {\n\t${0}\n}"
+    "body": ["function* $1($2) {", "\t$0", "}"]
+    // function* name(arguments) {
+    //   suite
+    // }
   },
   "console.log": {
     "prefix": "cl",
-    "body": "console.log(${0})"
+    "body": "console.log($0)"
   },
   "console.log with log": {
     "prefix": "log",
-    "body": "console.log(${0})"
+    "body": "console.log($0)"
   },
   "console.log a variable": {
     "prefix": "cv",
-    "body": "console.log('${1}:', ${1})"
+    "body": "console.log('$1:', $1)"
+    // console.log('variable:', variable)
   },
   "console.error": {
     "prefix": "ce",
-    "body": "console.error(${0})"
+    "body": "console.error($0)"
   },
   "console.warn": {
     "prefix": "cw",
-    "body": "console.warn(${0})"
+    "body": "console.warn($0)"
   },
   "console.dir": {
     "prefix": "cod",
-    "body": "console.dir('${1}:', ${1})"
+    "body": "console.dir('$1:', $1)"
+    // console.dir('variable:', variable)
   },
   "constructor": {
     "prefix": "cn",
-    "body": "constructor () {\n\t${0}\n}"
+    "body": ["constructor () {", "\t$0", "}"]
+    // constructor () {
+    //   suite
+    // }
   },
   "use strict": {
     "prefix": "uss",
@@ -470,75 +671,102 @@
   },
   "method": {
     "prefix": "m",
-    "body": "${1:method} (${2:arguments}) {\n\t${0}\n}"
+    "body": ["$1 ($2) {", "\t$0", "}"]
+    // method (arguments) {
+    //   suite
+    // }
   },
   "getter": {
     "prefix": "get",
-    "body": "get ${1:property} () {\n\t${0}\n}"
+    "body": ["get $1 () {", "\t$0", "}"]
+    // get property () {
+    //   suite
+    // }
   },
   "setter": {
     "prefix": "set",
-    "body": "set ${1:property} (${2:value}) {\n\t${0}\n}"
+    "body": ["set $1 ($2) {", "\t$0", "}"]
+    // set property (value) {
+    //   suite
+    // }
   },
   "getter + setter": {
     "prefix": "gs",
-    "body": "get ${1:property} () {\n\t${0}\n}\nset ${1:property} (${2:value}) {\n\t\n}"
+    "body": ["get $1 () {", "\t$0", "}", "set $1 ($2) {", "\t", "}"]
+    // get property () {
+    //   suite
+    // }
+    // set property (value) {
+    //   suite
+    // }
   },
   "prototype method": {
     "prefix": "proto",
-    "body": "${1:Class}.prototype.${2:method} = function (${3:arguments}) {\n\t${0}\n}"
+    "body": ["$1.prototype.$2 = function ($3) {", "\t$0", "}"]
+    // Class.prototype.method = function (arguments) {
+    //   suite
+    // }
   },
   "Object.assign": {
     "prefix": "oa",
-    "body": "Object.assign(${1:dest}, ${2:source})"
+    "body": "Object.assign($1, $2)"
+    // Object.assign(dest, source)
   },
   "Object.create": {
     "prefix": "oc",
-    "body": "Object.create(${1:obj})"
+    "body": "Object.create($1)"
+    // Object.create(obj)
   },
   "Object.getOwnPropertyDescriptor": {
     "prefix": "og",
-    "body": "Object.getOwnPropertyDescriptor(${1:obj}, '${2:prop}')"
+    "body": "Object.getOwnPropertyDescriptor($1, '$2')"
+    // Object.getOwnPropertyDescriptor(obj, 'prop')
   },
   "ternary": {
     "prefix": "te",
-    "body": "${1:cond} ? ${2:true} : ${3:false}"
+    "body": "$1 ? $2 : $3"
+    // condition ? true_suite : false_suite
   },
   "ternary assignment": {
     "prefix": "ta",
-    "body": "const ${0} = ${1:cond} ? ${2:true} : ${3:false}"
+    "body": "const $0 = $1 ? $2 : $3"
+    // const name = condition ? true_suite : false_suite
   },
   "Object.defineProperty": {
     "prefix": "od",
-    "body": "Object.defineProperty(${1:dest}, '${2:prop}', {\n\t${0}\n})"
+    "body": ["Object.defineProperty($1, '$2', {", "\t$0", "})"]
+    // Object.defineProperty(dest, 'prop', {
+    //   suite
+    // })
   },
   "Object.keys": {
     "prefix": "ok",
-    "body": "Object.keys(${1:obj})"
+    "body": "Object.keys($1)"
   },
   "Object.values": {
     "prefix": "ov",
-    "body": "Object.values(${1:obj})"
+    "body": "Object.values($1)"
   },
   "Object.entries": {
     "prefix": "oe",
-    "body": "Object.entries(${1:obj})"
+    "body": "Object.entries($1)"
   },
   "return": {
     "prefix": "r",
-    "body": "return ${0}"
+    "body": "return $0"
   },
   "return arrow function": {
     "prefix": "rf",
-    "body": "return (${1:arguments}) => ${2:statement}"
+    "body": "return ($1) => $2"
+    // return (arguments) => statement
   },
   "yield": {
     "prefix": "y",
-    "body": "yield ${0}"
+    "body": "yield $0"
   },
   "return this": {
     "prefix": "rt",
-    "body": "return ${0:this}"
+    "body": "return $0"
   },
   "return null": {
     "prefix": "rn",
@@ -546,101 +774,149 @@
   },
   "return new object": {
     "prefix": "ro",
-    "body": "return {\n\t${0}\n}"
+    "body": ["return {", "\t$0", "}"]
+    // return {
+    //    suite
+    // }
   },
   "return new array": {
     "prefix": "ra",
-    "body": "return [\n\t${0}\n]"
+    "body": ["return [", "\t$0", "]"]
+    // return [
+    //    suite
+    // ]
   },
   "return promise": {
     "prefix": "rp",
-    "body": "return new Promise((resolve, reject) => {\n\t${0}\n})"
+    "body": ["return new Promise((resolve, reject) => {", "\t$0", "})"]
+    // return new Promise((resolve, reject) => {
+    //    suite
+    // })
   },
-  "wrap selection in arrow function": {
-    "prefix": "wrap selection in arrow function",
-    "body": "() => {\n\t{$TM_SELECTED_TEXT}\n}",
-    "description": "wraps text in arrow function"
-  },
-  "wrap selection in async arrow function": {
-    "prefix": "wrap selection in async arrow function",
-    "body": "async () => {\n\t{$TM_SELECTED_TEXT}\n}",
-    "description": "wraps text in arrow function"
-  },
+  // "wrap selection in arrow function": {
+  //   "prefix": "wrap selection in arrow function",
+  //   "body": ["() => {\n\t{$TM_SELECTED_TEXT}\n}"],
+  //   "description": "wraps text in arrow function"
+  // },
+  // "wrap selection in async arrow function": {
+  //   "prefix": "wrap selection in async arrow function",
+  //   "body": ["async () => {\n\t{$TM_SELECTED_TEXT}\n}"],
+  //   "description": "wraps text in arrow function"
+  // },
   "define module": {
     "prefix": "define",
     "body": [
       "define([",
       "\t'require',",
-      "\t'${1:dependency}'",
-      "], function(require, ${2:factory}) {",
+      "\t'$1'",
+      "], function(require, $2) {",
       "\t'use strict';",
       "\t$0",
       "});"
     ],
+    // define ([
+    //    'require',
+    //    'dependency',
+    // ], function(require, factory) {
+    //    'use strict';
+    //     suite
+    // })
     "description": "define module"
   },
   "For Loop": {
     "prefix": "for",
     "body": [
-      "for (let ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {",
-      "\tconst ${3:element} = ${2:array}[${1:index}];",
+      "for (let $1 = 0; $1 < $2.length; $1++) {",
+      "\tconst $3 = $2[$1];",
       "\t$0",
       "}"
     ],
+    // for (let index = 0; index < array.length; index++) {
+    //     const element = array[index];
+    //     suite
+    // }
+
     "description": "For Loop"
   },
   "For-Each Loop": {
     "prefix": "foreach",
-    "body": ["${1:array}.forEach(${2:element} => {", "\t$0", "});"],
+    "body": ["$1.forEach($2 => {", "\t$0", "});"],
+    // array.forEach(element => {
+    //     suite
+    // });
     "description": "For-Each Loop"
   },
   "For-In Loop": {
     "prefix": "forin",
     "body": [
-      "for (const ${1:key} in ${2:object}) {",
-      "\tif (${2:object}.hasOwnProperty(${1:key})) {",
-      "\t\tconst ${3:element} = ${2:object}[${1:key}];",
+      "for (const $1 in $2) {",
+      "\tif ($2.hasOwnProperty($1)) {",
+      "\t\tconst $3 = $2[$1];",
       "\t\t$0",
       "\t}",
       "}"
     ],
+    // for (const key in object) {
+    //     if (object.hasOwnProperty(key)) {
+    //         const element = object[key];
+    //         suite
+    //     }
+    // }
     "description": "For-In Loop"
   },
   "For-Of Loop": {
     "prefix": "forof",
-    "body": ["for (const ${1:iterator} of ${2:object}) {", "\t$0", "}"],
+    "body": ["for (const $1 of $2) {", "\t$0", "}"],
+    // for (const iterator of object) {
+    //     suite
+    // }
     "description": "For-Of Loop"
   },
   "For-Await-Of Loop": {
     "prefix": "forawaitof",
-    "body": ["for await (const ${1:iterator} of ${2:object}) {", "\t$0", "}"],
+    "body": ["for await (const $1 of $2) {", "\t$0", "}"],
+    // for await (const iterator of object) {
+    //     suite
+    // }
     "description": "For-Await-Of Loop"
   },
   "Function Statement": {
     "prefix": "function",
-    "body": ["function ${1:name}(${2:params}) {", "\t$0", "}"],
+    "body": ["function $1($2) {", "\t$0", "}"],
+    // function name(params) {
+    //     suite
+    // }
     "description": "Function Statement"
   },
   "If Statement": {
     "prefix": "if",
-    "body": ["if (${1:condition}) {", "\t$0", "}"],
+    "body": ["if ($1) {", "\t$0", "}"],
+    // if (condition) {
+    //     suite
+    // }
     "description": "If Statement"
   },
   "If-Else Statement": {
     "prefix": "ifelse",
-    "body": ["if (${1:condition}) {", "\t$0", "} else {", "\t", "}"],
+    "body": ["if ($1) {", "\t$0", "} else {", "\t", "}"],
+    // if (condition) {
+    //     suite
+    // } else {
+    //     suite
+    // }
     "description": "If-Else Statement"
   },
   "New Statement": {
     "prefix": "new",
-    "body": ["const ${1:name} = new ${2:type}(${3:arguments});$0"],
+    "body": ["const $1 = new $2($3);$0"],
+    // const name = new type(arguments);
     "description": "New Statement"
   },
   "Switch Statement": {
     "prefix": "switch",
     "body": [
-      "switch (${1:key}) {",
-      "\tcase ${2:value}:",
+      "switch ($1) {",
+      "\tcase $2:",
       "\t\t$0",
       "\t\tbreak;",
       "",
@@ -648,36 +924,62 @@
       "\t\tbreak;",
       "}"
     ],
+    // switch (key) {
+    //     case value:
+    //         suite
+    //         break;
+    //
+    //     default:
+    //         break;
+    // }
     "description": "Switch Statement"
   },
   "While Statement": {
     "prefix": "while",
-    "body": ["while (${1:condition}) {", "\t$0", "}"],
+    "body": ["while ($1) {", "\t$0", "}"],
+    // while (condition) {
+    //     suite
+    // }
     "description": "While Statement"
   },
   "Do-While Statement": {
     "prefix": "dowhile",
-    "body": ["do {", "\t$0", "} while (${1:condition});"],
+    "body": ["do {", "\t$0", "} while ($1);"],
+    // do {
+    //     suite
+    // } while (condition);
     "description": "Do-While Statement"
   },
   "Try-Catch Statement": {
     "prefix": "trycatch",
-    "body": ["try {", "\t$0", "} catch (${1:error}) {", "\t", "}"],
+    "body": ["try {", "\t$0", "} catch ($1) {", "\t", "}"],
+    // try {
+    //     suite
+    // } catch (error) {
+    //     suite
+    // }
     "description": "Try-Catch Statement"
   },
   "Set Timeout Function": {
     "prefix": "settimeout",
-    "body": ["setTimeout(() => {", "\t$0", "}, ${1:timeout});"],
+    "body": ["setTimeout(() => {", "\t$0", "}, $1);"],
+    // setTimeout(() => {
+    //     suite
+    // }, timeout);
     "description": "Set Timeout Function"
   },
   "Set Interval Function": {
     "prefix": "setinterval",
-    "body": ["setInterval(() => {", "\t$0", "}, ${1:interval});"],
+    "body": ["setInterval(() => {", "\t$0", "}, $1);"],
+    // setInterval(() => {
+    //     suite
+    // }, interval);
     "description": "Set Interval Function"
   },
   "Import external module.": {
     "prefix": "import statement",
-    "body": ["import { $0 } from \"${1:module}\";"],
+    "body": ["import { $0 } from \"$1\";"],
+    // import { suite } from "module";
     "description": "Import external module."
   },
   "Region Start": {
@@ -693,16 +995,19 @@
   "Log warning to console": {
     "prefix": "warn",
     "body": ["console.warn($1);", "$0"],
+    // console.warn(suite);
     "description": "Log warning to the console"
   },
   "Log error to console": {
     "prefix": "error",
     "body": ["console.error($1);", "$0"],
+    // console.error(suite);
     "description": "Log error to the console"
   },
   "concat": {
     "prefix": "concat",
     "body": ["concat($1);", "$0"],
+    // concat(suite);
     "description": "The concat() method concatenates the string arguments to the calling string and returns a new string."
   },
   "endsWith": {
@@ -758,11 +1063,13 @@
   "replace": {
     "prefix": "replace",
     "body": ["replace($1, $2);", "$0"],
+    // replace(searchValue, replaceValue);
     "description": "The replace() method returns a new string with one, some, or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function called for each match. If pattern is a string, only the first occurrence will be replaced. The original string is left unchanged."
   },
   "replaceAll": {
     "prefix": "replaceAll",
     "body": ["replaceAll($1, $2);", "$0"],
+    // replaceAll(searchValue, replaceValue);
     "description": "The replaceAll() method returns a new string with all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match. The original string is left unchanged."
   },
   "search": {
