@@ -1701,3 +1701,6 @@ gps
 stow .
 gcam 'fix position of right side parentheses in combos'
 gps
+gcam 'update zed snippets'
+gps
+stow .

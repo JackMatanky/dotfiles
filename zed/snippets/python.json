@@ -32,7 +32,7 @@
 
   "Jupyter cell": {
     "prefix": "jcell",
-    "body": ["# %% ${0:| ,\[markdown\]|}", "$1"],
+    "body": ["# %% ${0:| ,[markdown]|}", "$1"],
     "description": "Add new REPL code cell"
   },
   "Jupyter cell": {
