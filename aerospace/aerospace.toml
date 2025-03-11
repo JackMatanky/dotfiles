@@ -82,9 +82,10 @@ run = 'move-node-to-workspace 4'
 if.app-id = 'com.microsoft.VSCode'
 run = 'move-node-to-workspace 5'
 
+# Does not work, do not know why
 [[on-window-detected]]
 if.app-id = 'net.ankiweb.dtop'
-if.window-title-regex-substring = 'browse'
+if.window-title-regex-substring = 'Browse\s\(\d+\sof\s\d+\snotes\sselected\)'
 run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]

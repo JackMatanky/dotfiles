@@ -1777,3 +1777,14 @@ gps
 stow .
 as load
 as app
+gcam 'fix aerospace nushell alias'
+gps
+stow .
+as app
+as window
+stow .
+as load
+stow .
+as load
+stow .
+as load
