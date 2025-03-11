@@ -1761,3 +1761,14 @@ as app
 stow .
 as app
 as window
+gcam 'consolidate aerospace aliases into one function'
+gps
+stow .
+as window
+stow .
+as load
+as debug
+stow .
+as load
+stow .
+as load

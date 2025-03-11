@@ -83,7 +83,8 @@ if.app-id = 'com.microsoft.VSCode'
 run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
-if.window-title-regex-substring = 'anki.+browse'
+if.app-id = 'net.ankiweb.dtop'
+if.window-title-regex-substring = 'browse'
 run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
