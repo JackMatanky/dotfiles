@@ -179,10 +179,29 @@ def --env yz [...args] {
 }
 
 # --- Aerospace ---
-alias as = aerospace
-alias as_load = aerospace reload-config
-def ff [] {
-    aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
+def as [command: string = ""] {
+  let cmd = match $command {
+    "load" => [reload-config]
+    "debug" => [debug-windows]
+    "monitor" => [list-monitors]
+    "app" => {
+      let selection = (aerospace list-apps | fzf --bind 'enter:execute(aerospace focus --app-id {1})+abort' | str trim)
+      return  # Selection is handled inside fzf, no need to return anything
+    }
+    "window" => {
+      let selection = (aerospace list-windows --all | fzf --bind 'enter:execute(aerospace focus --window-id {1})+abort' | str trim)
+      return  # Selection is handled inside fzf
+    }
+    _ => {
+      print "Usage: as <command>\nAvailable commands: load, debug, monitor, app, window"
+      return
+    }
+  }
+
+  # Run aerospace command only for non-fzf commands
+  if $command not-in ["app", "window"] {
+    aerospace ...$cmd
+  }
 }
 
 # --- Sketchybar ---

@@ -1718,3 +1718,46 @@ gcam 'undo aerospace edit'
 gps
 stow .
 as_load
+gcam 'undo aerospace edit'
+gps
+stow .
+as_load
+ff
+as debug-windows
+stow .
+as load
+as 
+as window
+stow .
+as window
+stow .
+as window
+stow .
+as window
+stow .
+as load
+stow .
+as load
+as debug
+as monitor
+as app
+stow .
+as app
+aerospace list-windows --all | fzf --bind "enter:execute(aerospace focus --window-id {1})+abort"
+stow .
+as load
+stow .
+as load
+as app
+stow .
+as app
+stow .
+as
+as load
+as monitor
+stow .
+as monitor
+as app
+stow .
+as app
+as window
