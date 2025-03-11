@@ -1710,3 +1710,7 @@ stow .
 gcam 'update zed python snippet'
 gps
 stow .
+gcam 'add fullscreen command to on-window-detected callback for aerospace'
+gps
+stow .
+as_load
