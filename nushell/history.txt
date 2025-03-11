@@ -1707,3 +1707,6 @@ stow .
 gcam 'update zed snippets'
 gps
 stow .
+gcam 'update zed python snippet'
+gps
+stow .

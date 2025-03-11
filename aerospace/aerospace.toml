@@ -64,35 +64,35 @@ run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
-run = 'move-node-to-workspace 1'
+run = ['fullscreen', 'move-node-to-workspace 1']
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
-run = 'move-node-to-workspace 2'
+run = ['fullscreen', 'move-node-to-workspace 2']
 
 [[on-window-detected]]
 if.app-id = 'dev.zed.Zed'
-run = 'move-node-to-workspace 3'
+run = ['fullscreen', 'move-node-to-workspace 3']
 
 [[on-window-detected]]
 if.app-id = 'net.ankiweb.dtop'
-run = 'move-node-to-workspace 4'
+run = ['fullscreen', 'move-node-to-workspace 4']
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
-run = 'move-node-to-workspace 5'
+run = ['fullscreen', 'move-node-to-workspace 5']
 
-# [[on-window-detected]]
-# if.app-name-regex-substring = 'anki|browse'
-# run = 'move-node-to-workspace 6'
+[[on-window-detected]]
+if.app-name-regex-substring = 'anki.+browse'
+run = ['fullscreen', 'move-node-to-workspace 6']
 
 [[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'
-run = 'move-node-to-workspace 7'
+run = ['fullscreen', 'move-node-to-workspace 7']
 
 [[on-window-detected]]
 if.app-id = "com.mitchellh.ghostty"
-run = 'move-node-to-workspace 7'
+run = ['fullscreen', 'move-node-to-workspace 7']
 
 
 # Possible values: (qwerty|dvorak)
