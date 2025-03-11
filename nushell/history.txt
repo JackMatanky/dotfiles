@@ -1714,3 +1714,7 @@ gcam 'add fullscreen command to on-window-detected callback for aerospace'
 gps
 stow .
 as_load
+gcam 'undo aerospace edit'
+gps
+stow .
+as_load
