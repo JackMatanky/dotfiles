@@ -184,10 +184,11 @@ def as [command: string = ""] {
     "load" => [reload-config]
     "debug" => [debug-windows]
     "monitor" => [list-monitors]
-    "app" => {
-      let selection = (aerospace list-apps | fzf --bind 'enter:execute(aerospace focus --app-id {1})+abort' | str trim)
-      return  # Selection is handled inside fzf, no need to return anything
-    }
+    "app" => [list-apps]
+    # "app" => {
+    #   let selection = (aerospace list-apps | fzf --bind 'enter:execute(aerospace focus --app-id {1})+abort' | str trim)
+    #   return  # Selection is handled inside fzf, no need to return anything
+    # }
     "window" => {
       let selection = (aerospace list-windows --all | fzf --bind 'enter:execute(aerospace focus --window-id {1})+abort' | str trim)
       return  # Selection is handled inside fzf

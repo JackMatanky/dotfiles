@@ -1772,3 +1772,8 @@ stow .
 as load
 stow .
 as load
+gcam 'update aerospace to try to have anki browse open in new workspace'
+gps
+stow .
+as load
+as app
