@@ -1801,3 +1801,17 @@ brew services restart borders
 brew services list
 brew services stop borders<\n>brew services start borders
 brew services list
+gcam 'add jankyborders config'
+gaa
+grmds
+gps
+stow .
+brew services restart borders
+brew services list
+brew services start borders
+as monitor
+as app
+as list-apps
+as --list-apps
+stow .
+as app

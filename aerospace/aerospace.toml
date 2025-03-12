@@ -70,8 +70,12 @@ if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
-if.app-id = 'org.mozilla.firefox'
+if.app-id = 'app.zen-browser.zen'
 run = 'move-node-to-workspace 2'
+
+# [[on-window-detected]]
+# if.app-id = 'org.mozilla.firefox'
+# run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
 if.app-id = 'dev.zed.Zed'
@@ -92,12 +96,16 @@ if.window-title-regex-substring = 'Browse\s\(\d+\sof\s\d+\snotes\sselected\)'
 run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
-if.app-id = 'com.github.wez.wezterm'
-run = 'move-node-to-workspace 7'
-
-[[on-window-detected]]
 if.app-id = "com.mitchellh.ghostty"
 run = 'move-node-to-workspace 7'
+
+# [[on-window-detected]]
+# if.app-id = 'com.github.wez.wezterm'
+# run = 'move-node-to-workspace 7'
+
+[[on-window-detected]]
+if.app-id = "com.openai.chat"
+run = 'move-node-to-workspace 9'
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -216,13 +224,15 @@ alt-shift-comma = 'mode service'
 # alt-shift-enter = 'mode apps'
 
 # >>> App Launcher <<<
-alt-ctrl-shift-n = 'exec-and-forget open /Applications/Obsidian.app' # Notes - Obsidian
-alt-ctrl-shift-a = 'exec-and-forget open /Applications/Anki.app'     # SRS - Anki
-alt-ctrl-shift-t = 'exec-and-forget open /Applications/Ghostty.app'  # Terminal - Ghostty
-# alt-ctrl-shift-t = 'exec-and-forget open /Applications/WezTerm.app'                 # Terminal - WezTerm
-alt-ctrl-shift-z = 'exec-and-forget open /Applications/Zed.app'                    # IDE - Zed Code Editor
-alt-ctrl-shift-c = '''exec-and-forget open /Applications/Visual Studio Code.app''' # IDE - Visual Studio Code
-alt-ctrl-shift-b = 'exec-and-forget open /Applications/Firefox.app'                # Browser - Firefox
+alt-ctrl-shift-n = 'exec-and-forget open /Applications/Obsidian.app'                # Notes - Obsidian
+alt-ctrl-shift-a = 'exec-and-forget open /Applications/Anki.app'                    # SRS - Anki
+alt-ctrl-shift-b = 'exec-and-forget open /Applications/Zen.app'                     # Browser - Zen
+# alt-ctrl-shift-b = 'exec-and-forget open /Applications/Firefox.app'               # Browser - Firefox
+alt-ctrl-shift-t = 'exec-and-forget open /Applications/Ghostty.app'                 # Terminal - Ghostty
+# alt-ctrl-shift-t = 'exec-and-forget open /Applications/WezTerm.app'               # Terminal - WezTerm
+alt-ctrl-shift-z = 'exec-and-forget open /Applications/Zed.app'                     # IDE - Zed Code Editor
+alt-ctrl-shift-c = '''exec-and-forget open /Applications/Visual Studio Code.app'''  # IDE - Visual Studio Code
+
 
 # >>> Multiple Monitors <<<
 # See: https://nikitabobko.github.io/AeroSpace/guide#multiple-monitors
@@ -233,6 +243,10 @@ alt-ctrl-shift-b = 'exec-and-forget open /Applications/Firefox.app'             
 4 = ['ASUS VA27EHE', 'secondary']
 5 = ['VC279', 'main']
 6 = ['ASUS VA27EHE', 'secondary']
+7 = ['VC279', 'main']
+8 = ['ASUS VA27EHE', 'secondary']
+9 = 'Built-in Retina Display'
+10 = 'Built-in Retina Display'
 
 # >>> Layout Tree Services <<<
 # --- Service Binding Mode ---

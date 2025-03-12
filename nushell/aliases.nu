@@ -200,7 +200,7 @@ def as [command: string = ""] {
   }
 
   # Run aerospace command only for non-fzf commands
-  if $command not-in ["app", "window"] {
+  if $command not-in ["window"] {
     aerospace ...$cmd
   }
 }
