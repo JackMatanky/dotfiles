@@ -1815,3 +1815,9 @@ as list-apps
 as --list-apps
 stow .
 as app
+gcam 'fix nushell aerospace app alias and update aerospace config'
+gps
+stow .
+as load
+gaa
+grmds
