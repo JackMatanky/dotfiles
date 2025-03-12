@@ -268,6 +268,12 @@ brew install keychain
 brew install --cask firefox
 ```
 
+- [Zen Browser](https://zen-browser.app/)
+
+```bash
+brew install --cask zen-browser
+```
+
 ## PKM
 
 - [Obsidian](https://obsidian.md/)

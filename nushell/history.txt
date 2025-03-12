@@ -1788,3 +1788,16 @@ stow .
 as load
 stow .
 as load
+gcam 'try fixing anki browse again, but could not'
+gps
+stow .
+brew install --cask zen-browser
+brew upgrade
+brew reinstall --cask zen-browser
+stow .
+brew services start borders
+brew services list
+brew services restart borders
+brew services list
+brew services stop borders<\n>brew services start borders
+brew services list

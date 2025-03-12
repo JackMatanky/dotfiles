@@ -17,7 +17,6 @@ brew tap FelixKratz/formulae
 ## Formulae
 echo "Installing Brew Formulae..."
 brew install wget
-brew install sketchybar
 brew install borders
 
 brew install keychain
@@ -68,6 +67,10 @@ brew install prettier
 brew install webp
 brew install avif
 
+### PDF
+brew install zathura
+brew install zathura-pdf-mupdf
+
 ## Casks
 echo "Installing Brew Casks..."
 ### Terminals & Browsers
@@ -75,6 +78,13 @@ brew install --cask wezterm
 
 ### IDE
 brew install --cask zed
+
+### PKM
+brew install --cask obsidian
+brew install --cask anki
+
+### Browser
+brew install --cask zen-browser
 
 ### Office
 brew install --cask inkscape
@@ -92,7 +102,3 @@ brew install --cask font-sf-pro
 brew install --cask font-hack-nerd-font
 brew install --cask font-jetbrains-mono
 brew install --cask font-fira-code
-
-### PKM
-brew install --cask obsidian
-brew install --cask anki
