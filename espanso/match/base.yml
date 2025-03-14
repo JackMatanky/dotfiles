@@ -50,7 +50,13 @@ matches:
       replace: "058-555-3200"
 
     - trigger: ":email"
-      replace: "{{my_email}}"
+      replace: "{{my_first_name}}{{my_last_name}}@gmail.com"
+
+    - trigger: ":hujiemail"
+      replace: "{{my_first_name}}{{my_last_name}}@mail.huji.ac.il"
+
+    - trigger: ":hiveemail"
+      replace: "{{my_first_name}}_m@hiveurban.com"
 
     - trigger: ":atb"
       replace: "All the best,\n{{my_full_name}}"

@@ -1821,3 +1821,5 @@ stow .
 as load
 gaa
 grmds
+gcam 'update'
+gps

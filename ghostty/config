@@ -54,6 +54,7 @@ mouse-hide-while-typing = true
 # MacOS
 # To hide the titlebar without removing the native window borders
 # or rounded corners, use `macos-titlebar-style = hidden` instead.
+# Use `macos-titlebar-style = tabs` to enable tabs within the titlebar.
 macos-titlebar-style = hidden
 macos-option-as-alt = true
 
