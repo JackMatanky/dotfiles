@@ -1830,3 +1830,5 @@ grmds
 gcam 'remove ds_store'
 gps
 stow .
+gcam 'update global gitignore'
+grmds
