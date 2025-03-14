@@ -114,7 +114,11 @@ alias glog = git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bo
 alias gcf = git config --list
 
 # Remove DS_Store
-alias grmds = git rm --cached '*.DS_Store'
+# alias grmds = git rm --cached '*.DS_Store'
+def grmds [] {
+    git rm --cached '*.DS_Store'
+    git commit --all --message 'Remove .DS_Store files'
+}
 
 # --- Nix ---
 alias flake_rebuild = sudo nixos-rebuild switch --flake .
@@ -135,18 +139,6 @@ alias tmx_src = tmux source ~/.tmux.conf
 
 # --- Zellij ---
 # Run Zellij in a particular directory
-def zj [dir: string = "~/"] {
-  if $dir == "dot" {
-    cd ~/dotfiles/
-    zellij
-  } else if $dir == "obsidian" {
-    cd ~/obsidian_vault/
-    zellij
-  } else {
-    cd $dir
-    zellij
-  }
-}
 def zj_dot [] {
   cd ~/dotfiles/
   zellij
@@ -155,6 +147,22 @@ def zj_obsidian [] {
   cd ~/obsidian_vault/
   zellij
 }
+def zj [dir: string = "~/"] {
+  if $dir == "dot" {
+    cd ~/dotfiles/
+    zellij attach dotfiles
+  } else if $dir == "dotvim" {
+    cd ~/dotfiles/nvim/
+    zellij attach neovim_config
+  } else if $dir == "obsidian" {
+  cd ~/obsidian_vault/
+  zellij attach obsidian_vault
+  } else {
+    cd $dir
+    zellij
+  }
+}
+# Run Zellij with the welcome screen
 alias zj_welcome = zellij -l welcome
 
 # --- Yazi ---
