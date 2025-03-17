@@ -114,7 +114,6 @@ alias glog = git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bo
 alias gcf = git config --list
 
 # Remove DS_Store
-# alias grmds = git rm --cached '*.DS_Store'
 def grmds [] {
     git rm --cached '*.DS_Store'
     git commit --all --message 'Remove .DS_Store files'
@@ -132,7 +131,7 @@ alias cg_empty_all = sudo nix-collect-garbage -d
 
 # --- Vim ---
 alias v = nvim
-alias vimdiff = nvim -d
+alias vdiff = nvim -d
 
 # --- Tmux ---
 alias tmx_src = tmux source ~/.tmux.conf

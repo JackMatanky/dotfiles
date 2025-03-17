@@ -1,3 +1,6 @@
+# -----------------------------------------------------------------------------
+# Filename: ~/dotfiles/zsh/.zshrc
+# -----------------------------------------------------------------------------
 # Suppress "Last login" message
 touch ~/.hushlogin
 
@@ -112,7 +115,10 @@ fi
 # source "$HOME/dotfiles/cli/aliases.sh"
 
 # --- Shell Commands ---
+alias c='clear'
 alias ll='ls -l'
+
+# --- eza ---
 # Detailed list of all files (hidden included), with icons and Git info
 alias l="eza --long --icons --git --all --group-directories-first"
 
@@ -122,17 +128,28 @@ alias lt="eza --tree --level=2 --long --icons --git"
 # Compact tree view, 2 levels deep
 alias ltree="eza --tree --level=2 --icons --git"
 
+# >>> zoxide <<<
+alias za='zoxide add'
+alias zq='zoxide query'
+
 # --- Directories ---
-alias dot='cd ~/dotfiles'
-alias dot_nix='cd ~/dotfiles/nixos'
-alias obsidian='cd ~/obsidian_vault'
-alias obsidian_gpl='cd ~/obsidian_vault; git pull'
 alias conf_dir='cd ~/.config'
 alias docs='cd ~/Documents'
+
+# Dotfiles
+alias dot='cd ~/dotfiles'
+alias dot_nix='cd ~/dotfiles/nixos'
+
+# Obsidian Vault
+alias obsidian='cd ~/obsidian_vault'
+alias obsidian_gpl='cd ~/obsidian_vault; git pull'
+
+# Keyboard Development
 alias kb_dev='cd ~/Documents/keyboard_dev'
 alias kb_ergogen='cd ~/Documents/keyboard_dev/ergogen'
 alias kb_zmk='cd ~/Documents/keyboard_dev/zmk-config'
 alias kb_snak_dir='cd ~/Documents/keyboard_dev/kb_snak'
+
 
 # --- Nix ---
 if [[ -d "/nix/var/nix/profiles/default" ]]; then
@@ -147,27 +164,139 @@ if [[ -d "/nix/var/nix/profiles/default" ]]; then
 fi
 
 # --- Git ---
-alias gad='git add'
-alias gadall='git add .'
-alias gadp='git add -p'
-alias gbr='git branch'
-alias gbra='git branch -a'
+# Add
+alias ga='git add'
+alias gaa='git add --all'
+alias gapa='git add --patch'
+alias gau='git add --update'
+
+# Commit
 alias gc='git commit -m'
-alias gca='git commit -a -m'
-alias gco='git checkout'
-alias gcoall='git checkout -- .'
-alias gdiff='git diff'
-alias glog='git log --graph --topo-order --pretty='\''%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N'\'' --abbrev-commit'
-alias gpl='git pull'
-alias gplog='git pull origin'
+alias gcam='git commit --all --message'
+
+# Push
 alias gps='git push'
 alias gpsog='git push origin'
-alias grm='git remote'
+
+# Pull
+alias gpl='git pull'
+alias gplog='git pull origin'
+
+# Fetch
+alias gf='git fetch'
+alias gfo='git fetch origin'
+
+# Branch
+alias gb='git branch'
+alias gbra='git branch --all'
+alias gbd='git branch --delete'
+alias gbD='git branch --delete --force'
+
+# Checkout
+alias gco='git checkout'
+alias gcm='git checkout (git_main_branch)'
+alias gcb='git checkout -b'
+alias gcoa='git checkout -- .'
+
+# Remote
+alias gr='git remote'
+alias gra='git remote add'
+alias grset='git remote set-url'
+
+# Reset
 alias grs='git reset'
+alias grsh='git reset --hard'
+
+# Diff
+alias gdiff='git diff'
+
+# Status
 alias gst='git status'
 
+# Log
+alias gl='git log'
+alias glog='git log --graph --topo-order --pretty="%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N" --abbrev-commit'
+
+# Config
+alias gcf='git config --list'
+
+# Remove .DS_Store Files
+grmds() {
+    git rm --cached '*.DS_Store'
+    git commit --all --message 'Remove .DS_Store files'
+}
+
 # --- Vim ---
-alias vimdiff='nvim -d'
+alias v='nvim'
+alias vdiff='nvim -d'
+
+# --- Zellij ---
+# Run Zellij in a particular directory
+zj_dot() {
+    cd ~/dotfiles/ && zellij
+}
+zj_obsidian() {
+    cd ~/obsidian_vault/ && zellij
+}
+zj() {
+    case "$1" in
+        "dot")
+            cd ~/dotfiles/ && zellij attach dotfiles
+            ;;
+        "dotvim")
+            cd ~/dotfiles/nvim/ && zellij attach neovim_config
+            ;;
+        "obsidian")
+            cd ~/obsidian_vault/ && zellij attach obsidian_vault
+            ;;
+        *)
+            cd "${1:-$HOME}" && zellij
+            ;;
+    esac
+}
+
+# Run Zellij with the welcome screen
+alias zj_welcome="zellij -l welcome"
+
+# --- Yazi ---
+# Shell wrapper function "yz"
+function yz() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+# --- Aerospace ---
+as() {
+    case "$1" in
+        "load")
+            aerospace reload-config
+            ;;
+        "debug")
+            aerospace debug-windows
+            ;;
+        "monitor")
+            aerospace list-monitors
+            ;;
+        "app")
+            aerospace list-apps
+            ;;
+        "window")
+            local selection
+            selection=$(aerospace list-windows --all | fzf --bind 'enter:execute(aerospace focus --window-id {})+abort' | tr -d '\n')
+            ;;
+        *)
+            echo "Usage: as <command>"
+            echo "Available commands: load, debug, monitor, app, window"
+            ;;
+    esac
+}
+
+# --- Sketchybar ---
+alias bar_load="sketchybar --reload"
 
 # >>> Specialized Configs <<<
 # --- SSH ---

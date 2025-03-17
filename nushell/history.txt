@@ -1834,3 +1834,37 @@ gcam 'update global gitignore'
 grmds
 gcam 'remove ds_store'
 gaa
+gcam 'update git remove ds_store nushell alias and add dotfiles gitignore'
+grmds
+gps
+stow .
+v
+brew bundle dump --file=~/dotfiles/Brewfile --force
+nvim
+zmk
+cdzmk
+z zmk-config/
+gaa
+gcam 'add pc version of 23332_2'
+gps
+gcam 'add pc version of 23332_2 to build yaml'
+gps
+kb_zmk
+gcam 'add pc version of 23332_2 to build yaml'
+gps
+gaa
+gcam 'fix dtsi references in 23332_2 shield'
+gps
+gcam 'change 23332_2 mac keymap include'
+gps
+gcam 'change 23332_2 mac keymap include'
+gps
+gcam 'change 23332_2 mac keymap include'
+gps
+gcam 'update conf files for 23332_2 keyboards'
+gaa
+gcam 'update conf files for 23332_2 keyboards'
+gps
+gcam ' update build file'
+gps
+gaa
