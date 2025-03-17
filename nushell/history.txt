@@ -1868,3 +1868,9 @@ gps
 gcam ' update build file'
 gps
 gaa
+gcam 'add setup script and update zsh aliases'
+gps
+stow .
+which zellij
+brew list zellij
+gaa

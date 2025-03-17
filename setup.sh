@@ -2,10 +2,14 @@
 
 set -e  # Exit on error
 
-# Define variables
-DOTFILES_REPO="https://github.com/yourusername/dotfiles.git"
+# Dotfiles Github Repository
+DOTFILES_REPO="https://github.com/JackMatanky/dotfiles.git"
 DOTFILES_DIR="$HOME/dotfiles"
 BREWFILE="$DOTFILES_DIR/Brewfile"
+
+# Obsidian
+OBSIDIAN_REPO="https://gitlab.com/JackMatanky/obsidian_vault.git"
+OBSIDIAN_DIR="$HOME/obsidian_vault"
 
 # Detect macOS architecture
 ARCH=$(uname -m)
