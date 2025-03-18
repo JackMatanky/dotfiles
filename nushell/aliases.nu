@@ -152,6 +152,7 @@ def zj [dir: string = "~/"] {
         "dot" => ["dotfiles", "~/dotfiles"],
         "dotvim" => ["neovim_config", "~/dotfiles/nvim"],
         "obsidian" => ["obsidian_vault", "~/obsidian_vault"],
+        "kb" => ["keyboard_dev", "~/Documents/keyboard_dev"],
         _ => ["general", $dir]  # Default to "general" session
     }
 
@@ -161,7 +162,7 @@ def zj [dir: string = "~/"] {
     cd $target_dir
 
     let existing_sessions = (zellij list-sessions | lines)
-    if $existing_sessions | any {|s| $s == $session_name } {
+    if ($existing_sessions | any {|s| $s == $session_name }) {
         zellij attach $session_name
     } else {
         zellij --session $session_name

@@ -1896,3 +1896,6 @@ which python3
 exit
 gcam 'update nushell alias for zellij'
 stow .
+gcam 'update nushell alias for zellij'
+gps
+stow .
