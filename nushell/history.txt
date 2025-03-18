@@ -1899,3 +1899,66 @@ stow .
 gcam 'update nushell alias for zellij'
 gps
 stow .
+gcam 'update nushell alias for zellij'
+gps
+stow .
+zj kb
+cd
+cd kb
+zj kb
+dot
+kb_zmk 
+gcam 'try moving include statements to keymap file'
+gps
+gcam 'try moving include statements for heb and shortcuts to keymap file'
+kb_zmk 
+gcam 'try moving include statements for heb and shortcuts to keymap file'
+gps
+gcam 'try ifdef for include statements'
+kb_zmk 
+gcam 'try ifdef for include statements'
+gps
+gcam 'try ifdef for key define'
+kb_zmk 
+gcam 'try ifdef for key define'
+gps
+gcam 'try to combine base keymap for 23332_2'
+kb_zmk 
+gcam 'try to combine base keymap for 23332_2'
+gps
+gaa
+gcam 'try to combine base keymap for 23332_2, again'
+gps
+gcam 'remove extra keymap file'
+gps
+gcam 'start consolidating 23331_2'
+gaa
+gcam 'start consolidating 23331_2'
+gps
+gcam 'update shield keymap include'
+kb_zmk 
+gaa
+gcam 'update shield keymap include'
+gps
+gaa
+gcam 'update conf name 23331_2 mac keymap'
+gps
+gaa
+gcam 'update 23331_2 mac shield'
+gaa
+gcam 'update 23331_2 mac shield'
+gps
+v
+which python3
+cd
+which python3
+dotnvim
+dotvim
+dot
+cd nvim
+which python
+which pyenv
+which python3
+which python3.13
+exit
+gaa

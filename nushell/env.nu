@@ -131,10 +131,35 @@ $env.PATH = (
 # source ($nu.default-config-dir | path join 'custom.nu')
 
 # pyenv
+# if (which pyenv | is-not-empty) {
+#    $env.PYENV_ROOT = ($env.HOME | path join ".pyenv")
+#    $env.PATH = ($env.PATH | append ($env.PYENV_ROOT | path join "bin"))
+#    $env.PATH = ($env.PATH | append ($env.PYENV_ROOT | path join "shims"))
+#}
+
+# pyenv
 if (which pyenv | is-not-empty) {
     $env.PYENV_ROOT = ($env.HOME | path join ".pyenv")
     $env.PATH = ($env.PATH | append ($env.PYENV_ROOT | path join "bin"))
     $env.PATH = ($env.PATH | append ($env.PYENV_ROOT | path join "shims"))
+
+    # Initialize pyenv
+    try {
+        let pyenv_init = (pyenv init - | str trim)
+        if ($pyenv_init | is-not-empty) {
+            nu -c $pyenv_init
+        }
+    } catch { }
+
+    # Initialize pyenv-virtualenv (if installed)
+    if (which pyenv-virtualenv | is-not-empty) {
+        try {
+            let pyenv_virtualenv_init = (pyenv virtualenv-init - | str trim)
+            if ($pyenv_virtualenv_init | is-not-empty) {
+                nu -c $pyenv_virtualenv_init
+            }
+        } catch { }
+    }
 }
 
 # Zellij
