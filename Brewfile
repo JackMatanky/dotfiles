@@ -11,27 +11,29 @@ tap "nikitabobko/tap"                     # Miscellaneous useful CLI tools
 tap "zegervdv/zathura"                    # Zathura PDF reader and extensions
 
 # -----------------------------------------------
-# >>> Essential CLI Tools <<<
+# >>> CLI <<<
 # -----------------------------------------------
+# --- Shells & Terminal Enhancements ---
 brew "bash"                               # Bash shell
+brew "nushell"                            # Modern shell with structured data support
 brew "git"                                # Version control system
-brew "carapace"                           # Shell completion framework
-brew "fzf"                                # Fuzzy finder for files and commands
+brew "zellij"                             # Terminal workspace manager (tmux alternative)
+brew "yazi"                               # Terminal file manager with vim-like keybindings
+brew "starship"                           # Fast, customizable shell prompt
+
+# --- Terminal Plugins ---
+brew "zoxide"                             # Smarter `cd` for quick directory jumping
 brew "eza"                                # Modern replacement for `ls`
 brew "fd"                                 # Fast file search alternative to `find`
+brew "fzf"                                # Fuzzy finder for files and commands
 brew "ripgrep"                            # Fast search tool for files (like grep)
-brew "keychain"                           # Securely manage SSH keys
-brew "stow"                               # Symlink manager for dotfiles
-
-# -----------------------------------------------
-# >>> Shells & Terminal Enhancements <<<
-# -----------------------------------------------
-brew "nushell"                            # Modern shell with structured data support
-brew "zellij"                             # Terminal workspace manager (tmux alternative)
-brew "zoxide"                             # Smarter `cd` for quick directory jumping
-brew "starship"                           # Fast, customizable shell prompt
+brew "bat"                                # Syntax-highlighted file viewer with Git support
+brew "carapace"                           # Shell completion framework
 brew "zsh-autosuggestions"                # Suggests past commands as you type
 brew "zsh-syntax-highlighting"            # Highlights commands as you type
+
+brew "keychain"                           # Securely manage SSH keys
+brew "stow"                               # Symlink manager for dotfiles
 
 # -----------------------------------------------
 # >>> Modal Editors <<<
@@ -48,77 +50,86 @@ brew "node"                               # Node.js runtime
 brew "lua"                                # Lightweight scripting language
 brew "openjdk"                            # Java Development Kit
 
-# -----------------------------------------------
-# >>> Python Tools <<<
-# -----------------------------------------------
-brew "basedpyright"                       # Python static type checker
-brew "ipython"                            # Interactive Python shell
-brew "ruff"                               # Fast Python linter and formatter
-brew "jupytext"                           # Convert Jupyter notebooks to plain scripts
-brew "pyenv"                              # Python version manager
+# --- Language Server Protocols ---
 brew "python-lsp-server"                  # Language server for Python development
-
-# -----------------------------------------------
-# >>> Web Development & Formatting <<<
-# -----------------------------------------------
+brew "basedpyright"                       # Python static type checker
+brew "rust-analyzer"                      # Language server for Rust development
+brew "lua-language-server"                # Language server for Lua development
 brew "typescript-language-server"         # Language server for TypeScript
 brew "vscode-langservers-extracted"       # Collection of useful language servers
 brew "yaml-language-server"               # YAML support in editors
-brew "markdownlint-cli"                   # Markdown linter
-brew "markdownlint-cli2"                  # Improved Markdown linter
+brew "texlab"                             # Language server for LaTeX
 brew "marksman"                           # Markdown LSP server
-brew "prettier"                           # Code formatter for multiple languages
 
-# -----------------------------------------------
-# >>> Productivity & Utilities <<<
-# -----------------------------------------------
-brew "tmux"                               # Terminal multiplexer
-brew "switchaudio-osx"                    # CLI for switching macOS audio devices
+# --- Python  ---
+brew "pyenv"                              # Python version manager
 brew "uv"                                 # Python package manager (alternative to pip)
-brew "yazi"                               # Terminal file manager with vim-like keybindings
+brew "ipython"                            # Interactive Python shell
+brew "jupytext"                           # Convert Jupyter notebooks to plain scripts
+
+# --- Lua ---
+brew "luarocks"                           # Package manager for Lua
+brew "luajit"                             # Just-In-Time compiler for Lua
+
+# --- Linters & Formatters ---
+brew "ruff"                               # Fast Python linter and formatter
+brew "luaformatter"                       # Lua code formatter
+brew "markdownlint-cli2"                  # Improved Markdown linter
+brew "prettier"                           # Code formatter for multiple languages
 
 # -----------------------------------------------
 # >>> Media & Document Processing <<<
 # -----------------------------------------------
-brew "webp"                               # Convert images to WebP format
-brew "tesseract"                          # Optical Character Recognition (OCR) tool
-brew "ffmpeg"                             # Multimedia framework (video/audio conversion)
 brew "pandoc"                             # Document format converter
-brew "texlab"                             # Language server for LaTeX
-brew "luarocks"                           # Package manager for Lua
+brew "tesseract"                          # Optical Character Recognition (OCR) tool
+brew "imagemagick"                        # CLI tool for image conversion and processing
+brew "ffmpeg"                             # Multimedia framework (video/audio conversion)
+brew "webp"                               # Convert images to WebP format
+brew "switchaudio-osx"                    # CLI for switching macOS audio devices
+brew "nowplaying-cli"                     # Display currently playing media in the
 
 # -----------------------------------------------
 # >>> Additional Tools <<<
 # -----------------------------------------------
-brew "nowplaying-cli"                     # Display currently playing media in the
 
 # -----------------------------------------------
 # >>> Custom Formulae <<<
 # -----------------------------------------------
-brew "felixkratz/formulae/borders"        # macOS window borders
-brew "felixkratz/formulae/sketchybar"     # Highly customizable macOS menu bar
 brew "jesseduffield/lazygit/lazygit"      # TUI Git client
 brew "zegervdv/zathura/zathura"           # Zathura PDF reader
 brew "zegervdv/zathura/zathura-pdf-mupdf" # MuPDF plugin for Zathura
+brew "felixkratz/formulae/borders"        # macOS window borders
 
 # -----------------------------------------------
 # >>> Casks: GUI Applications <<<
 # -----------------------------------------------
+# --- Terminal ---
+cask "ghostty"                            # Minimal terminal emulator
+cask "wezterm"                            # GPU-accelerated terminal emulator
+
+# --- IDE ---
+cask "zed"                                # GPU-accelerated, minimal, and keyboard-first code editor
+cask "visual-studio-code"                 # Lightweight code editor
+
 cask "aerospace"                          # Window manager for macOS
 cask "alfred"                             # Productivity app launcher
-cask "anki"                               # Flashcard-based learning tool
 cask "espanso"                            # Text expander for macOS
-cask "ghostty"                            # Minimal terminal emulator
-cask "karabiner-elements"                 # macOS keyboard remapping tool
+
+cask "vlc"                                # Open-source media player
+cask "zen-browser"                        # Minimalist web browser
+
+# --- Office Tools ---
 cask "libreoffice"                        # Open-source office suite
 cask "libreoffice-language-pack"          # Language packs for LibreOffice
-cask "sf-symbols"                         # Apple’s SF Symbols font and tools
+cask "zathura"                            # Zathura PDF reader
+cask "zathura-pdf-mupdf"                  # MuPDF plugin for Zathura
 cask "sioyek"                             # PDF reader optimized for research papers
-cask "visual-studio-code"                 # Lightweight code editor
-cask "vlc"                                # Open-source media player
-cask "wezterm"                            # GPU-accelerated terminal emulator
+
+# --- PKM ---
+cask "obsidian"                           # Markdown note-taking app
+cask "anki"                               # Flashcard-based learning tool
 cask "xournal++"                          # Handwritten notes and PDF annotation tool
-cask "zen-browser"                        # Minimalist web browser
+cask "calibre"                            # Ebook management software
 cask "zotero"                             # Reference management software
 
 # -----------------------------------------------
@@ -129,6 +140,7 @@ cask "font-hack-nerd-font"                # Hack font with Nerd Font glyphs
 cask "font-jetbrains-mono-nerd-font"      # JetBrains Mono with Nerd Font glyphs
 cask "font-sf-mono"                       # Apple's SF Mono font
 cask "font-sf-pro"                        # Apple's SF Pro font
+cask "sf-symbols"                         # Apple’s SF Symbols font and tools
 
 # -----------------------------------------------
 # >>> VS Code Extensions <<<

@@ -146,21 +146,25 @@ def zj_obsidian [] {
   cd ~/obsidian_vault/
   zellij
 }
+
 def zj [dir: string = "~/"] {
-  if $dir == "dot" {
-    cd ~/dotfiles/
-    zellij attach dotfiles
-  } else if $dir == "dotvim" {
-    cd ~/dotfiles/nvim/
-    zellij attach neovim_config
-  } else if $dir == "obsidian" {
-  cd ~/obsidian_vault/
-  zellij attach obsidian_vault
-  } else {
-    cd $dir
-    zellij
-  }
+    let (session_name, target_dir) = match $dir {
+        "dot" => ["dotfiles", "~/dotfiles"],
+        "dotvim" => ["neovim_config", "~/dotfiles/nvim"],
+        "obsidian" => ["obsidian_vault", "~/obsidian_vault"],
+        _ => ["general", $dir]  # Default to "general" session
+    }
+
+    cd $target_dir
+
+    let existing_sessions = (zellij list-sessions | lines)
+    if $existing_sessions | any {|s| $s == $session_name } {
+        zellij attach $session_name
+    } else {
+        zellij --session $session_name
+    }
 }
+
 # Run Zellij with the welcome screen
 alias zj_welcome = zellij -l welcome
 

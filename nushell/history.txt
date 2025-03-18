@@ -1874,3 +1874,23 @@ stow .
 which zellij
 brew list zellij
 gaa
+gcam 'organize brewfile'
+gps
+stow .
+brew instal bat
+brew install imagemagick
+brew upgrade
+luarocks install magick
+brew install luarocks
+brew install luajit
+luarocks --lua-version=luajit install magick
+luajit install magick
+luarocks --lua-version=5.1 install magick
+luarocks list | grep magick
+luajit -v
+luarocks list
+luarocks --lua-version=luajit install magick
+which luajit
+which python
+which python3
+exit
