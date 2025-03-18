@@ -1894,3 +1894,5 @@ which luajit
 which python
 which python3
 exit
+gcam 'update nushell alias for zellij'
+stow .

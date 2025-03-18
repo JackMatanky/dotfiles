@@ -148,12 +148,15 @@ def zj_obsidian [] {
 }
 
 def zj [dir: string = "~/"] {
-    let (session_name, target_dir) = match $dir {
+    let dir_session = match $dir {
         "dot" => ["dotfiles", "~/dotfiles"],
         "dotvim" => ["neovim_config", "~/dotfiles/nvim"],
         "obsidian" => ["obsidian_vault", "~/obsidian_vault"],
         _ => ["general", $dir]  # Default to "general" session
     }
+
+    let session_name = $dir_session.0
+    let target_dir = $dir_session.1
 
     cd $target_dir
 
