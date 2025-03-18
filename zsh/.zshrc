@@ -25,8 +25,11 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # >>> Pyenv <<<
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+
+# Initialize pyenv
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)" # Enables virtualenv auto-activation
 
 # >>> ZIDE <<<
 # Source: https://github.com/josephschmitt/zide

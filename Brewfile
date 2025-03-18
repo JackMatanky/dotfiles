@@ -63,6 +63,7 @@ brew "marksman"                           # Markdown LSP server
 
 # --- Python  ---
 brew "pyenv"                              # Python version manager
+brew "pyenv-virtualenv"                   # Python version manager
 brew "uv"                                 # Python package manager (alternative to pip)
 brew "ipython"                            # Interactive Python shell
 brew "jupytext"                           # Convert Jupyter notebooks to plain scripts
@@ -73,7 +74,7 @@ brew "luajit"                             # Just-In-Time compiler for Lua
 
 # --- Linters & Formatters ---
 brew "ruff"                               # Fast Python linter and formatter
-brew "luaformatter"                       # Lua code formatter
+brew "stylua"                             # Lua code formatter
 brew "markdownlint-cli2"                  # Improved Markdown linter
 brew "prettier"                           # Code formatter for multiple languages
 

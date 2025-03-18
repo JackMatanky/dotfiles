@@ -143,22 +143,17 @@ if (which pyenv | is-not-empty) {
     $env.PATH = ($env.PATH | append ($env.PYENV_ROOT | path join "bin"))
     $env.PATH = ($env.PATH | append ($env.PYENV_ROOT | path join "shims"))
 
-    # Initialize pyenv
-    try {
-        let pyenv_init = (pyenv init - | str trim)
-        if ($pyenv_init | is-not-empty) {
-            nu -c $pyenv_init
-        }
-    } catch { }
-
-    # Initialize pyenv-virtualenv (if installed)
+    # Load pyenv-virtualenv if available
     if (which pyenv-virtualenv | is-not-empty) {
-        try {
-            let pyenv_virtualenv_init = (pyenv virtualenv-init - | str trim)
-            if ($pyenv_virtualenv_init | is-not-empty) {
-                nu -c $pyenv_virtualenv_init
-            }
-        } catch { }
+        let pyenv_virtualenv_path = ($env.PYENV_ROOT | path join "plugins/pyenv-virtualenv/bin")
+        $env.PATH = ($env.PATH | append $pyenv_virtualenv_path)
+    }
+
+    # Manually activate the Neovim virtual environment in Nushell
+    let venv_path = ($env.PYENV_ROOT | path join "versions/neovim")
+    if ($venv_path | path exists) {
+        $env.VIRTUAL_ENV = $venv_path
+        $env.PATH = ($env.VIRTUAL_ENV | path join "bin" | prepend $env.PATH)
     }
 }
 

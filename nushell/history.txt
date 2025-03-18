@@ -1962,3 +1962,39 @@ which python3
 which python3.13
 exit
 gaa
+gcam 'add pyenv init to zshrc and env.nu'
+gps
+stow .
+$nu.env
+$env
+v
+brew install luaformatter
+brew search
+brew search lua
+brew install stylua
+which pyenv
+which pyenv-virtualenv
+brew search pyenv
+brew install pyenv-virtualenv
+pyenv versions
+brew upgrade
+pyenv install --list
+pyenv install 3.x:latest
+pyenv update
+pyenv install 3.12.3
+pyenv install 3.13.2
+pyenv --version
+pyenv install --list
+pyenv versions
+pyenv global 3.13.2
+pyenv virtualenv 3.13.2 neovim
+pyenv activate neovim
+pyenv virtualenv 3.13.2 neovim
+pyenv activate neovim
+pyenv virtualens
+pyenv virtualenvs
+stow .
+pyenv virtualenvs
+pyenv activate neovim
+source ~/.pyenv/versions/neovim/bin/activate
+gaa

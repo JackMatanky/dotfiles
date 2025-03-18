@@ -44,77 +44,58 @@ return {
   end,
 
   -- Plugin options: Formatters, filetype mappings, and conditions
-  opts = function()
-    -- Ensure users do not override `plugin.config`, which would break LazyVim's formatting system
-    local plugin = require("lazy.core.config").plugins["conform.nvim"]
-    if plugin.config ~= nil then
-      LazyVim.error({
-        "Don't set `plugin.config` for `conform.nvim`.\n",
-        "This will break **LazyVim** formatting.\n",
-        "Please refer to the docs at https://www.lazyvim.org/plugins/formatting",
-      }, { title = "LazyVim" })
-    end
+  opts = {
+    -- Default options for formatting
+    default_format_opts = {
+      timeout_ms = 3000, -- Formatting timeout
+      async = false, -- Synchronous formatting (recommended)
+      quiet = false, -- Show formatting messages
+      lsp_format = "fallback", -- Use LSP formatting if a formatter is not available
+    },
 
-    ---@type conform.setupOpts
-    return {
-      -- Disable automatic formatting on save for large files (more than 5000 lines)
-      format_on_save = function(bufnr)
-        local ignore_large_files = vim.api.nvim_buf_line_count(bufnr) > 5000
-        return not ignore_large_files
-      end,
+    -- Mapping of formatters to specific file types
+    formatters_by_ft = {
+      lua = { "stylua" }, -- Use `stylua` for Lua files
+      fish = { "fish_indent" }, -- Use `fish_indent` for Fish shell scripts
+      sh = { "shfmt" }, -- Use `shfmt` for shell scripts
+      markdown = { "prettier", "markdownlint-cli2", "markdown-toc" }, -- Markdown formatters
+      ["markdown.mdx"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
+    },
 
-      -- Default options for formatting
-      default_format_opts = {
-        timeout_ms = 3000, -- Formatting timeout
-        async = false, -- Synchronous formatting (recommended)
-        quiet = false, -- Show formatting messages
-        lsp_format = "fallback", -- Use LSP formatting if a formatter is not available
-      },
+    -- Custom formatter configurations
+    formatters = {
+      -- Ensure injected languages inside markdown, HTML, etc., are formatted without errors
+      injected = { options = { ignore_errors = true } },
 
-      -- Mapping of formatters to specific file types
-      formatters_by_ft = {
-        lua = { "stylua" }, -- Use `stylua` for Lua files
-        fish = { "fish_indent" }, -- Use `fish_indent` for Fish shell scripts
-        sh = { "shfmt" }, -- Use `shfmt` for shell scripts
-        markdown = { "prettier", "markdownlint-cli2", "markdown-toc" }, -- Markdown formatters
-        ["markdown.mdx"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
-      },
-
-      -- Custom formatter configurations
-      formatters = {
-        -- Ensure injected languages inside markdown, HTML, etc., are formatted without errors
-        injected = { options = { ignore_errors = true } },
-
-        -- Only format Markdown files with a TOC (Table of Contents) when `<!-- toc -->` is present
-        ["markdown-toc"] = {
-          condition = function(_, ctx)
-            for _, line in ipairs(vim.api.nvim_buf_get_lines(ctx.buf, 0, -1, false)) do
-              if line:find("<!%-%- toc %-%->") then
-                return true -- Run formatter if TOC marker is found
-              end
+      -- Only format Markdown files with a TOC (Table of Contents) when `<!-- toc -->` is present
+      ["markdown-toc"] = {
+        condition = function(_, ctx)
+          for _, line in ipairs(vim.api.nvim_buf_get_lines(ctx.buf, 0, -1, false)) do
+            if line:find("<!%-%- toc %-%->") then
+              return true -- Run formatter if TOC marker is found
             end
-          end,
-        },
-
-        -- Use `markdownlint-cli2` for Markdown formatting, but only if there are existing diagnostics from it
-        ["markdownlint-cli2"] = {
-          command = "markdownlint-cli2",
-          args = {
-            "--fix",
-            "--config",
-            os.getenv("HOME") .. "/.config/formatters/.markdownlint.jsonc", -- Config file for markdownlint
-            "--",
-            "$FILENAME",
-          },
-          condition = function(_, ctx)
-            -- Ensure markdownlint runs only if it has already detected linting issues
-            local diag = vim.tbl_filter(function(d)
-              return d.source == "markdownlint"
-            end, vim.diagnostic.get(ctx.buf))
-            return #diag > 0
-          end,
-        },
+          end
+        end,
       },
-    }
-  end,
+
+      -- Use `markdownlint-cli2` for Markdown formatting, but only if there are existing diagnostics from it
+      ["markdownlint-cli2"] = {
+        command = "markdownlint-cli2",
+        args = {
+          "--fix",
+          "--config",
+          os.getenv("HOME") .. "/.config/formatters/.markdownlint.jsonc", -- Config file for markdownlint
+          "--",
+          "$FILENAME",
+        },
+        condition = function(_, ctx)
+          -- Ensure markdownlint runs only if it has already detected linting issues
+          local diag = vim.tbl_filter(function(d)
+            return d.source == "markdownlint"
+          end, vim.diagnostic.get(ctx.buf))
+          return #diag > 0
+        end,
+      },
+    },
+  },
 }

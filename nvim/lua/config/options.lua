@@ -10,6 +10,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- Ensure Neovim uses the correct Python provider for plugins like Molten.nvim
+vim.g.python3_host_prog = vim.fn.expand("~/.pyenv/versions/neovim/bin/python3")
+
 -- LazyVim auto format
 vim.g.autoformat = false
 
