@@ -500,62 +500,81 @@
   "auto_install_extensions": {
     // AsciiDoc: https://github.com/andreicek/zed-asciidoc
     "asciidoc": true,
-    // Autocorrect: https://github.com/huacnlee/zed-autocorrect
-    "autocorrect": true,
     // Base16 Theme: https://github.com/bswinnerton/base16-zed
     "base16": true,
     // Bash: https://github.com/d1y/bash.zed
     "basher": true,
     // Basedpyright: https://github.com/m1guer/basedpyright-zed
     "basedpyright": false,
+    // CargoTom: https://github.com/frederik-uni/zed-cargotom
+    "cargo-tom": true,
     // CSV: https://github.com/huacnlee/zed-csv
     "csv": true,
     // Database Markup Language (DBML): https://github.com/shuklaayush/zed-dbml
     "dbml": true,
     // DeviceTree: https://github.com/anikinmd/zed_devicetree
     "devicetree": true,
+    // Emmet: https://github.com/zed-extensions/emmet
+    "emmet": true,
     // Environment Support: https://github.com/zarifpour/zed-env
     "env": true,
     // Gemini Syntax Highlighting
-    "gemini": true,
+    "gemini": false,
     // Git Firefly: https://github.com/d1y/git_firefly
     "git-firefly": true,
+    // HTML: https://github.com/zed-industries/zed/tree/main/extensions/html
     "html": true,
     // Justfile: https://github.com/jackTabsCode/zed-just
     "just": true,
+    // Kconfig: https://github.com/rowillia/zed-kconfig
+    "kconfig": true,
+    // kdl: https://github.com/elkowar/zed-kdl
+    "kdl": true,
     // LaTeX: https://github.com/rzukic/zed-latex
     "latex": true,
-    // Lua
+    // LOG: https://github.com/zed-extensions/log
+    "log": true,
+    // Lua: https://github.com/zed-extensions/lua
     "lua": true,
     // Makefile: https://github.com/caius/zed-make
-    "make": true,
+    "make": false,
     // Markdown Oxide: https://github.com/Feel-ix-343/markdown-oxide-zed
     "markdown-oxide": true,
     // Marksman MD: https://github.com/vitallium/zed-marksman
     "marksman": true,
     // Mermaid: https://github.com/gabeidx/zed-mermaid
     "mermaid": true,
-    // Nix
+    // Nix: https://github.com/zed-extensions/nix
     "nix": true,
-    // Nushell
+    // Nushell: https://github.com/zed-extensions/nu
     "nu": true,
-    // Python LSP: https://github.com/rgbkrk/python-lsp-zed-extension
-    "pylsp": true,
+    // Postgrs Context Server: https://github.com/rowillia/zed-postgres-context-server
+    "postgres-context-server": true,
     // Python Refactoring: https://github.com/rowillia/zed-python-refactoring
     "python-refactoring": true,
+    // Python Requirements: https://github.com/rowillia/zed-python-requirements
+    "python-requirements": true,
     // Rainbow CSV: https://github.com/weartist/zed-rainbow-csv
     "rainbow-csv": true,
+    // Ruff (Python Linter): https://github.com/zed-industries/zed/tree/main/extensions/ruff
     "ruff": true,
-    "sagemath": true,
+    // Simple Completion: https://github.com/d1y/simple-completion-zed
+    "simple-completion": true,
+    // Snippets: https://github.com/zed-industries/zed/tree/main/extensions/snippets
     "snippets": true,
     // SQL: https://github.com/zed-extensions/sql
     "sql": true,
+    // SSH Config: https://github.com/pranavmangal/zed-ssh-config
+    "ssh-config": true,
     // Tmux: https://github.com/dangh/zed-tmux
-    "tmux": true,
+    "tmux": false,
+    // TOML: https://github.com/zed-industries/zed/tree/main/extensions/toml
     "toml": true,
     // Typos Language Server: https://github.com/BaptisteRoseau/zed-typos
     "typos": true,
+    // Typst: https://github.com/weethet/typst.zed
     "typst": true,
+    // XML: https://github.com/sweetppro/zed-xml
     "xml": true
   },
 

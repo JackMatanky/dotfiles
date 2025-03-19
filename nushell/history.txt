@@ -1998,3 +1998,9 @@ pyenv virtualenvs
 pyenv activate neovim
 source ~/.pyenv/versions/neovim/bin/activate
 gaa
+gcam 'update options file with python path for molten'
+gps
+stow .
+exit
+stow .
+gaa
