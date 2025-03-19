@@ -2004,3 +2004,15 @@ stow .
 exit
 stow .
 gaa
+gcam 'update zed settings'
+gps
+stow .
+run add_uuid.py
+python run add_uuid.py
+python add_uuid.py
+stow .
+gaa
+kb_zmk 
+gaa
+gcam 'try to fix kb layout'
+gps

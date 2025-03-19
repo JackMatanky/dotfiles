@@ -46,7 +46,16 @@
     "right_padding": 0.2
   },
 
+  // Vim
   "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "always",
+    "use_multiline_find": false,
+    "use_smartcase_find": false,
+    "toggle_relative_line_numbers": true,
+    "highlight_on_yank_duration": 50,
+    "custom_digraphs": {}
+  },
 
   "hover_popover_enabled": true,
   "confirm_quit": false,
@@ -883,15 +892,6 @@
       "python": "ipython"
       // "typescript": "deno"
     }
-  },
-
-  // Vim
-  "vim": {
-    "toggle_relative_line_numbers": false,
-    "use_system_clipboard": "always",
-    "use_multiline_find": false,
-    "use_smartcase_find": false,
-    "custom_digraphs": {}
   },
 
   // Language Models.
