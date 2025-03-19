@@ -2026,3 +2026,6 @@ obsidian
 stow .
 dot
 stow .
+gcam 'try add directory substitutions for kb dev in starship'
+gps
+stow .
