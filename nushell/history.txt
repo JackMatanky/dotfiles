@@ -2056,3 +2056,6 @@ gcam 'continue trying with starship directory substitutions'
 gps
 stow .
 dot
+gcam 'add multicursors to neovim'
+gps
+gaa
