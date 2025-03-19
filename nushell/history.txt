@@ -2052,3 +2052,7 @@ kb_zmk
 z 60_library
 kb_zmk 
 dot
+gcam 'continue trying with starship directory substitutions'
+gps
+stow .
+dot
