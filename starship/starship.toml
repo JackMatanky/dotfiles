@@ -4,6 +4,7 @@
 # Source Link: https://github.com/nataziel/starship
 # -----------------------------------------------------------------------------
 
+# Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
@@ -97,22 +98,22 @@ read_only_style = 'red'
 use_os_path_sep = true
 
 [directory.substitutions]
-"Documents/" = "󰈙 "
-"Downloads/" = " "
-"Music/" = "󰝚 "
-"Pictures/" = " "
-"Developer/" = "󰲋 "
-"dotfiles/" = " Dotfiles"
-".config/" = ". Config"
-"obsidian_vault/" = "󰪶 Obsidian"
+"~/Documents/" = "󰈙 "
+"~/Downloads/" = " "
+"~/Music/" = "󰝚 "
+"~/Pictures/" = " "
+"~/Developer/" = "󰲋 "
+"~/dotfiles/" = " Dotfiles"
+"~/.config/" = ". Config"
+"~/obsidian_vault/" = "󰪶 Obsidian"
 "42_education/" = "󱛊 42_Education"
-# "course_huji_programming_intro/" = "HUJI Programming Intro"
+"course_huji_programming_intro/" = "HUJI Programming Intro"
 "course_huji_programming_intro/assignments_huji_programming_intro/" = "HUJI Programming Intro - Assignments"
-"course_mit_compsci_and_programming_intro/" = "MIT CS-Programming Intro"
-"obsidian_vault/60_library/" = "󰪶 Obsidian > 󱨢 Library"
-"obsidian_vault/70_pkm/" = "󰪶 Obsidian > 󰧑 PKM"
-"Documents/keyboard_dev/" = "  Keyboard Dev"
-"Documents/keyboard_dev/zmk-config/" = "  KB Dev > 󰰶 ZMK Config"
+"~/course_mit_compsci_and_programming_intro/" = "MIT CS-Programming Intro"
+"~/obsidian_vault/60_library/" = "󰪶 Obsidian > 󱨢 Library"
+"~/obsidian_vault/70_pkm/" = "󰪶 Obsidian > 󰧑 PKM"
+"~/Documents/keyboard_dev/" = "  Keyboard Dev"
+"~/Documents/keyboard_dev/zmk-config/" = "  KB Dev > 󰰶 ZMK Config"
 
 [fill]
 symbol = ' '

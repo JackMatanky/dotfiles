@@ -2019,3 +2019,10 @@ gps
 gcam 'update zed keymap for vim space and backspace'
 gps
 stow .
+gcam 'add directory substitutions for kb dev in starship'
+gps
+stow .
+obsidian
+stow .
+dot
+stow .
