@@ -2039,3 +2039,16 @@ kb_zmk
 gcam 'continue trying'
 stow .
 dot
+gcam 'continue trying with starship directory substitutions'
+gps
+stow .
+kb_zmk 
+dot
+kb_zmk 
+obsidian
+za 60_library
+z 60_library
+kb_zmk 
+z 60_library
+kb_zmk 
+dot
