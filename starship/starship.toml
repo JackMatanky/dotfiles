@@ -109,11 +109,11 @@ use_os_path_sep = true
 "42_education" = "󱛊 42_Education"
 "course_huji_programming_intro" = "HUJI Programming Intro"
 "course_huji_programming_intro/assignments_huji_programming_intro/" = "HUJI Programming Intro - Assignments"
-"~/course_mit_compsci_and_programming_intro/" = "MIT CS-Programming Intro"
-"~/obsidian_vault/60_library/" = "󰪶 Obsidian > 󱨢 Library"
-"~/obsidian_vault/70_pkm/" = "󰪶 Obsidian > 󰧑 PKM"
-"~/Documents/keyboard_dev/" = "  Keyboard Dev"
-"~/Documents/keyboard_dev/zmk-config/" = "  KB Dev > 󰰶 ZMK Config"
+"course_mit_compsci_and_programming_intro" = "MIT CS-Programming Intro"
+"obsidian_vault/60_library" = "󰪶 Obsidian > 󱨢 Library"
+"obsidian_vault/70_pkm" = "󰪶 Obsidian > 󰧑 PKM"
+"keyboard_dev" = "  Keyboard Dev"
+"keyboard_dev/zmk-config" = "  KB Dev > 󰰶 ZMK Config"
 
 [fill]
 symbol = ' '

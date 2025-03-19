@@ -2029,3 +2029,13 @@ stow .
 gcam 'try add directory substitutions for kb dev in starship'
 gps
 stow .
+gcam 'try again by removing slashes'
+obsidian
+kb_zmk 
+dot
+kb_zmk 
+dot
+kb_zmk 
+gcam 'continue trying'
+stow .
+dot
