@@ -2016,3 +2016,6 @@ kb_zmk
 gaa
 gcam 'try to fix kb layout'
 gps
+gcam 'update zed keymap for vim space and backspace'
+gps
+stow .
