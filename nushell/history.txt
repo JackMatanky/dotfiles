@@ -2077,3 +2077,7 @@ gcam 'setup OS agnostic zshrc and bashrc files'
 gps
 stow .
 command -v nu
+gcam 'final tweaks to setup script'
+gps
+stow .
+gaa
