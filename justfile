@@ -96,28 +96,24 @@ install-system-dependencies:
 # -----------------------------------------------------------------------------
 # 📦 Package Installation (Flatpak, Rust, Cargo)
 # -----------------------------------------------------------------------------
-
+# Install Flatpak applications
 install-flatpak:
     @echo "📦 Installing Flatpak applications..."
     flatpak install -y --noninteractive < "{{FLATPAK_MANIFEST}}"
-
-# 🔄 Restart Shell (For Rust/Cargo)
-restart-shell:
-    @echo "🔄 Restarting shell..."
-    exec "$SHELL"
 
 # 🦀 Install Rust & Cargo
 install-rust:
     @echo "🦀 Installing Rust & Cargo..."
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-    just restart-shell
+    @echo "🔄 Restarting shell..."
+    exec "$SHELL"
 
 # 📦 Install Cargo packages using `cargo-binstall` 🦀
 install-cargo-packages:
     @echo "📦 Installing Cargo packages using cargo-binstall..."
     @if not command -v cargo-binstall &>/dev/null; then \
-        @echo "🚀 Installing cargo-binstall first..."
-        cargo install cargo-binstall
+        @echo "🚀 Installing cargo-binstall first..." \
+        cargo install cargo-binstall \
     fi
 
     @if [[ -f "{{CARGO_PACKAGES}}" ]]; then \
@@ -131,6 +127,8 @@ install-cargo-packages:
 # -----------------------------------------------------------------------------
 # 🔄 Updating Packages
 # -----------------------------------------------------------------------------
+
+# 🍺 Update Homebrew packages
 update-homebrew:
     @echo "🔄 Updating Homebrew packages... 🍺"
     @if [[ "{{OS}}" == "Darwin" || "{{OS}}" == "Linux" ]]; then \
@@ -139,6 +137,7 @@ update-homebrew:
         @echo "❌ Homebrew not available on this OS. 🍺"; \
     fi
 
+# Update Flatpak packages
 update-flatpak:
     @echo "🔄 Updating Flatpak applications..."
     @if [[ "{{OS}}" == "Linux" ]]; then \

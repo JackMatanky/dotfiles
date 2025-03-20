@@ -1,6 +1,6 @@
 #------------------------------------------------------------------------------
 # Filename: ~/dotfiles/nushell/env.nu
-# Docs:
+# Docs: https://www.nushell.sh/book/nu_as_a_shell.html
 # Source Author: Omer Hammerman (omerxx)
 # Source Link: https://github.com/omerxx/dotfiles/blob/master/nushell/env.nu
 #------------------------------------------------------------------------------
@@ -8,9 +8,17 @@
 $env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
 $env.CARGO_HOME = ($env.HOME | path join '.cargo')
 
-# Load OpenAI API Key from macOS Keychain (Best Placement)
-$env.OPENAI_API_KEY = (security find-generic-password -s "openai_api_key" -a $env.USER -w | str trim)
+# OS Detection
+let OS = (uname)
 
+# Load OpenAI API Key from macOS Keychain (Best Placement)
+if ($OS == "Darwin") {
+    $env.OPENAI_API_KEY = (security find-generic-password -s "openai_api_key" -a $env.USER -w | str trim)
+}
+
+# ---------------------------------------------------
+# >>> Prompt Setup <<<
+# ---------------------------------------------------
 def create_left_prompt [] {
     let dir = match (do --ignore-errors { $env.PWD | path relative-to $nu.home-path }) {
         null => $env.PWD
@@ -67,7 +75,9 @@ $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
 # $env.TRANSIENT_PROMPT_MULTILINE_INDICATOR = {|| "" }
 # $env.TRANSIENT_PROMPT_COMMAND_RIGHT = {|| "" }
 
-# Environment Variable Conversions
+# ---------------------------------------------------
+# >>> Environment Variable Conversions <<<
+# ---------------------------------------------------
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
 # - converted from a value back to a string when running external commands (to_string)
@@ -106,7 +116,9 @@ use std "path add"
 # path add ($env.HOME | path join ".local" "bin")
 # $env.PATH = ($env.PATH | uniq)
 
+# ---------------------------------------------------
 # Update PATH dynamically
+# ---------------------------------------------------
 $env.PATH = (
   $env.PATH
   | split row (char esep)
@@ -115,17 +127,28 @@ $env.PATH = (
   | append /usr/local/bin
   | append /sbin
   | append /usr/sbin
-  | append /opt/homebrew/bin
-  | append /opt/homebrew/sbin
-  | append /opt/homebrew/bin/nvim
-  | append /opt/homebrew/opt/openjdk/bin
-  | append /run/current-system/sw/bin
-  | append /Applications/Ghostty.app/Contents/MacOS/ghostty
-  | append ($env.CARGO_HOME | path join bin)
+  | append ($env.HOME | path join ".local" "bin")
+  | append ($env.HOME | path join ".pyenv" "bin")
+  | append ($env.HOME | path join ".pyenv" "shims")
   | append ($env.XDG_CONFIG_HOME | path join 'zide/bin')
-  # | append ($env.HOME | path join .local bin)
-  | uniq # filter so the paths are unique
+  | append ($env.CARGO_HOME | path join 'bin')
+  # Filter out duplicate paths
+  | uniq
 )
+
+if ($OS == "Darwin") {
+    $env.PATH
+    | split row (char esep)
+    | append /opt/homebrew/bin
+    | append /opt/homebrew/sbin
+    | append /opt/homebrew/opt/openjdk/bin
+    | append /Applications/Ghostty.app/Contents/MacOS/ghostty
+    | uniq
+}
+
+if ($OS == "Linux") {
+    $env.PATH = ($env.PATH | append /run/current-system/sw/bin)
+}
 
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
@@ -137,6 +160,9 @@ $env.PATH = (
 #    $env.PATH = ($env.PATH | append ($env.PYENV_ROOT | path join "shims"))
 #}
 
+# ---------------------------------------------------
+# Programming Language Environment Setup
+# ---------------------------------------------------
 # pyenv
 if (which pyenv | is-not-empty) {
     $env.PYENV_ROOT = ($env.HOME | path join ".pyenv")
@@ -157,19 +183,23 @@ if (which pyenv | is-not-empty) {
     }
 }
 
-# Zellij
-$env.ZELLIJ_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'zellij')
-$env.ZELLIJ_LAYOUT_DIR = ($env.ZELLIJ_CONFIG_DIR | path join 'layouts')
-$env.ZELLIJ_THEME_DIR = ($env.ZELLIJ_CONFIG_DIR | path join 'themes')
+# Rust
+if (which rustup | is-not-empty) {
+    rustup completions nushell | save --force ~/.cache/rustup.nu
+}
 
-# ZIDE
-# # Source: https://github.com/josephschmitt/zide
-$env.ZIDE_LAYOUT_DIR = ($env.XDG_CONFIG_HOME | path join 'zellij/layouts')
-$env.ZIDE_ALWAYS_NAME = "true"
-$env.ZIDE_FILE_PICKER = "yazi"
-$env.ZIDE_USE_YAZI_CONFIG = ($env.XDG_CONFIG_HOME | path join 'yazi')
+# Java
+if (which java | is-not-empty) {
+    $env.JAVA_HOME = if ($OS == "Darwin") {
+        '/usr/libexec/java_home -v 23'
+    } else {
+        '/usr/lib/jvm/default-java'
+    }
+}
 
-# integrations
+# ---------------------------------------------------
+# Tooling & Integrations
+# ---------------------------------------------------
 if (which starship | is-not-empty) {
     mkdir ~/.cache/starship
     starship init nu | save --force ~/.cache/starship/init.nu
@@ -186,31 +216,57 @@ if (which carapace | is-not-empty) {
     $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 }
 
-$env.EDITOR = "nvim"        # NeoVim, 'hx' Helix
-$env.VISUAL = "zed"         # Zed
-$env.TERMINAL = "ghostty"   # Ghostty  "/Applications/Ghostty.app/Contents/MacOS/ghostty"
-$env.FILE_PICKER = "yazi"   # Yazi
+# Zellij
+$env.ZELLIJ_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'zellij')
+$env.ZELLIJ_LAYOUT_DIR = ($env.ZELLIJ_CONFIG_DIR | path join 'layouts')
+$env.ZELLIJ_THEME_DIR = ($env.ZELLIJ_CONFIG_DIR | path join 'themes')
 
-# Java
-$env.JAVA_HOME = '/usr/libexec/java_home -v 23'
+# ZIDE
+# # Source: https://github.com/josephschmitt/zide
+$env.ZIDE_LAYOUT_DIR = $env.ZELLIJ_LAYOUT_DIR
+$env.ZIDE_ALWAYS_NAME = "true"
+$env.ZIDE_FILE_PICKER = "yazi"
+$env.ZIDE_USE_YAZI_CONFIG = ($env.XDG_CONFIG_HOME | path join 'yazi')
 
-# Nushell
-$env.NU_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'nushell')
-
+# ---------------------------------------------------
+# SSH Configuration & Keychain
+# ---------------------------------------------------
 # SSH
 $env.SSH_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'ssh')
 $env.SSH_CONFIG_FILE = ($env.SSH_CONFIG_DIR | path join 'ssh-config')
 $env.SSH_KEY_PATH = ($env.HOME | path join '.ssh' 'id_ed25519')
 
 # Run keychain to load the SSH key and environment variables
-keychain --eval --quiet $env.SSH_KEY_PATH
-    | lines
-    | where not ($it | is-empty)
-    | parse "{k}={v}; export {k2};"
-    | select k v
-    | transpose --header-row
-    | into record
-    | load-env
+# keychain --eval --quiet $env.SSH_KEY_PATH
+#     | lines
+#     | where not ($it | is-empty)
+#     | parse "{k}={v}; export {k2};"
+#     | select k v
+#     | transpose --header-row
+#     | into record
+#     | load-env
+
+if ($OS == "Darwin" or $OS == "Linux") {
+    keychain --eval --quiet $env.SSH_KEY_PATH
+        | lines
+        | where not ($it | is-empty)
+        | parse "{k}={v}; export {k2};"
+        | select k v
+        | transpose --header-row
+        | into record
+        | load-env
+}
+
+# ---------------------------------------------------
+# >>> Defaults <<<
+# ---------------------------------------------------
+$env.EDITOR = "nvim"        # NeoVim, 'hx' Helix
+$env.VISUAL = "zed"         # Zed
+$env.TERMINAL = "ghostty"   # Ghostty  "/Applications/Ghostty.app/Contents/MacOS/ghostty"
+$env.FILE_PICKER = "yazi"   # Yazi
+
+# Nushell
+$env.NU_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'nushell')
 
 # Optional: Keep Last Exit Code Variable for prompt display
 $env.LAST_EXIT_CODE = 0

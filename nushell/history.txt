@@ -2102,3 +2102,10 @@ which zen-browser
 which zen
 which zathura
 gaa
+gcam 'add short install scripts, package files, and a justfile'
+gps
+stow .
+just
+stow .
+dot
+gaa
