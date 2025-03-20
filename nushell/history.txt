@@ -2067,3 +2067,6 @@ brew install --cask slack
 brew upgrade
 gaa
 grmds
+gcam 'update brewfile and move to dedicated folder'
+gps
+stow .
