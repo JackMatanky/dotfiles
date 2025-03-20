@@ -1,6 +1,13 @@
-# Dotfile
+# Dotfiles
 
-My dotfiles repo managed with GNU Stow on MacOS.
+My dotfiles repo managed with GNU Stow on MacOS and Linux (Ubuntu).
+
+For first time installation, follow these steps:
+
+```bash
+chmod +x setup.sh
+./setup.sh
+```
 
 ## CLI
 

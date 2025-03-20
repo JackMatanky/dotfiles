@@ -10,17 +10,20 @@ typeset -U path cdpath fpath manpath
 # >>> XDG Base Directory <<<
 export XDG_CONFIG_HOME="$HOME/.config"
 
-# >>> Homebrew paths (macOS-specific) <<<
-export PATH="/opt/homebrew/bin:$PATH"
+if [[ "$OS" == "Darwin" ]]; then
+    # MacOS-specific paths
+    export PATH="/opt/homebrew/bin:$PATH" # Homebrew
+    export PATH="/opt/homebrew/bin/nvim:$PATH" # Neovim
+    export PATH="/opt/homebrew/opt/openjdk/bin:$PATH" # OpenJDK
+elif [[ "$OS" == "Linux" ]]; then
+    # Linux-specific paths
+    export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH" # Linuxbrew
+    export PATH="/usr/bin/nvim:$PATH" # Neovim
+    export PATH="/usr/lib/jvm/java-17-openjdk-amd64/bin:$PATH" # OpenJDK
+fi
 
-# >>> Cargo binaries <<<
+# >>> Cargo Binaries <<<
 export PATH="$HOME/.cargo/bin:$PATH"
-
-# >>> Neovim binary <<<
-export PATH="/opt/homebrew/bin/nvim:$PATH"
-
-# >>> Java <<<
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # >>> Pyenv <<<
 export PYENV_ROOT="$HOME/.pyenv"
@@ -31,12 +34,6 @@ eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)" # Enables virtualenv auto-activation
 
-# >>> ZIDE <<<
-# Source: https://github.com/josephschmitt/zide
-export ZIDE_LAYOUT_DIR="$XDG_CONFIG_HOME/zellij/layouts"
-export ZIDE_ALWAYS_NAME="true"
-export ZIDE_FILE_PICKER="yazi"
-export ZIDE_USE_YAZI_CONFIG="$XDG_CONFIG_HOME/yazi"
 
 # Add Nix paths (NixOS-specific)
 if [[ -d "/nix/var/nix/profiles/default" ]]; then
@@ -74,16 +71,28 @@ autoload -U compinit
 compinit
 
 # --- ZSH Autosuggestions ---
-if [[ "$(uname)" == "Darwin" ]]; then
+if [[ "$OS" == "Darwin" ]]; then
   source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+elif [[ "$OS" == "Linux" ]]; then
+  if command -v brew &>/dev/null; then
+    source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+  elif [[ -d "/usr/share/zsh-autosuggestions" ]]; then
+    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  fi
 elif [[ -d "/nix/store" ]]; then
   source /nix/store/*zsh-autosuggestions*/zsh-autosuggestions.zsh
 fi
 
 # --- ZSH Syntax Highlighting ---
-if [[ "$(uname)" == "Darwin" ]]; then
+if [[ "$OS" == "Darwin" ]]; then
   SYNTAX_HIGHLIGHTING_PATH="$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
   [[ -f "$SYNTAX_HIGHLIGHTING_PATH" ]] && source "$SYNTAX_HIGHLIGHTING_PATH"
+elif [[ "$OS" == "Linux" ]]; then
+  if command -v brew &>/dev/null; then
+    source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  elif [[ -d "/usr/share/zsh-syntax-highlighting" ]]; then
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  fi
 elif [[ -d "/nix/store" ]]; then
   source /nix/store/*zsh-syntax-highlighting*/zsh-syntax-highlighting.zsh
 fi
@@ -113,6 +122,13 @@ if command -v fd &> /dev/null; then
   fi
 fi
 
+# --- ZIDE ---
+# Source: https://github.com/josephschmitt/zide
+export ZIDE_LAYOUT_DIR="$XDG_CONFIG_HOME/zellij/layouts"
+export ZIDE_ALWAYS_NAME="true"
+export ZIDE_FILE_PICKER="yazi"
+export ZIDE_USE_YAZI_CONFIG="$XDG_CONFIG_HOME/yazi"
+
 # >>> Aliases <<<
 # Import aliases from a separate file
 # source "$HOME/dotfiles/cli/aliases.sh"
@@ -121,7 +137,7 @@ fi
 alias c='clear'
 alias ll='ls -l'
 
-# --- eza ---
+# --- eza: Modern ls ---
 # Detailed list of all files (hidden included), with icons and Git info
 alias l="eza --long --icons --git --all --group-directories-first"
 
@@ -131,9 +147,34 @@ alias lt="eza --tree --level=2 --long --icons --git"
 # Compact tree view, 2 levels deep
 alias ltree="eza --tree --level=2 --icons --git"
 
-# >>> zoxide <<<
+# --- zoxide ---
 alias za='zoxide add'
 alias zq='zoxide query'
+
+# --- Navigation ---
+# cx: cd into a directory and list its contents.
+# Example: cx Documents/Projects
+cx() {
+  cd "$@" && l
+}
+
+# fcd: Fuzzy search for a directory and cd into it.
+# Example: fcd
+fcd() {
+  cd "$(find . -type d -not -path '*/.*' | fzf)" && l
+}
+
+# f: Fuzzy search for a file and copy its path to the clipboard.
+# Example: f
+f() {
+  echo "$(find . -type f -not -path '*/.*' | fzf)" | pbcopy
+}
+
+# fv: Fuzzy search for a file and open it in Neovim.
+# Example: fv
+fv() {
+  nvim "$(find . -type f -not -path '*/.*' | fzf)"
+}
 
 # --- Directories ---
 alias conf_dir='cd ~/.config'
@@ -152,7 +193,6 @@ alias kb_dev='cd ~/Documents/keyboard_dev'
 alias kb_ergogen='cd ~/Documents/keyboard_dev/ergogen'
 alias kb_zmk='cd ~/Documents/keyboard_dev/zmk-config'
 alias kb_snak_dir='cd ~/Documents/keyboard_dev/kb_snak'
-
 
 # --- Nix ---
 if [[ -d "/nix/var/nix/profiles/default" ]]; then
@@ -302,6 +342,12 @@ as() {
 alias bar_load="sketchybar --reload"
 
 # >>> Specialized Configs <<<
+# --- Default Editors ---
+export EDITOR="nvim"        # NeoVim, 'hx' Helix
+export VISUAL="zed"         # Zed
+export TERMINAL="ghostty"   # Ghostty
+export FILE_PICKER="yazi"   # Yazi
+
 # --- SSH ---
 export SSH_CONFIG_DIR="$XDG_CONFIG_HOME/ssh"
 export SSH_CONFIG_FILE="$SSH_CONFIG_DIR/ssh-config"
@@ -310,38 +356,11 @@ export SSH_CONFIG_FILE="$SSH_CONFIG_DIR/ssh-config"
 export NU_CONFIG_DIR="$XDG_CONFIG_HOME/nushell"
 
 # --- Java ---
-export JAVA_HOME=$(/usr/libexec/java_home -v 23)
-
-# --- Default Editors ---
-export EDITOR="nvim"        # NeoVim, 'hx' Helix
-export VISUAL="zed"         # Zed
-export TERMINAL="ghostty"   # Ghostty
-export FILE_PICKER="yazi"   # Yazi
-
-# >>> Navigation Functions <<<
-# cx: cd into a directory and list its contents.
-# Example: cx Documents/Projects
-cx() {
-  cd "$@" && l
-}
-
-# fcd: Fuzzy search for a directory and cd into it.
-# Example: fcd
-fcd() {
-  cd "$(find . -type d -not -path '*/.*' | fzf)" && l
-}
-
-# f: Fuzzy search for a file and copy its path to the clipboard.
-# Example: f
-f() {
-  echo "$(find . -type f -not -path '*/.*' | fzf)" | pbcopy
-}
-
-# fv: Fuzzy search for a file and open it in Neovim.
-# Example: fv
-fv() {
-  nvim "$(find . -type f -not -path '*/.*' | fzf)"
-}
+if [[ "$OS" == "Darwin" ]]; then
+    export JAVA_HOME=$(/usr/libexec/java_home -v 23)
+elif [[ "$OS" == "Linux" ]]; then
+    export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+fi
 
 # >>> Keybindings <<<
 bindkey '^w' autosuggest-execute
