@@ -253,4 +253,4 @@ install_flatpak
 setup_symlinks
 set_default_shell
 
-echo "Dotfiles setup complete!"
+echo "🎉 Dotfiles setup complete!"
