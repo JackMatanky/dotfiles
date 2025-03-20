@@ -230,7 +230,7 @@ set_default_shell() {
 }
 
 # Run setup
-install_homebrew_dependencies
+install_system_dependencies
 install_homebrew
 install_rust
 clone_repo "$DOTFILES_REPO" "$DOTFILES_DIR"  # Clone dotfiles

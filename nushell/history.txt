@@ -2109,3 +2109,6 @@ just
 stow .
 dot
 gaa
+gcam 'make env.nu os agnostic'
+gps
+stow .
