@@ -121,7 +121,7 @@ cask "visual-studio-code"                 # Lightweight code editor
 
 # --- Productivity & MacOS Utilities ---
 cask "aerospace"                          # Window manager for macOS
-cask "espanso"                            # Text expander for macOS
+cask "espanso"                            # Text expander
 cask "alfred"                             # Productivity app launcher
 
 # --- Knowledge Management (PKM) ---

@@ -2073,3 +2073,7 @@ stow .
 gcam 'rename setup_mac to setup'
 gps
 stow .
+gcam 'setup OS agnostic zshrc and bashrc files'
+gps
+stow .
+command -v nu
