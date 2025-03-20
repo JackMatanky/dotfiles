@@ -1,0 +1,5 @@
+# -----------------------------------------------------------------------------
+# Filename: ~/dotfiles/brew/Brewfile_mac
+# Description: MacOS Appstore packages downloaded with Homebrew.
+# -----------------------------------------------------------------------------
+brew "mas"                                # Mac App Store command-line interface

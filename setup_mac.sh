@@ -5,11 +5,14 @@ set -e  # Exit on error
 # Dotfiles Github Repository
 DOTFILES_REPO="https://github.com/JackMatanky/dotfiles.git"
 DOTFILES_DIR="$HOME/dotfiles"
-BREWFILE="$DOTFILES_DIR/Brewfile"
 
 # Obsidian
 OBSIDIAN_REPO="https://gitlab.com/JackMatanky/obsidian_vault.git"
 OBSIDIAN_DIR="$HOME/obsidian_vault"
+
+# Homebrew
+BREWFILE="$DOTFILES_DIR/brew/Brewfile"
+BREWFILE_MAC="$DOTFILES_DIR/brew/Brewfile_mac"
 
 # Detect macOS architecture
 ARCH=$(uname -m)

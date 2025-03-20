@@ -2059,3 +2059,11 @@ dot
 gcam 'add multicursors to neovim'
 gps
 gaa
+gcam 'add multicursors to neovim'
+gps
+dotnvim
+cd nvim
+brew install --cask slack
+brew upgrade
+gaa
+grmds
