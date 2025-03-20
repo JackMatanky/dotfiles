@@ -29,6 +29,12 @@ else
     BREW_PATH="/home/linuxbrew/.linuxbrew/bin/brew"
 fi
 
+# Request sudo upfront
+if ! sudo -v; then
+    echo "Failed to obtain sudo privileges. Please run the script again with the correct password."
+    exit 1
+fi
+
 # Function to install Homebrew dependencies
 # Xcode for macOS, packages per linux distribution
 install_homebrew_dependencies() {

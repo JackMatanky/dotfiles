@@ -2081,3 +2081,6 @@ gcam 'final tweaks to setup script'
 gps
 stow .
 gaa
+gcam 'final tweaks to setup script'
+gps
+gaa
