@@ -2,13 +2,13 @@
 
 # Source: linkarzu
 # Link: https://github.com/linkarzu/dotfiles-latest
-# Catppuccin Pallette: https://catppuccin.com/palette
+# Catppuccin Palette: https://catppuccin.com/palette
 #
 # Filename: ~/github/dotfiles/colorscheme/catppuccin-macchiato.sh
 # ~/github/dotfiles-latest/colorscheme/list/catppuccin-macchiato.sh
 
 # Lighter markdown headings
-# 4 colors to the right for these ligher headings
+# 4 colors to the right for these lighter headings
 # https://www.color-hex.com/color/987afb
 #
 # Given that color A (#987afb) becomes color B (#5b4996) when darkened 4 steps

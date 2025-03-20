@@ -14,9 +14,13 @@ DOTFILES_DIR="$HOME/dotfiles"
 OBSIDIAN_REPO="https://gitlab.com/JackMatanky/obsidian_vault.git"
 OBSIDIAN_DIR="$HOME/obsidian_vault"
 
-# Homebrew Brewfile Paths
-BREWFILE="$DOTFILES_DIR/brew/Brewfile"      # Shared Brewfile (Mac & Linux)
-BREWFILE_MAC="$DOTFILES_DIR/brew/Brewfile_mac" # Mac App Store only
+# Package Directory
+PACKAGES="$DOTFILES_DIR/packages"
+BREWFILE="$PACKAGES/brewfile"           # Shared Brewfile (Mac & Linux)
+BREWFILE_CASK="$PACKAGES/brewfile_cask" # Brewfile Cask (Mac)
+BREWFILE_MAC="$PACKAGES/brewfile_mac"   # Mac App Store only
+CARGO_PACKAGES="$PACKAGES/cargo-packages.txt"
+FLATPAK_MANIFEST="$PACKAGES/flatpak-manifest.json"
 
 # Set Homebrew Path
 if [[ "$OS" == "Darwin" ]]; then
@@ -35,11 +39,14 @@ if ! sudo -v; then
     exit 1
 fi
 
-# Function to install Homebrew dependencies
+# --------------------------------------------
+# Homebrew
+# --------------------------------------------
+# Install System Dependencies for Homebrew
 # Xcode for macOS, packages per linux distribution
-install_homebrew_dependencies() {
+install_system_dependencies() {
     if [[ "$OS" == "Darwin" ]]; then
-        # macOS: Ensure Xcode Command Line Tools are installed
+        # Ensure Xcode Command Line Tools are installed
         if ! xcode-select -p &>/dev/null; then
             echo "Installing Xcode Command Line Tools..."
             xcode-select --install
@@ -47,7 +54,7 @@ install_homebrew_dependencies() {
                 sleep 5
             done
         else
-            echo "Xcode Command Line Tools already installed."
+            echo "✅ Xcode Command Line Tools already installed."
         fi
     elif [[ "$OS" == "Linux" ]]; then
         # Detect Linux distribution
@@ -60,28 +67,27 @@ install_homebrew_dependencies() {
 
         echo "Detected Linux distribution: $DISTRO"
 
+        # Install necessary build dependencies
         case "$DISTRO" in
             ubuntu|debian)
-                echo "Installing dependencies for Ubuntu/Debian..."
-                sudo apt-get update && sudo apt-get install -y build-essential procps curl file git
+                sudo apt-get update && sudo apt-get install -y build-essential procps curl file git flatpak
                 ;;
             fedora|centos|rhel)
-                echo "Installing dependencies for Fedora/CentOS/Red Hat..."
                 sudo yum groupinstall -y 'Development Tools'
-                sudo yum install -y procps-ng curl file git
+                sudo yum install -y procps-ng curl file git flatpak
                 ;;
             arch)
-                echo "Installing dependencies for Arch Linux..."
-                sudo pacman -S --noconfirm base-devel procps-ng curl file git
+                sudo pacman -S --noconfirm base-devel procps-ng curl file git flatpak
                 ;;
             *)
-                echo "Unsupported Linux distribution: $DISTRO. Manual installation may be required."
+                echo "❌ Unsupported Linux distribution: $DISTRO. Install dependencies manually."
+                exit 1
                 ;;
         esac
     fi
 }
 
-# Function to install Homebrew
+# Install Homebrew
 install_homebrew() {
     if ! command -v brew &>/dev/null; then
         echo "Installing Homebrew..."
@@ -92,15 +98,20 @@ install_homebrew() {
     fi
 }
 
-# Function to install packages using Brewfile
-install_brewfile() {
+# Install packages using Brewfiles
+install_homebrew_packages() {
     eval "$($BREW_PATH shellenv)"  # Ensure Brew is loaded
 
     if [[ -f "$BREWFILE" ]]; then
-        echo "Installing shared packages from Brewfile..."
+        echo "📦 Installing Homebrew packages..."
         brew bundle --file="$BREWFILE"
     else
-        echo "Brewfile not found! Skipping package installation."
+        echo "⚠️ Brewfile not found! Skipping package installation."
+    fi
+
+    if [[ "$OS" == "Darwin" && -f "$BREWFILE_CASK" ]]; then
+        echo "📦 Installing macOS Cask packages..."
+        brew bundle --file="$BREWFILE_CASK"
     fi
 
     # if [[ "$OS" == "Darwin" && -f "$BREWFILE_MAC" ]]; then
@@ -121,6 +132,51 @@ install_brewfile() {
         else
             echo "OpenJDK is not installed via Homebrew. Skipping symlink."
         fi
+    fi
+}
+
+# --------------------------------------------
+# Flatpak Applications (Linux Only)
+# --------------------------------------------
+install_flatpak() {
+    if [[ "$OS" == "Linux" && -f "$FLATPAK_MANIFEST" ]]; then
+        echo "📦 Installing Flatpak applications..."
+        flatpak install -y --noninteractive < "$FLATPAK_MANIFEST"
+    else
+        echo "⚠️ Flatpak manifest not found or not applicable."
+    fi
+}
+
+# --------------------------------------------
+# Rust & Cargo
+# --------------------------------------------
+install_rust() {
+    if ! command -v cargo &>/dev/null; then
+        echo "🦀 Installing Rust & Cargo..."
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+        source "$HOME/.cargo/env"
+    else
+        echo "✅ Rust & Cargo already installed. 🦀"
+    fi
+}
+
+install_cargo_packages() {
+    if [[ -f "$CARGO_PACKAGES" ]]; then
+        echo "📦 Installing Cargo binaries... 🦀"
+
+        # Ensure cargo-binstall is installed first
+        if ! command -v cargo-binstall &>/dev/null; then
+            echo "🚀 Installing cargo-binstall..."
+            cargo install cargo-binstall
+        fi
+
+        while read -r package; do
+            cargo binstall "$package" -y
+        done < "$CARGO_PACKAGES"
+
+        echo "✅ Cargo packages installed!"
+    else
+        echo "⚠️ Cargo package list not found!"
     fi
 }
 
@@ -152,7 +208,9 @@ setup_symlinks() {
     done
 }
 
-# Function to set Nushell as the default shell
+# --------------------------------------------
+# 🛠️ Set Nushell as Default Shell
+# --------------------------------------------
 set_default_shell() {
     NU_PATH="$(command -v nu)"
     if [[ -z "$NU_PATH" ]]; then
@@ -174,8 +232,11 @@ set_default_shell() {
 # Run setup
 install_homebrew_dependencies
 install_homebrew
+install_rust
 clone_repo "$DOTFILES_REPO" "$DOTFILES_DIR"  # Clone dotfiles
-install_brewfile
+install_homebrew_packages
+install_flatpak
+install_cargo_packages
 setup_symlinks
 set_default_shell
 

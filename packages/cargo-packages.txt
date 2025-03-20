@@ -1,0 +1,26 @@
+# -----------------------------------------------------------------------------
+# Filename: ~/dotfiles/packages/cargo-packages.txt
+# Source: https://crates.io/
+# Github: https://github.com/rust-lang/cargo
+# Description: List of Cargo packages that should be installed using `cargo-binstall`.
+# -----------------------------------------------------------------------------
+
+# --- Terminal Utilities ---
+zellij               # Terminal workspace manager
+yazi                 # Terminal file manager with vim-like keybindings
+zoxide               # Smarter `cd` command
+fd-find              # Fast file search (alternative to `find`)
+ripgrep              # Fast file search (alternative to `grep`)
+bat                  # Syntax-highlighted `cat` alternative
+eza                  # Modern replacement for `ls`
+starship             # Fast, customizable shell prompt
+just                 # Handy `justfile` task runner
+skim                 # Fuzzy finder (alternative to `fzf`)
+
+# --- Development Tools ---
+cargo-binstall       # Faster binary installation for Rust projects
+cargo-edit           # Cargo subcommands for adding/removing dependencies
+cargo-watch          # Automatically compile Rust code on changes
+cargo-outdated       # Check for outdated dependencies
+cargo-udeps          # Detect unused dependencies
+cargo-nextest        # Fastest test runner for Rust

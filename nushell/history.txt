@@ -2084,3 +2084,21 @@ gaa
 gcam 'final tweaks to setup script'
 gps
 gaa
+gcam 'add sudo password request to the beginning of the script'
+gps
+stow .
+chmod +x setup.sh
+chmod +x setup.sh<\n>git add setup.sh<\n>git commit -m "Make setup.sh executable"<\n>git push origin main
+stow .
+brew update
+brew search zathura
+curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin<\n>
+brew install just
+just install-homebrew
+just
+just update-homebrew
+which python3.13
+which zen-browser
+which zen
+which zathura
+gaa

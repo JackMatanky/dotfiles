@@ -1,6 +1,8 @@
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/brew/Brewfile
-# Description: Homebrew packages with comments explaining each one.
+# Filename: ~/dotfiles/packages/Brewfile_Cask
+# Github: https://github.com/Homebrew/homebrew-cask
+# Source: https://formulae.brew.sh/cask/
+# Description: Homebrew Cask packages with comments explaining each one.
 # -----------------------------------------------------------------------------
 # >>> Homebrew Taps <<<
 tap "homebrew/bundle"                     # Manage multiple Homebrew dependencies
@@ -11,88 +13,8 @@ tap "nikitabobko/tap"                     # Miscellaneous useful CLI tools
 tap "zegervdv/zathura"                    # Zathura PDF reader and extensions
 
 # -----------------------------------------------
-# >>> CLI <<<
-# -----------------------------------------------
-# --- Shells & Terminal Enhancements ---
-brew "bash"                               # Bash shell
-brew "nushell"                            # Modern shell with structured data support
-brew "git"                                # Version control system
-brew "zellij"                             # Terminal workspace manager, with terminal multiplexer as the base feature
-
-# --- File Navigation & Search ---
-brew "yazi"                               # Terminal file manager with vim-like keybindings
-brew "zoxide"                             # Smarter `cd` command
-brew "fd"                                 # Fast file search (alternative to `find`)
-brew "fzf"                                # Fuzzy finder for files and commands
-
-# --- Terminal Display & Output ---
-brew "eza"                                # Modern `ls` replacement
-brew "bat"                                # Syntax-highlighted file viewer
-brew "ripgrep"                            # Fast file search (like `grep`)
-
-# --- Shell Enhancements ---
-brew "starship"                           # Fast, customizable shell prompt
-brew "carapace"                           # Shell completion framework
-brew "zsh-autosuggestions"                # Suggests past commands in Zsh
-brew "zsh-syntax-highlighting"            # Highlights commands in Zsh
-
-# --- Dotfile & Configuration Management ---
-brew "stow"                              # Symlink manager for dotfiles
-
-# --- Security & Authentication ---
-brew "keychain"                          # Securely manage SSH keys
-
-# -----------------------------------------------
-# >>> Modal Editors <<<
-# -----------------------------------------------
-brew "neovim"                             # Modern Vim-based text editor
-brew "helix"                              # Rust-based modal editor with LSP support
-
-# -----------------------------------------------
-# >>> Programming Languages & Runtimes <<<
-# -----------------------------------------------
-brew "python@3.13"                        # Python programming language
-brew "rust"                               # Rust programming language
-brew "node"                               # Node.js runtime
-brew "lua"                                # Lightweight scripting language
-brew "openjdk"                            # Java Development Kit
-
-# --- Language Server Protocols ---
-brew "python-lsp-server"                  # Language server for Python development
-brew "basedpyright"                       # Python static type checker
-brew "rust-analyzer"                      # Language server for Rust development
-brew "lua-language-server"                # Language server for Lua development
-brew "typescript-language-server"         # Language server for TypeScript
-brew "vscode-langservers-extracted"       # Collection of useful language servers
-brew "yaml-language-server"               # YAML support in editors
-brew "texlab"                             # Language server for LaTeX
-brew "marksman"                           # Markdown LSP server
-
-# --- Python  ---
-brew "pyenv"                              # Python version manager
-brew "pyenv-virtualenv"                   # Python version manager
-brew "uv"                                 # Python package manager (alternative to pip)
-brew "ipython"                            # Interactive Python shell
-brew "jupytext"                           # Convert Jupyter notebooks to plain scripts
-
-# --- Lua ---
-brew "luarocks"                           # Package manager for Lua
-brew "luajit"                             # Just-In-Time compiler for Lua
-
-# --- Linters & Formatters ---
-brew "ruff"                               # Fast Python linter and formatter
-brew "stylua"                             # Lua code formatter
-brew "markdownlint-cli2"                  # Improved Markdown linter
-brew "prettier"                           # Code formatter for multiple languages
-
-# -----------------------------------------------
 # >>> Media & Document Processing <<<
 # -----------------------------------------------
-brew "pandoc"                             # Document format converter
-brew "tesseract"                          # Optical Character Recognition (OCR) tool
-brew "imagemagick"                        # CLI tool for image conversion and processing
-brew "ffmpeg"                             # Multimedia framework (video/audio conversion)
-brew "webp"                               # Convert images to WebP format
 brew "switchaudio-osx"                    # CLI for switching macOS audio devices
 brew "nowplaying-cli"                     # Display currently playing media in the
 

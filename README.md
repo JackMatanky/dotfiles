@@ -267,7 +267,7 @@ brew install lazygit
 brew install keychain
 ```
 
-## Brower
+## Browser
 
 - [Firefox](https://www.mozilla.org/firefox/)
 
