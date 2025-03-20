@@ -2112,3 +2112,7 @@ gaa
 gcam 'make env.nu os agnostic'
 gps
 stow .
+gcam 'fix setup script'
+gps
+stow .
+gaa

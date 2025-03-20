@@ -54,7 +54,7 @@ brew "helix"                              # Rust-based modal editor with LSP sup
 # >>> Programming Languages & Runtimes <<<
 # -----------------------------------------------------------------------------
 brew "python@3.13"                        # Python programming language
-brew "rust"                               # Rust programming language
+# brew "rust"                               # Rust programming language
 brew "node"                               # Node.js runtime
 brew "lua"                                # Lightweight scripting language
 brew "openjdk"                            # Java Development Kit

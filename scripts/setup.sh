@@ -141,7 +141,7 @@ install_homebrew_packages() {
 install_flatpak() {
     if [[ "$OS" == "Linux" && -f "$FLATPAK_MANIFEST" ]]; then
         echo "📦 Installing Flatpak applications..."
-        flatpak install -y --noninteractive < "$FLATPAK_MANIFEST"
+        flatpak install -y --noninteractive --from "$FLATPAK_MANIFEST"
     else
         echo "⚠️ Flatpak manifest not found or not applicable."
     fi
@@ -180,6 +180,18 @@ install_cargo_packages() {
     fi
 }
 
+# --------------------------------------------
+# Just (Task Runner)
+# --------------------------------------------
+install_just() {
+    if ! command -v just &>/dev/null; then
+        echo "⚡ Installing Just (Task Runner)..."
+        curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin
+    else
+        echo "✅ Just is already installed."
+    fi
+}
+
 # General function to clone or update a Git repository
 clone_repo() {
     local REPO_URL="$1"
@@ -209,7 +221,7 @@ setup_symlinks() {
 }
 
 # --------------------------------------------
-# 🛠️ Set Nushell as Default Shell
+# Set Nushell as Default Shell
 # --------------------------------------------
 set_default_shell() {
     NU_PATH="$(command -v nu)"
@@ -233,10 +245,11 @@ set_default_shell() {
 install_system_dependencies
 install_homebrew
 install_rust
+install_just
 clone_repo "$DOTFILES_REPO" "$DOTFILES_DIR"  # Clone dotfiles
 install_homebrew_packages
-install_flatpak
 install_cargo_packages
+install_flatpak
 setup_symlinks
 set_default_shell
 
