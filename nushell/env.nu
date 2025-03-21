@@ -135,13 +135,14 @@ $env.PATH = (
 )
 
 if ($OS == "Darwin") {
-    $env.PATH =
+    $env.PATH = (
       $env.PATH
         | split row (char esep)
         | append /opt/homebrew/bin
         | append /opt/homebrew/sbin
         | append /opt/homebrew/opt/openjdk/bin
         | append /Applications/Ghostty.app/Contents/MacOS/ghostty
+    )
 }
 
 if ($OS == "Linux") {
