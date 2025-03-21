@@ -238,25 +238,27 @@ $env.SSH_CONFIG_FILE = ($env.SSH_CONFIG_DIR | path join 'ssh-config')
 $env.SSH_KEY_PATH = ($env.HOME | path join '.ssh' 'id_ed25519')
 
 # Run keychain to load the SSH key and environment variables
-# keychain --eval --quiet $env.SSH_KEY_PATH
-#     | lines
-#     | where not ($it | is-empty)
-#     | parse "{k}={v}; export {k2};"
-#     | select k v
-#     | transpose --header-row
-#     | into record
-#     | load-env
+keychain --eval --quiet $env.SSH_KEY_PATH
+    | lines
+    | where not ($it | is-empty)
+    | parse "{k}={v}; export {k2};"
+    | select k v
+    | transpose --header-row
+    | into record
+    | load-env
 
-if ($OS == "Darwin" or $OS == "Linux") {
-    keychain --eval --quiet $env.SSH_KEY_PATH
-        | lines
-        | where not ($it | is-empty)
-        | parse "{k}={v}; export {k2};"
-        | select k v
-        | transpose --header-row
-        | into record
-        | load-env
-}
+# if ($OS == "Darwin" or $OS == "Linux") {
+#     keychain --eval --quiet $env.SSH_KEY_PATH
+#         | lines
+#         | where not ($it | is-empty)
+#         | parse "{k}={v}; export {k2};"
+#         | select k v
+#         | transpose --header-row
+#         | into record
+#         | load-env
+# }
+
+
 
 # ---------------------------------------------------
 # >>> Defaults <<<

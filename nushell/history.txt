@@ -2129,3 +2129,5 @@ gaa
 gcam 'fix env.nu zoxide and caraspace referencing nushell instead of nu'
 gps
 stow .
+gcam 'revert env.nu change'
+gps
