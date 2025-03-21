@@ -2158,3 +2158,7 @@ stow --delete *
 stow packages
 stow scripts
 gaa
+gcam 'add gnu stow aliases to nushell'
+gps
+stow
+stow .

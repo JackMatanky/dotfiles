@@ -121,7 +121,9 @@ def grmds [] {
 
 # --- GNU Stow ---
 alias unstow = stow -D
+alias unstow_all = stow -D .
 alias restow = stow -R
+alias restow_all = stow -R .
 
 # --- Nix ---
 alias flake_rebuild = sudo nixos-rebuild switch --flake .
