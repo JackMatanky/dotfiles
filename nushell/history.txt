@@ -2135,3 +2135,8 @@ gcam 'revert keychain in env.nu back to mac specific'
 gps
 stow .
 gaa
+gcam 'revert keychain in env.nu back to mac specific'
+gps
+brew install keychain
+nu --help
+gaa
