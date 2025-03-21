@@ -9,7 +9,7 @@ $env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
 $env.CARGO_HOME = ($env.HOME | path join '.cargo')
 
 # OS Detection
-let OS = (uname)
+let OS = (uname | get operating-system)
 
 # Load OpenAI API Key from macOS Keychain (Best Placement)
 if ($OS == "Darwin") {

@@ -2140,3 +2140,21 @@ gps
 brew install keychain
 nu --help
 gaa
+gcam 'update'
+gps
+stow .
+uname
+uname --help
+(uname | get operating-system)
+mas list
+brew install mas
+mas list
+stow -D
+stow -D */
+stow --delete
+stow --delete dotfiles
+stow --delete ~/dotfiles
+stow --delete *
+stow packages
+stow scripts
+gaa

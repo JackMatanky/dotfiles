@@ -4,23 +4,52 @@
 # Github: https://github.com/rust-lang/cargo
 # Description: List of Cargo packages that should be installed using `cargo-binstall`.
 # -----------------------------------------------------------------------------
-
 # --- Terminal Utilities ---
-zellij               # Terminal workspace manager
-yazi                 # Terminal file manager with vim-like keybindings
-zoxide               # Smarter `cd` command
-fd-find              # Fast file search (alternative to `find`)
-ripgrep              # Fast file search (alternative to `grep`)
-bat                  # Syntax-highlighted `cat` alternative
-eza                  # Modern replacement for `ls`
-starship             # Fast, customizable shell prompt
-just                 # Handy `justfile` task runner
-skim                 # Fuzzy finder (alternative to `fzf`)
+# Terminal workspace manager, with terminal multiplexer as the base feature
+zellij
+
+# --- Shell Enhancements ---
+# Fast, customizable shell prompt
+starship
+
+# --- File Navigation & Search ---
+# Terminal file manager with vim-like keybindings
+yazi
+
+# Smarter `cd` command
+zoxide
+
+# Fast file search (alternative to `find`)
+fd-find
+
+# --- Terminal Display & Output ---
+# Modern replacement for `ls`
+eza
+
+# Syntax-highlighted `cat` alternative
+bat
+
+# Fast file search (alternative to `grep`)
+ripgrep
+
+# Fuzzy finder (alternative to `fzf`)
+skim
 
 # --- Development Tools ---
-cargo-binstall       # Faster binary installation for Rust projects
-cargo-edit           # Cargo subcommands for adding/removing dependencies
-cargo-watch          # Automatically compile Rust code on changes
-cargo-outdated       # Check for outdated dependencies
-cargo-udeps          # Detect unused dependencies
-cargo-nextest        # Fastest test runner for Rust
+# Faster binary installation for Rust projects
+cargo-binstall
+
+# Cargo subcommands for adding/removing dependencies
+cargo-edit
+
+# Automatically compile Rust code on changes
+cargo-watch
+
+# Check for outdated dependencies
+cargo-outdated
+
+# Detect unused dependencies
+cargo-udeps
+
+# Fastest test runner for Rust
+cargo-nextest

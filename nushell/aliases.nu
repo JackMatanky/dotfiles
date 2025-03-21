@@ -119,6 +119,10 @@ def grmds [] {
     git commit --all --message 'Remove .DS_Store files'
 }
 
+# --- GNU Stow ---
+alias unstow = stow -D
+alias restow = stow -R
+
 # --- Nix ---
 alias flake_rebuild = sudo nixos-rebuild switch --flake .
 alias flake_rebuild_trace = sudo nixos-rebuild switch --flake . --show-trace
