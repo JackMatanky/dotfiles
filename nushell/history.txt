@@ -2131,3 +2131,7 @@ gps
 stow .
 gcam 'revert env.nu change'
 gps
+gcam 'revert keychain in env.nu back to mac specific'
+gps
+stow .
+gaa
