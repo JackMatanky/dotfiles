@@ -2118,3 +2118,11 @@ stow .
 gaa
 gcam 'add just to setup script'
 gps
+gcam 'add just to setup script'
+gps
+stow .
+--help
+stow .
+carapace _carapace nushell
+starship init nushell
+gaa

@@ -153,6 +153,10 @@ if ($OS == "Linux") {
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
 
+
+# ---------------------------------------------------
+# Programming Language Environment Setup
+# ---------------------------------------------------
 # pyenv
 # if (which pyenv | is-not-empty) {
 #    $env.PYENV_ROOT = ($env.HOME | path join ".pyenv")
@@ -160,9 +164,6 @@ if ($OS == "Linux") {
 #    $env.PATH = ($env.PATH | append ($env.PYENV_ROOT | path join "shims"))
 #}
 
-# ---------------------------------------------------
-# Programming Language Environment Setup
-# ---------------------------------------------------
 # pyenv
 if (which pyenv | is-not-empty) {
     $env.PYENV_ROOT = ($env.HOME | path join ".pyenv")
@@ -207,12 +208,12 @@ if (which starship | is-not-empty) {
 }
 
 if (which zoxide | is-not-empty) {
-    zoxide init nushell | save --force ~/.zoxide.nu
+    zoxide init nu | save --force ~/.zoxide.nu
 }
 
 if (which carapace | is-not-empty) {
     mkdir ~/.cache/carapace
-    carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+    carapace _carapace nu | save --force ~/.cache/carapace/init.nu
     $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 }
 

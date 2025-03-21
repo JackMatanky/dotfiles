@@ -9,12 +9,12 @@
     "use_key_equivalents": true,
     "bindings": {
       // >>> Menu Navigation <<<
-      "up": "menu::SelectPrev",
-      "shift-tab": "menu::SelectPrev",
+      "up": "menu::SelectPrevious",
+      "shift-tab": "menu::SelectPrevious",
       "home": "menu::SelectFirst",
       "pageup": "menu::SelectFirst",
       "shift-pageup": "menu::SelectFirst",
-      "ctrl-p": "menu::SelectPrev",
+      "ctrl-p": "menu::SelectPrevious",
       "down": "menu::SelectNext",
       "tab": "menu::SelectNext",
       "end": "menu::SelectLast",
@@ -180,10 +180,11 @@
       // >>> UI & Miscellaneous Commands <<<
       "ctrl-cmd-space": "editor::ShowCharacterPalette",
       "cmd-;": "editor::ToggleLineNumbers",
-      "cmd-alt-z": "editor::RevertSelectedHunks",
+      "cmd-alt-z": "git::Restore",
+      "ctrl-alt-y": "git::RestoreFile",
       "cmd-'": "editor::ToggleHunkDiff",
       "cmd-\"": "editor::ExpandAllHunkDiffs",
-      "cmd-alt-g b": "editor::ToggleGitBlame",
+      "cmd-alt-g b": "git::Blame",
       "cmd-i": "editor::ShowSignatureHelp",
 
       // >>> Code Navigation <<<
