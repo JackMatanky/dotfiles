@@ -132,18 +132,16 @@ $env.PATH = (
   | append ($env.HOME | path join ".pyenv" "shims")
   | append ($env.XDG_CONFIG_HOME | path join 'zide/bin')
   | append ($env.CARGO_HOME | path join 'bin')
-  # Filter out duplicate paths
-  | uniq
 )
 
 if ($OS == "Darwin") {
-    $env.PATH
-    | split row (char esep)
-    | append /opt/homebrew/bin
-    | append /opt/homebrew/sbin
-    | append /opt/homebrew/opt/openjdk/bin
-    | append /Applications/Ghostty.app/Contents/MacOS/ghostty
-    | uniq
+    $env.PATH =
+      $env.PATH
+        | split row (char esep)
+        | append /opt/homebrew/bin
+        | append /opt/homebrew/sbin
+        | append /opt/homebrew/opt/openjdk/bin
+        | append /Applications/Ghostty.app/Contents/MacOS/ghostty
 }
 
 if ($OS == "Linux") {
@@ -268,6 +266,9 @@ $env.FILE_PICKER = "yazi"   # Yazi
 
 # Nushell
 $env.NU_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'nushell')
+
+# # Filter out duplicate paths
+$env.PATH = ($env.PATH | uniq)
 
 # Optional: Keep Last Exit Code Variable for prompt display
 $env.LAST_EXIT_CODE = 0
