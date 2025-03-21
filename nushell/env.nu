@@ -12,9 +12,9 @@ $env.CARGO_HOME = ($env.HOME | path join '.cargo')
 let OS = (uname | get operating-system)
 
 # Load OpenAI API Key from macOS Keychain (Best Placement)
-if ($OS == "Darwin") {
-    $env.OPENAI_API_KEY = (security find-generic-password -s "openai_api_key" -a $env.USER -w | str trim)
-}
+# if ($OS == "Darwin") {
+#     $env.OPENAI_API_KEY = (security find-generic-password -s "openai_api_key" -a $env.USER -w | str trim)
+# }
 
 # ---------------------------------------------------
 # >>> Prompt Setup <<<
