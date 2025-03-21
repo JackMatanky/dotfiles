@@ -2126,3 +2126,6 @@ stow .
 carapace _carapace nushell
 starship init nushell
 gaa
+gcam 'fix env.nu zoxide and caraspace referencing nushell instead of nu'
+gps
+stow .

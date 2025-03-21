@@ -208,12 +208,12 @@ if (which starship | is-not-empty) {
 }
 
 if (which zoxide | is-not-empty) {
-    zoxide init nu | save --force ~/.zoxide.nu
+    zoxide init nushell | save --force ~/.zoxide.nu
 }
 
 if (which carapace | is-not-empty) {
     mkdir ~/.cache/carapace
-    carapace _carapace nu | save --force ~/.cache/carapace/init.nu
+    carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
     $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 }
 
