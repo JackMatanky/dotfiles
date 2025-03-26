@@ -7,6 +7,7 @@
 
 $env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
 $env.CARGO_HOME = ($env.HOME | path join '.cargo')
+$env.HOMEBREW = '/opt/homebrew'
 
 # OS Detection
 let OS = (uname | get operating-system)
@@ -138,9 +139,11 @@ if ($OS == "Darwin") {
     $env.PATH = (
       $env.PATH
         | split row (char esep)
-        | append /opt/homebrew/bin
-        | append /opt/homebrew/sbin
-        | append /opt/homebrew/opt/openjdk/bin
+        | append ($env.HOMEBREW | path join "bin")
+        | append ($env.HOMEBREW | path join "sbin")
+        | append ($env.HOMEBREW | path join "opt" "openjdk" "bin")
+        | append ($env.HOMEBREW | path join "bin" "ghostty")
+        | append ($env.HOMEBREW | path join "bin" "nvim")
         | append /Applications/Ghostty.app/Contents/MacOS/ghostty
     )
 }
