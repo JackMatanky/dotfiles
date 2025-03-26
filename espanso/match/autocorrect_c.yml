@@ -1,8 +1,8 @@
 # Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
 matches:
-    # --------
-    # --- C ---
-    # --------
+    # ----------
+    # --- CA ---
+    # ----------
     - trigger: caculater
       replace: calculator
       propagate_case: true
@@ -383,6 +383,9 @@ matches:
       replace: casualties
       propagate_case: true
       word: true
+    # ----------
+    # --- CE ---
+    # ----------
     - trigger: Ceasar
       replace: Caesar
       propagate_case: true
@@ -479,6 +482,9 @@ matches:
       replace: "cervical\x2C\x20servile\x2C\x20serval"
       propagate_case: true
       word: true
+    # ----------
+    # --- CH ---
+    # ----------
     - trigger: chalenging
       replace: challenging
       propagate_case: true
@@ -595,6 +601,9 @@ matches:
       replace: churches
       propagate_case: true
       word: true
+    # ----------
+    # --- CI ---
+    # ----------
     - trigger: Cincinatti
       replace: Cincinnati
       propagate_case: true
@@ -627,6 +636,9 @@ matches:
       replace: civilian
       propagate_case: true
       word: true
+    # ----------
+    # --- CL ---
+    # ----------
     - trigger: claer
       replace: clear
       propagate_case: true
@@ -675,6 +687,9 @@ matches:
       replace: clinically
       propagate_case: true
       word: true
+    # ----------
+    # --- CO ---
+    # ----------
     - trigger: cmo
       replace: com
       propagate_case: true
@@ -1671,6 +1686,10 @@ matches:
       replace: corrosion
       propagate_case: true
       word: true
+    - trigger: corrolary
+      replace: corollary
+      propagate_case: true
+      word: true
     - trigger: corparate
       replace: corporate
       propagate_case: true
@@ -1775,6 +1794,9 @@ matches:
       replace: "coy\x2C\x20copy"
       propagate_case: true
       word: true
+    # ----------
+    # --- CR ---
+    # ----------
     - trigger: creaeted
       replace: created
       propagate_case: true
@@ -1871,6 +1893,9 @@ matches:
       replace: crystallisation
       propagate_case: true
       word: true
+    # ----------
+    # --- CU ---
+    # ----------
     - trigger: culiminating
       replace: culminating
       propagate_case: true
@@ -1895,6 +1920,9 @@ matches:
       replace: curriculum
       propagate_case: true
       word: true
+    # ----------
+    # --- CY ---
+    # ----------
     - trigger: cxan
       replace: cyan
       propagate_case: true
