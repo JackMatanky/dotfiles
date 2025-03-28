@@ -120,10 +120,23 @@ def grmds [] {
 }
 
 # --- GNU Stow ---
+def stow_all [] {
+  cd ~/dotfiles/
+  stow .
+}
+
+def unstow_all [] {
+  cd ~/dotfiles/
+  stow -D .
+}
+
+def restow_all [] {
+  cd ~/dotfiles/
+  stow -R .
+}
+
 alias unstow = stow -D
-alias unstow_all = stow -D .
 alias restow = stow -R
-alias restow_all = stow -R .
 
 # --- Nix ---
 alias flake_rebuild = sudo nixos-rebuild switch --flake .
