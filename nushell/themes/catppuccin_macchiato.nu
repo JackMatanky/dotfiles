@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 #  Filename: ~/dotfiles/nushell/themes/catppuccin-macchiato.nu
-#
-#  Source: https://github.com/nushell/nu_scripts/blob/main/themes/nu-themes/catppuccin-macchiato.nu
+#  Catppuccin GitHub: https://github.com/catppuccin/nushell/blob/main/themes/catppuccin_macchiato.nu
+#  nu-scripts: https://github.com/nushell/nu_scripts/blob/main/themes/nu-themes/catppuccin-macchiato.nu
 # -----------------------------------------------------------------------------
 
 # Retrieve the theme settings
