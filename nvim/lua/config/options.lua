@@ -1,10 +1,10 @@
 -- --------------------------------------------------------------------
 --  Filename: ~/dotfiles/nvim/lua/config/options.lua
---  LazyVim Docs: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua (Default Options)
+--  LazyVim Docs: https://www.lazyvim.org/configuration/general
+--  GitHub: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua (Default Options)
 -- --------------------------------------------------------------------
 
--- Options are automatically loaded before lazy.nvim startup
--- This file is automatically loaded by plugins.core
+-- Options are automatically loaded before lazy.nvim startup by plugins.core
 
 -- Add any additional options here
 vim.g.mapleader = " "
