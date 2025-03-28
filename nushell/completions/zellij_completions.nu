@@ -1,7 +1,8 @@
+# -----------------------------------------------------------------------------
 # Filename: ~/dotfiles/nushell/completions/zellij_completions.nu
 #
 # Source: https://github.com/nushell/nu_scripts/blob/main/custom-completions/zellij/zellij-completions.nu
-
+# -----------------------------------------------------------------------------
 def "nu-complete subcommands" [] {
   ^zellij --help | split column "SUBCOMMANDS:" | get column2.0 | str trim | lines | str trim | parse -r '(?P<command>^[
 a-z-]+)' | get command

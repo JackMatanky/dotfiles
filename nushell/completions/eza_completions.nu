@@ -1,7 +1,8 @@
-# Filename: ~/dotfiles/nushell/completions/git_completions.nu
+# -----------------------------------------------------------------------------
+#  Filename: ~/dotfiles/nushell/completions/git_completions.nu
 #
-# Source: https://github.com/nushell/nu_scripts/blob/main/custom-completions/git/git-completions.nu
-
+#  Source: https://github.com/nushell/nu_scripts/blob/main/custom-completions/git/git-completions.nu
+# -----------------------------------------------------------------------------
 
 def "nu-complete git available upstream" [] {
   ^git branch --no-color -a | lines | each { |line| $line | str replace '* ' "" | str trim }

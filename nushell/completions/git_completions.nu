@@ -1,6 +1,8 @@
-# Filename: ~/dotfiles/nushell/completions/eza_completions.nu
+# -----------------------------------------------------------------------------
+#  Filename: ~/dotfiles/nushell/completions/eza_completions.nu
 #
-# Source: https://github.com/nushell/nu_scripts/blob/main/custom-completions/eza/eza-completions.nu
+#  Source: https://github.com/nushell/nu_scripts/blob/main/custom-completions/eza/eza-completions.nu
+# -----------------------------------------------------------------------------
 def "nu-complete eza when" [] {
     [[value]; ["always"] ["auto"] ["never"]]
 }
