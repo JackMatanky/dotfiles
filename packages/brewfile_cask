@@ -41,6 +41,10 @@ cask "wezterm"                            # GPU-accelerated terminal emulator
 cask "zed"                                # GPU-accelerated, minimal, and keyboard-first code editor
 cask "visual-studio-code"                 # Lightweight code editor
 
+# --- SQL Clients ---
+cask "mysqlworkbench"                     # MySQL database management tool
+cask "pgadmin4"                           # PostgreSQL database management tool
+
 # --- Productivity & MacOS Utilities ---
 cask "aerospace"                          # Window manager for macOS
 cask "espanso"                            # Text expander

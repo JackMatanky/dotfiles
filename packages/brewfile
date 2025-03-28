@@ -54,6 +54,8 @@ brew "helix"                              # Rust-based modal editor with LSP sup
 # >>> Programming Languages & Runtimes <<<
 # -----------------------------------------------------------------------------
 brew "python@3.13"                        # Python programming language
+brew "mysql"                              # MySQL database server
+brew "postgresql@17"                      # PostgreSQL database server
 # brew "rust"                               # Rust programming language
 brew "node"                               # Node.js runtime
 brew "lua"                                # Lightweight scripting language

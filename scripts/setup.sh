@@ -18,7 +18,7 @@ OBSIDIAN_DIR="$HOME/obsidian_vault"
 PACKAGES="$DOTFILES_DIR/packages"
 BREWFILE="$PACKAGES/brewfile"           # Shared Brewfile (Mac & Linux)
 BREWFILE_CASK="$PACKAGES/brewfile_cask" # Brewfile Cask (Mac)
-BREWFILE_MAC="$PACKAGES/brewfile_mac"   # Mac App Store only
+BREWFILE_MAS="$PACKAGES/brewfile_mas"   # Mac App Store only
 CARGO_PACKAGES="$PACKAGES/cargo-packages.txt"
 FLATPAK_MANIFEST="$PACKAGES/flatpak-manifest.json"
 
@@ -109,15 +109,22 @@ install_homebrew_packages() {
         echo "⚠️ Brewfile not found! Skipping package installation."
     fi
 
-    if [[ "$OS" == "Darwin" && -f "$BREWFILE_CASK" ]]; then
-        echo "📦 Installing macOS Cask packages..."
-        brew bundle --file="$BREWFILE_CASK"
-    fi
+    if [[ "$OS" == "Darwin" ]]; then
+        if [[ -f "$BREWFILE_CASK" ]]; then
+            echo "📦 Installing macOS Cask packages..."
+            brew bundle --file="$BREWFILE_CASK"
+        fi
 
-    # if [[ "$OS" == "Darwin" && -f "$BREWFILE_MAC" ]]; then
-    #     echo "Installing Mac App Store apps from Brewfile_mac..."
-    #     brew bundle --file="$BREWFILE_MAC"
-    # fi
+        if [[ -f "$BREWFILE_MAC" ]]; then
+            if mas account &>/dev/null; then
+                echo "📦 Installing Mac App Store apps..."
+                brew bundle --file="$BREWFILE_MAC"
+            else
+                echo "⚠️  Skipping Mac App Store installs: not signed into Apple ID."
+                echo "    Tip: Open the App Store and sign in before rerunning this script."
+            fi
+        fi
+    fi
 
     if [[ "$OS" == "Linux" ]]; then
         echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
