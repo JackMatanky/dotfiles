@@ -1,96 +1,84 @@
 -- --------------------------------------------------------------------
 --  Filename: ~/dotfiles/nvim/lua/plugins/multicursors.lua
---  multicursors.nvim Docs: https://github.com/smoka7/multicursors.nvim
+--  multicursors.nvim Docs: https://github.com/jake-stewart/multicursor.nvim
 --  Description: The Multicursor Plugin for Neovim extends the native Neovim
 --               text editing capabilities, providing a more intuitive
 --               way to edit repetitive text with multiple selections.
 -- --------------------------------------------------------------------
 
 return {
-  "smoka7/multicursors.nvim",
-  event = "VeryLazy",
-  dependencies = { "smoka7/hydra.nvim" }, -- Dependency for managing multi-cursor hints
-  opts = {
-    DEBUG_MODE = false, -- Enable debugging mode (set to `true` for debugging logs)
-    create_commands = true, -- Create `Multicursor` user commands for ease of use
-    updatetime = 50, -- Time (ms) before selections update in insert mode (see `:help updatetime`)
-    nowait = true, -- Prevent delay in keybinding execution (see `:help :map-nowait`)
+  "jake-stewart/multicursor.nvim",
+  branch = "1.0",
+  config = function()
+    local mc = require("multicursor-nvim")
+    mc.setup()
 
-    -- Multi-Cursor Mode Keys (similar to VS Code)
-    mode_keys = {
-      append = "a", -- Enter append mode
-      change = "c", -- Enter change mode
-      extend = "e", -- Extend selection
-      insert = "i", -- Enter insert mode
-    },
+    local set = vim.keymap.set
 
-    -- Configurations for displaying hints
-    hint_config = {
-      float_opts = { border = "none" }, -- Hide borders around the hint popups
-      position = "bottom", -- Display hints at the bottom of the window
-    },
+    -- Add or skip cursor above/below the main cursor.
+    set({ "n", "x" }, "<up>", function()
+      mc.lineAddCursor(-1)
+    end)
+    set({ "n", "x" }, "<down>", function()
+      mc.lineAddCursor(1)
+    end)
+    set({ "n", "x" }, "<leader><up>", function()
+      mc.lineSkipCursor(-1)
+    end)
+    set({ "n", "x" }, "<leader><down>", function()
+      mc.lineSkipCursor(1)
+    end)
 
-    -- Generate hints for different modes (normal, insert, extend)
-    generate_hints = {
-      normal = true, -- Enable hints in normal mode
-      insert = true, -- Enable hints in insert mode
-      extend = true, -- Enable hints in extend mode
-      config = {
-        column_count = nil, -- Auto-adjust the number of hint columns based on window size
-        max_hint_length = 25, -- Max width of each hint column
-      },
-    },
-  },
+    -- Add or skip adding a new cursor by matching word/selection
+    set({ "n", "x" }, "<leader>n", function()
+      mc.matchAddCursor(1)
+    end)
+    set({ "n", "x" }, "<leader>s", function()
+      mc.matchSkipCursor(1)
+    end)
+    set({ "n", "x" }, "<leader>N", function()
+      mc.matchAddCursor(-1)
+    end)
+    set({ "n", "x" }, "<leader>S", function()
+      mc.matchSkipCursor(-1)
+    end)
 
-  -- Keybindings for Multicursor (VS Code/Zed Style)
-  keys = {
-    {
-      "<C-n>",
-      function()
-        require("multicursors").start()
-      end,
-      desc = "Start Multi-Cursor Mode",
-      mode = { "n", "v" },
-    },
-    {
-      "<C-k>",
-      function()
-        require("multicursors").remove_cursor()
-      end,
-      desc = "Remove Last Multi-Cursor",
-      mode = { "n", "v" },
-    },
-    {
-      "<C-l>",
-      function()
-        require("multicursors").select_next_cursor()
-      end,
-      desc = "Select Next Multi-Cursor",
-      mode = { "n", "v" },
-    },
-    {
-      "<C-j>",
-      function()
-        require("multicursors").select_prev_cursor()
-      end,
-      desc = "Select Previous Multi-Cursor",
-      mode = { "n", "v" },
-    },
-    {
-      "<C-d>",
-      function()
-        require("multicursors").select_next_occurrence()
-      end,
-      desc = "Add Next Occurrence",
-      mode = { "n", "v" },
-    },
-    {
-      "<A-n>",
-      function()
-        require("multicursors").select_all_occurrences()
-      end,
-      desc = "Select All Occurrences",
-      mode = { "n", "v" },
-    },
-  },
+    -- Add and remove cursors with control + left click.
+    set("n", "<c-leftmouse>", mc.handleMouse)
+    set("n", "<c-leftdrag>", mc.handleMouseDrag)
+    set("n", "<c-leftrelease>", mc.handleMouseRelease)
+
+    -- Disable and enable cursors.
+    set({ "n", "x" }, "<c-q>", mc.toggleCursor)
+
+    -- Mappings defined in a keymap layer only apply when there are
+    -- multiple cursors. This lets you have overlapping mappings.
+    mc.addKeymapLayer(function(layerSet)
+      -- Select a different cursor as the main one.
+      layerSet({ "n", "x" }, "<left>", mc.prevCursor)
+      layerSet({ "n", "x" }, "<right>", mc.nextCursor)
+
+      -- Delete the main cursor.
+      layerSet({ "n", "x" }, "<leader>x", mc.deleteCursor)
+
+      -- Enable and clear cursors using escape.
+      layerSet("n", "<esc>", function()
+        if not mc.cursorsEnabled() then
+          mc.enableCursors()
+        else
+          mc.clearCursors()
+        end
+      end)
+    end)
+
+    -- Customize how cursors look.
+    local hl = vim.api.nvim_set_hl
+    hl(0, "MultiCursorCursor", { link = "Cursor" })
+    hl(0, "MultiCursorVisual", { link = "Visual" })
+    hl(0, "MultiCursorSign", { link = "SignColumn" })
+    hl(0, "MultiCursorMatchPreview", { link = "Search" })
+    hl(0, "MultiCursorDisabledCursor", { link = "Visual" })
+    hl(0, "MultiCursorDisabledVisual", { link = "Visual" })
+    hl(0, "MultiCursorDisabledSign", { link = "SignColumn" })
+  end,
 }
