@@ -1,6 +1,8 @@
-# Filename: ~/dotfiles/nushell/themes/catppuccin-macchiato.nu
+# -----------------------------------------------------------------------------
+#  Filename: ~/dotfiles/nushell/themes/catppuccin-macchiato.nu
 #
-# Source: https://github.com/nushell/nu_scripts/blob/main/themes/nu-themes/catppuccin-macchiato.nu
+#  Source: https://github.com/nushell/nu_scripts/blob/main/themes/nu-themes/catppuccin-macchiato.nu
+# -----------------------------------------------------------------------------
 
 # Retrieve the theme settings
 export def main [] {

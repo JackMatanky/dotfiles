@@ -925,3 +925,8 @@ source ~/.cache/carapace/init.nu
 if (which starship | is-not-empty) {
     use ~/.cache/starship/init.nu
 }
+
+# Load Nushell themes only if it exists
+if (which nushell | is-not-empty) {
+    source ~/.config/nushell/themes/catppuccin_macchiato.nu
+}
