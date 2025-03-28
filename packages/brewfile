@@ -85,6 +85,7 @@ brew "luajit"                             # Just-In-Time compiler for Lua
 
 # --- Linters & Formatters ---
 brew "ruff"                               # Fast Python linter and formatter
+brew "sqlfluff"                           # SQL linter and formatter
 brew "stylua"                             # Lua code formatter
 brew "markdownlint-cli2"                  # Improved Markdown linter
 brew "prettier"                           # Code formatter for multiple languages
