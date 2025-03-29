@@ -155,8 +155,8 @@ def compress_images [format: string] {
 def run_tesseract_ocr [format: string, lang: string, dpi: int] {
   print "🔠 Running OCR..."
 
-  let pattern = $"*.($format)"
-  let images = (ls $pattern | get name)
+  # Manually filter files matching *.webp or *.avif
+  let images = (ls | where name ends-with $format | get name)
 
   if ($images | is-empty) {
     print $"⚠️ No ($format) files found for OCR."
