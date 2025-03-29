@@ -10,7 +10,7 @@ def ocr_run [
   --mode: string        # OCR mode: force, skip, redo
   --dry-run             # Simulate only
 ] {
-  # Map mode to flag
+  # Map mode to OCR flag
   let ocr_flag = (match $mode {
     "force" => "--force-ocr",
     "skip" => "--skip-text",
@@ -18,19 +18,22 @@ def ocr_run [
     _ => ""
   })
 
-  # Simulate or run
+  # Flags incompatible with --redo-ocr
+  let core_flags = (if $ocr_flag == "--redo-ocr" {
+    []  # skip deskew and rotate
+  } else {
+    ["--rotate-pages", "--deskew"]
+  })
+
   if $dry_run {
     print $"🧪 Would OCR: ($input) → ($output) using ($ocr_flag)"
   } else {
+    # Build final argument list and run ocrmypdf
     do {
       let args = (
-        (if $ocr_flag != "" { [$ocr_flag] } else { [] }) ++ [
-          "--rotate-pages"
-          "--deskew"
-          "--output-type" "pdf"
-          $input
-          $output
-        ]
+        (if $ocr_flag != "" { [$ocr_flag] } else { [] }) ++
+        $core_flags ++
+        ["--output-type" "pdf" $input $output]
       )
       ocrmypdf ...$args
     }
