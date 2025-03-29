@@ -67,10 +67,10 @@ def ocrfile [
 # ocrfolder: OCR all PDFs in a folder
 def ocrfolder [
   path?: string         # Folder path (optional)
-  --mode: string        # OCR mode
+  --mode: string        # OCR mode: force, skip, redo
   --dry-run             # Simulate only
 ] {
-  # Select folder if not provided
+  # Use fd+fzf if no path is provided
   let folder = (if ($path == null) {
     fd --type directory | fzf
   } else {
@@ -83,8 +83,6 @@ def ocrfolder [
   }
 
   let absolute_path = ($folder | path expand)
-
-  # Use `.` to match all files inside the given directory
   let folder_pdfs = (fd . $absolute_path --type file --extension pdf)
 
   if ($folder_pdfs | is-empty) {
@@ -92,19 +90,71 @@ def ocrfolder [
     return
   }
 
-  # Process each file
+  # Process each PDF
   for pdf in $folder_pdfs {
     let input = ($pdf | path expand)
-    let output = ($input | str replace ".pdf" "_ocr.pdf")
+    let dirname = ($input | path dirname)
+    let filename = ($input | path basename)
+    let output = ($filename | str replace ".pdf" "_ocr.pdf")
 
-    if ($output | path exists) {
-      print $"⚠️ Skipping (already exists): ($output)"
+    # Skip if output already exists in the same folder
+    let full_output = $"($dirname)/($output)"
+    if ($full_output | path exists) {
+      print $"⚠️ Skipping (already exists): ($full_output)"
       continue
     }
 
-    print $"OCR'ing: ($input)"
-    ocr_run $input $output --mode=$mode --dry-run=$dry_run
+    print $"OCR'ing: ($filename) in ($dirname)"
+
+    # Temporarily enter the file's directory and run OCR there
+    cd $dirname
+    ocr_run $filename $output --mode=$mode --dry-run=$dry_run
+    cd -
   }
 
   print (if $dry_run { "🧪 Dry run complete." } else { "✅ Batch OCR complete." })
 }
+# # ocrfolder: OCR all PDFs in a folder
+# def ocrfolder [
+#   path?: string         # Folder path (optional)
+#   --mode: string        # OCR mode
+#   --dry-run             # Simulate only
+# ] {
+#   # Select folder if not provided
+#   let folder = (if ($path == null) {
+#     fd --type directory | fzf
+#   } else {
+#     $path
+#   })
+
+#   if ($folder == "") {
+#     print "No folder selected."
+#     return
+#   }
+
+#   let absolute_path = ($folder | path expand)
+
+#   # Use `.` to match all files inside the given directory
+#   let folder_pdfs = (fd . $absolute_path --type file --extension pdf)
+
+#   if ($folder_pdfs | is-empty) {
+#     print $"No PDF files found in folder: ($absolute_path)"
+#     return
+#   }
+
+#   # Process each file
+#   for pdf in $folder_pdfs {
+#     let input = ($pdf | path expand)
+#     let output = ($input | str replace ".pdf" "_ocr.pdf")
+
+#     if ($output | path exists) {
+#       print $"⚠️ Skipping (already exists): ($output)"
+#       continue
+#     }
+
+#     print $"OCR'ing: ($input)"
+#     ocr_run $input $output --mode=$mode --dry-run=$dry_run
+#   }
+
+#   print (if $dry_run { "🧪 Dry run complete." } else { "✅ Batch OCR complete." })
+# }
