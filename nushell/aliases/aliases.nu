@@ -263,13 +263,14 @@ alias bar_load = sketchybar --reload
 #   print "✅ Batch OCR complete."
 # }
 
-# ocr_run: Run or simulate OCR on a single file
+# ocr_run: Run or simulate OCR on one file
 def ocr_run [
-  input: string       # Full path to input PDF
-  output: string      # Full path to output PDF
-  mode?: string       # OCR mode: force, skip, redo
-  --dry-run           # Simulate only
+  input: string         # Input PDF
+  output: string        # Output path
+  --mode: string        # OCR mode: force, skip, redo
+  --dry-run             # Simulate only
 ] {
+  # Map mode to flag
   let ocr_flag = (match $mode {
     "force" => "--force-ocr",
     "skip" => "--skip-text",
@@ -277,6 +278,7 @@ def ocr_run [
     _ => ""
   })
 
+  # Simulate or run
   if $dry_run {
     print $"🧪 Would OCR: ($input) → ($output) using ($ocr_flag)"
   } else {
@@ -295,11 +297,13 @@ def ocr_run [
   }
 }
 
+# ocrfile: OCR one PDF (arg or fzf)
 def ocrfile [
-  path?: string
-  mode?: string
-  --dry-run
+  path?: string         # Input path (optional)
+  --mode: string        # OCR mode
+  --dry-run             # Simulate only
 ] {
+  # Select file if not provided
   let file = (if ($path == null) {
     fd --type file --extension pdf | fzf
   } else {
@@ -314,14 +318,16 @@ def ocrfile [
   let input = ($file | path expand)
   let output = ($input | str replace ".pdf" "_ocr.pdf")
 
-  ocr_run $input $output $mode --dry-run=$dry_run
+  ocr_run $input $output --mode=$mode --dry-run=$dry_run
 }
 
+# ocrfolder: OCR all PDFs in a folder
 def ocrfolder [
-  path?: string
-  mode?: string
-  --dry-run
+  path?: string         # Folder path (optional)
+  --mode: string        # OCR mode
+  --dry-run             # Simulate only
 ] {
+  # Select folder if not provided
   let folder = (if ($path == null) {
     fd --type directory | fzf
   } else {
@@ -341,6 +347,7 @@ def ocrfolder [
     return
   }
 
+  # Process each file
   for pdf in $folder_pdfs {
     let input = ($pdf | path expand)
     let output = ($input | str replace ".pdf" "_ocr.pdf")
@@ -351,7 +358,7 @@ def ocrfolder [
     }
 
     print $"OCR'ing: ($input)"
-    ocr_run $input $output $mode --dry-run=$dry_run
+    ocr_run $input $output --mode=$mode --dry-run=$dry_run
   }
 
   print (if $dry_run { "🧪 Dry run complete." } else { "✅ Batch OCR complete." })
