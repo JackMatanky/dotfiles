@@ -263,13 +263,43 @@ alias bar_load = sketchybar --reload
 #   print "✅ Batch OCR complete."
 # }
 
-# ocrfile: OCR a single PDF (arg or fzf)
-def ocrfile [
-  path?: string       # PDF path (optional)
+# ocr_run: Run or simulate OCR on a single file
+def ocr_run [
+  input: string       # Full path to input PDF
+  output: string      # Full path to output PDF
   mode?: string       # OCR mode: force, skip, redo
-  --dry-run           # Print actions without running
+  --dry-run           # Simulate only
 ] {
-  # Select file if not provided
+  let ocr_flag = (match $mode {
+    "force" => "--force-ocr",
+    "skip" => "--skip-text",
+    "redo" => "--redo-ocr",
+    _ => ""
+  })
+
+  if $dry_run {
+    print $"🧪 Would OCR: ($input) → ($output) using ($ocr_flag)"
+  } else {
+    do {
+      let args = (
+        (if $ocr_flag != "" { [$ocr_flag] } else { [] }) ++ [
+          "--rotate-pages"
+          "--deskew"
+          "--output-type" "pdf"
+          $input
+          $output
+        ]
+      )
+      ocrmypdf ...$args
+    }
+  }
+}
+
+def ocrfile [
+  path?: string
+  mode?: string
+  --dry-run
+] {
   let file = (if ($path == null) {
     fd --type file --extension pdf | fzf
   } else {
@@ -281,32 +311,17 @@ def ocrfile [
     return
   }
 
-  let absolute_path = ($file | path expand)
-  let output_path = ($absolute_path | str replace ".pdf" "_ocr.pdf")
+  let input = ($file | path expand)
+  let output = ($input | str replace ".pdf" "_ocr.pdf")
 
-  # Choose flag based on mode
-  let ocr_flag = (match $mode {
-    "force" => "--force-ocr",
-    "skip" => "--skip-text",
-    "redo" => "--redo-ocr",
-    _ => ""
-  })
-
-  # Run or simulate
-  if $dry_run {
-    print $"🧪 Would OCR: ($absolute_path) → ($output_path) using ($ocr_flag)"
-  } else {
-    ocrmypdf $ocr_flag --rotate-pages --deskew --output-type pdf $absolute_path $output_path
-  }
+  ocr_run $input $output $mode --dry-run=$dry_run
 }
 
-# ocrfolder: OCR all PDFs in a folder
 def ocrfolder [
-  path?: string       # Folder path (optional)
-  mode?: string       # OCR mode: force, skip, redo
-  --dry-run           # Print actions without running
+  path?: string
+  mode?: string
+  --dry-run
 ] {
-  # Select folder if not provided
   let folder = (if ($path == null) {
     fd --type directory | fzf
   } else {
@@ -326,30 +341,17 @@ def ocrfolder [
     return
   }
 
-  # Choose flag based on mode
-  let ocr_flag = (match $mode {
-    "force" => "--force-ocr",
-    "skip" => "--skip-text",
-    "redo" => "--redo-ocr",
-    _ => ""
-  })
-
-  # Process PDFs
   for pdf in $folder_pdfs {
-    let pdf_path = ($pdf | path expand)
-    let output_path = ($pdf_path | str replace ".pdf" "_ocr.pdf")
+    let input = ($pdf | path expand)
+    let output = ($input | str replace ".pdf" "_ocr.pdf")
 
-    if ($output_path | path exists) {
-      print $"⚠️ Skipping (already exists): ($output_path)"
+    if ($output | path exists) {
+      print $"⚠️ Skipping (already exists): ($output)"
       continue
     }
 
-    if $dry_run {
-      print $"🧪 Would OCR: ($pdf_path) → ($output_path) using ($ocr_flag)"
-    } else {
-      print $"OCR'ing: ($pdf_path)"
-      ocrmypdf $ocr_flag --rotate-pages --deskew --output-type pdf $pdf_path $output_path
-    }
+    print $"OCR'ing: ($input)"
+    ocr_run $input $output $mode --dry-run=$dry_run
   }
 
   print (if $dry_run { "🧪 Dry run complete." } else { "✅ Batch OCR complete." })
