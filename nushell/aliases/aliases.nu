@@ -4,10 +4,7 @@
 
 # --- Navigation ---
 # cx: Change into a directory and list its contents
-def --env cx [
-  # Optional path argument with directory completion
-  path?: string@'ls | where type == "dir" | get name'
-] {
+def --env cx [path?: string] {
   # - If a path is not provided, use fzf to interactively select a directory
   let target = (if ($path == null) {
     fd --type directory --hidden --exclude .git | fzf
