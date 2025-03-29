@@ -340,7 +340,9 @@ def ocrfolder [
   }
 
   let absolute_path = ($folder | path expand)
-  let folder_pdfs = (fd --type file --extension pdf $absolute_path)
+
+  # Use `.` to match all files inside the given directory
+  let folder_pdfs = (fd . $absolute_path --type file --extension pdf)
 
   if ($folder_pdfs | is-empty) {
     print $"No PDF files found in folder: ($absolute_path)"
