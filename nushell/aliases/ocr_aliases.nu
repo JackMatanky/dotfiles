@@ -171,8 +171,17 @@ def ocr_img_pipeline [
 
   # Step 6: Move the result back to original location and clean up
   let result_path = ($input_path | path dirname)
-  move $"($basename)_ocr.pdf" $result_path
-  remove *
+  let final_pdf = $"($basename)_ocr.pdf"
+
+  if ($final_pdf | path exists) {
+    mv $final_pdf $result_path
+    print $"✅ Done: ($final_pdf) → saved to: ($result_path)"
+  } else {
+    print "⚠️ OCR output PDF not found. Nothing was moved."
+  }
+
+  # Clean up working directory
+  remove --force *
 
   print $"✅ Done: ($basename)_ocr.pdf → saved to: ($result_path)"
 }
