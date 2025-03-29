@@ -180,3 +180,16 @@ install-all:
     just install-rust
     just install-cargo-packages
     @echo "✅ All installations complete!"
+
+# -----------------------------------------------------------------------------
+# 📝 Document Processing
+# -----------------------------------------------------------------------------
+
+# Use OCRmyPDF to convert PDFs to searchable PDFs. Usage: just ocr input.pdf output.pdf
+ocr input:
+    output = "{{input | replace('.pdf', '_ocr.pdf')}}"
+    if [ -f "{{output}}" ]; then \
+        echo "Output already exists: {{output}}"; \
+    else \
+        ocrmypdf --rotate-pages --deskew --output-type pdf {{input}} {{output}}; \
+    fi

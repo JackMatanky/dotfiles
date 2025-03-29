@@ -2,9 +2,51 @@
 # Filename: ~/dotfiles/nushell/aliases.nu
 # -----------------------------------------------------------------------------
 
-def --env cx [arg] {
-    cd $arg
+# --- Navigation ---
+# cx: Change into a directory and list its contents
+def --env cx [
+  # Optional path argument with directory completion
+  path?: string@'ls | where type == "dir" | get name'
+] {
+  # - If a path is not provided, use fzf to interactively select a directory
+  let target = (if ($path == null) {
+    fd --type directory --hidden --exclude .git | fzf
+  } else {
+    # - If a path is passed, cd to it
+    $path
+  })
+
+  if ($target != "") {
+    cd $target
     ls -l
+  }
+}
+
+# f: Fuzzy search for a file and copy its path to clipboard
+def f [] {
+  let file = (fd --type file --hidden --exclude .git | fzf)
+  if ($file != "") {
+    echo $file | pbcopy
+  }
+}
+
+# ffv: Fuzzy search for a file and open it in nvim
+def ffv [] {
+  let file = (fd --type file --hidden --exclude .git | fzf)
+  if ($file != "") {
+    nvim $file
+  }
+}
+
+# fdv: Fuzzy search for a directory and open it in nvim
+def fdv [] {
+  # List directories with fd and select one using fzf
+  let dir = (fd --type directory --hidden --exclude .git | fzf)
+
+  # Open selected directory in nvim
+  if ($dir != "") {
+    nvim $dir
+  }
 }
 
 # >>> Shell Commands <<<
@@ -40,84 +82,6 @@ alias kb_dev = cd ~/Documents/keyboard_dev
 alias kb_ergogen = cd ~/Documents/keyboard_dev/ergogen
 alias kb_zmk = cd ~/Documents/keyboard_dev/zmk-config
 alias kb_snak_dir = cd ~/Documents/keyboard_dev/kb_snak
-
-# --- Git ---
-# Source: https://github.com/nushell/nu_scripts/blob/main/aliases/git/git-aliases.nu
-def git_current_branch [] {
-    (gstat).branch
-}
-
-def git_main_branch [] {
-    git remote show origin
-        | lines
-        | str trim
-        | find --regex 'HEAD .*?[：: ].+'
-        | first
-        | str replace --regex 'HEAD .*?[：: ]\s*(.+)' '$1'
-}
-
-# Add
-alias ga = git add
-alias gaa = git add --all
-alias gapa = git add --patch
-alias gau = git add --update
-
-# Commit
-alias gc = git commit -m
-alias gcam = git commit --all --message
-
-# Push
-alias gps = git push
-alias gpsog = git push origin
-
-# Pull
-alias gpl = git pull
-alias gplog = git pull origin
-
-# Fetch
-alias gf = git fetch
-alias gfo = git fetch origin
-
-# Branch
-alias gb = git branch
-alias gbra = git branch --all
-alias gbd = git branch --delete
-alias gbD = git branch --delete --force
-
-# Checkout
-alias gco = git checkout
-alias gcm = git checkout (git_main_branch)
-alias gcb = git checkout -b
-alias gcoa = git checkout -- .
-
-# Remote
-alias gr = git remote
-alias gra = git remote add
-alias grset = git remote set-url
-
-# Reset
-alias grs = git reset
-alias grsh = git reset --hard
-
-# Diff
-alias gdiff = git diff
-
-# Status
-alias gst = git status
-
-# Log
-alias gl = git log
-alias glog = git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit
-# alias glogtb = git log --pretty=%h»¦«%aN»¦«%s»¦«%aD | lines | split column "»¦«" sha1 committer desc merged_at | first 20
-
-# Config
-alias gcf = git config --list
-
-# Remove DS_Store
-def grmds [] {
-    git rm --cached '*.DS_Store'
-    git commit --all --message 'Remove .DS_Store files'
-}
 
 # --- GNU Stow ---
 def stow_all [] {
@@ -241,3 +205,63 @@ def as [command: string = ""] {
 
 # --- Sketchybar ---
 alias bar_load = sketchybar --reload
+
+# --- OCRmyPDF ---
+# ocrfile: OCR a PDF file using ocrmypdf
+def ocrfile [path?: string] {
+  # If no path is provided, use fzf to interactively select a .pdf file via fd
+  let file = (if ($path == null) {
+    fd --type file --extension pdf | fzf
+  } else {
+    $path
+  })
+
+  # Get absolute path of selected file
+  let absolute_path = ($file | path expand)
+
+  # Define output path with "_ocr" suffix
+  let output_path = ($absolute_path | str replace ".pdf" "_ocr.pdf")
+
+  # Run OCR with basic cleanup and output formatting
+  ocrmypdf --rotate-pages --deskew --output-type pdf $absolute_path $output_path
+}
+
+# ocrfolder: OCR a folder's PDF files using ocrmypdf
+def ocrfolder [path?: string] {
+  # If no folder provided, use fd + fzf to select one interactively
+  let folder = (if ($path == null) {
+    fd --type directory | fzf
+  } else {
+    $path
+  })
+
+  # Get absolute path of selected folder
+  let absolute_path = ($folder | path expand)
+
+  # Recursively find all .pdf files in the folder
+  let folder_pdfs = (fd --type file --extension pdf $absolute_path)
+
+  # Abort if no PDFs found
+  if ($folder_pdfs | is-empty) {
+    print $"No PDF files found in folder: ($absolute_path)"
+    return
+  }
+
+  # Process each PDF in the folder
+  for pdf in $folder_pdfs {
+    let pdf_path = ($pdf | path expand)
+    let output_path = ($pdf_path | str replace ".pdf" "_ocr.pdf")
+
+    # Skip files that already have an OCR'd version
+    if ($output_path | path exists) {
+      print $"⚠️ Skipping (already exists): ($output_path)"
+      continue
+    }
+
+    # Run OCR on the current PDF
+    print $"OCR'ing: ($pdf_path)"
+    ocrmypdf --rotate-pages --deskew --output-type pdf $pdf_path $output_path
+  }
+
+  print "✅ Batch OCR complete."
+}

@@ -269,12 +269,6 @@ brew install keychain
 
 ## Browser
 
-- [Firefox](https://www.mozilla.org/firefox/)
-
-```bash
-brew install --cask firefox
-```
-
 - [Zen Browser](https://zen-browser.app/)
 
 ```bash
@@ -289,6 +283,16 @@ brew install --cask zen-browser
 brew install --cask obsidian
 ```
 
+- [Anki](https://apps.ankiweb.net/)
+
+```bash
+brew install --cask anki
+brew install webp
+brew install avif
+```
+
+## Document Viewer and Processor
+
 - [LibreOffice](https://www.libreoffice.org/)
 
 ```bash
@@ -301,21 +305,10 @@ brew install --cask libreoffice
 brew install --cask libreoffice-language-pack
 ```
 
-- [Anki](https://apps.ankiweb.net/)
 
-```bash
-brew install --cask anki
-brew install webp
-brew install avif
-```
-
-- [tesseract OCR](https://github.com/tesseract-ocr/)
-
-```bash
-brew install tesseract
-```
-
-- [Zathura Document Viewer](https://pwmt.org/projects/zathura/)
+- Zathura Document Viewer
+    - [Docs](https://pwmt.org/projects/zathura/)
+    - [GitHub](https://github.com/pwmt/zathura)
 
 ```bash
 brew install zathura
@@ -327,4 +320,18 @@ brew install zathura
 brew install zathura-pdf-mupdf
 mkdir -p $(brew --prefix zathura)/lib/zathura
 ln -s $(brew --prefix zathura-pdf-mupdf)/libpdf-mupdf.dylib $(brew --prefix zathura)/lib/zathura/libpdf-mupdf.dylib
+```
+
+- OCRmyPDF
+    - [Docs](https://ocrmypdf.readthedocs.io/en/latest/)
+    - [GitHub](https://github.com/ocrmypdf/OCRmyPDF)
+
+```bash
+brew install ocrmypdf
+```
+
+- [tesseract OCR](https://github.com/tesseract-ocr/)
+
+```bash
+brew install tesseract
 ```
