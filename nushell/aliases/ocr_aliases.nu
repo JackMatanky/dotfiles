@@ -130,13 +130,23 @@ def render_pdf_to_png [input: string, dpi: int] {
 # Helper: Compress PNGs to WebP or AVIF
 def compress_images [format: string] {
   print $"🖼 Converting PNGs to ($format)..."
+
   for img in (ls page*.png | get name) {
     let base = ($img | str replace ".png" "")
     let out = $"($base).($format)"
+
+    print $"🔧 Converting: ($img) → ($out)"
+
     if $format == "webp" {
-      cwebp -quiet -q 85 $img -o $out
+      let result = (cwebp -quiet -q 85 $img -o $out | complete)
     } else {
-      avifenc $img $out
+      let result = (avifenc $img $out | complete)
+    }
+
+    if ($out | path exists) {
+      print $"✅ Success: ($out)"
+    } else {
+      print $"❌ Failed to create: ($out)"
     }
   }
 }
@@ -144,8 +154,16 @@ def compress_images [format: string] {
 # Run Tesseract OCR on images
 def run_tesseract_ocr [format: string, lang: string, dpi: int] {
   print "🔠 Running OCR..."
+
   let pattern = $"*.($format)"
-  for img in (ls $pattern | get name) {
+  let images = (ls $pattern | get name)
+
+  if ($images | is-empty) {
+    print $"⚠️ No ($format) files found for OCR."
+    return
+  }
+
+  for img in $images {
     let base = ($img | path parse | get stem)
     tesseract $img $base -l $lang --dpi $dpi pdf
   }
