@@ -116,47 +116,63 @@ def ocrfolder [
 
   print (if $dry_run { "🧪 Dry run complete." } else { "✅ Batch OCR complete." })
 }
-# # ocrfolder: OCR all PDFs in a folder
-# def ocrfolder [
-#   path?: string         # Folder path (optional)
-#   --mode: string        # OCR mode
-#   --dry-run             # Simulate only
-# ] {
-#   # Select folder if not provided
-#   let folder = (if ($path == null) {
-#     fd --type directory | fzf
-#   } else {
-#     $path
-#   })
 
-#   if ($folder == "") {
-#     print "No folder selected."
-#     return
-#   }
+def ocr_img_pipeline [
+  path?: string                # Optional: path to input PDF
+  --language: string = "eng"   # OCR language (e.g., eng, deu)
+  --dpi: int = 300             # Render resolution
+  --force-avif                 # Use AVIF instead of WebP
+] {
+  # Step 1: Choose a PDF file (from argument or fzf)
+  let file = (if ($path == null) {
+    fd --type file --extension pdf | fzf
+  } else {
+    $path
+  })
 
-#   let absolute_path = ($folder | path expand)
+  if ($file == "") {
+    print "❌ No PDF selected."
+    return
+  }
 
-#   # Use `.` to match all files inside the given directory
-#   let folder_pdfs = (fd . $absolute_path --type file --extension pdf)
+  let input_path = ($file | path expand)
+  let basename = ($input_path | path basename | str replace ".pdf" "")
+  let temp_dir = $"($env.TMPDIR)/ocr_webp_($basename)"
+  mkdir $temp_dir
+  cd $temp_dir
 
-#   if ($folder_pdfs | is-empty) {
-#     print $"No PDF files found in folder: ($absolute_path)"
-#     return
-#   }
+  # Step 2: Render PDF pages as PNG using Poppler
+  print "📄 Rendering PDF pages..."
+  pdftoppm -r $dpi -png $input_path page
 
-#   # Process each file
-#   for pdf in $folder_pdfs {
-#     let input = ($pdf | path expand)
-#     let output = ($input | str replace ".pdf" "_ocr.pdf")
+  # Step 3: Convert PNG pages to compressed images (WebP or AVIF)
+  print "🖼 Converting PNGs to compressed format..."
+  for image in (list page*.png | get name) {
+    let name = ($image | str replace ".png" "")
+    let format = (if $force_avif { "avif" } else { "webp" })
+    let output = $"($name).($format)"
+    if $format == "webp" {
+      cwebp -quiet -q 85 $image -o $output
+    } else {
+      avifenc $image $output
+    }
+  }
 
-#     if ($output | path exists) {
-#       print $"⚠️ Skipping (already exists): ($output)"
-#       continue
-#     }
+  # Step 4: Run OCR on each image with Tesseract
+  print "🔠 Running OCR on each image..."
+  for compressed_image in (list *.webp *.avif | get name) {
+    let stem = ($compressed_image | path parse | get stem)
+    tesseract $compressed_image $stem -l $language --dpi $dpi pdf
+  }
 
-#     print $"OCR'ing: ($input)"
-#     ocr_run $input $output --mode=$mode --dry-run=$dry_run
-#   }
+  # Step 5: Combine OCR outputs into a final searchable PDF
+  print "🧾 Merging OCR results into single PDF..."
+  img2pdf *.pdf -o $"($basename)_ocr.pdf"
 
-#   print (if $dry_run { "🧪 Dry run complete." } else { "✅ Batch OCR complete." })
-# }
+  # Step 6: Move the result back to original location and clean up
+  let result_path = ($input_path | path dirname)
+  move $"($basename)_ocr.pdf" $result_path
+  remove *
+
+  print $"✅ Done: ($basename)_ocr.pdf → saved to: ($result_path)"
+}

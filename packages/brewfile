@@ -95,8 +95,11 @@ brew "prettier"                           # Code formatter for multiple language
 # -----------------------------------------------------------------------------
 brew "pandoc"                             # Document format converter
 brew "ocrmypdf"                           # Optical Character Recognition (OCR) tool for PDFs
+brew "img2pdf"                            # Convert images to PDF format
+# brew "mupdf-tools"                        # Lightweight PDF and XPS viewer and tools
+brew "poppler"                            # PDF rendering library (based on the xpdf-3.0 code base)
 brew "tesseract"                          # Optical Character Recognition (OCR) tool
 brew "imagemagick"                        # CLI tool for image conversion and processing
 brew "ffmpeg"                             # Multimedia framework (video/audio conversion)
 brew "webp"                               # Convert images to WebP format
-brew "avif"                               # Convert images to AVIF format
+brew "libavif"                            # Convert images to AVIF format
