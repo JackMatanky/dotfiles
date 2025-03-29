@@ -142,9 +142,10 @@ def compress_images [format: string] {
 }
 
 # Run Tesseract OCR on images
-def run_ocr [format: string, lang: string, dpi: int] {
+def run_tesseract_ocr [format: string, lang: string, dpi: int] {
   print "🔠 Running OCR..."
-  for img in (ls *.($format) | get name) {
+  let pattern = $"*.($format)"
+  for img in (ls $pattern | get name) {
     let base = ($img | path parse | get stem)
     tesseract $img $base -l $lang --dpi $dpi pdf
   }
@@ -187,7 +188,7 @@ def ocr_img_pipeline [
   compress_images $format
 
   # Step 3: OCR each compressed image
-  run_ocr $format $language $dpi
+  run_tesseract_ocr $format $language $dpi
 
   # Step 4: Combine results into one PDF
   merge_ocr_pdfs $basename
