@@ -204,61 +204,153 @@ def as [command: string = ""] {
 alias bar_load = sketchybar --reload
 
 # --- OCRmyPDF ---
-# ocrfile: OCR a PDF file using ocrmypdf
-def ocrfile [path?: string] {
-  # If no path is provided, use fzf to interactively select a .pdf file via fd
+# # ocrfile: OCR a PDF file using ocrmypdf
+# def ocrfile [path?: string] {
+#   # If no path is provided, use fzf to interactively select a .pdf file via fd
+#   let file = (if ($path == null) {
+#     fd --type file --extension pdf | fzf
+#   } else {
+#     $path
+#   })
+
+#   # Get absolute path of selected file
+#   let absolute_path = ($file | path expand)
+
+#   # Define output path with "_ocr" suffix
+#   let output_path = ($absolute_path | str replace ".pdf" "_ocr.pdf")
+
+#   # Run OCR with basic cleanup and output formatting
+#   ocrmypdf --rotate-pages --deskew --output-type pdf $absolute_path $output_path
+# }
+
+# # ocrfolder: OCR a folder's PDF files using ocrmypdf
+# def ocrfolder [path?: string] {
+#   # If no folder provided, use fd + fzf to select one interactively
+#   let folder = (if ($path == null) {
+#     fd --type directory | fzf
+#   } else {
+#     $path
+#   })
+
+#   # Get absolute path of selected folder
+#   let absolute_path = ($folder | path expand)
+
+#   # Recursively find all .pdf files in the folder
+#   let folder_pdfs = (fd --type file --extension pdf $absolute_path)
+
+#   # Abort if no PDFs found
+#   if ($folder_pdfs | is-empty) {
+#     print $"No PDF files found in folder: ($absolute_path)"
+#     return
+#   }
+
+#   # Process each PDF in the folder
+#   for pdf in $folder_pdfs {
+#     let pdf_path = ($pdf | path expand)
+#     let output_path = ($pdf_path | str replace ".pdf" "_ocr.pdf")
+
+#     # Skip files that already have an OCR'd version
+#     if ($output_path | path exists) {
+#       print $"⚠️ Skipping (already exists): ($output_path)"
+#       continue
+#     }
+
+#     # Run OCR on the current PDF
+#     print $"OCR'ing: ($pdf_path)"
+#     ocrmypdf --rotate-pages --deskew --output-type pdf $pdf_path $output_path
+#   }
+
+#   print "✅ Batch OCR complete."
+# }
+
+# ocrfile: OCR a single PDF (arg or fzf)
+def ocrfile [
+  path?: string       # PDF path (optional)
+  mode?: string       # OCR mode: force, skip, redo
+  --dry-run           # Print actions without running
+] {
+  # Select file if not provided
   let file = (if ($path == null) {
     fd --type file --extension pdf | fzf
   } else {
     $path
   })
 
-  # Get absolute path of selected file
-  let absolute_path = ($file | path expand)
+  if ($file == "") {
+    print "No file selected."
+    return
+  }
 
-  # Define output path with "_ocr" suffix
+  let absolute_path = ($file | path expand)
   let output_path = ($absolute_path | str replace ".pdf" "_ocr.pdf")
 
-  # Run OCR with basic cleanup and output formatting
-  ocrmypdf --rotate-pages --deskew --output-type pdf $absolute_path $output_path
+  # Choose flag based on mode
+  let ocr_flag = (match $mode {
+    "force" => "--force-ocr",
+    "skip" => "--skip-text",
+    "redo" => "--redo-ocr",
+    _ => ""
+  })
+
+  # Run or simulate
+  if $dry_run {
+    print $"🧪 Would OCR: ($absolute_path) → ($output_path) using ($ocr_flag)"
+  } else {
+    ocrmypdf $ocr_flag --rotate-pages --deskew --output-type pdf $absolute_path $output_path
+  }
 }
 
-# ocrfolder: OCR a folder's PDF files using ocrmypdf
-def ocrfolder [path?: string] {
-  # If no folder provided, use fd + fzf to select one interactively
+# ocrfolder: OCR all PDFs in a folder
+def ocrfolder [
+  path?: string       # Folder path (optional)
+  mode?: string       # OCR mode: force, skip, redo
+  --dry-run           # Print actions without running
+] {
+  # Select folder if not provided
   let folder = (if ($path == null) {
     fd --type directory | fzf
   } else {
     $path
   })
 
-  # Get absolute path of selected folder
-  let absolute_path = ($folder | path expand)
+  if ($folder == "") {
+    print "No folder selected."
+    return
+  }
 
-  # Recursively find all .pdf files in the folder
+  let absolute_path = ($folder | path expand)
   let folder_pdfs = (fd --type file --extension pdf $absolute_path)
 
-  # Abort if no PDFs found
   if ($folder_pdfs | is-empty) {
     print $"No PDF files found in folder: ($absolute_path)"
     return
   }
 
-  # Process each PDF in the folder
+  # Choose flag based on mode
+  let ocr_flag = (match $mode {
+    "force" => "--force-ocr",
+    "skip" => "--skip-text",
+    "redo" => "--redo-ocr",
+    _ => ""
+  })
+
+  # Process PDFs
   for pdf in $folder_pdfs {
     let pdf_path = ($pdf | path expand)
     let output_path = ($pdf_path | str replace ".pdf" "_ocr.pdf")
 
-    # Skip files that already have an OCR'd version
     if ($output_path | path exists) {
       print $"⚠️ Skipping (already exists): ($output_path)"
       continue
     }
 
-    # Run OCR on the current PDF
-    print $"OCR'ing: ($pdf_path)"
-    ocrmypdf --rotate-pages --deskew --output-type pdf $pdf_path $output_path
+    if $dry_run {
+      print $"🧪 Would OCR: ($pdf_path) → ($output_path) using ($ocr_flag)"
+    } else {
+      print $"OCR'ing: ($pdf_path)"
+      ocrmypdf $ocr_flag --rotate-pages --deskew --output-type pdf $pdf_path $output_path
+    }
   }
 
-  print "✅ Batch OCR complete."
+  print (if $dry_run { "🧪 Dry run complete." } else { "✅ Batch OCR complete." })
 }
