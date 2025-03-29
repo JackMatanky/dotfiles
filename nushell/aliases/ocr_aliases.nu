@@ -147,7 +147,7 @@ def ocr_img_pipeline [
 
   # Step 3: Convert PNG pages to compressed images (WebP or AVIF)
   print "🖼 Converting PNGs to compressed format..."
-  for image in (list page*.png | get name) {
+  for image in (ls page*.png | get name) {
     let name = ($image | str replace ".png" "")
     let format = (if $force_avif { "avif" } else { "webp" })
     let output = $"($name).($format)"
@@ -160,7 +160,7 @@ def ocr_img_pipeline [
 
   # Step 4: Run OCR on each image with Tesseract
   print "🔠 Running OCR on each image..."
-  for compressed_image in (list *.webp *.avif | get name) {
+  for compressed_image in (ls *.webp *.avif | get name) {
     let stem = ($compressed_image | path parse | get stem)
     tesseract $compressed_image $stem -l $language --dpi $dpi pdf
   }
