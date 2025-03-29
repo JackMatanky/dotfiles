@@ -83,7 +83,9 @@ def ocrfolder [
   }
 
   let absolute_path = ($folder | path expand)
-  let folder_pdfs = (fd . $absolute_path --type file --extension pdf)
+
+  # Find all PDFs as separate lines
+  let folder_pdfs = (fd . $absolute_path --type file --extension pdf | lines)
 
   if ($folder_pdfs | is-empty) {
     print $"No PDF files found in folder: ($absolute_path)"
@@ -96,9 +98,9 @@ def ocrfolder [
     let dirname = ($input | path dirname)
     let filename = ($input | path basename)
     let output = ($filename | str replace ".pdf" "_ocr.pdf")
-
-    # Skip if output already exists in the same folder
     let full_output = $"($dirname)/($output)"
+
+    # Skip if OCR'd file already exists
     if ($full_output | path exists) {
       print $"⚠️ Skipping (already exists): ($full_output)"
       continue
@@ -106,7 +108,7 @@ def ocrfolder [
 
     print $"OCR'ing: ($filename) in ($dirname)"
 
-    # Temporarily enter the file's directory and run OCR there
+    # Change to file directory and run ocrmypdf
     cd $dirname
     ocr_run $filename $output --mode=$mode --dry-run=$dry_run
     cd -
