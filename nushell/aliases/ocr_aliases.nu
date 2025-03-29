@@ -160,7 +160,7 @@ def ocr_img_pipeline [
 
   # Step 4: Run OCR on each image with Tesseract
   print "🔠 Running OCR on each image..."
-  for compressed_image in (ls *.webp? | get name) {
+  for compressed_image in (ls *.webp | get name) {
     let stem = ($compressed_image | path parse | get stem)
     tesseract $compressed_image $stem -l $language --dpi $dpi pdf
   }
