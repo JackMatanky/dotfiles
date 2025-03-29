@@ -127,7 +127,7 @@ def render_pdf_to_png [input: string, dpi: int] {
   pdftoppm -r $dpi -png $input page
 }
 
-# Helper: Compress PNGs to WebP or AVIF
+# Compress PNGs to WebP or AVIF
 def compress_images [format: string] {
   print $"🖼 Converting PNGs to ($format)..."
 
@@ -172,7 +172,19 @@ def run_tesseract_ocr [format: string, lang: string, dpi: int] {
 # Merge OCR’d pages into final PDF
 def merge_ocr_pdfs [basename: string] {
   print "🧾 Merging OCR PDFs..."
-  img2pdf *.pdf -o $"($basename)_ocr.pdf"
+
+  let valid_pdfs = (
+    ls *.pdf
+    | where size > 0
+    | get name
+  )
+
+  if ($valid_pdfs | is-empty) {
+    print "❌ No valid OCR PDFs to merge."
+    return
+  }
+
+  img2pdf ...$valid_pdfs -o $"($basename)_ocr.pdf"
 }
 
 # >>> Main Function <<<
