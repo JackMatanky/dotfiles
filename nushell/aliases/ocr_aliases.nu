@@ -117,13 +117,53 @@ def ocrfolder [
   print (if $dry_run { "🧪 Dry run complete." } else { "✅ Batch OCR complete." })
 }
 
+# -----------------------------------------------
+# OCR Image Pipeline
+# -----------------------------------------------
+# >>> Helper Functions <<<
+# Convert PDF to PNG using Poppler
+def render_pdf_to_png [input: string, dpi: int] {
+  print "📄 Rendering PDF pages to PNG..."
+  pdftoppm -r $dpi -png $input page
+}
+
+# Helper: Compress PNGs to WebP or AVIF
+def compress_images [format: string] {
+  print $"🖼 Converting PNGs to ($format)..."
+  for img in (ls page*.png | get name) {
+    let base = ($img | str replace ".png" "")
+    let out = $"($base).($format)"
+    if $format == "webp" {
+      cwebp -quiet -q 85 $img -o $out
+    } else {
+      avifenc $img $out
+    }
+  }
+}
+
+# Run Tesseract OCR on images
+def run_ocr [format: string, lang: string, dpi: int] {
+  print "🔠 Running OCR..."
+  for img in (ls *.($format) | get name) {
+    let base = ($img | path parse | get stem)
+    tesseract $img $base -l $lang --dpi $dpi pdf
+  }
+}
+
+# Merge OCR’d pages into final PDF
+def merge_ocr_pdfs [basename: string] {
+  print "🧾 Merging OCR PDFs..."
+  img2pdf *.pdf -o $"($basename)_ocr.pdf"
+}
+
+# >>> Main Function <<<
 def ocr_img_pipeline [
-  path?: string                # Optional: path to input PDF
-  --language: string = "eng"   # OCR language (e.g., eng, deu)
-  --dpi: int = 300             # Render resolution
+  path?: string                 # Optional: input PDF path
+  --language: string = "eng"   # OCR language
+  --dpi: int = 300             # Render DPI
   --force-avif                 # Use AVIF instead of WebP
 ] {
-  # Step 1: Choose a PDF file (from argument or fzf)
+  # Step 1: Choose PDF via argument or fzf
   let file = (if ($path == null) {
     fd --type file --extension pdf | fzf
   } else {
@@ -137,51 +177,30 @@ def ocr_img_pipeline [
 
   let input_path = ($file | path expand)
   let basename = ($input_path | path basename | str replace ".pdf" "")
-  let temp_dir = $"($env.TMPDIR)/ocr_webp_($basename)"
+  let temp_dir = $"($env.TMPDIR)/ocr_temp_($basename)"
   mkdir $temp_dir
   cd $temp_dir
 
-  # Step 2: Render PDF pages as PNG using Poppler
-  print "📄 Rendering PDF pages..."
-  pdftoppm -r $dpi -png $input_path page
+  # Step 2: Render and compress pages
+  render_pdf_to_png $input_path $dpi
+  let format = (if $force_avif { "avif" } else { "webp" })
+  compress_images $format
 
-  # Step 3: Convert PNG pages to compressed images (WebP or AVIF)
-  print "🖼 Converting PNGs to compressed format..."
-  for image in (ls page*.png | get name) {
-    let name = ($image | str replace ".png" "")
-    let format = (if $force_avif { "avif" } else { "webp" })
-    let output = $"($name).($format)"
-    if $format == "webp" {
-      cwebp -quiet -q 85 $image -o $output
-    } else {
-      avifenc $image $output
-    }
-  }
+  # Step 3: OCR each compressed image
+  run_ocr $format $language $dpi
 
-  # Step 4: Run OCR on each image with Tesseract
-  print "🔠 Running OCR on each image..."
-  for compressed_image in (ls *.webp | get name) {
-    let stem = ($compressed_image | path parse | get stem)
-    tesseract $compressed_image $stem -l $language --dpi $dpi pdf
-  }
+  # Step 4: Combine results into one PDF
+  merge_ocr_pdfs $basename
 
-  # Step 5: Combine OCR outputs into a final searchable PDF
-  print "🧾 Merging OCR results into single PDF..."
-  img2pdf *.pdf -o $"($basename)_ocr.pdf"
-
-  # Step 6: Move the result back to original location and clean up
-  let result_path = ($input_path | path dirname)
-  let final_pdf = $"($basename)_ocr.pdf"
-
-  if ($final_pdf | path exists) {
-    mv $final_pdf $result_path
-    print $"✅ Done: ($final_pdf) → saved to: ($result_path)"
+  # Step 5: Move and clean up
+  let final = $"($basename)_ocr.pdf"
+  let out_dir = ($input_path | path dirname)
+  if ($final | path exists) {
+    mv $final $out_dir
+    print $"✅ Done: ($final) → saved to: ($out_dir)"
   } else {
-    print "⚠️ OCR output PDF not found. Nothing was moved."
+    print "⚠️ No output PDF found."
   }
 
-  # Clean up working directory
   remove --force *
-
-  print $"✅ Done: ($basename)_ocr.pdf → saved to: ($result_path)"
 }
