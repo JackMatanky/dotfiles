@@ -1,7 +1,7 @@
 // Zed settings
 // https://zed.dev/docs/configuring-zed
 {
-  "icon_theme": "Catppuccin Macchiato",
+  "icon_theme": "VSCode Great Icons Theme",
   "theme": {
     "mode": "system",
     "light": "One Light",
