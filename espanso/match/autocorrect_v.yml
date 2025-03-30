@@ -139,6 +139,13 @@ matches:
       replace: very
       propagate_case: true
       word: true
+    # ----------
+    # --- VI ---
+    # ----------
+    - trigger: wiew
+      replace: view
+      propagate_case: true
+      word: true
     - trigger: vigeur
       replace: "vigueur\x2C\x20vigour\x2C\x20vigor"
       propagate_case: true

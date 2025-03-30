@@ -1,13 +1,32 @@
 # Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
 matches:
-    # ---------
-    # --- Y ---
-    # ---------
+    # ----------
+    # --- YA ---
+    # ----------
+    - trigger: yatch
+      replace: yacht
+      propagate_case: true
+      word: true
     - trigger: yaching
       replace: yachting
       propagate_case: true
       word: true
+    # ----------
+    # --- YE ---
+    # ----------
     - trigger: yaer
+      replace: year
+      propagate_case: true
+      word: true
+    - trigger: yearm
+      replace: year
+      propagate_case: true
+      word: true
+    - trigger: yera
+      replace: year
+      propagate_case: true
+      word: true
+    - trigger: yrea
       replace: year
       propagate_case: true
       word: true
@@ -19,32 +38,8 @@ matches:
       replace: years
       propagate_case: true
       word: true
-    - trigger: yatch
-      replace: yacht
-      propagate_case: true
-      word: true
-    - trigger: yearm
-      replace: year
-      propagate_case: true
-      word: true
     - trigger: yeasr
       replace: years
-      propagate_case: true
-      word: true
-    - trigger: yeild
-      replace: yield
-      propagate_case: true
-      word: true
-    - trigger: yeilding
-      replace: yielding
-      propagate_case: true
-      word: true
-    - trigger: Yementite
-      replace: "Yemenite\x2C\x20Yemeni"
-      propagate_case: true
-      word: true
-    - trigger: yera
-      replace: year
       propagate_case: true
       word: true
     - trigger: yeras
@@ -55,27 +50,45 @@ matches:
       replace: years
       propagate_case: true
       word: true
-    - trigger: yotube
-      replace: youtube
+    - trigger: Yementite
+      replace: "Yemenite\x2C\x20Yemeni"
       propagate_case: true
       word: true
-    - trigger: youseff
-      replace: yousef
+    # ----------
+    # --- YI ---
+    # ----------
+    - trigger: yeild
+      replace: yield
       propagate_case: true
       word: true
-    - trigger: youself
-      replace: yourself
+    - trigger: yeilding
+      replace: yielding
       propagate_case: true
       word: true
-    - trigger: yrea
-      replace: year
-      propagate_case: true
-      word: true
+    # ----------
+    # --- YO ---
+    # ----------
     - trigger: ytou
       replace: you
       propagate_case: true
       word: true
     - trigger: yuo
       replace: you
+      propagate_case: true
+      word: true
+    - trigger: youseff
+      replace: yousef
+      propagate_case: true
+      word: true
+    - trigger: youre
+      replace: you're
+      propagate_case: true
+      word: true
+    - trigger: youself
+      replace: yourself
+      propagate_case: true
+      word: true
+    - trigger: yotube
+      replace: youtube
       propagate_case: true
       word: true

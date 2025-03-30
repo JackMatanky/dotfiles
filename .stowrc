@@ -5,18 +5,17 @@
 --ignore=.DS_Store
 
 --ignore='.git/'
---ignore=".ropeproject/"
+--ignore='.ropeproject/'
 --ignore=\.ropeproject/
---ignore="mac-terminal/"
 
 --ignore='_assets'
 --ignore='_notes'
 --ignore='_examples'
+--ignore='mac-terminal'
 
 --ignore='install.sh'
 --ignore='history.txt'
 --ignore=anki
---ignore=cli
 --ignore=colorscheme
 --ignore=devtools
 --ignore=file-manager
