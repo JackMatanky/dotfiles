@@ -335,3 +335,17 @@ brew install ocrmypdf
 ```bash
 brew install tesseract
 ```
+
+- qpdf: Tool for manipulating PDF files
+    - [Docs](https://qpdf.readthedocs.io/en/stable/index.html)
+    - [GitHub](https://github.com/qpdf/qpdf)
+
+```bash
+brew install qpdf
+```
+
+- [img2pdf](https://github.com/jwilk/img2pdf)
+
+```bash
+brew install img2pdf
+```

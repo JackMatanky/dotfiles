@@ -22,7 +22,7 @@ def ocr_run [
   let core_flags = (if $ocr_flag == "--redo-ocr" {
     []  # skip deskew and rotate
   } else {
-    ["--rotate-pages", "--deskew"]
+    ["--optimize 3", "--rotate-pages", "--deskew"]
   })
 
   if $dry_run {
@@ -117,6 +117,72 @@ def ocrfolder [
   print (if $dry_run { "🧪 Dry run complete." } else { "✅ Batch OCR complete." })
 }
 
+# # ocrfolder: OCR all PDFs in a folder using GNU parallel
+# def ocrfolder [
+#   path?: string         # Folder path (optional)
+#   --mode: string        # OCR mode: force, skip, redo
+#   --dry-run             # Simulate only
+# ] {
+#   # Determine the OCR flag from the mode
+#   let ocr_flag = (match $mode {
+#     "force" => "--force-ocr",
+#     "skip" => "--skip-text",
+#     "redo" => "--redo-ocr",
+#     _ => ""
+#   })
+
+#   # Use fd+fzf if no path is provided
+#   let folder = (if ($path == null) {
+#     fd --type directory | fzf
+#   } else {
+#     $path
+#   })
+
+#   if ($folder == "") {
+#     print "No folder selected."
+#     return
+#   }
+
+#   let absolute_path = ($folder | path expand)
+
+#   # Find all PDFs
+#   let folder_pdfs = (fd . $absolute_path --type file --extension pdf | lines)
+
+#   if ($folder_pdfs | is-empty) {
+#     print $"No PDF files found in folder: ($absolute_path)"
+#     return
+#   }
+
+#   # Build shell commands to run in parallel
+#   let commands = (
+#     $folder_pdfs
+#     | each {|pdf|
+#         let input = ($pdf | path expand)
+#         let output = ($input | str replace ".pdf" "_ocr.pdf")
+
+#         if ($output | path exists) {
+#           $"echo '⚠️ Skipping (already exists): ($output)'"
+#         } else if ($dry_run) {
+#           $"echo '🧪 Would OCR: ($input) → ($output) using ($ocr_flag)'"
+#         } else {
+#           $"ocrmypdf ($ocr_flag) --output-type pdf --optimize 3 --rotate-pages --deskew ($input) ($output)"
+#         }
+#       }
+#   )
+
+#   # Save and run using parallel if not a dry run
+#   let script_path = $"($env.TMPDIR | default '/tmp')/ocr_batch.sh"
+#   $commands | str join "\n" | save -f $script_path
+
+#   if ($dry_run) {
+#     print "🧪 Dry run commands:"
+#     open $script_path | lines | each {|line| print $line }
+#   } else {
+#     bash -c $"cat ($script_path) | parallel -j (nproc)"
+#     print "✅ Batch OCR complete."
+#   }
+# }
+
 # -----------------------------------------------
 # OCR Image Pipeline
 # -----------------------------------------------
@@ -191,7 +257,7 @@ def merge_ocr_pdfs [basename: string] {
 def ocr_img_pipeline [
   path?: string                 # Optional: input PDF path
   --language: string = "eng"   # OCR language
-  --dpi: int = 300             # Render DPI
+  --dpi: int = 150             # Render DPI
   --force-avif                 # Use AVIF instead of WebP
 ] {
   # Step 1: Choose PDF via argument or fzf

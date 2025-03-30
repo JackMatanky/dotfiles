@@ -5,8 +5,9 @@
 --ignore=.DS_Store
 
 --ignore='.git/'
+--ignore=".ropeproject/"
 --ignore=\.ropeproject/
---ignore=\.ropeproject/
+--ignore="mac-terminal/"
 
 --ignore='_assets'
 --ignore='_notes'

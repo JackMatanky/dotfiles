@@ -97,6 +97,8 @@ brew "pandoc"                             # Document format converter
 brew "ocrmypdf"                           # Optical Character Recognition (OCR) tool for PDFs
 brew "img2pdf"                            # Convert images to PDF format
 # brew "mupdf-tools"                        # Lightweight PDF and XPS viewer and tools
+brew "pdftoppm"                           # Convert PDFs to images
+brew "qpdf"                               # Tools for and transforming and inspecting PDF files
 brew "poppler"                            # PDF rendering library (based on the xpdf-3.0 code base)
 brew "tesseract"                          # Optical Character Recognition (OCR) tool
 brew "imagemagick"                        # CLI tool for image conversion and processing
