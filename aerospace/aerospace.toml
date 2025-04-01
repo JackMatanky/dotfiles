@@ -110,7 +110,7 @@ run = 'move-node-to-workspace 9'
 # Gemini
 [[on-window-detected]]
 if.app-id = "com.apple.Safari.WebApp.D23A73B0-A971-4778-BA6C-5343B38CA19B"
-run = 'move-node-to-workspace 10'
+run = 'move-node-to-workspace 9'
 
 # NotebookLM
 [[on-window-detected]]
