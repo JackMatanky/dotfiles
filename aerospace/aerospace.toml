@@ -108,8 +108,8 @@ if.app-id = "com.openai.chat"
 run = 'move-node-to-workspace 9'
 
 [[on-window-detected]]
-if.window-title-regex-substring = "notebooklm"
-# if.app-id = "com.apple.Safari.WebApp.C353A7A6-36B0-464C-B0C9-99528F2760AB"
+# if.window-title-regex-substring = "notebooklm"
+if.app-id = "com.apple.Safari.WebApp.C353A7A6-36B0-464C-B0C9-99528F2760AB"
 run = 'move-node-to-workspace 10'
 
 # Possible values: (qwerty|dvorak)
