@@ -18,8 +18,9 @@ tap "zegervdv/zathura"                    # Zathura PDF reader and extensions
 # --- Shells & Terminal Enhancements ---
 brew "bash"                               # Bash shell
 brew "nushell"                            # Modern shell with structured data support
-brew "git"                                # Version control system
 brew "zellij"                             # Terminal workspace manager, with terminal multiplexer as the base feature
+brew "git"                                # Version control system
+brew "git-filter-repo"                    # Filter and rewrite Git history
 
 # --- File Navigation & Search ---
 brew "yazi"                               # Terminal file manager with vim-like keybindings

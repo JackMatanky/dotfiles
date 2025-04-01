@@ -49,6 +49,14 @@ window-decoration = true
 
 mouse-hide-while-typing = true
 
+# Whether to automatically copy selected text to the clipboard.
+#   `true` will prefer to copy to the selection clipboard,
+#   otherwise it will copy to the system clipboard.
+# The value `clipboard` will always copy text to the selection and system clipboards.
+# Middle-click paste will always use the selection clipboard and is always enabled.
+# The default value is true on Linux and macOS.
+copy-on-select = true
+
 # keybind = global:cmd+/=toggle_quick_terminal
 
 # MacOS

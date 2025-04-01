@@ -91,8 +91,8 @@ run = 'move-node-to-workspace 5'
 
 # Does not work, do not know why
 [[on-window-detected]]
-if.app-id = 'net.ankiweb.dtop'
-if.window-title-regex-substring = 'Browse\s\(\d+\sof\s\d+\snotes\sselected\)'
+# if.app-id = 'net.ankiweb.dtop'
+if.window-title-regex-substring = 'browse\s.*?of.*?notes\sselected.*'
 run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
@@ -105,6 +105,10 @@ run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
 if.app-id = "com.openai.chat"
+run = 'move-node-to-workspace 9'
+
+[[on-window-detected]]
+if.window-title-regex-substring = "notebooklm"
 run = 'move-node-to-workspace 9'
 
 # Possible values: (qwerty|dvorak)
@@ -224,14 +228,14 @@ alt-shift-comma = 'mode service'
 # alt-shift-enter = 'mode apps'
 
 # >>> App Launcher <<<
-alt-ctrl-shift-n = 'exec-and-forget open /Applications/Obsidian.app'                # Notes - Obsidian
-alt-ctrl-shift-a = 'exec-and-forget open /Applications/Anki.app'                    # SRS - Anki
-alt-ctrl-shift-b = 'exec-and-forget open /Applications/Zen.app'                     # Browser - Zen
-# alt-ctrl-shift-b = 'exec-and-forget open /Applications/Firefox.app'               # Browser - Firefox
-alt-ctrl-shift-t = 'exec-and-forget open /Applications/Ghostty.app'                 # Terminal - Ghostty
-# alt-ctrl-shift-t = 'exec-and-forget open /Applications/WezTerm.app'               # Terminal - WezTerm
-alt-ctrl-shift-z = 'exec-and-forget open /Applications/Zed.app'                     # IDE - Zed Code Editor
-alt-ctrl-shift-c = '''exec-and-forget open /Applications/Visual Studio Code.app'''  # IDE - Visual Studio Code
+alt-ctrl-shift-n = 'exec-and-forget open /Applications/Obsidian.app'                    # Notes - Obsidian
+alt-ctrl-shift-a = 'exec-and-forget open /Applications/Anki.app'                        # SRS - Anki
+alt-ctrl-shift-b = 'exec-and-forget open /Applications/Zen.app'                         # Browser - Zen
+alt-ctrl-shift-s = 'exec-and-forget open /Applications/Safari.app'                      # Browser - Safari
+alt-ctrl-shift-t = 'exec-and-forget open /Applications/Ghostty.app'                     # Terminal - Ghostty
+# alt-ctrl-shift-t = 'exec-and-forget open /Applications/WezTerm.app'                   # Terminal - WezTerm
+alt-ctrl-shift-z = 'exec-and-forget open /Applications/Zed.app'                         # IDE - Zed Code Editor
+alt-ctrl-shift-c = '''exec-and-forget open '/Applications/Visual Studio Code.app''''    # IDE - Visual Studio Code
 
 
 # >>> Multiple Monitors <<<

@@ -1,7 +1,7 @@
 // Zed settings
 // https://zed.dev/docs/configuring-zed
 {
-  "icon_theme": "VSCode Great Icons Theme",
+  "icon_theme": "VSCode Icons (Dark)",
   "theme": {
     "mode": "system",
     "light": "One Light",
