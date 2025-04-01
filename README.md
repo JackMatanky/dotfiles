@@ -291,6 +291,12 @@ brew install webp
 brew install avif
 ```
 
+- [Calibre](https://calibre-ebook.com)
+
+```bash
+brew install --cask calibre
+```
+
 ## Document Viewer and Processor
 
 - [LibreOffice](https://www.libreoffice.org/)
