@@ -203,10 +203,25 @@ if (which java | is-not-empty) {
 # ---------------------------------------------------
 # Tooling & Integrations
 # ---------------------------------------------------
+# if (which starship | is-not-empty) {
+#     mkdir ~/.cache/starship
+#     starship init nu | save --force ~/.cache/starship/init.nu
+#     $env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join 'starship/starship.toml')
+# }
+
 if (which starship | is-not-empty) {
-    mkdir ~/.cache/starship
-    starship init nu | save --force ~/.cache/starship/init.nu
-    $env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join 'starship/starship.toml')
+    # Path to starship's init file (uses ~/.cache by default if XDG_CACHE_HOME not set)
+    let init_file = ($env.XDG_CACHE_HOME | default "~/.cache" | path join "starship/init.nu")
+
+    # Ensure the cache directory exists
+    mkdir ($init_file | path dirname)
+
+    # Generate init.nu if it doesn't exist
+    if not ($init_file | path exists) {
+        starship init nu | save --force $init_file
+    }
+    # Set location of Starship config (relies on predefined XDG_CONFIG_HOME)
+    $env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join "starship/starship.toml")
 }
 
 if (which zoxide | is-not-empty) {

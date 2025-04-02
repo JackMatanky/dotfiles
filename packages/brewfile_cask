@@ -63,6 +63,7 @@ cask "libreoffice-language-pack"          # Language packs for LibreOffice
 cask "zathura"                            # Zathura PDF reader
 cask "zathura-pdf-mupdf"                  # MuPDF plugin for Zathura
 cask "sioyek"                             # PDF reader optimized for research papers
+cask "adobe-digital-editions"             # Adobe Digital Editions
 
 # --- Cloud Storage ---
 cask "onedrive"                           # Microsoft Cloud storage service
