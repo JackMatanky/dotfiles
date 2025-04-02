@@ -6,6 +6,9 @@
 #------------------------------------------------------------------------------
 
 $env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
+$env.XDG_CACHE_HOME = ($env.HOME | path join '.cache')
+$env.XDG_DATA_HOME = ($env.HOME | path join '.local/share')
+
 $env.CARGO_HOME = ($env.HOME | path join '.cargo')
 $env.HOMEBREW = '/opt/homebrew'
 
@@ -209,18 +212,17 @@ if (which java | is-not-empty) {
 #     $env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join 'starship/starship.toml')
 # }
 
+# Only proceed if starship is installed
 if (which starship | is-not-empty) {
-    # Path to starship's init file (uses ~/.cache by default if XDG_CACHE_HOME not set)
-    let init_file = ($env.XDG_CACHE_HOME | default "~/.cache" | path join "starship/init.nu")
-
-    # Ensure the cache directory exists
+    # Path to starship's Nushell init script
+    let init_file = ($env.XDG_CACHE_HOME | path join "starship/init.nu")
+    # Ensure the parent directory exists
     mkdir ($init_file | path dirname)
-
-    # Generate init.nu if it doesn't exist
+    # Only generate init.nu if it doesn't exist
     if not ($init_file | path exists) {
         starship init nu | save --force $init_file
     }
-    # Set location of Starship config (relies on predefined XDG_CONFIG_HOME)
+    # Point to your Starship config file
     $env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join "starship/starship.toml")
 }
 
