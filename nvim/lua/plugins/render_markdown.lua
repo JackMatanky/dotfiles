@@ -46,8 +46,8 @@ return {
             converter = "latex2text", -- Use latex2text for rendering
             highlight = "RenderMarkdownMath", -- Set syntax highlighting for math
             position = "above", -- Render math above its original position
-            top_pad = 0, -- No extra padding above equations
-            bottom_pad = 0, -- No extra padding below equations
+            top_pad = 1, -- No extra padding above equations
+            bottom_pad = 1, -- No extra padding below equations
         },
     },
     ft = { "markdown", "norg", "rmd", "org", "codecompanion" }, -- Supported file types
