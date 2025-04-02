@@ -158,7 +158,6 @@ if ($OS == "Linux") {
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
 
-
 # ---------------------------------------------------
 # Programming Language Environment Setup
 # ---------------------------------------------------
@@ -190,9 +189,11 @@ if (which pyenv | is-not-empty) {
 }
 
 # Rust
-if (which rustup | is-not-empty) {
-    rustup completions nushell | save --force ~/.cache/rustup.nu
-}
+# rustup does not support Nushell completions:
+# https://rust-lang.github.io/rustup/installation/index.html#enable-tab-completion
+# if (which rustup | is-not-empty) {
+#     rustup completions nushell | save --force ~/.cache/rustup.nu
+# }
 
 # Java
 if (which java | is-not-empty) {
