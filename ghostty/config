@@ -58,6 +58,7 @@ mouse-hide-while-typing = true
 copy-on-select = true
 
 # keybind = global:cmd+/=toggle_quick_terminal
+keybind = performable:cmd+c=copy_to_clipboard
 
 # MacOS
 # To hide the titlebar without removing the native window borders
