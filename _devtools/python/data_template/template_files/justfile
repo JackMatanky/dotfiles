@@ -1,0 +1,28 @@
+# -----------------------------------------------------------------------------
+# File: ${PROJECT_PATH}/justfile
+# Description: Task automation for reproducible development commands
+# -----------------------------------------------------------------------------
+
+# Default: Show available recipes
+default:
+    @just --list --unsorted
+
+# Create a virtual environment and install dependencies from pyproject.toml
+init:
+	uv venv && uv pip install
+
+# Pair all .ipynb notebooks with .py (percent format) using Jupytext
+notebooks:
+	jupytext --set-formats ipynb,py:percent notebooks/*.ipynb
+
+# Run Ruff linting on notebooks and source code
+lint:
+	ruff check src notebooks
+
+# Automatically format code with Ruff (imports, whitespace, etc.)
+format:
+	ruff format src notebooks
+
+# Run your main script (if defined); modify as needed
+run:
+	python src/main.py
