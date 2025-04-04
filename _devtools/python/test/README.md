@@ -1,6 +1,6 @@
-# ${PROJECT_NAME}
+# test
 
-${DESCRIPTION}
+test
 
 ---
 
@@ -8,7 +8,7 @@ ${DESCRIPTION}
 
 The following structure is automatically generated based on the selected project type:
 
-${STRUCTURE_BLOCK}
+
 
 ---
 

@@ -1,0 +1,11 @@
+# -----------------------------------------------------------------------------
+# File: test/.gitignore
+# Description: Prevents Git from tracking system, environment, and cache files
+# -----------------------------------------------------------------------------
+
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints/
+.venv/
+.env/
+.DS_Store
