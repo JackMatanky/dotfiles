@@ -7,6 +7,14 @@ matches:
       replace: each
       propagate_case: true
       word: true
+    - trigger: eaach
+      replace: each
+      propagate_case: true
+      word: true
+    - trigger: eeach
+      replace: each
+      propagate_case: true
+      word: true
     - trigger: ealier
       replace: earlier
       propagate_case: true
