@@ -111,7 +111,7 @@ use_os_path_sep = true
 "course_huji_programming_intro/assignments_huji_programming_intro/" = "HUJI Programming Intro - Assignments"
 "course_mit_compsci_and_programming_intro" = "MIT CS-Programming Intro"
 "60_library" = "󰪶 Obsidian > 󱨢 Library"
-"obsidian_vault/70_pkm" = "󰪶 Obsidian > 󰧑 PKM"
+"obsidian_vault/70_pkm/" = "󰪶 Obsidian > 󰧑 PKM"
 "keyboard_dev" = " Keyboard Dev"
 "zmk-config" = " KB Dev > 󰰶 ZMK Config"
 
