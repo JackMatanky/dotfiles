@@ -1,4 +1,0 @@
-# -----------------------------------------------------------------------------
-# File: ${PROJECT_PATH}/models/.gitkeep
-# Description: Keeps the models directory tracked in Git even if empty
-# -----------------------------------------------------------------------------
