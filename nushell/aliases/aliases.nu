@@ -52,8 +52,8 @@ alias ll = ls -l
 
 # >>> eza <<<
 alias l = eza --long --icons --git --all --group-directories-first # Detailed File List
-alias lt = eza --tree --level=2 --long --icons --git # Tree View - Full
-alias ltree = eza --tree --level=2 --icons --git # Tree View - Compact
+alias lt = eza --tree --level=2 --icons --git # Tree View - 2 levels
+alias ltree = eza --tree --level=3 --icons --git # Tree View - 3 levels
 
 # >>> zoxide <<<
 alias za = zoxide add
