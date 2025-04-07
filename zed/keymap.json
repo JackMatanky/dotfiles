@@ -174,8 +174,8 @@
       "cmd-alt-down": "editor::AddSelectionBelow",
       "alt-up": "editor::MoveLineUp",
       "alt-down": "editor::MoveLineDown",
-      "alt-shift-up": "editor::DuplicateLineUp",
-      "alt-shift-down": "editor::DuplicateLineDown",
+      "alt-ctrl-up": "editor::DuplicateLineUp",
+      "alt-ctrl-down": "editor::DuplicateLineDown",
 
       // >>> UI & Miscellaneous Commands <<<
       "ctrl-cmd-space": "editor::ShowCharacterPalette",
