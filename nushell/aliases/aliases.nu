@@ -202,3 +202,22 @@ def as [command: string = ""] {
 
 # --- Sketchybar ---
 alias bar_load = sketchybar --reload
+
+# >>> Python <<<
+# --- uv ---
+# Activate virtual environment
+# alias uv_activate = ['use' ['.venv' (if (uname | get operating-system) == 'Windows' { 'Scripts' } else { 'bin' }) 'activate.nu'] | path join] str join ' '
+
+# def activate [] {
+#   let os = (uname | get operating-system)
+#   let dir = (if $os == 'Windows' { 'Scripts' } else { 'bin' })
+#   let path = ['.venv' $dir 'activate.nu'] | path join
+
+#   if (not ($path | path exists)) {
+#     error make {
+#       msg: $"Could not find activate.nu at: ($path)"
+#     }
+#   }
+
+#   echo $path
+# }
