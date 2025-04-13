@@ -71,23 +71,19 @@ brew_update_banner message:
 brew-already-installed:
     @echo "✅ Homebrew is already installed."
 
-# Check if Homebrew is not already installed and install it
+# Install Homebrew
 [group("Homebrew")]
 brew-not-installed:
     @echo "🔹 Installing Homebrew..."
     curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | sh
     @echo "✅ Homebrew installation complete!"
 
-# Check if Homebrew is installed and install it if not
+# Check if Homebrew is installed; if not, install it
 [group("Homebrew")]
 [unix]
 install-homebrew:
     @echo "🍺 Checking if Homebrew is installed..."
-    @if command -v brew &>/dev/null; then \
-        just brew-already-installed; \
-    else \
-        just brew-not-installed; \
-    fi
+    @command -v brew &>/dev/null && just brew-already-installed || just brew-not-installed
 
 # Install Homebrew Core Packages
 [group("Homebrew")]
