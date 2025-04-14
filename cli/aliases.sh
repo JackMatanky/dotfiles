@@ -276,6 +276,9 @@ as() {
 # --- Sketchybar ---
 alias bar_load='sketchybar --reload'
 
+# --- Justfile ---
+alias j='just'
+
 # --- OCRmyPDF ---
 
 # ocrfile: OCR a single PDF (arg or fzf)

@@ -5,16 +5,9 @@
 # Description: Justfile for automating system setup and package installations.
 # -----------------------------------------------------------------------------
 
-# 📂 Define directories
-PACKAGES_DIR := "~/dotfiles/packages"
-SCRIPTS_DIR := "~/dotfiles/scripts"
-BREWFILE := PACKAGES_DIR / "brewfile"
-BREWFILE_CASK := PACKAGES_DIR / "brewfile_cask"
-BREWFILE_MAS := PACKAGES_DIR / "brewfile_mas"
-CARGO_PACKAGES := PACKAGES_DIR / "cargo-packages.txt"
-FLATPAK_MANIFEST := PACKAGES_DIR / "flatpak-manifest.json"
-
-# 🖥️ Detect OS Metadata
+# -----------------------------------------------
+# OS Metadata
+# -----------------------------------------------
 OS_FAMILY := os_family()  # "unix" or "windows"
 # Options: "android", "bitrig", "dragonfly", "emscripten", "freebsd", "haiku",
 # "ios", "linux", "macos", "netbsd", "openbsd", "solaris", "windows"
@@ -31,17 +24,28 @@ OS_NAME := if OS =~ '.*os$' {
     capitalize(OS)
 }
 
-# ----------------------------------------------------------------------------
+# -----------------------------------------------
+# Directory Definitions
+# -----------------------------------------------
+PACKAGES_DIR := "~/dotfiles/packages"
+SCRIPTS_DIR := "~/dotfiles/scripts"
+BREWFILE := PACKAGES_DIR / "brewfile"
+BREWFILE_CASK := PACKAGES_DIR / "brewfile_cask"
+BREWFILE_MAS := PACKAGES_DIR / "brewfile_mas"
+CARGO_PACKAGES := PACKAGES_DIR / "cargo-packages.txt"
+FLATPAK_MANIFEST := PACKAGES_DIR / "flatpak-manifest.json"
+
+# -----------------------------------------------
 # 📌 Core Interface
-# ----------------------------------------------------------------------------
+# -----------------------------------------------
 # 📌 Default: Show available recipes
 [group('Core')]
 default:
     @just --list --unsorted
 
-# -----------------------------------------------------------------------------
+# -----------------------------------------------
 # 🛠️ Helper Recipes
-# -----------------------------------------------------------------------------
+# -----------------------------------------------
 
 # 🛠️ Print unavailable package manager message
 [group('Helpers')]
@@ -63,9 +67,9 @@ brew_install_banner message:
 brew_update_banner message:
     @echo "🔄 Updating {{message}}... 🍺"
 
-# -----------------------------------------------------------------------------
+# -----------------------------------------------
 # 🍺 Homebrew Installation
-# -----------------------------------------------------------------------------
+# -----------------------------------------------
 # Show message if Homebrew is already installed
 [group("Homebrew")]
 brew-already-installed:
@@ -125,9 +129,9 @@ setup-openjdk:
         echo "✅ OpenJDK symlinked!"; \
     fi
 
-# -----------------------------------------------------------------------------
+# -----------------------------------------------
 # 🖥️ System Dependencies (Linux)
-# -----------------------------------------------------------------------------
+# -----------------------------------------------
 # Install Linux System Dependencies
 [group("System")]
 [linux]
@@ -135,9 +139,9 @@ install-system-dependencies:
     @echo "📦 Installing system dependencies..."
     bash SCRIPTS_DIR / "install-system-dependencies.sh"
 
-# -----------------------------------------------------------------------------
+# -----------------------------------------------
 # 📦 Package Installation (Flatpak, Rust, Cargo)
-# -----------------------------------------------------------------------------
+# -----------------------------------------------
 # Install Flatpak applications
 [group("Package Installation")]
 [linux]
@@ -185,9 +189,9 @@ install-all:
     just install-cargo-packages
     @echo "✅ All installations complete!"
 
-# -----------------------------------------------------------------------------
+# -----------------------------------------------
 # 🔄 Updating Packages
-# -----------------------------------------------------------------------------
+# -----------------------------------------------
 
 # Update Mac App Store applications (used by update-brew)
 [group("Package Updates")]
@@ -243,9 +247,9 @@ update-all:
     @echo "✅ All updates complete!"
 
 
-# -----------------------------------------------------------------------------
+# -----------------------------------------------
 # 📝 Document Processing
-# -----------------------------------------------------------------------------
+# -----------------------------------------------
 
 # Use OCRmyPDF to convert PDFs to searchable PDFs. Usage: just ocr input.pdf output.pdf
 # ocr input:

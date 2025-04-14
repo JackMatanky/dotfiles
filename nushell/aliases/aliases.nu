@@ -203,6 +203,9 @@ def as [command: string = ""] {
 # --- Sketchybar ---
 alias bar_load = sketchybar --reload
 
+# --- Justfile ---
+alias j = just
+
 # >>> Python <<<
 # --- uv ---
 # Activate virtual environment
