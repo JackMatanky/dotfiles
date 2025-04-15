@@ -5,11 +5,18 @@
 # Source Link: https://github.com/omerxx/dotfiles/blob/master/nushell/env.nu
 #------------------------------------------------------------------------------
 
+# >>> XDG Base Directory <<<
 $env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
 $env.XDG_CACHE_HOME = ($env.HOME | path join '.cache')
 $env.XDG_DATA_HOME = ($env.HOME | path join '.local/share')
 
+# >>> Git Global Config Location <<<
+$env.GIT_CONFIG_GLOBAL = ($env.XDG_CONFIG_HOME | path join 'git/config')
+
+# >>> Cargo Home Directory <<<
 $env.CARGO_HOME = ($env.HOME | path join '.cargo')
+
+# >>> Homebrew Installation Directory <<<
 $env.HOMEBREW = '/opt/homebrew'
 
 # OS Detection

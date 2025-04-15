@@ -9,6 +9,11 @@ OS="$(uname -s)"
 
 # >>> XDG Base Directory <<<
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+
+# >>> Git Global Config Location <<<
+export GIT_CONFIG_GLOBAL="$XDG_CONFIG_HOME/git/config"
 
 # >>> Path Configuration (OS-Specific) <<<
 if [[ "$OS" == "Darwin" ]]; then
