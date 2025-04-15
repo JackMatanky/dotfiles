@@ -1,6 +1,14 @@
+#------------------------------------------------------------------------------#
+# Filename: ~/dotfiles/git/.gitignore_global
+#
+# Git Docs: https://git-scm.com/docs/git-config
+#------------------------------------------------------------------------------#
+
+# >>> Google Drive <<<
 .tmp.driveupload/
 .tmp.drivedownload/
 
+# >>> MacOS <<<
 .DS_Store
 DS_Store
 
