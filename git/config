@@ -46,4 +46,4 @@
     textconv = pdftotext -layout -enc UTF-8 -
 
 [includeIf "gitdir:/Users/jack/Documents/_dev_work/"]
-    path = ~/.config/git/config_work
+    path = /Users/jack/.config/git/config_work
