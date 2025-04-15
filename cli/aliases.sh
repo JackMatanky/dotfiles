@@ -67,6 +67,10 @@ alias kb_ergogen='cd ~/Documents/keyboard_dev/ergogen'
 alias kb_zmk='cd ~/Documents/keyboard_dev/zmk-config'
 alias kb_snak_dir='cd ~/Documents/keyboard_dev/kb_snak'
 
+# --- Work ---
+alias dev_work='cd ~/Documents/_dev_work'
+alias dev_hive='cd ~/Documents/_dev_work/hive_urban_github'
+
 # --- Git ---
 # Note: git_current_branch helper
 git_current_branch() {
