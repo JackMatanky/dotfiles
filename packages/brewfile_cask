@@ -46,6 +46,7 @@ cask "mysqlworkbench"                     # MySQL database management tool
 cask "pgadmin4"                           # PostgreSQL database management tool
 
 # --- Productivity & MacOS Utilities ---
+cask "chatgpt"                            # ChatGPT client for macOS
 cask "aerospace"                          # Window manager for macOS
 cask "espanso"                            # Text expander
 cask "alfred"                             # Productivity app launcher
