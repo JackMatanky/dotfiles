@@ -5,9 +5,7 @@
 # Description: Justfile for automating system setup and package installations.
 # -----------------------------------------------------------------------------
 
-# -----------------------------------------------
-# OS Metadata
-# -----------------------------------------------
+# >>> OS Metadata <<<
 OS_FAMILY := os_family()  # "unix" or "windows"
 # Options: "android", "bitrig", "dragonfly", "emscripten", "freebsd", "haiku",
 # "ios", "linux", "macos", "netbsd", "openbsd", "solaris", "windows"
@@ -68,6 +66,32 @@ brew_update_banner message:
     @echo "🔄 Updating {{message}}... 🍺"
 
 # -----------------------------------------------
+# 🖥️ System Dependencies
+# -----------------------------------------------
+# Install xcode tools as a prerequisite for Homebrew
+[macos]
+[group("System")]
+xcode_tools_installation:
+    @if xcode-select -p &>/dev/null; then \
+        echo "✅ Xcode Command Line Tools already installed."; \
+    else \
+        echo "🔧 Installing Xcode Command Line Tools..."; \
+        xcode-select --install; \
+        echo "⏳ Waiting for installation to complete..."; \
+        until xcode-select -p &>/dev/null; do \
+            sleep 5; \
+        done; \
+        echo "✅ Installation complete."; \
+    fi
+
+# Install Linux System Dependencies
+[group("System")]
+[linux]
+install-system-dependencies:
+    @echo "📦 Installing system dependencies..."
+    bash SCRIPTS_DIR / "install-system-dependencies.sh"
+
+# -----------------------------------------------
 # 🍺 Homebrew Installation
 # -----------------------------------------------
 # Show message if Homebrew is already installed
@@ -86,6 +110,7 @@ brew-not-installed:
 [group("Homebrew")]
 [unix]
 install-homebrew:
+    just xcode_tools_installation
     @echo "🍺 Checking if Homebrew is installed..."
     @command -v brew &>/dev/null && just brew-already-installed || just brew-not-installed
 
@@ -128,16 +153,6 @@ setup-openjdk:
         sudo ln -sfn "$(brew --prefix)/opt/openjdk/libexec/openjdk.jdk" /Library/Java/JavaVirtualMachines/openjdk.jdk; \
         echo "✅ OpenJDK symlinked!"; \
     fi
-
-# -----------------------------------------------
-# 🖥️ System Dependencies (Linux)
-# -----------------------------------------------
-# Install Linux System Dependencies
-[group("System")]
-[linux]
-install-system-dependencies:
-    @echo "📦 Installing system dependencies..."
-    bash SCRIPTS_DIR / "install-system-dependencies.sh"
 
 # -----------------------------------------------
 # 📦 Package Installation (Flatpak, Rust, Cargo)

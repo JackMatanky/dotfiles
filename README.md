@@ -39,7 +39,7 @@ chmod +x scripts/setup.sh
   brew install zsh-autocomplete
   ```
 
-#### Plugins
+### Plugins
 
 - [Carapace](https://carapace.sh/)
 
