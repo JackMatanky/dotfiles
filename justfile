@@ -72,6 +72,7 @@ brew_update_banner message:
 [macos]
 [group("System")]
 xcode_tools_installation:
+    #!/usr/bin/env bash
     @if xcode-select -p &>/dev/null; then \
         echo "✅ Xcode Command Line Tools already installed."; \
     else \

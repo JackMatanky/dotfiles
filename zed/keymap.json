@@ -579,6 +579,18 @@
     }
   },
 
+  // >>> Insert Mode (Completion Menu Navigation) <<<
+  {
+    "context": "vim_mode == insert && showing_completions",
+    "bindings": {
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrevious",
+      "ctrl-down": "menu::SelectNext",
+      "ctrl-up": "menu::SelectPrevious",
+      "enter": "menu::Confirm"
+    }
+  },
+
   // >>> Replace Mode <<<
   {
     "context": "vim_mode == replace",
@@ -966,7 +978,7 @@
 
   // >>> Edit Prediction <<<
   {
-    "context": "Editor && edit_prediction",
+    "context": "vim_mode == insert && edit_prediction",
     "bindings": {
       // This is identical to the binding in the base keymap,
       // but the vim bindings above to "vim::Tab" shadow it,
