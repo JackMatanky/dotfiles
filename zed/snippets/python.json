@@ -26,7 +26,7 @@
   },
   "if __name__ == __main__": {
     "prefix": "ifmain",
-    "body": ["if __name__ == \"__main__\":", "\t$0"],
+    "body": ["if __name__ == \"__main__\":", "    $0"],
     "description": "Execute code if the file is executed directly"
   },
 
@@ -75,89 +75,89 @@
 
   "if": {
     "prefix": "if",
-    "body": ["if $1:", "\t$0"],
+    "body": ["if ${1:condition}:", "    $0"],
     "description": "if statement"
   },
   "elif": {
     "prefix": "elif",
-    "body": ["elif $1:", "\t$0"],
+    "body": ["elif ${1:condition}:", "    $0"],
     "description": "elif statement"
   },
   "else": {
     "prefix": "else",
-    "body": ["else:", "\t$0"],
+    "body": ["else:", "    $0"],
     "description": "else statement"
   },
   "if/else": {
     "prefix": "ifelse",
-    "body": ["if $1:", "\t$2", "else:", "\t$0"],
+    "body": ["if ${1:condition}:", "    ${2:action}", "else:", "    $0"],
     "description": "if statement with else"
   },
   "for": {
     "prefix": "for",
-    "body": ["for $1 in $2:", "\t$0"],
+    "body": ["for ${1:target} in ${2:iterable}:", "    $0"],
     "description": "for loop"
   },
   "for w/ range": {
     "prefix": "forr",
-    "body": ["for $1 in range($2):", "\t$0"],
+    "body": ["for ${1:target} in range(${2:...}):", "    $0"],
     "description": "for loop that iterates over range of integers"
   },
   "while": {
     "prefix": "while",
-    "body": ["while $1:", "\t$0"],
+    "body": ["while $1:", "    $0"],
     "description": "while loop"
   },
   "dowhile": {
     "prefix": "dowhile",
-    "body": ["do = True", "while do or $1:", "\tdo = False", "\t$0"],
+    "body": ["do = True", "while do or $1:", "    do = False", "    $0"],
     "description": "Code snippet to create a do-while loop structure."
   },
   "match/case": {
     "prefix": "match",
-    "body": ["match $1:", "\tcase $2:", "\t\t$0"],
+    "body": ["match $1:", "    case $2:", "        $0"],
     "description": "match/case statements"
   },
   "case": {
     "prefix": "case",
-    "body": ["case $1:", "\t$0"],
+    "body": ["case $1:", "    $0"],
     "description": "case block"
   },
   "case wildcard": {
     "prefix": "casew",
-    "body": ["case _:", "\t$0"],
+    "body": ["case _:", "    $0"],
     "description": "case wildcard block if other cases fail"
   },
 
   "With Statement": {
     "prefix": "with",
-    "body": ["with $1 as $2:", "\t$0"],
+    "body": ["with $1 as $2:", "    $0"],
     "description": "'with' statement"
   },
 
   "Function": {
     "prefix": "def",
-    "body": ["def $1($2):", "\t$0"],
+    "body": ["def ${1:func}(${2:args}):", "    ${0:pass}"],
     "description": "Function definition"
   },
   "Function w/ return type": {
     "prefix": "deft",
-    "body": ["def $1($2) -> $3:", "\t$0"],
+    "body": ["def $1($2) -> $3:", "    $0"],
     "description": "Function definition with return type"
   },
   "Function w/pass": {
     "prefix": "defp",
-    "body": ["def $1($2):", "\tpass$0"],
+    "body": ["def $1($2):", "    pass$0"],
     "description": "Function definition"
   },
   "Function w/ return type and pass": {
     "prefix": "deftp",
-    "body": ["def $1($2) -> $3:", "\tpass$0"],
+    "body": ["def $1($2) -> $3:", "    pass$0"],
     "description": "Function definition with return type"
   },
   "async Function": {
     "prefix": "adef",
-    "body": ["async def $1($2):", "\t$0"],
+    "body": ["async def $1($2):", "    $0"],
     "description": "Function definition"
   },
   "Lambda Function": {
@@ -168,33 +168,33 @@
 
   "Class": {
     "prefix": "class",
-    "body": ["class $1:", "\t$0"],
+    "body": ["class $1:", "    $0"],
     "description": "Class definition"
   },
   "Derived Class": {
     "prefix": "classd",
-    "body": ["class $1($2):", "\t$0"],
+    "body": ["class $1($2):", "    $0"],
     "description": "Class definition with inheritance"
   },
   "Class Template": {
     "prefix": "classi",
     "body": [
       "class $1($2):",
-      "\t\"\"\"$3\"\"\"",
-      "\tdef __init__(self, $4):",
-      "\t\t$5super($6, self).__init__()}",
-      "\t\tself.$7 = $0"
+      "    \"\"\"$3\"\"\"",
+      "    def __init__(self, $4):",
+      "        $5super($6, self).__init__()}",
+      "        self.$7 = $0"
     ],
     "description": "Class definition template"
   },
   "Method": {
     "prefix": "defs",
-    "body": ["def $1(self, $2):", "\t$0"],
+    "body": ["def $1(self, $2):", "    $0"],
     "description": "Class method definition"
   },
   "Method w/ Return Type": {
     "prefix": "defst",
-    "body": ["def $1(self, $2) -> $3:", "\t$0"],
+    "body": ["def $1(self, $2) -> $3:", "    $0"],
     "description": "Class method definition"
   },
   "Property Template": {
@@ -202,12 +202,12 @@
     "body": [
       "@property",
       "def $1(self):",
-      "\t\"\"\"$2\"\"\"",
-      "\t$3",
+      "    \"\"\"$2\"\"\"",
+      "    $3",
       "",
       "@$4.setter",
       "def $5(self, value):",
-      "\t$6 = value"
+      "    $6 = value"
     ],
     "description": "New property: get and set via decorator"
   },
@@ -218,10 +218,10 @@
       "",
       "",
       "class $1(Enum):",
-      "\t\"\"\"$2\"\"\"",
-      "\t$3 = \"some_value\"",
-      "\t$4 = \"some_other_value\"",
-      "\t$0"
+      "    \"\"\"$2\"\"\"",
+      "    $3 = \"some_value\"",
+      "    $4 = \"some_other_value\"",
+      "    $0"
     ],
     "description": "enum  definition."
   },
@@ -231,9 +231,9 @@
       "from dataclasses import dataclass\n\n",
       "@dataclass",
       "class $1($2):",
-      "\t\"\"\"$3\"\"\"",
-      "\t$4",
-      "\t$0"
+      "    \"\"\"$3\"\"\"",
+      "    $4",
+      "    $0"
     ],
     "description": "dataclass definition."
   },
@@ -251,40 +251,47 @@
 
   "except": {
     "prefix": "except",
-    "body": ["except$1:", "\t$0"],
+    "body": ["except$1:", "    $0"],
     "description": "except statement"
   },
   "except as": {
     "prefix": "exceptas",
-    "body": ["except $1 as $2:", "\t$0"],
+    "body": ["except $1 as $2:", "    $0"],
     "description": "'except as' statement"
   },
   "try/except": {
     "prefix": "try",
-    "body": ["try:", "\t$1", "except $2 as $3:", "\t$0"],
+    "body": ["try:", "    $1", "except $2 as $3:", "    $0"],
     "description": "try/except blocks"
   },
   "try/except/else": {
     "prefix": "trya",
-    "body": ["try:", "\t$1", "except $2 as $3:", "\t$4", "else:", "\t$0"],
+    "body": ["try:", "    $1", "except $2 as $3:", "    $4", "else:", "    $0"],
     "description": "try/except/else blocks"
   },
   "try/except/finally": {
     "prefix": "tryf",
-    "body": ["try:", "\t$1", "except $2 as $3:", "\t$4", "finally:", "\t$0"],
+    "body": [
+      "try:",
+      "    $1",
+      "except $2 as $3:",
+      "    $4",
+      "finally:",
+      "    $0"
+    ],
     "description": "try/except/finally blocks"
   },
   "try/except/else/finally": {
     "prefix": "tryef",
     "body": [
       "try:",
-      "\t$1",
+      "    $1",
       "except$2 $3 as $4:",
-      "\t$5",
+      "    $5",
       "else:",
-      "\t$6",
+      "    $6",
       "finally:",
-      "\t$0"
+      "    $0"
     ],
     "description": "try/except/else/finally blocks"
   },
@@ -339,20 +346,20 @@
     "prefix": "#docsimple",
     "body": [
       "\"\"\"",
-      "\t$1",
-      "\t",
-      "\t$2",
-      "\t",
-      "\tArgs:",
-      "\t\t$4: $5",
-      "\t",
-      "\tReturns:",
-      "\t\t$3",
-      "\t",
-      "\tExample:",
-      "\t\t# $6",
-      "\t\t$7",
-      "\t\"\"\"",
+      "    $1",
+      "    ",
+      "    $2",
+      "    ",
+      "    Args:",
+      "        $4: $5",
+      "    ",
+      "    Returns:",
+      "        $3",
+      "    ",
+      "    Example:",
+      "        # $6",
+      "        $7",
+      "    \"\"\"",
       "$0"
     ],
     "description": "A Python docstring for functions and methods, including short summary, details, args, returns, and examples. This docstring is an synonym of \"\"\"function."
@@ -365,15 +372,15 @@
   "module docstring": {
     "prefix": "###module",
     "body": [
-      "\t\"\"\"",
-      "\t$1",
-      "\t",
-      "\t$2$0",
-      "\t",
-      "\tExamples:",
-      "\t\t# $3",
-      "\t\t$4",
-      "\t\"\"\""
+      "    \"\"\"",
+      "    $1",
+      "    ",
+      "    $2$0",
+      "    ",
+      "    Examples:",
+      "        # $3",
+      "        $4",
+      "    \"\"\""
     ],
     "description": "A Python docstring for modules, including a one-line summary, details, and example."
   },
@@ -386,20 +393,20 @@
     "prefix": "#docfunction",
     "body": [
       "\"\"\"",
-      "\t$1",
-      "\t",
-      "\t$2",
-      "\t",
-      "\tArgs:",
-      "\t\t$4: $5",
-      "\t",
-      "\tReturns:",
-      "\t\t$3",
-      "\t",
-      "\tExample:",
-      "\t\t# $6",
-      "\t\t$7",
-      "\t\"\"\"",
+      "    $1",
+      "    ",
+      "    $2",
+      "    ",
+      "    Args:",
+      "        $4: $5",
+      "    ",
+      "    Returns:",
+      "        $3",
+      "    ",
+      "    Example:",
+      "        # $6",
+      "        $7",
+      "    \"\"\"",
       "$0"
     ],
     "description": "A Python docstring for functions and methods, including short summary, details, args, returns, and example."
@@ -408,20 +415,20 @@
     "prefix": "###function_typed",
     "body": [
       "\"\"\"",
-      "\t$1",
-      "\t",
-      "\t$2",
-      "\t",
-      "\tArgs:",
-      "\t\t$5 ($6): $7",
-      "\t",
-      "\tReturns:",
-      "\t\t$3: $4",
-      "\t",
-      "\tExample:",
-      "\t\t# $8",
-      "\t\t$9",
-      "\t\"\"\"",
+      "    $1",
+      "    ",
+      "    $2",
+      "    ",
+      "    Args:",
+      "        $5 ($6): $7",
+      "    ",
+      "    Returns:",
+      "        $3: $4",
+      "    ",
+      "    Example:",
+      "        # $8",
+      "        $9",
+      "    \"\"\"",
       "$0"
     ],
     "description": "Alternative Python docstring for functions and methods, with a different type syntax. Some teams prefer it."
@@ -435,14 +442,14 @@
       "$2",
       "",
       "Args:",
-      "\t$4: $5",
+      "    $4: $5",
       "",
       "Yields:",
-      "\t$3",
+      "    $3",
       "",
       "Example:",
-      "\t# $6",
-      "\t$7",
+      "    # $6",
+      "    $7",
       "\"\"\"",
       "$0"
     ],
@@ -457,7 +464,7 @@
       "$2",
       "",
       "Attributes:",
-      "\t$3: $4",
+      "    $3: $4",
       "\"\"\"",
       "$0"
     ],
@@ -472,7 +479,7 @@
       "$2",
       "",
       "Attributes:",
-      "\t$3: $4",
+      "    $3: $4",
       "\"\"\"",
       "$0"
     ],
@@ -480,7 +487,7 @@
   },
   "raises docstring": {
     "prefix": "###raises",
-    "body": ["Raises:", "\t$1: $0"],
+    "body": ["Raises:", "    $1: $0"],
     "description": "A Python docstring for methods when we want to be exclicit about the errors it Raises. Use it only when is relevant."
   },
 
