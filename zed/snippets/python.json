@@ -2,12 +2,7 @@
   "#!/usr/bin/env pythonX": {
     "prefix": "#env",
     "body": "#!/usr/bin/env python$0",
-    "description": "Shebang line for the first python in PATH"
-  },
-  "#!/usr/bin/env python3": {
-    "prefix": "#env",
-    "body": "#!/usr/bin/env python$0",
-    "description": "Shebang line for default python 3 interpreter"
+    "description": "Shebang line for default python interpreter"
   },
   "pyright ignore line": {
     "prefix": "#ignore",
@@ -30,22 +25,23 @@
     "description": "Execute code if the file is executed directly"
   },
 
-  "Jupyter cell": {
+  "py:percent Cell": {
     "prefix": "jupy",
-    "body": ["# %% ${0:| ,[markdown]|}", "$1"],
-    "description": "Add new REPL code cell"
+    "body": ["# %% ${1:[markdown]}", "$0"],
+    "description": "Add new py:percent code or markdown cell"
   },
-  "Jupyter cell": {
+  "py:percent Code Cell": {
     "prefix": "jcell",
     "body": "# %%",
-    "description": "Add new REPL code cell"
+    "description": "Add new py:percent code cell"
   },
-  "Jupyter markdown cell": {
+  "py:percent Markdown Cell": {
     "prefix": "jmark",
     "body": "# %% [markdown]",
-    "description": "Add a new REPL markdown cell"
+    "description": "Add a new py:percent markdown cell"
   },
 
+  // >>> IMPORT Statements <<<
   "import": {
     "prefix": "import",
     "body": "import $0",
@@ -73,6 +69,7 @@
     "description": "Import future statement definitions for python3.x scripts using utf-8 as encoding."
   },
 
+  // >>> IF Statements <<<
   "if": {
     "prefix": "if",
     "body": ["if ${1:condition}:", "    $0"],
@@ -93,6 +90,8 @@
     "body": ["if ${1:condition}:", "    ${2:action}", "else:", "    $0"],
     "description": "if statement with else"
   },
+
+  // >>> FOR Statements <<<
   "for": {
     "prefix": "for",
     "body": ["for ${1:target} in ${2:iterable}:", "    $0"],
@@ -103,9 +102,11 @@
     "body": ["for ${1:target} in range(${2:...}):", "    $0"],
     "description": "for loop that iterates over range of integers"
   },
+
+  // >>> WHILE Statements <<<
   "while": {
     "prefix": "while",
-    "body": ["while $1:", "    $0"],
+    "body": ["while ${1:condition}:", "    $0"],
     "description": "while loop"
   },
   "dowhile": {
@@ -113,14 +114,62 @@
     "body": ["do = True", "while do or $1:", "    do = False", "    $0"],
     "description": "Code snippet to create a do-while loop structure."
   },
+
+  // >>> LIST COMPREHENSIONS <<<
+  "List comprehension": {
+    "prefix": "lc",
+    "body": "[${1:expr} for ${2:item} in ${3:iterable}]$0",
+    "description": "List comprehension for creating a list based on existing lists."
+  },
+  "List comprehension if else": {
+    "prefix": "lcie",
+    "body": "[${1:expr1} if ${2:condition} else ${3:expr2} for ${4:item} in ${5:iterable}]$0",
+    "description": "List comprehension with conditional if-else."
+  },
+  "List comprehension if filter": {
+    "prefix": "lci",
+    "body": "[${1:expr} for ${2:item} in ${3:iterable} if ${4:condition}]$0",
+    "description": "List comprehension with conditional if filter."
+  },
+  "Dictionary comprehension": {
+    "prefix": "dc",
+    "body": "{${1:key}: ${2:value} for ${3:k}, ${4:v} in ${5:items}}$0",
+    "description": "Dictionary comprehension."
+  },
+  "Dictionary comprehension if filter": {
+    "prefix": "dci",
+    "body": "{${1:key}: ${2:value} for ${3:k}, ${4:v} in ${5:items} if ${6:condition}}$0",
+    "description": "Dictionary comprehension with filter."
+  },
+  "Set comprehension": {
+    "prefix": "sc",
+    "body": "{${1:item} for ${2:item} in ${3:iterable}}$0",
+    "description": "Set comprehension."
+  },
+  "Set Comprehension if filter": {
+    "prefix": "sci",
+    "body": "{${1:item} for ${2:item} in ${3:iterable} if ${4:condition}}$0",
+    "description": "Set comprehension with filter."
+  },
+  "Generator comprehension": {
+    "prefix": "gc",
+    "body": "(${1:item} for ${2:item} in ${3:iterable})$0",
+    "description": "Generator expression."
+  },
+  "Generator comprehension if filter": {
+    "prefix": "gci",
+    "body": "(${1:item} for ${2:item} in ${3:iterable} if ${4:condition})$0",
+    "description": "Generator with filter."
+  },
+  // >>> MATCH/CASE Statements <<<
   "match/case": {
     "prefix": "match",
-    "body": ["match $1:", "    case $2:", "        $0"],
+    "body": ["match ${1:subject}:", "    case ${2:pattern}:", "        $0"],
     "description": "match/case statements"
   },
   "case": {
     "prefix": "case",
-    "body": ["case $1:", "    $0"],
+    "body": ["case ${1:pattern}:", "    $0"],
     "description": "case block"
   },
   "case wildcard": {
@@ -129,80 +178,85 @@
     "description": "case wildcard block if other cases fail"
   },
 
+  // >>> WITH Statements <<<
   "With Statement": {
     "prefix": "with",
     "body": ["with $1 as $2:", "    $0"],
     "description": "'with' statement"
   },
+  "With Statement for File": {
+    "prefix": "withf",
+    "body": ["with open(${1:filename}, 'r') as ${2:file}:", "    $0"],
+    "description": "'with' statement for reading files"
+  },
+  "With Statement for SQLite Database Connection": {
+    "prefix": "withsq",
+    "body": ["with sqlite3.connect(${1:database}) as ${2:conn}:", "    $0"],
+    "description": "'with' statement for SQLite database connection"
+  },
+  "With Statement Async": {
+    "prefix": "witha",
+    "body": ["async with $1 as $2:", "    $0"],
+    "description": "'async with' statement"
+  },
 
-  "Function": {
+  // >>> FUNCTION Definitions <<<
+  "Function Definition w/Return Type": {
     "prefix": "def",
-    "body": ["def ${1:func}(${2:args}):", "    ${0:pass}"],
-    "description": "Function definition"
-  },
-  "Function w/ return type": {
-    "prefix": "deft",
-    "body": ["def $1($2) -> $3:", "    $0"],
+    "body": ["def ${1:func}(${2:args}) -> ${3:None}:", "    ${0:pass}"],
     "description": "Function definition with return type"
   },
-  "Function w/pass": {
-    "prefix": "defp",
-    "body": ["def $1($2):", "    pass$0"],
-    "description": "Function definition"
-  },
-  "Function w/ return type and pass": {
-    "prefix": "deftp",
-    "body": ["def $1($2) -> $3:", "    pass$0"],
-    "description": "Function definition with return type"
-  },
+
   "async Function": {
     "prefix": "adef",
-    "body": ["async def $1($2):", "    $0"],
-    "description": "Function definition"
-  },
-  "Lambda Function": {
-    "prefix": "lam",
-    "body": ["lambda $1: $0"],
-    "description": "lambda function"
+    "body": ["async def ${1:func}(${2:args}) -> ${3:None}:", "    ${0:pass}"],
+    "description": "Asynchronous function definition"
   },
 
+  "Lambda Function": {
+    "prefix": "lam",
+    "body": ["lambda ${1:x}: ${2:...}"],
+    "description": "Lambda function"
+  },
+
+  // >>> CLASS Definitions <<<
   "Class": {
     "prefix": "class",
-    "body": ["class $1:", "    $0"],
+    "body": ["class ${1:ClassName}:", "    $0"],
     "description": "Class definition"
   },
+
   "Derived Class": {
     "prefix": "classd",
-    "body": ["class $1($2):", "    $0"],
+    "body": ["class ${1:ClassName}(${2:BaseClass}):", "    $0"],
     "description": "Class definition with inheritance"
   },
+
   "Class Template": {
     "prefix": "classi",
     "body": [
-      "class $1($2):",
+      "class ${1:ClassName}(${2:BaseClass}):",
       "    \"\"\"$3\"\"\"",
       "    def __init__(self, $4):",
-      "        $5super($6, self).__init__()}",
-      "        self.$7 = $0"
+      "        $5super($6, self).__init__()",
+      "        self.$7 = $8",
+      "        $0"
     ],
     "description": "Class definition template"
   },
-  "Method": {
-    "prefix": "defs",
-    "body": ["def $1(self, $2):", "    $0"],
-    "description": "Class method definition"
-  },
-  "Method w/ Return Type": {
+
+  "Class Method w/ Return Type": {
     "prefix": "defst",
-    "body": ["def $1(self, $2) -> $3:", "    $0"],
+    "body": ["def ${1:method}(self, ${2:args}) -> ${3:None}:", "    $0"],
     "description": "Class method definition"
   },
+
   "Property Template": {
     "prefix": "property",
     "body": [
       "@property",
-      "def $1(self):",
-      "    \"\"\"$2\"\"\"",
+      "def ${1:attr}(self):",
+      "    \"\"\"${2:docstring}\"\"\"",
       "    $3",
       "",
       "@$4.setter",
@@ -216,23 +270,24 @@
     "body": [
       "from enum import Enum",
       "",
-      "",
-      "class $1(Enum):",
-      "    \"\"\"$2\"\"\"",
-      "    $3 = \"some_value\"",
-      "    $4 = \"some_other_value\"",
+      "class ${1:EnumName}(Enum):",
+      "    \"\"\"${2:docstring}\"\"\"",
+      "    ${3:KEY1} = \"${4:value1}\"",
+      "    ${5:KEY2} = \"${6:value2}\"",
       "    $0"
     ],
     "description": "enum  definition."
   },
+
   "Dataclass Template": {
-    "prefix": "classd",
+    "prefix": "datacls",
     "body": [
-      "from dataclasses import dataclass\n\n",
+      "from dataclasses import dataclass",
+      "",
       "@dataclass",
-      "class $1($2):",
-      "    \"\"\"$3\"\"\"",
-      "    $4",
+      "class ${1:ClassName}(${2:object}):",
+      "    \"\"\"${3:docstring}\"\"\"",
+      "    ${4:attr}: ${5:type} = ${6:default}",
       "    $0"
     ],
     "description": "dataclass definition."
@@ -294,52 +349,6 @@
       "    $0"
     ],
     "description": "try/except/else/finally blocks"
-  },
-
-  "List comprehension": {
-    "prefix": "lc",
-    "body": "[$1 for $2 in $3]$0",
-    "description": "List comprehension for creating a list based on existing lists."
-  },
-  "List comprehension if else": {
-    "prefix": "lcie",
-    "body": "[$1 if $2 else $3 for $4 in $5]$0",
-    "description": "List comprehension for creating a list based on existing lists, with conditional if-else statement."
-  },
-  "List comprehension if filter": {
-    "prefix": "lci",
-    "body": "[$1 for $2 in $3 if $0]",
-    "description": "List comprehension for creating a list based on existing lists, with conditional if statement."
-  },
-  "Dictionary comprehension": {
-    "prefix": "dc",
-    "body": "{$1: $2 for $3, $4 in $5}$0",
-    "description": "Handy and faster way to create dictories based on existing dictionaries."
-  },
-  "Dictionary comprehension if filter": {
-    "prefix": "dci",
-    "body": "{$1: $2 for $3, $4 in $5 if $6}$0",
-    "description": "Handy and faster way to create dictories based on existing dictionaries, with conditional if statement."
-  },
-  "Set comprehension": {
-    "prefix": "sc",
-    "body": "{$1 for $2 in $3}$0",
-    "description": "Create a set based on existing iterables."
-  },
-  "Set Comprehension if filter": {
-    "prefix": "sci",
-    "body": "{$1 for $2 in $3 if $4}$0",
-    "description": "Create a set based on existing iterables, with condition if statement."
-  },
-  "Generator comprehension": {
-    "prefix": "gc",
-    "body": "($1 for $2 in $3)$0",
-    "description": "Create a generator based on existing iterables."
-  },
-  "Generator comprehension if filter": {
-    "prefix": "gci",
-    "body": "($1 for $2 in $3 if $4)$0",
-    "description": "Create a generator based on existing iterables, with condition if statement."
   },
 
   "comment": {
