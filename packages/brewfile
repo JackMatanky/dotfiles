@@ -64,7 +64,8 @@ brew "openjdk"                            # Java Development Kit
 
 # --- Language Server Protocols ---
 brew "python-lsp-server"                  # Language server for Python development
-brew "basedpyright"                       # Python static type checker
+brew "basedpyright"                       # Pyright fork with improvements and built-in pylance features
+brew "pylyzer"                            # Fast static code analyzer & language server for Python
 brew "rust-analyzer"                      # Language server for Rust development
 brew "lua-language-server"                # Language server for Lua development
 brew "typescript-language-server"         # Language server for TypeScript
