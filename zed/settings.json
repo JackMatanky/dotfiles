@@ -758,7 +758,13 @@
       }
     },
     "Python": {
-      "language_servers": ["pylsp", "ruff", "!pyright"],
+      "language_servers": [
+        "basedpyright",
+        "pylyzer",
+        "ruff",
+        "!pylsp",
+        "!pyright"
+      ],
       "tab_size": 4,
       "format_on_save": "on",
       "formatter": [
@@ -840,12 +846,65 @@
   // >>> Language Server Protocol (LSP) <<<
   // ------------------------------------------------------
   "lsp": {
-    // >>> Python LSP: pylsp <<<
-    // Used for code intelligence (completions, definitions, type checking)
+    // >>> Python LSP: basedpyright <<<
+    // Fast, open-source fork of Pyright for completions, type checking, and more
+    "basedpyright": {
+      "settings": {
+        "basedpyright.analysis": {
+          "diagnosticMode": "workspace",
+          "autoSearchPaths": true,
+          "useLibraryCodeForTypes": true,
+          "typeCheckingMode": "basic",
+          "inlayHints": {
+            "variableTypes": true,
+            "functionReturnTypes": true,
+            "callArgumentNames": false
+          }
+        }
+      }
+    },
+
+    // >>> Python LSP: pylyzer <<<
+    // Rust-based static analyzer providing inlay hints and type diagnostics
+    "pylyzer": {
+      "settings": {
+        "python.analysis": {
+          "diagnostics": true,
+          "checkOnType": true,
+          "inlayHints": true
+        }
+      }
+    },
+
+    // >>> Python LSP: ruff <<<
+    // Handles all linting, formatting, and import organization
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "lint": {
+            "enable": true,
+            "select": ["E", "F", "W", "I"],
+            "fixable": ["ALL"]
+          },
+          "format": {
+            "preview": true
+          },
+          "codeAction": {
+            "fixViolation": { "enable": true },
+            "organizeImports": true
+          },
+          "fixAll": true,
+          "lineLength": 100
+        }
+      }
+    },
+
+    // >>> [DISABLED] Python LSP: pylsp <<<
+    // Retained for reference — replaced by basedpyright and pylyzer
+    /*
     "pylsp": {
       "settings": {
         "plugins": {
-          // Disable all built-in formatters and linters — Ruff replaces them
           "autopep8": { "enabled": false },
           "black": { "enabled": false },
           "flake8": { "enabled": false },
@@ -856,82 +915,34 @@
           "pyflakes": { "enabled": false },
           "pylint": { "enabled": false },
           "yapf": { "enabled": false },
-          "ruff": { "enabled": false }, // Disable embedded Ruff in favor of Ruff LSP
-
-          // Enable useful pylsp plugins
-          "pylsp_mypy": { "enabled": true }, // Static type checking with Mypy
-          "jedi": { "enabled": true }, // Completions, definitions
-          "rope": { "enabled": true }, // Optional: refactoring (creates .ropeproject)
-          "rope_autoimport": { "enabled": true }, // Autoimport from Rope
-          "rope_completion": { "enabled": true } // Completion suggestions from Rope
+          "ruff": { "enabled": false },
+          "pylsp_mypy": { "enabled": true },
+          "jedi": { "enabled": true },
+          "rope": { "enabled": true },
+          "rope_autoimport": { "enabled": true },
+          "rope_completion": { "enabled": true }
         }
       }
     },
+    */
 
-    // >>> Python LSP: ruff <<<
-    // Used for linting, formatting, and import organization
-    "ruff": {
-      "initialization_options": {
-        "settings": {
-          "configurationPreference": "filesystemFirst", // Prefer pyproject.toml or ruff.toml
-
-          // Optional override for formatter behavior
-          "configuration": {
-            "format": {
-              "quote-style": "double", // Use double quotes
-              "skip-magic-trailing-comma": false // Keep trailing commas
-            }
-          },
-
-          // Code action support
-          "codeAction": {
-            "disableRuleComment": { "enable": false }, // Avoid inserting noqa automatically
-            "fixViolation": { "enable": true } // Allow quick fix of violations
-          },
-
-          // Linting rules — focused and fast
-          "lint": {
-            "select": ["E4", "E7", "E9", "F"], // Subsets of pycodestyle and pyflakes
-            "extendSelect": ["I"], // isort-style import ordering
-            "enable": true
-          },
-
-          // Formatting behavior
-          "format": {
-            "preview": true // Use latest formatter engine
-          },
-
-          // Additional behavior
-          "fixAll": true, // Fix all fixable issues on save
-          "organizeImports": true, // Sort + clean imports
-          "showSyntaxErrors": true, // Display syntax errors
-          "lineLength": 100 // Set maximum line length
-        }
-      }
-    },
-
-    // >>> TeX LSP: texlab (optional) <<<
-    // Used for compiling LaTeX documents, linting, formatting, and search
+    // >>> TeX LSP: texlab <<<
     "texlab": {
       "settings": {
         "texlab": {
-          // Configure LaTeX build system
           "build": {
-            "executable": "latexmk", // Change to "tectonic" or "pdflatex" if preferred
+            "executable": "latexmk",
             "args": ["-pdf", "-interaction=nonstopmode", "-synctex=1", "%f"],
             "onSave": true
           },
-          // Configure PDF viewer and forward search
           "forwardSearch": {
-            "executable": "zathura", // Change to "okular", "skim", etc.
+            "executable": "zathura",
             "args": ["--synctex-forward", "%l:1:%f", "%p"]
           },
-          // Enable linting on open/save
           "chktex": {
             "onOpenAndSave": true,
             "onEdit": false
           },
-          // Use latexindent for formatting
           "latexFormatter": "latexindent",
           "latexindent": {
             "modifyLineBreaks": true
