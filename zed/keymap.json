@@ -6,6 +6,15 @@
 
 [
   {
+    "context": "Editor",
+    "use_key_equivalents": true,
+    "bindings": {
+      // >>> Formatting & Cancellation <<<
+      "alt-shift-f": "editor::Format",
+      "escape": "editor::Cancel"
+    }
+  },
+  {
     "context": "VimControl && !menu",
     "bindings": {
       // >>> Basic Editing <<<
