@@ -844,6 +844,9 @@
     // Fast, open-source fork of Pyright for completions, type checking, and more
     "basedpyright": {
       "settings": {
+        "python": {
+          "pythonPath": ".venv/bin/python"
+        },
         "disableOrganizeImports": true,
         "basedpyright.analysis": {
           "diagnosticMode": "workspace",
