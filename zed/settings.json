@@ -758,13 +758,7 @@
       }
     },
     "Python": {
-      "language_servers": [
-        "basedpyright",
-        "pylyzer",
-        "ruff",
-        "!pylsp",
-        "!pyright"
-      ],
+      "language_servers": ["basedpyright", "pylyzer", "ruff"], // pylsp, pyright
       "tab_size": 4,
       "format_on_save": "on",
       "formatter": [
