@@ -844,6 +844,7 @@
     // Fast, open-source fork of Pyright for completions, type checking, and more
     "basedpyright": {
       "settings": {
+        "disableOrganizeImports": true,
         "basedpyright.analysis": {
           "diagnosticMode": "workspace",
           "autoSearchPaths": true,
@@ -851,8 +852,8 @@
           "typeCheckingMode": "basic",
           "inlayHints": {
             "variableTypes": true,
-            "functionReturnTypes": true,
-            "callArgumentNames": false
+            "callArgumentNames": false,
+            "functionReturnTypes": true
           }
         }
       }
