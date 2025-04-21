@@ -892,7 +892,7 @@
             "organizeImports": true
           },
           "fixAll": true,
-          "lineLength": 100
+          "lineLength": 88
         }
       }
     },
