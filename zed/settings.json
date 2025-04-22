@@ -847,19 +847,34 @@
     // Fast, open-source fork of Pyright for completions, type checking, and more
     "basedpyright": {
       "settings": {
+        // >>> Python Interpreter <<<
         "python": {
           "pythonPath": ".venv/bin/python"
         },
-        "disableOrganizeImports": true,
+
+        // >>> General LSP Behavior <<<
+        "disableOrganizeImports": true, // Let Ruff handle import organization
+
+        // >>> Static Analysis Settings <<<
         "basedpyright.analysis": {
+          // --- Project-Level Settings ---
           "diagnosticMode": "workspace",
-          "autoSearchPaths": true,
-          "useLibraryCodeForTypes": true,
+          // Options: "off" | "basic" | "strict"
           "typeCheckingMode": "basic",
+          // Automatically discover third-party packages
+          "autoSearchPaths": true,
+          // Use code from libraries even without stubs
+          "useLibraryCodeForTypes": true,
+
+          // --- Diagnostics ---
+          "reportIgnoreCommentWithoutRule": true, // Rule-specific ignores
+
+          // --- Inlay Hints ---
           "inlayHints": {
             "variableTypes": true,
+            "functionReturnTypes": true,
             "callArgumentNames": false,
-            "functionReturnTypes": true
+            "parameterNames": true
           }
         }
       }
