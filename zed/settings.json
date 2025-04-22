@@ -324,7 +324,9 @@
     // Tab to activate after closing the current tab.
     // 1. The previously tab (default): "History"
     // 2. The neighbour tab: "Neighbour"
-    "activate_on_close": "history"
+    "activate_on_close": "history",
+    "show_close_button": "hover",
+    "show_diagnostics": "off"
   },
 
   // Preview Tabs.
@@ -481,7 +483,6 @@
 
   // File Types
   "file_types": {
-    "Plain Text": ["txt"],
     "JSON": ["flake.lock"],
     "JSONC": [
       "**/.zed/**/*.json",
@@ -490,6 +491,8 @@
       "tsconfig.json",
       "pyrightconfig.json"
     ],
+    "Plain Text": ["txt"],
+    "Ruby": ["rb", "brewfile*"],
     "TOML": ["uv.lock", "pyproject.toml"]
   },
 

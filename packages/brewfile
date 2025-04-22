@@ -107,3 +107,4 @@ brew "imagemagick"                        # CLI tool for image conversion and pr
 brew "ffmpeg"                             # Multimedia framework (video/audio conversion)
 brew "webp"                               # Convert images to WebP format
 brew "libavif"                            # Convert images to AVIF format
+brew "graphviz"                           # Graph visualization tool
