@@ -28,6 +28,16 @@ elif [[ "$OS" == "Linux" ]]; then
     export PATH="/usr/lib/jvm/java-17-openjdk-amd64/bin:$PATH" # OpenJDK
 fi
 
+# >>> Build Flags for Brew-Linked Libraries <<<
+# Help C extension modules (e.g., pygraphviz) locate Brew-installed headers and libraries
+if [[ "$OS" == "Darwin" ]]; then
+    export CFLAGS="-I/opt/homebrew/include"
+    export LDFLAGS="-L/opt/homebrew/lib"
+elif [[ "$OS" == "Linux" ]]; then
+    export CFLAGS="-I/home/linuxbrew/.linuxbrew/include"
+    export LDFLAGS="-L/home/linuxbrew/.linuxbrew/lib"
+fi
+
 # >>> Cargo Binaries <<<
 export PATH="$HOME/.cargo/bin:$PATH"
 

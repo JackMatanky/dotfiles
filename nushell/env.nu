@@ -5,6 +5,9 @@
 # Source Link: https://github.com/omerxx/dotfiles/blob/master/nushell/env.nu
 #------------------------------------------------------------------------------
 
+# OS Detection
+let OS = (uname | get operating-system)
+
 # >>> XDG Base Directory <<<
 $env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
 $env.XDG_CACHE_HOME = ($env.HOME | path join '.cache')
@@ -17,10 +20,20 @@ $env.GIT_CONFIG_GLOBAL = ($env.XDG_CONFIG_HOME | path join 'git/config')
 $env.CARGO_HOME = ($env.HOME | path join '.cargo')
 
 # >>> Homebrew Installation Directory <<<
-$env.HOMEBREW = '/opt/homebrew'
+# Default fallback to empty string if OS is unknown
+$env.HOMEBREW = match $OS {
+    "Darwin" => '/opt/homebrew',
+    "Linux" => '/home/linuxbrew/.linuxbrew',
+    _ => '',
+}
 
-# OS Detection
-let OS = (uname | get operating-system)
+# >>> Homebrew Base Paths <<<
+$env.BREW_INCLUDE_DIR = ($env.HOMEBREW | path join 'include')
+$env.BREW_LIB_DIR = ($env.HOMEBREW | path join 'lib')
+
+# >>> Build Flags for Brew-Linked Libraries <<<
+$env.CFLAGS = ["-I", $env.BREW_INCLUDE_DIR] | str join
+$env.LDFLAGS = ["-L", $env.BREW_LIB_DIR] | str join
 
 # Load OpenAI API Key from macOS Keychain (Best Placement)
 # if ($OS == "Darwin") {
