@@ -97,8 +97,8 @@
   "spellright.addToSystemDictionary": true,
   "spellright.notificationClass": "warning",
   "spellright.configurationScope": "user",
-  "spellright.language": ["en"],
-  "spellright.documentTypes": ["markdown", "latex"],
+  "spellright.language": [ "en" ],
+  "spellright.documentTypes": [ "markdown", "latex" ],
 
   // --------------------------------------------
   // Formatting Settings
@@ -116,6 +116,16 @@
   // --------------------------------------------
   // Comment Extensions
   // --------------------------------------------
+  "commentAnchors.tags.separators": [
+    " - ",
+    ": ",
+    " "
+  ],
+  "commentAnchors.tagHighlights.enabled": true,
+  "commentAnchors.tags.displayHierarchyInWorkspace": true,
+  "commentAnchors.tags.displayInGutter": true,
+  "commentAnchors.tags.displayLineNumber": true,
+  "commentAnchors.tags.endTag": "!",
   "commentAnchors.tags.matchPrefix": [
     "<!--",
     "//",
@@ -125,7 +135,7 @@
     "#",
     "--"
   ],
-  "commentAnchors.tags.anchors": {
+  "commentAnchors.tags.list": [
     "ANCHOR": {
       "iconColor": "purple",
       "highlightColor": "#A8C023",
@@ -183,7 +193,7 @@
       "scope": "workspace",
       "behavior": "link"
     }
-  },
+  ],
 
   "better-comments.multilineComments": true,
   "better-comments.highlightPlainText": false,
@@ -263,10 +273,10 @@
   "python.terminal.activateEnvironment": true,
   "python.terminal.shellIntegration.enabled": true,
   "python.venvPath": ".venv",
-  "python.venvFolders": [".pyenv"],
+  "python.venvFolders": [ ".pyenv" ],
 
   //SEGMENT - Ruff
-  "ruff.path": ["/opt/homebrew/bin/ruff"],
+  "ruff.path": [ "/opt/homebrew/bin/ruff" ],
   "ruff.lineLength": 80,
   "ruff.organizeImports": true,
   //!SEGMENT
@@ -737,5 +747,5 @@
 
   "[nix]": {
     "editor.defaultFormatter": "brettm12345.nixfmt-vscode"
-  }
+  },
 }

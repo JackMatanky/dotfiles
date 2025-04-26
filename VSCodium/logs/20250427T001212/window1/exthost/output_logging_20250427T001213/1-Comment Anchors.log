@@ -1,0 +1,19 @@
+[Comment Anchors] Tags: !SECTION|SECTION|ANCHOR|REVIEW|FIXME|TODO|STUB|NOTE|LINK
+[Comment Anchors] Separators:  +\- +|: +| +
+[Comment Anchors] Using matcher /[^\w](!SECTION|SECTION|ANCHOR|REVIEW|FIXME|TODO|STUB|NOTE|LINK)(\[.*\])?(( +\- +|: +| +)(.*))?/gm
+[Comment Anchors] Generated icon cache at /Users/jack/.config/VSCodium/User/globalStorage/exodiusstudios.comment-anchors/icons
+[Comment Anchors] Tags: !SECTION|SECTION|ANCHOR|REVIEW|FIXME|TODO|STUB|NOTE|LINK
+[Comment Anchors] Separators:  +\- +|: +| +
+[Comment Anchors] Using matcher /[^\w](!SECTION|SECTION|ANCHOR|REVIEW|FIXME|TODO|STUB|NOTE|LINK)(\[.*\])?(( +\- +|: +| +)(.*))?/gm
+[Comment Anchors] Generated icon cache at /Users/jack/.config/VSCodium/User/globalStorage/exodiusstudios.comment-anchors/icons
+[Comment Anchors] Tags: !SECTION|SECTION|ANCHOR|REVIEW|FIXME|TODO|STUB|NOTE|LINK
+[Comment Anchors] Separators:  +\- +|: +| +
+[Comment Anchors] Using matcher /[^\w](!SECTION|SECTION|ANCHOR|REVIEW|FIXME|TODO|STUB|NOTE|LINK)(\[.*\])?(( +\- +|: +| +)(.*))?/gm
+[Comment Anchors] Generated icon cache at /Users/jack/.config/VSCodium/User/globalStorage/exodiusstudios.comment-anchors/icons
+[Comment Anchors] Tags: !SECTION|SECTION|ANCHOR|REVIEW|FIXME|TODO|STUB|NOTE|LINK
+[Comment Anchors] Separators:  +\- +|: +| +
+[Comment Anchors] Using matcher /[^\w](!SECTION|SECTION|ANCHOR|REVIEW|FIXME|TODO|STUB|NOTE|LINK)(\[.*\])?(( +\- +|: +| +)(.*))?/gm
+[Comment Anchors] Generated icon cache at /Users/jack/.config/VSCodium/User/globalStorage/exodiusstudios.comment-anchors/icons
+[Comment Anchors] provideCompletionItems
+[Comment Anchors] Failed to build resources: Cannot read properties of undefined (reading 'toUpperCase')
+[Comment Anchors] TypeError: Cannot read properties of undefined (reading 'toUpperCase')
