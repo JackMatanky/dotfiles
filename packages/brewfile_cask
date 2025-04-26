@@ -2,97 +2,92 @@
 # Filename: ~/dotfiles/packages/Brewfile_Cask
 # Github: https://github.com/Homebrew/homebrew-cask
 # Source: https://formulae.brew.sh/cask/
-# Description: Homebrew Cask packages with comments explaining each one.
+# Description: Homebrew Cask packages and macOS-specific formulae.
 # -----------------------------------------------------------------------------
+
 # >>> Homebrew Taps <<<
 tap "homebrew/bundle"                     # Manage multiple Homebrew dependencies
 tap "homebrew/services"                   # Start/stop macOS services
-tap "felixkratz/formulae"                 # Custom tools (e.g., SketchyBar, Borders)
-tap "jesseduffield/lazygit"               # Fast Git UI
-tap "nikitabobko/tap"                     # Miscellaneous useful CLI tools
-tap "zegervdv/zathura"                    # Zathura PDF reader and extensions
+tap "felixkratz/formulae"                  # Custom tools (e.g., SketchyBar, Borders)
+tap "jesseduffield/lazygit"                # Fast Git UI
+tap "nikitabobko/tap"                      # Miscellaneous useful CLI tools
+tap "zegervdv/zathura"                     # Zathura PDF reader and extensions
 
 # -----------------------------------------------
-# Media & Document Processing
+# macOS-Specific Formulae (CLI Utilities)
 # -----------------------------------------------
 brew "switchaudio-osx"                    # CLI for switching macOS audio devices
-brew "nowplaying-cli"                     # Display currently playing media in the
-
-# -----------------------------------------------
-# Additional Tools
-# -----------------------------------------------
-
-# -----------------------------------------------
-# Custom Formulae
-# -----------------------------------------------
-brew "jesseduffield/lazygit/lazygit"      # TUI Git client
-brew "zegervdv/zathura/zathura"           # Zathura PDF reader
-brew "zegervdv/zathura/zathura-pdf-mupdf" # MuPDF plugin for Zathura
-brew "felixkratz/formulae/borders"        # macOS window borders
+brew "nowplaying-cli"                     # Display currently playing media in the menu bar
+brew "borders"                             # Adds borders to macOS windows
+brew "lazygit"                             # Simple terminal UI for Git
+brew "zathura"                             # Zathura PDF reader
+brew "zathura-pdf-mupdf"                   # MuPDF plugin for Zathura
 
 # -----------------------------------------------
 # Casks: GUI Applications
 # -----------------------------------------------
-# >>> Terminal Emulators <<<
-cask "ghostty"                            # Minimal terminal emulator
-cask "wezterm"                            # GPU-accelerated terminal emulator
 
-# >>> IDE & Editors <<<
-cask "zed"                                # GPU-accelerated, minimal, and keyboard-first code editor
-cask "visual-studio-code"                 # Lightweight code editor
+# >>> Media & Document Processing <<<
+cask "adobe-digital-editions"              # eBook and document reader
+cask "sioyek"                               # PDF reader optimized for research papers
+
+# >>> Terminal Emulators <<<
+cask "ghostty"                             # Minimal GPU-accelerated terminal
+cask "wezterm"                             # GPU-accelerated terminal emulator
+
+# >>> IDEs & Editors <<<
+cask "zed"                                 # Keyboard-centric code editor
+cask "vscodium"                            # Open-source version of Visual Studio Code
+cask "visual-studio-code"                  # Lightweight code editor
 
 # >>> SQL Clients <<<
-cask "mysqlworkbench"                     # MySQL database management tool
-cask "pgadmin4"                           # PostgreSQL database management tool
+cask "mysqlworkbench"                      # MySQL database management tool
+cask "pgadmin4"                             # PostgreSQL database management tool
 
-# >>> Productivity & MacOS Utilities <<<
-cask "chatgpt"                            # ChatGPT client for macOS
-cask "aerospace"                          # Window manager for macOS
-cask "espanso"                            # Text expander
-cask "alfred"                             # Productivity app launcher
+# >>> Productivity Tools <<<
+cask "aerospace"                           # Window manager for macOS
+# cask "alfred"                              # Productivity app launcher
+cask "espanso"                             # Text expander
+cask "chatgpt"                             # ChatGPT desktop app for macOS
 
 # >>> Knowledge Management (PKM) <<<
-cask "obsidian"                           # Markdown note-taking app
-cask "anki"                               # Flashcard-based learning and memory training tool
-cask "xournal++"                          # Handwritten notes and PDF annotation tool
-cask "calibre"                            # Ebook management software
-cask "zotero"                             # Reference management software
+cask "obsidian"                            # Markdown note-taking and PKM app
+cask "anki"                                # Spaced repetition flashcard learning
+cask "xournal++"                           # Handwritten notes and PDF annotation tool
+cask "calibre"                             # eBook management and library software
+cask "zotero"                              # Reference management tool
 
-# >>> Office & Document Readers <<<
-cask "libreoffice"                        # Open-source office suite
-cask "libreoffice-language-pack"          # Language packs for LibreOffice
-cask "zathura"                            # Zathura PDF reader
-# cask "zathura-pdf-mupdf"                  # MuPDF plugin for Zathura
-cask "sioyek"                             # PDF reader optimized for research papers
-cask "adobe-digital-editions"             # Adobe Digital Editions
+# >>> Office & Document Tools <<<
+cask "libreoffice"                         # Open-source office suite
+cask "libreoffice-language-pack"           # Language packs for LibreOffice
 
 # >>> Cloud Storage <<<
-cask "onedrive"                           # Microsoft Cloud storage service
-cask "google-drive"                       # Google Cloud storage service
+cask "onedrive"                             # Microsoft cloud storage client
+cask "google-drive"                         # Google Drive client for macOS
 
-# >>> Browser <<<
-cask "zen-browser"                        # Minimalist web browser
+# >>> Browsers <<<
+cask "zen-browser"                         # Minimalist web browser
 
-# >>> Media <<<
-cask "vlc"                                # Open-source media player
+# >>> Media Players <<<
+cask "vlc"                                  # Open-source media player for video and audio
 
 # >>> Communication <<<
-cask "slack"                              # Team communication platform
-# cask "signal"                             # Secure messaging app
+cask "slack"                                # Team collaboration platform
 
 # -----------------------------------------------
 # Fonts
 # -----------------------------------------------
-cask "font-fira-code-nerd-font"           # Fira Code with Nerd Font glyphs
-cask "font-hack-nerd-font"                # Hack font with Nerd Font glyphs
-cask "font-jetbrains-mono-nerd-font"      # JetBrains Mono with Nerd Font glyphs
-cask "font-sf-mono"                       # Apple's SF Mono font
-cask "font-sf-pro"                        # Apple's SF Pro font
-cask "sf-symbols"                         # Apple’s SF Symbols font and tools
+cask "font-fira-code-nerd-font"             # Fira Code font with Nerd Font glyphs
+cask "font-hack-nerd-font"                  # Hack font with Nerd Font glyphs
+cask "font-jetbrains-mono-nerd-font"         # JetBrains Mono font with Nerd Font glyphs
+cask "font-sf-mono"                         # Apple's SF Mono font
+cask "font-sf-pro"                          # Apple's SF Pro font
+cask "sf-symbols"                           # Apple's SF Symbols toolkit
 
 # -----------------------------------------------
 # VS Code Extensions
 # -----------------------------------------------
+
 # >>> UI & Themes <<<
 vscode "dracula-theme.theme-dracula"
 vscode "akamud.vscode-theme-onelight"
@@ -101,9 +96,9 @@ vscode "emmanuelbeziat.vscode-great-icons"
 # >>> Code Navigation & Productivity <<<
 vscode "alefragnani.project-manager"
 vscode "eamodio.gitlens"                      # Git integration
-vscode "exodiusstudios.comment-anchors"       # Code comments & bookmarks
-vscode "aaron-bond.better-comments"           # Improve code readability
-vscode "chakrounanas.turbo-console-log"       # Enhanced console logging
+vscode "exodiusstudios.comment-anchors"       # Anchors for code comments
+vscode "aaron-bond.better-comments"           # Enhance code comments
+vscode "chakrounanas.turbo-console-log"       # Quick console logs
 
 # >>> Vim & Modal Editing <<<
 vscode "andenetalexander.vim-cheatsheet"
@@ -116,9 +111,9 @@ vscode "github.copilot"
 vscode "github.copilot-chat"
 vscode "github.remotehub"
 vscode "github.vscode-github-actions"
+vscode "gitlab.gitlab-workflow"
 vscode "me-dutour-mathieu.vscode-github-actions"
 vscode "github.vscode-pull-request-github"
-vscode "gitlab.gitlab-workflow"
 vscode "ms-vscode.azure-repos"
 
 # >>> Python Development <<<
@@ -176,15 +171,15 @@ vscode "ms-dotnettools.csharp"
 vscode "ms-dotnettools.dotnet-interactive-vscode"
 vscode "ms-dotnettools.vscode-dotnet-pack"
 vscode "ms-dotnettools.vscode-dotnet-runtime"
-vscode "ms-vscode.powershell"                 # PowerShell integration
+vscode "ms-vscode.powershell"
 vscode "ms-vscode.remote-repositories"
 
 # >>> Data Science & Research <<<
-vscode "hongyin163.excel-to-html-table"       # Excel formatting
-vscode "grapecity.gc-excelviewer"             # View Excel files in VS Code
-vscode "cweijan.epub-reader"                  # Read EPUB files in VS Code
-vscode "labnol.google-apps-script"            # Google Apps Script support
-vscode "molaidev.gscript-tools"               # Google Apps Script utilities
+vscode "hongyin163.excel-to-html-table"
+vscode "grapecity.gc-excelviewer"
+vscode "cweijan.epub-reader"
+vscode "labnol.google-apps-script"
+vscode "molaidev.gscript-tools"
 vscode "dunstontc.vscode-google-sheets-syntax"
 
 # >>> Nix Development <<<
@@ -201,28 +196,28 @@ vscode "janisdd.vscode-edit-csv"
 vscode "iulian-radu-at.find-unused-exports"
 
 # >>> Linters & Formatters <<<
-vscode "ban.spellright"                       # Spell checker
-vscode "ms-python.black-formatter"            # Python formatter
+vscode "ban.spellright"                      # Spell checker
+vscode "ms-python.black-formatter"           # Python formatter
 vscode "charliermarsh.ruff"                   # Python linter
 vscode "ms-python.isort"                      # Python import sorter
 vscode "kamadorueda.alejandra"                # Nix formatter
 vscode "davidanson.vscode-markdownlint"
-vscode "markdownlint-cli2"                    # Markdown linter
+vscode "markdownlint-cli2"
 vscode "darkriszty.markdown-table-prettify"
 vscode "kaanaytekin.concise-sql-formatter"
 vscode "inferrinizzard.prettier-sql-vscode"
-vscode "jbockle.jbockle-format-files"         # Batch file formatting
+vscode "jbockle.jbockle-format-files"
 vscode "lacroixdavid1.vscode-format-context-menu"
 
 # >>> Miscellaneous Utilities <<<
-vscode "spadin.zmk-tools"                     # ZMK development tools
+vscode "spadin.zmk-tools"
 vscode "mark-wiemer.vscode-autohotkey-plus-plus"
 vscode "chrisdias.vscode-opennewinstance"
-vscode "visualstudioexptteam.vscodeintellicode"  # AI-powered code suggestions
-vscode "ms-vscode.live-server"                   # Local web server
-vscode "humao.rest-client"                       # API testing & HTTP requests
-vscode "juanallo.vscode-dependency-cruiser"      # Dependency visualization
-vscode "leonidasiiv.google-sheets-equation-syntax-hightlighter" # Google Sheets syntax highlighting
+vscode "visualstudioexptteam.vscodeintellicode"
+vscode "ms-vscode.live-server"
+vscode "humao.rest-client"
+vscode "juanallo.vscode-dependency-cruiser"
+vscode "leonidasiiv.google-sheets-equation-syntax-hightlighter"
 vscode "christian-kohler.npm-intellisense"
 vscode "christian-kohler.path-intellisense"
 vscode "foam.foam-vscode"

@@ -172,20 +172,20 @@ chmod +x scripts/setup.sh
     brew install fzf
     ```
 
-- [ripgrep](https://github.com/BurntSushi/ripgrep)
-
-    - Fast and recursive `grep` alternative.
-
-    ```sh
-    brew install ripgrep
-    ```
-
 - [fd](https://github.com/sharkdp/fd)
 
     - Simple, fast alternative to `find`.
 
     ```sh
     brew install fd
+    ```
+
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+
+    - Fast and recursive `grep` alternative.
+
+    ```sh
+    brew install ripgrep
     ```
 
 - [bat](https://github.com/sharkdp/bat) (Optional)

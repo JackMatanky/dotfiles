@@ -8,6 +8,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.deprecation_warnings = false -- Suppress deprecation messages
+-- http://www.lazyvim.org/extras/vscode
+vim.g.vscode = true
+
 
 -- >>> UI / Appearance <<<
 

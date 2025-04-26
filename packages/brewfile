@@ -2,110 +2,127 @@
 # Filename: ~/dotfiles/packages/Brewfile
 # Source: https://formulae.brew.sh/formula/
 # Github: https://github.com/Homebrew/homebrew-core
-# Description: Homebrew core packages with comments explaining each one.
+# Description: Homebrew core packages (cross-platform, Linux/macOS).
 # -----------------------------------------------------------------------------
+
 # >>> Homebrew Taps <<<
 tap "homebrew/bundle"                     # Manage multiple Homebrew dependencies
 tap "homebrew/services"                   # Start/stop macOS services
-tap "felixkratz/formulae"                 # Custom tools (e.g., SketchyBar, Borders)
-tap "jesseduffield/lazygit"               # Fast Git UI
-tap "nikitabobko/tap"                     # Miscellaneous useful CLI tools
-tap "zegervdv/zathura"                    # Zathura PDF reader and extensions
+tap "felixkratz/formulae"                  # Custom tools (e.g., SketchyBar, Borders)
+tap "jesseduffield/lazygit"                # Fast Git UI
+tap "nikitabobko/tap"                      # Miscellaneous useful CLI tools
+tap "zegervdv/zathura"                     # Zathura PDF reader and extensions
 
 # -----------------------------------------------
-# CLI
+# Terminal Environment
 # -----------------------------------------------
-# >>> Shells & Terminal Enhancements <<<
+# >>> Shells <<<
 brew "bash"                               # Bash shell
 brew "nushell"                            # Modern shell with structured data support
-brew "zellij"                             # Terminal workspace manager, with terminal multiplexer as the base feature
-brew "git"                                # Version control system
-brew "git-filter-repo"                    # Filter and rewrite Git history
-brew "git-lfs"                            # Large File Storage support for Git
-
-# >>> File Navigation & Search <<<
-brew "yazi"                               # Terminal file manager with vim-like keybindings
-brew "zoxide"                             # Smarter `cd` command
-brew "fd"                                 # Fast file search (alternative to `find`)
-brew "fzf"                                # Fuzzy finder for files and commands
-
-# >>> Terminal Display & Output <<<
-brew "eza"                                # Modern `ls` replacement
-brew "bat"                                # Syntax-highlighted file viewer
-brew "ripgrep"                            # Fast file search (like `grep`)
 
 # >>> Shell Enhancements <<<
-brew "starship"                           # Fast, customizable shell prompt
+brew "stow"                               # Symlink manager for dotfiles
+brew "keychain"                           # Securely manage SSH keys
+brew "just"                               # Command runner for task automation
+
+brew "atuin"                              # Shell history replacement with sync and search
 brew "carapace"                           # Shell completion framework
+brew "starship"                           # Fast, customizable shell prompt
+brew "yazi"                               # Terminal file manager with vim-like keybindings
+brew "zellij"                             # Terminal workspace manager
+
+# >>> Shell Plugins <<<
+brew "bash-completion@2"                  # Completion scripts for Bash 4.1+
 brew "zsh-autosuggestions"                # Suggests past commands in Zsh
 brew "zsh-syntax-highlighting"            # Highlights commands in Zsh
 
-# >>> Dotfile & Configuration Management <<<
-brew "stow"                              # Symlink manager for dotfiles
-
-# >>> Security & Authentication <<<
-brew "keychain"                          # Securely manage SSH keys
-
-# -----------------------------------------------
-# Modal Editors
-# -----------------------------------------------
-brew "neovim"                             # Modern Vim-based text editor
-brew "helix"                              # Rust-based modal editor with LSP support
+# >>> CLI Utilities <<<
+brew "zoxide"                             # Smarter `cd` command
+brew "eza"                                # Modern `ls` replacement
+brew "fzf"                                # Fuzzy finder for files and commands
+brew "fd"                                 # Fast file search (alternative to `find`)
+brew "ripgrep"                            # Fast file content search (alternative to `grep`)
+brew "bat"                                # Syntax-highlighted file viewer
 
 # -----------------------------------------------
-# Programming Languages & Runtimes
+# Version Control
 # -----------------------------------------------
-brew "python@3.13"                        # Python programming language
-brew "mysql"                              # MySQL database server
-brew "postgresql@17"                      # PostgreSQL database server
-# brew "rust"                               # Rust programming language
-brew "node"                               # Node.js runtime
+brew "git"                                # Version control system
+brew "git-filter-repo"                    # Filter and rewrite Git history
+brew "git-lfs"                            # Large File Storage support for Git
+brew "lazygit"                            # Simple terminal UI for Git commands
+
+# -----------------------------------------------
+# Development Environment
+# -----------------------------------------------
+# >>> Languages & Runtimes <<<
 brew "lua"                                # Lightweight scripting language
+brew "mysql"                              # MySQL database server
+brew "node"                               # Node.js runtime
 brew "openjdk"                            # Java Development Kit
+brew "postgresql@17"                      # PostgreSQL database server
+brew "python@3.13"                        # Python programming language
+# brew "rust"                              # Rust programming language
 
-# >>> Language Server Protocols <<<
-brew "basedpyright"                       # Pyright fork with improvements and built-in pylance features
-brew "pylyzer"                            # Fast static code analyzer & language server for Python
+# >>> Language Server Protocols (LSPs) <<<
+brew "marksman"                           # Markdown LSP
+brew "lua-language-server"                # Lua LSP
+brew "rust-analyzer"                      # Rust LSP
+brew "texlab"                             # LaTeX LSP
+brew "typescript-language-server"         # TypeScript LSP
+brew "vscode-langservers-extracted"       # Various web language servers
+brew "yaml-language-server"               # YAML LSP
+
+# --- Python LSPs ---
+brew "basedpyright"                       # Python LSP (Pyright fork with Pylance features)
+brew "pylyzer"                            # Fast static code analyzer for Python
 # brew "python-lsp-server"                  # Language server for Python development
-brew "rust-analyzer"                      # Language server for Rust development
-brew "lua-language-server"                # Language server for Lua development
-brew "typescript-language-server"         # Language server for TypeScript
-brew "vscode-langservers-extracted"       # Collection of useful language servers
-brew "yaml-language-server"               # YAML support in editors
-brew "texlab"                             # Language server for LaTeX
-brew "marksman"                           # Markdown LSP server
 
-# >>> Python  <<<
+# >>> Python Toolchain <<<
 brew "pyenv"                              # Python version manager
-brew "pyenv-virtualenv"                   # Python version manager
-brew "uv"                                 # Python package manager (alternative to pip)
+brew "pyenv-virtualenv"                   # Virtual environment plugin for pyenv
+brew "uv"                                 # Fast Python package installer (alternative to pip)
 brew "ipython"                            # Interactive Python shell
 brew "jupytext"                           # Convert Jupyter notebooks to plain scripts
 
-# >>> Lua <<<
-brew "luarocks"                           # Package manager for Lua
+# >>> Lua Toolchain <<<
 brew "luajit"                             # Just-In-Time compiler for Lua
+brew "luarocks"                           # Package manager for Lua
 
 # >>> Linters & Formatters <<<
-brew "ruff"                               # Fast Python linter and formatter
-brew "sqlfluff"                           # SQL linter and formatter
-brew "stylua"                             # Lua code formatter
+brew "prettier"                           # Universal code formatter
 brew "markdownlint-cli2"                  # Improved Markdown linter
-brew "prettier"                           # Code formatter for multiple languages
+brew "ruff"                               # Python linter and formatter
+brew "sqlfluff"                           # SQL linter and formatter
+brew "sql-formatter"                      # SQL formatter
+brew "stylua"                             # Lua code formatter
 
 # -----------------------------------------------
-# Media & Document Processing
+# Document Processing & Viewing
 # -----------------------------------------------
+# >>> Document Processing & Conversion <<<
 brew "pandoc"                             # Document format converter
-brew "ocrmypdf"                           # Optical Character Recognition (OCR) tool for PDFs
-brew "img2pdf"                            # Convert images to PDF format
-# brew "mupdf-tools"                        # Lightweight PDF and XPS viewer and tools
-brew "pdftoppm"                           # Convert PDFs to images
-brew "qpdf"                               # Tools for and transforming and inspecting PDF files
-brew "poppler"                            # PDF rendering library (based on the xpdf-3.0 code base)
-brew "tesseract"                          # Optical Character Recognition (OCR) tool
-brew "imagemagick"                        # CLI tool for image conversion and processing
-brew "ffmpeg"                             # Multimedia framework (video/audio conversion)
-brew "webp"                               # Convert images to WebP format
-brew "libavif"                            # Convert images to AVIF format
-brew "graphviz"                           # Graph visualization tool
+brew "ocrmypdf"                           # OCR tool for PDFs
+brew "img2pdf"                            # Convert images to PDF
+# brew "mupdf-tools"                       # Lightweight PDF and XPS viewer and tools
+brew "pdftoppm"                           # Convert PDF pages to images
+brew "qpdf"                               # Inspect and transform PDFs
+brew "poppler"                            # PDF rendering utilities
+
+# >>> Document Viewing <<<
+brew "zathura"                             # Lightweight document viewer (PDF, EPUB, PostScript)
+brew "zathura-pdf-mupdf"                   # PDF plugin for zathura (MuPDF backend)
+
+# -----------------------------------------------
+# Image Processing
+# -----------------------------------------------
+brew "tesseract"                           # OCR engine for scanned documents
+brew "imagemagick"                        # CLI tool for image manipulation
+brew "webp"                                # WebP image format tools
+brew "libavif"                             # AVIF image format tools
+brew "graphviz"                            # Graph visualization tool (produces images)
+
+# -----------------------------------------------
+# Multimedia (Audio/Video) Processing
+# -----------------------------------------------
+brew "ffmpeg"                             # Multimedia framework for audio/video processing
