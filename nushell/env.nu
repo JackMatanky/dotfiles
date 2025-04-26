@@ -261,7 +261,6 @@ if (which atuin | is-not-empty) {
     if not ($init_file | path exists) {
         atuin init nu | save --force $init_file
     }
-    source $init_file
 }
 
 # >>> Zellij: Terminal Multiplexer <<<
