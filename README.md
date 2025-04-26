@@ -9,8 +9,6 @@ Dotfiles repository managed with **GNU Stow** for **macOS** and **Linux (Ubuntu)
 - [Development Environment](#development-environment)
 - [Personal Knowledge Management (PKM)](#personal-knowledge-management-pkm)
 - [Media and Document Processing](#media-and-document-processing)
-- [Cloud Storage](#cloud-storage)
-- [Communication Tools](#communication-tools)
 - [Browsers](#browsers)
 - [Unused / Archived Programs](#unused--archived-programs)
 
@@ -33,7 +31,7 @@ chmod +x scripts/setup.sh
 
 - [Nushell](https://www.nushell.sh/)
 
-    - Modern shell with structured data support.
+    - Modern structured-shell with pipelines and tables.
 
     ```sh
     brew install nushell
@@ -41,12 +39,12 @@ chmod +x scripts/setup.sh
 
 - [ZSH](https://zsh.sourceforge.io/)
 
-    - Traditional Unix shell with powerful customization.
+    - Highly customizable traditional Unix shell.
 
     - ZSH Specific Plugins:
 
         - [ZSH Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-        - [ZSH Syntax Highlighting] (https://github.com/zsh-users/zsh-syntax-highlighting)
+        - [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
         - [ZSH Autocomplete](https://github.com/marlonrichert/zsh-autocomplete)
 
         ```sh
@@ -55,9 +53,9 @@ chmod +x scripts/setup.sh
         brew install zsh-autocomplete
         ```
 
-- [Bash](https://www.gnu.org/software/bash/)
+- [Bash](https://www.gnu.org/software/bash/) (Optional)
 
-    - (Optional) — Traditional Unix shell.
+    - Classic Unix shell.
 
     ```sh
     brew install bash
@@ -71,7 +69,7 @@ chmod +x scripts/setup.sh
         brew install bash-completion@2
         ```
 
-        Note: Add the following line to your ~/.bash_profile:
+        Add to `.bash_profile`:
 
         ```sh
         [[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
@@ -80,13 +78,16 @@ chmod +x scripts/setup.sh
 ### Terminal Emulators
 
 - [Ghostty](https://github.com/ghostty/ghostty)
-    - GPU-accelerated terminal emulator.
+
+    - GPU-accelerated, fast terminal emulator.
 
     ```sh
     brew install --cask ghostty
     ```
 
 - [Wezterm](https://wezfurlong.org/wezterm/)
+
+    - Highly configurable GPU-accelerated terminal emulator.
 
     ```sh
     brew install --cask wezterm
@@ -95,6 +96,7 @@ chmod +x scripts/setup.sh
 ### Shell Enhancements
 
 - [GNU Stow](https://www.gnu.org/software/stow/)
+
     - Dotfiles symlink farm manager which takes distinct sets of software and/or data located in separate directories on the filesystem, and makes them appear to be installed in a single directory tree.
     - Docs: https://www.gnu.org/software/stow/manual/stow.html
 
@@ -103,6 +105,7 @@ chmod +x scripts/setup.sh
     ```
 
 - [Keychain](https://www.funtoo.org/Keychain)
+
     - Keychain helps you to manage SSH and GPG keys in a convenient and secure manner. It acts as a frontend to ssh-agent and ssh-add, but allows you to easily have one long running ssh-agent process per system, rather than the norm of one ssh-agent per login session.
 
     ```sh
@@ -110,7 +113,8 @@ chmod +x scripts/setup.sh
     ```
 
 - [Atuin](https://github.com/atuinsh/atuin)
-    - Improved shell history manager for zsh, bash, fish and nushell
+
+    - Shell history replacement with structured search and optional sync for zsh, bash, fish and nushell
     - Docs: https://docs.atuin.sh
 
     ```sh
@@ -118,13 +122,43 @@ chmod +x scripts/setup.sh
     ```
 
 - [Carapace](https://carapace.sh/)
-    - Multi-shell command completion
+
+    - Shell completion engine for multiple shells.
 
     ```sh
     brew install carapace
     ```
 
+- [Starship](https://starship.rs/)
+
+    - Cross-shell minimal prompt with extensive customization.
+
+    ```sh
+    brew install starship
+    ```
+
+- [Yazi](https://github.com/sxyazi/yazi)
+
+    - Docs: https://yazi-rs.github.io/
+    - Fast, modern terminal file manager with preview support.
+
+    ```sh
+    brew install yazi
+    ```
+
+### CLI Utilities
+
+- [zoxide](https://github.com/ajeetdsouza/zoxide)
+
+    - Smarter `cd` command with fuzzy matching.
+
+    ```sh
+    brew install zoxide
+    ```
+
 - [eza](https://eza.rocks/)
+
+    - Modern `ls` replacement with color and git support.
 
     ```sh
     brew install eza
@@ -132,11 +166,15 @@ chmod +x scripts/setup.sh
 
 - [fzf](https://junegunn.github.io/fzf/)
 
+    - Powerful fuzzy finder for files and history.
+
     ```sh
     brew install fzf
     ```
 
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
+
+    - Fast and recursive `grep` alternative.
 
     ```sh
     brew install ripgrep
@@ -144,41 +182,51 @@ chmod +x scripts/setup.sh
 
 - [fd](https://github.com/sharkdp/fd)
 
+    - Simple, fast alternative to `find`.
+
     ```sh
     brew install fd
     ```
 
-### Multiplexxer
+- [bat](https://github.com/sharkdp/bat) (Optional)
+
+    - Syntax-highlighted and paginated alternative to `cat`.
+
+    ```sh
+    brew install bat
+    ```
+
+### Terminal Multiplexers
 
 - [Zellij](https://zellij.dev/)
+
+    - Terminal workspace manager and multiplexer.
 
     ```sh
     brew install zellij
     ```
 
-### Prompt
+- [tmux](https://github.com/tmux/tmux) (Optional)
 
-- [Starship](https://starship.rs/)
-
-    ```sh
-    brew install starship
-    ```
-
-### File Manager
-
-- [Yazi](https://github.com/sxyazi/yaz)
-    - [docs](https://yazi-rs.github.io/)
+    - Traditional terminal multiplexer.
 
     ```sh
-    brew install yazi
+    brew install tmux
     ```
 
-### SSH
+- [tmuxinator](https://github.com/tmuxinator/tmuxinator) (Optional)
 
+    - Session management for tmux.
+
+    ```sh
+    brew install tmuxinator
+    ```
 
 ### Version Control
 
 - [Git](https://git-scm.com/)
+
+    - Distributed version control system.
 
     ```sh
     brew install git
@@ -186,11 +234,15 @@ chmod +x scripts/setup.sh
 
 - [LazyGit](https://github.com/jesseduffield/lazygit)
 
+    - Simple TUI for git commands.
+
     ```sh
     brew install lazygit
     ```
 
-- [Git Large File Storage](https://git-lfs.github.com/)
+- [Git LFS](https://git-lfs.github.com/)
+
+    - Support for large files in git repositories.
 
     ```sh
     brew install git-lfs
@@ -198,13 +250,17 @@ chmod +x scripts/setup.sh
 
 - [Git Filter Repo](https://github.com/newren/git-filter-repo)
 
+    - Efficient git history rewriting tool.
+
     ```sh
     brew install git-filter-repo
     ```
 
-## Development
+## Development Environment
 
 - [Neovim](https://neovim.io/)
+
+    - Hyperextensible Vim-based text editor.
 
     ```sh
     brew install neovim
@@ -212,27 +268,50 @@ chmod +x scripts/setup.sh
 
 - [Helix](https://helix-editor.com/)
 
+    - Postmodern modal text editor.
+
     ```sh
     brew install helix
     ```
 
 - [Zed](https://zed.dev/)
 
+    - High-performance collaborative code editor.
+
     ```sh
     brew install --cask zed
     ```
 
-### Languages
+- [VSCodium](https://vscodium.com)
 
-#### Language Server Protocol
+    - GitHub: https://github.com/VSCodium/vscodium
+    - a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code without Microsoft branding, telemetry, and licensing.
+
+    ```sh
+    brew install --cask vscodium
+    ```
+
+- [VS Code](https://code.visualstudio.com/)
+
+    - Extensible code editor.
+
+    ```sh
+    brew install --cask visual-studio-code
+    ```
+
+### Language Servers
 
 - [VS Code Language Servers](https://github.com/hrsh7th/vscode-langservers-extracted)
+
+    - Extracted LSP servers:
+        - HTML: `vscode-html-language-server`
+        - CSS: `vscode-css-language-server`
+        - JSON: `vscode-json-language-server`
+        - ESLint: `vscode-eslint-language-server`
 
     ```sh
     brew install vscode-langservers-extracted
     ```
-
-Includes: - `vscode-html-language-server` - `vscode-css-language-server` - `vscode-json-language-server` - `vscode-eslint-language-server`
 
 - [TypeScript Language Server](https://github.com/typescript-language-server/typescript-language-server)
 
@@ -241,6 +320,8 @@ Includes: - `vscode-html-language-server` - `vscode-css-language-server` - `vsco
     ```
 
 - [TexLab](https://github.com/latex-lsp/texlab)
+
+    - LaTeX Language Server.
 
     ```sh
     brew install texlab
@@ -252,21 +333,19 @@ Includes: - `vscode-html-language-server` - `vscode-css-language-server` - `vsco
     brew install yaml-language-server
     ```
 
-#### Python
+### Python Tooling
 
 - [Python](https://www.python.org/)
+
+    - Latest version of the Python programming language.
 
     ```sh
     brew install python@3.13
     ```
 
-- [Python Language Server](https://github.com/python-lsp/python-lsp-server)
-
-    ```sh
-    brew install python-lsp-server
-    ```
-
 - [BasedPyright](https://github.com/DetachHead/basedpyright)
+
+    - Open source LSP and pype checker for Python based on Pyright.
 
     ```sh
     brew install basedpyright
@@ -274,17 +353,23 @@ Includes: - `vscode-html-language-server` - `vscode-css-language-server` - `vsco
 
 - [Pylyzer](https://github.com/mtshiba/pylyzer)
 
+    - Fast static analysis for Python.
+
     ```sh
     brew install pylyzer
     ```
 
 - [uv](https://github.com/astral-sh/uv)
 
+    - Extremely fast Python package installer and resolver.
+
     ```sh
     brew install uv
     ```
 
-- [iPython](https://ipython.org/)
+- [IPython](https://ipython.org/)
+
+    - Rich interactive Python shell.
 
     ```sh
     brew install ipython
@@ -292,11 +377,15 @@ Includes: - `vscode-html-language-server` - `vscode-css-language-server` - `vsco
 
 - [Jupytext](https://jupytext.readthedocs.io/)
 
+    - Sync Jupyter notebooks and plain text scripts.
+
     ```sh
     brew install jupytext
     ```
 
-- [ruff Formatter](https://docs.astral.sh/ruff/)
+- [ruff](https://docs.astral.sh/ruff/)
+
+    - Extremely fast Python linter and formatter.
 
     ```sh
     brew install ruff
@@ -304,67 +393,79 @@ Includes: - `vscode-html-language-server` - `vscode-css-language-server` - `vsco
 
 - [isort](https://pycqa.github.io/isort/)
 
+    - Automatically sort Python imports.
+
     ```sh
     brew install isort
     ```
 
-#### Java
+### Java
 
-- [Java Development Kit]()
+- [OpenJDK](https://openjdk.org/)
 
-used for zotero libreoffice plugin
+    - Open-source Java Development Kit.
 
     ```sh
     brew install openjdk
     ```
 
-If you need to have openjdk first in your PATH, run:
-echo 'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"' >> /Users/jack/.config/zsh/.zshrc
+    If you need to add to `PATH`:
 
-For compilers to find openjdk you may need to set:
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+    ```sh
+    echo 'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"' >> ~/.zshrc
+    ```
 
-#### Markdown
+    And for compilers:
 
-- [Marksman](https://github.com/python-lsp/python-lsp-server)
+    ```sh
+    export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+    ```
+
+### Markdown Tooling
+
+- [Marksman](https://github.com/artempyanykh/marksman)
+
+    - Markdown Language Server.
 
     ```sh
     brew install marksman
     ```
 
-- [Markdown Lint](https://github.com/igorshubovych/markdownlint-cli)
+- [Markdownlint CLI](https://github.com/igorshubovych/markdownlint-cli)
+
+    - Markdown linter and style checker.
 
     ```sh
     brew install markdownlint-cli
     ```
 
-#### Rust
+### Rust
 
 - [Rust](https://www.rust-lang.org/)
+
+    - Systems programming language.
 
     ```sh
     brew install rust
     ```
 
-#### Formatters
+### Formatters
 
 - [Prettier](https://prettier.io/)
+
+    - Code formatter supporting multiple languages.
 
     ```sh
     brew install prettier
     ```
 
-## Browser
+---
 
-- [Zen Browser](https://zen-browser.app/)
-
-    ```sh
-    brew install --cask zen-browser
-    ```
-
-## PKM
+## Personal Knowledge Management (PKM)
 
 - [Obsidian](https://obsidian.md/)
+
+    - Personal knowledge base and markdown editor.
 
     ```sh
     brew install --cask obsidian
@@ -372,51 +473,56 @@ export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
 - [Anki](https://apps.ankiweb.net/)
 
-```sh
-brew install --cask anki
-brew install webp
-brew install avif
-```
+    - Spaced repetition flashcard software.
 
-- [Calibre](https://calibre-ebook.com)
+    ```sh
+    brew install --cask anki
+    brew install webp
+    brew install avif
+    ```
+
+- [Calibre](https://calibre-ebook.com/)
+
+    - Comprehensive e-book management software.
 
     ```sh
     brew install --cask calibre
     ```
 
-## Document Viewer and Processor
+---
+
+## Media and Document Processing
 
 - [LibreOffice](https://www.libreoffice.org/)
 
+    - Free office suite and language pack
+
     ```sh
     brew install --cask libreoffice
-    ```
-
-- LibreOffice Language Pack
-
-    ```sh
     brew install --cask libreoffice-language-pack
     ```
 
-- Zathura Document Viewer
-    - [Docs](https://pwmt.org/projects/zathura/)
+- [Zathura Document Viewer](https://pwmt.org/projects/zathura/)
+
     - [GitHub](https://github.com/pwmt/zathura)
+    - Lightweight document viewer.
 
     ```sh
     brew install zathura
     ```
 
-- MuPDF Plugin
+    - MuPDF Plugin for Zathura:
 
-```sh
-brew install zathura-pdf-mupdf
-mkdir -p $(brew --prefix zathura)/lib/zathura
-ln -s $(brew --prefix zathura-pdf-mupdf)/libpdf-mupdf.dylib $(brew --prefix zathura)/lib/zathura/libpdf-mupdf.dylib
-```
+        ```sh
+        brew install zathura-pdf-mupdf
+        mkdir -p $(brew --prefix zathura)/lib/zathura
+        ln -s $(brew --prefix zathura-pdf-mupdf)/libpdf-mupdf.dylib $   (brew --prefix zathura)/lib/zathura/libpdf-mupdf.dylib
+        ```
 
-- OCRmyPDF
-    - [Docs](https://ocrmypdf.readthedocs.io/en/latest/)
+- [OCRmyPDF](https://ocrmypdf.readthedocs.io/en/latest/)
+
     - [GitHub](https://github.com/ocrmypdf/OCRmyPDF)
+    - Adds OCR text layers to PDFs.
 
     ```sh
     brew install ocrmypdf
@@ -424,13 +530,16 @@ ln -s $(brew --prefix zathura-pdf-mupdf)/libpdf-mupdf.dylib $(brew --prefix zath
 
 - [tesseract OCR](https://github.com/tesseract-ocr/)
 
+    - Optical character recognition engine.
+
     ```sh
     brew install tesseract
     ```
 
-- qpdf: Tool for manipulating PDF files
-    - [Docs](https://qpdf.readthedocs.io/en/stable/index.html)
+- [qpdf](https://qpdf.readthedocs.io/en/stable/)
+
     - [GitHub](https://github.com/qpdf/qpdf)
+    - PDF transformation and inspection tool.
 
     ```sh
     brew install qpdf
@@ -438,6 +547,40 @@ ln -s $(brew --prefix zathura-pdf-mupdf)/libpdf-mupdf.dylib $(brew --prefix zath
 
 - [img2pdf](https://github.com/jwilk/img2pdf)
 
+    - Convert images to PDF without quality loss.
+
     ```sh
     brew install img2pdf
+    ```
+
+---
+
+## Browsers
+
+- [Zen Browser](https://zen-browser.app/)
+
+    - Lightweight, distraction-free browser.
+
+    ```sh
+    brew install --cask zen-browser
+    ```
+
+---
+
+## Unused / Archived Programs
+
+- [MuPDF Tools](https://mupdf.com/) (Archived)
+
+    - Lightweight PDF and XPS viewer toolkit.
+
+    ```sh
+    brew install mupdf-tools
+    ```
+
+- [Signal](https://signal.org/) (Archived)
+
+    - Secure private messaging app.
+
+    ```sh
+    brew install --cask signal
     ```
