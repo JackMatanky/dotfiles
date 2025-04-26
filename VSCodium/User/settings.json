@@ -2,6 +2,15 @@
   // --------------------------------------------
   // Global Settings
   // --------------------------------------------
+  "extensions.additionalExtensionGallery": [
+    {
+      "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
+      "itemUrl": "https://marketplace.visualstudio.com/items",
+      "controlUrl": "",
+      "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
+      "resourceUrlTemplate": "https://{publisher}.gallery.vsassets.io/_apis/public/gallery/publisher/{publisher}/extension/{extension}/{version}/assetbyname/{assetName}"
+    }
+  ],
   "editor.fontFamily": "FiraCode Nerd Font Mono",
   "editor.fontSize": 15,
   "editor.fontLigatures": true,
