@@ -1,0 +1,168 @@
+# --------------------------------------------------------------------
+#  Filename: ~/dotfiles/atuin/config.toml
+#  Atuin Git: https://github.com/atuinsh/atuin
+#  Atuin Docs: https://docs.atuin.sh
+#  Description: Configuration file for Atuin, a command-line history manager.
+# --------------------------------------------------------------------
+
+# Where to store your database, default is your system data directory
+# Linux/macOS: ~/.local/share/atuin/history.db
+# Windows: %USERPROFILE%/.local/share/atuin/history.db
+# db_path = "~/.history.db"
+
+# Where to store your encryption key, default is your system data directory
+# Linux/macOS: ~/.local/share/atuin/key
+# Windows: %USERPROFILE%/.local/share/atuin/key
+# key_path = "~/.key"
+
+# Where to store your auth session token, default is your system data directory
+# Linux/macOS: ~/.local/share/atuin/session
+# Windows: %USERPROFILE%/.local/share/atuin/session
+# session_path = "~/.session"
+
+# Date format used, either "us" or "uk"
+dialect = "us"
+
+# Default timezone to use when displaying time
+timezone = "local"
+
+# Enable or disable automatic sync
+auto_sync = false
+
+# Enable or disable automatic update checks
+update_check = true
+
+# Address of the sync server
+sync_address = ""
+
+# How often to sync history. Note that this is only triggered when a command
+# is ran, so sync intervals may well be longer
+# Set it to 0 to sync after every command
+# sync_frequency = "10m"
+
+# Which search mode to use
+# Possible values: prefix, fulltext, fuzzy, skim
+search_mode = "fuzzy"
+
+# Which filter mode to use by default
+# Possible values: "global", "host", "session", "directory", "workspace"
+filter_mode = "global"
+
+# With workspace filtering enabled, Atuin will filter for commands executed
+# in any directory within a git repository tree (default: false).
+workspaces = false
+
+# Which filter mode to use when atuin is invoked from a shell up-key binding
+filter_mode_shell_up_key_binding = "global"
+
+# Which search mode to use when atuin is invoked from a shell up-key binding
+search_mode_shell_up_key_binding = "fuzzy"
+
+# Which style to use
+# Possible values: auto, full, compact
+style = "compact"
+
+# The maximum number of lines the interface should take up
+# Set it to 0 to always go full screen
+inline_height = 0
+
+# Invert the UI - put the search bar at the top , Default to `false`
+invert = false
+
+# Enable or disable showing a preview of the selected command
+show_preview = true
+
+# What to do when the escape key is pressed when searching
+# Possible values: return-original, return-query
+exit_mode = "return-original"
+
+# Possible values: emacs, subl
+word_jump_mode = "emacs"
+
+# Characters that count as a part of a word
+# word_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+
+# Number of context lines to show when scrolling by pages
+# scroll_context_lines = 1
+
+# Use ctrl instead of alt as the shortcut modifier key for numerical UI shortcuts
+# ctrl_n_shortcuts = false
+
+# Default history list format - can also be specified with the --format arg
+# history_format = "{time}\t{command}\t{duration}"
+
+# Prevent commands matching any of these regexes from being written to history.
+# history_filter = [ "^secret-cmd", "^innocuous-cmd .*--secret=.+" ]
+
+# Prevent commands run with cwd matching any of these regexes from being written
+# cwd_filter = [ "^/very/secret/area" ]
+
+# Configure the maximum height of the preview to show.
+# max_preview_height = 4
+
+# Configure whether or not to show the help row
+show_help = true
+
+# Configure whether or not to show tabs for search and inspect
+show_tabs = true
+
+# Configure whether or not the tabs row may be auto-hidden
+auto_hide_height = 8
+
+# Filter sensitive secrets by default
+secrets_filter = true
+
+# Execute commands immediately after selection (unless you press Tab to edit)
+enter_accept = true
+
+# Defaults to "emacs", can be \"auto\", \"emacs\", \"vim-insert\", \"vim-normal\"
+# keymap_mode = "auto"
+
+# Cursor style in each keymap mode
+# keymap_cursor = { emacs = "blink-block", vim_insert = "blink-block", vim_normal = "steady-block" }
+
+# network_connect_timeout = 5
+# network_timeout = 5
+
+# Timeout (in seconds) for acquiring a local database connection
+local_timeout = 5
+
+# Set this to true to minimize motion
+prefers_reduced_motion = false
+
+[stats]
+# Commands to prioritize for subcommands stats
+common_subcommands = [
+  "apt", "cargo", "composer", "docker", "git", "go",
+  "npm", "pnpm", "systemctl", "tmux", "yarn"
+]
+
+# Commands to totally ignore for stats
+ignored_commands = [
+  "cd", "ls", "vi"
+]
+
+[keys]
+# Behavior for keys
+scroll_exits = true
+exit_past_line_start = true
+accept_past_line_end = true
+
+[sync]
+# Sync v2 enabled by default (even though sync itself is off)
+records = true
+
+[preview]
+# Preview strategy
+strategy = "auto"
+
+[daemon]
+# Sync via daemon disabled
+# enabled = false
+# sync_frequency = 300
+# socket_path = "~/.local/share/atuin/atuin.sock"
+# systemd_socket = false
+# tcp_port = 8889
+
+[search]
+filters = [ "global", "host", "session", "workspace", "directory" ]

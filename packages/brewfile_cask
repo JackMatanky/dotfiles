@@ -13,17 +13,17 @@ tap "nikitabobko/tap"                     # Miscellaneous useful CLI tools
 tap "zegervdv/zathura"                    # Zathura PDF reader and extensions
 
 # -----------------------------------------------
-# >>> Media & Document Processing <<<
+# Media & Document Processing
 # -----------------------------------------------
 brew "switchaudio-osx"                    # CLI for switching macOS audio devices
 brew "nowplaying-cli"                     # Display currently playing media in the
 
 # -----------------------------------------------
-# >>> Additional Tools <<<
+# Additional Tools
 # -----------------------------------------------
 
 # -----------------------------------------------
-# >>> Custom Formulae <<<
+# Custom Formulae
 # -----------------------------------------------
 brew "jesseduffield/lazygit/lazygit"      # TUI Git client
 brew "zegervdv/zathura/zathura"           # Zathura PDF reader
@@ -31,57 +31,57 @@ brew "zegervdv/zathura/zathura-pdf-mupdf" # MuPDF plugin for Zathura
 brew "felixkratz/formulae/borders"        # macOS window borders
 
 # -----------------------------------------------
-# >>> Casks: GUI Applications <<<
+# Casks: GUI Applications
 # -----------------------------------------------
-# --- Terminal Emulators ---
+# >>> Terminal Emulators <<<
 cask "ghostty"                            # Minimal terminal emulator
 cask "wezterm"                            # GPU-accelerated terminal emulator
 
-# --- IDE & Editors ---
+# >>> IDE & Editors <<<
 cask "zed"                                # GPU-accelerated, minimal, and keyboard-first code editor
 cask "visual-studio-code"                 # Lightweight code editor
 
-# --- SQL Clients ---
+# >>> SQL Clients <<<
 cask "mysqlworkbench"                     # MySQL database management tool
 cask "pgadmin4"                           # PostgreSQL database management tool
 
-# --- Productivity & MacOS Utilities ---
+# >>> Productivity & MacOS Utilities <<<
 cask "chatgpt"                            # ChatGPT client for macOS
 cask "aerospace"                          # Window manager for macOS
 cask "espanso"                            # Text expander
 cask "alfred"                             # Productivity app launcher
 
-# --- Knowledge Management (PKM) ---
+# >>> Knowledge Management (PKM) <<<
 cask "obsidian"                           # Markdown note-taking app
-cask "anki"                               # Flashcard-based learning tool
+cask "anki"                               # Flashcard-based learning and memory training tool
 cask "xournal++"                          # Handwritten notes and PDF annotation tool
 cask "calibre"                            # Ebook management software
 cask "zotero"                             # Reference management software
 
-# --- Office & Document Readers ---
+# >>> Office & Document Readers <<<
 cask "libreoffice"                        # Open-source office suite
 cask "libreoffice-language-pack"          # Language packs for LibreOffice
 cask "zathura"                            # Zathura PDF reader
-cask "zathura-pdf-mupdf"                  # MuPDF plugin for Zathura
+# cask "zathura-pdf-mupdf"                  # MuPDF plugin for Zathura
 cask "sioyek"                             # PDF reader optimized for research papers
 cask "adobe-digital-editions"             # Adobe Digital Editions
 
-# --- Cloud Storage ---
+# >>> Cloud Storage <<<
 cask "onedrive"                           # Microsoft Cloud storage service
 cask "google-drive"                       # Google Cloud storage service
 
-# --- Browser ---
+# >>> Browser <<<
 cask "zen-browser"                        # Minimalist web browser
 
-# --- Media ---
+# >>> Media <<<
 cask "vlc"                                # Open-source media player
 
-# --- Communication ---
+# >>> Communication <<<
 cask "slack"                              # Team communication platform
 # cask "signal"                             # Secure messaging app
 
 # -----------------------------------------------
-# >>> Fonts <<<
+# Fonts
 # -----------------------------------------------
 cask "font-fira-code-nerd-font"           # Fira Code with Nerd Font glyphs
 cask "font-hack-nerd-font"                # Hack font with Nerd Font glyphs
@@ -91,26 +91,26 @@ cask "font-sf-pro"                        # Apple's SF Pro font
 cask "sf-symbols"                         # Apple’s SF Symbols font and tools
 
 # -----------------------------------------------
-# >>> VS Code Extensions <<<
+# VS Code Extensions
 # -----------------------------------------------
-# --- UI & Themes ---
+# >>> UI & Themes <<<
 vscode "dracula-theme.theme-dracula"
 vscode "akamud.vscode-theme-onelight"
 vscode "emmanuelbeziat.vscode-great-icons"
 
-# --- Code Navigation & Productivity ---
+# >>> Code Navigation & Productivity <<<
 vscode "alefragnani.project-manager"
 vscode "eamodio.gitlens"                      # Git integration
 vscode "exodiusstudios.comment-anchors"       # Code comments & bookmarks
 vscode "aaron-bond.better-comments"           # Improve code readability
 vscode "chakrounanas.turbo-console-log"       # Enhanced console logging
 
-# --- Vim & Modal Editing ---
+# >>> Vim & Modal Editing <<<
 vscode "andenetalexander.vim-cheatsheet"
 vscode "asvetliakov.vscode-neovim"
 vscode "jasew.vscode-helix-emulation"
 
-# --- Git & Version Control ---
+# >>> Git & Version Control <<<
 vscode "github.codespaces"
 vscode "github.copilot"
 vscode "github.copilot-chat"
@@ -121,7 +121,7 @@ vscode "github.vscode-pull-request-github"
 vscode "gitlab.gitlab-workflow"
 vscode "ms-vscode.azure-repos"
 
-# --- Python Development ---
+# >>> Python Development <<<
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
 vscode "ms-python.debugpy"
@@ -139,7 +139,7 @@ vscode "ms-toolsai.vscode-jupyter-powertoys"
 vscode "ms-toolsai.vscode-jupyter-slideshow"
 vscode "batisteo.vscode-django"
 
-# --- JavaScript, TypeScript, & Web Dev ---
+# >>> JavaScript, TypeScript, & Web Dev <<<
 vscode "dbaeumer.vscode-eslint"
 vscode "esbenp.prettier-vscode"
 vscode "formulahendry.auto-rename-tag"
@@ -148,7 +148,7 @@ vscode "typescript-language-server"
 vscode "george-alisson.html-preview-vscode"
 vscode "ms-vscode.js-debug-nightly"
 
-# --- Markdown, LaTeX, & Writing ---
+# >>> Markdown, LaTeX, & Writing <<<
 vscode "jebbs.markdown-extended"
 vscode "goessner.mdmath"
 vscode "mathematic.vscode-latex"
@@ -157,20 +157,20 @@ vscode "bnavetta.zoterolatex"
 vscode "mblode.zotero"
 vscode "kortina.vscode-markdown-notes"
 
-# --- SQL & Databases ---
+# >>> SQL & Databases <<<
 vscode "ms-mssql.mssql"
 vscode "ms-mssql.data-workspace-vscode"
 vscode "ms-mssql.sql-bindings-vscode"
 vscode "ms-mssql.sql-database-projects-vscode"
 vscode "matt-meyers.vscode-dbml"
 
-# --- C++ & Low-Level Development ---
+# >>> C++ & Low-Level Development <<<
 vscode "ms-vscode.cpptools"
 vscode "ms-vscode.cpptools-extension-pack"
 vscode "ms-vscode.cpptools-themes"
 vscode "ms-vscode.cmake-tools"
 
-# --- DevOps, Containers, & PowerShell ---
+# >>> DevOps, Containers, & PowerShell <<<
 vscode "ms-azuretools.vscode-docker"
 vscode "ms-dotnettools.csharp"
 vscode "ms-dotnettools.dotnet-interactive-vscode"
@@ -179,7 +179,7 @@ vscode "ms-dotnettools.vscode-dotnet-runtime"
 vscode "ms-vscode.powershell"                 # PowerShell integration
 vscode "ms-vscode.remote-repositories"
 
-# --- Data Science & Research ---
+# >>> Data Science & Research <<<
 vscode "hongyin163.excel-to-html-table"       # Excel formatting
 vscode "grapecity.gc-excelviewer"             # View Excel files in VS Code
 vscode "cweijan.epub-reader"                  # Read EPUB files in VS Code
@@ -187,20 +187,20 @@ vscode "labnol.google-apps-script"            # Google Apps Script support
 vscode "molaidev.gscript-tools"               # Google Apps Script utilities
 vscode "dunstontc.vscode-google-sheets-syntax"
 
-# --- Nix Development ---
+# >>> Nix Development <<<
 vscode "jnoortheen.nix-ide"
 vscode "arrterian.nix-env-selector"
 vscode "brettm12345.nixfmt-vscode"
 
-# --- F# Development ---
+# >>> F# Development <<<
 vscode "ionide.ionide-fsharp"
 
-# --- CSV, JSON, & Miscellaneous Formats ---
+# >>> CSV, JSON, & Miscellaneous Formats <<<
 vscode "mechatroner.rainbow-csv"
 vscode "janisdd.vscode-edit-csv"
 vscode "iulian-radu-at.find-unused-exports"
 
-# --- Linters & Formatters ---
+# >>> Linters & Formatters <<<
 vscode "ban.spellright"                       # Spell checker
 vscode "ms-python.black-formatter"            # Python formatter
 vscode "charliermarsh.ruff"                   # Python linter
@@ -214,7 +214,7 @@ vscode "inferrinizzard.prettier-sql-vscode"
 vscode "jbockle.jbockle-format-files"         # Batch file formatting
 vscode "lacroixdavid1.vscode-format-context-menu"
 
-# --- Miscellaneous Utilities ---
+# >>> Miscellaneous Utilities <<<
 vscode "spadin.zmk-tools"                     # ZMK development tools
 vscode "mark-wiemer.vscode-autohotkey-plus-plus"
 vscode "chrisdias.vscode-opennewinstance"

@@ -3,36 +3,48 @@
 # Ported from: ~/dotfiles/nushell/aliases.nu
 # -----------------------------------------------------------------------------
 
-# --- Navigation ---
-# cx: cd into dir (arg or fzf) and list
+# >>> Navigation <<<
+# cx: cd into a dir (arg or fzf with eza preview) and list with eza
 cx() {
   local target="$1"
   if [ -z "$target" ]; then
-    target="$(fd --type directory --hidden --exclude .git | fzf)"
+    target="$(fd --type directory --hidden --exclude .git | fzf --preview 'eza --tree --level=2 --color=always {}')"
   fi
-  [ -n "$target" ] && cd "$target" && ls -l
+  [ -n "$target" ] && cd "$target" && eza -la --group-directories-first --icons
 }
 
-# f: Fuzzy search for a file and copy its path to clipboard
+# f: Fuzzy search for a file with bat preview enabled and copy its path to clipboard
 f() {
   local file
-  file="$(fd --type file --hidden --exclude .git | fzf)"
+  file="$(fd --type file --hidden --exclude .git | fzf --preview 'bat --style=full --color=always {} || cat {}')"
   [ -n "$file" ] && printf %s "$file" | pbcopy
 }
 
-# ffv: Fuzzy search for a file and open it in nvim
+# ffv: Fuzzy search for a file with bat preview enabled and open it in Neovim
 ffv() {
   local file
-  file="$(fd --type file --hidden --exclude .git | fzf)"
+  file="$(fd --type file --hidden --exclude .git | fzf --preview 'bat --style=full --color=always {} || cat {}')"
   [ -n "$file" ] && nvim "$file"
 }
 
-# fdv: Fuzzy search for a directory and open it in nvim
+# fdv: Fuzzy search for a directory with eza preview and open it in Neovim
 fdv() {
   local dir
-  dir="$(fd --type directory --hidden --exclude .git | fzf)"
+  dir="$(fd --type directory --hidden --exclude .git | fzf --preview 'eza --tree --level=2 --color=always {}')"
   [ -n "$dir" ] && nvim "$dir"
 }
+
+# rgf: Hybrid fd and ripgrep fuzzy file search
+rgf() (
+  RELOAD_RG='reload:rg --column --line-number --no-heading --color=always --smart-case {q} || :'
+  INITIAL_FD='fd --type f --hidden --follow --exclude .git'
+
+  eval "$INITIAL_FD" | fzf --ansi --multi --preview 'bat --style=full --color=always {} || cat {}' \
+    --bind "change:$RELOAD_RG" \
+    --delimiter : \
+    --preview-window 'right:60%' \
+    --query "$*"
+)
 
 # >>> Shell Commands <<<
 alias c='clear'

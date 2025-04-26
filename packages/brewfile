@@ -12,48 +12,49 @@ tap "jesseduffield/lazygit"               # Fast Git UI
 tap "nikitabobko/tap"                     # Miscellaneous useful CLI tools
 tap "zegervdv/zathura"                    # Zathura PDF reader and extensions
 
-# -----------------------------------------------------------------------------
-# >>> CLI <<<
-# -----------------------------------------------------------------------------
-# --- Shells & Terminal Enhancements ---
+# -----------------------------------------------
+# CLI
+# -----------------------------------------------
+# >>> Shells & Terminal Enhancements <<<
 brew "bash"                               # Bash shell
 brew "nushell"                            # Modern shell with structured data support
 brew "zellij"                             # Terminal workspace manager, with terminal multiplexer as the base feature
 brew "git"                                # Version control system
 brew "git-filter-repo"                    # Filter and rewrite Git history
+brew "git-lfs"                            # Large File Storage support for Git
 
-# --- File Navigation & Search ---
+# >>> File Navigation & Search <<<
 brew "yazi"                               # Terminal file manager with vim-like keybindings
 brew "zoxide"                             # Smarter `cd` command
 brew "fd"                                 # Fast file search (alternative to `find`)
 brew "fzf"                                # Fuzzy finder for files and commands
 
-# --- Terminal Display & Output ---
+# >>> Terminal Display & Output <<<
 brew "eza"                                # Modern `ls` replacement
 brew "bat"                                # Syntax-highlighted file viewer
 brew "ripgrep"                            # Fast file search (like `grep`)
 
-# --- Shell Enhancements ---
+# >>> Shell Enhancements <<<
 brew "starship"                           # Fast, customizable shell prompt
 brew "carapace"                           # Shell completion framework
 brew "zsh-autosuggestions"                # Suggests past commands in Zsh
 brew "zsh-syntax-highlighting"            # Highlights commands in Zsh
 
-# --- Dotfile & Configuration Management ---
+# >>> Dotfile & Configuration Management <<<
 brew "stow"                              # Symlink manager for dotfiles
 
-# --- Security & Authentication ---
+# >>> Security & Authentication <<<
 brew "keychain"                          # Securely manage SSH keys
 
-# -----------------------------------------------------------------------------
-# >>> Modal Editors <<<
-# -----------------------------------------------------------------------------
+# -----------------------------------------------
+# Modal Editors
+# -----------------------------------------------
 brew "neovim"                             # Modern Vim-based text editor
 brew "helix"                              # Rust-based modal editor with LSP support
 
-# -----------------------------------------------------------------------------
-# >>> Programming Languages & Runtimes <<<
-# -----------------------------------------------------------------------------
+# -----------------------------------------------
+# Programming Languages & Runtimes
+# -----------------------------------------------
 brew "python@3.13"                        # Python programming language
 brew "mysql"                              # MySQL database server
 brew "postgresql@17"                      # PostgreSQL database server
@@ -62,10 +63,10 @@ brew "node"                               # Node.js runtime
 brew "lua"                                # Lightweight scripting language
 brew "openjdk"                            # Java Development Kit
 
-# --- Language Server Protocols ---
-brew "python-lsp-server"                  # Language server for Python development
+# >>> Language Server Protocols <<<
 brew "basedpyright"                       # Pyright fork with improvements and built-in pylance features
 brew "pylyzer"                            # Fast static code analyzer & language server for Python
+# brew "python-lsp-server"                  # Language server for Python development
 brew "rust-analyzer"                      # Language server for Rust development
 brew "lua-language-server"                # Language server for Lua development
 brew "typescript-language-server"         # Language server for TypeScript
@@ -74,27 +75,27 @@ brew "yaml-language-server"               # YAML support in editors
 brew "texlab"                             # Language server for LaTeX
 brew "marksman"                           # Markdown LSP server
 
-# --- Python  ---
+# >>> Python  <<<
 brew "pyenv"                              # Python version manager
 brew "pyenv-virtualenv"                   # Python version manager
 brew "uv"                                 # Python package manager (alternative to pip)
 brew "ipython"                            # Interactive Python shell
 brew "jupytext"                           # Convert Jupyter notebooks to plain scripts
 
-# --- Lua ---
+# >>> Lua <<<
 brew "luarocks"                           # Package manager for Lua
 brew "luajit"                             # Just-In-Time compiler for Lua
 
-# --- Linters & Formatters ---
+# >>> Linters & Formatters <<<
 brew "ruff"                               # Fast Python linter and formatter
 brew "sqlfluff"                           # SQL linter and formatter
 brew "stylua"                             # Lua code formatter
 brew "markdownlint-cli2"                  # Improved Markdown linter
 brew "prettier"                           # Code formatter for multiple languages
 
-# -----------------------------------------------------------------------------
-# >>> Media & Document Processing <<<
-# -----------------------------------------------------------------------------
+# -----------------------------------------------
+# Media & Document Processing
+# -----------------------------------------------
 brew "pandoc"                             # Document format converter
 brew "ocrmypdf"                           # Optical Character Recognition (OCR) tool for PDFs
 brew "img2pdf"                            # Convert images to PDF format

@@ -15,30 +15,42 @@ export XDG_DATA_HOME="$HOME/.local/share"
 # >>> Git Global Config Location <<<
 export GIT_CONFIG_GLOBAL="$XDG_CONFIG_HOME/git/config"
 
+# >>> Cargo Binaries <<<
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# -----------------------------------------------
+# Homebrew Installation Directory
+# -----------------------------------------------
+# Default fallback to empty string if OS is unknown
 if [[ "$OS" == "Darwin" ]]; then
-    # MacOS-specific paths
-    export PATH="/opt/homebrew/bin:$PATH" # Homebrew
-    export PATH="/opt/homebrew/bin/nvim:$PATH" # Neovim
-    export PATH="/opt/homebrew/opt/openjdk/bin:$PATH" # OpenJDK
+    export HOMEBREW="/opt/homebrew"
+elif [[ "$OS" == "Linux" ]]; then
+    export HOMEBREW="$(brew --prefix)"
+fi
+
+# >>> Path Configuration (OS-Specific) <<<
+# Homebrew (Linuxbrew), Neovim, OpenJDK
+if [[ "$OS" == "Darwin" ]]; then
+    # macOS-specific paths
+    export PATH="$HOMEBREW/bin:$PATH"
+    export PATH="$HOMEBREW/bin/nvim:$PATH"
+    export PATH="$HOMEBREW/opt/openjdk/bin:$PATH"
 elif [[ "$OS" == "Linux" ]]; then
     # Linux-specific paths
-    export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH" # Linuxbrew
-    export PATH="/usr/bin/nvim:$PATH" # Neovim
-    export PATH="/usr/lib/jvm/java-17-openjdk-amd64/bin:$PATH" # OpenJDK
+    export PATH="$HOMEBREW/bin:$PATH"
+    export PATH="/usr/bin/nvim:$PATH"
+    export PATH="/usr/lib/jvm/java-17-openjdk-amd64/bin:$PATH"
 fi
 
 # >>> Build Flags for Brew-Linked Libraries <<<
 # Help C extension modules (e.g., pygraphviz) locate Brew-installed headers and libraries
 if [[ "$OS" == "Darwin" ]]; then
-    export CFLAGS="-I/opt/homebrew/include"
-    export LDFLAGS="-L/opt/homebrew/lib"
+    export CFLAGS="-I$HOMEBREW/include"
+    export LDFLAGS="-L$HOMEBREW/lib"
 elif [[ "$OS" == "Linux" ]]; then
-    export CFLAGS="-I/home/linuxbrew/.linuxbrew/include"
-    export LDFLAGS="-L/home/linuxbrew/.linuxbrew/lib"
+    export CFLAGS="-I$HOMEBREW/include"
+    export LDFLAGS="-L$HOMEBREW/lib"
 fi
-
-# >>> Cargo Binaries <<<
-export PATH="$HOME/.cargo/bin:$PATH"
 
 # >>> Pyenv <<<
 export PYENV_ROOT="$HOME/.pyenv"
@@ -80,85 +92,108 @@ setopt HIST_IGNORE_DUPS              # Ignore consecutive duplicates
 setopt HIST_IGNORE_SPACE             # Ignore commands starting with a space
 setopt SHARE_HISTORY                 # Share history across Zsh instances
 
-# >>> Plugin Management <<<
+# -----------------------------------------------
+# Tooling & Integrations
+# -----------------------------------------------
+# >>> ZSH Plugins <<<
 # --- ZSH Completion System ---
 autoload -U compinit
 compinit
 
 # --- ZSH Autosuggestions ---
-if [[ "$OS" == "Darwin" ]]; then
-  source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-elif [[ "$OS" == "Linux" ]]; then
-  if command -v brew &>/dev/null; then
-    source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-  elif [[ -d "/usr/share/zsh-autosuggestions" ]]; then
-    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-  fi
-elif [[ -d "/nix/store" ]]; then
-  source /nix/store/*zsh-autosuggestions*/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGESTIONS_RELATIVE="share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+if [[ -f "$HOMEBREW/$ZSH_AUTOSUGGESTIONS_RELATIVE" ]]; then
+    source "$HOMEBREW/$ZSH_AUTOSUGGESTIONS_RELATIVE"
+elif [[ -f "/usr/$ZSH_AUTOSUGGESTIONS_RELATIVE" ]]; then
+    source "/usr/$ZSH_AUTOSUGGESTIONS_RELATIVE"
+elif [[ -n "$(ls /nix/store/*zsh-autosuggestions*/zsh-autosuggestions.zsh 2>/dev/null)" ]]; then
+    source "$(ls /nix/store/*zsh-autosuggestions*/zsh-autosuggestions.zsh 2>/dev/null)"
 fi
 
 # --- ZSH Syntax Highlighting ---
-if [[ "$OS" == "Darwin" ]]; then
-  SYNTAX_HIGHLIGHTING_PATH="$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-  [[ -f "$SYNTAX_HIGHLIGHTING_PATH" ]] && source "$SYNTAX_HIGHLIGHTING_PATH"
-elif [[ "$OS" == "Linux" ]]; then
-  if command -v brew &>/dev/null; then
-    source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-  elif [[ -d "/usr/share/zsh-syntax-highlighting" ]]; then
-    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  fi
-elif [[ -d "/nix/store" ]]; then
-  source /nix/store/*zsh-syntax-highlighting*/zsh-syntax-highlighting.zsh
+ZSH_SYNTAX_HIGHLIGHTING_RELATIVE="share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+
+if [[ -f "$HOMEBREW/$ZSH_SYNTAX_HIGHLIGHTING_RELATIVE" ]]; then
+    source "$HOMEBREW/$ZSH_SYNTAX_HIGHLIGHTING_RELATIVE"
+elif [[ -f "/usr/$ZSH_SYNTAX_HIGHLIGHTING_RELATIVE" ]]; then
+    source "/usr/$ZSH_SYNTAX_HIGHLIGHTING_RELATIVE"
+elif [[ -n "$(ls /nix/store/*zsh-syntax-highlighting*/zsh-syntax-highlighting.zsh 2>/dev/null)" ]]; then
+    source "$(ls /nix/store/*zsh-syntax-highlighting*/zsh-syntax-highlighting.zsh 2>/dev/null)"
+fifi
+
+# >>> Starship Prompt <<<
+if command -v starship &>/dev/null; then
+    eval "$(starship init bash)"
+    export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 fi
 
-# --- Carapace Shell Completion ---
-if command -v carapace &> /dev/null; then
-  source <(carapace _carapace zsh)
+# >>> Carapace Shell Completion <<<
+if command -v carapace &>/dev/null; then
+    source <(carapace _carapace bash)
 fi
 
-# --- Starship Prompt ---
-if command -v starship &> /dev/null; then
-  eval "$(starship init zsh)"
-  export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+# >>> Atuin Shell History Replacement <<<
+if command -v atuin &>/dev/null; then
+    eval "$(atuin init bash)"
 fi
 
-# --- Zoxide ---
-if command -v zoxide &> /dev/null; then
-  eval "$(zoxide init zsh)"
+# >>> Zoxide <<<
+if command -v zoxide &>/dev/null; then
+    eval "$(zoxide init bash)"
 fi
 
-# --- FZF: Fuzzy File Finder ---
-if command -v fd &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
-
-  if [ -f ~/.fzf.zsh ]; then
-    source ~/.fzf.zsh
-  fi
+# >>> FD: File Finder <<<
+# Docs: https://github.com/sharkdp/fd
+if command -v fd &>/dev/null; then
+    export FZF_DEFAULT_COMMAND='fd --type file --hidden --follow --color=always'
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
-# --- ZIDE ---
-# Source: https://github.com/josephschmitt/zide
-export ZIDE_LAYOUT_DIR="$XDG_CONFIG_HOME/zellij/layouts"
-export ZIDE_ALWAYS_NAME="true"
-export ZIDE_FILE_PICKER="yazi"
-export ZIDE_USE_YAZI_CONFIG="$XDG_CONFIG_HOME/yazi"
+# >>> FZF: Fuzzy File Finder <<<
+# Docs: https://junegunn.github.io/fzf/
+export FZF_DEFAULT_OPTS='
+    --height=40%
+    --layout=reverse
+    --info=inline
+    --border
+    --preview "bat --style=numbers --color=always {} || cat {}"
+    --preview-window=right:60%
+'
 
-# >>> Specialized Configs <<<
-# --- Default Editors ---
+if command -v brew &>/dev/null; then
+    if [[ -f "$HOMEBREW/opt/fzf/shell/key-bindings.zsh" ]]; then
+        source "$HOMEBREW/opt/fzf/shell/key-bindings.zsh"
+    fi
+    if [[ -f "$HOMEBREW/opt/fzf/shell/completion.zsh" ]]; then
+        source "$HOMEBREW/opt/fzf/shell/completion.zsh"
+    fi
+fi
+
+# >>> Zellij: Terminal Multiplexer <<<
+# Docs: https://zellij.dev/documentation/
+export ZELLIJ_CONFIG_DIR="$XDG_CONFIG_HOME/zellij"
+export ZELLIJ_LAYOUT_DIR="$ZELLIJ_CONFIG_DIR/layouts"
+export ZELLIJ_THEME_DIR="$ZELLIJ_CONFIG_DIR/themes"
+
+# -----------------------------------------------
+# Specialized Configs
+# -----------------------------------------------
+# >>> Default Editors <<<
 export EDITOR="nvim"        # NeoVim, 'hx' Helix
 export VISUAL="zed"         # Zed
 export TERMINAL="ghostty"   # Ghostty
 export FILE_PICKER="yazi"   # Yazi
 
-# --- SSH ---
+# >>> SSH <<<
 export SSH_CONFIG_DIR="$XDG_CONFIG_HOME/ssh"
 export SSH_CONFIG_FILE="$SSH_CONFIG_DIR/ssh-config"
 
-# --- Nushell ---
+# >>> Nushell <<<
 export NU_CONFIG_DIR="$XDG_CONFIG_HOME/nushell"
 
-# --- Java ---
+# >>> Java <<<
 if [[ "$OS" == "Darwin" ]]; then
     export JAVA_HOME=$(/usr/libexec/java_home -v 23)
 elif [[ "$OS" == "Linux" ]]; then

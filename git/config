@@ -49,3 +49,5 @@
 # includeIf Docs: https://git-scm.com/docs/git-config#_conditional_includes
 [includeIf "gitdir:~/Documents/_dev_work/"]
     path = ~/.config/git/config_work
+[credential]
+	helper = osxkeychain

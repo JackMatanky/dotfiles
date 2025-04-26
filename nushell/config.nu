@@ -772,7 +772,9 @@ $env.config = {
 const nu_conf = "~/.config/nushell"
 source $"($nu_conf)/env.nu"
 
-# >>> Aliases <<<
+# -----------------------------------------------
+# Aliases
+# -----------------------------------------------
 const nu_alias = $nu_conf | path join "aliases"
 source $"($nu_alias)/aliases.nu"
 source $"($nu_alias)/git_aliases.nu"
@@ -781,7 +783,9 @@ source $"($nu_alias)/ocr_aliases.nu"
 # use ~/.config/nushell/themes.nu
 # source ~/history.txt
 
-# >>> Custom Completions <<<
+# -----------------------------------------------
+# Custom Completions
+# -----------------------------------------------
 const nu_comp = $nu_conf | path join "completions"
 source $"($nu_comp)/bat_completions.nu"
 source $"($nu_comp)/eza_completions.nu"
@@ -792,15 +796,27 @@ source $"($nu_comp)/python_uv_completions.nu"
 source $"($nu_comp)/rg_completions.nu"
 source $"($nu_comp)/zellij_completions.nu"
 
-# >>> Plugin Management <<<
+# -----------------------------------------------
+# Plugin Management
+# -----------------------------------------------
+# --- Zoxide ---
 source ~/.zoxide.nu
+
+# --- Carapace ---
 source ~/.cache/carapace/init.nu
 
+# --- Atuin ---
+source ~/.cache/atuin/init.nu
+
+# --- Starship ---
 # Load Starship only if it exists
 if (which starship | is-not-empty) {
     use ~/.cache/starship/init.nu
 }
 
+# -----------------------------------------------
+# Nushell Themes
+# -----------------------------------------------
 # Load Nushell themes only if it exists
 if (which nushell | is-not-empty) {
     source $"($nu_conf)/themes/catppuccin_macchiato.nu"
