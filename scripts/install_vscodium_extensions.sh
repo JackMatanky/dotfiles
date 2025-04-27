@@ -7,7 +7,7 @@
 
 # --- Setup ---
 
-EXTENSION_LIST="$HOME/dotfiles/VSCodium/extensions/vscode-extensions.txt"
+EXTENSION_LIST="$HOME/dotfiles/vscodium/extensions/vscode-extensions.txt"
 
 if ! command -v codium &> /dev/null; then
   echo "Error: 'codium' command not found. Make sure VSCodium is installed and codium CLI is available."
