@@ -11,6 +11,7 @@
       "resourceUrlTemplate": "https://{publisher}.gallery.vsassets.io/_apis/public/gallery/publisher/{publisher}/extension/{extension}/{version}/assetbyname/{assetName}"
     }
   ],
+
   "editor.fontFamily": "FiraCode Nerd Font Mono",
   "editor.fontSize": 15,
   "editor.fontLigatures": true,
@@ -29,20 +30,29 @@
     "*.pgsql": "postgres",
     "*.html": "html",
     "brew*": "ruby",
-    "uv.lock": "toml"
+    "uv.lock": "toml",
+    "snippets/*.json": "jsonc"
   },
 
   "security.workspace.trust.untrustedFiles": "open",
 
-  "vsicons.dontShowNewVersionMessage": true,
-
   // --------------------------------------------
   //SECTION - Appearance and Theme
   // --------------------------------------------
+  //SEGMENT - Theme
   "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
   "workbench.colorTheme": "Catppuccin Macchiato",
-  "workbench.iconTheme": "catppuccin-macchiato",
   "catppuccin.accentColor": "blue",
+  //!SEGMENT
+
+  //SEGMENT - Icons
+  // Grey - #90a4ae; Light Beige - #f7d88c; Darker Beige - #e6c04c
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.activeIconPack": "none",
+  "material-icon-theme.files.color": "#90a4ae",
+  "material-icon-theme.folders.color": "#ddbb77",
+  "material-icon-theme.folders.theme": "specific",
+  //!SEGMENT
 
   "workbench.settings.applyToAllProfiles": [
     "editor.defaultFormatter",
@@ -70,8 +80,18 @@
   //!SECTION
 
   // --------------------------------------------
-  //SECTION - Terminal
+  //SECTION - Shell & Terminal
   // --------------------------------------------
+  //SEGMENT - Nushell
+  "nushellLanguageServer.includeDirs": [
+    "/Users/jack/dotfiles/nushell",
+    "/Users/jack/dotfiles/nushell/aliases",
+    "/Users/jack/dotfiles/nushell/completions",
+    "/Users/jack/dotfiles/nushell/themes"
+  ],
+  "nushellLanguageServer.nushellExecutablePath": "nu",
+  //!SEGMENT
+
   "terminal.external.osxExec": "Ghostty.app",
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.copyOnSelection": true,
@@ -81,6 +101,7 @@
   "terminal.integrated.fontLigatures.enabled": true,
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.enableImages": true,
+  "terminal.integrated.sendKeybindingsToShell": true,
   //!SECTION
 
   // --------------------------------------------
@@ -96,11 +117,12 @@
   // --------------------------------------------
   // Spellcheck
   // --------------------------------------------
+  "cSpell.enabled": true,
   "spellright.addToSystemDictionary": true,
   "spellright.notificationClass": "warning",
   "spellright.configurationScope": "user",
-  "spellright.language": [ "en" ],
-  "spellright.documentTypes": [ "markdown", "latex" ],
+  "spellright.language": ["en"],
+  "spellright.documentTypes": ["markdown", "latex"],
 
   // --------------------------------------------
   // Formatting Settings
@@ -118,11 +140,7 @@
   // --------------------------------------------
   // Comment Extensions
   // --------------------------------------------
-  "commentAnchors.tags.separators": [
-    " - ",
-    ": ",
-    " "
-  ],
+  "commentAnchors.tags.separators": [" - ", ": ", " "],
   "commentAnchors.tagHighlights.enabled": true,
   "commentAnchors.tags.displayHierarchyInWorkspace": true,
   "commentAnchors.tags.displayInGutter": true,
@@ -155,21 +173,15 @@
     {
       "tag": "SEGMENT",
       "iconColor": "blue",
-      "highlightColor": "#896afc",
+      "highlightColor": "#3ea8ff",
       "styleMode": "full",
       "scope": "file",
       "behavior": "region"
     },
     {
-      "tag": "NOTE",
-      "iconColor": "green",
-      "highlightColor": "#FFB300",
-      "scope": "file"
-    },
-    {
       "tag": "REVIEW",
       "iconColor": "orange",
-      "highlightColor": "#64DD17",
+      "highlightColor": "#FFB300",
       "scope": "workspace"
     },
     {
@@ -191,6 +203,13 @@
       "highlightColor": "#BA68C8",
       "scope": "file"
     },
+    // Information Tags
+    {
+      "tag": "NOTE",
+      "iconColor": "green",
+      "highlightColor": "#64DD17",
+      "scope": "file"
+    },
     {
       "tag": "LINK",
       "iconColor": "emerald",
@@ -200,11 +219,11 @@
     },
     {
       "tag": "SOURCE",
-      "iconColor": "emerald",
+      "iconColor": "yellow",
       "highlightColor": "#2ecc71",
       "scope": "workspace",
       "behavior": "link"
-    },
+    }
   ],
 
   "better-comments.multilineComments": true,
@@ -271,7 +290,8 @@
     "editor.formatOnType": true,
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports.ruff": "explicit"
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
     }
   },
   "python.defaultInterpreterPath": "/Users/jack/.pyenv/shims/python",
@@ -285,10 +305,10 @@
   "python.terminal.activateEnvironment": true,
   "python.terminal.shellIntegration.enabled": true,
   "python.venvPath": ".venv",
-  "python.venvFolders": [ ".pyenv" ],
+  "python.venvFolders": [".pyenv"],
 
   //SEGMENT - Ruff
-  "ruff.path": [ "/opt/homebrew/bin/ruff" ],
+  "ruff.path": ["/opt/homebrew/bin/ruff"],
   "ruff.lineLength": 80,
   "ruff.organizeImports": true,
   //!SEGMENT
@@ -755,20 +775,10 @@
 
   //SECTION - Git
   "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "always",
   //!SECTION
 
   "[nix]": {
     "editor.defaultFormatter": "brettm12345.nixfmt-vscode"
-  },
-
-  //SECTION - Nushell
-  "nushellLanguageServer.includeDirs": [
-    "/Users/jack/dotfiles/nushell",
-    "/Users/jack/dotfiles/nushell/aliases",
-    "/Users/jack/dotfiles/nushell/completions",
-    "/Users/jack/dotfiles/nushell/themes"
-  ],
-  "nushellLanguageServer.nushellExecutablePath": "nu",
-  "terminal.integrated.sendKeybindingsToShell": true
-  //!SECTION
+  }
 }

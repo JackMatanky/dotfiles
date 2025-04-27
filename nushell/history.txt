@@ -1,2164 +1,1049 @@
-$env.PATH
-which nu
-$env.config
-$env.config-dir
-dot
-$nu.env-path
-cd
-$nu.env-path
-ls -l ~/.config/nushell/env.nu<\n>
-rm -rf ~/.cache/nushell<\n>
-echo $env.NU_CONFIG_DIR
-$nu.env-path
-$nu.config-path
-$nu.env-path
-$nu.config-path
-ls -l ~/.config/nushell
-exit
-pwd
-exit
-$nu.config-path
-$nu.env-path
-exit
-ll
-l
-rm test_file
-l
-la
-exit
-la
-exit
-la
-exit
-la
-exit
-stow
+stow -D .
 stow .
-dot
-~/dotfiles
-stow .
-exit
-exis
-exit
-brew install zathura
-brew tap zegervdv/zathura
-brew install zathura
-exit
-nvim
-exit
-la
-l
-ll
-alias
-hint
-help
-ls -l
-lt
-brew install eza
-lt
-ls -l ~/.ssh/config
-ls -l ~/ssh/ssh-config
-ls -ld ~/.ssh
-l ~/.ssh
-$nu.env-path
-$env.config-dir
-$env.PATH
-$env.SSH_CONFIG_DIR
-$env.XDG_CONFIG_HOME
-$env.SSH_CONFIG_DIR
-$env.HOME
-$env.SSH_CONFIG_DIR
-stow .
-$env.SSH_CONFIG_DIR
-gad_d
-gca 'update paths in nushell'
-gps
-stow .
-$env.HOME
-$env.XDG_CONFIG_HOME
-source ~/.zshrc
-stow .
-$env.SSH_CONFIG_FILE
-ssh github.com
-ssh-add -L<\n>
-ssh-add ~/.ssh/id_ed25519
-chmod 600 ~/.ssh/id_ed25519<\n>chmod 644 ~/.config/ssh/ssh-config
-ls -l ~/.ssh/id_ed25519
-ls -l ~/.config/ssh/ssh-config
-l -l ~/.ssh/id_ed25519
-l ~/.ssh/id_ed25519
-l ~/.config/ssh/ssh-config
-ls -l ~/.config/ssh/ssh-config
-ls -l ~/.config/ssh
-ls -l ~/.config/ssh/
-eval "$(ssh-agent -s)"<\n>
-eval "$(ssh-agent -s)"
-ssh -F ~/.config/ssh/ssh-config github.com
-ssh -F ~/.config/ssh/ssh-config gitlab.com
-spawn ssh-agent | save-agent
-brew install keychain
-keychain --eval --quiet -f ~/.config/ssh/ssh-config id_ed25519
-gad_d
-gca 'add keychain and a corresponding part to env.nu'
-gps
-compinit
-echo $ZDOTDIR
-$env.ZDOTDIR
-stow .
-gad_d
-gca 'update starship and zed shell'
-gps
-git clone https://github.com/LazyVim/LazyVim.git ~/dotfiles/_examples/nvim
-git clone https://github.com/LazyVim/LazyVim.git ~/dotfiles/_examples/nvim/lazyvim
-nvim
-stow .
-git clone https://github.com/LazyVim/starter ~/dotfiles/nvim
-rm -rf ~/dotfiles/nvim/.git
-brew uninstall --cask alacritty
-nvim
-sketchybar
-sketchybar restart
-sketchybar reload
-sketchybar --reload
-brew install --cask vlc
-gad_d
-gca 'copy sketchybar from felix kratz and put omerxx config in examples'
-gps
-stow .
-ls -l
-stow .
-sketchybar --reload
-open -a 'Notion Calendar'
-sketchybar --reload
-exit
-gad_d
-gca 'copy sketchybar from logicsec'
-gps
-stow .
-nvim
-stow .
-nvim
-exit
-sketchybar --reload
-exit
-gad_d
-gca 'use typecraft neovim for newbs setup'
-gps
-sketchybar --reload
-stow .
-gad_d
-gca 'update starship to catppuccin'
-gps
-obsidian
-git add .gitignore
-gca 'update gitignore'
-touch .gitignore
-git add .gitignore
-gca 'update gitignore'
-gps
-~
-cd
-touch -/.gitignore_global
-touch ~/.gitignore_global
-gad_d
-gca 'add global git ignore for MacOS files'
-gps
-stow .
-find . -name ".DS_Store" -delete
-exit
-gad_d
-gca 'add obsidan callouts to espanso'
-gps
-gad_d
-gca 'add obsidian abstract callout to espanso'
-gps
-stow .
-exit
-stow .
-gad_d
-gca 'update obsidian callouts for espanso'
-gps
-sketchybar --reload
-exit
-gad_d
-gca 'change aerospace gaps to match sketchybar top position'
-gps
-stow .
-cd ~/Documents
-cd ~/Documents/keyboard_dev
-git clone git@github.com:JackMatanky/ergogen.git
-git clone git@github.com:JackMatanky/kb_snak.git
-git clone git@github.com:JackMatanky/zmk-config.git
-exit
-diskutil list
-exit
-stow .
-gad_d
-gca 'update nushell config and zshrc to add new directory aliases'
-gps
-bar_reload
-nvim
-exit
-nvim
-exit
-brew install tmux
-nvim
-exit
-stow .
-gad_d
-gca 'add tmux'
-gps
-stow .
-nvim
-exit
-nvim
-exit
-nvim
-exit
-nvim
-exit
-brew install ripgrep
-brew install fd
-gad_d
-gca 'add fzf to neovim'
-gps
-stow .
-nvim
-exit
-gad_d
-gca 'change zed keybindings to mac default'
-gps
-stow .
-gaI
-gad_d
-gca 'update karabiner'
-gps
-stow .
-gad_d
-gca 'update stowrc after unistalling karabiner'
-gps
-zmk
-kb_zmk
-gad_d
-gca 'try something similar to the convenience C macro in combos and macros'
-gps
-kb_zmk
-gad_d
-gca 'switch ctrl and gui references'
-gps
-gad_d
-gca 'fix typo in combos'
-gps
-cd
-kb_ergogen
-gst
-gpl
-kb_zmk
-gad_d
-gca 'add combos'
-gps
-nvim
-exit
-gad_d
-gca 'add lualine, blink, noice, and render markdown to neovim'
-gps
-stow .
-nvim
-exit
-nvim
-exit
-gad_d
-gca 'fix lualine and render markdown'
-gps
-stow .
-exit
-stow .
-espanso --reload
-stow .
-gad_d
-gca 'remove alt-shift aerospace shortcuts until I figure out an alternative that will not use the mac select word shortcuts'
-gps
-gad_d
-gca 'add too much to nvim without committing in between'
-gps
-gad_d
-gca 'add colorscheme folder to stowrc'
-gps
-stow .
-nvim
-exit
-gad_d
-gca 'fix nvim init require catppuccin'
-gps
-nvim
-exit
-gad_d
-gca 'comment load theme from init.lua for nvim'
-gps
-stow .
-nvim
-exit
-gad_d
-gca 'update graphic in snacks dashboard'
-gps
-stow .
-nvim
-exit
-nvim
-stow .
-exit
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-stow .
-tmux
-exit
-tmux
-tmux kill-session
-tmux
-exit
-tmux -V
-stow .
-gad_d
-gca 'restart tmux config to install plugins'
-gps
-stow .
-aa
-nvim
-exit
-tmux
-exit
-stow .
-cd
-tmux kill-session
-tmux info
-tmux -V
-tmux kill-server
-exit
-ff
-as
-as list-monitors
-gad_d
-gca 'update aerospace workspace monitor assignment with monitor names and add aliases to config.nu'
-gps
-stow .
-tmux source
-tmx source
-stow .
-tmx_src
-stow .
-tmx_src
-stow .
-tmx_src
-tmux source ~/.config/tmux/tmux.conf
-tmux source ~/dotfiles/tmux/tmux.conf
-stow .
-as_load
-tmx_src
-brew uninstall tmux --force
-brew install tmux
-tmx_src
-tmux
-stow .
-git add .
-gca 'update aerospace to open apps with meh; update zsh to include zoxide and fzf; update git add . alias to gadall; generally removed underscores from aliases'
-gps
-stow .
-as_load
-exit
-stow .
-tmx_src
-stow .
-tmux
-tmx_src
-tmux
-stow .
-tmux show-options -g | grep conf
-tmux
-exit
-tmux show-environment
-stow .
-tmux
-exit
-stow .
-tmux
-exit
-brew install --cask libreoffice
-brew install --cask libreoffice-language-pack
-which zathura
-stow .
-tmux
-exit
-tmux
-tmux list-keys
-nvim
-exit
-stow .
-nvim
-stow .
-nvim
-ex
-exit
-nvim
-exit
-gadall
-git rm --cached tmux/plugins/tmux
-git rm -f --cached tmux/plugins/tmux
-gca 'update neovim plugins: snacks, catppuccin, and blink'
-gps
-stow .
-tmux
-stow .
-gadall
-gca 'update tmux conf to make sure plugins are downloaded to .tmux'
-gps
-stow .
-nvim
-nI
-stow .
-nvim
-gadall
-gca 'add blink config from linkarzu'
-gps
-stow .
-nvim
-stow .
-nvim
-exit
-brew install openjdk
-stow .
-gadall
-gca 'update nushell history.txt source'
-gps
-stow .
-exit
-stow .
-nvim
-stow .
-nvim
-stow .
-nvim
-stow .
-brew install helix
-which helix
-whixh hx
-which hx
-hx
-exit
-hx
-stow .
-exit
-gadall
-gca 'add helix config'
-gps
-gadall
-gca 'move python snippet file into main zed directory to see  if that will work'
-gps
-stow .
-gadall
-gca 'update stowrc to remove ropeproject'
-gps
-stow .
-gadall
-gca 'delete ropeproject'
-gps
-stow .
-uv init
-stow .
-gadall
-gca 'put python snippets back in snippets folder'
-gps
-which tex
-which texlab
-find tex
-gadall
-gca 'update zed settings to hopefully remove unnecessary hints'
-gps
-stow .
-uv add --dev ipykernel
-uv run ipython kernel install --user --name=problem_set_05
-uv run ipython kernel install --user
-stow .
-source /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate
-stow .
-gadall
-gca 'remove comments from zed snippets'
-gps
-stow .
-source .venv/bin/activate
-stow .
-gadall
-gca 'change zed venv setting to activate with nushell'
-gps
-stow .
-overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu
-stow .
-overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu
-uv run
-stow .
-overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu
-stow .
-overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu
-stow .
-gadall
-gca 'add a tasks file to zed'
-gps
-stow .
-overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu
-stow .
-gadall
-gca 'add md code block to espanso'
-gps
-stow .
-overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu
-zip ex5.zip ngrams.py language_classifier.py
-> ^zip ex5.zip ngrams.py language_classifier.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-stow .
-as_load
-stow .
-as_load
-gadall
-gca 'remove mode app binding from aerospace'
-gps
-overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-which luarocks
-overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-^zip ex5.zip ngrams.py language_classifier.py
-uv run test_my_file.py
-overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu
-^zip ex5.zip ngrams.py language_classifier.py
-which ffmpeg
-brew install ffmpeg
-brew install webp
-gadall
-gca 'update readme and install brew'
-gps
-gadall
-gca 'add weekday name file to espanso'
-gps
-stow .
-exit
-kb_zmk
-git add .gitignore
-gca 'update gitignore to include google drive temp files'
-gps
-kb_zmk
-gadall
-gca 'update keybindings for mac'
-gps
-gadall
-gca 'update behavior file import in base keymaps'
-gps
-gadall
-gca 'update 28 combo file name'
-gps
-gadall
-gca 'add files for mac and pc'
-gps
-stow .
-hx
-exit
-stow .
-gadall
-gca 'add helix keybindings to zed'
-gps
-hx
-exit
-gadall
-gca 'update aerospace config layout keybindings to not conflict with helix'
-gps
-stow .
-gadall
-gca 'update espanso logic'
-gps
-hx
-which pylsp
-which python
-which py
-cd
-which nu
-which uv
-which python3
-brew install python-lsp-server
-brew install zellij
-$env.ZELLIJ
-echo $ZELLIJ
-exit
-$env.ZELLIJ
-which zellij
-zellij
-exit
-stow .
-gadall
-gca 'add zellij config'
-gps
-stow .
-zellij
-exit
-exit
-zellij
-brew install yazi
-brew update
-brew upgrade
-q
-exit
-zellij
-which file
-which ffmpeg
-which zoxide
-yazi
-gadall
-gca 'add yazi config'
-git rm --cached .DS_Store
-gca 'remove ds_store'
-gps
-git config --get core.excludefile
-git config --get core.excludesfile
-cat ~/.config/git/.gitignore_global
-l
-stow .
-l
-ff
-l
-stow .
-gadall
-gc 'update eza alias'
-gps
-stow .
-l
-eza -l
-gca 'update eza aliases'
-gps
-stow .
-gca 'fix new eza alias syntax to match nushell'
-git add .
-git commit -m 'fix new eza aliases to match nushell syntax'
-git push
-stow .
-l
-lt
-stow .
-$env.config-dir
-$env.config
-stow .
-$env.data-dir
-data-dir
-$nu.env-path
-zoxide add ~/dotfiles
-zoxide add ~/obsidian_vault
-z obs
-z dot
-zoxide
-zoxide query
-stow .
-gcam 'add and update git aliases'
-gps
-stow .
-gaa
-gc 'modualarize aliases from nushell config'
-gps
-gaa
-sto
-stow .
-gaa
-stow .
-gaa
-gc 'modualarize aliases from nushell config'
-gps
-gaa
-gcam 'update nushell config'
-gps
-stow .
-gcam 'update nushell config'
-gps
-stow .
-v
-gaa
-gcam 'update nushell config'
-gps
-exit
-hx
-ze
-zellij
-exit
-exip
-exit
-dot
-obsidian
-which luarocks
-brew install luarocks
-luarocks install lunajson
-uv pip install yfinance
-uv pip install yfinance --system
-cd
-brew install yfinance
-uv pip install --system yfinance
-stow .
-bar_load
-gcam 'change sketchybarr config to felix kratz'
-gps
-curl -L https://raw.githubusercontent.com/FelixKratz/dotfiles/master/install_sketchybar.sh | sh
-exit
-hx
-exit
-which anki
-which anki2
-stow .
-gcam 'add anki shortcut to aerospace'
-gps
-gaa
-gc 'add yazi shell wrapper to nushell'
-find . -name .DS_Store -print0 | xargs -0 git rm --cached
-find . -name ".DS_Store" | each { git rm --cached $it }
-glog
-find ".DS_Store" | each { git rm --cached $it }
-find ".DS_Store"
-ls | find ".DS_Store"
-ls -l | find ".DS_Store"
-git rm --cached -r .DS_Store<\n>git commit -m "Remove .DS_Store files from tracking"
-gps
-glogtb
-stow .
-glogtb
-stow .
-glogtb
-gcam 'add file headers'
-gps
-stow .
-gcam 'add file headers'
-gps
-stow .
-exit
-which marksman
-which pylsp
-which ruff
-brew install ruff
-brew install isort
-which rope
-which pylsp-rope
-gcam 'update helix config to match my file style'
-gps
-stow .
-hx
-hx --health
-brew install vscode-langservers-extracted
-brew install marksman
-brew install texlab
-brew install yaml-language-server
-stow .
-gcam 'download lsp with brew and update readme and install script'
-exit
-exI
-exit
-hx --health
-brew install typescript-language-server
-brew install markdownlint-cli
-brew install prettier
-exit
-hx --health
-sops --version
-exit
-stow .
-gcam 'update helix config and language config and add yazelix command to wezterm'
-gps
-stow .
-hx --health
-hx
-z programming problem_set_06
-fd programming
-fd huji programming
-fd huji_programming
-z add obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/
-za obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/
-programming
-z programming
-l
-za obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_06
-za problem_set_06
-z problem_set_06
-hx
-stow .
-bar_load
-stow .
-bar_load
-stow .
-bar_load
-ff
-aerospace list-monitors
-stow .
-bar_load
-stow .
-bar_load
-stow .
-bar_load
-stow .
-bar_load
-as_load
-stow .
-as_load
-stow .
-exit
-exit
-which ruff
-which isort
-which mypy
-uv pip install --system python-lsp-ruff
-stow .
-gcam 'update python helix config'
-brew uninstall isort
-stow .
-gcam 'update python helix config'
-gps
-hx --health
-stow .
-exit
-exI
-exit
-z problem_set_06
-y
-hx ex6.py
-hx --health
-stow .
-hx --health
-stow .
-hx --health
-stow .
-which basedpyright
-brew install basedpyright
-hx --health
-exit
-y
-exit
-dot
-za zsh
-z zsh
-hx zshrc
-gcam 'add environment variables for editor (helix) and visual (zed)'
-gps
-stow .
-exit
-hx ex6.py
-exit
-gcam 'move yazi files outside sidebar folder'
-stow .
-gcam 'add catppuccin theme to yazi'
-gps
-hx ex6.py
-exit
-y
-exit
-stow .
-gcam 'add catppuccin theme to yazi'
-gps
-stow .
-gcam 'move yazi files outside sidebar folder'
-gps
-cargo --version
-brew install rust
-brew upgrade
-cargo install --git https://github.com/estin/simple-completion-language-server.git
-stow .
-$nu.env-path
-$env
-env
-gcam 'add cargo to env'
-gps
-simple-completion-language-server validate-snippets
-stow .
-hx --health
-simple-completion-language-server validate-snippets
-stow .
-hx --health
-simple-completion-language-server validate-snippets
-stow .
-simple-completion-language-server validate-snippets
-stow .
-simple-completion-language-server validate-snippets
-stow .
-simple-completion-language-server validate-snippets
-cd /Users/jack/dotfiles/helix/snippetscd /Users/jack/obsidian_vault
-exit
-exit
-hx ex6.py
-cd
-cd /Users/jack/dotfiles/helix/snippetscd /Users/jack/obsidian_vault
-exit
-exit
-exit
-z problem_set_06
-stow .
-simple-completion-language-server validate-snippets
-stow .
-simple-completion-language-server validate-snippets
-stow .
-simple-completion-language-server validate-snippets
-stow .
-simple-completion-language-server validate-snippets
-stow .
-simple-completion-language-server validate-snippets
-stow .
-simple-completion-language-server validate-snippets
-stow .
-simple-completion-language-server validate-snippets
-stow .
-simple-completion-language-server validate-snippets
-hx ex6.py
-exit
-exit
-stow .
-gcam 'add snippets to helix'
-gps
-hx ex6.py
-exit
-hx ex6.py
-exit
-stow .
-simple-completion-language-server validate-snippets
-uv init
-exit
-cd /Users/jack/obsidian_vault
-hx /Users/jack/obsidian_vault
-cd /Users/jack/obsidian_vault/42_education/course_huji_programming_intro
-z problem_set_06
-hx /Users/jack/obsidian_vault/42_education/course_huji_programming_intro
-z problem_set_06
-uv run ex6.py
-cd /Users/jack/dotfiles/starship
-dot
-z nushell
-za nushell
-za config.nu
-dot
-za nushell
-z nushell
-hx /Users/jack/dotfiles/starship/starship.toml
-dot
-za starship
-z starship
-hx starship.toml
-exit
-hx env.nu
-exit
-cd /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_06
-exit
-cd /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_06
-exit
-stow .
-gcam 'add directory substitutions for obsidian in starship'
-exit
-z problem_set_06
-dot
-z starship
-hx starship.toml
-exit
-exit
-hx starship.toml
-dot
-stow .
-exit
-y
-exit
-dot
-cd
-cd /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_06
-stow .
-z problem_set_06
-stow .
-dot
-stow .
-z problem_set_06
-cd
-stow .
-gcam 'add directory substitutions for obsidian in starship'
-gps
-z problem_set_06
-dot
-stow .
-z problem_set_06
-dot
-stow .
-z problem_set_06
-dot
-stow .
-z problem_set_06
-dot
-stow .
-z problem_set_06
-exit
-exit
-y
-cd /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_06
-uv run ex6.py
-exit
-uv run ex6.py
-exit
-uv run ex6.py
-exit
-uv run ex6.py
-hx /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_06
-^zip ex6.zip ex6.py README
-uv run test_my_file.py
-^zip ex6.zip ex6.py README
-uv run test_my_file.py
-hx ex6.py
-uv run ex6.py
-^zip ex6.zip ex6.py README
-uv run test_my_file.py
-^zip ex6.zip ex6.py README
-uv run test_my_file.py
-^zip ex6.zip ex6.py README
-uv run test_my_file.py
-^zip ex6.zip ex6.py README
-uv run test_my_file.py
-^zip ex6.zip ex6.py README
-uv run test_my_file.py
-^zip ex6.zip ex6.py README
-uv run test_my_file.py
-gcam 'update gap between windows in aerospace'
-gps
-exit
-hx ex6.py
-exit
-brew install tesseract
-brew update
-brew upgrade
-gcam 'update'
-gps
-gcam 'update'
-gps
-stow .
-ls
-cd /Users/jack/obsidian_vault/60_library/61_books/cummings_2019_real_analysis/notes
-cd
-brew install --cask sioyek
-sioyek
-zathura
-exit
-hx /Users/jack/obsidian_vault/60_library/61_books/cummings_2019_real_analysis/notes/sum_03_sequences_real_analysis_full.md
-exit
-exit
-ff
-as list-apps
-as list-apps --all
-ff
-aerospace list-apps
-stow .
-as_load
-brew update
-gcam 'update zed keymap'
-gps
-stow .
-brew upgrade
-stow .
-ls -l ~/.config | grep starship
-ls -l ~/.config/starship
-rm ~/.config/starship.toml
-stow -D starship
-stow -t ~/.config starship
-stow -D starship
-stow .
-ls -l ~/.config/starship/starship.toml
-ls -l ~/.config
-starship prompt
-which starship
-ls -l ~/.cache/starship/init.nu
-use ~/.cache/starship/init.nu
-stow .
-use ~/.cache/starship/init.nu
-gcam 'update try fixing nu prompt'
-$nu.config-path
-ls -l ~/.config/nushell/config.nu
-$nu.config-path
-stow -t ~/.config nushell
-stow .
-stow -t ~/.config nushell
-stow -D nushell -t ~/.config
-ls -l ~/.config/nushell<\n>ls -l ~/dotfiles/nushell
-ls -l ~/.config/nushell
-$nu.config-path
-source ~/.config/nushell/config.nu
-stow .
-source ~/.config/nushell/config.nu
-gcam 'create pc version for 23331_2'
-zmk
-z zmk
-gcam 'create pc version for 23331_2'
-gps
-gcam 'fix shield files for 23331_2_pc'
-gaa
-gcam 'fix shield files for 23331_2_pc'
-gps
-gcam 'fix build file for 23331_2_pc'
-gps
-gcam 'fix kconfig file for 23331_2_pc'
-gps
-gcam 'fix hebrew layer (lgui for lctrl) on 23331_2 mac keymap'
-gps
-stow .
-gcam 'fix inconsistencies in espanso math shortcuts'
-gps
-gcam 'separate espanso autocorrect to files by letter'
-gps
-stow .
-gcam 'update move to top of page keybinding in zed'
-gps
-python3 --version
-z anki2
-zoxide query
-ls
-fzf addons21
-brew upgrade
-which nvim
-which curl
-which lazygit
-cd
-brew install jesseduffield/lazygit/lazygit
-which lazygit
-which fzf
-which ripgrep
-which fd
-brew install ripgrep
-which ripgrep
-config.path
-config
-env
-env.config
-help
-help commands
-which nu
-brew --prefix nushell
-stow .
-as_load
-as list-apps --all
-as list-apps
-as list-windows
-as list-windows --all
-as list-apps
-as_load
-stow .
-as_load
-as list-apps
-stow .
-as list-apps
-as list-windows --all
-as_load
-l
-ls
-cd 1915225457
-ls
-touch macos-install.sh
-hz
-which pyenv
-which py
-brew install pyenv
-hx macos-install.sh
-xcode-select --install
-which pyenv
-pyenv --version
-stow .
-env.PATH
-nu.path
-path
-env.path
-help commands
-$env.PATH
-stow .
-pyenv --version
-pyenv versions
-pyenv install --list | grep 3.9.13
-pyenv install 3.9.13
-pyenv versions
-cd "/Users/jack/Library/Application Support/Anki2/addons21/1915225457"
-ls
-pyenv local 3.9.13
-pyenv versions
-python --version
-python -m venv venv
-source venv/bin/activate.nu
-ls venv/bin
-rm -rf venv
-python -m venv venv
-ls venv/bin
-source venv/bin/activate
-let-env VIRTUAL_ENV = (pwd | path join "venv")<\n>let-env PATH = ($env.VIRTUAL_ENV | path join "bin") + $env.PATH
-rm -rf venv
-uv venv venv
-overlay use venv/bin/activate.nu
-which python
-uv pip install -r linux_requirements.txt
-uv pip list
-ls
-ls venv/bin
-which python
-ls -d venv
-uv venv list
-rm -rf list
-overlay use venv/bin/activate.nu
-deactivate
-ls venv/bin
-ls
-uv venv list
-ls -d venv
-ls -d .venv
-uv python list
-uv tool list
-uv pip list
-overlay use venv/bin/activate.nu
-python -c "import sys; print(sys.prefix)"
-ls -d venv
-ls -d .venv
-ls -d list
-mv list venv
-ls -d venv
-ls venv/bin
-overlay use venv/bin/activate.nu
-deactivate
-rm -rf venv
-ls
-ls -d venv
-ls
-uv venv venv
-overlay use venv/bin/activate.nu
-ls -d venv
-which python
-uv pip install -r linux_requirements.txt
-ls -d venv
-ls
-macos-install.sh
-dos2unix macos-install.sh
-exit
-cd
-deactivate
-cd
-dot
-stow .
-gcam 'update'
-gps
-gcam 'update'
-gps
-git reset --soft HEAD~2
-gcam 'update'
-gps
-stow .
-gcam 'update zed keymap for cursor movement to match obsidian and vs code'
-gps
-stow .
-ssh-add --apple-use-keychain ~/.ssh/id_ed25519
-gcam 'update zed keymap for document formatter to match obsidian and vs code'
-gps
-stow .
-brew install pandoc
-as list-windows --all
-as list-apps
-gcam 'update vs code exec and forget in aerospace'
-gps
-stow .
-as_load
-rm -rf nvim
-git clone https://github.com/LazyVim/starter ~/dotfiles/nvim
-rm -rf nvim/.git
-yazi
-exit
-nvim
-exit
-gcam 'add lazyvim to dotfiles'
-gps
-stow .
-gcam 'try to figure out alt arrow problem in zed'
-gps
-stow .
-nvim tutor
-exit
-brew install --cask ghostty
-brew update
-brew upgrade
-stow .
-gcam 'add ghostty config'
-gps
-stow .
-as_load
-stow .
-gcam 'edit ghostty config to try to get nushell as login shell'
-gps
-gcam 'edit ghostty config to try to get nushell as login shell, again'
-gps
-stow .
-gcam 'comment out sketchybar from aerospace'
-gps
-stow .
-as_load
-which borders
-stow .
-as_load
-gcam 'update ghostty config with macos title option'
-gps
-stow .
-git clone git@github.com:josephschmitt/zide.git
-gcam 'add flash plugin lua file to Neovim config'
-gcam 'add mini surround plugin lua file to Neovim config'
-gps
-stow .
-gcam 'add markdown related plugins to nvim'
-gps
-stow .
-gcam 'add bufferline and lualine ui plugins to nvim'
-gps
-stow .
-yazi
-exit
-zide
-brew install bash
-gcam 'add zide to nushell env path'
-gps
-stow .
-gcam 'update env editor variable to nvim'
-gps
-stow .
-gcam 'move yazi and zellij files from zide into yazi and zellij folders'
-gps
-stow .
-gcam 'add zide layout dir environment variable'
-gps
-stow .
-gcam 'review and edit zide zellij layouts'
-gps
-stow .
-exit
-gcam 'revise default zellij layout'
-gps
-stow .
-gcam 'revise default zellij layout: switched compact bar for tab and status bar'
-gps
-stow .
-exit
-zellij setup --clean
-exit
-gcam 'add zide environment variables'
-gps
-gcam 'update default zellij layout'
-gps
-stow .
-gcam 'update default zellij layout'
-gps
-stow .
-gcam 'update default zellij layout'
-gps
-gcam 'update yazi toml to open pdf files in sioyek'
-gps
-stow .
-gcam 'update default zellij layout'
-gps
-stow .
-gcam 'update yazi toml to open pdf files in sioyek'
-gps
-gcam 'update aerospace config: change app launcher to remove wezterm and include ghostty'
-gps
-stow .
-as_load
-gcam 'remove pdf capability from yazi'
-gaa
-gaa 
-gcam 'remove pdf capability from yazi'
-git filter-branch --force --index-filter \<\n>  'git rm --cached --ignore-unmatch .DS_Store' \<\n>  --prune-empty --tag-name-filter cat -- --all
-git rm --cached -r .DS_Store<\n>git commit -m "Remove .DS_Store files from tracking"
-git rm --cached -r "**/.DS_Store"<\n>git commit -m "Remove all .DS_Store files from tracking"
-gps
-stow .
-gaa
-gcam 'change lazy definition of luasnip plugin'
-git rm --cached -r "**/.DS_Store"<\n>git commit -m "Remove all .DS_Store files from tracking"
-gps
-stow .
-which markdownlint
-which markdownlint-cli2
-brew install markdownlint-cli2
-brew uninstall markdownlint
-markdownlint-cli2 --config /Users/jack/.config/formatters/.markdownlint.jsonc myfile.md
-gcam 'add conform for markdown to nvim'
-gps
-stow .
-gcam 'add obsidian to nvim'
-gps
-stow .
-gcam 'add obsidian to nvim'
-gps
-stow .
-gcam 'revise espanso files and add obsidian config file'
-gps
-stow .
-which nvim
-gcam 'add nvim binary to path in nushell and zsh'
-gps
-stow .
-exit
-gcam 'add reciprical to espanso'
-gps
-stow .
-exit
-gcam 'add recipricals to espanso'
-gps
-stow .
-gcam 'add recipricals to espanso'
-gps
-stow .
-gcam 'add espanso autocorrect to obsidian'
-gps
-stow .
-which lazygit
-nvim
-exit
-gcam 'create lazygit config based on default config'
-gps
-stow .
-gcam 'update'
-yazi
-gps
-stow .
-gcam 'change all zide zellij layouts to start with zide_'
-gps
-stow .
-dot
-nvim
-obsidian
-nvim
-zellij --session obsidian_vault
-zellij --help
-which ghostty
-which wezterm
-brew upgrade
-brew install --cask ghostty
-which ghostty
-cd
-which ghostty
-dot
-gcam 'add ghostty to terminal path'
-gps
-stow .
-gcam 'add command to ghostty config to open Zellij with welcome screen' 
-gps
-stow .
-exit
-cd zellij
-fzf catppuccin.kdl
-fzf
-cd
-fzf
-dot
-gcam 'add zjstatus to zellij'
-gps
-stow .
-gcam 'add zjstatus config to layout to zellij'
-ga zellij/layouts/
-gcam 'add zjstatus config to layout to zellij'
-ga nvim/lua/plugins
-gcam 'stage nvim plugins'
-ga lazygit/
-ga zellij/zjstatus/
-gcam 'stage untracked dotfiles'
-gps
-stow .
-gcam 'add local wasm for zjstatus'
-gps
-stow .
-gcam 'update ghostty config with command for zellij welcome screen'
-gcam 'update ghostty config with command for zellij welcome screen, but with the correct command and not yazelix'
-gps
-stow .
-exit
-gcam 'add zellij env variables to env.nu'
-gps
-stow .
-which zellij
-gcam 'add full zellij path to ghostty'
-gps
-stow .
-gcam 'define default layout as zjstatus for zellij'
-gps
-stow .
-gcam 'revise zjstatus in zellij'
-gps
-stow .
-ga zellij/plugins/
-gcam 'revise zjstatus in zellij'
-ga zellij/layouts/
-gcam 'revise zjstatus in zellij'
-ga dotfiles/ -- ':!**/.DS_Store'
-ga espanso/ -- ':!**/.DS_Store'
-ga devtools/ -- ':!**/.DS_Store'
-ga helix/ -- ':!**/.DS_Store'
-ga nushell/ -- ':!**/.DS_Store'
-ga nvim/ -- ':!**/.DS_Store'
-ga yazi/ -- ':!**/.DS_Store'
-ga zed/ -- ':!**/.DS_Store'
-gcam 'track files'
-gps
-stow .
-gcam 'update ghostty config with shorter command for zellij welcome screen, but with the correct command and not yazelix'
-gps
-stow .
-zellij
-gcam 'add children block to zjstatus layout'
-gps
-stow .
-gcam 'again try to fix zjstatus layout'
-gps
-stow .
-gcam 'fix zjstatus path to wasm file'
-gps
-stow .
-gcam 'fix zjstatus path to wasm file to use dotfiles/ instead of .config/'
-gps
-stow .
-zellij
-exit
-gcam 'add zellij aliases to nushell and removed zellij command from ghostty'
-gps
-stow .
-yes
-gcam 'update config.nu to rename yazi shell wrapper to yz'
-gps
-stow .
-y
-exit
-y
-exit
-zellij
-gcam 'add first start parameter for zjstatus'
-gps
-stow .
-y
-zellij
-y
-zellij options --disable-plugins
-zellij kill-all-sessions
-y
-zellij
-request_permission
-gcam 'add tab bar to zellij layout'
-gps
-stow .
-dot
-exit
-nvim
-dot
-dot
-gcam 'change position of status and tab bar in zellij layout'
-gps
-stow .
-dot
-gcam 'update zellig aliases for nushell' 
-gps
-stow .
-gcam 'fix zellij aliases for nushell'
-gps
-stow .
-gcam 'change datetime format zellij'
-gps
-stow .
-gcam 'change aerospace tiling boundaries'
-gps
-stow .
-as_load
-gcam 'add autocmd to open pdf from neovim in zathura'
-gps
-stow .
-obsidian
-obsidian
-which zathura
-brew install zathura
-brew install zathura-pdf-mupdf
-mkdir -p $(brew --prefix zathura)/lib/zathura
-brew install zathura-pdf-mupdf
-gcam 'add config files for zathura'
-gps
-stow .
-gcam 'add set before definitions in zathurarc'
-gps
-stow .
-gcam 'remove non-existent settings for zathura'
-gps
-stow .
-gcam 'remove non-existent settings for zathura'
-gps
-stow .
-gcam 'remove non-existent settings for zathura'
-gps
-stow .
-v
-gcam 'disable autoformat in neovim'
-gps
-stow .
-gcam 'move yazi shell wrapper function for nushell to aliases.nu'
-gps
-stow .
-gcam 'change zed keymap to completely vim'
-gps
-stow .
-kb_zmk
-gcam 'update 23332_2 files for mac'
-gps
-gcam 'specify mac files in config'
-gps
-gcam 'fix missing colon in keymap'
-gps
-gaa
-glog
-gcam 'try to figure out why keymap cannot find 23332_2_base_mac'
-gps
-gcam 'remove duplicate escape combo'
-gps
-gcam 'remove layer from shortcuts combos'
-gps
-gcam 'replace sym for sys layer from shortcuts combos'
-gps
-gcam 'replace sym for sys layer from shortcuts combos'
-gps
-gaa
-gcam 'update'
-find . -name ".DS_Store" -delete<\n>
-find . -name ".DS_Store" -delete<\n>git rm --cached $(git ls-files -i --exclude-standard)
-ls **/.DS_Store | each { rm $it }
-git rm --cached $(git ls-files -i --exclude-standard --ignored)
-git ls-files -i --exclude-standard --ignored | lines | each { git rm --cached $it }
-ls **/.DS_Store | each {|f| rm $f }
-git ls-files -o -i --exclude-standard | each {|f| git rm --cached $f }
-git rm --cached '*.DS_Store'
-gcam 'remove ds_store'
-gps
-defaults read -g | grep -i "Key"
-showkey -a
-defaults read -g | grep -i "Key"
-showkey -a
-gcam 'fix find combo'
-gps
-gcam 'fix letter combo positions'
-gps
-gaa
-gcam 'fix letter combo positions'
-gps
-gcam 'add openjdk to zshrc and nushell'
-gps
-stow .
-gaa
-gcam 'add libreoffice files'
-grmds
-gps
-stow .
-gcam 'add combos for lte and gte and add control to nav side of num-sys layer'
-gaa
-grmds
-gcam 'add combos for lte and gte and add control to nav side of num-sys layer'
-gps
-brew install jupytext
-gcam 'add jupytext info to readme'
-gps
-stow .
-gcam 'fix position of right side parentheses in combos'
-gps
-gcam 'update zed snippets'
-gps
-stow .
-gcam 'update zed snippets'
-gps
-stow .
-gcam 'update zed python snippet'
-gps
-stow .
-gcam 'add fullscreen command to on-window-detected callback for aerospace'
-gps
-stow .
-as_load
-gcam 'undo aerospace edit'
-gps
-stow .
-as_load
-gcam 'undo aerospace edit'
-gps
-stow .
-as_load
-ff
-as debug-windows
-stow .
-as load
-as 
-as window
-stow .
-as window
-stow .
-as window
-stow .
-as window
-stow .
-as load
-stow .
-as load
-as debug
-as monitor
-as app
-stow .
-as app
-aerospace list-windows --all | fzf --bind "enter:execute(aerospace focus --window-id {1})+abort"
-stow .
-as load
-stow .
-as load
-as app
-stow .
-as app
-stow .
-as
-as load
-as monitor
-stow .
-as monitor
-as app
-stow .
-as app
-as window
-gcam 'consolidate aerospace aliases into one function'
-gps
-stow .
-as window
-stow .
-as load
-as debug
-stow .
-as load
-stow .
-as load
-gcam 'update aerospace to try to have anki browse open in new workspace'
-gps
-stow .
-as load
-as app
-gcam 'fix aerospace nushell alias'
-gps
-stow .
-as app
-as window
-stow .
-as load
-stow .
-as load
-stow .
-as load
-gcam 'try fixing anki browse again, but could not'
-gps
-stow .
-brew install --cask zen-browser
-brew upgrade
-brew reinstall --cask zen-browser
-stow .
-brew services start borders
-brew services list
-brew services restart borders
-brew services list
-brew services stop borders<\n>brew services start borders
-brew services list
-gcam 'add jankyborders config'
-gaa
-grmds
-gps
-stow .
-brew services restart borders
-brew services list
-brew services start borders
-as monitor
-as app
-as list-apps
-as --list-apps
-stow .
-as app
-gcam 'fix nushell aerospace app alias and update aerospace config'
-gps
-stow .
-as load
-gaa
-grmds
-gcam 'update'
-gps
-gcam 'add huji and hive emails to espanso' 
-gps
-gaa
-grmds
-gcam 'remove ds_store'
-gps
-stow .
-gcam 'update global gitignore'
-grmds
-gcam 'remove ds_store'
-gaa
-gcam 'update git remove ds_store nushell alias and add dotfiles gitignore'
-grmds
-gps
-stow .
-v
-brew bundle dump --file=~/dotfiles/Brewfile --force
-nvim
-zmk
-cdzmk
-z zmk-config/
-gaa
-gcam 'add pc version of 23332_2'
-gps
-gcam 'add pc version of 23332_2 to build yaml'
-gps
-kb_zmk
-gcam 'add pc version of 23332_2 to build yaml'
-gps
-gaa
-gcam 'fix dtsi references in 23332_2 shield'
-gps
-gcam 'change 23332_2 mac keymap include'
-gps
-gcam 'change 23332_2 mac keymap include'
-gps
-gcam 'change 23332_2 mac keymap include'
-gps
-gcam 'update conf files for 23332_2 keyboards'
-gaa
-gcam 'update conf files for 23332_2 keyboards'
-gps
-gcam ' update build file'
-gps
-gaa
-gcam 'add setup script and update zsh aliases'
-gps
-stow .
-which zellij
-brew list zellij
-gaa
-gcam 'organize brewfile'
-gps
-stow .
-brew instal bat
-brew install imagemagick
-brew upgrade
-luarocks install magick
-brew install luarocks
-brew install luajit
-luarocks --lua-version=luajit install magick
-luajit install magick
-luarocks --lua-version=5.1 install magick
-luarocks list | grep magick
-luajit -v
-luarocks list
-luarocks --lua-version=luajit install magick
-which luajit
-which python
-which python3
-exit
-gcam 'update nushell alias for zellij'
-stow .
-gcam 'update nushell alias for zellij'
-gps
-stow .
-gcam 'update nushell alias for zellij'
-gps
-stow .
-zj kb
-cd
-cd kb
-zj kb
-dot
-kb_zmk 
-gcam 'try moving include statements to keymap file'
-gps
-gcam 'try moving include statements for heb and shortcuts to keymap file'
-kb_zmk 
-gcam 'try moving include statements for heb and shortcuts to keymap file'
-gps
-gcam 'try ifdef for include statements'
-kb_zmk 
-gcam 'try ifdef for include statements'
-gps
-gcam 'try ifdef for key define'
-kb_zmk 
-gcam 'try ifdef for key define'
-gps
-gcam 'try to combine base keymap for 23332_2'
-kb_zmk 
-gcam 'try to combine base keymap for 23332_2'
-gps
-gaa
-gcam 'try to combine base keymap for 23332_2, again'
-gps
-gcam 'remove extra keymap file'
-gps
-gcam 'start consolidating 23331_2'
-gaa
-gcam 'start consolidating 23331_2'
-gps
-gcam 'update shield keymap include'
-kb_zmk 
-gaa
-gcam 'update shield keymap include'
-gps
-gaa
-gcam 'update conf name 23331_2 mac keymap'
-gps
-gaa
-gcam 'update 23331_2 mac shield'
-gaa
-gcam 'update 23331_2 mac shield'
-gps
-v
-which python3
-cd
-which python3
-dotnvim
-dotvim
-dot
-cd nvim
-which python
-which pyenv
-which python3
-which python3.13
-exit
-gaa
-gcam 'add pyenv init to zshrc and env.nu'
-gps
-stow .
-$nu.env
-$env
-v
-brew install luaformatter
-brew search
-brew search lua
-brew install stylua
-which pyenv
-which pyenv-virtualenv
-brew search pyenv
-brew install pyenv-virtualenv
-pyenv versions
-brew upgrade
-pyenv install --list
-pyenv install 3.x:latest
-pyenv update
-pyenv install 3.12.3
-pyenv install 3.13.2
-pyenv --version
-pyenv install --list
-pyenv versions
-pyenv global 3.13.2
-pyenv virtualenv 3.13.2 neovim
-pyenv activate neovim
-pyenv virtualenv 3.13.2 neovim
-pyenv activate neovim
-pyenv virtualens
-pyenv virtualenvs
-stow .
-pyenv virtualenvs
-pyenv activate neovim
-source ~/.pyenv/versions/neovim/bin/activate
-gaa
-gcam 'update options file with python path for molten'
-gps
-stow .
-exit
-stow .
-gaa
-gcam 'update zed settings'
-gps
-stow .
-run add_uuid.py
-python run add_uuid.py
-python add_uuid.py
-stow .
-gaa
-kb_zmk 
-gaa
-gcam 'try to fix kb layout'
-gps
-gcam 'update zed keymap for vim space and backspace'
-gps
-stow .
-gcam 'add directory substitutions for kb dev in starship'
-gps
-stow .
-obsidian
-stow .
-dot
-stow .
-gcam 'try add directory substitutions for kb dev in starship'
-gps
-stow .
-gcam 'try again by removing slashes'
-obsidian
-kb_zmk 
-dot
-kb_zmk 
-dot
-kb_zmk 
-gcam 'continue trying'
-stow .
-dot
-gcam 'continue trying with starship directory substitutions'
-gps
-stow .
-kb_zmk 
-dot
-kb_zmk 
-obsidian
-za 60_library
-z 60_library
-kb_zmk 
-z 60_library
-kb_zmk 
-dot
-gcam 'continue trying with starship directory substitutions'
-gps
-stow .
-dot
-gcam 'add multicursors to neovim'
-gps
-gaa
-gcam 'add multicursors to neovim'
-gps
-dotnvim
-cd nvim
-brew install --cask slack
-brew upgrade
-gaa
-grmds
-gcam 'update brewfile and move to dedicated folder'
-gps
-stow .
-gcam 'rename setup_mac to setup'
-gps
-stow .
-gcam 'setup OS agnostic zshrc and bashrc files'
+gcam 'add unstow and restow all aliases'
 gps
+unstow install-brewfile.sh
 stow .
+unstow install-brewfile.sh
 command -v nu
-gcam 'final tweaks to setup script'
+gaa
+gcam 'comment out openai keychain'
+gps
+stow .
+unstow packages
+unstow scripts
+restow_all
+which keychain
+which keychain
+gaa
+gcam 'fix os conditional path assignment in env.nu'
 gps
 stow .
 gaa
-gcam 'final tweaks to setup script'
-gps
-gaa
-gcam 'add sudo password request to the beginning of the script'
-gps
-stow .
-chmod +x setup.sh
-chmod +x setup.sh<\n>git add setup.sh<\n>git commit -m "Make setup.sh executable"<\n>git push origin main
-stow .
-brew update
-brew search zathura
-curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin<\n>
-brew install just
-just install-homebrew
-just
-just update-homebrew
-which python3.13
-which zen-browser
-which zen
-which zathura
-gaa
-gcam 'add short install scripts, package files, and a justfile'
-gps
-stow .
-just
-stow .
-dot
-gaa
-gcam 'make env.nu os agnostic'
-gps
-stow .
-gcam 'fix setup script'
-gps
 stow .
 gaa
-gcam 'add just to setup script'
+gcam 'try again'
 gps
-gcam 'add just to setup script'
+stow .
+echo nu.SHELL
+env.SHELL
+SHELL
+gaa
+gcam 'try to fix zed keymap'
+gps
+stow .
+which ruff
+exit
+nu
+exit
+gaa
+gcam 'added safari to aerospce config to open in workspace 2'
+gps
+exit
+stow .
+as windows
+as app
+gaa
+gcam 'added safari to aerospce config to open in workspace 2'
+gaa
+gcam 'added safari to aerospce config to open in workspace 2, fix'
+which ghostty
+which nvim
+gcam 'add homebrew env variable to env.nu and added nvim and ghostty to my path for obsidian edit in neovim'
+gaa
+gcam 'add homebrew env variable to env.nu and added nvim and ghostty to my path for obsidian edit in neovim'
 gps
 stow .
 --help
-stow .
-carapace _carapace nushell
-starship init nushell
-gaa
-gcam 'fix env.nu zoxide and caraspace referencing nushell instead of nu'
+grep -r -- '--shell nushell' ~/.config
+nu -l debug
+env.NU_LOG_LEVEL = "debug"
+grep -r 'nushell' ~/.config/nushell
+carapace _carapace --help
+cat /etc/shells
+brew update
+brew upgrade
+gcam 'add corollary to espanso'
 gps
-stow .
-gcam 'revert env.nu change'
-gps
-gcam 'revert keychain in env.nu back to mac specific'
-gps
-stow .
-gaa
-gcam 'revert keychain in env.nu back to mac specific'
-gps
-brew install keychain
-nu --help
-gaa
-gcam 'update'
-gps
-stow .
-uname
-uname --help
-(uname | get operating-system)
+which ruff
+which python
 mas list
+gcam 'add pdfgear to brewfile mas'
+gaa
+gcam 'add pdfgear to brewfile mas and remove default neovim files'
+gps
+gaa
+gcam 'update readme'
+gps
+stow .
+yz
+gst
+glog
 brew install mas
-mas list
-stow -D
-stow -D */
-stow --delete
-stow --delete dotfiles
-stow --delete ~/dotfiles
-stow --delete *
-stow packages
-stow scripts
+brew upgrade
+mas upgrade
 gaa
-gcam 'add gnu stow aliases to nushell'
+gcam 'add motions for moving lines up and down in nvim'
 gps
-stow
 stow .
+gaa
+gcam 'move image.nvim out of plugin folder'
+gps
+stow .
+gaa
+gcam 'change to snacks picker in nvim'
+gps
+stow .
+kb_zmk
+cd
+l
+z zmk
+gcam 'change screenshot shortcut for mac'
+gps
+brew list
+brew install mysql
+brew install postgresql@17
+brew uninstall postgresql@17
+brew install postgresql
+brew uninstall postgresql
+brew install postgresql@17
+brew install --cask mysqlworkbench
+brew install --cask pgadmin4
+gcam 'update brewfiles'
+gps
+gaa
+gcam 'remove zide'
+gps
+stow .
+brew install sql-formatter
+brew install sqlfluff
+gaa
+gcam 'add sqlfluff config'
+gps
+gcam 'add catppuccin theme to nushell'
+gps
+stow .
+gaa
+gcam 'add catppuccin theme to nushell and remove old color theme'
+gps
+stow .
+gaa
+gcam 'add more completion files to nushell'
+gps
+rg plist
+cd
+rg plist
+stow .
+dot
+stow .
+gcam 'update stow shortcuts to make sure I run stow in my dotfiles'
+gps
+stow_all
+stow .
+stow_all
+gaa
+gcam 'add ripgrep completions'
+gps
+stow_all
+brew install ocrmypdf
+fd --type f --extension pdf --max-depth 1 | fzf
+fd --type f --extension pdf | fzf
+obsidian
+fd --type f --extension pdf | fzf
+git_main_branch
+git show --pretty=short --show-signature
+git status --short --branch
+git whatchanged -p --abbrev-commit --pretty=medium
+bat --number --line-range
+bat
+l
+lt
+ltree
+ls -l
+lt
+dot
+gaa
+gcam 'add ocrmypdf functions to shell and update aliases'
+gps
+stow_all
+gaa
+stow_all
+stow .
+gaa
+gcam 'add ocrmypdf functions to shell and update aliases'
+gps
+stow_all
+ocrfile
+gaa
+gcam 'add ocrmypdf options to functions'
+gps
+stow_all
+ocrfile
+gaa
+gcam 'fix ocrmypdf nushell functions'
+gps
+stow_all
+ocrfile
+gcam 'fix ocrmypdf nushell functions'
+gps
+stow_all
+ocrfile --force
+ocrfile --mode force
+ocrfolder --mode redo
+gcam 'add match all to fd call in ocrmypdf folder function for nushell'
+gps
+stow_all
+ocrfolder --mode redo
+gaa
+gcam 'add separate ocr file for nushell'
+gps
+gcam 'update ocr_run command in nushell'
+gps
+stow_all
+ocrfolder --mode redo
+ocrfolder --mode force
+ocrfolder --mode redo
+ocrfolder --mode force
+gcam 'update ocr_run command in nushell by cd-ing into the path'
+gps
+stow_all
+ocrfolder --mode redo
+gcam 'update ocr_run command in nushell by cd-ing into the path'
+gps
+stow_all
+ocrfolder --mode redo
+ocrfolder --mode force
+brew search img2
+brew install img2pdf
+brew install mupdf-tools
+brew install poppler
+gcam 'add img pdf ocr pipeline function to nushell'
+gps
+stow_all
+stow .
+gcam 'add img pdf ocr pipeline function to nushell'
+gps
+stow_all
+ocr_img_pipeline
+gcam 'fix img pdf ocr pipeline function in nushell'
+gps
+stow_all
+ocr_img_pipeline
+gcam 'fix img pdf ocr pipeline function in nushell'
+gps
+stow_all
+ocr_img_pipeline
+gcam 'fix img pdf ocr pipeline function in nushell'
+gps
+stow_all
+ocr_img_pipeline
+gcam 'fix img pdf ocr pipeline function in nushell'
+gps
+stow_all
+ocr_img_pipeline
+gcam 'fix img pdf ocr pipeline function in nushell'
+gps
+stow_all
+ocr_img_pipeline
+brew install webp
+gcam 'fix img pdf ocr pipeline function in nushell'
+gps
+stow_all
+ocr_img_pipeline
+gcam 'fix img pdf ocr pipeline function in nushell'
+gps
+stow_all
+ocr_img_pipeline
+gcam 'fix img pdf ocr pipeline function in nushell'
+gps
+stow_all
+ocr_img_pipeline
+brew install qpdf
+obsidian
+f
+qpdf --show-outline 60_library/61_books/bertsekas_tsitsiklis_2008_introduction_to_probability/assets/bertsekas_tsitsiklis_2008_introduction_to_probability_ocr.pdf
+qpdf --version
+brew upgrade
+brew install --cask cisdem-pdf-converter-ocr
+brew uninstall --cask cisdem-pdf-converter-ocr
+mas upgrade
+dot
+gaa
+gcam 'add mac terminal settings'
+gps
+stow_all
+unstow mac-terminal
+unstow mac-terminal/
+unstow mac-terminal/*
+unstow mac-terminal*
+unstow mac-terminal
+stow -D mac-terminal
+stow -Dv mac-terminal
+dotconf
+conf_dir
+l
+rm mac-terminal
+l
+ll
+dot
+stow_all
+rm ~/.config/mac-terminal
+stow_all
+gaa
+gcam 'added sesion to espanso'
+gps
+stow_all
+gaa
+gcam 'add vscode files'
+gps
+stow_all
+gpso main --force
+git remote set-url origin git@gitlab.com:JackMatanky/obsidian_vault.git
+gpso main --force
+git remote
+gb
+gpso main --force
+git remote set-url origin https://gitlab.com/JackMatanky/obsidian_vault.git<\n>
+gpso main --force
+gps
+git push --set-upstream origin main
+gps
+exit
+as load
+as app
+gcam 'change on-window-detected call for notebooklm in aerospace'
+gps
+stow_all
+as load
+gcam 'change on-window-detected call for notebooklm in aerospace'
+gps
+stow_all
+as load
+as app
+gcam 'add gemini to aerospace'
+gps
+stow_all
+gcam 'add gemini to aerospace'
+gps
+stow_all
+as app
+gcam 'try to fix gemini window detected call in aerospace'
+brew install --cask calibre
+gcam 'add calibre to readme'
+gps
+brew install --cask adobe-digital-editions
+uname | get operating-system
+gcam 'add optimized starship snippet in env.nu'
+gps
+stow_all
+env.NU_PLUGINS_DIRS
+NU_PLUGINS_DIRS
+env
+gcam 'add optimized starship snippet in env.nu'
+gps
+stow_all
+gcam 'comment out rustup from nushell env.nu'
+gps
+stow_all
+gcam 'add xdg directories to zshrc'
+gps
+stow_all
+exit
+which magick
+luarocks config --lua-version<\n>luarocks config --lua-interpreter
+luarocks --version
+luarocks config --list | grep LUA
+which luajit
+gcam 'add molten and image to nvim'
+gps
+stow_all
+gcam 'add copy to clipboard shortcut to ghostty'
+gps
+stow_all
+ex
+exit
+zsh
+exit
+cd _devtools
+cd python
+ll
+cd data_template
+l
+ll
+ltree
+do
+dot
+gaa
+gcam 'added data template'
+gps
+stow_all
+za _devtools
+devtools
+z devtools
+z python
+z data_template
+bash template_tests/test_bash.sh
+bash tests/test_bash.sh
+z python
+bash ~/dotfiles/_devtools/python/data_template/scripts/bash_render.sh
+z template_files
+za template_files
+z data_template
+za data_template
+za template_files
+z template_files
+ll
+ltree
+bash ~/dotfiles/_devtools/python/data_template/scripts/bash_render.sh
+z py
+bash ~/dotfiles/_devtools/python/data_template/scripts/bash_render.sh
+cat template_files/README.md | sed "/\${STRUCTURE_BLOCK}/ {<\n>  r directory_structures/data_science.md<\n>  d<\n>}"
+z data_template
+cat template_files/README.md | sed "/\${STRUCTURE_BLOCK}/ {<\n>  r directory_structures/data_science.md<\n>  d<\n>}"
+z py
+bash ~/dotfiles/_devtools/python/data_template/scripts/bash_render.sh
+dot
+gaa
+gcam 'try fixing data template readme output, but did not work'
+gps
+stow_all
+gcam 'add each variations to espanso'
+gps
+stow_all
+gaa
+gcam 'move python data template to documents'
+gps
+stow_all
+gaa
+gcam 'align duplicate line up and duplicate line down in zed with vs code and obsidian'
+gps
+stow_all
+obsidian
+za 70_pkm
+z pkm
+gaa
+gcam 'try to figure out directory substitutions for subdirectories'
+gps
+stow_all
+obsidian
+z pkm
+gcam 'try to figure out directory substitutions for subdirectories again'
+gps
+stow_all
+z pkm
+cwd
+pwd
+dot
+gcam 'try to figure out directory substitutions for subdirectories again, for a third time'
+gps
+stow_all
+z pkm
+dot
+gcam 'try to figure out directory substitutions for subdirectories again by moving the subfolder line above the parent'
+gps
+stow_all
+z pkm
+dot
+pwd
+z pkm
+pwd
+dot
+gcam 'try to figure out directory substitutions for subdirectories again, for fifth time'
+gps
+stow_all
+z pkm
+dot
+gcam 'try to figure out directory substitutions for subdirectories again, for sixth time'
+gps
+stow_all
+z pkm
+starship module directory
+dot
+gcam 'try to figure out directory substitutions for subdirectories again, for seventh time'
+gps
+stow_all
+z pkm
+dot
+gcam 'revert to previous directory substitutions'
+gps
+stow_all
+z pkm
+z formal 
+z formal_science
+f
+fcd
+fcx
+cx
+ltree
+dot
+gcam 'update eza aliases by levels shown'
+gps
+stow_all
+activate
+overlay use /Users/jack/obsidian_vault/42_education/course_huji_programming_intro/assignments_huji_programming_intro/problem_set_05/.venv/bin/activate.nu ; clear
+activate
+gcam 'update zed files and try making an alias for activating an environment with uv'
+gps
+just --summary
+z template_files
+just --summary
+just update-homebrew
+just
+which tex
+brew list
+gcam 'update the justfile and zed lsp settings'
+gps
+stow_all
+uv init
+uv lock
+uv venv
+just activate
+just ACTIVATE_PATH
+overlay use /Users/jack/Documents/geocoding/.venv/bin/activate.nu ; clear
+just setup_tools
+just print_shell
+# Test script<\n>echo "SHELL: $SHELL"<\n>echo "Current shell: $(ps -p $$ -o comm=)"
+ps -p
+ps -o comm= -p $(ps -o ppid= -p $$)
+bash -c 'ps -o comm= -p $(ps -o ppid= -p $$)'
+just detect-terminal
+echo TERM
+echo $TERM
+$env.TERM
+just detect-terminal
+$env.SHELL
+just whoami
+just detect-terminal
+just whoami
+just detect-terminal
+just show-terminal-tree
+just activate
+just activate-path
+just detect-terminal
+just activate
+just detect-shell
+uv pip install --upgrade numpy
+just setup_tools
+just setup-tools
+just nb_pair
+just nb_sync
+just nb-sync
+bash --version
+brew install bash
+which bash
+just nb-sync
+just setup-tools
+uv pip install pandas
+just nb-sync-py
+gcam 'update the justfile'
+gps
+stow_all
+just activate
+use .venv/bin/activate.nu<\n>
+just setup-tools
+uv add dataclasses
+just venv
+ltree
+just setup-tools
+overlay use /Users/jack/Documents/geocoding/.venv/bin/activate.nu ; clear
+just print-venv
+overlay use /Users/jack/Documents/geocoding/.venv/bin/activate.nu ; clear
+just print-venv
+just activate
+just activate-path
+just activate
+just nb-sync-py
+just nb-sync
+overlay use /Users/jack/Documents/geocoding/.venv/bin/activate.nu ; clear
+just setup-pre-commit
+uv add pre-commit
+overlay use /Users/jack/Documents/geocoding/.venv/bin/activate.nu ; clear
+git init
+rm -rf .git
+z python
+git init
+git remote add origin git@github.com:JackMatanky/python_data_template.git
+gb -M main
+gpso main
+gb
+git branch
+git branch -M main
+gpso main
+git branch
+gaa
+gcam 'initial commit'
+gb -M main
+gb
+gpso main
+overlay use /Users/jack/Documents/geocoding/.venv/bin/activate.nu ; clear
+gcam 'add pre commit config'
+gaa
+gcam 'add pre commit config'
+gps
+git push --set-upstream origin main
+gst
+overlay use /Users/jack/Documents/geocoding/.venv/bin/activate.nu ; clear
+l
+ltree
+just activate
+use .venv/bin/activate.nu<\n>
+gcam 'add j as alias for justfile'
+gps
+stow_all
+j setup-tools
+j activate
+use .venv/bin/activate.nu<\n>
+j setup-tools
+j nb-sync-py
+as windows
+as window
+as monitor
+overlay use /Users/jack/Documents/geocoding/.venv/bin/activate.nu ; clear
+gaa
+gcam 'add a git config for hive urban'
+gps
+stow_all
+git config user.email
+l
+ll
+gaa
+gcam 'add global git config path to shell configs'
+gps
+stow_all
+git config --global --list --show-origin
+gcam 'update path for git work config in global config'
+gps
+stow_all
+git config user.email
+git rev-parse --git-dir --show-toplevel
+cat ~/.config/git/config-work
+cat ~/.config/git/config_work
+git config --show-origin --get user.email
+gcam 'update path for git work config in global config'
+gps
+stow_all
+cat ~/.config/git/config_work
+z hive
+za hive_urban_github
+z hive
+git clone https://github.com/Hive-Urban/research.git
+overlay use /Users/jack/Documents/geocoding/.venv/bin/activate.nu ; clear
+git config --show-origin --get user.email
+cat ~/.config/git/config_work
+gcam 'update path for git work config in global config'
+gps
+stow_all
+cd geo
+git init
+git config --show-origin --get user.email
+pwd
+gcam 'add work dev directory aliases'
+gps
+stow_all
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+uv venv
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+dev_hive
+deactivate
+dev_hive
+git config --show-origin --get user.email
+cd geo
+git config --show-origin --get user.email
+pwd
+git clone https://github.com/Hive-Urban/research.git /Users/jack/Documents/_dev_work/hive_urban_github/
+git clone https://github.com/Hive-Urban/research.git /Users/jack/Documents/_dev_work/hive_urban_github/research
+dev_hive
+cd research
+gb
+git init
+git remote add origin https://github.com/Hive-Urban/research.git
+gb
+git remote -v
+git fetch
+gcam 'add __macosx to gitignore'
+gps
+brew install --cask chatgpt
+gcam 'add chatgpt to brewfile'
+gps
+stow_all
+j update-brew
+mysql -u root
+mysql_secure_installation
+brew services start mysql
+mysqladmin variables | grep socket
+gaa
+gcam 'add iron.nvim to neovim config'
+gps
+stow_all
+gaa
+gcam 'update nvim multicursor keymap to not conflict with snacks notifier and updated the justfile homebrew installation to include xcode'
+gps
+stow_all
+gcam 'update zed keybindings to be able to select code suggestions with ctrl j/k or up/down'
+gps
+stow_all
+gcam 'update zed python snippets'
+gps
+stow_all
+j nb-pair
+cd geo
+uv pip install types-numpy
+just activate
+use .venv/bin/activate.nu<\n>
+uv pip install types-numpy
+j setup-tools
+uv pip install types-numpy
+uv pip install -U numpy
+j setup-tools
+gaa
+gcam 'update zed python snippets'
+gps
+stow_all
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+which pylyzer
+brew list
+brew install pylyzer
+gaa
+gcam 'add rainbow csv to nvim'
+gps
+gcam 'change zed setting to use basedpyright and pylyzer instead of pylsp'
+gps
+stow_all
+gcam 'update zed python settings'
+gps
+stow_all
+gcam 'removed non-vim keybindings from zed keymap'
+gps
+stow_all
+cd geo
+j activate
+use .venv/bin/activate.nu<\n>
+j setup-tools
+uv pip install -U numpy
+uv pip install -U pandas
+j setup-tools
+j activate
+use .venv/bin/activate.nu<\n>
+which python
+$env.PATH
+gcam 'update zed basedpyright settings'
+gps
+stow_all
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+j setup-tools
+which basedpyright
+gcam 'update zed basedpyright settings'
+gps
+stow_all
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+uv sync --all-packages
+uv pip install -U pandas
+uv pip install -U numpy
+uv sync --all-packages
+use .venv/bin/activate.nu<\n>
+deactivate
+use .venv/bin/activate.nu<\n>
+uv pip install ipykernel
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+gcam 'add back format keybinding'
+gps
+stow_all
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+j setup-tools
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+j activate
+use .venv/bin/activate.nu<\n>
+j setup-tools
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+j setup-tools
+gcam 'update python line length in ruff lsp definition'
+gps
+stow_all
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+j lint
+j format
+j setup-tools
+uv add pydantic
+j setup-tools
+ltree
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+ltree
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+uv add erdantic
+brew install graphviz
+gcam 'add graphviz to brewfile'
+gps
+stow_all
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+uv add graphviz erdantic
+uv add graphviz
+uv add erdantic
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+uv pip install erdantic
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+uv pip install erdantic
+gcam 'add homebrew c extension build flags to shell configs'
+gps
+stow_all
+$env.PATH
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+uv pip install erdantic
+uv add erdantic
+gcam 'update basedpyright zed settings'
+gps
+stow_all
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+j setup-tools
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+j render-erds
+j render-docs
+uv add pdoc
+j render-docs
+uv remove pdoc
+uv add pdoc
+j render-docs
+uv pip install mkdocs mkdocs-material mkdocstrings[python]
+uv add mkdocs mkdocs-material mkdocstrings[python]
+uv remove pdoc
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+uv remove mkdocs mkdocs-material mkdocstrings[python]
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+uv pip install pydoc-markdown
+j render-pydoc
+j setup-tools
+j render-pydoc
+pydoc-markdown src
+pydoc-markdown
+pydoc-markdown --verbose
+j format
+j activate
+use .venv/bin/activate.nu<\n>
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+j setup-tools
+j activate
+use .venv/bin/activate.nu<\n>
+uv add shapely
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+j venv
+j activate
+use .venv/bin/activate.nu<\n>
+j setup-tools
+uv add --dev basedpyright
+j setup-tools
+j nb-pair
+gcam 'update data dictionary loader and geo factory'
+gps
+gst
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo/.venv/bin/activate.nu ; clear
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/personal_folders/jack/.venv/bin/activate.nu ; clear
+gcam 'update jupytext config in pyproject'
+j nb-sync
+j nb-sync-py
+j nb-pair
+jupytext --sync notebooks/**/_scripts/*.py
+jupytext --sync notebooks/_scripts/*.py
+jupytext --sync _scripts/*.py
+j nb-pair
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/personal_folders/jack/.venv/bin/activate.nu ; clear
+gst
+gaa
+gcam 'add stub-ish file for address and geocoordinate classes and update pyproject and justfile'
+gps
+gst
+gb
+j venv
+j activate
+use .venv/bin/activate.nu<\n>
+git init
+gb
+rm -rf .git
+z research
+gb
+gaa
+gcam 'move geo packages from personal folder to geo_engineering project'
+gps
+za projects/geo_engineering
+z geoengineer
+z geo_engineering
+j setup-core
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/projects/geo_engineering/.venv/bin/activate.nu ; clear
+gb
+gaa
+gcam 'update address, coordinate and poll station classes and make singular factory function'
+gps
+rg 'GeoIndex' src/geo_entities/
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/projects/geo_engineering/.venv/bin/activate.nu ; clear
+gaa
+gcam 'add index accessor to fix circular dependency'
+gb
+gps
+j activate
+j setup-core
+rg 'GeoIndex' src/geo_entities/
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/projects/geo_engineering/.venv/bin/activate.nu ; clear
+gb
+gaa
+gcam 'add geo interface to manage the circular dependency between the geo entities and the index and removed index accessor because it did not work'
+gps
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/projects/geo_engineering/.venv/bin/activate.nu ; clear
+gaa
+gcam 'update address with new geo interface from geo index'
+gps
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/projects/geo_engineering/.venv/bin/activate.nu ; clear
+gaa
+gcam 'update cache and factory and download open source israel geo files'
+git add .gitignore
+gst
+gps
+brew install git-lfs
+git add .gitignore
+git add .gitattributes
+git commit -m "update gitignore and git attributes and track files with Git LFS"
+gps
+git reset HEAD projects/geo_engineering/data/01_raw/geodatabases/review/שכבת\ גושים\ -\ המרכז\ למיפוי\ ישראל.geojson
+git reset HEAD -- "projects/geo_engineering/data/01_raw/geodatabases/review/שכבת גושים - המרכז למיפוי ישראל.geojson"
+git lfs track "*.pdf"<\n>git lfs track "*.gdb"
+git lfs track "*.geojson"
+git lfs track "*.geojson"<\n>echo "*.geojson filter=lfs diff=lfs merge=lfs -text" >> .gitattributes<\n>git add .gitattributes
+git add projects/geo_engineering/data/01_raw/geodatabases/review/שכבת\ גושים\ -\ המרכז\ למיפוי\ ישראל.geojson
+git add -- "projects/geo_engineering/data/01_raw/geodatabases/review/שכבת גושים - המרכז למיפוי ישראל.geojson"
+git lfs ls-files
+gcam 'update cache and factory and download open source israel geo files'
+gps
+git rm --cached "projects/geo_engineering/data/01_raw/geodatabases/review/שכבת גושים - המרכז למיפוי ישראל.geojson"
+gb
+gps
+gaa
+gcam 'add geo interface to manage the circular dependency between the geo entities and the index and removed index accessor because it did not work'
+gps
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/projects/geo_engineering/.venv/bin/activate.nu ; clear
+gaa
+gcam 'edit geo factory functions to class'
+gps
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/projects/geo_engineering/.venv/bin/activate.nu ; clear
+brew install atuin
+brew services
+gaa
+gcam 'edit readme and shell configs to enable atuin'
+gps
+stow_all
+gaa
+git add .
+git commit -m "fix the env.nu by removing source line from atuin config"<\n>
+git push
+stow_all
+stow .
+brew services
+brew services start postgresql@17
+brew services start atuin
+gaa
+gcam 'edit readme to match brewfile and add preliminary windows setup scripts'
+gps
+stow_all
+j
+brew list
+brew uninstall python-lsp-server
+brew uninstall markdownlint-cli
+brew bundle dump
+brew bundle dump --cask
+brew bundle dump --tap
+brew bundle dump --formula
+brew search sketchybar
+brew uninstal felixkratz/formulae/sketchybar
+brew bundle dump --formula
+brew bundle dump --cask
+brew uninstal karabiner-elements
+brew uninstall karabiner-elements
+brew search zed
+brew install karabiner-elements
+brew uninstall karabiner-elements
+brew uninstall --force karabiner-elements<\n>brew cleanup
+j update-brew
+as load
+brew list --cask
+brew list
+brew install --cask notion-calendar
+brew list --cask
+which notion-calendar
+brew list --cask
+brew search notion-calendar
+which notion-calendar
+brew uninstall alfred
+brew bundle dump --vscode
+brew bundle dump --mas
+cd
+cp ~/.config/Code/User/settings.json ~/dotfiles/VSCodium/User/<\n>
+brew install --cask vscodium
+gaa
+dot
+gaa
+gcam 'add dotfiles for vscodium'
+gps
+stow_all
+code --list-extensions > vscode-extensions.txt
+code --list-extensions > vscode-extensions.txt && cat vscode-extensions.txt | xargs -L 1 codium --install-extension
+chmod +x ~/dotfiles/scripts/install_vscodium_extensions.sh
+~/dotfiles/scripts/install_vscodium_extensions.sh
+gcam 'add vscode marketplace settings to codium'
+gps
+stow_all
+conf_dir
+l
+ltree
+ll
+lt
+codium --user-data-dir ~/.config/VSCodium
+gaa
+dot
+gaa
+gcam 'update codium settings and extensions'
+gps
+stow_all
+as windows
+as window
+as window
+as app
+as app
+as window
+as app
+as load
+gaa
+gcam 'remove all not dotfile like files from vscodium'
+gps
+stow_all
+restow_all
+stow_all
+restow_all
+stow_all
+restow_all
+ltree
+stow vscodium
+restow_all
+unstow VSCodium
+restow_all
+rg VSCodium
+restow_all
+unstow_all
+stow_all
+ls -l ~/.config/nushell/
+stow nushell
+restow_all
+stow .
+restow_all
+$env.PATH
+gaa
+git add .
+git commit -m 'rename vscodium folder'
+git reset
+mv VSCodium VSCodium_temp
+git add -A<\n>git commit -m "Temporary rename VSCodium to VSCodium_temp for case correction"
+mv VSCodium_temp vscodium
+git add -A<\n>git commit -m "Rename VSCodium to vscodium (fix casing)"
+git commit -m 'rename vscodium folder'
+git push
+stow .
+stow -D .
+stow .
+stow .
+stow_all
+gaa
