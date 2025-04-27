@@ -291,6 +291,10 @@ chmod +x scripts/setup.sh
     brew install --cask vscodium
     ```
 
+    - Microsoft Marketplace Setup:
+        - https://github.com/flathub/com.vscodium.codium/issues/90
+        - https://github.com/VSCodium/vscodium/pull/674
+
 - [VS Code](https://code.visualstudio.com/)
 
     - Extensible code editor.

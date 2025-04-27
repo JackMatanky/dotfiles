@@ -1047,3 +1047,7 @@ stow .
 stow .
 stow_all
 gaa
+gcam 'add product json to vscodium for ms marketplace access'
+gps
+stow_all
+gaa
