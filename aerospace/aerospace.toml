@@ -89,6 +89,10 @@ run = 'move-node-to-workspace 4'
 if.app-id = 'com.microsoft.VSCode'
 run = 'move-node-to-workspace 5'
 
+[[on-window-detected]]
+if.app-id = 'com.vscodium'
+run = 'move-node-to-workspace 5'
+
 # Does not work, do not know why
 [[on-window-detected]]
 # if.app-id = 'net.ankiweb.dtop'
@@ -241,7 +245,8 @@ alt-ctrl-shift-s = 'exec-and-forget open /Applications/Safari.app'              
 alt-ctrl-shift-t = 'exec-and-forget open /Applications/Ghostty.app'                     # Terminal - Ghostty
 # alt-ctrl-shift-t = 'exec-and-forget open /Applications/WezTerm.app'                   # Terminal - WezTerm
 alt-ctrl-shift-z = 'exec-and-forget open /Applications/Zed.app'                         # IDE - Zed Code Editor
-alt-ctrl-shift-c = '''exec-and-forget open '/Applications/Visual Studio Code.app''''    # IDE - Visual Studio Code
+alt-ctrl-shift-c = 'exec-and-forget open /Applications/VSCodium.app'                    # IDE - Visual Studio Code
+# alt-ctrl-shift-c = '''exec-and-forget open '/Applications/Visual Studio Code.app''''    # IDE - Visual Studio Code
 
 
 # >>> Multiple Monitors <<<

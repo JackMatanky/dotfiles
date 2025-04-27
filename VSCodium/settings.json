@@ -1,4 +1,3 @@
-vscode-userdata:/Users/jack/.config/VSCodium/User/settings.json {"mtime":1745702764880,"ctime":1745702764879,"size":21963,"etag":"3e5nrbneomqf","orphaned":false,"typeId":""}
 {
   // --------------------------------------------
   // Global Settings
@@ -73,13 +72,15 @@ vscode-userdata:/Users/jack/.config/VSCodium/User/settings.json {"mtime":1745702
   // --------------------------------------------
   //SECTION - Terminal
   // --------------------------------------------
+  "terminal.external.osxExec": "Ghostty.app",
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.defaultProfile.windows": "Nushell",
   "terminal.integrated.defaultProfile.osx": "Nushell",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.fontLigatures.enabled": true,
+  "terminal.integrated.fontSize": 15,
   "terminal.integrated.enableImages": true,
-  "terminal.external.osxExec": "Ghostty.app",
   //!SECTION
 
   // --------------------------------------------
@@ -204,56 +205,6 @@ vscode-userdata:/Users/jack/.config/VSCodium/User/settings.json {"mtime":1745702
       "scope": "workspace",
       "behavior": "link"
     },
-    {
-      "tag": "ANCHOR",
-      "iconColor": "default",
-      "highlightColor": "#A8C023",
-      "scope": "file"
-    },
-    {
-      "tag": "TODO",
-      "iconColor": "blue",
-      "highlightColor": "#3ea8ff",
-      "scope": "workspace"
-    },
-    {
-      "tag": "FIXME",
-      "iconColor": "red",
-      "highlightColor": "#F44336",
-      "scope": "workspace"
-    },
-    {
-      "tag": "STUB",
-      "iconColor": "purple",
-      "highlightColor": "#BA68C8",
-      "scope": "file"
-    },
-    {
-      "tag": "NOTE",
-      "iconColor": "orange",
-      "highlightColor": "#FFB300",
-      "scope": "file"
-    },
-    {
-      "tag": "REVIEW",
-      "iconColor": "green",
-      "highlightColor": "#64DD17",
-      "scope": "workspace"
-    },
-    {
-      "tag": "SECTION",
-      "iconColor": "blurple",
-      "highlightColor": "#896afc",
-      "scope": "workspace",
-      "behavior": "region"
-    },
-    {
-      "tag": "LINK",
-      "iconColor": "#2ecc71",
-      "highlightColor": "#2ecc71",
-      "scope": "workspace",
-      "behavior": "link"
-    }
   ],
 
   "better-comments.multilineComments": true,
@@ -809,4 +760,15 @@ vscode-userdata:/Users/jack/.config/VSCodium/User/settings.json {"mtime":1745702
   "[nix]": {
     "editor.defaultFormatter": "brettm12345.nixfmt-vscode"
   },
+
+  //SECTION - Nushell
+  "nushellLanguageServer.includeDirs": [
+    "/Users/jack/dotfiles/nushell",
+    "/Users/jack/dotfiles/nushell/aliases",
+    "/Users/jack/dotfiles/nushell/completions",
+    "/Users/jack/dotfiles/nushell/themes"
+  ],
+  "nushellLanguageServer.nushellExecutablePath": "nu",
+  "terminal.integrated.sendKeybindingsToShell": true
+  //!SECTION
 }
