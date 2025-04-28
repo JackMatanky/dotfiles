@@ -1092,3 +1092,15 @@ gps
 overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/projects/geo_engineering/.venv/bin/activate.nu ; clear
 brew search cspell
 gaa
+gcam 'add cspell json to file type associations'
+gps
+stow_all
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/projects/geo_engineering/.venv/bin/activate.nu ; clear
+j setup-core
+uv add pytest
+j setup-core
+gaa
+gcam 'update pyproject with pytest and optional dependency groups and add relevant recipes to justfile'
+gps
+ltree
+gaa

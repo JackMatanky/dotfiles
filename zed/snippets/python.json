@@ -4,11 +4,23 @@
     "body": "#!/usr/bin/env python$0",
     "description": "Shebang line for default python interpreter"
   },
-  "pyright ignore line": {
-    "prefix": "#ignore",
-    "body": "# pyright: ignore[$0]",
+  "# coding=utf-8": {
+    "prefix": "enco",
+    "body": "# coding=utf-8\n$0",
+    "description": "Set default python3 encoding specification to utf-8, by default this is the encoding for python3.x as it is mentioned in pep-3120."
+  },
+
+  "BasedPyright Ignore Rule Comment": {
+    "prefix": "pyignore",
+    "body": "# pyright: ignore[${1:reportExplicitAny}]$0",
     "description": "Ignore specific line diagnostic in pyright (ignore all is unsafe)"
   },
+  "BasedPyright Ignore Report Any": {
+    "prefix": "pyignoreany",
+    "body": ["# pyright: ignore[reportExplicitAny]$0"],
+    "description": "BasedPyright ignore rule for explicit any, which is used to ignore the error when a variable is annotated as Any."
+  },
+
   "Multiline string": {
     "prefix": "#",
     "body": ["\"\"\"$0", "\"\"\""],
@@ -498,11 +510,5 @@
     "prefix": "###raises",
     "body": ["Raises:", "    $1: $0"],
     "description": "A Python docstring for methods when we want to be exclicit about the errors it Raises. Use it only when is relevant."
-  },
-
-  "# coding=utf-8": {
-    "prefix": "enco",
-    "body": "# coding=utf-8\n$0",
-    "description": "Set default python3 encoding specification to utf-8, by default this is the encoding for python3.x as it is mentioned in pep-3120."
   }
 }
