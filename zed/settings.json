@@ -481,7 +481,7 @@
   },
   "toolchain": { "name": "default", "path": "default" },
 
-  // File Types
+  // >>> File Type Associations <<<
   "file_types": {
     "JSON": ["flake.lock"],
     "JSONC": [
@@ -489,7 +489,8 @@
       "**/zed/**/*.json",
       "**/Zed/**/*.json",
       "tsconfig.json",
-      "pyrightconfig.json"
+      "pyrightconfig.json",
+      "cspell.json"
     ],
     "Plain Text": ["txt"],
     "Ruby": ["rb", "brewfile*"],
