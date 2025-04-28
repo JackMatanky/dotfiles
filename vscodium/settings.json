@@ -8,14 +8,21 @@
     "itemUrl": "https://marketplace.visualstudio.com/items"
   },
 
+  // Fonts
   "editor.fontFamily": "FiraCode Nerd Font Mono",
   "editor.fontSize": 15,
   "editor.fontLigatures": true,
-  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-  "editor.foldingMaximumRegions": 10000,
+
+  "editor.insertSpaces": true,
   "editor.wordWrap": "on",
-  "editor.unicodeHighlight.ambiguousCharacters": false,
+
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.experimentalGpuAcceleration": "on",
+  "editor.foldingMaximumRegions": 10000,
+  "editor.lineNumbers": "relative",
+  "editor.linkedEditing": true,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
 
   "diffEditor.codeLens": true,
 
@@ -32,6 +39,12 @@
 
   "security.workspace.trust.untrustedFiles": "open",
 
+  //SEGMENT - Snippets
+  "[snippets]": {
+    "editor.snippetSuggestions": "top"
+  },
+  //!SEGMENT
+
   // --------------------------------------------
   //SECTION - Appearance and Theme
   // --------------------------------------------
@@ -43,7 +56,7 @@
 
   //SEGMENT - Icons
   // Grey - #90a4ae; Light Beige - #f7d88c; Darker Beige - #e6c04c
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "vscode-icons",
   "material-icon-theme.activeIconPack": "none",
   "material-icon-theme.files.color": "#90a4ae",
   "material-icon-theme.folders.color": "#ddbb77",
@@ -115,15 +128,31 @@
   // --------------------------------------------
   "cSpell.enabled": true,
   "cSpell.language": "en, he",
+  "cSpell.dictionaryDefinitions": [
+    {
+      "name": "hebrew",
+      "path": "/opt/homebrew/lib/node_modules/@cspell/dict-he/hebrew-words.txt",
+      "description": "Hebrew words from cspell-dict-he",
+      "addWords": false
+    }
+  ],
+  "cSpell.dictionaries": ["hebrew"],
   "cSpell.customDictionaries": {
     "user_dictionary_eng": {
-      "name": "general_dictionary",
-      "path": "~/dotfiles/cspell/user_dictionary_eng.txt",
+      "name": "user_dictionary_eng",
+      "path": "~/dotfiles/cspell/dictionaries/user_dictionary_eng.txt",
+      "addWords": true,
+      "scope": "user"
+    },
+    "user_dictionary_python": {
+      "name": "user_dictionary_python",
+      "path": "~/dotfiles/cspell/dictionaries/user_dictionary_python.txt",
       "addWords": true,
       "scope": "user"
     }
   },
-  "cSpell.ignoreWords": ["PREMADE", "canonizer"],
+  "cSpell.ignoreWords": ["PREMADE"],
+
   "spellright.addToSystemDictionary": true,
   "spellright.notificationClass": "warning",
   "spellright.configurationScope": "user",
@@ -322,7 +351,7 @@
       "source.organizeImports": "explicit"
     }
   },
-  "python.defaultInterpreterPath": "/Users/jack/.pyenv/shims/python",
+  "python.defaultInterpreterPath": "~/.pyenv/versions/3.13.2/bin/python",
   "python.analysis.autoFormatStrings": true,
   "python.analysis.inlayHints.callArgumentNames": "partial",
   "python.analysis.inlayHints.functionReturnTypes": true,
@@ -333,7 +362,7 @@
   "python.terminal.activateEnvironment": true,
   "python.terminal.shellIntegration.enabled": true,
   "python.venvPath": ".venv",
-  "python.venvFolders": [".pyenv"],
+  "python.venvFolders": ["envs", ".venv"],
 
   //SEGMENT - Ruff
   "ruff.path": ["/opt/homebrew/bin/ruff"],
@@ -433,7 +462,7 @@
       "server": "JACK-LENOVO-LAP\\SQLEXPRESS",
       "database": "jolt_professional_abilities_test",
       "authenticationType": "Integrated",
-      "profileName": "Jolt Professional Abilities Test",
+      "profileName": "Jolt Profesional Abilities Test",
       "password": "",
       "id": "9B85E3C8-52ED-4945-811A-CA00D08D2AE4",
       "groupId": "FC8AE99C-9366-4CD8-A953-2E47FB9B5115"

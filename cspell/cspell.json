@@ -2,24 +2,37 @@
   "version": "0.2",
   "language": "en,he",
   "ignorePaths": [],
-  "dictionaryDefinitions": [],
-  "dictionaries": [],
+  "dictionaryDefinitions": [
+    {
+      "name": "hebrew",
+      "path": "/opt/homebrew/lib/node_modules/@cspell/dict-he/hebrew-words.txt",
+      "description": "Hebrew words from cspell-dict-he",
+      "addWords": false
+    }
+  ],
+  "dictionaries": ["hebrew"],
+  "customDictionaries": {
+    "user_dictionary_eng": {
+      "name": "general_dictionary",
+      "path": ".dictionaries/user_dictionary_eng.txt",
+      "addWords": true,
+      "scope": "user"
+    },
+    "user_dictionary_python": {
+      "name": "python_dictionary",
+      "path": ".dictionaries/user_dictionary_python.txt",
+      "addWords": true,
+      "scope": "user"
+    }
+  },
   "words": [],
   "ignoreWords": ["PREMADE", "canonizer"],
-  "import": ["@cspell/dict-he/cspell-ext.json"],
+  "import": [],
   "languageSettings": [
     {
       "languageId": "python",
       "locale": "*",
       "ignoreRegExpList": ["/#include.*/"]
     }
-  ],
-  "customDictionaries": {
-    "user_dictionary_eng": {
-      "name": "general_dictionary",
-      "path": ".user_dictionaries/user_dictionary_eng.txt",
-      "addWords": true,
-      "scope": "user"
-    }
-  }
+  ]
 }

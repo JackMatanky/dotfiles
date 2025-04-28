@@ -18,6 +18,8 @@ pyright
 setuptools
 
 # --- Python Concepts / Keywords ---
+dataclass
+dataclasses
 housenumber
 ipynb
 isinstance

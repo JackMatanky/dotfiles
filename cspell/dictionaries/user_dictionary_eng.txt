@@ -1,5 +1,6 @@
 # Custom Dictionary Words
 Dizengoff
+docstrings
 geocoder
 geocoordinate
 geoentities
