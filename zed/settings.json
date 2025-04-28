@@ -911,7 +911,7 @@
             "organizeImports": true
           },
           "fixAll": true,
-          "lineLength": 88
+          "lineLength": 80
         }
       }
     },

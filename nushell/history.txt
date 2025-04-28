@@ -1119,3 +1119,21 @@ overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/projects/
 gcam 'update index interface to comply with line length'
 gps
 gaa
+gcam 'update hebrew dictionary setting in cspell config'
+gps
+stow_all
+gcam 'update geofactory to ignore type warnings from Any'
+gps
+gcam 'fix resolve index in geoentity base and update test'
+gps
+gcam 'finish writing geoidindex subclass (star like schema) to geoindex'
+gps
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/projects/geo_engineering/.venv/bin/activate.nu ; clear
+j format
+j activate
+use .venv/bin/activate.nu<\n>
+j setup-dev
+j format
+uv pip install -e .[dev]
+j check
+j format
