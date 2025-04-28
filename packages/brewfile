@@ -68,6 +68,7 @@ brew "python@3.13"                        # Python programming language
 brew "marksman"                           # Markdown LSP
 brew "lua-language-server"                # Lua LSP
 brew "rust-analyzer"                      # Rust LSP
+brew "solargraph"                         # Ruby LSP
 brew "texlab"                             # LaTeX LSP
 brew "typescript-language-server"         # TypeScript LSP
 brew "vscode-langservers-extracted"       # Various web language servers
@@ -91,6 +92,9 @@ brew "luarocks"                           # Package manager for Lua
 
 # >>> Linters & Formatters <<<
 brew "prettier"                           # Universal code formatter
+brew "cspell"                             # Spell checker for code and text
+
+# --- Language Specific Formatters ---
 brew "markdownlint-cli2"                  # Improved Markdown linter
 brew "ruff"                               # Python linter and formatter
 brew "sqlfluff"                           # SQL linter and formatter

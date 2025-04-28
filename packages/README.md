@@ -63,7 +63,7 @@ The Brewfile is organized into the following major sections:
 > Setup major language runtimes, language servers, and development toolchains.
 
 - **Languages & Runtimes**: Installs Python, Node.js, Lua, Java (OpenJDK), MySQL, and PostgreSQL.
-- **Language Server Protocols (LSPs)**: Adds language server support for Markdown, Lua, Rust, LaTeX, YAML, TypeScript, and Python.
+- **Language Server Protocols (LSPs)**: Adds language server support for Markdown, Lua, Rust, Ruby, LaTeX, YAML, TypeScript, and Python.
 - **Python Toolchain**: Python version management (*pyenv*), environment management (*pyenv-virtualenv*), fast package installation (*uv*), and interactive scripting tools (*ipython*, *jupytext*).
 - **Lua Toolchain**: Lua JIT compiler (*luajit*) and Lua package manager (*luarocks*).
 - **Linters & Formatters**: Install linters and formatters for Python, Lua, SQL, Markdown, and universal codebases (e.g., *ruff*, *stylua*, *markdownlint-cli2*, *sqlfluff*, *prettier*).

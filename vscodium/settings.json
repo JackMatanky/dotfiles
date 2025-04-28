@@ -2,15 +2,11 @@
   // --------------------------------------------
   // Global Settings
   // --------------------------------------------
-  "extensions.additionalExtensionGallery": [
-    {
-      "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
-      "itemUrl": "https://marketplace.visualstudio.com/items",
-      "controlUrl": "",
-      "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
-      "resourceUrlTemplate": "https://{publisher}.gallery.vsassets.io/_apis/public/gallery/publisher/{publisher}/extension/{extension}/{version}/assetbyname/{assetName}"
-    }
-  ],
+  "extensionsGallery": {
+    "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
+    "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
+    "itemUrl": "https://marketplace.visualstudio.com/items"
+  },
 
   "editor.fontFamily": "FiraCode Nerd Font Mono",
   "editor.fontSize": 15,
@@ -118,6 +114,16 @@
   // Spellcheck
   // --------------------------------------------
   "cSpell.enabled": true,
+  "cSpell.language": "en, he",
+  "cSpell.customDictionaries": {
+    "user_dictionary_eng": {
+      "name": "general_dictionary",
+      "path": "~/dotfiles/cspell/user_dictionary_eng.txt",
+      "addWords": true,
+      "scope": "user"
+    }
+  },
+  "cSpell.ignoreWords": ["PREMADE", "canonizer"],
   "spellright.addToSystemDictionary": true,
   "spellright.notificationClass": "warning",
   "spellright.configurationScope": "user",
@@ -267,6 +273,28 @@
     }
   ],
 
+  //SEGMENT - TODO Tree
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "icon": "check",
+      "type": "line"
+    },
+    "FIXME": {
+      "iconColour": "#eed49f",
+      "gutterIcon": true
+    }
+  },
+  //!SEGMENT
+
   // --------------------------------------------
   // Extensions
   // --------------------------------------------
@@ -405,7 +433,7 @@
       "server": "JACK-LENOVO-LAP\\SQLEXPRESS",
       "database": "jolt_professional_abilities_test",
       "authenticationType": "Integrated",
-      "profileName": "Jolt Profesional Abilities Test",
+      "profileName": "Jolt Professional Abilities Test",
       "password": "",
       "id": "9B85E3C8-52ED-4945-811A-CA00D08D2AE4",
       "groupId": "FC8AE99C-9366-4CD8-A953-2E47FB9B5115"
@@ -522,6 +550,22 @@
     "editor.wordWrapColumn": 80,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  //!SECTION
+
+  //SECTION - JSON
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true,
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace"
+  },
+  "json.format.keepLines": true,
   //!SECTION
 
   //SECTION - HTML
@@ -735,20 +779,6 @@
   "vscodeMarkdownNotes.allowPipedWikiLinks": true,
   "obsidianmd.vaultPath": "D:\\obsidian_vault",
   //!SEGMENT
-  //!SECTION
-
-  //SECTION - JSON
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[jsonc]": {
-    "editor.quickSuggestions": {
-      "strings": true
-    },
-    "editor.suggest.insertMode": "replace",
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "json.format.keepLines": true,
   //!SECTION
 
   //SECTION - TOML

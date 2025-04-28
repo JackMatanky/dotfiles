@@ -1051,3 +1051,39 @@ gcam 'add product json to vscodium for ms marketplace access'
 gps
 stow_all
 gaa
+gcam 'move cspell to top level and change dictionary name to clarify english'
+gps
+stow_all
+brew install cspell
+npm install -g @cspell/dict-he
+cspell link add @cspell/dict-he
+pyenv shell shims
+j activate
+use .venv/bin/activate.nu<\n>
+j format
+gaa
+gcam 'update files during review with Mushkin'
+gps
+uv add requests_cache
+uv pip install --upgrade --sync
+uv pip sync --upgrade
+uv pip install --upgrade
+uv pip install --upgrade -requirements
+uv pip install --upgrade requirements
+uv pip install --upgrade pyproject
+uv pip install --upgrade e .
+gaa
+gcam 'update address and base geoindex use'
+gps
+gaa
+gcam 'update resolve index methods and add dedicated method to address to find street entities'
+gps
+gb
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/projects/geo_engineering/.venv/bin/activate.nu ; clear
+gb
+gaa
+gcam 'add search interface, move interfaces to dedicated folder, break up index to index and search' 
+gps
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/projects/geo_engineering/.venv/bin/activate.nu ; clear
+j update-brew-mac
+brew install solargraph

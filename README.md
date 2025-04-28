@@ -303,7 +303,7 @@ chmod +x scripts/setup.sh
     brew install --cask visual-studio-code
     ```
 
-### Language Servers
+### Language Server Protocols (LSPs)
 
 - [VS Code Language Servers](https://github.com/hrsh7th/vscode-langservers-extracted)
 
@@ -335,6 +335,15 @@ chmod +x scripts/setup.sh
 
     ```sh
     brew install yaml-language-server
+    ```
+
+- [Solargraph](https://solargraph.org)
+
+    - Ruby Language Server
+    - Note: Primarily used for handling Homebrew related tasks on my machine.
+
+    ```sh
+    brew install solargraph
     ```
 
 ### Python Tooling
@@ -461,6 +470,16 @@ chmod +x scripts/setup.sh
 
     ```sh
     brew install prettier
+    ```
+
+- [cSpell](https://cspell.org)
+
+    - GitHub: https://github.com/streetsidesoftware/cspell
+
+    - Spell checker for code and text.
+
+    ```sh
+    brew install cspell
     ```
 
 ---

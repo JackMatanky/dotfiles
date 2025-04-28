@@ -1,0 +1,10 @@
+# Custom Dictionary Words
+Dizengoff
+geocoder
+geocoordinate
+geoentities
+geospatial
+Geostatistical
+Matanky
+moshav
+moshavim
