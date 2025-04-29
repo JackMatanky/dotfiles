@@ -1195,3 +1195,8 @@ stow_all
 gcam 'update cspell zed lsp config'
 gps
 stow_all
+gcam 'try commenting out cspell lsp zed config'
+gps
+stow_all
+cspell link add @cspell/dict-he
+which typos

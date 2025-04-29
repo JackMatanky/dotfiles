@@ -846,40 +846,15 @@
   // >>> Language Server Protocol (LSP) <<<
   // ------------------------------------------------------
   "lsp": {
-    // "cspell": {
-    //   "command": "cspell-lsp",
-    //   "args": ["--stdio", "--config", "/User/jack/dotfiles/cspell/cspell.json"],
-    //   "settings": {
-    //     "cSpell": {
-    //       "configFile": "/User/jack/dotfiles/cspell/cspell.json"
-    //       "language": "en, he",
-    //       "dictionaryDefinitions": [
-    //         {
-    //           "name": "hebrew",
-    //           "path": "/opt/homebrew/lib/node_modules/@cspell/dict-he/hebrew-words.txt",
-    //           "description": "Hebrew words from cspell-dict-he",
-    //           "addWords": false
-    //         }
-    //       ],
-    //       "dictionaries": ["hebrew"],
-    //       "customDictionaries": {
-    //         "user_dictionary_eng": {
-    //           "name": "user_dictionary_eng",
-    //           "path": "~/dotfiles/cspell/dictionaries/user_dictionary_eng.txt",
-    //           "addWords": true,
-    //           "scope": "user"
-    //         },
-    //         "user_dictionary_python": {
-    //           "name": "user_dictionary_python",
-    //           "path": "~/dotfiles/cspell/dictionaries/user_dictionary_python.txt",
-    //           "addWords": true,
-    //           "scope": "user"
-    //         }
-    //       },
-    //       "ignoreWords": ["PREMADE"]
-    //     }
-    //   }
-    // },
+    "cspell": {
+      "command": "cspell-lsp",
+      "args": ["--stdio", "--config", "/User/jack/dotfiles/cspell/cspell.json"],
+      "settings": {
+        "cSpell": {
+          "configFile": "/User/jack/dotfiles/cspell/cspell.json"
+        }
+      }
+    },
     // >>> Python LSP: basedpyright <<<
     // Fast, open-source fork of Pyright for completions, type checking, and more
     "basedpyright": {
