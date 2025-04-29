@@ -1214,3 +1214,9 @@ brew bundle dump --describe
 brew uninstall tmux
 pyenv shell 3.13.2
 gaa
+gcam 'try adding pyenv shell integration'
+gps
+stow_all
+npm install -g @cspell/dict-python
+pnpm add -g @cspell/dict-python
+cspell link add @cspell/dict-python

@@ -1,35 +1,62 @@
 {
   "version": "0.2",
   "language": "en,he",
-  "ignorePaths": [],
+  "ignorePaths": [
+    "node_modules/**",
+    "venv/**",
+    ".venv/**",
+    "__pycache__/**"
+  ],
   "dictionaryDefinitions": [
+    // npm install -g @cspell/dict-he
     {
       "name": "hebrew",
       "path": "/opt/homebrew/lib/node_modules/@cspell/dict-he/hebrew-words.txt",
       "description": "Hebrew words from cspell-dict-he",
       "addWords": false
-    }
-  ],
-  "dictionaries": ["hebrew"],
-  "customDictionaries": {
-    "user_dictionary_eng": {
-      "name": "general_dictionary",
-      "path": "~/.config/cspell/dictionaries/user_dictionary_eng.txt",
+    },
+    // npm install -g @cspell/dict-python
+    {
+      "name": "python",
+      "path": "/opt/homebrew/lib/node_modules/@cspell/dict-python/python.txt",
+      "description": "Python dictionary words",
+      "addWords": false
+    },
+    {
+      "name": "python_dictionary",
+      "path": "${env:HOME}/.config/cspell/dictionaries/user_dictionary_python.txt",
       "addWords": true,
       "scope": "user"
     },
-    "user_dictionary_python": {
-      "name": "python_dictionary",
-      "path": "~/.config/cspell/dictionaries/user_dictionary_python.txt",
+    {
+      "name": "general_dictionary",
+      "path": "${env:HOME}/.config/cspell/dictionaries/user_dictionary_eng.txt",
       "addWords": true,
       "scope": "user"
     }
-  },
-  "words": [],
-  "ignoreWords": ["PREMADE", "canonizer"],
-  "import": [],
+  ],
+  "dictionaries": [
+    "general_dictionary",
+    "hebrew",
+    "python",
+  ],
+  "ignoreWords": [
+    "PREMADE",
+    "canonizer"
+  ],
   "languageSettings": [
-    { "languageId": "python", "dictionaries": ["python"] },
-    { "languageId": "javascript", "dictionaries": ["typescript", "node"] }
+    {
+      "languageId": "python",
+      "dictionaries": [
+        "python"
+      ]
+    },
+    {
+      "languageId": "javascript",
+      "dictionaries": [
+        "typescript",
+        "node"
+      ]
+    }
   ]
 }
