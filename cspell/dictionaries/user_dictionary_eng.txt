@@ -6,6 +6,13 @@ geocoordinate
 geoentities
 geospatial
 Geostatistical
+jackm
 Matanky
 moshav
 moshavim
+Pyenv
+Pyright
+venv
+virtualenv
+Nushell
+Atuin

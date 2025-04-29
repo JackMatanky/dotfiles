@@ -27,5 +27,6 @@ itertuples
 kernelspec
 pycache
 typestubs
+Pyenv
 venv
 venvPath

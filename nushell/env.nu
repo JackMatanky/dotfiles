@@ -202,11 +202,11 @@ if (which pyenv | is-not-empty) {
     $env.PATH = ($env.PATH | append ($env.PYENV_ROOT | path join "bin"))
     $env.PATH = ($env.PATH | append ($env.PYENV_ROOT | path join "shims"))
 
-    # >>> Pyenv shell integration (CRITICAL for pyenv shell/local/global) <<<
-    let pyenv_hook = (pyenv init --path | complete)
-    if ($pyenv_hook.exit_code == 0) {
-        eval $pyenv_hook.stdout
-    }
+    # # >>> Pyenv shell integration (CRITICAL for pyenv shell/local/global) <<<
+    # let pyenv_hook = (pyenv init --path | complete)
+    # if ($pyenv_hook.exit_code == 0) {
+    #     eval $pyenv_hook.stdout
+    # }
 
     # Load pyenv-virtualenv if available
     if (which pyenv-virtualenv | is-not-empty) {

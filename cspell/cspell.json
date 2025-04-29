@@ -42,7 +42,8 @@
   ],
   "ignoreWords": [
     "PREMADE",
-    "canonizer"
+    "canonizer",
+    "inshellisense"
   ],
   "languageSettings": [
     {

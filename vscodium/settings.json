@@ -127,37 +127,73 @@
   // Spellcheck
   // --------------------------------------------
   "cSpell.enabled": true,
-  "cSpell.language": "en, he",
+  "cSpell.ignorePaths": [
+    "node_modules/**",
+    "venv/**",
+    ".venv/**",
+    "__pycache__/**",
+    "settings.json"
+  ],
   "cSpell.dictionaryDefinitions": [
+    // npm install -g @cspell/dict-he
     {
       "name": "hebrew",
       "path": "/opt/homebrew/lib/node_modules/@cspell/dict-he/hebrew-words.txt",
       "description": "Hebrew words from cspell-dict-he",
       "addWords": false
-    }
-  ],
-  "cSpell.dictionaries": ["hebrew"],
-  "cSpell.customDictionaries": {
-    "user_dictionary_eng": {
-      "name": "user_dictionary_eng",
-      "path": "~/dotfiles/cspell/dictionaries/user_dictionary_eng.txt",
-      "addWords": true,
-      "scope": "user"
     },
-    "user_dictionary_python": {
-      "name": "user_dictionary_python",
+    // npm install -g @cspell/dict-python
+    {
+      "name": "python",
+      "path": "/opt/homebrew/lib/node_modules/@cspell/dict-python/python.txt",
+      "description": "Python dictionary words",
+      "addWords": false
+    },
+    {
+      "name": "python_dictionary",
       "path": "~/dotfiles/cspell/dictionaries/user_dictionary_python.txt",
       "addWords": true,
       "scope": "user"
+    },
+    {
+      "name": "general_dictionary",
+      "path": "~/dotfiles/cspell/dictionaries/user_dictionary_eng.txt",
+      "addWords": true,
+      "scope": "user"
     }
-  },
-  "cSpell.ignoreWords": ["PREMADE"],
+  ],
+  "cSpell.dictionaries": [
+    "general_dictionary",
+    "hebrew",
+    "python",
+  ],
+  "cSpell.ignoreWords": [
+    "PREMADE",
+    "canonizer",
+    "esbenp",
+    "libexec"
+  ],
+  "cSpell.languageSettings": [
+    {
+      "languageId": "python",
+      "dictionaries": [
+        "python"
+      ]
+    },
+    {
+      "languageId": "javascript",
+      "dictionaries": [
+        "typescript",
+        "node"
+      ]
+    }
+  ],
 
   "spellright.addToSystemDictionary": true,
   "spellright.notificationClass": "warning",
   "spellright.configurationScope": "user",
-  "spellright.language": ["en"],
-  "spellright.documentTypes": ["markdown", "latex"],
+  "spellright.language": [ "en" ],
+  "spellright.documentTypes": [ "markdown", "latex" ],
 
   // --------------------------------------------
   // Formatting Settings
@@ -172,10 +208,15 @@
   "less.format.enable": false,
   "formatContextMenu.closeAfterSave": true,
 
+  //SEGMENT - .editorconfig
+  "editorconfig.generateAuto": true,
+  "editorconfig.showMenuEntry": true,
+  //!SEGMENT
+
   // --------------------------------------------
   // Comment Extensions
   // --------------------------------------------
-  "commentAnchors.tags.separators": [" - ", ": ", " "],
+  "commentAnchors.tags.separators": [ " - ", ": ", " " ],
   "commentAnchors.tagHighlights.enabled": true,
   "commentAnchors.tags.displayHierarchyInWorkspace": true,
   "commentAnchors.tags.displayInGutter": true,
@@ -351,7 +392,7 @@
       "source.organizeImports": "explicit"
     }
   },
-  "python.defaultInterpreterPath": "~/.pyenv/versions/3.13.2/bin/python",
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
   "python.analysis.autoFormatStrings": true,
   "python.analysis.inlayHints.callArgumentNames": "partial",
   "python.analysis.inlayHints.functionReturnTypes": true,
@@ -361,11 +402,11 @@
   "python.REPL.sendToNativeREPL": true,
   "python.terminal.activateEnvironment": true,
   "python.terminal.shellIntegration.enabled": true,
-  "python.venvPath": ".venv",
-  "python.venvFolders": ["envs", ".venv"],
+  "python.venvPath": "${workspaceFolder}/.venv",
+  "python.venvFolders": [ "envs", ".venv" ],
 
   //SEGMENT - Ruff
-  "ruff.path": ["/opt/homebrew/bin/ruff"],
+  "ruff.path": [ "/opt/homebrew/bin/ruff" ],
   "ruff.lineLength": 80,
   "ruff.organizeImports": true,
   //!SEGMENT
@@ -839,5 +880,6 @@
 
   "[nix]": {
     "editor.defaultFormatter": "brettm12345.nixfmt-vscode"
-  }
+  },
+  "vscode-just.formatOnSave": true
 }

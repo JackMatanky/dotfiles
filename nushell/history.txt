@@ -1220,3 +1220,6 @@ stow_all
 npm install -g @cspell/dict-python
 pnpm add -g @cspell/dict-python
 cspell link add @cspell/dict-python
+gcam 'update cspell global config'
+gps
+stow_all
