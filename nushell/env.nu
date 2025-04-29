@@ -163,14 +163,24 @@ $env.PATH = (
 )
 
 if ($OS == "Darwin") {
+    $env.HOMEBREW_RUBY = ($env.BREW_OPT_DIR | path join "ruby" "bin")
+    $env.HOMEBREW_RUBY_GEMS = ($env.BREW_OPT_DIR | path join "ruby" "gems" "3.4.0" "bin")
+    if ($env.HOMEBREW_RUBY | is-not-empty) {
+        $env.PATH = (
+          $env.PATH
+          | split row (char esep)
+          | append $env.HOMEBREW_RUBY
+          | append $env.HOMEBREW_RUBY_GEMS
+          | append /usr/bin
+        )
+    }
+
     $env.PATH = (
       $env.PATH
         | split row (char esep)
         | append ($env.HOMEBREW | path join "bin")
         | append ($env.HOMEBREW | path join "sbin")
         | append ($env.BREW_OPT_DIR | path join "openjdk" "bin")
-        | append ($env.BREW_OPT_DIR | path join "ruby" "bin" "ruby")
-        | append ($env.BREW_LIB_DIR | path join "ruby" "gems" "3.4.0" "bin")
         | append ($env.BREW_BIN_DIR | path join "ghostty")
         | append ($env.BREW_BIN_DIR | path join "nvim")
         | append /Applications/Ghostty.app/Contents/MacOS/ghostty

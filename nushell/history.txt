@@ -1170,3 +1170,8 @@ which solargraph
 which ruby
 brew install ruby
 brew reinstall ruby
+gcam 'add ruby to path as per homebrew instructions'
+gps
+stow_all
+ruby --version
+which ruby
