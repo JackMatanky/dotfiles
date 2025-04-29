@@ -1192,3 +1192,6 @@ which solargraph
 gcam 'change path order for homebrew ruby to come before system ruby in zsh and bash configs'
 gps
 stow_all
+gcam 'update cspell zed lsp config'
+gps
+stow_all
