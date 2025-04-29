@@ -1154,3 +1154,9 @@ gcam 'update zed settings to add solargraph lsp'
 gps
 stow_all
 which solargraph
+gcam 'update zed settings to add solargraph lsp'
+gps
+stow_all
+solargraph socket
+ruby --version
+brew install ruby

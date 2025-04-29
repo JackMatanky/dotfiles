@@ -37,6 +37,8 @@ $env.HOMEBREW = (match $OS {
 # >>> Homebrew Base Paths <<<
 $env.BREW_INCLUDE_DIR = ($env.HOMEBREW | path join 'include')
 $env.BREW_LIB_DIR = ($env.HOMEBREW | path join 'lib')
+$env.BREW_OPT_DIR = ($env.HOMEBREW | path join 'opt')
+$env.BREW_BIN_DIR = ($env.HOMEBREW | path join 'bin')
 
 # >>> Build Flags for Brew-Linked Libraries <<<
 $env.CFLAGS = ["-I", $env.BREW_INCLUDE_DIR] | str join
@@ -157,7 +159,6 @@ $env.PATH = (
   | append ($env.HOME | path join ".local" "bin")
   | append ($env.HOME | path join ".pyenv" "bin")
   | append ($env.HOME | path join ".pyenv" "shims")
-  | append ($env.XDG_CONFIG_HOME | path join 'zide/bin')
   | append ($env.CARGO_HOME | path join 'bin')
 )
 
@@ -167,9 +168,11 @@ if ($OS == "Darwin") {
         | split row (char esep)
         | append ($env.HOMEBREW | path join "bin")
         | append ($env.HOMEBREW | path join "sbin")
-        | append ($env.HOMEBREW | path join "opt" "openjdk" "bin")
-        | append ($env.HOMEBREW | path join "bin" "ghostty")
-        | append ($env.HOMEBREW | path join "bin" "nvim")
+        | append ($env.BREW_OPT_DIR | path join "openjdk" "bin")
+        | append ($env.BREW_OPT_DIR | path join "ruby" "bin")
+        | append ($env.BREW_LIB_DIR | path join "ruby" "gems" "3.4.0" "bin")
+        | append ($env.BREW_BIN_DIR | path join "ghostty")
+        | append ($env.BREW_BIN_DIR | path join "nvim")
         | append /Applications/Ghostty.app/Contents/MacOS/ghostty
     )
 }
@@ -227,15 +230,13 @@ if (which java | is-not-empty) {
 # Docs: https://starship.rs/config/
 # Nushell Guide: https://starship.rs/guide/#step-2-set-up-your-shell-to-use-starship
 if (which starship | is-not-empty) {
-    # Path to starship's Nushell init script
     let init_file = ($env.XDG_CACHE_HOME | path join "starship/init.nu")
     # Ensure the parent directory exists
     mkdir ($init_file | path dirname)
-    # Only generate init.nu if it doesn't exist
+    # Only generate init.nu if parent directory does not exist
     if not ($init_file | path exists) {
         starship init nu | save --force $init_file
     }
-    # Point to your Starship config file
     $env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join "starship/starship.toml")
 }
 
