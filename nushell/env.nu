@@ -169,7 +169,7 @@ if ($OS == "Darwin") {
         | append ($env.HOMEBREW | path join "bin")
         | append ($env.HOMEBREW | path join "sbin")
         | append ($env.BREW_OPT_DIR | path join "openjdk" "bin")
-        | append ($env.BREW_OPT_DIR | path join "ruby" "bin")
+        | append ($env.BREW_OPT_DIR | path join "ruby" "bin" "ruby")
         | append ($env.BREW_LIB_DIR | path join "ruby" "gems" "3.4.0" "bin")
         | append ($env.BREW_BIN_DIR | path join "ghostty")
         | append ($env.BREW_BIN_DIR | path join "nvim")

@@ -1160,3 +1160,13 @@ stow_all
 solargraph socket
 ruby --version
 brew install ruby
+gcam 'add ruby to path as per homebrew instructions'
+gps
+stow_all
+ruby --version
+$env.PATH
+brew install solargraph
+which solargraph
+which ruby
+brew install ruby
+brew reinstall ruby
