@@ -1180,3 +1180,12 @@ gps
 stow_all
 which ruby
 $env.PATH
+gcam 'change path order for homebrew ruby to come before system ruby'
+gps
+stow_all
+ruby --version
+$env.PATH
+which ruby
+which solargraph
+brew reinstall solargraph
+which solargraph

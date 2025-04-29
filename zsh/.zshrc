@@ -52,6 +52,18 @@ elif [[ "$OS" == "Linux" ]]; then
     export LDFLAGS="-L$HOMEBREW/lib"
 fi
 
+# >>> Homebrew Ruby Path Prepend with Auto-Detection <<<
+if [[ "$OS" == "Darwin" ]]; then
+  HOMEBREW_RUBY_BIN="$HOMEBREW/opt/ruby/bin"
+  if [[ -d "$HOMEBREW_RUBY_BIN" ]]; then
+    HOMEBREW_RUBY_VERSION="$("$HOMEBREW_RUBY_BIN/ruby" --version | awk '{print $2}' | cut -d. -f1,2)"
+    HOMEBREW_RUBY_GEMS_BIN="$HOMEBREW/lib/ruby/gems/$HOMEBREW_RUBY_VERSION/bin"
+
+    # Prepend Ruby and Gems bin directories to PATH
+    export PATH="$HOMEBREW_RUBY_GEMS_BIN:$HOMEBREW_RUBY_BIN:$PATH"
+  fi
+fi
+
 # >>> Pyenv <<<
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"

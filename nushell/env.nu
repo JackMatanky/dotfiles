@@ -164,14 +164,12 @@ $env.PATH = (
 
 if ($OS == "Darwin") {
     $env.HOMEBREW_RUBY = ($env.BREW_OPT_DIR | path join "ruby" "bin")
-    $env.HOMEBREW_RUBY_GEMS = ($env.BREW_OPT_DIR | path join "ruby" "gems" "3.4.0" "bin")
     if ($env.HOMEBREW_RUBY | is-not-empty) {
         $env.PATH = (
           $env.PATH
           | split row (char esep)
+          | prepend ($env.BREW_OPT_DIR | path join "ruby" "gems" "3.4.0" "bin")
           | prepend $env.HOMEBREW_RUBY
-          | prepend $env.HOMEBREW_RUBY_GEMS
-          #| append /usr/bin
         )
     }
 
