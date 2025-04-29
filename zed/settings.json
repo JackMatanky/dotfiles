@@ -849,7 +849,7 @@
     "cspell": {
       "settings": {
         "cSpell": {
-          "configFile": "~/dotfiles/cspell/cspell.json"
+          "configFile": "User/jack/dotfiles/cspell/cspell.json"
           // "language": "en, he",
           // "dictionaryDefinitions": [
           //   {
@@ -953,12 +953,8 @@
     // >>> Ruby: Solargraph <<<
     "solargraph": {
       "initialization_options": {
-        "solargraph": {
-          "initialization_options": {
-            "diagnostics": true,
-            "formatting": true
-          }
-        }
+        "diagnostics": true,
+        "formatting": true
       }
     },
 

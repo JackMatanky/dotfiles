@@ -8,17 +8,15 @@
 # >>> Homebrew Taps <<<
 tap "homebrew/bundle"                     # Manage multiple Homebrew dependencies
 tap "homebrew/services"                   # Start/stop macOS services
-tap "felixkratz/formulae"                  # Custom tools (e.g., SketchyBar, Borders)
-tap "jesseduffield/lazygit"                # Fast Git UI
-tap "nikitabobko/tap"                      # Miscellaneous useful CLI tools
-tap "zegervdv/zathura"                     # Zathura PDF reader and extensions
+tap "felixkratz/formulae"                 # Custom tools (e.g., SketchyBar, Borders)
+tap "nikitabobko/tap"                     # Miscellaneous useful CLI tools (AeroSpace)
 
 # -----------------------------------------------
 # macOS-Specific Formulae (CLI Utilities)
 # -----------------------------------------------
 brew "switchaudio-osx"                    # CLI for switching macOS audio devices
 brew "nowplaying-cli"                     # Display currently playing media in the menu bar
-brew "borders"                             # Adds borders to macOS windows
+brew "borders"                            # Adds borders to macOS windows
 
 # -----------------------------------------------
 # Casks: GUI Applications
@@ -26,7 +24,7 @@ brew "borders"                             # Adds borders to macOS windows
 
 # >>> Media & Document Processing <<<
 cask "adobe-digital-editions"              # eBook and document reader
-cask "sioyek"                               # PDF reader optimized for research papers
+cask "sioyek"                              # PDF reader optimized for research papers
 
 # >>> Terminal Emulators <<<
 cask "ghostty"                             # Minimal GPU-accelerated terminal
@@ -39,7 +37,7 @@ cask "visual-studio-code"                  # Lightweight code editor
 
 # >>> SQL Clients <<<
 cask "mysqlworkbench"                      # MySQL database management tool
-cask "pgadmin4"                             # PostgreSQL database management tool
+cask "pgadmin4"                            # PostgreSQL database management tool
 
 # >>> Productivity Tools <<<
 cask "displaylink"                         # DisplayLink driver for macOS
@@ -60,24 +58,24 @@ cask "libreoffice"                         # Open-source office suite
 cask "libreoffice-language-pack"           # Language packs for LibreOffice
 
 # >>> Cloud Storage <<<
-cask "onedrive"                             # Microsoft cloud storage client
-cask "google-drive"                         # Google Drive client for macOS
+cask "onedrive"                            # Microsoft cloud storage client
+cask "google-drive"                        # Google Drive client for macOS
 
 # >>> Browsers <<<
 cask "zen-browser"                         # Minimalist web browser
 
 # >>> Media Players <<<
-cask "vlc"                                  # Open-source media player for video and audio
+cask "vlc"                                 # Open-source media player for video and audio
 
 # >>> Communication <<<
-cask "slack"                                # Team collaboration platform
+cask "slack"                               # Team collaboration platform
 
 # -----------------------------------------------
 # Fonts
 # -----------------------------------------------
 cask "font-fira-code-nerd-font"             # Fira Code font with Nerd Font glyphs
 cask "font-hack-nerd-font"                  # Hack font with Nerd Font glyphs
-cask "font-jetbrains-mono-nerd-font"         # JetBrains Mono font with Nerd Font glyphs
+cask "font-jetbrains-mono-nerd-font"        # JetBrains Mono font with Nerd Font glyphs
 cask "font-sf-mono"                         # Apple's SF Mono font
 cask "font-sf-pro"                          # Apple's SF Pro font
 cask "sf-symbols"                           # Apple's SF Symbols toolkit

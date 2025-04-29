@@ -1150,3 +1150,7 @@ which cspell-lsp
 gcam 'update cspell config'
 gps
 stow_all
+gcam 'update zed settings to add solargraph lsp'
+gps
+stow_all
+which solargraph
