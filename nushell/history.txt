@@ -1147,3 +1147,6 @@ brew install --cask displaylink
 which cspell
 which cspell-languageserver
 which cspell-lsp
+gcam 'update cspell config'
+gps
+stow_all

@@ -950,32 +950,17 @@
       }
     },
 
-    // >>> [DISABLED] Python LSP: pylsp <<<
-    // Retained for reference — replaced by basedpyright and pylyzer
-    /*
-    "pylsp": {
-      "settings": {
-        "plugins": {
-          "autopep8": { "enabled": false },
-          "black": { "enabled": false },
-          "flake8": { "enabled": false },
-          "isort": { "enabled": false },
-          "mccabe": { "enabled": false },
-          "pycodestyle": { "enabled": false },
-          "pydocstyle": { "enabled": false },
-          "pyflakes": { "enabled": false },
-          "pylint": { "enabled": false },
-          "yapf": { "enabled": false },
-          "ruff": { "enabled": false },
-          "pylsp_mypy": { "enabled": true },
-          "jedi": { "enabled": true },
-          "rope": { "enabled": true },
-          "rope_autoimport": { "enabled": true },
-          "rope_completion": { "enabled": true }
+    // >>> Ruby: Solargraph <<<
+    "solargraph": {
+      "initialization_options": {
+        "solargraph": {
+          "initialization_options": {
+            "diagnostics": true,
+            "formatting": true
+          }
         }
       }
     },
-    */
 
     // >>> TeX LSP: texlab <<<
     "texlab": {
