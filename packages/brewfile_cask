@@ -19,9 +19,6 @@ tap "zegervdv/zathura"                     # Zathura PDF reader and extensions
 brew "switchaudio-osx"                    # CLI for switching macOS audio devices
 brew "nowplaying-cli"                     # Display currently playing media in the menu bar
 brew "borders"                             # Adds borders to macOS windows
-brew "lazygit"                             # Simple terminal UI for Git
-brew "zathura"                             # Zathura PDF reader
-brew "zathura-pdf-mupdf"                   # MuPDF plugin for Zathura
 
 # -----------------------------------------------
 # Casks: GUI Applications
@@ -45,6 +42,7 @@ cask "mysqlworkbench"                      # MySQL database management tool
 cask "pgadmin4"                             # PostgreSQL database management tool
 
 # >>> Productivity Tools <<<
+cask "displaylink"                         # DisplayLink driver for macOS
 cask "aerospace"                           # Window manager for macOS
 # cask "alfred"                              # Productivity app launcher
 cask "espanso"                             # Text expander

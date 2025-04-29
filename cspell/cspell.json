@@ -29,10 +29,7 @@
   "ignoreWords": ["PREMADE", "canonizer"],
   "import": [],
   "languageSettings": [
-    {
-      "languageId": "python",
-      "locale": "*",
-      "ignoreRegExpList": ["/#include.*/"]
-    }
+    { "languageId": "python", "dictionaries": ["python"] },
+    { "languageId": "javascript", "dictionaries": ["typescript", "node"] }
   ]
 }

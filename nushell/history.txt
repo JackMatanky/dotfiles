@@ -1137,3 +1137,13 @@ j format
 uv pip install -e .[dev]
 j check
 j format
+gcam 'update ruff line length to 80'
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/projects/geo_engineering/.venv/bin/activate.nu ; clear
+j format
+gaa
+gcam 'instantiate the geo query package and fix geo entities calling the index'
+gps
+brew install --cask displaylink
+which cspell
+which cspell-languageserver
+which cspell-lsp

@@ -104,24 +104,26 @@ brew "stylua"                             # Lua code formatter
 # -----------------------------------------------
 # Document Processing & Viewing
 # -----------------------------------------------
+# >>> Document Viewing <<<
+brew "zathura"                             # Lightweight document viewer (PDF, EPUB, PostScript)
+# brew "zathura-pdf-mupdf"                   # PDF plugin for zathura (MuPDF backend)
+# brew "mupdf-tools"                       # Lightweight PDF and XPS viewer and tools
+
 # >>> Document Processing & Conversion <<<
 brew "pandoc"                             # Document format converter
-brew "ocrmypdf"                           # OCR tool for PDFs
 brew "img2pdf"                            # Convert images to PDF
-# brew "mupdf-tools"                       # Lightweight PDF and XPS viewer and tools
 brew "pdftoppm"                           # Convert PDF pages to images
 brew "qpdf"                               # Inspect and transform PDFs
 brew "poppler"                            # PDF rendering utilities
 
-# >>> Document Viewing <<<
-brew "zathura"                             # Lightweight document viewer (PDF, EPUB, PostScript)
-brew "zathura-pdf-mupdf"                   # PDF plugin for zathura (MuPDF backend)
+# >>> OCR: Optical Character Recognition <<<
+brew "ocrmypdf"                           # OCR tool for PDFs
+brew "tesseract"                          # OCR engine for scanned documents
 
 # -----------------------------------------------
 # Image Processing
 # -----------------------------------------------
-brew "tesseract"                           # OCR engine for scanned documents
-brew "imagemagick"                        # CLI tool for image manipulation
+brew "imagemagick"                         # CLI tool for image manipulation
 brew "webp"                                # WebP image format tools
 brew "libavif"                             # AVIF image format tools
 brew "graphviz"                            # Graph visualization tool (produces images)
