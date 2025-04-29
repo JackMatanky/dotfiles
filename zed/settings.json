@@ -847,6 +847,8 @@
   // ------------------------------------------------------
   "lsp": {
     "cspell": {
+      "command": "cspell-lsp",
+      "args": [],
       "settings": {
         "cSpell": {
           "configFile": "User/jack/dotfiles/cspell/cspell.json"

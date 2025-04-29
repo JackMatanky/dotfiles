@@ -1189,3 +1189,6 @@ which ruby
 which solargraph
 brew reinstall solargraph
 which solargraph
+gcam 'change path order for homebrew ruby to come before system ruby in zsh and bash configs'
+gps
+stow_all
