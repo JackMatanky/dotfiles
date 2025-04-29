@@ -169,9 +169,9 @@ if ($OS == "Darwin") {
         $env.PATH = (
           $env.PATH
           | split row (char esep)
-          | append $env.HOMEBREW_RUBY
-          | append $env.HOMEBREW_RUBY_GEMS
-          | append /usr/bin
+          | prepend $env.HOMEBREW_RUBY
+          | prepend $env.HOMEBREW_RUBY_GEMS
+          #| append /usr/bin
         )
     }
 

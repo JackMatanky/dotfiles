@@ -1175,3 +1175,8 @@ gps
 stow_all
 ruby --version
 which ruby
+gcam 'change path order for homebrew ruby to come before system ruby'
+gps
+stow_all
+which ruby
+$env.PATH
