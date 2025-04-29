@@ -1,0 +1,78 @@
+{
+  /*
+	Place your snippets for markdown here. Each snippet is defined under a snippet name and has a prefix, body and description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted.
+	Snippet body syntax:
+	    - Tabstops: Make the editor cursor move inside a snippet. Use $1, $2 to specify cursor locations. The number is the order in which tabstops will be visited, whereas $0 denotes the final cursor position. Multiple occurrences of the same tabstop are linked and updated in sync.
+	    - Placeholders: tabstops with values, like ${1:foo}. The placeholder text will be inserted and selected such that it can be easily changed. Placeholders can be nested, like ${1:another ${2:placeholder}}.
+	    - Choice: Placeholders with a comma-separated enumeration of values, enclosed with the pipe-character, for example ${1|one,two,three|}. When the snippet is inserted and the placeholder selected, choices will prompt the user to pick one of the values.
+	    - Variables: With $name or ${name:default}, you can insert the value of a variable. When a variable isn't set, its default or the empty string is inserted. When a variable is unknown (that is, its name isn't defined) the name of the variable is inserted and it is transformed into a placeholder.
+	*/
+  "HTML comment": {
+    "description": "Insert comment",
+    "prefix": "comment",
+    "body": "<!-- ${1:text} -->"
+  },
+  "hr line": {
+    // to obey markdownlint's MD035 - Horizontal rule style
+    "description": "Insert consistent hr",
+    "prefix": "hr",
+    "body": "---"
+  },
+  //SECTION - Links
+  "link": {
+    "description": "Insert link",
+    "prefix": "lk",
+    "body": "[${1:name}](${2:url})"
+  },
+  "link with clipboard url": {
+    "description": "Insert link with url from clipboard",
+    "prefix": "lku",
+    "body": "[${1:name}]($CLIPBOARD)"
+  },
+  "link with clipboard text": {
+    "description": "Insert link with name from clipboard",
+    "prefix": "lkt",
+    "body": "[$CLIPBOARD](${1:url})"
+  },
+  "image with clipboard url": {
+    "description": "Insert image with url from clipboard",
+    "prefix": "imgu",
+    "body": "![${1:alt_text}]($CLIPBOARD)"
+  },
+  "codeblock with language": {
+    "description": "codeblock with frequently used languages",
+    "prefix": "block",
+    "body": ["```${1|python,sql,javascript,diff,shell,json|}", "${0}", "```"]
+  },
+  //SECTION - Table
+  "two-column table": {
+    "description": "Insert two-column table",
+    "prefix": "table",
+    "body": [
+      "| Header1 | Header2 |",
+      "| --- | --- |",
+      "| content | content |",
+      "| content | content |"
+    ]
+  },
+  "three-column table": {
+    "description": "Insert three-column table",
+    "prefix": "3table",
+    "body": [
+      "| Header1 | Header2 | Header3 |",
+      "| --- | --- | --- |",
+      "| content | content | content |",
+      "| content | content | content |"
+    ]
+  },
+  "four-column table": {
+    "description": "Insert three-column table",
+    "prefix": "4table",
+    "body": [
+      "| Header1 | Header2 | Header3 | Header4 |",
+      "| --- | --- | --- | --- |",
+      "| content | content | content | content |",
+      "| content | content | content | content |"
+    ]
+  }
+}

@@ -29,7 +29,7 @@ $env.CARGO_HOME = ($env.HOME | path join '.cargo')
 # -----------------------------------------------
 # Default fallback to empty string if OS is unknown
 $env.HOMEBREW = (match $OS {
-    "Darwin" => "/opt/homebrew",
+    "Darwin" => $env.HOMEBREW_PREFIX,
     "Linux" => (brew --prefix | str trim),
     _ => "",
 })
@@ -195,11 +195,18 @@ if ($OS == "Linux") {
 # -----------------------------------------------
 # Programming Language Environment Setup
 # -----------------------------------------------
-# >>> Pyenv <<<
+# >>> Pyenv Integration <<<
 if (which pyenv | is-not-empty) {
+    # Set pyenv root and paths
     $env.PYENV_ROOT = ($env.HOME | path join ".pyenv")
     $env.PATH = ($env.PATH | append ($env.PYENV_ROOT | path join "bin"))
     $env.PATH = ($env.PATH | append ($env.PYENV_ROOT | path join "shims"))
+
+    # >>> Pyenv shell integration (CRITICAL for pyenv shell/local/global) <<<
+    let pyenv_hook = (pyenv init --path | complete)
+    if ($pyenv_hook.exit_code == 0) {
+        eval $pyenv_hook.stdout
+    }
 
     # Load pyenv-virtualenv if available
     if (which pyenv-virtualenv | is-not-empty) {
@@ -207,7 +214,7 @@ if (which pyenv | is-not-empty) {
         $env.PATH = ($env.PATH | append $pyenv_virtualenv_path)
     }
 
-    # Manually activate the Neovim virtual environment in Nushell
+    # Optional: Manually activate Neovim virtual environment if available
     let venv_path = ($env.PYENV_ROOT | path join "versions/neovim")
     if ($venv_path | path exists) {
         $env.VIRTUAL_ENV = $venv_path

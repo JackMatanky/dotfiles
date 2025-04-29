@@ -14,13 +14,13 @@
   "customDictionaries": {
     "user_dictionary_eng": {
       "name": "general_dictionary",
-      "path": ".dictionaries/user_dictionary_eng.txt",
+      "path": "~/.config/cspell/dictionaries/user_dictionary_eng.txt",
       "addWords": true,
       "scope": "user"
     },
     "user_dictionary_python": {
       "name": "python_dictionary",
-      "path": ".dictionaries/user_dictionary_python.txt",
+      "path": "~/.config/cspell/dictionaries/user_dictionary_python.txt",
       "addWords": true,
       "scope": "user"
     }

@@ -496,7 +496,7 @@
     ],
     "Plain Text": ["txt"],
     "Ruby": ["rb", "brewfile*"],
-    "TOML": ["uv.lock", "pyproject.toml"]
+    "TOML": ["uv.lock", "pyproject.toml", ".editorconfig"]
   },
 
   // By default use a recent system version of node, or install our own.

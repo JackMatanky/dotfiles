@@ -1200,3 +1200,17 @@ gps
 stow_all
 cspell link add @cspell/dict-he
 which typos
+gcam 'try one more time with cspell lsp zed config'
+gps
+stow_all
+$env.HOMEBREW_PREFIX
+brew uninstall vscode
+brew search vs-code
+brew search visual studio code
+brew uninstall visual-studio-code
+brew bundle dump --global --force --describe<\n>
+brew bundle dump --global --force --describe
+brew bundle dump --describe
+brew uninstall tmux
+pyenv shell 3.13.2
+gaa
