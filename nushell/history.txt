@@ -1263,3 +1263,7 @@ gcam 'update atuin nu config to match hardcoded source path in config'
 gps
 stow_all
 $env.PATH
+gcam 'try putting paths at the bottom of env.nu'
+gps
+stow_all
+which openjdk

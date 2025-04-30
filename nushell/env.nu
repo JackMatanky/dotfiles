@@ -25,27 +25,7 @@ $env.CARGO_HOME = ($env.HOME | path join '.cargo')
 # }
 
 # -----------------------------------------------
-# Homebrew Environment Setup
-# -----------------------------------------------
-# Set $env.HOMEBREW from actual Homebrew installation
-if (which brew | is-not-empty) {
-    # Darwin: "/opt/homebrew"
-    # Linux: "/home/linuxbrew/.linuxbrew"
-    $env.HOMEBREW = (brew --prefix | str trim)
-
-    # Base Paths
-    $env.BREW_INCLUDE_DIR = ($env.HOMEBREW | path join 'include')
-    $env.BREW_LIB_DIR = ($env.HOMEBREW | path join 'lib')
-    $env.BREW_OPT_DIR = ($env.HOMEBREW | path join 'opt')
-    $env.BREW_BIN_DIR = ($env.HOMEBREW | path join 'bin')
-
-    # Build Flags for Brew-Linked Libraries
-    $env.CFLAGS = ["-I", $env.BREW_INCLUDE_DIR] | str join
-    $env.LDFLAGS = ["-L", $env.BREW_LIB_DIR] | str join
-}
-
-# -----------------------------------------------
-# Nushell Environment Setup
+# >>> Nushell Environment Setup <<<
 # -----------------------------------------------
 # --- Config Directory ---
 # Default: $nu.default-config-dir == $XDG_CONFIG_HOME/nushell
@@ -64,6 +44,38 @@ $env.NU_LIB_DIRS = [
 $env.NU_PLUGIN_DIRS = [
     ($env.NU_CONFIG_DIR | path join 'plugins')
 ]
+
+
+# -----------------------------------------------
+# Homebrew Installation Directory
+# -----------------------------------------------
+# Darwin = "/opt/homebrew"
+# Linux = "/home/linuxbrew/.linuxbrew"
+if (which brew | is-not-empty) {
+    $env.HOMEBREW = (brew --prefix | str trim)
+
+    # >>> Homebrew Base Paths <<<
+    $env.BREW_INCLUDE_DIR = ($env.HOMEBREW | path join 'include')
+    $env.BREW_LIB_DIR = ($env.HOMEBREW | path join 'lib')
+    $env.BREW_OPT_DIR = ($env.HOMEBREW | path join 'opt')
+    $env.BREW_BIN_DIR = ($env.HOMEBREW | path join 'bin')
+    $env.BREW_SBIN_DIR = ($env.HOMEBREW | path join 'sbin')
+
+    # >>> Build Flags for Brew-Linked Libraries <<<
+    $env.CFLAGS = ['-I', $env.BREW_INCLUDE_DIR] | str join (char space)
+    $env.LDFLAGS = ['-L', $env.BREW_LIB_DIR] | str join (char space)
+
+    if $OS == "Darwin" {
+        let brew_bin_paths = [
+            $env.BREW_BIN_DIR
+            $env.BREW_SBIN_DIR
+            ($env.BREW_OPT_DIR | path join "openjdk" "bin")
+            ($env.BREW_BIN_DIR | path join "ghostty")
+            ($env.BREW_BIN_DIR | path join "nvim")
+            "/Applications/Ghostty.app/Contents/MacOS/ghostty"
+        ]
+    }
+}
 
 
 # -----------------------------------------------
@@ -108,10 +120,10 @@ $env.PROMPT_COMMAND_RIGHT = {|| create_right_prompt }
 
 # The prompt indicators are environmental variables that represent
 # the state of the prompt
-$env.PROMPT_INDICATOR = {|| "> " }
-$env.PROMPT_INDICATOR_VI_INSERT = {|| ": " }
-$env.PROMPT_INDICATOR_VI_NORMAL = {|| "> " }
-$env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
+$env.PROMPT_INDICATOR = {|| '> ' }
+$env.PROMPT_INDICATOR_VI_INSERT = {|| ': ' }
+$env.PROMPT_INDICATOR_VI_NORMAL = {|| '> ' }
+$env.PROMPT_MULTILINE_INDICATOR = {|| '::: ' }
 
 # If you want previously entered commands to have a different prompt from the usual one,
 # you can uncomment one or more of the following lines.
@@ -133,50 +145,67 @@ $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
 # - converted from a value back to a string when running external commands (to_string)
 # Note: The conversions happen *after* config.nu is loaded
 $env.ENV_CONVERSIONS = {
-    "PATH": {
+    'PATH': {
         from_string: { |s| $s | split row (char esep) | path expand --no-symlink }
         to_string: { |v| $v | path expand --no-symlink | str join (char esep) }
     }
-    "Path": {
+    'Path': {
         from_string: { |s| $s | split row (char esep) | path expand --no-symlink }
         to_string: { |v| $v | path expand --no-symlink | str join (char esep) }
     }
 }
 
 
-# To add entries to PATH (on Windows you might use Path), you can use the following pattern:
-# $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
-# An alternate way to add entries to $env.PATH is to use the custom command `path add`
-# which is built into the nushell stdlib:
-use std "path add"
-# $env.PATH = ($env.PATH | split row (char esep))
-# path add /some/path
-# path add ($env.CARGO_HOME | path join "bin")
-# path add ($env.HOME | path join ".local" "bin")
-# $env.PATH = ($env.PATH | uniq)
-
 # -----------------------------------------------
 # Dynamic PATH Declaration
 # -----------------------------------------------
+# To add entries to PATH (on Windows you might use Path),
+# you can use the following pattern:
+# $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
+
+# An alternate way to add entries to $env.PATH is to use the custom
+# command `path add` which is built into the nushell stdlib:
+use std "path add"
+# $env.PATH = ($env.PATH | split row (char esep))
+# path add /some/path
+# $env.PATH = ($env.PATH | uniq)
+
+let base_paths = [
+  '/bin'
+  '/usr/bin'
+  '/usr/local/bin'
+  '/sbin'
+  '/usr/sbin'
+]
+
+let user_paths = [
+  ($env.HOME | path join '.local' 'bin')
+  ($env.CARGO_HOME | path join 'bin')
+]
+
+let nixos_paths = if ($OS == 'Linux' and ('/run/current-system/sw/bin' | path exists)) {
+  ['/run/current-system/sw/bin']
+} else {
+  []
+}
+
 $env.PATH = (
   $env.PATH
   | split row (char esep)
-  | append /bin
-  | append /usr/bin
-  | append /usr/local/bin
-  | append /sbin
-  | append /usr/sbin
-  | append ($env.HOME | path join ".local" "bin")
-  | append ($env.CARGO_HOME | path join 'bin')
+  | append $base_paths
+  | append $user_paths
+  | append $nixos_paths
+  | flatten
+  | uniq
 )
 
-if ($OS == "Darwin") {
-    $env.HOMEBREW_RUBY = ($env.BREW_OPT_DIR | path join "ruby" "bin")
+if ($OS == 'Darwin') {
+    $env.HOMEBREW_RUBY = ($env.BREW_OPT_DIR | path join 'ruby' 'bin')
     if ($env.HOMEBREW_RUBY | is-not-empty) {
         $env.PATH = (
           $env.PATH
           | split row (char esep)
-          | prepend ($env.BREW_OPT_DIR | path join "ruby" "gems" "3.4.0" "bin")
+          | prepend ($env.BREW_OPT_DIR | path join 'ruby' 'gems' '3.4.0' 'bin')
           | prepend $env.HOMEBREW_RUBY
         )
     }
@@ -184,22 +213,17 @@ if ($OS == "Darwin") {
     $env.PATH = (
       $env.PATH
         | split row (char esep)
-        | append ($env.HOMEBREW | path join "bin")
-        | append ($env.HOMEBREW | path join "sbin")
-        | append ($env.BREW_OPT_DIR | path join "openjdk" "bin")
-        | append ($env.BREW_BIN_DIR | path join "ghostty")
-        | append ($env.BREW_BIN_DIR | path join "nvim")
+        | append ($env.HOMEBREW | path join 'bin')
+        | append ($env.HOMEBREW | path join 'sbin')
+        | append ($env.BREW_OPT_DIR | path join 'openjdk' 'bin')
+        | append ($env.BREW_BIN_DIR | path join 'ghostty')
+        | append ($env.BREW_BIN_DIR | path join 'nvim')
         | append /Applications/Ghostty.app/Contents/MacOS/ghostty
     )
 }
 
-if ($OS == "Linux") {
-    $env.PATH = (
-      $env.PATH
-        | split row (char esep)
-        | append /run/current-system/sw/bin
-        | append /usr/bin/nvim
-    )
+if ($OS == 'Linux') {
+    $env.PATH = ($env.PATH | append /run/current-system/sw/bin)
 }
 
 # To load from a custom file you can use:
@@ -211,12 +235,14 @@ if ($OS == "Linux") {
 # >>> Pyenv Integration <<<
 if (which pyenv | is-not-empty) {
     # Set pyenv root and paths
-    $env.PYENV_ROOT = ($env.HOME | path join ".pyenv")
+    $env.PYENV_ROOT = ($env.HOME | path join '.pyenv')
+    $env.PYENV_BIN = ($env.PYENV_ROOT | path join 'bin')
+    $env.PYENV_SHIMS = ($env.PYENV_ROOT | path join 'shims')
     $env.PATH = (
-      $env.PATH
+        $env.PATH
         | split row (char esep)
-        | append ($env.PYENV_ROOT | path join "bin")
-        | append ($env.PYENV_ROOT | path join "shims")
+        | append $env.PYENV_BIN
+        | append $env.PYENV_SHIMS
     )
 
     # # >>> Pyenv shell integration (CRITICAL for pyenv shell/local/global) <<<
@@ -227,15 +253,14 @@ if (which pyenv | is-not-empty) {
 
     # Load pyenv-virtualenv if available
     if (which pyenv-virtualenv | is-not-empty) {
-        let pyenv_virtualenv_path = ($env.PYENV_ROOT | path join "plugins/pyenv-virtualenv/bin")
-        $env.PATH = ($env.PATH | append $pyenv_virtualenv_path)
+        $env.PYENV_VIRTUALENV = ($env.PYENV_ROOT | path join 'plugins' 'pyenv-virtualenv' 'bin')
+        $env.PATH = ($env.PATH | append $env.PYENV_VIRTUALENV)
     }
 
     # Optional: Manually activate Neovim virtual environment if available
-    let venv_path = ($env.PYENV_ROOT | path join "versions/neovim")
-    if ($venv_path | path exists) {
-        $env.VIRTUAL_ENV = $venv_path
-        $env.PATH = ($env.VIRTUAL_ENV | path join "bin" | prepend $env.PATH)
+    $env.NEOVIM_VENV = ($env.PYENV_ROOT | path join 'versions' 'neovim')
+    if ($env.NEOVIM_VENV | path exists) {
+        $env.PATH = ($env.NEOVIM_VENV | path join 'bin' | prepend $env.PATH)
     }
 }
 
@@ -248,7 +273,7 @@ if (which pyenv | is-not-empty) {
 
 # >>> Java <<<
 if (which java | is-not-empty) {
-    $env.JAVA_HOME = if ($OS == "Darwin") {
+    $env.JAVA_HOME = if ($OS == 'Darwin') {
         '/usr/libexec/java_home -v 23'
     } else {
         '/usr/lib/jvm/default-java'
@@ -262,14 +287,14 @@ if (which java | is-not-empty) {
 # Docs: https://starship.rs/config/
 # Nushell Guide: https://starship.rs/guide/#step-2-set-up-your-shell-to-use-starship
 if (which starship | is-not-empty) {
-    let init_file = ($env.XDG_CACHE_HOME | path join "starship/init.nu")
+    let init_file = ($env.XDG_CACHE_HOME | path join 'starship' 'init.nu')
     # Ensure the parent directory exists
     mkdir ($init_file | path dirname)
     # Only generate init.nu if parent directory does not exist
     if not ($init_file | path exists) {
         starship init nu | save --force $init_file
     }
-    $env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join "starship/starship.toml")
+    $env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join 'starship' 'starship.toml')
 }
 
 # >>> Carapace Shell Completion <<<
@@ -289,7 +314,7 @@ if (which zoxide | is-not-empty) {
 # >>> Atuin Shell History <<<
 # Docs: https://docs.atuin.sh
 if (which atuin | is-not-empty) {
-    let init_file = ($env.XDG_DATA_HOME | path join "atuin" "init.nu")
+    let init_file = ($env.XDG_CACHE_HOME | path join 'atuin' 'init.nu')
     mkdir ($init_file | path dirname)
     if not ($init_file | path exists) {
         atuin init nu | save --force $init_file
@@ -335,80 +360,13 @@ keychain --eval --quiet $env.SSH_KEY_PATH
 # -----------------------------------------------
 # Defaults
 # -----------------------------------------------
-$env.EDITOR = "nvim"                # NeoVim, 'hx' Helix
-$env.VISUAL = "zed"                 # Zed
-$env.config.buffer_editor = "zed"   # Zed
-$env.TERMINAL = "ghostty"           # Ghostty  "/Applications/Ghostty.app/Contents/MacOS/ghostty"
-$env.FILE_PICKER = "yazi"           # Yazi
+$env.EDITOR = 'nvim'        # NeoVim, 'hx' Helix
+$env.VISUAL = 'zed'         # Zed
+$env.TERMINAL = 'ghostty'   # Ghostty  "/Applications/Ghostty.app/Contents/MacOS/ghostty"
+$env.FILE_PICKER = 'yazi'   # Yazi
 
-# -----------------------------------------------
-# Final PATH Declaration
-# -----------------------------------------------
-
-let base_paths = [
-    "/bin"
-    "/usr/bin"
-    "/usr/local/bin"
-    "/sbin"
-    "/usr/sbin"
-]
-
-let user_paths = [
-    ($env.HOME | path join ".local" "bin")
-    ($env.CARGO_HOME | path join "bin")
-]
-
-let brew_paths = if ($env.HOMEBREW? | is-not-empty) {
-    [
-        ($env.HOMEBREW | path join "bin")
-        ($env.HOMEBREW | path join "sbin")
-        ($env.BREW_OPT_DIR | path join "openjdk" "bin")
-        ($env.BREW_BIN_DIR | path join "ghostty")
-        ($env.BREW_BIN_DIR | path join "nvim")
-        "/Applications/Ghostty.app/Contents/MacOS/ghostty"
-    ]
-} else { [] }
-
-let ruby_paths = if ($env.HOMEBREW_RUBY? | is-not-empty) {
-    [
-        ($env.BREW_OPT_DIR | path join "ruby" "gems" "3.4.0" "bin")
-        $env.HOMEBREW_RUBY
-    ]
-} else { [] }
-
-let pyenv_paths = if ($env.PYENV_ROOT? | is-not-empty) {
-    [
-        ($env.PYENV_ROOT | path join "bin")
-        ($env.PYENV_ROOT | path join "shims")
-        ($env.PYENV_ROOT | path join "plugins" "pyenv-virtualenv" "bin")
-    ]
-} else { [] }
-
-let venv_paths = if ($env.VIRTUAL_ENV? | is-not-empty) {
-    [($env.VIRTUAL_ENV | path join "bin")]
-} else { [] }
-
-let linux_paths = if ($OS == "Linux") {
-    [
-        "/run/current-system/sw/bin"
-        "/usr/bin/nvim"
-    ]
-} else { [] }
-
-# Combine and deduplicate the full PATH
-$env.PATH = (
-    $env.PATH
-    | split row (char esep)
-    | append $base_paths
-    | append $user_paths
-    | append $brew_paths
-    | append $ruby_paths
-    | append $pyenv_paths
-    | append $venv_paths
-    | append $linux_paths
-    | flatten
-    | uniq
-)
+# >>> Nushell <<<
+$env.NU_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'nushell')
 
 # Filter out duplicate paths
 $env.PATH = ($env.PATH | uniq)
