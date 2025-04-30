@@ -1277,3 +1277,6 @@ stow_all
 gcam 'move homebrew env variable out of conditional'
 gps
 stow_all
+gcam 'move primary homebrew env variable out of conditional'
+gps
+stow_all
