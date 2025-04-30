@@ -51,16 +51,20 @@ $env.NU_PLUGIN_DIRS = [
 # -----------------------------------------------
 # Darwin = "/opt/homebrew"
 # Linux = "/home/linuxbrew/.linuxbrew"
-$env.HOMEBREW = if (which brew | is-not-empty) { (brew --prefix | str trim) } else { "" }
+$env.HOMEBREW = (do {
+    if (which brew | is-not-empty) {
+        (brew --prefix | str trim)
+    } else {
+        ""
+    }
+})
 
 # >>> Homebrew Base Paths <<<
-if ($env.HOMEBREW | is-not-empty) {
-    $env.BREW_INCLUDE_DIR = ($env.HOMEBREW | path join 'include')
-    $env.BREW_LIB_DIR = ($env.HOMEBREW | path join 'lib')
-    $env.BREW_OPT_DIR = ($env.HOMEBREW | path join 'opt')
-    $env.BREW_BIN_DIR = ($env.HOMEBREW | path join 'bin')
-    $env.BREW_SBIN_DIR = ($env.HOMEBREW | path join 'sbin')
-}
+$env.BREW_OPT_DIR = ($env.HOMEBREW? | default "" | path join 'opt')
+$env.BREW_BIN_DIR = ($env.HOMEBREW? | default "" | path join 'bin')
+$env.BREW_SBIN_DIR = ($env.HOMEBREW? | default "" | path join 'sbin')
+$env.BREW_LIB_DIR = ($env.HOMEBREW? | default "" | path join 'lib')
+$env.BREW_INCLUDE_DIR = ($env.HOMEBREW? | default "" | path join 'include')
 
 # >>> Build Flags for Brew-Linked Libraries <<<
 $env.CFLAGS = ['-I', $env.BREW_INCLUDE_DIR] | str join (char space)

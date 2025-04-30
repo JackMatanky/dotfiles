@@ -1284,3 +1284,5 @@ gcam 'add empty string to homebrew conditional'
 gps
 stow_all
 $env.PATH
+gcam 'add conditional to later homebrew variables'
+gps
