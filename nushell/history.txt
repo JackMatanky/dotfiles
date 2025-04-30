@@ -1274,3 +1274,6 @@ $env.PATH
 gcam 'use lists in path for nushell - revert'
 gps
 stow_all
+gcam 'move homebrew env variable out of conditional'
+gps
+stow_all
