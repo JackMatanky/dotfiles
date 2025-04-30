@@ -806,7 +806,7 @@ source ~/.zoxide.nu
 source ~/.cache/carapace/init.nu
 
 # --- Atuin ---
-source ($env.XDG_DATA_HOME | path join "atuin" "init.nu")
+source ~/.local/share/atuin/init.nu
 
 # --- Starship ---
 # Load Starship only if it exists

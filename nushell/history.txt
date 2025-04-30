@@ -1256,3 +1256,6 @@ which brew
 gcam 'fix homebrew path in env.nu'
 gps
 stow_all
+gcam 'update atuin nu config to match docs placement in xdg_data'
+gps
+stow_all
