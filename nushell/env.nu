@@ -44,6 +44,27 @@ if (which brew | is-not-empty) {
     $env.LDFLAGS = ["-L", $env.BREW_LIB_DIR] | str join
 }
 
+# -----------------------------------------------
+# Nushell Environment Setup
+# -----------------------------------------------
+# --- Config Directory ---
+# Default: $nu.default-config-dir == $XDG_CONFIG_HOME/nushell
+$env.NU_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'nushell')
+
+# --- Script and Completion Libraries ---
+# Script Default: $nu.default-config-dir/scripts
+# Completion Default: $nu.data-dir/completions
+$env.NU_LIB_DIRS = [
+    ($env.NU_CONFIG_DIR | path join 'scripts')
+    ($env.NU_CONFIG_DIR | path join 'completions')
+]
+
+# --- Plugin Directory ---
+# Default: $nu.default-config-dir/plugins
+$env.NU_PLUGIN_DIRS = [
+    ($env.NU_CONFIG_DIR | path join 'plugins')
+]
+
 
 # -----------------------------------------------
 # Prompt Setup
@@ -122,17 +143,6 @@ $env.ENV_CONVERSIONS = {
     }
 }
 
-# Directories for scripts and plugins
-# Default: $nu.default-config-dir/scripts
-$env.NU_LIB_DIRS = [
-    ($nu.default-config-dir | path join 'scripts')
-    ($nu.data-dir | path join 'completions')
-]
-
-# Default: $nu.default-config-dir/plugins
-$env.NU_PLUGIN_DIRS = [
-    ($nu.default-config-dir | path join 'plugins')
-]
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
@@ -325,13 +335,80 @@ keychain --eval --quiet $env.SSH_KEY_PATH
 # -----------------------------------------------
 # Defaults
 # -----------------------------------------------
-$env.EDITOR = "nvim"        # NeoVim, 'hx' Helix
-$env.VISUAL = "zed"         # Zed
-$env.TERMINAL = "ghostty"   # Ghostty  "/Applications/Ghostty.app/Contents/MacOS/ghostty"
-$env.FILE_PICKER = "yazi"   # Yazi
+$env.EDITOR = "nvim"                # NeoVim, 'hx' Helix
+$env.VISUAL = "zed"                 # Zed
+$env.config.buffer_editor = "zed"   # Zed
+$env.TERMINAL = "ghostty"           # Ghostty  "/Applications/Ghostty.app/Contents/MacOS/ghostty"
+$env.FILE_PICKER = "yazi"           # Yazi
 
-# >>> Nushell <<<
-$env.NU_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'nushell')
+# -----------------------------------------------
+# Final PATH Declaration
+# -----------------------------------------------
+
+let base_paths = [
+    "/bin"
+    "/usr/bin"
+    "/usr/local/bin"
+    "/sbin"
+    "/usr/sbin"
+]
+
+let user_paths = [
+    ($env.HOME | path join ".local" "bin")
+    ($env.CARGO_HOME | path join "bin")
+]
+
+let brew_paths = if ($env.HOMEBREW? | is-not-empty) {
+    [
+        ($env.HOMEBREW | path join "bin")
+        ($env.HOMEBREW | path join "sbin")
+        ($env.BREW_OPT_DIR | path join "openjdk" "bin")
+        ($env.BREW_BIN_DIR | path join "ghostty")
+        ($env.BREW_BIN_DIR | path join "nvim")
+        "/Applications/Ghostty.app/Contents/MacOS/ghostty"
+    ]
+} else { [] }
+
+let ruby_paths = if ($env.HOMEBREW_RUBY? | is-not-empty) {
+    [
+        ($env.BREW_OPT_DIR | path join "ruby" "gems" "3.4.0" "bin")
+        $env.HOMEBREW_RUBY
+    ]
+} else { [] }
+
+let pyenv_paths = if ($env.PYENV_ROOT? | is-not-empty) {
+    [
+        ($env.PYENV_ROOT | path join "bin")
+        ($env.PYENV_ROOT | path join "shims")
+        ($env.PYENV_ROOT | path join "plugins" "pyenv-virtualenv" "bin")
+    ]
+} else { [] }
+
+let venv_paths = if ($env.VIRTUAL_ENV? | is-not-empty) {
+    [($env.VIRTUAL_ENV | path join "bin")]
+} else { [] }
+
+let linux_paths = if ($OS == "Linux") {
+    [
+        "/run/current-system/sw/bin"
+        "/usr/bin/nvim"
+    ]
+} else { [] }
+
+# Combine and deduplicate the full PATH
+$env.PATH = (
+    $env.PATH
+    | split row (char esep)
+    | append $base_paths
+    | append $user_paths
+    | append $brew_paths
+    | append $ruby_paths
+    | append $pyenv_paths
+    | append $venv_paths
+    | append $linux_paths
+    | flatten
+    | uniq
+)
 
 # Filter out duplicate paths
 $env.PATH = ($env.PATH | uniq)

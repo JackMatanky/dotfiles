@@ -1259,3 +1259,7 @@ stow_all
 gcam 'update atuin nu config to match docs placement in xdg_data'
 gps
 stow_all
+gcam 'update atuin nu config to match hardcoded source path in config'
+gps
+stow_all
+$env.PATH
