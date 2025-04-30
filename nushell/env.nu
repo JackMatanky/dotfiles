@@ -25,24 +25,24 @@ $env.CARGO_HOME = ($env.HOME | path join '.cargo')
 # }
 
 # -----------------------------------------------
-# Homebrew Installation Directory
+# Homebrew Environment Setup
 # -----------------------------------------------
-# Default fallback to empty string if OS is unknown
-$env.HOMEBREW = (match $OS {
-    "Darwin" => $env.HOMEBREW_PREFIX,
-    "Linux" => (brew --prefix | str trim),
-    _ => "",
-})
+# Set $env.HOMEBREW from actual Homebrew installation
+if (which brew | is-not-empty) {
+    # Darwin: "/opt/homebrew"
+    # Linux: "/home/linuxbrew/.linuxbrew"
+    $env.HOMEBREW = (brew --prefix | str trim)
 
-# >>> Homebrew Base Paths <<<
-$env.BREW_INCLUDE_DIR = ($env.HOMEBREW | path join 'include')
-$env.BREW_LIB_DIR = ($env.HOMEBREW | path join 'lib')
-$env.BREW_OPT_DIR = ($env.HOMEBREW | path join 'opt')
-$env.BREW_BIN_DIR = ($env.HOMEBREW | path join 'bin')
+    # Base Paths
+    $env.BREW_INCLUDE_DIR = ($env.HOMEBREW | path join 'include')
+    $env.BREW_LIB_DIR = ($env.HOMEBREW | path join 'lib')
+    $env.BREW_OPT_DIR = ($env.HOMEBREW | path join 'opt')
+    $env.BREW_BIN_DIR = ($env.HOMEBREW | path join 'bin')
 
-# >>> Build Flags for Brew-Linked Libraries <<<
-$env.CFLAGS = ["-I", $env.BREW_INCLUDE_DIR] | str join
-$env.LDFLAGS = ["-L", $env.BREW_LIB_DIR] | str join
+    # Build Flags for Brew-Linked Libraries
+    $env.CFLAGS = ["-I", $env.BREW_INCLUDE_DIR] | str join
+    $env.LDFLAGS = ["-L", $env.BREW_LIB_DIR] | str join
+}
 
 
 # -----------------------------------------------
@@ -59,7 +59,7 @@ def create_left_prompt [] {
     let separator_color = (if (is-admin) { ansi light_red_bold } else { ansi light_green_bold })
     let path_segment = $"($path_color)($dir)"
 
-    $path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)"
+    $path_segment | str replace --all (char path_sep) $'($separator_color)(char path_sep)($path_color)'
 }
 
 def create_right_prompt [] {

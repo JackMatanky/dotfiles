@@ -1232,3 +1232,24 @@ j update-brew-mac
 j
 j update-brew-outdated
 brew upgrade
+gcam 'update vscodium config'
+gps
+stow_all
+brew uninstall vscodium
+brew install vscodium
+brew uninstall --force visual-studio-code<\n>brew uninstall --force vscodium
+rm -rf ~/Library/Application\ Support/Code<\n>rm -rf ~/Library/Application\ Support/VSCodium
+rm -rf ~/.vscode<\n>rm -rf ~/.vscode-oss
+rm -rf ~/Library/Preferences/com.microsoft.VSCode.helper.plist<\n>rm -rf ~/Library/Preferences/com.microsoft.VSCode.plist<\n>rm -rf ~/Library/Preferences/com.vscodium.codium.plist
+rm -rf ~/Library/Caches/com.microsoft.VSCode<\n>rm -rf ~/Library/Caches/com.vscodium.codium<\n>rm -rf ~/Library/Saved\ Application\ State/com.microsoft.VSCode.savedState<\n>rm -rf ~/Library/Saved\ Application\ State/com.vscodium.codium.savedState
+brew autoremove
+conf_dir
+l
+ll
+dot
+ghossty  --print-config
+ghostty  --print-config
+brew update
+which keychain
+which brew
+(brew --prefix | str trim)
