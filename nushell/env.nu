@@ -157,8 +157,6 @@ $env.PATH = (
   | append /sbin
   | append /usr/sbin
   | append ($env.HOME | path join ".local" "bin")
-  | append ($env.HOME | path join ".pyenv" "bin")
-  | append ($env.HOME | path join ".pyenv" "shims")
   | append ($env.CARGO_HOME | path join 'bin')
 )
 
@@ -186,7 +184,12 @@ if ($OS == "Darwin") {
 }
 
 if ($OS == "Linux") {
-    $env.PATH = ($env.PATH | append /run/current-system/sw/bin)
+    $env.PATH = (
+      $env.PATH
+        | split row (char esep)
+        | append /run/current-system/sw/bin
+        | append /usr/bin/nvim
+    )
 }
 
 # To load from a custom file you can use:
@@ -199,8 +202,12 @@ if ($OS == "Linux") {
 if (which pyenv | is-not-empty) {
     # Set pyenv root and paths
     $env.PYENV_ROOT = ($env.HOME | path join ".pyenv")
-    $env.PATH = ($env.PATH | append ($env.PYENV_ROOT | path join "bin"))
-    $env.PATH = ($env.PATH | append ($env.PYENV_ROOT | path join "shims"))
+    $env.PATH = (
+      $env.PATH
+        | split row (char esep)
+        | append ($env.PYENV_ROOT | path join "bin")
+        | append ($env.PYENV_ROOT | path join "shims")
+    )
 
     # # >>> Pyenv shell integration (CRITICAL for pyenv shell/local/global) <<<
     # let pyenv_hook = (pyenv init --path | complete)
@@ -272,7 +279,7 @@ if (which zoxide | is-not-empty) {
 # >>> Atuin Shell History <<<
 # Docs: https://docs.atuin.sh
 if (which atuin | is-not-empty) {
-    let init_file = ($env.XDG_CACHE_HOME | path join "atuin/init.nu")
+    let init_file = ($env.XDG_DATA_HOME | path join "atuin" "init.nu")
     mkdir ($init_file | path dirname)
     if not ($init_file | path exists) {
         atuin init nu | save --force $init_file

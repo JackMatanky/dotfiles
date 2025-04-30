@@ -1253,3 +1253,6 @@ brew update
 which keychain
 which brew
 (brew --prefix | str trim)
+gcam 'fix homebrew path in env.nu'
+gps
+stow_all
