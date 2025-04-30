@@ -1267,3 +1267,7 @@ gcam 'try putting paths at the bottom of env.nu'
 gps
 stow_all
 which openjdk
+gcam 'use lists in path for nushell'
+gps
+stow_all
+$env.PATH

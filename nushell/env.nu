@@ -192,11 +192,13 @@ let nixos_paths = if ($OS == 'Linux' and ('/run/current-system/sw/bin' | path ex
 $env.PATH = (
   $env.PATH
   | split row (char esep)
-  | append $base_paths
-  | append $user_paths
-  | append $nixos_paths
-  | flatten
-  | uniq
+  | append /bin
+  | append /usr/bin
+  | append /usr/local/bin
+  | append /sbin
+  | append /usr/sbin
+  | append ($env.HOME | path join '.local' 'bin')
+  | append ($env.CARGO_HOME | path join 'bin')
 )
 
 if ($OS == 'Darwin') {
