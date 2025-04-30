@@ -1223,3 +1223,12 @@ cspell link add @cspell/dict-python
 gcam 'update cspell global config'
 gps
 stow_all
+gcam 'remove nushell pyenv update'
+gps
+stow_all
+cat /Applications/VSCodium.app/Contents/Resources/app/product.json
+j brew-update
+j update-brew-mac
+j
+j update-brew-outdated
+brew upgrade
