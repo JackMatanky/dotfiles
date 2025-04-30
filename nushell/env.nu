@@ -54,28 +54,18 @@ $env.NU_PLUGIN_DIRS = [
 if (which brew | is-not-empty) {
     $env.HOMEBREW = (brew --prefix | str trim)
 
-    # >>> Homebrew Base Paths <<<
-    $env.BREW_INCLUDE_DIR = ($env.HOMEBREW | path join 'include')
-    $env.BREW_LIB_DIR = ($env.HOMEBREW | path join 'lib')
-    $env.BREW_OPT_DIR = ($env.HOMEBREW | path join 'opt')
-    $env.BREW_BIN_DIR = ($env.HOMEBREW | path join 'bin')
-    $env.BREW_SBIN_DIR = ($env.HOMEBREW | path join 'sbin')
-
-    # >>> Build Flags for Brew-Linked Libraries <<<
-    $env.CFLAGS = ['-I', $env.BREW_INCLUDE_DIR] | str join (char space)
-    $env.LDFLAGS = ['-L', $env.BREW_LIB_DIR] | str join (char space)
-
-    if $OS == "Darwin" {
-        let brew_bin_paths = [
-            $env.BREW_BIN_DIR
-            $env.BREW_SBIN_DIR
-            ($env.BREW_OPT_DIR | path join "openjdk" "bin")
-            ($env.BREW_BIN_DIR | path join "ghostty")
-            ($env.BREW_BIN_DIR | path join "nvim")
-            "/Applications/Ghostty.app/Contents/MacOS/ghostty"
-        ]
-    }
 }
+
+# >>> Homebrew Base Paths <<<
+$env.BREW_INCLUDE_DIR = ($env.HOMEBREW | path join 'include')
+$env.BREW_LIB_DIR = ($env.HOMEBREW | path join 'lib')
+$env.BREW_OPT_DIR = ($env.HOMEBREW | path join 'opt')
+$env.BREW_BIN_DIR = ($env.HOMEBREW | path join 'bin')
+$env.BREW_SBIN_DIR = ($env.HOMEBREW | path join 'sbin')
+
+# >>> Build Flags for Brew-Linked Libraries <<<
+$env.CFLAGS = ['-I', $env.BREW_INCLUDE_DIR] | str join (char space)
+$env.LDFLAGS = ['-L', $env.BREW_LIB_DIR] | str join (char space)
 
 
 # -----------------------------------------------
@@ -189,6 +179,17 @@ let nixos_paths = if ($OS == 'Linux' and ('/run/current-system/sw/bin' | path ex
   []
 }
 
+if $OS == "Darwin" {
+    let brew_bin_paths = [
+        $env.BREW_BIN_DIR
+        $env.BREW_SBIN_DIR
+        ($env.BREW_OPT_DIR | path join "openjdk" "bin")
+        ($env.BREW_BIN_DIR | path join "nvim")
+        ($env.BREW_BIN_DIR | path join "ghostty")
+        "/Applications/Ghostty.app/Contents/MacOS/ghostty"
+    ]
+}
+
 $env.PATH = (
   $env.PATH
   | split row (char esep)
@@ -200,6 +201,7 @@ $env.PATH = (
   | append ($env.HOME | path join '.local' 'bin')
   | append ($env.CARGO_HOME | path join 'bin')
 )
+
 
 if ($OS == 'Darwin') {
     $env.HOMEBREW_RUBY = ($env.BREW_OPT_DIR | path join 'ruby' 'bin')

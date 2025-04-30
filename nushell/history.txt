@@ -1271,3 +1271,6 @@ gcam 'use lists in path for nushell'
 gps
 stow_all
 $env.PATH
+gcam 'use lists in path for nushell - revert'
+gps
+stow_all
