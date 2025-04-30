@@ -1280,3 +1280,7 @@ stow_all
 gcam 'move primary homebrew env variable out of conditional'
 gps
 stow_all
+gcam 'add empty string to homebrew conditional'
+gps
+stow_all
+$env.PATH
