@@ -51,12 +51,10 @@ $env.NU_PLUGIN_DIRS = [
 # -----------------------------------------------
 # Darwin = "/opt/homebrew"
 # Linux = "/home/linuxbrew/.linuxbrew"
-$env.HOMEBREW = (do {
-    if (which brew | is-not-empty) {
-        (brew --prefix | str trim)
-    } else {
-        ""
-    }
+$env.HOMEBREW = (match $OS {
+    "Darwin" => "/opt/homebrew"
+    "Linux" =>  (brew --prefix | str trim)
+    _ => ""
 })
 
 # >>> Homebrew Base Paths <<<
