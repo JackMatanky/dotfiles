@@ -1289,3 +1289,15 @@ gps
 gcam 'try different conditional for homebrew envs'
 gps
 stow_all
+gcam 'revert to match for homebrew'
+gps
+stow_all
+brew install vscodium
+codium --version
+cat /Applications/VSCodium.app/Contents/Resources/app/product.json
+codium --list-extensions --show-versions
+rg "marketplace.visualstudio.com" ~/.vscode-oss/extensions
+rg --files-with-matches "marketplace.visualstudio.com" ~/.vscode-oss/extensions
+rg --files-with-matches "marketplace.visualstudio.com" ~/.vscode-oss/extensions |<\n>  cut -d/ -f6 |<\n>  sort -u
+rg --files-with-matches "marketplace.visualstudio.com" ~/.vscode-oss/extensions |<\n>  lines |<\n>  parse "/Users/jack/.vscode-oss/extensions/{ext}/" |<\n>  get ext |<\n>  split column "-" | get column0 | uniq
+codium --list-extensions --show-versions

@@ -2,6 +2,7 @@
   // --------------------------------------------
   // Global Settings
   // --------------------------------------------
+  // * Uncomment to enable MS Marketplace extensions
   // "extensionsGallery": {
   //   "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
   //   "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
@@ -16,7 +17,11 @@
   "editor.insertSpaces": true,
   "editor.wordWrap": "on",
 
+  // Bracket Pairs
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.experimentalGpuAcceleration": "on",
   "editor.foldingMaximumRegions": 10000,
@@ -45,6 +50,12 @@
   },
   //!SEGMENT
 
+  // --------------------------------------------
+  //SECTION - Workbench
+  // --------------------------------------------
+  "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
+
+  //!SECTION
   // --------------------------------------------
   //SECTION - Appearance and Theme
   // --------------------------------------------
@@ -234,77 +245,66 @@
     "#",
     "--"
   ],
-  "commentAnchors.tags.list": [
-    {
-      "tag": "ANCHOR",
+  "commentAnchors.tags.anchors": {
+    "ANCHOR": {
       "iconColor": "purple",
       "highlightColor": "#A8C023",
       "scope": "file"
     },
-    {
-      "tag": "SECTION",
+    "SECTION": {
       "iconColor": "blurple",
       "highlightColor": "#896afc",
       "styleMode": "full",
       "scope": "workspace",
       "behavior": "region"
     },
-    {
-      "tag": "SEGMENT",
+    "SEGMENT": {
       "iconColor": "blue",
       "highlightColor": "#3ea8ff",
       "styleMode": "full",
       "scope": "file",
       "behavior": "region"
     },
-    {
-      "tag": "REVIEW",
+    "REVIEW": {
       "iconColor": "orange",
       "highlightColor": "#FFB300",
       "scope": "workspace"
     },
-    {
-      "tag": "TODO",
+    "TODO": {
       "iconColor": "yellow",
       "highlightColor": "#3ea8ff",
       "scope": "workspace"
     },
-    {
-      "tag": "FIXME",
+    "FIXME": {
       "iconColor": "red",
       "highlightColor": "#F44336",
       "styleMode": "full",
       "scope": "workspace"
     },
-    {
-      "tag": "STUB",
+    "STUB": {
       "iconColor": "teal",
       "highlightColor": "#BA68C8",
       "scope": "file"
     },
     // Information Tags
-    {
-      "tag": "NOTE",
+    "NOTE": {
       "iconColor": "green",
       "highlightColor": "#64DD17",
       "scope": "file"
     },
-    {
-      "tag": "LINK",
+    "LINK": {
       "iconColor": "emerald",
       "highlightColor": "#2ecc71",
       "scope": "workspace",
       "behavior": "link"
     },
-    {
-      "tag": "SOURCE",
+    "SOURCE": {
       "iconColor": "yellow",
       "highlightColor": "#2ecc71",
       "scope": "workspace",
       "behavior": "link"
-    }
-  ],
-
+    },
+  },
   "better-comments.multilineComments": true,
   "better-comments.highlightPlainText": false,
   "better-comments.tags": [
@@ -395,7 +395,7 @@
       "source.organizeImports": "explicit"
     }
   },
-  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.defaultInterpreterPath": "/Users/jack/.pyenv/versions/3.13.2/bin/python",
   "python.analysis.autoFormatStrings": true,
   "python.analysis.inlayHints.callArgumentNames": "partial",
   "python.analysis.inlayHints.functionReturnTypes": true,
@@ -884,5 +884,7 @@
   "[nix]": {
     "editor.defaultFormatter": "brettm12345.nixfmt-vscode"
   },
-  "vscode-just.formatOnSave": true
+  "vscode-just.formatOnSave": true,
+  "inlineChat.lineNaturalLanguageHint": false,
+  "extensions.supportUntrustedRepositories": false
 }
