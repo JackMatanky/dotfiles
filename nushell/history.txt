@@ -1308,3 +1308,5 @@ restow_all
 gcam 'add lazyvim keybindings example for zed'
 gps
 stow_all
+gcam 'set lazyvim like keybindings for zed'
+gps
