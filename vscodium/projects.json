@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Dotfiles",
+    "rootPath": "/Users/jack/dotfiles",
+    "paths": [ ],
+    "tags": [
+      "Personal"
+    ],
+    "enabled": true
+  },
+  {
+    "name": "Obsidian Vault",
+    "rootPath": "/Users/jack/obsidian_vault",
+    "paths": [ ],
+    "tags": [
+      "Personal"
+    ],
+    "enabled": true
+  },
+  {
+    "name": "Python Data Template",
+    "rootPath": "/Users/jack/Documents/python_data_template",
+    "paths": [ ],
+    "tags": [
+      "Personal"
+    ],
+    "enabled": true
+  },
+  {
+    "name": "Hive: Geo-Engineering",
+    "rootPath": "/Users/jack/Documents/_dev_work/hive_urban_github/research/projects/geo_engineering",
+    "paths": [ ],
+    "tags": [
+      "Work",
+      "Hive"
+    ],
+    "enabled": true
+  },
+  {
+    "name": "Hive: Personal Research Folder",
+    "rootPath": "/Users/jack/Documents/_dev_work/hive_urban_github/research/personal_folders/jack",
+    "paths": [ ],
+    "tags": [
+      "Work",
+      "Hive"
+    ],
+    "enabled": true
+  },
+  {
+    "name": "ZMK Configuration",
+    "rootPath": "/Users/jack/Documents/keyboard_dev/zmk-config",
+    "paths": [ ],
+    "tags": [
+      "Personal"
+    ],
+    "enabled": true
+  }
+]

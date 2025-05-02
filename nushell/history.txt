@@ -1310,3 +1310,9 @@ gps
 stow_all
 gcam 'set lazyvim like keybindings for zed'
 gps
+gcam 'set lazyvim like keybindings for zed and update nushell aliases to use a hyphen insteal of underscore'
+gps
+stow-all
+stow_all
+stow-all
+gaa
