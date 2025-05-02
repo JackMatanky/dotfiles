@@ -1319,3 +1319,7 @@ gaa
 gcam 'add vscodium projects json'
 gps
 stow-all
+gcam 'try adding python specific tasks to zed'
+gps
+stow-all
+gaa
