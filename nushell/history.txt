@@ -1328,3 +1328,6 @@ gps
 stow-all
 restow-all
 stow-all
+gcam 'add adopt to stowrc'
+gps
+brew install shfmt

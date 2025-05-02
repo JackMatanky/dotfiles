@@ -137,6 +137,14 @@ chmod +x scripts/setup.sh
     brew install starship
     ```
 
+- [shfmt](https://github.com/mvdan/sh)
+
+    - Shell formatter for POSIX sh, bash, zsh, ksh, and fish.
+
+    ```sh
+    brew install shfmt
+    ```
+
 - [Yazi](https://github.com/sxyazi/yazi)
 
     - Docs: https://yazi-rs.github.io/

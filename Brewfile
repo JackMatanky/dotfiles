@@ -26,6 +26,7 @@ brew "just"                             # Handy way to save and run project-spec
 brew "atuin", restart_service: :changed # Improved shell history for zsh, bash, fish and nushell
 brew "carapace"                         # Multi-shell multi-command argument completer
 brew "starship"                         # Fast, customizable shell prompt
+brew "shfmt"                            # Shell formatter for POSIX sh, bash, zsh, ksh, and fish.
 brew "yazi"                             # Terminal file manager with vim-like keybindings
 brew "zellij"                           # Terminal workspace manager and multiplexer
 
