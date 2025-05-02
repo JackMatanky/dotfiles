@@ -60,42 +60,42 @@ alias za = zoxide add
 alias zq = zoxide query
 
 # >>> Directories <<<
-alias conf_dir = cd ~/.config
+alias conf-dir = cd ~/.config
 alias docs = cd ~/Documents
 
 # --- Dotfiles ---
 alias dot = cd ~/dotfiles
-alias dot_nix = cd ~/dotfiles/nixos
+alias dot-nix = cd ~/dotfiles/nixos
 
 # --- Obsidian Vault ---
 alias obsidian = cd ~/obsidian_vault
-def obsidian_gpl [] {
+def obsidian-gpl [] {
   cd ~/obsidian_vault
   git pull
 }
 
 # --- Keyboard Dev ---
-alias kb_dev = cd ~/Documents/keyboard_dev
-alias kb_ergogen = cd ~/Documents/keyboard_dev/ergogen
-alias kb_zmk = cd ~/Documents/keyboard_dev/zmk-config
-alias kb_snak_dir = cd ~/Documents/keyboard_dev/kb_snak
+alias kb-dev = cd ~/Documents/keyboard_dev
+alias kb-ergogen = cd ~/Documents/keyboard_dev/ergogen
+alias kb-zmk = cd ~/Documents/keyboard_dev/zmk-config
+alias kb-snak-dir = cd ~/Documents/keyboard_dev/kb_snak
 
 # --- Work ---
-alias dev_work = cd ~/Documents/_dev_work
-alias dev_hive = cd ~/Documents/_dev_work/hive_urban_github
+alias dev-work = cd ~/Documents/_dev_work
+alias dev-hive = cd ~/Documents/_dev_work/hive_urban_github
 
 # --- GNU Stow ---
-def stow_all [] {
+def stow-all [] {
   cd ~/dotfiles/
   stow .
 }
 
-def unstow_all [] {
+def unstow-all [] {
   cd ~/dotfiles/
   stow -D .
 }
 
-def restow_all [] {
+def restow-all [] {
   cd ~/dotfiles/
   stow -R .
 }
@@ -104,29 +104,29 @@ alias unstow = stow -D
 alias restow = stow -R
 
 # --- Nix ---
-alias flake_rebuild = sudo nixos-rebuild switch --flake .
-alias flake_rebuild_trace = sudo nixos-rebuild switch --flake . --show-trace
-alias flake_up = sudo nix flake update
-alias flake_up_trace = sudo nix flake update --show-trace
-alias hm_switch = home-manager switch --flake .
-alias hm_switch_trace = home-manager switch --flake . --show-trace
-alias cg_empty = sudo nix-collect-garbage
-alias cg_empty_all = sudo nix-collect-garbage -d
+alias flake-rebuild = sudo nixos-rebuild switch --flake .
+alias flake-rebuild_trace = sudo nixos-rebuild switch --flake . --show-trace
+alias flake-up = sudo nix flake update
+alias flake-up_trace = sudo nix flake update --show-trace
+alias hm-switch = home-manager switch --flake .
+alias hm-switch-trace = home-manager switch --flake . --show-trace
+alias cg-empty = sudo nix-collect-garbage
+alias cg-empty-all = sudo nix-collect-garbage -d
 
 # --- Vim ---
 alias v = nvim
 alias vdiff = nvim -d
 
 # --- Tmux ---
-alias tmx_src = tmux source ~/.tmux.conf
+alias tmx-src = tmux source ~/.tmux.conf
 
 # --- Zellij ---
 # Run Zellij in a particular directory
-def zj_dot [] {
+def zj-dot [] {
   cd ~/dotfiles/
   zellij
 }
-def zj_obsidian [] {
+def zj-obsidian [] {
   cd ~/obsidian_vault/
   zellij
 }
@@ -154,7 +154,7 @@ def zj [dir: string = "~/"] {
 }
 
 # Run Zellij with the welcome screen
-alias zj_welcome = zellij -l welcome
+alias zj-welcome = zellij -l welcome
 
 # --- Yazi ---
 # Shell wrapper function "yz"
@@ -205,7 +205,7 @@ def as [command: string = ""] {
 }
 
 # --- Sketchybar ---
-alias bar_load = sketchybar --reload
+alias bar-load = sketchybar --reload
 
 # --- Justfile ---
 alias j = just
