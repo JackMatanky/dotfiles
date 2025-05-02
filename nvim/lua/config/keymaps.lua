@@ -93,7 +93,7 @@ local function neovimMappings()
   -- Toggle line wrap, pick buffer visually, open parent directory via oil.nvim
   map("n", "<leader>ct", ToggleWordWrap, { desc = "toggle word wrap" })
   map("n", "<leader>bc", "<cmd>BufferLinePick<CR>", { desc = "pick buffer" })
-  map("n", "-", require("oil").open, { desc = "open parent directory" })
+  -- map("n", "-", require("oil").open, { desc = "open parent directory" })
 
   -- Clear search highlights using <Esc>
   map("n", "<Esc>", "<cmd>noh<CR>", { desc = "clear search highlight" })
