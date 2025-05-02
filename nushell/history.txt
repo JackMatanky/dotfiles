@@ -1316,3 +1316,6 @@ stow-all
 stow_all
 stow-all
 gaa
+gcam 'add vscodium projects json'
+gps
+stow-all
