@@ -27,6 +27,7 @@
   "editor.foldingMaximumRegions": 10000,
   "editor.lineNumbers": "relative",
   "editor.linkedEditing": true,
+  "editor.snippetSuggestions": "top",
   "editor.unicodeHighlight.ambiguousCharacters": false,
 
   "diffEditor.codeLens": true,
@@ -46,7 +47,8 @@
 
   //SEGMENT - Snippets
   "[snippets]": {
-    "editor.snippetSuggestions": "top"
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true
   },
   //!SEGMENT
 
@@ -54,25 +56,6 @@
   //SECTION - Workbench
   // --------------------------------------------
   "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
-
-  //!SECTION
-  // --------------------------------------------
-  //SECTION - Appearance and Theme
-  // --------------------------------------------
-  //SEGMENT - Theme
-  "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
-  "workbench.colorTheme": "Catppuccin Macchiato",
-  "catppuccin.accentColor": "blue",
-  //!SEGMENT
-
-  //SEGMENT - Icons
-  // Grey - #90a4ae; Light Beige - #f7d88c; Darker Beige - #e6c04c
-  "workbench.iconTheme": "vscode-icons",
-  "material-icon-theme.activeIconPack": "none",
-  "material-icon-theme.files.color": "#90a4ae",
-  "material-icon-theme.folders.color": "#ddbb77",
-  "material-icon-theme.folders.theme": "specific",
-  //!SEGMENT
 
   "workbench.settings.applyToAllProfiles": [
     "editor.defaultFormatter",
@@ -100,9 +83,38 @@
   //!SECTION
 
   // --------------------------------------------
+  //SECTION - Appearance and Theme
+  // --------------------------------------------
+  //SEGMENT - Theme
+  "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "catppuccin.accentColor": "blue",
+  //!SEGMENT
+
+  //SEGMENT - Icons
+  // Grey - #90a4ae; Light Beige - #f7d88c; Darker Beige - #e6c04c
+  "workbench.iconTheme": "vscode-icons",
+  "material-icon-theme.activeIconPack": "none",
+  "material-icon-theme.files.color": "#90a4ae",
+  "material-icon-theme.folders.color": "#ddbb77",
+  "material-icon-theme.folders.theme": "specific",
+  //!SEGMENT
+
+  //!SECTION
+
+  // --------------------------------------------
   //SECTION - Shell & Terminal
   // --------------------------------------------
   //SEGMENT - Nushell
+  "[nushell]": {
+    "editor.defaultFormatter": "constneo.vscode-nushell-format",
+    "editor.autoIndent": "full",
+    "editor.autoClosingBrackets": "always",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "workbench.editor.languageDetection": true
+  },
   "nushellLanguageServer.includeDirs": [
     "/Users/jack/dotfiles/nushell",
     "/Users/jack/dotfiles/nushell/aliases",
@@ -138,13 +150,7 @@
   // Spellcheck
   // --------------------------------------------
   "cSpell.enabled": true,
-  "cSpell.ignorePaths": [
-    "node_modules/**",
-    "venv/**",
-    ".venv/**",
-    "__pycache__/**",
-    "settings.json"
-  ],
+  "cSpell.language": "en, he",
   "cSpell.dictionaryDefinitions": [
     // npm install -g @cspell/dict-he
     {
@@ -173,20 +179,20 @@
       "scope": "user"
     }
   ],
-  "cSpell.dictionaries": [
-    // User Defined
-    "general_dictionary",
-    "python_dictionary",
-    // cSpell
-    "hebrew",
-    "python",
-  ],
-  "cSpell.ignoreWords": [
-    "PREMADE",
-    "canonizer",
-    "esbenp",
-    "libexec"
-  ],
+  // "cSpell.customDictionaries": {
+  //   "user_dictionary_eng": {
+  //     "name": "user_dictionary_eng",
+  //     "path": "~/dotfiles/cspell/dictionaries/user_dictionary_eng.txt",
+  //     "addWords": true,
+  //     "scope": "user"
+  //   },
+  //   "user_dictionary_python": {
+  //     "name": "user_dictionary_python",
+  //     "path": "~/dotfiles/cspell/dictionaries/user_dictionary_python.txt",
+  //     "addWords": true,
+  //     "scope": "user"
+  //   }
+  // },
   "cSpell.languageSettings": [
     {
       "languageId": "python",
@@ -202,6 +208,36 @@
       ]
     }
   ],
+  "cSpell.dictionaries": [
+    // User Defined
+    "general_dictionary",
+    "python_dictionary",
+    // cSpell
+    "hebrew",
+    "python"
+  ],
+  "cSpell.ignorePaths": [
+    "node_modules/**",
+    "venv/**",
+    ".venv/**",
+    "__pycache__/**",
+    "settings.json"
+  ],
+  "cSpell.ignoreWords": [
+    "PREMADE",
+    "canonizer",
+    "esbenp",
+    "libexec",
+    "datacls",
+    "docsimple",
+    "enco",
+    "exceptas",
+    "ifmain",
+    "jupy",
+    "pyignore",
+    "pyignoreany",
+    "tryef"
+  ],
 
   "spellright.addToSystemDictionary": true,
   "spellright.notificationClass": "warning",
@@ -212,6 +248,9 @@
   // --------------------------------------------
   // Formatting Settings
   // --------------------------------------------
+  "prettier.documentSelectors": [
+    "*/**.json"
+  ],
   "prettier.endOfLine": "lf",
   "prettier.htmlWhitespaceSensitivity": "css",
   "prettier.semi": true,
@@ -303,8 +342,9 @@
       "highlightColor": "#2ecc71",
       "scope": "workspace",
       "behavior": "link"
-    },
+    }
   },
+
   "better-comments.multilineComments": true,
   "better-comments.highlightPlainText": false,
   "better-comments.tags": [
@@ -376,6 +416,10 @@
   "redhat.telemetry.enabled": false,
   "github.copilot.nextEditSuggestions.enabled": true,
 
+  //SEGMENT - Projects
+  "projectManager.projectsLocation": "/Users/jack/dotfiles/vscodium/projects.json",
+  //!SEGMENT
+
   // --------------------------------------------
   // Language Configurations
   // --------------------------------------------
@@ -392,10 +436,10 @@
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.fixAll": "explicit",
-      "source.organizeImports": "explicit"
+      "source.organizeImports": "explicit",
     }
   },
-  "python.defaultInterpreterPath": "/Users/jack/.pyenv/versions/3.13.2/bin/python",
+  "python.defaultInterpreterPath": "~/.pyenv/versions/3.13.2/bin/python",
   "python.analysis.autoFormatStrings": true,
   "python.analysis.inlayHints.callArgumentNames": "partial",
   "python.analysis.inlayHints.functionReturnTypes": true,
@@ -405,7 +449,7 @@
   "python.REPL.sendToNativeREPL": true,
   "python.terminal.activateEnvironment": true,
   "python.terminal.shellIntegration.enabled": true,
-  "python.venvPath": "${workspaceFolder}/.venv",
+  "python.venvPath": ".venv",
   "python.venvFolders": [ "envs", ".venv" ],
 
   //SEGMENT - Ruff
@@ -506,7 +550,7 @@
       "server": "JACK-LENOVO-LAP\\SQLEXPRESS",
       "database": "jolt_professional_abilities_test",
       "authenticationType": "Integrated",
-      "profileName": "Jolt Professional Abilities Test",
+      "profileName": "Jolt Profesional Abilities Test",
       "password": "",
       "id": "9B85E3C8-52ED-4945-811A-CA00D08D2AE4",
       "groupId": "FC8AE99C-9366-4CD8-A953-2E47FB9B5115"
@@ -747,7 +791,7 @@
 
   //SECTION - Markdown
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.wordWrap": "on",
     "editor.tabSize": 2,
@@ -858,6 +902,9 @@
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
+  "evenBetterToml.formatter.alignComments": true,
+  "evenBetterToml.formatter.allowedBlankLines": 2,
+  "evenBetterToml.formatter.arrayAutoExpand": true,
   //!SECTION
 
   // --------------------------------------------
@@ -883,8 +930,5 @@
 
   "[nix]": {
     "editor.defaultFormatter": "brettm12345.nixfmt-vscode"
-  },
-  "vscode-just.formatOnSave": true,
-  "inlineChat.lineNaturalLanguageHint": false,
-  "extensions.supportUntrustedRepositories": false
+  }
 }

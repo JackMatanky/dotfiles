@@ -1301,3 +1301,7 @@ rg --files-with-matches "marketplace.visualstudio.com" ~/.vscode-oss/extensions
 rg --files-with-matches "marketplace.visualstudio.com" ~/.vscode-oss/extensions |<\n>  cut -d/ -f6 |<\n>  sort -u
 rg --files-with-matches "marketplace.visualstudio.com" ~/.vscode-oss/extensions |<\n>  lines |<\n>  parse "/Users/jack/.vscode-oss/extensions/{ext}/" |<\n>  get ext |<\n>  split column "-" | get column0 | uniq
 codium --list-extensions --show-versions
+gcam 'remove vscode folder'
+gps
+stow_all
+restow_all
