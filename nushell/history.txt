@@ -1360,3 +1360,8 @@ restow-all
 brew install tmux
 brew install tpm
 gaa
+gcam 'setup tmux like zellij to move back to tmux for image rendering capabilities'
+gps
+stow-all
+brew install ical-buddy<\n>
+gaa
