@@ -36,7 +36,8 @@ local function ToggleWordWrap()
   print("Word wrap " .. (vim.wo.wrap and "enabled" or "disabled"))
 end
 
--- Temporarily enable system clipboard, yank visually selected text, then disable clipboard
+-- Temporarily enable system clipboard, yank
+-- visually selected text, then disable clipboard
 local function copyToClipBoard()
   vim.cmd("set clipboard+=unnamedplus")
   vim.cmd("norm! y")

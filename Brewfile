@@ -196,6 +196,7 @@ if OS.mac?
 
   # >>> Communication <<<
   cask "slack"                          # Team communication and collaboration software
+  cask "zoom"                           # Video communication and virtual meeting platform
 
   # ---------------------------------------------
   # Fonts
@@ -234,67 +235,67 @@ end
 # VS Code Extensions
 # ---------------------------------------------
 
-# >>> UI & Themes <<<
-vscode "catppuccin.catppuccin-vsc"
-vscode "vscode-icons-team.vscode-icons"
+# # >>> UI & Themes <<<
+# vscode "catppuccin.catppuccin-vsc"
+# vscode "vscode-icons-team.vscode-icons"
 
-# >>> Code Navigation & Productivity <<<
-vscode "gruntfuggly.todo-tree"
-vscode "exodiusstudios.comment-anchors"
-vscode "usernamehw.errorlens"
+# # >>> Code Navigation & Productivity <<<
+# vscode "gruntfuggly.todo-tree"
+# vscode "exodiusstudios.comment-anchors"
+# vscode "usernamehw.errorlens"
 
-# >>> Productivity & Utilities <<<
-vscode "streetsidesoftware.code-spell-checker"
-vscode "patbenatar.advanced-new-file"
-vscode "njpwerner.autodocstring"
-vscode "aaron-bond.better-comments"
-vscode "albert.tabout"
+# # >>> Productivity & Utilities <<<
+# vscode "streetsidesoftware.code-spell-checker"
+# vscode "patbenatar.advanced-new-file"
+# vscode "njpwerner.autodocstring"
+# vscode "aaron-bond.better-comments"
+# vscode "albert.tabout"
 
-# >>> Vim & Modal Editing <<<
-vscode "asvetliakov.vscode-neovim"
-vscode "vspacecode.whichkey"
+# # >>> Vim & Modal Editing <<<
+# vscode "asvetliakov.vscode-neovim"
+# vscode "vspacecode.whichkey"
 
-# >>> Linters & Formatters <<<
-vscode "esbenp.prettier-vscode"
-vscode "editorconfig.editorconfig"
-vscode "jkillian.custom-local-formatters"
-vscode "jbockle.jbockle-format-files"
-vscode "lacroixdavid1.vscode-format-context-menu"
-vscode "inferrinizzard.prettier-sql-vscode"
+# # >>> Linters & Formatters <<<
+# vscode "esbenp.prettier-vscode"
+# vscode "editorconfig.editorconfig"
+# vscode "jkillian.custom-local-formatters"
+# vscode "jbockle.jbockle-format-files"
+# vscode "lacroixdavid1.vscode-format-context-menu"
+# vscode "inferrinizzard.prettier-sql-vscode"
 
-# >>> Python <<<
-vscode "ms-python.python"
-vscode "ms-python.debugpy"
-vscode "charliermarsh.ruff"
-vscode "detachhead.basedpyright"
-vscode "marimo-team.vscode-marimo"
+# # >>> Python <<<
+# vscode "ms-python.python"
+# vscode "ms-python.debugpy"
+# vscode "charliermarsh.ruff"
+# vscode "detachhead.basedpyright"
+# vscode "marimo-team.vscode-marimo"
 
-# >>> HTML <<<
-vscode "formulahendry.auto-close-tag"
-vscode "formulahendry.auto-rename-tag"
+# # >>> HTML <<<
+# vscode "formulahendry.auto-close-tag"
+# vscode "formulahendry.auto-rename-tag"
 
-# >>> Git & Version Control <<<
-vscode "eamodio.gitlens"
-vscode "github.vscode-github-actions"
-vscode "github.vscode-pull-request-github"
-vscode "gitlab.gitlab-workflow"
-vscode "vsls-contrib.gistfs"
+# # >>> Git & Version Control <<<
+# vscode "eamodio.gitlens"
+# vscode "github.vscode-github-actions"
+# vscode "github.vscode-pull-request-github"
+# vscode "gitlab.gitlab-workflow"
+# vscode "vsls-contrib.gistfs"
 
-# >>> Markdown, LaTeX, & Writing <<<
-vscode "davidanson.vscode-markdownlint"
-vscode "shd101wyy.markdown-preview-enhanced"
-vscode "james-yu.latex-workshop"
-vscode "kortina.vscode-markdown-notes"
+# # >>> Markdown, LaTeX, & Writing <<<
+# vscode "davidanson.vscode-markdownlint"
+# vscode "shd101wyy.markdown-preview-enhanced"
+# vscode "james-yu.latex-workshop"
+# vscode "kortina.vscode-markdown-notes"
 
-# >>> Languages <<<
-vscode "redhat.vscode-yaml"
-vscode "tamasfe.even-better-toml"
-vscode "thenuprojectcontributors.vscode-nushell-lang"
+# # >>> Languages <<<
+# vscode "redhat.vscode-yaml"
+# vscode "tamasfe.even-better-toml"
+# vscode "thenuprojectcontributors.vscode-nushell-lang"
 
-# >>> CSV <<<
-vscode "mechatroner.rainbow-csv"
-vscode "janisdd.vscode-edit-csv"
-vscode "grapecity.gc-excelviewer"
+# # >>> CSV <<<
+# vscode "mechatroner.rainbow-csv"
+# vscode "janisdd.vscode-edit-csv"
+# vscode "grapecity.gc-excelviewer"
 
-# >>> Miscellaneous Utilities <<<
-vscode "spadin.zmk-tools"
+# # >>> Miscellaneous Utilities <<<
+# vscode "spadin.zmk-tools"

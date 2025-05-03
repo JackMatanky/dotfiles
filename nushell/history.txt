@@ -1345,3 +1345,11 @@ brew install --cask neovide
 gcam 'update nvim settings for vscode use'
 gps
 stow-all
+gcam 'update nvim settings for vscode use and remove oil reference'
+gps
+stow-all
+brew install --cask zoom
+brew bundle list
+brew bundle list --vscode
+codium --list-extensions --show-versions
+gaa
