@@ -4,24 +4,21 @@
 --  Description: Override or extend LazyVim defaults
 -- -----------------------------------------------------------------------------
 
--- ------------------------
---  Leader Keys
--- ------------------------
-
+-- ------------------------------------------------------ --
+--                       Leader Keys                      --
+-- ------------------------------------------------------ --
 -- Already set by LazyVim:
 -- vim.g.mapleader = " "
 -- vim.g.maplocalleader = "\\"
 
--- ------------------------
---  Python LSP
--- ------------------------
-
+-- ------------------------------------------------------ --
+--                       Python LSP                       --
+-- ------------------------------------------------------ --
 vim.g.python3_host_prog = vim.fn.expand("~/.pyenv/versions/neovim/bin/python3")
 
--- ------------------------
---  Editor Behavior
--- ------------------------
-
+-- ------------------------------------------------------ --
+--                     Editor Behavior                    --
+-- ------------------------------------------------------ --
 local opt = vim.opt
 
 -- Override LazyVim default timeoutlen to increase delay in VSCode
@@ -31,9 +28,8 @@ opt.timeoutlen = vim.g.vscode and 1000 or 300
 -- Keep these if you rely on custom plugin integration
 opt.statuscolumn = [[%!v:lua.require'snacks.statuscolumn'.get()]]
 
--- ------------------------
---  Markdown
--- ------------------------
-
+-- ------------------------------------------------------ --
+--                        Markdown                        --
+-- ------------------------------------------------------ --
 -- Avoid default Markdown indentation behavior
 vim.g.markdown_recommended_style = 0

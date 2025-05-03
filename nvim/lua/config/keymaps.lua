@@ -8,9 +8,9 @@
 -- This file supplements LazyVim defaults with custom mappings.
 -- See LazyVim's default keymaps: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 
--- ------------------------
---  Safe Mapping Utility
--- ------------------------
+-- ------------------------------------------------------ --
+--                  Safe Mapping Utility                  --
+-- ------------------------------------------------------ --
 -- Wrapper around vim.keymap.set that respects Lazy.nvim key handlers.
 -- Avoids overwriting user-defined Lazy keys. Use this for all mappings.
 local function map(mode, lhs, rhs, opts)
@@ -26,10 +26,9 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
--- ------------------------
---  Helper Functions
--- ------------------------
-
+-- ------------------------------------------------------ --
+--                    Helper Functions                    --
+-- ------------------------------------------------------ --
 -- Toggle line wrapping and print result
 local function ToggleWordWrap()
   vim.wo.wrap = not vim.wo.wrap
@@ -50,9 +49,9 @@ local function callVSCodeFunction(vsCodeCommand)
   vim.cmd(vsCodeCommand)
 end
 
--- ------------------------
---  Neovim Keymaps
--- ------------------------
+-- ------------------------------------------------------ --
+--                     Neovim Keymaps                     --
+-- ------------------------------------------------------ --
 -- These are only loaded in standalone Neovim (not VSCode).
 
 local function neovimMappings()
@@ -114,9 +113,10 @@ local function neovimMappings()
   map("n", "<leader>|", "<C-W>v", { desc = "split right (alias)" })
 end
 
--- ------------------------
---  VSCode Keymaps
--- ------------------------
+
+-- ------------------------------------------------------ --
+--                     VSCode Keymaps                     --
+-- ------------------------------------------------------ --
 -- These keymaps only load when running inside VSCode with vscode-neovim
 
 local function vscodeMappings()
@@ -226,10 +226,9 @@ local function vscodeMappings()
   end, { desc = "redo" })
 end
 
--- ------------------------
---  Keymap Dispatcher
--- ------------------------
-
+-- ------------------------------------------------------ --
+--                    Keymap Dispatcher                   --
+-- ------------------------------------------------------ --
 if vim.g.vscode then
   print("⚡ Connected to VSCode-Neovim")
   vscodeMappings()

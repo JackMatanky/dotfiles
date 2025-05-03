@@ -1,7 +1,7 @@
 {
-  // --------------------------------------------
-  // Global Settings
-  // --------------------------------------------
+  /* ------------------------------------------------------ */
+  /*                     Global Settings                    */
+  /* ------------------------------------------------------ */
   // * Uncomment to enable MS Marketplace extensions
   // "extensionsGallery": {
   //   "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
@@ -9,7 +9,7 @@
   //   "itemUrl": "https://marketplace.visualstudio.com/items"
   // },
 
-  // Fonts
+  /* ------------------------ Fonts ----------------------- */
   "editor.fontFamily": "FiraCode Nerd Font Mono",
   "editor.fontSize": 15,
   "editor.fontLigatures": true,
@@ -17,7 +17,7 @@
   "editor.insertSpaces": true,
   "editor.wordWrap": "on",
 
-  // Bracket Pairs
+  /* -------------------- Bracket Pairs ------------------- */
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
@@ -52,9 +52,9 @@
   },
   //!SEGMENT
 
-  // --------------------------------------------
-  //SECTION - Workbench
-  // --------------------------------------------
+  /* ------------------------------------------------------ */
+  /*SECTION:                Workbench                       */
+  /* ------------------------------------------------------ */
   "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
 
   "workbench.settings.applyToAllProfiles": [
@@ -82,9 +82,9 @@
   "workbench.commandPalette.experimental.suggestCommands": true,
   //!SECTION
 
-  // --------------------------------------------
-  //SECTION - Appearance and Theme
-  // --------------------------------------------
+  /* ------------------------------------------------------ */
+  /*SECTION:          Appearance and Theme                  */
+  /* ------------------------------------------------------ */
   //SEGMENT - Theme
   "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
   "workbench.colorTheme": "Catppuccin Macchiato",
@@ -102,9 +102,9 @@
 
   //!SECTION
 
-  // --------------------------------------------
-  //SECTION - Shell & Terminal
-  // --------------------------------------------
+  /* ------------------------------------------------------ */
+  /*SECTION:            Shell & Terminal                    */
+  /* ------------------------------------------------------ */
   //SEGMENT - Nushell
   "[nushell]": {
     "editor.defaultFormatter": "constneo.vscode-nushell-format",
@@ -136,19 +136,20 @@
   "terminal.integrated.sendKeybindingsToShell": true,
   //!SECTION
 
-  // --------------------------------------------
-  //SECTION - NeoVim
-  // --------------------------------------------
+  /* ------------------------------------------------------ */
+  /*SECTION:                 NeoVim                         */
+  /* ------------------------------------------------------ */
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
   //"vscode-neovim.neovimExecutablePaths.windows": "C:\\path\\to\\nvim.exe"
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
+  "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
   //!SECTION
 
-  // --------------------------------------------
-  // Spellcheck
-  // --------------------------------------------
+  /* ------------------------------------------------------ */
+  /*SECTION:               Spellcheck                       */
+  /* ------------------------------------------------------ */
   "cSpell.enabled": true,
   "cSpell.language": "en, he",
   "cSpell.dictionaryDefinitions": [
@@ -244,10 +245,11 @@
   "spellright.configurationScope": "user",
   "spellright.language": [ "en" ],
   "spellright.documentTypes": [ "markdown", "latex" ],
+  //!Section
 
-  // --------------------------------------------
-  // Formatting Settings
-  // --------------------------------------------
+  /* ------------------------------------------------------ */
+  /*SECTION:           Formatter Settings                   */
+  /* ------------------------------------------------------ */
   "prettier.documentSelectors": [
     "*/**.json"
   ],
@@ -266,9 +268,11 @@
   "editorconfig.showMenuEntry": true,
   //!SEGMENT
 
-  // --------------------------------------------
-  // Comment Extensions
-  // --------------------------------------------
+  //!SECTION
+
+  /* ------------------------------------------------------ */
+  /*SECTION:           Comment Extensions                   */
+  /* ------------------------------------------------------ */
   "commentAnchors.tags.separators": [ " - ", ": ", " " ],
   "commentAnchors.tagHighlights.enabled": true,
   "commentAnchors.tags.displayHierarchyInWorkspace": true,
@@ -408,6 +412,50 @@
   },
   //!SEGMENT
 
+  /*SEGMENT: ------------ Comment Divider ----------------- */
+  // Docs: https://github.com/stackbreak/comment-divider
+  "comment-divider.length": 60,
+
+  // Set whether the divider will be shrink consider indent size,
+  // or will be always fixed length.
+  "comment-divider.shouldLengthIncludeIndent": true,
+
+  // Main Header
+  // Set symbol for main header line filling (only one).
+  "comment-divider.mainHeaderFiller": "-",
+
+  // Set main header vertical style.
+  "comment-divider.mainHeaderHeight": "block",
+
+  // Set main header text align.
+  "comment-divider.mainHeaderAlign": "center",
+
+  // Set main header text transform style.
+  "comment-divider.mainHeaderTransform": "titlecase",
+
+  // Subheader
+  // Set symbol for subheader line filling (only one).
+  "comment-divider.subheaderFiller": "-",
+
+  // Set subheader vertical style.
+  "comment-divider.subheaderHeight": "line",
+
+  // Set subheader text align.
+  "comment-divider.subheaderAlign": "center",
+
+  // Set subheader text transform style.
+  "comment-divider.subheaderTransform": "none",
+  "comment-divider.languagesMap": {
+    "html": [ "<!--", "-->" ],
+    "nu": [ "#", "#" ],
+    "nushell": [ "#", "#" ],
+    "lua": [ "--", "--" ],
+    "py": [ "#", "#" ],
+  },
+  //!SEGMENT
+
+  //!SECTION
+
   // --------------------------------------------
   // Extensions
   // --------------------------------------------
@@ -417,7 +465,13 @@
   "github.copilot.nextEditSuggestions.enabled": true,
 
   //SEGMENT - Projects
-  "projectManager.projectsLocation": "/Users/jack/dotfiles/vscodium/projects.json",
+  "projectManager.cacheProjectsBetweenSessions": true,
+  "projectManager.openInCurrentWindowIfEmpty": "always",
+  // "projectManager.projectsLocation": "~/dotfiles/vscodium/projects.json",
+  "projectManager.sortList": "Name",
+  // "projectManager.any.baseFolders": [
+  // "/Users/jack/dotfiles"
+  // ],
   //!SEGMENT
 
   // --------------------------------------------
@@ -808,90 +862,90 @@
   "markdown-preview-enhanced.frontMatterRenderingOption": "table",
   "markdown.math.enabled": false,
   "markdownlint.configFile": "/Users/jack/dotfiles/formatters/.markdownlint.jsonc",
-  // "markdownlint.config": {
-  //   "heading-increment": true,
-  //   "heading-style": {
-  //     "style": "atx"
-  //   },
-  //   "ul-style": {
-  //     "style": "dash"
-  //   },
-  //   "list-indent": true,
-  //   "ul-indent": {
-  //     "indent": 4
-  //   },
-  //   "no-trailing-spaces": {
-  //     "br_spaces": 2,
-  //     "list_item_empty_lines": true
-  //   },
-  //   "no-hard-tabs": {
-  //     "code_blocks": false,
-  //     "spaces_per_tab": 4
-  //   },
-  //   "no-reversed-links": true,
-  //   "no-multiple-blanks": {
-  //     "maximum": 1
-  //   },
-  //   "line-length": false,
-  //   "commands-show-output": true,
-  //   "no-missing-space-atx": true,
-  //   "blanks-around-headings": {
-  //     "lines_above": 1,
-  //     "lines_below": 1
-  //   },
-  //   "heading-start-left": true,
-  //   "no-duplicate-heading": false,
-  //   "single-h1": {
-  //     "level": 1
-  //   },
-  //   "no-trailing-punctuation": {
-  //     "punctuation": ".,;:。，；："
-  //   },
-  //   "no-multiple-space-blockquote": true,
-  //   "no-blanks-blockquote": false,
-  //   "ol-prefix": {
-  //     "style": "one_or_ordered"
-  //   },
-  //   "list-marker-space": {
-  //     "ol_multi": 1,
-  //     "ol_single": 1,
-  //     "ul_multi": 1,
-  //     "ul_single": 1
-  //   },
-  //   "blanks-around-fences": true,
-  //   "blanks-around-lists": true,
-  //   "no-inline-html": false,
-  //   "no-bare-urls": true,
-  //   "hr-style": false,
-  //   "no-emphasis-as-heading": true,
-  //   "no-space-in-emphasis": true,
-  //   "no-space-in-code": true,
-  //   "fenced-code-language": {
-  //     "allowed_languages": [ ]
-  //   },
-  //   "first-line-heading": {
-  //     "level": 1
-  //   },
-  //   "no-empty-links": true,
-  //   "required-headings": false,
-  //   "no-alt-text": false,
-  //   "code-block-style": {
-  //     "style": "fenced"
-  //   },
-  //   "single-trailing-newline": true,
-  //   "code-fence-style": {
-  //     "style": "backtick"
-  //   },
-  //   "emphasis-style": {
-  //     "style": "asterisk"
-  //   },
-  //   "strong-style": {
-  //     "style": "asterisk"
-  //   },
-  //   "link-fragments": false,
-  //   "reference-links-images": false,
-  //   "link-image-reference-definitions": false
-  // },
+  "markdownlint.config": {
+    "heading-increment": true,
+    "heading-style": {
+      "style": "atx"
+    },
+    "ul-style": {
+      "style": "dash"
+    },
+    "list-indent": true,
+    "ul-indent": {
+      "indent": 4
+    },
+    "no-trailing-spaces": {
+      "br_spaces": 2,
+      "list_item_empty_lines": true
+    },
+    "no-hard-tabs": {
+      "code_blocks": false,
+      "spaces_per_tab": 4
+    },
+    "no-reversed-links": true,
+    "no-multiple-blanks": {
+      "maximum": 1
+    },
+    "line-length": false,
+    "commands-show-output": true,
+    "no-missing-space-atx": true,
+    "blanks-around-headings": {
+      "lines_above": 1,
+      "lines_below": 1
+    },
+    "heading-start-left": true,
+    "no-duplicate-heading": false,
+    "single-h1": {
+      "level": 1
+    },
+    "no-trailing-punctuation": {
+      "punctuation": ".,;:。，；："
+    },
+    "no-multiple-space-blockquote": true,
+    "no-blanks-blockquote": false,
+    "ol-prefix": {
+      "style": "one_or_ordered"
+    },
+    "list-marker-space": {
+      "ol_multi": 1,
+      "ol_single": 1,
+      "ul_multi": 1,
+      "ul_single": 1
+    },
+    "blanks-around-fences": true,
+    "blanks-around-lists": true,
+    "no-inline-html": false,
+    "no-bare-urls": true,
+    "hr-style": false,
+    "no-emphasis-as-heading": true,
+    "no-space-in-emphasis": true,
+    "no-space-in-code": true,
+    "fenced-code-language": {
+      "allowed_languages": [ ]
+    },
+    "first-line-heading": {
+      "level": 1
+    },
+    "no-empty-links": true,
+    "required-headings": false,
+    "no-alt-text": false,
+    "code-block-style": {
+      "style": "fenced"
+    },
+    "single-trailing-newline": true,
+    "code-fence-style": {
+      "style": "backtick"
+    },
+    "emphasis-style": {
+      "style": "asterisk"
+    },
+    "strong-style": {
+      "style": "asterisk"
+    },
+    "link-fragments": false,
+    "reference-links-images": false,
+    "link-image-reference-definitions": false
+  },
   //SEGMENT - Notes
   "vscodeMarkdownNotes.allowPipedWikiLinks": true,
   "obsidianmd.vaultPath": "D:\\obsidian_vault",
@@ -910,6 +964,21 @@
   // --------------------------------------------
   // Miscellaneous
   // --------------------------------------------
+  //SECTION - Git
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "always",
+  //!SECTION
+
+  //SEGMENT - Justfie
+  "vscode-just.formatOnSave": true,
+  "vscode-just.runInTerminal": true,
+  //!SEGMENT
+
+  //SEGMENT - ZMK
+  "zmk.configPath": "/Users/jack/Documents/keyboard_dev/zmk-config",
+  "zmk.buildMatrixPath": "/Users/jack/Documents/keyboard_dev/zmk-config/build.yaml",
+  //!SEGMENT
+
   //SECTION - AutoHotkey
   "AutoHotkey2.AutoLibInclude": "All",
   "AutoHotkey2.CompleteFunctionParens": true,
@@ -923,12 +992,17 @@
   "powershell.powerShellDefaultVersion": "Windows PowerShell (x64)",
   //!SECTION
 
-  //SECTION - Git
-  "git.confirmSync": false,
-  "git.openRepositoryInParentFolders": "always",
-  //!SECTION
-
+  //SEGMENT - Nix
   "[nix]": {
     "editor.defaultFormatter": "brettm12345.nixfmt-vscode"
-  }
+  },
+  "terminal.integrated.ignoreProcessNames": [
+    "starship",
+    "oh-my-posh",
+    "bash",
+    "zsh",
+    "nu"
+  ],
+  //!SEGMENT
+
 }

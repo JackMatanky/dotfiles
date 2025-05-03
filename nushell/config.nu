@@ -1,8 +1,8 @@
 # -----------------------------------------------------------------------------
 #  Filename: ~/dotfiles/nushell/config.nu
 #  Docs: https://www.nushell.sh/book/nu_as_a_shell.html
-#  Base Source: https://github.com/omerxx/dotfiles/blob/master/nushell/config.nu
-#               (Omer Hammerman - omerxx)
+# Acknowledgments: Omer Hammerman (omerxx)
+#                  https://github.com/omerxx/dotfiles/blob/master/nushell/env.nu
 # -----------------------------------------------------------------------------
 
 $env.config = {

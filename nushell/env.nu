@@ -1,22 +1,22 @@
 #------------------------------------------------------------------------------
 # Filename: ~/dotfiles/nushell/env.nu
 # Docs: https://www.nushell.sh/book/nu_as_a_shell.html
-# Source Author: Omer Hammerman (omerxx)
-# Source Link: https://github.com/omerxx/dotfiles/blob/master/nushell/env.nu
+# Acknowledgments: Omer Hammerman (omerxx)
+#                  https://github.com/omerxx/dotfiles/blob/master/nushell/env.nu
 #------------------------------------------------------------------------------
 
-# OS Detection
+# -------------------- OS Detection -------------------- #
 let OS = (uname | get operating-system)
 
-# >>> XDG Base Directory <<<
+# ------------------ XDG Base Directory ------------------ #
 $env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
 $env.XDG_CACHE_HOME = ($env.HOME | path join '.cache')
 $env.XDG_DATA_HOME = ($env.HOME | path join '.local/share')
 
-# >>> Git Global Config Location <<<
+# -------------- Git Global Config Location -------------- #
 $env.GIT_CONFIG_GLOBAL = ($env.XDG_CONFIG_HOME | path join 'git/config')
 
-# >>> Cargo Home Directory <<<
+# ----------------- Cargo Home Directory ----------------- #
 $env.CARGO_HOME = ($env.HOME | path join '.cargo')
 
 # Load OpenAI API Key from macOS Keychain (Best Placement)
@@ -24,9 +24,9 @@ $env.CARGO_HOME = ($env.HOME | path join '.cargo')
 #     $env.OPENAI_API_KEY = (security find-generic-password -s "openai_api_key" -a $env.USER -w | str trim)
 # }
 
-# -----------------------------------------------
-# >>> Nushell Environment Setup <<<
-# -----------------------------------------------
+# -------------------------------------------------------- #
+#                 Nushell Environment Setup                #
+# -------------------------------------------------------- #
 # --- Config Directory ---
 # Default: $nu.default-config-dir == $XDG_CONFIG_HOME/nushell
 $env.NU_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'nushell')
@@ -46,9 +46,9 @@ $env.NU_PLUGIN_DIRS = [
 ]
 
 
-# -----------------------------------------------
-# Homebrew Installation Directory
-# -----------------------------------------------
+# -------------------------------------------------------- #
+#              Homebrew Installation Directory             #
+# -------------------------------------------------------- #
 # Darwin = "/opt/homebrew"
 # Linux = "/home/linuxbrew/.linuxbrew"
 $env.HOMEBREW = (match $OS {
@@ -57,21 +57,21 @@ $env.HOMEBREW = (match $OS {
     _ => ""
 })
 
-# >>> Homebrew Base Paths <<<
+# ------------------ Homebrew Base Paths ----------------- #
 $env.BREW_OPT_DIR = ($env.HOMEBREW? | default "" | path join 'opt')
 $env.BREW_BIN_DIR = ($env.HOMEBREW? | default "" | path join 'bin')
 $env.BREW_SBIN_DIR = ($env.HOMEBREW? | default "" | path join 'sbin')
 $env.BREW_LIB_DIR = ($env.HOMEBREW? | default "" | path join 'lib')
 $env.BREW_INCLUDE_DIR = ($env.HOMEBREW? | default "" | path join 'include')
 
-# >>> Build Flags for Brew-Linked Libraries <<<
+# --------- Build Flags for Brew-Linked Libraries -------- #
 $env.CFLAGS = ['-I', $env.BREW_INCLUDE_DIR] | str join (char space)
 $env.LDFLAGS = ['-L', $env.BREW_LIB_DIR] | str join (char space)
 
 
-# -----------------------------------------------
-# Prompt Setup
-# -----------------------------------------------
+# -------------------------------------------------------- #
+#                       Prompt Setup                       #
+# -------------------------------------------------------- #
 def create_left_prompt [] {
     let dir = match (do --ignore-errors { $env.PWD | path relative-to $nu.home-path }) {
         null => $env.PWD
@@ -128,9 +128,9 @@ $env.PROMPT_MULTILINE_INDICATOR = {|| '::: ' }
 # $env.TRANSIENT_PROMPT_MULTILINE_INDICATOR = {|| "" }
 # $env.TRANSIENT_PROMPT_COMMAND_RIGHT = {|| "" }
 
-# -----------------------------------------------
-# Environment Variable Conversions
-# -----------------------------------------------
+# -------------------------------------------------------- #
+#             Environment Variable Conversions             #
+# -------------------------------------------------------- #
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
 # - converted from a value back to a string when running external commands (to_string)
@@ -147,9 +147,9 @@ $env.ENV_CONVERSIONS = {
 }
 
 
-# -----------------------------------------------
-# Dynamic PATH Declaration
-# -----------------------------------------------
+# -------------------------------------------------------- #
+#                 Dynamic PATH Declaration                 #
+# -------------------------------------------------------- #
 # To add entries to PATH (on Windows you might use Path),
 # you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
@@ -234,10 +234,11 @@ if ($OS == 'Linux') {
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
 
-# -----------------------------------------------
-# Programming Language Environment Setup
-# -----------------------------------------------
-# >>> Pyenv Integration <<<
+# -------------------------------------------------------- #
+#          Programming Language Environment Setup          #
+# -------------------------------------------------------- #
+
+# ------------------- Pyenv Integration ------------------ #
 if (which pyenv | is-not-empty) {
     # Set pyenv root and paths
     $env.PYENV_ROOT = ($env.HOME | path join '.pyenv')
@@ -276,7 +277,7 @@ if (which pyenv | is-not-empty) {
 #     rustup completions nushell | save --force ~/.cache/rustup.nu
 # }
 
-# >>> Java <<<
+# ------------------------- Java ------------------------- #
 if (which java | is-not-empty) {
     $env.JAVA_HOME = if ($OS == 'Darwin') {
         '/usr/libexec/java_home -v 23'
@@ -285,10 +286,11 @@ if (which java | is-not-empty) {
     }
 }
 
-# -----------------------------------------------
-# Tooling & Integrations
-# -----------------------------------------------
-# >>> Starship Prompt <<<
+# -------------------------------------------------------- #
+#                  Tooling & Integrations                  #
+# -------------------------------------------------------- #
+
+# -------------------- Starship Prompt ------------------- #
 # Docs: https://starship.rs/config/
 # Nushell Guide: https://starship.rs/guide/#step-2-set-up-your-shell-to-use-starship
 if (which starship | is-not-empty) {
@@ -302,7 +304,7 @@ if (which starship | is-not-empty) {
     $env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join 'starship' 'starship.toml')
 }
 
-# >>> Carapace Shell Completion <<<
+# --------------- Carapace Shell Completion -------------- #
 # Docs: https://carapace.sh
 if (which carapace | is-not-empty) {
     mkdir ~/.cache/carapace
@@ -310,13 +312,13 @@ if (which carapace | is-not-empty) {
     $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 }
 
-# >>> Zoxide <<<
+# ------------------------ Zoxide ------------------------ #
 # Docs: https://github.com/ajeetdsouza/zoxide
 if (which zoxide | is-not-empty) {
     zoxide init nushell | save --force ~/.zoxide.nu
 }
 
-# >>> Atuin Shell History <<<
+# ------------------ Atuin Shell History ----------------- #
 # Docs: https://docs.atuin.sh
 if (which atuin | is-not-empty) {
     let init_file = ($env.XDG_CACHE_HOME | path join 'atuin' 'init.nu')
@@ -326,21 +328,22 @@ if (which atuin | is-not-empty) {
     }
 }
 
-# >>> Zellij: Terminal Multiplexer <<<
+# ------------- Zellij: Terminal Multiplexer ------------- #
 # Docs: https://zellij.dev/documentation/
 $env.ZELLIJ_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'zellij')
 $env.ZELLIJ_LAYOUT_DIR = ($env.ZELLIJ_CONFIG_DIR | path join 'layouts')
 $env.ZELLIJ_THEME_DIR = ($env.ZELLIJ_CONFIG_DIR | path join 'themes')
 
-# -----------------------------------------------
-# SSH Configuration & Keychain
-# -----------------------------------------------
-# >>> SSH <<<
+# -------------------------------------------------------- #
+#               SSH Configuration & Keychain               #
+# -------------------------------------------------------- #
+
+# -------------------------- SSH ------------------------- #
 $env.SSH_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'ssh')
 $env.SSH_CONFIG_FILE = ($env.SSH_CONFIG_DIR | path join 'ssh-config')
 $env.SSH_KEY_PATH = ($env.HOME | path join '.ssh' 'id_ed25519')
 
-# >>> Keychain <<<
+# ----------------------- Keychain ----------------------- #
 # Run keychain to load the SSH key and environment variables
 keychain --eval --quiet $env.SSH_KEY_PATH
     | lines
@@ -362,16 +365,13 @@ keychain --eval --quiet $env.SSH_KEY_PATH
 #         | load-env
 # }
 
-# -----------------------------------------------
-# Defaults
-# -----------------------------------------------
+# -------------------------------------------------------- #
+#                         Defaults                         #
+# -------------------------------------------------------- #
 $env.EDITOR = 'nvim'        # NeoVim, 'hx' Helix
 $env.VISUAL = 'zed'         # Zed
 $env.TERMINAL = 'ghostty'   # Ghostty  "/Applications/Ghostty.app/Contents/MacOS/ghostty"
 $env.FILE_PICKER = 'yazi'   # Yazi
-
-# >>> Nushell <<<
-$env.NU_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'nushell')
 
 # Filter out duplicate paths
 $env.PATH = ($env.PATH | uniq)

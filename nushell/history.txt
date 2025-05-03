@@ -1365,3 +1365,6 @@ gps
 stow-all
 brew install ical-buddy<\n>
 gaa
+gcam 'add readme for tmux setup'
+gps
+gaa

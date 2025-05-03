@@ -22,6 +22,53 @@
     "tags": ["format", "text"]
     // Replaces curly quotes with straight quotes and saves file in-place using --force
   },
+  // >>> Comment Diveder <<<
+  {
+    "label": "Insert Comment Divider: Main",
+    "command": "~/dotfiles/zed/scripts/comment-divider.sh --file $ZED_FILE --title '%%' --type main",
+    "prompt": {
+      "input": {
+        "placeholder": "Enter main header title",
+        "default": "Main Section"
+      }
+    },
+    "shell": {
+      "with_arguments": {
+        "program": "bash"
+      }
+    },
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always",
+    "hide": "on_success",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "show_summary": true,
+    "show_output": true,
+    "tags": ["divider", "comment", "main"]
+  },
+  {
+    "label": "Insert Comment Divider: Sub",
+    "command": "~/dotfiles/zed/scripts/comment-divider.sh --file $ZED_FILE --title '%%' --type sub",
+    "prompt": {
+      "input": {
+        "placeholder": "Enter subheader title",
+        "default": "Subsection"
+      }
+    },
+    "shell": {
+      "with_arguments": {
+        "program": "bash"
+      }
+    },
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always",
+    "hide": "on_success",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "show_summary": true,
+    "show_output": true,
+    "tags": ["divider", "comment", "sub"]
+  },
 
   // --------------------------------------------
   // >>> Python Virtual Environment & Setup <<<
