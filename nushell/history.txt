@@ -1353,3 +1353,10 @@ brew bundle list
 brew bundle list --vscode
 codium --list-extensions --show-versions
 gaa
+gcam 'update colorscheme folder to include background images and scripts. renamed the folder to themes'
+gps
+stow-all
+restow-all
+brew install tmux
+brew install tpm
+gaa

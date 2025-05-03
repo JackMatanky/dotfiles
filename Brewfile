@@ -18,17 +18,22 @@ tap "homebrew/services"                 # Start/stop macOS services
 brew "bash"                             # Bourne-Again SHell, a UNIX command interpreter
 brew "nushell"                          # Modern shell with structured data support
 
-# >>> Shell Enhancements <<<
+# >>> Terminal Utilities <<<
+brew "zellij"                           # Terminal workspace manager and multiplexer
+brew "tmux"                             # Terminal multiplexer
+brew "tpm"                              # Tmux plugin manager
+
+# >>> Core Shell Tools <<<
 brew "stow"                             # Dotfiles symlink manager: Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "keychain"                         # Securely manage SSH keys
 brew "just"                             # Handy way to save and run project-specific commands
 
+# >>> Shell Enhancements <<<
 brew "atuin", restart_service: :changed # Improved shell history for zsh, bash, fish and nushell
 brew "carapace"                         # Multi-shell multi-command argument completer
 brew "starship"                         # Fast, customizable shell prompt
 brew "shfmt"                            # Shell formatter for POSIX sh, bash, zsh, ksh, and fish.
 brew "yazi"                             # Terminal file manager with vim-like keybindings
-brew "zellij"                           # Terminal workspace manager and multiplexer
 
 # >>> Shell Plugins <<<
 brew "bash-completion@2"                # Completion scripts for Bash 4.1+

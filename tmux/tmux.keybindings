@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+clear
+echo "
+████████╗███╗   ███╗██╗   ██╗██╗  ██╗
+╚══██╔══╝████╗ ████║██║   ██║╚██╗██╔╝
+   ██║   ██╔████╔██║██║   ██║ ╚███╔╝
+   ██║   ██║╚██╔╝██║██║   ██║ ██╔██╗
+   ██║   ██║ ╚═╝ ██║╚██████╔╝██╔╝ ██╗
+   ╚═╝   ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝
+
+           TMUX KEYBINDING CHEAT SHEET
+=====================================================
+Prefix Key (in this config):   C-a
+
+[Session Management]
+  C-a $        Rename session
+  C-a d        Detach session
+  C-a D        Choose client to detach
+  C-a s        List sessions
+  C-a L        Switch to last session
+  C-a (        Previous session
+  C-a )        Next session
+  C-a O        Session manager (tmux-sessionx)
+  C-a r        Reload tmux config
+
+[Window Management]
+  C-a c        Create window
+  C-a ,        Rename window
+  C-a &        Kill window
+  C-a w        List windows
+  C-a n        Next window
+  C-a p        Previous window
+  C-a l        Last window
+  C-a f        Find window
+  C-a .        Move window
+  C-a 0-9      Go to window by number
+
+[Pane Management]
+  C-a %        Vertical split
+  C-a \"        Horizontal split
+  C-a x        Kill pane
+  C-a o        Switch to next pane
+  C-a ;        Switch to last active pane
+  C-a z        Toggle pane zoom
+  C-a !        Break pane into new window
+  C-a q        Show pane numbers
+  C-a {        Move pane left
+  C-a }        Move pane right
+
+[Pane Resizing]
+  C-a ←/→/↑/↓  Resize panes (arrow keys)
+  C-a M-h      Resize left (alt+h)
+  C-a M-l      Resize right (alt+l)
+  C-a M-j      Resize down (alt+j)
+  C-a M-k      Resize up (alt+k)
+
+[Navigation]
+  C-a h/j/k/l  Move between panes (vim-style)
+  C-a Space    Cycle layouts
+  C-a t        Show time
+
+[Copy Mode]
+  C-a [        Enter copy mode
+  v            Start selection (vi mode)
+  y            Copy selected text
+  /            Search forward
+  ?            Search backward
+  n / N        Next / previous search result
+  C-a ]        Paste buffer
+
+[Buffers]
+  C-a :show-buffer
+  C-a :save-buffer ~/file.txt
+  C-a :delete-buffer
+
+[Miscellaneous]
+  C-a :        Enter command mode
+  C-a ?        Show this help file
+  C-a ~        View message log
+  C-a u        Show uptime (catppuccin)
+  C-a a        Send prefix to inner session
+
+[System Commands (outside tmux)]
+  tmux         Start new tmux session
+  tmux ls      List all sessions
+  tmux a       Attach to last session
+  tmux a -t N  Attach to session N
+  tmux kill-session -t N   Kill session N
+"
