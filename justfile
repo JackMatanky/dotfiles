@@ -320,6 +320,7 @@ update-all:
 
 # Path to tmux config
 TMUX_CONF := "~/.config/tmux/tmux.conf"
+SESSION_NAME_DEFAULT := "bootstrap"
 
 # Reload tmux configuration file
 # Reload the tmux configuration file and display a message
@@ -331,7 +332,7 @@ tmux-reload:
 # Start a detached tmux session and preload the config
 # Bootstrap a detached tmux session and copy attach command
 [group("TMUX")]
-tmux-bootstrap SESSION_NAME=bootstrap:
+tmux-bootstrap SESSION_NAME=SESSION_NAME_DEFAULT:
     @tmux new-session -d -s {{SESSION_NAME}} 'sleep 1'
     @just tmux-reload
     @echo "Started tmux. Attach with: tmux attach -t {{SESSION_NAME}}"
@@ -364,8 +365,8 @@ tmux-bootstrap-attach SESSION_NAME:
 # Main entrypoint: attach or bootstrap as needed
 # Attach to session if exists, else bootstrap and attach
 [group("TMUX")]
-tmux-up SESSION_NAME=bootstrap:
-    @just tmux-has-session {{SESSION_NAME}} && just tmux-attach {{SESSION_NAME}} || just tmux-bootstrap-attach {{SESSION_NAME}}
+tmux-up SESSION_NAME=SESSION_NAME_DEFAULT:
+    @just tmux-attach-if-exists {{SESSION_NAME}} || just tmux-bootstrap-attach {{SESSION_NAME}}
 
 # -------------------------------------------------------- #
 #                  📝 Document Processing                  #
