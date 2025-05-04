@@ -1383,3 +1383,13 @@ gaa
 gcam 'add to espanso; update bashrc and zshrc; add tmux files and just recipes'
 gps
 stow-all
+j
+j tmux-bootstrap
+ls /opt/homebrew/share/tmux-plugins/tpm/tpm
+v .zshrc
+v
+tmux
+tmux-bootstrap
+j tmux-bootstrap
+tmux attach -t bootstrap<\n>
+exit
