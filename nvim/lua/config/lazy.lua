@@ -29,7 +29,7 @@ require("lazy").setup({
 
     -- Official VSCode extras: disables incompatible plugins when in VSCode
     -- Docs: http://www.lazyvim.org/extras/vscode
-    { import = "lazyvim.plugins.extras.vscode" },
+    vim.g.vscode and { import = "lazyvim.plugins.extras.vscode" } or nil,
 
     -- Import/override with custom plugins
     { import = "plugins" },

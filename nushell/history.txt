@@ -1425,3 +1425,6 @@ gcam 'update vs code option in lazy.lua for neovim'
 gps
 stow-all
 gaa
+gcam 'update lazy.lua to change order of imports'
+gps
+stow-all
