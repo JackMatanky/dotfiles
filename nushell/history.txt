@@ -1428,3 +1428,9 @@ gaa
 gcam 'update lazy.lua to change order of imports'
 gps
 stow-all
+gcam 'update lazy.lua to conditionally import vscode plugins'
+gps
+stow-all
+rm -f ~/.local/share/nvim/lazy/noice.nvim<\n>rm -f ~/.local/share/nvim/lazy/lualine.nvim
+rm -rf ~/.local/share/nvim/lazy/lazy.nvim
+gaa
