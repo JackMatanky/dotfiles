@@ -1371,3 +1371,7 @@ gaa
 gcam 'add comment divider script to zed and update files with comment divider'
 stow-all
 gaa
+gcam 'remove original assets folder after moving to themes'
+gps
+stow-all
+gaa
