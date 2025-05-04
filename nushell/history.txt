@@ -1434,3 +1434,6 @@ stow-all
 rm -f ~/.local/share/nvim/lazy/noice.nvim<\n>rm -f ~/.local/share/nvim/lazy/lualine.nvim
 rm -rf ~/.local/share/nvim/lazy/lazy.nvim
 gaa
+gcam 'update'
+gps
+stow-all

@@ -19,21 +19,25 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Build plugin spec safely to avoid nil entries
+local spec = {
+  -- Add LazyVim and import core plugins
+  { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+
+  -- Import/override with custom plugins
+  { import = "plugins" },
+}
+
+-- Conditionally load VSCode-specific plugins if running inside VSCode
+-- Docs: http://www.lazyvim.org/extras/vscode
+if vim.g.vscode then
+  table.insert(spec, { import = "lazyvim.plugins.extras.vscode" })
+  -- Optionally also insert your own vscode-only plugins here:
+  -- table.insert(spec, { import = "plugins.vscode" })
+end
+
 require("lazy").setup({
-  spec = {
-    -- Add LazyVim and import core plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-
-    -- Conditionally load VSCode-specific plugins if running inside VSCode
-    -- (vim.g.vscode and { import = "plugins.vscode" } or nil),
-
-    -- Official VSCode extras: disables incompatible plugins when in VSCode
-    -- Docs: http://www.lazyvim.org/extras/vscode
-    vim.g.vscode and { import = "lazyvim.plugins.extras.vscode" } or nil,
-
-    -- Import/override with custom plugins
-    { import = "plugins" },
-  },
+  spec = spec,
   defaults = {
     -- By default, only LazyVim plugins are lazy-loaded
     -- while custom plugins are loaded during startup.
