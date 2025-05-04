@@ -775,7 +775,7 @@ source $"($nu_conf)/env.nu"
 # -----------------------------------------------
 # Aliases
 # -----------------------------------------------
-const nu_alias = $nu_conf | path join "aliases"
+const nu_alias: string = $nu_conf | path join "aliases"
 source $"($nu_alias)/aliases.nu"
 source $"($nu_alias)/git_aliases.nu"
 source $"($nu_alias)/ocr_aliases.nu"

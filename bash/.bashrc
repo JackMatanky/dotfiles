@@ -190,6 +190,10 @@ if command -v brew &>/dev/null; then
     fi
 fi
 
+# ------------------ Tmux Plugin Manager ----------------- #
+# Used by TPM to avoid polluting tracked dotfiles
+export TMUX_PLUGIN_MANAGER_PATH="$XDG_CONFIG_HOME/tmux/plugins"
+
 # ------------- Zellij: Terminal Multiplexer ------------- #
 # Docs: https://zellij.dev/documentation/
 export ZELLIJ_CONFIG_DIR="$XDG_CONFIG_HOME/zellij"

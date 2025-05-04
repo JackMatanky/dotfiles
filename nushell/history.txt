@@ -1393,3 +1393,17 @@ tmux-bootstrap
 j tmux-bootstrap
 tmux attach -t bootstrap<\n>
 exit
+ls ~/.tmux/plugins
+ls ~/.tmux/resurrect/
+tmux
+tmx-src
+ls ~/.tmux/plugins
+v tmux/
+ls ~/.tmux/plugins
+tmx-src
+exit
+gaa
+l
+ltree
+rm -rf ~/dotfiles/tmux/plugins
+gaa

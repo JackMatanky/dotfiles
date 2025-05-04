@@ -332,6 +332,10 @@ if (which atuin | is-not-empty) {
     }
 }
 
+# ------------------ Tmux Plugin Manager ----------------- #
+# Used by TPM to avoid polluting tracked dotfiles
+$env.TMUX_PLUGIN_MANAGER_PATH = ($env.XDG_DATA_HOME | path join 'tmux' 'plugins')
+
 # ------------- Zellij: Terminal Multiplexer ------------- #
 # Docs: https://zellij.dev/documentation/
 $env.ZELLIJ_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'zellij')
