@@ -1440,3 +1440,6 @@ stow-all
 gcam 'update nvim lazy lua'
 gps
 stow-all
+gcam 'try disabling lazyvim vscode to see if noice and lualine return'
+gps
+stow-all

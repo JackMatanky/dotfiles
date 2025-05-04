@@ -30,11 +30,11 @@ local spec = {
 
 -- Conditionally load VSCode-specific plugins if running inside VSCode
 -- Docs: http://www.lazyvim.org/extras/vscode
-if vim.g.vscode == true then
-  table.insert(spec, { import = "lazyvim.plugins.extras.vscode" })
-  -- Optionally also insert your own vscode-only plugins here:
-  -- table.insert(spec, { import = "plugins.vscode" })
-end
+-- if vim.g.vscode == true then
+--   table.insert(spec, { import = "lazyvim.plugins.extras.vscode" })
+--   -- Optionally also insert your own vscode-only plugins here:
+--   -- table.insert(spec, { import = "plugins.vscode" })
+-- end
 
 require("lazy").setup({
   spec = spec,
