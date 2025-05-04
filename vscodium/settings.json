@@ -85,6 +85,9 @@
   /* ------------------------------------------------------ */
   /*SECTION:          Appearance and Theme                  */
   /* ------------------------------------------------------ */
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#fab387"
+  },
   //SEGMENT - Theme
   "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
   "workbench.colorTheme": "Catppuccin Macchiato",
@@ -134,6 +137,13 @@
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.enableImages": true,
   "terminal.integrated.sendKeybindingsToShell": true,
+  "terminal.integrated.ignoreProcessNames": [
+    "starship",
+    "oh-my-posh",
+    "bash",
+    "zsh",
+    "nu"
+  ],
   //!SECTION
 
   /* ------------------------------------------------------ */
@@ -145,6 +155,32 @@
     "asvetliakov.vscode-neovim": 1
   },
   "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
+
+  /* ---------------- Neovim UI Modifier ---------------- */
+  "nvim-ui.nvimColorNormal": "#fab387", // Peach – calm, default state
+  "nvim-ui.nvimColorInsert": "#89b4fa", // Blue – active insertion, not alarming
+  "nvim-ui.nvimColorVisual": "#cba6f7", // Mauve – selected/visual state
+  "nvim-ui.nvimColorReplace": "#f38ba8", // Red – replace/destructive operation
+
+  /* ----------------- NeoVim Dashboard ----------------- */
+  "nvimDashboard.keybinds": [
+    {
+      "letter": "f",
+      "name": "files",
+      "command": "workbench.action.quickOpen"
+    },
+    {
+      "letter": "s",
+      "name": "settings",
+      "command": "workbench.action.openSettings"
+    },
+    {
+      "letter": "q",
+      "name": "exit",
+      "command": "nvim-dashboard.close"
+    }
+  ],
+  "nvimDashboard.openOnNoTabs": true,
   //!SECTION
 
   /* ------------------------------------------------------ */
@@ -197,16 +233,11 @@
   "cSpell.languageSettings": [
     {
       "languageId": "python",
-      "dictionaries": [
-        "python"
-      ]
+      "dictionaries": [ "python" ]
     },
     {
       "languageId": "javascript",
-      "dictionaries": [
-        "typescript",
-        "node"
-      ]
+      "dictionaries": [ "typescript", "node" ]
     }
   ],
   "cSpell.dictionaries": [
@@ -250,9 +281,7 @@
   /* ------------------------------------------------------ */
   /*SECTION:           Formatter Settings                   */
   /* ------------------------------------------------------ */
-  "prettier.documentSelectors": [
-    "*/**.json"
-  ],
+  "prettier.documentSelectors": [ "*/**.json" ],
   "prettier.endOfLine": "lf",
   "prettier.htmlWhitespaceSensitivity": "css",
   "prettier.semi": true,
@@ -412,7 +441,7 @@
   },
   //!SEGMENT
 
-  /*SEGMENT: ------------ Comment Divider ----------------- */
+  /* ------------------ Comment Divider ----------------- */
   // Docs: https://github.com/stackbreak/comment-divider
   "comment-divider.length": 60,
 
@@ -447,12 +476,13 @@
   "comment-divider.subheaderTransform": "none",
   "comment-divider.languagesMap": {
     "html": [ "<!--", "-->" ],
+    "just": [ "#", "#" ],
+    "justfie": [ "#", "#" ],
     "nu": [ "#", "#" ],
     "nushell": [ "#", "#" ],
     "lua": [ "--", "--" ],
-    "py": [ "#", "#" ],
+    "py": [ "#", "#" ]
   },
-  //!SEGMENT
 
   //!SECTION
 
@@ -477,7 +507,6 @@
   // --------------------------------------------
   // Language Configurations
   // --------------------------------------------
-
   //SECTION - Python
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
@@ -490,7 +519,7 @@
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.fixAll": "explicit",
-      "source.organizeImports": "explicit",
+      "source.organizeImports": "explicit"
     }
   },
   "python.defaultInterpreterPath": "~/.pyenv/versions/3.13.2/bin/python",
@@ -863,88 +892,141 @@
   "markdown.math.enabled": false,
   "markdownlint.configFile": "/Users/jack/dotfiles/formatters/.markdownlint.jsonc",
   "markdownlint.config": {
+    // MD001 - Heading levels should only increment by one level at a time
     "heading-increment": true,
+    // MD003 - Heading style
     "heading-style": {
       "style": "atx"
     },
+    // MD004 - Unordered list style
     "ul-style": {
       "style": "dash"
     },
+    // MD005 - Inconsistent indentation for list items at the same level
     "list-indent": true,
+    // MD007 - Unordered list indentation
     "ul-indent": {
       "indent": 4
     },
+    // MD009 - Trailing spaces
     "no-trailing-spaces": {
       "br_spaces": 2,
       "list_item_empty_lines": true
     },
+    // MD010 - Hard tabs
     "no-hard-tabs": {
       "code_blocks": false,
       "spaces_per_tab": 4
     },
+    // MD011 - Reversed link syntax
     "no-reversed-links": true,
+    // MD012 - Multiple consecutive blank lines
     "no-multiple-blanks": {
       "maximum": 1
     },
+    // MD013 - Line length
     "line-length": false,
+    // MD014 - Dollar signs used before commands without showing output
     "commands-show-output": true,
+    // MD018 - No space after hash on atx style heading
     "no-missing-space-atx": true,
+    // MD022 - Headings should be surrounded by blank lines
     "blanks-around-headings": {
       "lines_above": 1,
       "lines_below": 1
     },
+    // MD023 - Headings must start at the beginning of the line
     "heading-start-left": true,
+    // MD024 - Multiple headings with the same content
     "no-duplicate-heading": false,
+    // MD025 - Multiple top-level headings in the same document
     "single-h1": {
       "level": 1
     },
+    // MD026 - Trailing punctuation in heading
     "no-trailing-punctuation": {
       "punctuation": ".,;:。，；："
     },
+    // MD027 - Multiple spaces after blockquote symbol
     "no-multiple-space-blockquote": true,
+    // MD028 - Blank line inside blockquote
     "no-blanks-blockquote": false,
+    // MD029 - Ordered list item prefix
     "ol-prefix": {
       "style": "one_or_ordered"
     },
+    // MD030 - Spaces after list markers
     "list-marker-space": {
       "ol_multi": 1,
       "ol_single": 1,
       "ul_multi": 1,
       "ul_single": 1
     },
+    // MD031 - Fenced code blocks should be surrounded by blank lines
     "blanks-around-fences": true,
+    // MD032 - Lists should be surrounded by blank lines
     "blanks-around-lists": true,
+    // MD033 - Inline HTML
     "no-inline-html": false,
+    // MD034 - Bare URL used
     "no-bare-urls": true,
+    // MD035 - Horizontal rule style
     "hr-style": false,
+    // MD036 - Emphasis used instead of a heading
     "no-emphasis-as-heading": true,
+    // MD037 - Spaces inside emphasis markers
     "no-space-in-emphasis": true,
+    // MD038 - Spaces inside code span elements
     "no-space-in-code": true,
+    // MD039 - Spaces inside link text
+    "no-space-in-links": true,
+    // MD040 - Fenced code blocks should have a language specified
     "fenced-code-language": {
       "allowed_languages": [ ]
     },
+    // MD041 - First line in a file should be a top-level heading
     "first-line-heading": {
       "level": 1
     },
+    // MD042 - No empty links
     "no-empty-links": true,
-    "required-headings": false,
+    // MD043 - Required heading structure
+    "required-headings": {
+      "headings": [ "*" ],
+      "match_case": false
+    },
+    // MD045 - Images should have alternate text (alt text)
     "no-alt-text": false,
+    // MD046 - Code block style
     "code-block-style": {
       "style": "fenced"
     },
+    // MD047 - Files should end with a single newline character
     "single-trailing-newline": true,
+    // MD048 - Code fence style
     "code-fence-style": {
       "style": "backtick"
     },
+    // MD049 - Emphasis style
     "emphasis-style": {
       "style": "asterisk"
     },
+    // MD050 - Strong style
     "strong-style": {
       "style": "asterisk"
     },
+    // MD051 - Link fragments should be valid
     "link-fragments": false,
+    // MD052 - Reference links and images should use a label that is defined
     "reference-links-images": false,
-    "link-image-reference-definitions": false
+    // MD053 - Link and image reference definitions should be needed
+    "link-image-reference-definitions": false,
+    // MD055 - Table pipe style
+    "table-pipe-style": {
+      "style": "leading_and_trailing"
+    },
+    // MD058 - Tables should be surrounded by blank lines
+    "blanks-around-tables": true
   },
   //SEGMENT - Notes
   "vscodeMarkdownNotes.allowPipedWikiLinks": true,
@@ -995,14 +1077,6 @@
   //SEGMENT - Nix
   "[nix]": {
     "editor.defaultFormatter": "brettm12345.nixfmt-vscode"
-  },
-  "terminal.integrated.ignoreProcessNames": [
-    "starship",
-    "oh-my-posh",
-    "bash",
-    "zsh",
-    "nu"
-  ],
+  }
   //!SEGMENT
-
 }

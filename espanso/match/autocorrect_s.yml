@@ -1,8 +1,8 @@
 # Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
 matches:
-    # ----------
-    # --- SA ---
-    # ----------
+    # ---------------------------------------------------- #
+    #                          SA                          #
+    # ---------------------------------------------------- #
     - trigger: sacrafice
       replace: sacrifice
       propagate_case: true
@@ -111,9 +111,9 @@ matches:
       replace: saxophone
       propagate_case: true
       word: true
-    # ----------
-    # --- SC ---
-    # ----------
+    # ---------------------------------------------------- #
+    #                          SC                          #
+    # ---------------------------------------------------- #
     - trigger: scaleable
       replace: scalable
       propagate_case: true
@@ -182,9 +182,9 @@ matches:
       replace: sculptures
       propagate_case: true
       word: true
-    # ----------
-    # --- SE ---
-    # ----------
+    # ---------------------------------------------------- #
+    #                          SE                          #
+    # ---------------------------------------------------- #
     - trigger: seach
       replace: search
       propagate_case: true
@@ -341,6 +341,9 @@ matches:
       replace: service
       propagate_case: true
       word: true
+    # ---------------------------------------------------- #
+    #                          SH                          #
+    # ---------------------------------------------------- #
     - trigger: shadasloo
       replace: shadaloo
       propagate_case: true
@@ -397,6 +400,10 @@ matches:
       replace: should
       propagate_case: true
       word: true
+    - trigger: sh}ld
+      replace: should
+      propagate_case: true
+      word: true
     - trigger: shoudln
       replace: "should\x2C\x20shouldn\x27t"
       propagate_case: true
@@ -413,6 +420,9 @@ matches:
       replace: shrunk
       propagate_case: true
       word: true
+    # ---------------------------------------------------- #
+    #                          SI                          #
+    # ---------------------------------------------------- #
     - trigger: sicne
       replace: since
       propagate_case: true
@@ -541,6 +551,9 @@ matches:
       replace: Sistine
       propagate_case: true
       word: true
+    # ---------------------------------------------------- #
+    #                          SK                          #
+    # ---------------------------------------------------- #
     - trigger: Skagerak
       replace: Skagerrak
       propagate_case: true
@@ -549,6 +562,9 @@ matches:
       replace: skating
       propagate_case: true
       word: true
+    # ---------------------------------------------------- #
+    #                          SL                          #
+    # ---------------------------------------------------- #
     - trigger: slaugterhouses
       replace: slaughterhouses
       propagate_case: true
@@ -565,6 +581,9 @@ matches:
       replace: slowly
       propagate_case: true
       word: true
+    # ---------------------------------------------------- #
+    #                          SM                          #
+    # ---------------------------------------------------- #
     - trigger: smae
       replace: same
       propagate_case: true
@@ -577,6 +596,9 @@ matches:
       replace: some
       propagate_case: true
       word: true
+    # ---------------------------------------------------- #
+    #                          SN                          #
+    # ---------------------------------------------------- #
     - trigger: sneeks
       replace: sneaks
       propagate_case: true
@@ -585,6 +607,9 @@ matches:
       replace: sneeze
       propagate_case: true
       word: true
+    # ---------------------------------------------------- #
+    #                          SO                          #
+    # ---------------------------------------------------- #
     - trigger: socalism
       replace: socialism
       propagate_case: true
@@ -717,6 +742,9 @@ matches:
       replace: sovereignty
       propagate_case: true
       word: true
+    # ---------------------------------------------------- #
+    #                          SP                          #
+    # ---------------------------------------------------- #
     - trigger: spainish
       replace: Spanish
       propagate_case: true
@@ -825,6 +853,9 @@ matches:
       replace: square
       propagate_case: true
       word: true
+    # ---------------------------------------------------- #
+    #                          ST                          #
+    # ---------------------------------------------------- #
     - trigger: stablility
       replace: stability
       propagate_case: true
@@ -1037,6 +1068,9 @@ matches:
       replace: structure
       propagate_case: true
       word: true
+    # ---------------------------------------------------- #
+    #                          SU                          #
+    # ---------------------------------------------------- #
     - trigger: subcatagories
       replace: subcategories
       propagate_case: true
@@ -1545,6 +1579,9 @@ matches:
       replace: suspension
       propagate_case: true
       word: true
+    # ---------------------------------------------------- #
+    #                          SW                          #
+    # ---------------------------------------------------- #
     - trigger: swaer
       replace: swear
       propagate_case: true
@@ -1561,13 +1598,13 @@ matches:
       replace: swimming
       propagate_case: true
       word: true
+    # ---------------------------------------------------- #
+    #                          SY                          #
+    # ---------------------------------------------------- #
     - trigger: syas
       replace: says
       propagate_case: true
       word: true
-    # ----------
-    # --- SY ---
-    # ----------
     - trigger: symetrical
       replace: symmetrical
       propagate_case: true

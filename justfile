@@ -5,26 +5,22 @@
 # Description: Justfile for automating system setup and package installations.
 # -----------------------------------------------------------------------------
 
-# >>> OS Metadata <<<
-OS_FAMILY := os_family()  # "unix" or "windows"
+# -------------------------------------------------------- #
+#                        OS Metadata                       #
+# -------------------------------------------------------- #
+OS_FAMILY := os_family()
+
 # Options: "android", "bitrig", "dragonfly", "emscripten", "freebsd", "haiku",
 # "ios", "linux", "macos", "netbsd", "openbsd", "solaris", "windows"
 OS := os()
 
 # 🎯 Human-readable OS name for display/logging
-OS_NAME := if OS =~ '.*os$' {
-    replace(OS, "os", "OS")
-} else if OS =~ '.*bsd$' {
-    replace(OS, "bsd", "BSD")
-} else if OS == "dragonfly" {
-    "DragonFly"
-} else {
-    capitalize(OS)
-}
+OS_NAME := if OS =~ '.*os$' { replace(OS, "os", "OS") } else if OS =~ '.*bsd$' { replace(OS, "bsd", "BSD") } else if OS == "dragonfly" { "DragonFly" } else { capitalize(OS) }
 
-# -----------------------------------------------
-# Directory Definitions
-# -----------------------------------------------
+# -------------------------------------------------------- #
+#                   Directory Definitions                  #
+# -------------------------------------------------------- #
+
 PACKAGES_DIR := "~/dotfiles/packages"
 SCRIPTS_DIR := "~/dotfiles/scripts"
 BREWFILE := PACKAGES_DIR / "brewfile"
@@ -33,44 +29,46 @@ BREWFILE_MAS := PACKAGES_DIR / "brewfile_mas"
 CARGO_PACKAGES := PACKAGES_DIR / "cargo-packages.txt"
 FLATPAK_MANIFEST := PACKAGES_DIR / "flatpak-manifest.json"
 
-# -----------------------------------------------
-# 📌 Core Interface
-# -----------------------------------------------
+# -------------------------------------------------------- #
+#                     📌 Core Interface                    #
+# -------------------------------------------------------- #
+
 # 📌 Default: Show available recipes
 [group('Core')]
 default:
     @just --list --unsorted
 
-# -----------------------------------------------
-# 🛠️ Helper Recipes
-# -----------------------------------------------
+# -------------------------------------------------------- #
+#                    🛠️ Helper Recipes                     #
+# -------------------------------------------------------- #
 
 # 🛠️ Print unavailable package manager message
 [group('Helpers')]
 print_unavailable reason os_name:
-    @echo "❌ {{reason}} is not available on {{os_name}}."
+    @echo "❌ {{ reason }} is not available on {{ os_name }}."
 
 # 🛠️ Log a task message with 🍺 prefix
 [group("Helpers")]
 log task:
-    @echo "🔄 {{task}}... 🍺"
+    @echo "🔄 {{ task }}... 🍺"
 
 # 🛠️ Banner for brew-specific updates
 [group("Helpers")]
 brew_install_banner message:
-    @echo "📦 Installing Homebrew {{message}}... 🍺"
+    @echo "📦 Installing Homebrew {{ message }}... 🍺"
 
 # 🛠️ Banner for brew-specific updates
 [group("Helpers")]
 brew_update_banner message:
-    @echo "🔄 Updating {{message}}... 🍺"
+    @echo "🔄 Updating {{ message }}... 🍺"
 
-# -----------------------------------------------
-# 🖥️ System Dependencies
-# -----------------------------------------------
+# -------------------------------------------------------- #
+#                  🖥️ System Dependencies                  #
+# -------------------------------------------------------- #
+
 # Install xcode tools as a prerequisite for Homebrew
-[macos]
 [group("System")]
+[macos]
 xcode_tools_installation:
     #!/usr/bin/env bash
     @if xcode-select -p &>/dev/null; then \
@@ -92,9 +90,10 @@ install-system-dependencies:
     @echo "📦 Installing system dependencies..."
     bash SCRIPTS_DIR / "install-system-dependencies.sh"
 
-# -----------------------------------------------
-# 🍺 Homebrew Installation
-# -----------------------------------------------
+# -------------------------------------------------------- #
+#                 🍺 Homebrew Installation                 #
+# -------------------------------------------------------- #
+
 # Show message if Homebrew is already installed
 [group("Homebrew")]
 brew-already-installed:
@@ -120,21 +119,21 @@ install-homebrew:
 [unix]
 install-homebrew-packages:
     just brew_install_banner "Packages"
-    brew bundle --file="{{BREWFILE}}"
+    brew bundle --file="{{ BREWFILE }}"
 
 # Install Homebrew Cask Packages
 [group("Homebrew")]
 [macos]
 install-homebrew-casks:
     just brew_install_banner "Casks on macOS"
-    brew bundle --file={{BREWFILE_CASK}}
+    brew bundle --file={{ BREWFILE_CASK }}
 
 # Install Homebrew Mac App Store Packages
 [group("Homebrew")]
 [macos]
 install-homebrew-mas:
     just brew_install_banner "MacOS App Store Applications"
-    brew bundle --file="{{BREWFILE_MAS}}"
+    brew bundle --file="{{ BREWFILE_MAS }}"
 
 # 🏗️ Setup Homebrew for Linux
 [group("Homebrew")]
@@ -155,15 +154,16 @@ setup-openjdk:
         echo "✅ OpenJDK symlinked!"; \
     fi
 
-# -----------------------------------------------
-# 📦 Package Installation (Flatpak, Rust, Cargo)
-# -----------------------------------------------
+# -------------------------------------------------------- #
+#      📦 Package Installation (Flatpak, Rust, Cargo)      #
+# -------------------------------------------------------- #
+
 # Install Flatpak applications
 [group("Package Installation")]
 [linux]
 install-flatpak:
     @echo "📦 Installing Flatpak applications..."
-    flatpak install -y --noninteractive < "{{FLATPAK_MANIFEST}}"
+    flatpak install -y --noninteractive < "{{ FLATPAK_MANIFEST }}"
 
 # 🦀 Install Rust & Cargo
 [group("Package Installation")]
@@ -185,12 +185,12 @@ ensure-cargo-binstall:
 [group("Package Installation")]
 install-cargo-packages:
     just ensure-cargo-binstall
-    @if [[ -f "{{CARGO_PACKAGES}}" ]]; then \
-        @echo "📜 Found cargo package list: {{CARGO_PACKAGES}}"; \
-        xargs -n1 cargo binstall -y < "{{CARGO_PACKAGES}}"; \
+    @if [[ -f "{{ CARGO_PACKAGES }}" ]]; then \
+        @echo "📜 Found cargo package list: {{ CARGO_PACKAGES }}"; \
+        xargs -n1 cargo binstall -y < "{{ CARGO_PACKAGES }}"; \
         @echo "✅ Cargo packages installed!"; \
     else \
-        @echo "⚠️ Cargo package list not found at {{CARGO_PACKAGES}}. Skipping installation."; \
+        @echo "⚠️ Cargo package list not found at {{ CARGO_PACKAGES }}. Skipping installation."; \
     fi
 
 # 🚀 Install all packages: homebrew, system dependencies, homebrew packages, flatpak, rust, cargo packages
@@ -205,15 +205,11 @@ install-all:
     just install-cargo-packages
     @echo "✅ All installations complete!"
 
-# -----------------------------------------------
-# 🔄 Updating Packages
-# -----------------------------------------------
+# -------------------------------------------------------- #
+#                   🔄 Updating Packages                   #
+# -------------------------------------------------------- #
+# ----------------------- Homebrew ----------------------- #
 
-
-# -----------------------------------------------------------------------------
-# Group: Package Updates
-# -----------------------------------------------------------------------------
-# >>> Homebrew <<<
 # Upgrade all available Mac App Store applications
 [group("Package Updates")]
 [macos]
@@ -251,7 +247,7 @@ update-brew:
     brew update
 
     # Optionally update Mac App Store apps (macOS only)
-    @if [ "{{OS}}" == "macos" ]; then just update-brew-mac; fi
+    @if [ "{{ OS }}" == "macos" ]; then just update-brew-mac; fi
 
     # Show outdated packages
     just update-brew-outdated
@@ -272,7 +268,8 @@ update-brew:
         echo "Skipping brew cleanup."; \
     fi
 
-# >>> Rust and Cargo <<<
+# -------------------- Rust and Cargo -------------------- #
+
 # 🔄 Update Rust and Cargo packages 🦀
 [group("Package Updates")]
 update-rust:
@@ -283,11 +280,11 @@ update-rust:
 [group("Package Updates")]
 update-cargo-packages:
     @echo "🔄 Updating Cargo packages... 🦀"
-    if [[ -f "{{CARGO_PACKAGES}}" ]]; then \
-        cargo binstall -y -r < "{{CARGO_PACKAGES}}"; \
+    if [[ -f "{{ CARGO_PACKAGES }}" ]]; then \
+        cargo binstall -y -r < "{{ CARGO_PACKAGES }}"; \
         @echo "✅ Cargo packages updated!"; \
     else \
-        @echo "⚠️ Cargo package list not found at {{CARGO_PACKAGES}}. Skipping update."; \
+        @echo "⚠️ Cargo package list not found at {{ CARGO_PACKAGES }}. Skipping update."; \
     fi
 
 # Update Flatpak packages
@@ -302,16 +299,41 @@ update-flatpak:
 update-all:
     @echo "🔄 Updating all package managers..."
     just update-brew
-    @if [ "{{OS}}" == "linux" ]; then just update-flatpak; fi
+    @if [ "{{ OS }}" == "linux" ]; then just update-flatpak; fi
     just update-rust
     just update-cargo-packages
     @echo "✅ All updates complete!"
 
+# -------------------------------------------------------- #
+#                    Tmux Bootstrapping                    #
+# -------------------------------------------------------- #
 
-# -----------------------------------------------
-# 📝 Document Processing
-# -----------------------------------------------
+# Path to tmux config
+TMUX_CONF := ~/.config/tmux/tmux.conf
 
+# Reload the tmux config file
+tmux-reload:
+    @tmux source-file ~/.config/tmux/tmux.conf
+    @tmux display-message "Reloaded tmux config!"
+
+# Start a detached session, preload config, and copy attach cmd
+tmux-bootstrap SESSION_NAME=bootstrap:
+    @tmux new-session -d -s {{SESSION_NAME}} 'sleep 1'
+    @just tmux-reload
+    @echo "Started tmux. Attach with: tmux attach -t {{SESSION_NAME}}"
+    @echo "tmux attach -t {{SESSION_NAME}}" | pbcopy
+
+# Attach to a session or start it if missing
+tmux-up SESSION_NAME=bootstrap:
+    if tmux has-session -t {{SESSION_NAME}} 2>/dev/null; then
+        tmux attach -t {{SESSION_NAME}}
+    else
+        just tmux-bootstrap {{SESSION_NAME}} && tmux attach -t {{SESSION_NAME}}
+    fi
+
+# -------------------------------------------------------- #
+#                  📝 Document Processing                  #
+# -------------------------------------------------------- #
 # Use OCRmyPDF to convert PDFs to searchable PDFs. Usage: just ocr input.pdf output.pdf
 # ocr input:
 #     output = "{{input}}" | replace('.pdf', '_ocr.pdf')

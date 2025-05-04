@@ -31,7 +31,8 @@
 | `Ctrl-a o`      | Launch fuzzy session switcher (SessionX) |
 | `Ctrl-a p`      | Launch floating pane (Floax)             |
 
-> Full list: see [`tmux.keybindings`](./tmux.keybindings)
+> For a full list of Tmux keybindings: [tmux-cheatsheet](https://github.com/omerxx/tmux-cheatsheet)
+> For a full list of configuration specific keybindings: [`tmux.keybindings`](./tmux.keybindings)
 
 ---
 
@@ -85,7 +86,9 @@ This is the complete setup process for first-time installation:
 brew install tpm
 ```
 
-### Step 2: Symlink the tmux config (preferred: Stow)
+### Step 2: Symlink the Tmux Config
+
+Recommended: Use GNU Stow
 
 ```sh
 cd ~/dotfiles
@@ -99,34 +102,43 @@ mkdir -p ~/.config/tmux
 ln -sf ~/dotfiles/tmux/tmux.conf ~/.config/tmux/tmux.conf
 ```
 
-### Step 3: Start a new tmux session
+### Step 3: Launch and Configure
 
 ```sh
 tmux
+# Then inside tmux:
+# Press Ctrl-a then I to install plugins
+# Press Ctrl-a then r to reload config
+# Or run: tmux source-file ~/.config/tmux/tmux.conf
 ```
 
-### Step 4: Inside tmux, install all plugins via TPM
+### Step 4: Confirm Plugins are Working
 
-Press: Ctrl-a then I
+- `Ctrl-a + o` → opens sessionx;
+- `Ctrl-a + p` → opens floax
 
-### Step 5: Reload the config after installation
+## 🛠️ Automation via Justfile
 
-Press: Ctrl-a then r
+```just
+# Reload the tmux config
+tmux-reload:
+    tmux source-file ~/.config/tmux/tmux.conf
+    tmux display-message "Reloaded tmux config!"
 
-Or run: tmux source-file ~/.config/tmux/tmux.conf
+# Start a detached session, preload config, and copy attach cmd
+tmux-bootstrap SESSION_NAME=bootstrap:
+    tmux new-session -d -s {{SESSION_NAME}} 'sleep 1'
+    just tmux-reload
+    echo "Started tmux. Attach with: tmux attach -t {{SESSION_NAME}}"
+    echo "tmux attach -t {{SESSION_NAME}}" | pbcopy
 
-### Step 6: Confirm plugins are working
-
-e.g., Ctrl-a + o → opens sessionx; Ctrl-a + p → opens floax
-
-Optional: you can automate this with a Justfile task:
-
-```justfile
-tmux-bootstrap:
-    mkdir -p ~/.config/tmux
-    stow -t ~/.config tmux
-    tmux new-session -d -s bootstrap 'sleep 1 && tmux source-file ~/.config/tmux/tmux.conf && tmux display-message "Reloaded tmux config!"'
-    echo "Started tmux. Attach with: tmux attach -t bootstrap"
+# Attach to a session or start it if missing
+tmux-up SESSION_NAME=bootstrap:
+    if tmux has-session -t {{SESSION_NAME}} 2>/dev/null; then
+        tmux attach -t {{SESSION_NAME}}
+    else
+        just tmux-bootstrap {{SESSION_NAME}} && tmux attach -t {{SESSION_NAME}}
+    fi
 ```
 
 ---

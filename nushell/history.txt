@@ -1375,3 +1375,8 @@ gcam 'remove original assets folder after moving to themes'
 gps
 stow-all
 gaa
+gcam 'add underscore to tmux readme and add setup instructions'
+gps
+stow-all
+which shfmt
+gaa

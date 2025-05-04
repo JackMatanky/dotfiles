@@ -139,9 +139,9 @@ matches:
       replace: very
       propagate_case: true
       word: true
-    # ----------
-    # --- VI ---
-    # ----------
+    # ---------------------------------------------------- #
+    #                          VI                          #
+    # ---------------------------------------------------- #
     - trigger: wiew
       replace: view
       propagate_case: true

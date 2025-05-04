@@ -2,108 +2,121 @@
 # Filename: ~/dotfiles/nushell/aliases/aliases.nu
 # -----------------------------------------------------------------------------
 
-# --- Navigation ---
+# -------------------------------------------------------- #
+#                        Navigation                        #
+# -------------------------------------------------------- #
 # cx: Change into a directory and list its contents
 def --env cx [path?: string] {
-  # - If a path is not provided, use fzf to interactively select a directory
-  let target = (if ($path == null) {
-    fd --type directory --hidden --exclude .git | fzf
-  } else {
-    # - If a path is passed, cd to it
-    $path
-  })
-
-  if ($target != "") {
-    cd $target
-    ls -l
-  }
+    # - If a path is not provided, use fzf to interactively select a directory
+    let target = (if ($path == null) {
+        fd --type directory --hidden --exclude .git | fzf
+    } else {
+        # - If a path is passed, cd to it
+        $path
+    })
+    if ($target != "") {
+        cd $target
+        ls -l
+    }
 }
 
 # f: Fuzzy search for a file and copy its path to clipboard
 def f [] {
-  let file = (fd --type file --hidden --exclude .git | fzf)
-  if ($file != "") {
-    echo $file | pbcopy
-  }
+    let file = (fd --type file --hidden --exclude .git | fzf)
+    if ($file != "") {
+        echo $file | pbcopy
+    }
 }
 
 # ffv: Fuzzy search for a file and open it in nvim
 def ffv [] {
-  let file = (fd --type file --hidden --exclude .git | fzf)
-  if ($file != "") {
-    nvim $file
-  }
+    let file = (fd --type file --hidden --exclude .git | fzf)
+    if ($file != "") {
+        nvim $file
+    }
 }
 
 # fdv: Fuzzy search for a directory and open it in nvim
 def fdv [] {
-  # List directories with fd and select one using fzf
-  let dir = (fd --type directory --hidden --exclude .git | fzf)
+    # List directories with fd and select one using fzf
+    let dir = (fd --type directory --hidden --exclude .git | fzf)
 
-  # Open selected directory in nvim
-  if ($dir != "") {
-    nvim $dir
-  }
+    # Open selected directory in nvim
+    if ($dir != "") {
+        nvim $dir
+    }
 }
 
-# >>> Shell Commands <<<
+# -------------------------------------------------------- #
+#                      Shell Commands                      #
+# -------------------------------------------------------- #
 alias c = clear
-alias ll = ls -l
+alias l = ls -l
 
-# >>> eza <<<
-alias l = eza --long --icons --git --all --group-directories-first # Detailed File List
+# ----------------------- Justfile ----------------------- #
+alias j = just
+
+# -------------------------- eza ------------------------- #
+alias ll = eza --long --icons --git --all --group-directories-first # Detailed File List
 alias lt = eza --tree --level=2 --icons --git # Tree View - 2 levels
 alias ltree = eza --tree --level=3 --icons --git # Tree View - 3 levels
 
-# >>> zoxide <<<
+# ------------------------ Zoxide ------------------------ #
+# Docs: https://github.com/ajeetdsouza/zoxide
 alias za = zoxide add
 alias zq = zoxide query
 
-# >>> Directories <<<
+# -------------------------------------------------------- #
+#                        Directories                       #
+# -------------------------------------------------------- #
 alias conf-dir = cd ~/.config
 alias docs = cd ~/Documents
 
-# --- Dotfiles ---
+# ----------------------- Dotfiles ----------------------- #
 alias dot = cd ~/dotfiles
 alias dot-nix = cd ~/dotfiles/nixos
 
-# --- Obsidian Vault ---
+# -------------------- Obsidian Vault -------------------- #
 alias obsidian = cd ~/obsidian_vault
 def obsidian-gpl [] {
-  cd ~/obsidian_vault
-  git pull
+    cd ~/obsidian_vault
+    git pull
 }
 
-# --- Keyboard Dev ---
+# --------------------- Keyboard Dev --------------------- #
 alias kb-dev = cd ~/Documents/keyboard_dev
 alias kb-ergogen = cd ~/Documents/keyboard_dev/ergogen
 alias kb-zmk = cd ~/Documents/keyboard_dev/zmk-config
 alias kb-snak-dir = cd ~/Documents/keyboard_dev/kb_snak
 
-# --- Work ---
+# ------------------------- Work ------------------------- #
 alias dev-work = cd ~/Documents/_dev_work
 alias dev-hive = cd ~/Documents/_dev_work/hive_urban_github
 
-# --- GNU Stow ---
+# -------------------------------------------------------- #
+#                         GNU Stow                         #
+# -------------------------------------------------------- #
 def stow-all [] {
-  cd ~/dotfiles/
-  stow .
+    cd ~/dotfiles/
+    stow .
 }
 
 def unstow-all [] {
-  cd ~/dotfiles/
-  stow -D .
+    cd ~/dotfiles/
+    stow -D .
 }
 
 def restow-all [] {
-  cd ~/dotfiles/
-  stow -R .
+    cd ~/dotfiles/
+    stow -R .
 }
 
 alias unstow = stow -D
 alias restow = stow -R
 
-# --- Nix ---
+# -------------------------------------------------------- #
+#                            Nix                           #
+# -------------------------------------------------------- #
 alias flake-rebuild = sudo nixos-rebuild switch --flake .
 alias flake-rebuild_trace = sudo nixos-rebuild switch --flake . --show-trace
 alias flake-up = sudo nix flake update
@@ -113,22 +126,53 @@ alias hm-switch-trace = home-manager switch --flake . --show-trace
 alias cg-empty = sudo nix-collect-garbage
 alias cg-empty-all = sudo nix-collect-garbage -d
 
-# --- Vim ---
+
+# -------------------------------------------------------- #
+#                  Tooling & Integrations                  #
+# -------------------------------------------------------- #
+
+# -------------------------- Vim ------------------------- #
 alias v = nvim
 alias vdiff = nvim -d
 
-# --- Tmux ---
-alias tmx-src = tmux source ~/.tmux.conf
+# ------------------------- Tmux ------------------------- #
 
-# --- Zellij ---
+# Reload tmux configuration
+alias tmx-src = tmux source-file ~/.config/tmux/tmux.conf
+
+# Run tmux in a specific directory/session
+def tmx [dir: string = "~/"] {
+    let dir_session = match $dir {
+        "dot" => ["dotfiles", "~/dotfiles"],
+        "dotvim" => ["neovim_config", "~/dotfiles/nvim"],
+        "obsidian" => ["obsidian_vault", "~/obsidian_vault"],
+        "kb" => ["keyboard_dev", "~/Documents/keyboard_dev"],
+        _ => ["general", $dir]  # Default to "general" session
+    }
+
+    let session_name = $dir_session.0
+    let target_dir = $dir_session.1
+
+    cd $target_dir
+
+    let sessions = (tmux list-sessions | lines)
+    if ($sessions | any {|s| $s =~ $session_name }) {
+        tmux attach-session -t $session_name
+    } else {
+        tmux new-session -s $session_name
+    }
+}
+
+# ------------- Zellij: Terminal Multiplexer ------------- #
+# Docs: https://zellij.dev/documentation/
 # Run Zellij in a particular directory
 def zj-dot [] {
-  cd ~/dotfiles/
-  zellij
+    cd ~/dotfiles/
+    zellij
 }
 def zj-obsidian [] {
-  cd ~/obsidian_vault/
-  zellij
+    cd ~/obsidian_vault/
+    zellij
 }
 
 def zj [dir: string = "~/"] {
@@ -156,7 +200,7 @@ def zj [dir: string = "~/"] {
 # Run Zellij with the welcome screen
 alias zj-welcome = zellij -l welcome
 
-# --- Yazi ---
+# ------------------------- Yazi ------------------------- #
 # Shell wrapper function "yz"
 def --env yz [...args] {
     # Create a temporary file for storing Yazi's current working directory
@@ -177,38 +221,35 @@ def --env yz [...args] {
     rm -fp $tmp
 }
 
-# --- Aerospace ---
+# ----------------------- Aerospace ---------------------- #
 def as [command: string = ""] {
-  let cmd = match $command {
-    "load" => [reload-config]
-    "debug" => [debug-windows]
-    "monitor" => [list-monitors]
-    "app" => [list-apps]
-    # "app" => {
-    #   let selection = (aerospace list-apps | fzf --bind 'enter:execute(aerospace focus --app-id {1})+abort' | str trim)
-    #   return  # Selection is handled inside fzf, no need to return anything
-    # }
-    "window" => {
-      let selection = (aerospace list-windows --all | fzf --bind 'enter:execute(aerospace focus --window-id {1})+abort' | str trim)
-      return  # Selection is handled inside fzf
+    let cmd = match $command {
+        "load" => [reload-config]
+        "debug" => [debug-windows]
+        "monitor" => [list-monitors]
+        "app" => [list-apps]
+        # "app" => {
+        #   let selection = (aerospace list-apps | fzf --bind 'enter:execute(aerospace focus --app-id {1})+abort' | str trim)
+        #   return  # Selection is handled inside fzf, no need to return anything
+        # }
+        "window" => {
+            let selection = (aerospace list-windows --all | fzf --bind 'enter:execute(aerospace focus --window-id {1})+abort' | str trim)
+            return  # Selection is handled inside fzf
+        }
+        _ => {
+            print "Usage: as <command>\nAvailable commands: load, debug, monitor, app, window"
+            return
+        }
     }
-    _ => {
-      print "Usage: as <command>\nAvailable commands: load, debug, monitor, app, window"
-      return
-    }
-  }
 
-  # Run aerospace command only for non-fzf commands
-  if $command not-in ["window"] {
-    aerospace ...$cmd
-  }
+    # Run aerospace command only for non-fzf commands
+    if $command not-in ["window"] {
+        aerospace ...$cmd
+    }
 }
 
-# --- Sketchybar ---
+# ---------------------- Sketchybar ---------------------- #
 alias bar-load = sketchybar --reload
-
-# --- Justfile ---
-alias j = just
 
 # >>> Python <<<
 # --- uv ---

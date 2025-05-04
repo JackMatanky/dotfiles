@@ -27,11 +27,12 @@ $env.CARGO_HOME = ($env.HOME | path join '.cargo')
 # -------------------------------------------------------- #
 #                 Nushell Environment Setup                #
 # -------------------------------------------------------- #
-# --- Config Directory ---
+
+# ------------------- Config Directory ------------------- #
 # Default: $nu.default-config-dir == $XDG_CONFIG_HOME/nushell
 $env.NU_CONFIG_DIR = ($env.XDG_CONFIG_HOME | path join 'nushell')
 
-# --- Script and Completion Libraries ---
+# ------------ Script and Completion Libraries ----------- #
 # Script Default: $nu.default-config-dir/scripts
 # Completion Default: $nu.data-dir/completions
 $env.NU_LIB_DIRS = [
@@ -39,7 +40,7 @@ $env.NU_LIB_DIRS = [
     ($env.NU_CONFIG_DIR | path join 'completions')
 ]
 
-# --- Plugin Directory ---
+# ------------------- Plugin Directory ------------------- #
 # Default: $nu.default-config-dir/plugins
 $env.NU_PLUGIN_DIRS = [
     ($env.NU_CONFIG_DIR | path join 'plugins')
@@ -51,6 +52,7 @@ $env.NU_PLUGIN_DIRS = [
 # -------------------------------------------------------- #
 # Darwin = "/opt/homebrew"
 # Linux = "/home/linuxbrew/.linuxbrew"
+# Default fallback to empty string if OS is unknown
 $env.HOMEBREW = (match $OS {
     "Darwin" => "/opt/homebrew"
     "Linux" =>  (brew --prefix | str trim)
@@ -65,6 +67,8 @@ $env.BREW_LIB_DIR = ($env.HOMEBREW? | default "" | path join 'lib')
 $env.BREW_INCLUDE_DIR = ($env.HOMEBREW? | default "" | path join 'include')
 
 # --------- Build Flags for Brew-Linked Libraries -------- #
+# Help C extension modules (e.g., pygraphviz) locate
+# Brew-installed headers and libraries
 $env.CFLAGS = ['-I', $env.BREW_INCLUDE_DIR] | str join (char space)
 $env.LDFLAGS = ['-L', $env.BREW_LIB_DIR] | str join (char space)
 

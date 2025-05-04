@@ -7,6 +7,7 @@ if vim.g.vscode then
   require("config.lazy")
 
   -- Mode-aware cursor highlighting via VSCodeNotify (optional)
+  -- Requires Neovim Ui Modifier VS Code extension.
   vim.api.nvim_exec(
     [[
     function! SetCursorLineNrColorInsert(mode)

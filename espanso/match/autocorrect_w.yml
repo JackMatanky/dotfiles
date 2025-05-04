@@ -1,8 +1,8 @@
 # Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
 matches:
-    # ----------
-    # --- WA ---
-    # ----------
+    # ---------------------------------------------------- #
+    #                          WA                          #
+    # ---------------------------------------------------- #
     - trigger: watn
       replace: want
       propagate_case: true
@@ -59,10 +59,9 @@ matches:
       replace: wayward
       propagate_case: true
       word: true
-
-    # ----------
-    # --- WE ---
-    # ----------
+    # ---------------------------------------------------- #
+    #                          WE                          #
+    # ---------------------------------------------------- #
     - trigger: wendsay
       replace: Wednesday
       propagate_case: true
@@ -79,10 +78,9 @@ matches:
       replace: weird
       propagate_case: true
       word: true
-
-    # ----------
-    # --- WH ---
-    # ----------
+    # ---------------------------------------------------- #
+    #                          WH                          #
+    # ---------------------------------------------------- #
     - trigger: waht
       replace: what
       propagate_case: true
@@ -151,10 +149,9 @@ matches:
       replace: "wholly\x2C\x20holy"
       propagate_case: true
       word: true
-
-    # ----------
-    # --- WI ---
-    # ----------
+    # ---------------------------------------------------- #
+    #                          WI                          #
+    # ---------------------------------------------------- #
     - trigger: wief
       replace: wife
       propagate_case: true
@@ -223,10 +220,9 @@ matches:
       replace: "withdrawal\x2C\x20withdraw"
       propagate_case: true
       word: true
-
-    # ----------
-    # --- WO ---
-    # ----------
+    # ---------------------------------------------------- #
+    #                          WO                          #
+    # ---------------------------------------------------- #
     - trigger: wokr
       replace: work
       propagate_case: true
@@ -263,18 +259,21 @@ matches:
       replace: worsened
       propagate_case: true
       word: true
-
-    # ----------
-    # --- WO ---
-    # ----------
     - trigger: woudl
       replace: would
       propagate_case: true
       word: true
-
-    # ----------
-    # --- WR ---
-    # ----------
+    - trigger: w}ld
+      replace: would
+      propagate_case: true
+      word: true
+    - trigger: wouldnt
+      replace: "would\x20not"
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          WR                          #
+    # ---------------------------------------------------- #
     - trigger: wresters
       replace: wrestlers
       propagate_case: true

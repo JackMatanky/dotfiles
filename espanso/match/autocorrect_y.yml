@@ -1,8 +1,8 @@
 # Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
 matches:
-    # ----------
-    # --- YA ---
-    # ----------
+    # ---------------------------------------------------- #
+    #                          YA                          #
+    # ---------------------------------------------------- #
     - trigger: yatch
       replace: yacht
       propagate_case: true
@@ -11,9 +11,9 @@ matches:
       replace: yachting
       propagate_case: true
       word: true
-    # ----------
-    # --- YE ---
-    # ----------
+    # ---------------------------------------------------- #
+    #                          YE                          #
+    # ---------------------------------------------------- #
     - trigger: yaer
       replace: year
       propagate_case: true
@@ -54,9 +54,9 @@ matches:
       replace: "Yemenite\x2C\x20Yemeni"
       propagate_case: true
       word: true
-    # ----------
-    # --- YI ---
-    # ----------
+    # ---------------------------------------------------- #
+    #                          YI                          #
+    # ---------------------------------------------------- #
     - trigger: yeild
       replace: yield
       propagate_case: true
@@ -65,9 +65,9 @@ matches:
       replace: yielding
       propagate_case: true
       word: true
-    # ----------
-    # --- YO ---
-    # ----------
+    # ---------------------------------------------------- #
+    #                          YO                          #
+    # ---------------------------------------------------- #
     - trigger: ytou
       replace: you
       propagate_case: true
