@@ -1421,3 +1421,7 @@ ls ~/.local/share/tmux/plugins/
 tmx-src
 exit
 gaa
+gcam 'update vs code option in lazy.lua for neovim'
+gps
+stow-all
+gaa
