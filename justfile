@@ -15,7 +15,16 @@ OS_FAMILY := os_family()
 OS := os()
 
 # 🎯 Human-readable OS name for display/logging
-OS_NAME := if OS =~ '.*os$' { replace(OS, "os", "OS") } else if OS =~ '.*bsd$' { replace(OS, "bsd", "BSD") } else if OS == "dragonfly" { "DragonFly" } else { capitalize(OS) }
+OS_NAME := if OS =~ '.*os$' {
+    replace(OS, "os", "OS")
+} else if OS =~ '.*bsd$' {
+    replace(OS, "bsd", "BSD")
+} else if OS == "dragonfly" {
+    "DragonFly"
+} else {
+    capitalize(OS)
+}
+
 
 # -------------------------------------------------------- #
 #                   Directory Definitions                  #
@@ -208,6 +217,7 @@ install-all:
 # -------------------------------------------------------- #
 #                   🔄 Updating Packages                   #
 # -------------------------------------------------------- #
+
 # ----------------------- Homebrew ----------------------- #
 
 # Upgrade all available Mac App Store applications
@@ -305,31 +315,58 @@ update-all:
     @echo "✅ All updates complete!"
 
 # -------------------------------------------------------- #
-#                    Tmux Bootstrapping                    #
+#                       Tmux Utilities                     #
 # -------------------------------------------------------- #
 
 # Path to tmux config
-TMUX_CONF := ~/.config/tmux/tmux.conf
+TMUX_CONF := "~/.config/tmux/tmux.conf"
 
-# Reload the tmux config file
+# Reload tmux configuration file
+[group("TMUX")]
+# Reload the tmux config and display a message
 tmux-reload:
-    @tmux source-file ~/.config/tmux/tmux.conf
+    @tmux source-file {{TMUX_CONF}}
     @tmux display-message "Reloaded tmux config!"
 
-# Start a detached session, preload config, and copy attach cmd
+# Start a detached tmux session and preload the config
+[group("TMUX")]
+# Bootstrap a detached tmux session and copy attach command
 tmux-bootstrap SESSION_NAME=bootstrap:
     @tmux new-session -d -s {{SESSION_NAME}} 'sleep 1'
     @just tmux-reload
     @echo "Started tmux. Attach with: tmux attach -t {{SESSION_NAME}}"
     @echo "tmux attach -t {{SESSION_NAME}}" | pbcopy
 
-# Attach to a session or start it if missing
+# Check if a tmux session exists
+[group("TMUX")]
+# Returns 0 if session exists; fails silently otherwise
+tmux-has-session SESSION_NAME:
+    @tmux has-session -t {{SESSION_NAME}} 2>/dev/null
+
+# Attach to an existing tmux session
+[group("TMUX")]
+# Attach to a named tmux session
+tmux-attach SESSION_NAME:
+    @tmux attach -t {{SESSION_NAME}}
+
+# Try to attach if the session exists
+[group("TMUX")]
+# Attach only if the session already exists
+tmux-attach-if-exists SESSION_NAME:
+    @just tmux-has-session {{SESSION_NAME}} && just tmux-attach {{SESSION_NAME}}
+
+# Bootstrap a new session then attach
+[group("TMUX")]
+# Create and attach to a new tmux session
+tmux-bootstrap-attach SESSION_NAME:
+    @just tmux-bootstrap {{SESSION_NAME}}
+    @just tmux-attach {{SESSION_NAME}}
+
+# Main entrypoint: attach or bootstrap as needed
+[group("TMUX")]
+# Attach to session if exists, else bootstrap and attach
 tmux-up SESSION_NAME=bootstrap:
-    if tmux has-session -t {{SESSION_NAME}} 2>/dev/null; then
-        tmux attach -t {{SESSION_NAME}}
-    else
-        just tmux-bootstrap {{SESSION_NAME}} && tmux attach -t {{SESSION_NAME}}
-    fi
+    @just tmux-has-session {{SESSION_NAME}} && just tmux-attach {{SESSION_NAME}} || just tmux-bootstrap-attach {{SESSION_NAME}}
 
 # -------------------------------------------------------- #
 #                  📝 Document Processing                  #

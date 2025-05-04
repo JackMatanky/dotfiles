@@ -1380,3 +1380,6 @@ gps
 stow-all
 which shfmt
 gaa
+gcam 'add to espanso; update bashrc and zshrc; add tmux files and just recipes'
+gps
+stow-all

@@ -36,11 +36,12 @@
   "window.newWindowProfile": "Default",
 
   "files.associations": {
-    "*.pgsql": "postgres",
     "*.html": "html",
+    "snippets/*.json": "jsonc",
+    "*.nu": "nushell",
+    "*.pgsql": "postgres",
     "brew*": "ruby",
-    "uv.lock": "toml",
-    "snippets/*.json": "jsonc"
+    "uv.lock": "toml"
   },
 
   "security.workspace.trust.untrustedFiles": "open",
@@ -144,6 +145,9 @@
     "zsh",
     "nu"
   ],
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   //!SECTION
 
   /* ------------------------------------------------------ */
@@ -163,6 +167,7 @@
   "nvim-ui.nvimColorReplace": "#f38ba8", // Red – replace/destructive operation
 
   /* ----------------- NeoVim Dashboard ----------------- */
+  "nvimDashboard.fontSize": 14,
   "nvimDashboard.keybinds": [
     {
       "letter": "f",
@@ -296,6 +301,9 @@
   "editorconfig.generateAuto": true,
   "editorconfig.showMenuEntry": true,
   //!SEGMENT
+
+  "shfmt.executablePath": "/opt/homebrew/bin/shfmt",
+  "shellformat.path": "/opt/homebrew/bin/shfmt",
 
   //!SECTION
 
@@ -449,7 +457,7 @@
   // or will be always fixed length.
   "comment-divider.shouldLengthIncludeIndent": true,
 
-  // Main Header
+  /* -------------------- Main Header ------------------- */
   // Set symbol for main header line filling (only one).
   "comment-divider.mainHeaderFiller": "-",
 
@@ -462,7 +470,7 @@
   // Set main header text transform style.
   "comment-divider.mainHeaderTransform": "titlecase",
 
-  // Subheader
+  /* --------------------- Subheader -------------------- */
   // Set symbol for subheader line filling (only one).
   "comment-divider.subheaderFiller": "-",
 
