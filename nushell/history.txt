@@ -1407,3 +1407,17 @@ l
 ltree
 rm -rf ~/dotfiles/tmux/plugins
 gaa
+gcam 'update tmux conf with tpm path env var'
+gps
+stow-all
+mkdir -p ~/.local/share/tmux/plugins
+mkdir ~/.local/share/tmux/plugins
+tmx-src
+yz
+y
+dot
+cx
+ls ~/.local/share/tmux/plugins/
+tmx-src
+exit
+gaa

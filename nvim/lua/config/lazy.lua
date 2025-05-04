@@ -28,7 +28,11 @@ require("lazy").setup({
     { import = "plugins" },
 
     -- Conditionally load VSCode-specific plugins if running inside VSCode
-    (vim.g.vscode and { import = "plugins.vscode" } or nil),
+    -- (vim.g.vscode and { import = "plugins.vscode" } or nil),
+
+    -- Official VSCode extras: disables incompatible plugins when in VSCode
+    -- Docs: http://www.lazyvim.org/extras/vscode
+    { import = "lazyvim.plugins.extras.vscode" },
   },
   defaults = {
     -- By default, only LazyVim plugins are lazy-loaded
