@@ -11,10 +11,15 @@
 -- vim.g.mapleader = " "
 -- vim.g.maplocalleader = "\\"
 
+-- Sets the terminal to use with `vim.o.shell`
+-- and adds some additional configuration:
+LazyVim.terminal.setup("opt/homebrew/bin/nu")
+
 -- ------------------------------------------------------ --
 --                       Python LSP                       --
 -- ------------------------------------------------------ --
 vim.g.python3_host_prog = vim.fn.expand("~/.pyenv/versions/neovim/bin/python3")
+vim.g.lazyvim_python_lsp = "basedpyright"
 
 -- ------------------------------------------------------ --
 --                     Editor Behavior                    --

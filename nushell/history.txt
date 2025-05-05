@@ -1451,3 +1451,7 @@ gps
 stow-all
 tmux help
 exit
+gcam 'add apple mail settings to aerospace'
+gps
+stow-all
+as load
