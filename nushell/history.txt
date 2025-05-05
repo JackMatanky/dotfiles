@@ -1476,3 +1476,6 @@ gcam 'modularize vscode and neovide setup for nvim init'
 gps
 stow-all
 gaa
+gcam 'add copty paste settings for neovide'
+gps
+stow-all

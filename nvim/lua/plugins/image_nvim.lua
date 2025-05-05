@@ -1,29 +1,11 @@
 -- --------------------------------------------------------------------
---  Filename: ~/dotfiles/nvim/lua/plugins/image_nvim.lua.lua
+--  Filename: ~/dotfiles/nvim/lua/plugins/image_nvim.lua
 --  Image.nvim Docs: https://github.com/3rd/image.nvim
 --  Description: Image support for Neovim using Kitty's Graphic Protocol
 -- --------------------------------------------------------------------
 
--- For dependencies see
--- `~/github/dotfiles-latest/neovim/neobean/README.md`
---
--- -- Uncomment the following 2 lines if you use the local luarocks installation
--- -- Leave them commented to instead use `luarocks.nvim`
--- -- instead of luarocks.nvim
--- Notice that in the following 2 commands I'm using luaver
--- package.path = package.path
---   .. ";"
---   .. vim.fn.expand("$HOME")
---   .. "/.luaver/luarocks/3.11.0_5.1/share/lua/5.1/magick/?/init.lua"
--- package.path = package.path
---   .. ";"
---   .. vim.fn.expand("$HOME")
---   .. "/.luaver/luarocks/3.11.0_5.1/share/lua/5.1/magick/?.lua"
---
--- -- Here I'm not using luaver, but instead installed lua and luarocks directly through
--- -- homebrew
--- package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua"
--- package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua"
+-- NOTE: This plugin does not work in GUI clients like Neovide,
+-- so we explicitly disable it using `enabled = not vim.g.neovide`.
 
 return {
   {
@@ -33,7 +15,8 @@ return {
     -- Neovim users.
     -- https://github.com/vhyrro/luarocks.nvim
     "vhyrro/luarocks.nvim",
-    priority = 1001,  -- this plugin needs to run before anything else
+    priority = 1001, -- this plugin needs to run before anything else
+    enabled = not vim.g.neovide,
     opts = {
       hererocks = true,
       rocks = { "magick" },
@@ -41,13 +24,15 @@ return {
   },
   {
     "3rd/image.nvim",
-    enabled = true,
+    enabled = not vim.g.neovide, -- ❌ Disabled when using Neovide (GUI)
     vscode = false,
     dependencies = { "luarocks.nvim" },
+
     config = function()
       require("image").setup({
-        backend = "kitty",
+        backend = "kitty", -- Uses Kitty Graphics Protocol
         kitty_method = "normal",
+
         integrations = {
           markdown = {
             enabled = true,
@@ -55,12 +40,12 @@ return {
             -- Set to false to not render images from a URL
             download_remote_images = true,
             -- Change to render images only at the cursor's location
-            -- I set this to true, because if the file has way too many images
-            -- it will be laggy and will take time for the initial load
+            -- Helps with performance on large files
             only_render_image_at_cursor = true,
             -- markdown extensions (ie. quarto) can go here
             filetypes = { "markdown", "vimwiki", "html" },
           },
+
           neorg = {
             enabled = true,
             clear_in_insert_mode = false,
@@ -68,47 +53,46 @@ return {
             only_render_image_at_cursor = false,
             filetypes = { "norg" },
           },
+
           -- Disabled by default
           -- Detect and render images referenced in HTML files
-          -- Make sure you have an html treesitter parser installed
-          -- ~/github/dotfiles-latest/neovim/neobean/lua/plugins/treesitter.lua
+          -- Make sure you have an HTML Treesitter parser installed
           html = {
             enabled = true,
             only_render_image_at_cursor = true,
-            -- Enabling "markdown" below allows you to view html images in .md files
+            -- Enabling "markdown" below allows you to view HTML images in .md files
             -- https://github.com/3rd/image.nvim/issues/234
             filetypes = { "html", "xhtml", "htm", "markdown" },
-            -- filetypes = { "html", "xhtml", "htm" },
           },
+
           -- Disabled by default
           -- Detect and render images referenced in CSS files
-          -- Make sure you have a css treesitter parser installed
-          -- ~/github/dotfiles-latest/neovim/neobean/lua/plugins/treesitter.lua
+          -- Requires a CSS Treesitter parser
           css = {
             enabled = true,
           },
         },
+
         max_width = nil,
         max_height = nil,
         max_width_window_percentage = nil,
 
-        -- This is what I changed to make my images look smaller,
-        -- like a thumbnail, the default value is 50
-        -- max_height_window_percentage = 20,
+        -- You can set this to reduce image size in the buffer
+        -- Default = 50; smaller = smaller images
         max_height_window_percentage = 40,
 
-        -- toggles images when windows are overlapped
+        -- Toggles images when windows are overlapped
         window_overlap_clear_enabled = false,
         window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
 
-        -- auto show/hide images when the editor gains/looses focus
+        -- Auto show/hide images when the editor gains/loses focus
         editor_only_render_when_focused = true,
 
-        -- auto show/hide images in the correct tmux window
-        -- In the tmux.conf add `set -g visual-activity off`
+        -- Auto show/hide images in the correct tmux window
+        -- Requires `set -g visual-activity off` in tmux.conf
         tmux_show_only_in_active_window = true,
 
-        -- render image files as images when opened
+        -- Render image files directly when opened
         hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.avif" },
       })
     end,
