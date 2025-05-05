@@ -1,10 +1,10 @@
----
 #------------------------------------------------------------------------------
 # Filename: ~/dotfiles/lazygit/config.yml
 # GitHub: https://github.com/jesseduffield/lazygit
 # Docs: https://github.com/jesseduffield/lazygit/blob/master/docs/
 #------------------------------------------------------------------------------
 
+---
 gui:
   # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-author-color
   authorColors: {}

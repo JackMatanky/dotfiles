@@ -1456,3 +1456,6 @@ gps
 stow-all
 as load
 gaa
+gcam 'add comment divider plugin to neovim'
+gps
+stow-all
