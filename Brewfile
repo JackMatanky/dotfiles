@@ -54,6 +54,7 @@ brew "bat"                              # File Viewer: Clone of cat(1) with synt
 brew "git"                              # Distributed revision control system
 brew "git-filter-repo"                  # Filter and rewrite Git repository history
 brew "git-lfs"                          # Git extension for versioning large files
+brew "git-delta"                        # Syntax-highlighting pager for git and diff output
 brew "jesseduffield/lazygit/lazygit"    # Simple terminal UI for Git commands
 
 # ---------------------------------------------

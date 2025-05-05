@@ -273,6 +273,15 @@ chmod +x scripts/setup.sh
   brew install git-filter-repo
   ```
 
+- [Delta](https://github.com/dandavison/delta)
+
+  - Docs: https://dandavison.github.io/delta/introduction.html
+  - A syntax-highlighting pager for git, diff, grep, and blame output
+
+  ```sh
+  brew install git-delta
+  ```
+
 ## Development Environment
 
 - [Neovim](https://neovim.io/)

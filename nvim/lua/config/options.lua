@@ -15,12 +15,17 @@
 -- and adds some additional configuration:
 LazyVim.terminal.setup("opt/homebrew/bin/nu")
 
+-- Introduced in version 10.x
+-- Docs: https://www.lazyvim.org/news#10x
 vim.g.lazygit_config = false
 
 -- ------------------------------------------------------ --
 --                       Python LSP                       --
 -- ------------------------------------------------------ --
 vim.g.python3_host_prog = vim.fn.expand("~/.pyenv/versions/neovim/bin/python3")
+
+-- Introduced in version 10.x
+-- Docs: https://www.lazyvim.org/news#10x
 vim.g.lazyvim_python_lsp = "basedpyright"
 
 -- ------------------------------------------------------ --
