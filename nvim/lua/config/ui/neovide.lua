@@ -5,11 +5,16 @@
 -- ----------------------------------------------------------------------------
 
 -- Neovide transparency (0 = opaque, 1 = fully transparent)
-vim.g.neovide_transparency = 0.9
+vim.g.neovide_opacity = 0.9
 
 -- System clipboard paste: Ctrl+Shift+V in insert and terminal modes
 vim.keymap.set("i", "<C-S-v>", "<C-r>+")
-vim.keymap.set("t", "<C-S-v>", [[<C-\><C-n>"+pi]], { noremap = true, silent = true })
+vim.keymap.set(
+  "t",
+  "<C-S-v>",
+  [[<C-\><C-n>"+pi]],
+  { noremap = true, silent = true }
+)
 
 -- Frame and rendering refresh rates
 vim.g.neovide_refresh_rate = 100
@@ -26,4 +31,4 @@ vim.g.neovide_floating_blur_amount_x = 2.0
 vim.g.neovide_floating_blur_amount_y = 2.0
 
 -- GUI font (adjust to your installed fonts and preference)
-vim.opt.guifont = "Fira Code Nerd Font:h14"
+-- vim.opt.guifont = "Fira Code Nerd Font:h14"

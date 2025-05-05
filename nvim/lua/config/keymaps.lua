@@ -54,6 +54,16 @@ local function vscodeNotify(command)
 end
 
 -- ------------------------------------------------------ --
+--                 Global Clipboard Maps                  --
+-- ------------------------------------------------------ --
+-- Global clipboard support for ⌘V across various modes.
+-- These are fallback bindings for edge cases like terminal mode.
+vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("t", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+
+-- ------------------------------------------------------ --
 --                     Neovim Keymaps                     --
 -- ------------------------------------------------------ --
 local function defineNeovimKeymaps()
@@ -98,6 +108,21 @@ local function defineNeovimKeymaps()
   -- Misc navigation & toggles
   safeMap("n", "<leader>ct", toggleWordWrap, { desc = "Toggle word wrap" })
   safeMap("n", "<leader>bc", "<cmd>BufferLinePick<CR>", { desc = "Pick buffer" })
+end
+
+-- ------------------------------------------------------ --
+--                    Neovide Keymaps                     --
+-- ------------------------------------------------------ --
+-- These keymaps enable common macOS-like clipboard shortcuts
+-- when running in Neovide (GUI Neovim frontend).
+-- Source: https://neovide.dev/faq.html#how-can-i-use-cmd-ccmd-v-to-copy-and-paste
+if vim.g.neovide then
+  vim.keymap.set("n", "<D-s>", ":w<CR>", { desc = "Save file" })
+  vim.keymap.set("v", "<D-c>", '"+y', { desc = "Copy to clipboard" })
+  vim.keymap.set("n", "<D-v>", '"+P', { desc = "Paste (normal mode)" })
+  vim.keymap.set("v", "<D-v>", '"+P', { desc = "Paste (visual mode)" })
+  vim.keymap.set("c", "<D-v>", "<C-R>+", { desc = "Paste (command mode)" })
+  vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli', { desc = "Paste (insert mode)" })
 end
 
 -- ------------------------------------------------------ --

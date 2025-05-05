@@ -1472,3 +1472,7 @@ gcam 'revise comment lengths in lazygit config'
 gps
 stow-all
 gaa
+gcam 'modularize vscode and neovide setup for nvim init'
+gps
+stow-all
+gaa
