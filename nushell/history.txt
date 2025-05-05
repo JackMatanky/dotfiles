@@ -1468,3 +1468,7 @@ gcam 'add git delta to git and lazygit config'
 gps
 stow-all
 gaa
+gcam 'revise comment lengths in lazygit config'
+gps
+stow-all
+gaa

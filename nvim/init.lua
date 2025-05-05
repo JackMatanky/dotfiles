@@ -1,35 +1,41 @@
--- --------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
 --  Filename: ~/dotfiles/nvim/init.lua
---  Description: Main bootstrap and environment-specific config
--- --------------------------------------------------------------------
+--  Description: Main Neovim entry point with environment-specific modules
+--  Source: https://github.com/cStralpt/lazycodium-starter-template/
+-- ----------------------------------------------------------------------------
+
+require("config.lazy")
 
 if vim.g.vscode then
-  require("config.lazy")
+  require("config.ui.vscode")
+elseif vim.g.neovide then
+  require("config.ui.neovide")
+end
 
-  -- Mode-aware cursor highlighting via VSCodeNotify (optional)
-  -- Requires Neovim Ui Modifier VS Code extension.
-  vim.api.nvim_exec(
-    [[
-    function! SetCursorLineNrColorInsert(mode)
-      if a:mode == "i"
-        call VSCodeNotify('nvim-theme.insert')
-      elseif a:mode == "r"
-        call VSCodeNotify('nvim-theme.replace')
-      endif
-    endfunction
+-- ---------------------------------------------------------- --
+--     Regular Neovim (non-VSCode, non-Neovide) settings      --
+-- ---------------------------------------------------------- --
 
-    augroup CursorLineNrColorSwap
-      autocmd!
-      autocmd ModeChanged *:[vV\x16]* call VSCodeNotify('nvim-theme.visual')
-      autocmd ModeChanged *:[R]* call VSCodeNotify('nvim-theme.replace')
-      autocmd InsertEnter * call SetCursorLineNrColorInsert(v:insertmode)
-      autocmd InsertLeave * call VSCodeNotify('nvim-theme.normal')
-      autocmd CursorHold * call VSCodeNotify('nvim-theme.normal')
-    augroup END
-    ]],
-    false
+-- Highlight groups
+vim.api.nvim_command("highlight LineNr guifg=#bae67e ctermfg=149")
+vim.api.nvim_command("highlight CursorLineNr guifg=#ef6b73 ctermfg=203")
+vim.api.nvim_command("highlight CursorLine guibg=#1C1C3E")
+
+-- Transparency settings for popup menu and floating windows
+-- ⚠️ If you don’t like the effect, comment out these lines:
+vim.o.winblend = 20
+vim.o.pumblend = 20
+
+-- Fallback transparency for terminal (non-VSCode, non-Neovide)
+local transparencyGroups = {
+  Normal = { bg = "NONE", ctermbg = "NONE" },
+  NormalNC = { bg = "NONE", ctermbg = "NONE" },
+  NeoTreeNormal = { bg = "NONE", ctermbg = "NONE" },
+  NeoTreeNormalNC = { bg = "NONE", ctermbg = "NONE" },
+}
+
+for group, hl in pairs(transparencyGroups) do
+  vim.cmd(
+    string.format("highlight %s guibg=%s ctermbg=%s", group, hl.bg, hl.ctermbg)
   )
-
-else
-  require("config.lazy")
 end
