@@ -1479,3 +1479,6 @@ gaa
 gcam 'add copty paste settings for neovide'
 gps
 stow-all
+gcam 'disable image.nvim in neovide'
+gps
+stow-all
