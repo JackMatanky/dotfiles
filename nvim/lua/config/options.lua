@@ -15,6 +15,8 @@
 -- and adds some additional configuration:
 LazyVim.terminal.setup("opt/homebrew/bin/nu")
 
+vim.g.lazygit_config = false
+
 -- ------------------------------------------------------ --
 --                       Python LSP                       --
 -- ------------------------------------------------------ --
