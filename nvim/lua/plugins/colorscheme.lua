@@ -1,8 +1,9 @@
--- --------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
 --  Filename: ~/dotfiles/nvim/lua/plugins/colorscheme.lua
---  LazyVim Docs: https://www.lazyvim.org/plugins/colorscheme
---  Catppuccin Docs: https://github.com/catppuccin/nvim
--- --------------------------------------------------------------------
+--  LazyVim: https://www.lazyvim.org/plugins/colorscheme
+--  Catppuccin: https://github.com/catppuccin/nvim
+-- ----------------------------------------------------------------------------
+
 return {
   -- Catppuccin
   {
