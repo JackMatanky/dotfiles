@@ -1446,3 +1446,8 @@ stow-all
 gcam 'try disabling lazyvim vscode to see if noice and lualine return'
 gps
 stow-all
+gcam 'remove vscode plugin file'
+gps
+stow-all
+tmux help
+exit

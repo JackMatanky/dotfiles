@@ -61,10 +61,28 @@ automatically-unhide-macos-hidden-apps = false
 # check-further-callbacks = true
 # run = ['layout floating', 'move-node-to-workspace S']  # The callback itsel
 
+# Floating Window Layouts
+# System Settings
 [[on-window-detected]]
-if.app-name-regex-substring = 'finder|settings'
+if.app-id = 'com.apple.systempreferences'
 run = 'layout floating'
 
+# File Finder
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+# MacOS App Store
+[[on-window-detected]]
+if.app-id = 'com.apple.AppStore'
+run = 'layout floating'
+
+# Calculator
+[[on-window-detected]]
+if.app-id = 'com.apple.calculator'
+run = 'layout floating'
+
+# Predifined Workspace Layouts
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace 1'
@@ -86,10 +104,6 @@ if.app-id = 'net.ankiweb.dtop'
 run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.VSCode'
-run = 'move-node-to-workspace 5'
-
-[[on-window-detected]]
 if.app-id = 'com.vscodium'
 run = 'move-node-to-workspace 5'
 
@@ -106,6 +120,11 @@ run = 'move-node-to-workspace 7'
 # [[on-window-detected]]
 # if.app-id = 'com.github.wez.wezterm'
 # run = 'move-node-to-workspace 7'
+
+# Apple Mail
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace 8'
 
 [[on-window-detected]]
 if.app-id = "com.openai.chat"
@@ -238,15 +257,15 @@ alt-shift-comma = 'mode service'
 # alt-shift-enter = 'mode apps'
 
 # >>> App Launcher <<<
-alt-ctrl-shift-n = 'exec-and-forget open /Applications/Obsidian.app'                    # Notes - Obsidian
-alt-ctrl-shift-a = 'exec-and-forget open /Applications/Anki.app'                        # SRS - Anki
-alt-ctrl-shift-b = 'exec-and-forget open /Applications/Zen.app'                         # Browser - Zen
-alt-ctrl-shift-s = 'exec-and-forget open /Applications/Safari.app'                      # Browser - Safari
-alt-ctrl-shift-t = 'exec-and-forget open /Applications/Ghostty.app'                     # Terminal - Ghostty
-# alt-ctrl-shift-t = 'exec-and-forget open /Applications/WezTerm.app'                   # Terminal - WezTerm
-alt-ctrl-shift-z = 'exec-and-forget open /Applications/Zed.app'                         # IDE - Zed Code Editor
-alt-ctrl-shift-c = 'exec-and-forget open /Applications/VSCodium.app'                    # IDE - Visual Studio Code
-# alt-ctrl-shift-c = '''exec-and-forget open '/Applications/Visual Studio Code.app''''    # IDE - Visual Studio Code
+alt-ctrl-shift-a = 'exec-and-forget open /Applications/Anki.app'          # SRS - Anki
+alt-ctrl-shift-b = 'exec-and-forget open /Applications/Zen.app'           # Browser - Zen
+alt-ctrl-shift-c = 'exec-and-forget open /Applications/VSCodium.app'      # IDE - Visual Studio Code
+alt-ctrl-shift-m = 'exec-and-forget open /Applications/Mail.app'          # Email - Apple Mail
+alt-ctrl-shift-n = 'exec-and-forget open /Applications/Obsidian.app'      # Notes - Obsidian
+alt-ctrl-shift-s = 'exec-and-forget open /Applications/Safari.app'        # Browser - Safari
+alt-ctrl-shift-t = 'exec-and-forget open /Applications/Ghostty.app'       # Terminal - Ghostty
+# alt-ctrl-shift-t = 'exec-and-forget open /Applications/WezTerm.app'     # Terminal - WezTerm
+alt-ctrl-shift-z = 'exec-and-forget open /Applications/Zed.app'           # IDE - Zed Code Editor
 
 
 # >>> Multiple Monitors <<<
