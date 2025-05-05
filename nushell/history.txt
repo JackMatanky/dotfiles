@@ -1464,3 +1464,7 @@ stow-all
 brew install git-delta
 brew upgrade
 gaa
+gcam 'add git delta to git and lazygit config'
+gps
+stow-all
+gaa
