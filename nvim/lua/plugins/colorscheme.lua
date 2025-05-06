@@ -6,7 +6,7 @@
 
 return {
   -- Disable unwanted themes
-    { "folke/tokyonight.nvim", enabled = false },
+  { "folke/tokyonight.nvim", enabled = false },
 
   -- Catppuccin
   {
