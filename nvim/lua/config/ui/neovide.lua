@@ -5,7 +5,7 @@
 -- ----------------------------------------------------------------------------
 
 -- Neovide transparency (0 = opaque, 1 = fully transparent)
-vim.g.neovide_opacity = 0.9
+-- vim.g.neovide_opacity = 0.9
 -- For Catppuccin Macchiato
 vim.g.neovide_background_color = "#24273a"
 
