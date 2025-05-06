@@ -6,12 +6,12 @@
 
 return {
   -- Disable unwanted themes
-  { "folke/tokyonight.nvim", enabled = false },
+  -- { "folke/tokyonight.nvim", enabled = false },
 
   -- Catppuccin
   {
     "catppuccin/nvim",
-    lazy = true,
+    lazy = false,
     name = "catppuccin",
     opts = {
       flavour = "macchiato",
@@ -60,7 +60,8 @@ return {
         optional = true,
         opts = function(_, opts)
           if (vim.g.colors_name or ""):find("catppuccin") then
-            opts.highlights = require("catppuccin.groups.integrations.bufferline").get()
+            opts.highlights =
+              require("catppuccin.groups.integrations.bufferline").get()
           end
         end,
       },
