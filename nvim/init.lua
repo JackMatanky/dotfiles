@@ -6,6 +6,9 @@
 
 require("config.lazy")
 
+-- ---------------------------------------------------------- --
+--        Load UI-specific modules for VSCode or Neovide      --
+-- ---------------------------------------------------------- --
 if vim.g.vscode then
   require("config.ui.vscode")
 elseif vim.g.neovide then
@@ -15,11 +18,6 @@ end
 -- ---------------------------------------------------------- --
 --     Regular Neovim (non-VSCode, non-Neovide) settings      --
 -- ---------------------------------------------------------- --
-
--- Highlight groups
-vim.api.nvim_command("highlight LineNr guifg=#bae67e ctermfg=149")
-vim.api.nvim_command("highlight CursorLineNr guifg=#ef6b73 ctermfg=203")
-vim.api.nvim_command("highlight CursorLine guibg=#1C1C3E")
 
 -- Transparency settings for popup menu and floating windows
 -- ⚠️ If you don’t like the effect, comment out these lines:
