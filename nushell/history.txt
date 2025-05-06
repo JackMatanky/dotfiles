@@ -1482,3 +1482,6 @@ stow-all
 gcam 'disable image.nvim in neovide'
 gps
 stow-all
+gcam 'add catppuccin background color to neovide'
+gps
+stow-all
