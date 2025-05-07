@@ -1,12 +1,7 @@
 {
   "version": "0.2",
   "language": "en,he",
-  "ignorePaths": [
-    "node_modules/**",
-    "venv/**",
-    ".venv/**",
-    "__pycache__/**"
-  ],
+  "ignorePaths": ["node_modules/**", "venv/**", ".venv/**", "__pycache__/**"],
   "dictionaryDefinitions": [
     // npm install -g @cspell/dict-he
     {
@@ -35,29 +30,16 @@
       "scope": "user"
     }
   ],
-  "dictionaries": [
-    "general_dictionary",
-    "hebrew",
-    "python",
-  ],
-  "ignoreWords": [
-    "PREMADE",
-    "canonizer",
-    "inshellisense"
-  ],
+  "dictionaries": ["general_dictionary", "hebrew", "python"],
+  "ignoreWords": ["PREMADE", "canonizer", "inshellisense"],
   "languageSettings": [
     {
       "languageId": "python",
-      "dictionaries": [
-        "python"
-      ]
+      "dictionaries": ["python"]
     },
     {
       "languageId": "javascript",
-      "dictionaries": [
-        "typescript",
-        "node"
-      ]
+      "dictionaries": ["typescript", "node"]
     }
   ]
 }
