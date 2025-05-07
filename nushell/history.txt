@@ -1577,3 +1577,16 @@ j activate
 use .venv/bin/activate.nu<\n>
 uv add marimo
 gaa
+git restore .
+uv pip install -e .
+uv pip install ipykernel
+uv add marimo
+marimo tutorial intro
+uv add "marimo[recommended]"
+marimo tutorial intro
+git switch jack
+gst
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo-data/.venv/bin/activate.nu ; clear
+gcam 'update pyproject and gitignore'
+gst
+gps

@@ -33,7 +33,7 @@ preset = "default"
 
 [runtime]
 auto_instantiate = true
-auto_reload = "off"                 # Options: "off", "lazy", "autorun"
+auto_reload = "autorun"             # Options: "off", "lazy", "autorun"
 reactive_tests = true
 on_cell_change = "autorun"          # Options: "lazy", "autorun"
 watcher_on_save = "lazy"            # Options: "lazy", "autorun"
