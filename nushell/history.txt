@@ -1491,3 +1491,84 @@ stow-all
 gcam 'remove highlight overrides in nvim init.lua'
 gps
 stow-all
+gcam 'remove all extras in nvim init'
+gps
+stow-all
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/projects/geo_engineering/.venv/bin/activate.nu ; clear
+pwd
+z research
+pwd
+gst
+gaa
+gcam 'update geoentity submodels to work with geoquery'
+gb
+gps
+gst
+cp -r /Users/jack/Documents/_dev_work/hive_urban_github/research /Users/jack/Documents/_dev_work/hive_urban_github/research_backup<\n>
+pwd
+gst
+git checkout -b backup-before-geo-split<\n>
+gb
+git subtree split --prefix=projects/geo_engineering -b geo_engineering-split<\n>
+git log geo_engineering-split<\n>
+mkdir /Users/jack/Documents/_dev_work/hive_urban_github/geo_data<\n>
+cd /Users/jack/Documents/_dev_work/hive_urban_github/geo_data<\n>
+git init
+git pull /Users/jack/Documents/_dev_work/hive_urban_github/research geo_engineering-split<\n>
+gb
+deactivate
+z hive
+cd geo_data
+gst
+git remote -v
+pwd
+git remote add origin https://github.com/Hive-Urban/geo_data.git<\n>
+git remote -v
+git push -u origin main
+cd /Users/jack/Documents/_dev_work/hive_urban_github/research<\n>
+gst
+gb
+j
+j venv
+j activate
+use .venv/bin/activate.nu<\n>
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo_data/.venv/bin/activate.nu ; clear
+deactivate
+git remote set-url origin https://github.com/Hive-Urban/geo-data.git
+git remote -v
+git pull
+git fetch
+gst
+git restore .
+gst
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo-data/.venv/bin/activate.nu ; clear
+j venv
+deactivate
+rm -rf .venv
+j venv
+j activate
+use .venv/bin/activate.nu<\n>
+j
+j setup-all
+j setup-core
+pwd
+ls pyproject.toml
+gst
+gcam 'update justfile'
+gps
+j setup-all
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo-data/.venv/bin/activate.nu ; clear
+gcam 'update enum headers'
+gps
+gst
+gcam 'fix line length issue in street file'
+gps
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo-data/.venv/bin/activate.nu ; clear
+z hive
+za geo-data
+deactivate
+z hive
+za geo-data
+z geo-data
+gcam 'update comment headers'
+gps

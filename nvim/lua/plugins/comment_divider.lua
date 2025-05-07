@@ -61,6 +61,11 @@ return {
         lineSeperator = "-",
         lineEnd = "#",
       },
+      toml = {
+        lineStart = "#",
+        lineSeperator = "-",
+        lineEnd = "#",
+      },
     },
   },
   keys = {
