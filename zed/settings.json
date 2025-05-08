@@ -275,7 +275,7 @@
     "default_width": 380
   },
 
-  "assistant": {
+  "agent": {
     "version": "2",
     "enabled": true,
     "button": true,
