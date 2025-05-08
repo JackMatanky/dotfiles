@@ -785,6 +785,12 @@ const nu_conf = "~/.config/nushell"
 source $"($nu_conf)/env.nu"
 
 # -----------------------------------------------
+# Overlays
+# -----------------------------------------------
+const nu_overlay: string = $nu_conf | path join "overlays"
+overlay use $"($nu_overlay)/activate.nu"
+
+# -----------------------------------------------
 # Aliases
 # -----------------------------------------------
 const nu_alias: string = $nu_conf | path join "aliases"
