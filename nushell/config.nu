@@ -780,6 +780,7 @@ $env.config = {
         }
     ]
 }
+
 const nu_conf = "~/.config/nushell"
 source $"($nu_conf)/env.nu"
 

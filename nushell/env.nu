@@ -272,6 +272,12 @@ if (which pyenv | is-not-empty) {
     if ($env.NEOVIM_VENV | path exists) {
         $env.PATH = ($env.NEOVIM_VENV | path join 'bin' | prepend $env.PATH)
     }
+
+    # Optional: Manually activate Zed virtual environment if available
+    $env.ZED_VENV = ($env.PYENV_ROOT | path join 'versions' 'zed')
+    if ($env.ZED_VENV | path exists) {
+        $env.PATH = ($env.ZED_VENV | path join 'bin' | prepend $env.PATH)
+    }
 }
 
 # Rust
