@@ -1710,3 +1710,6 @@ gaa
 gcam 'add pyenv overlay for nushell'
 gps
 stow-all
+gcam 'add pyenv overlay for nushell and update aliases file'
+gps
+stow-all

@@ -259,12 +259,13 @@ def use_pyenv_env [env_name: string] {
   let bin_path = ($env_path | path join "bin")
 
   if ($env_path | path exists) {
-    overlay use --env ~/.config/nushell/overlays/pyenv_activate.nu \
-      --env-vars [
-        __VIRTUAL_ENV__ = $env_path
-        __BIN_NAME__ = "bin"
-        __VIRTUAL_PROMPT__ = $env_name
-      ]
+    # Set required environment variables before loading overlay
+    let-env __VIRTUAL_ENV__ = $env_path
+    let-env __BIN_NAME__ = "bin"
+    let-env __VIRTUAL_PROMPT__ = $env_name
+
+    # Load the overlay which uses these env vars
+    overlay use activate
   } else {
     print $"❌ pyenv environment not found: ($env_path)"
   }
