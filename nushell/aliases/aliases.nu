@@ -251,7 +251,25 @@ def as [command: string = ""] {
 # ---------------------- Sketchybar ---------------------- #
 alias bar-load = sketchybar --reload
 
-# >>> Python <<<
+# ------------------- Pyenv Integration ------------------ #
+# Helper function to activate a pyenv virtualenv
+def use_pyenv_env [env_name: string] {
+  let pyenv_root = ($env.HOME | path join ".pyenv")
+  let env_path = ($pyenv_root | path join "versions" $env_name)
+  let bin_path = ($env_path | path join "bin")
+
+  if ($env_path | path exists) {
+    overlay use --env ~/.config/nushell/overlays/pyenv_activate.nu \
+      --env-vars [
+        __VIRTUAL_ENV__ = $env_path
+        __BIN_NAME__ = "bin"
+        __VIRTUAL_PROMPT__ = $env_name
+      ]
+  } else {
+    print $"❌ pyenv environment not found: ($env_path)"
+  }
+}
+
 # --- uv ---
 # Activate virtual environment
 # alias uv_activate = ['use' ['.venv' (if (uname | get operating-system) == 'Windows' { 'Scripts' } else { 'bin' }) 'activate.nu'] | path join] str join ' '

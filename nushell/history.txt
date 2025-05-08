@@ -1707,3 +1707,6 @@ pyenv virtualenv 3.13.2 zed
 pyenv activate zed<\n>
 pyenv virtualenvs
 gaa
+gcam 'add pyenv overlay for nushell'
+gps
+stow-all
