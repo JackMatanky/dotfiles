@@ -21,6 +21,7 @@ export GIT_CONFIG_GLOBAL="$XDG_CONFIG_HOME/git/config"
 # -------------------- Cargo Binaries -------------------- #
 export PATH="$HOME/.cargo/bin:$PATH"
 
+
 # -------------------------------------------------------- #
 #              Homebrew Installation Directory             #
 # -------------------------------------------------------- #
@@ -65,6 +66,30 @@ fi
 
 
 # -------------------------------------------------------- #
+#                Session & Completion Files                #
+# -------------------------------------------------------- #
+export ZSH_SESSION="$XDG_CONFIG_HOME/.zsh_sessions"
+mkdir -p "$(dirname "$ZSH_SESSION")"
+
+export ZCOMPFILE="$XDG_CONFIG_HOME/.zcompdump"
+mkdir -p "$(dirname "$ZCOMPFILE")"
+
+
+# -------------------------------------------------------- #
+#                   History Configuration                  #
+# -------------------------------------------------------- #
+export HISTSIZE=10000                           # Number of commands kept in memory
+export SAVEHIST=10000                           # Number of commands saved to the file
+export HISTFILE="$XDG_CONFIG_HOME/.zsh_history" # Location of the history file
+mkdir -p "$(dirname "$HISTFILE")"
+
+setopt HIST_FCNTL_LOCK               # Prevent simultaneous history writes
+setopt HIST_IGNORE_DUPS              # Ignore consecutive duplicates
+setopt HIST_IGNORE_SPACE             # Ignore commands starting with a space
+setopt SHARE_HISTORY                 # Share history across Zsh instances
+
+
+# -------------------------------------------------------- #
 #          Programming Language Environment Setup          #
 # -------------------------------------------------------- #
 
@@ -101,28 +126,11 @@ fi
 # ------------------------ Nushell ----------------------- #
 export NU_CONFIG_DIR="$XDG_CONFIG_HOME/nushell"
 
-# -------------------------------------------------------- #
-#                Session & Completion Files                #
-# -------------------------------------------------------- #
-export ZSH_SESSION="$XDG_CONFIG_HOME/.zsh_sessions"
-mkdir -p "$(dirname "$ZSH_SESSION")"
-
-export ZCOMPFILE="$XDG_CONFIG_HOME/.zcompdump"
-mkdir -p "$(dirname "$ZCOMPFILE")"
-
-# -------------------------------------------------------- #
-#                   History Configuration                  #
-# -------------------------------------------------------- #
-export HISTSIZE=10000                           # Number of commands kept in memory
-export SAVEHIST=10000                           # Number of commands saved to the file
-export HISTFILE="$XDG_CONFIG_HOME/.zsh_history" # Location of the history file
-mkdir -p "$(dirname "$HISTFILE")"
-
-setopt HIST_FCNTL_LOCK               # Prevent simultaneous history writes
-setopt HIST_IGNORE_DUPS              # Ignore consecutive duplicates
-setopt HIST_IGNORE_SPACE             # Ignore commands starting with a space
-setopt SHARE_HISTORY                 # Share history across Zsh instances
-
+# ------------------------ Direnv ------------------------ #
+# Docs: https://direnv.net
+if command -v direnv &>/dev/null; then
+  eval "$(direnv hook zsh)"
+fi
 
 # -------------------------------------------------------- #
 #                  Tooling & Integrations                  #

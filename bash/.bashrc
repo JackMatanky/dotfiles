@@ -62,6 +62,15 @@ elif [[ "$OS" == "Linux" ]]; then
   export PATH="/usr/lib/jvm/java-17-openjdk-amd64/bin:$PATH"
 fi
 
+
+# -------------------------------------------------------- #
+#                   History Configuration                  #
+# -------------------------------------------------------- #
+export HISTSIZE=10000
+export HISTFILE="$XDG_CONFIG_HOME/.bash_history"
+mkdir -p "$(dirname "$HISTFILE")"
+
+
 # -------------------------------------------------------- #
 #          Programming Language Environment Setup          #
 # -------------------------------------------------------- #
@@ -101,13 +110,11 @@ fi
 # ------------------------ Nushell ----------------------- #
 export NU_CONFIG_DIR="$XDG_CONFIG_HOME/nushell"
 
-
-# -------------------------------------------------------- #
-#                   History Configuration                  #
-# -------------------------------------------------------- #
-export HISTSIZE=10000
-export HISTFILE="$XDG_CONFIG_HOME/.bash_history"
-mkdir -p "$(dirname "$HISTFILE")"
+# ------------------------- Direnv ------------------------ #
+# Docs: https://direnv.net
+if command -v direnv &>/dev/null; then
+  eval "$(direnv hook bash)"
+fi
 
 # -------------------------------------------------------- #
 #                  Tooling & Integrations                  #

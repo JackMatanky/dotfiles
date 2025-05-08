@@ -114,6 +114,15 @@ chmod +x scripts/setup.sh
 
 ### Shell Enhancements
 
+- [Direnv](https://direnv.net/)
+
+  - Load/unload environment variables based on $PWD
+  - GitHub: https://github.com/direnv/direnv
+
+  ```sh
+  brew install direnv
+  ```
+
 - [Atuin](https://github.com/atuinsh/atuin)
 
   - Shell history replacement with structured search and optional sync for zsh, bash, fish and nushell
