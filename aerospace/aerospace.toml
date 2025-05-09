@@ -82,23 +82,32 @@ run = 'layout floating'
 if.app-id = 'com.apple.calculator'
 run = 'layout floating'
 
+# Media Player - VLC
+[[on-window-detected]]
+if.app-id = 'org.videolan.vlc'
+run = 'layout floating'
+
 # Predifined Workspace Layouts
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace 1'
 
+# Browser - Zen
 [[on-window-detected]]
 if.app-id = 'app.zen-browser.zen'
 run = 'move-node-to-workspace 2'
 
+# Browser - Safari
 [[on-window-detected]]
 if.app-id = 'com.apple.Safari'
 run = 'move-node-to-workspace 2'
 
+# IDE - Zed
 [[on-window-detected]]
 if.app-id = 'dev.zed.Zed'
 run = 'move-node-to-workspace 3'
 
+# SRS - Anki
 [[on-window-detected]]
 if.app-id = 'net.ankiweb.dtop'
 run = 'move-node-to-workspace 4'
@@ -107,16 +116,19 @@ run = 'move-node-to-workspace 4'
 # if.app-id = 'com.vscodium'
 # run = 'move-node-to-workspace 5'
 
+# IDE - Visual Studio Code
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
 run = 'move-node-to-workspace 5'
 
+# SRS - Anki Notes Editor
 # Does not work, do not know why
 [[on-window-detected]]
 # if.app-id = 'net.ankiweb.dtop'
 if.window-title-regex-substring = 'browse\s.*?of.*?notes\sselected.*'
 run = 'move-node-to-workspace 6'
 
+# Terminal Emulator - Ghostty
 [[on-window-detected]]
 if.app-id = "com.mitchellh.ghostty"
 run = 'move-node-to-workspace 7'
@@ -130,6 +142,12 @@ run = 'move-node-to-workspace 7'
 if.app-id = 'com.apple.mail'
 run = 'move-node-to-workspace 8'
 
+# Slack
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace 8'
+
+# ChatGPT
 [[on-window-detected]]
 if.app-id = "com.openai.chat"
 run = 'move-node-to-workspace 9'
@@ -239,16 +257,16 @@ alt-0 = 'workspace 10'
 # alt-right = 'workspace next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
-alt-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
-alt-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
-alt-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
-alt-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
-alt-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
-alt-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
-alt-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
-alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
-alt-shift-0 = 'move-node-to-workspace 10 --focus-follows-window'
+alt-ctrl-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
+alt-ctrl-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
+alt-ctrl-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
+alt-ctrl-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
+alt-ctrl-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
+alt-ctrl-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
+alt-ctrl-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
+alt-ctrl-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
+alt-ctrl-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
+alt-ctrl-shift-0 = 'move-node-to-workspace 10 --focus-follows-window'
 
 # alt-shift-left = 'move-node-to-workspace prev --focus-follows-window'
 # alt-shift-right = 'move-node-to-workspace next --focus-follows-window'

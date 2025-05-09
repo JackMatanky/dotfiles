@@ -1754,3 +1754,6 @@ gps
 echo 'layout uv' > .envrc
 as app
 gaa
+gcam 'update aerospace with vscode on-window-detected'
+gps
+stow-all
