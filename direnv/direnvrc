@@ -19,7 +19,7 @@ export SHELL=${SHELL:-/bin/bash}
 # Docs: https://github.com/direnv/direnv/wiki/Python#uv
 layout_uv() {
   if [[ -d ".venv" ]]; then
-    VIRTUAL_ENV="$PWD/.venv"
+    VIRTUAL_ENV="$(pwd)/.venv"
   fi
 
   if [[ -z "$VIRTUAL_ENV" || ! -d "$VIRTUAL_ENV" ]]; then
@@ -27,7 +27,7 @@ layout_uv() {
     uv init --no-readme
     rm -f hello.py
     uv venv
-    VIRTUAL_ENV="$PWD/.venv"
+    VIRTUAL_ENV="$(pwd)/.venv"
   fi
 
   PATH_add "$VIRTUAL_ENV/bin"
@@ -47,4 +47,3 @@ layout_uv() {
 # Used by tools like git, direnv, or anything that prompts for edits
 export EDITOR="${EDITOR:-nvim}"
 export VISUAL="${VISUAL:-zed}"
-

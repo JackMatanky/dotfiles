@@ -1734,3 +1734,7 @@ codium --list-extensions --show-versions > extensions.txt
 ls -l extensions.txt
 brew uninstall --force vscodium
 gaa
+gcam 'retrieve settings and other files before uninstalling vscodium; update direnv setting in zed; add vscode directory'
+gps
+stow-all
+gaa
