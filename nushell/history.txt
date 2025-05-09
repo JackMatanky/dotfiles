@@ -1738,3 +1738,19 @@ gcam 'retrieve settings and other files before uninstalling vscodium; update dir
 gps
 stow-all
 gaa
+gcam 'update direnvrc to match docs'
+gps
+gaa
+gcam 'add just file recipes for uv'
+gps
+gcam 'update pythonpath in envrc'
+gps
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo-data/.venv/bin/activate.nu ; clear
+direnv reload
+direnv allow
+gaa
+gcam 'update pythonpath in envrc'
+gps
+echo 'layout uv' > .envrc
+as app
+gaa
