@@ -1764,3 +1764,7 @@ gcam 'make ghostty partially transparent'
 gps
 stow-all
 gps
+SSH_KEY="$HOME/.ssh/id_ed25519"<\n>
+let SSH_KEY = $"($env.HOME)/.ssh/id_ed25519"
+echo $SSH_KEY
+gaa
