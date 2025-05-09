@@ -637,7 +637,7 @@ chmod +x scripts/setup.sh
 
 - [VSCodium](https://vscodium.com)
 
-  - GitHub: https://github.com/VSCodium/vscodium
+  - [Docs](https://vscodium.com); [GitHub](https://github.com/VSCodium/vscodium)
   - a community-driven, freely-licensed binary distribution of Microsoft’s
     editor VS Code without Microsoft branding, telemetry, and licensing.
 
