@@ -2,12 +2,6 @@
   /* ------------------------------------------------------ */
   /*                     Global Settings                    */
   /* ------------------------------------------------------ */
-  // * Uncomment to enable MS Marketplace extensions
-  // "extensionsGallery": {
-  //   "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
-  //   "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
-  //   "itemUrl": "https://marketplace.visualstudio.com/items"
-  // },
 
   /* ------------------------ Fonts ----------------------- */
   "editor.fontFamily": "FiraCode Nerd Font Mono",
@@ -45,6 +39,8 @@
   },
 
   "security.workspace.trust.untrustedFiles": "open",
+  "telemetry.feedback.enabled": false,
+  "telemetry.telemetryLevel": "crash",
 
   //SEGMENT - Snippets
   "[snippets]": {
@@ -150,15 +146,6 @@
   },
   //!SECTION
 
-  // Feature: Notebooks
-  "jupyter.enableExtendedPythonKernelCompletions": true,
-  "jupyter.interactiveWindow.notebookRepl": true,
-  "notebook.defaultFormatter": "detachhead.basedpyright",
-  "notebook.codeActionsOnSave": {
-    "source.organizeImports.ruff": "explicit",
-    "source.fixAll.ruff": "explicit"
-  },
-
   /* ------------------------------------------------------ */
   /*SECTION:                 NeoVim                         */
   /* ------------------------------------------------------ */
@@ -219,13 +206,13 @@
     },
     {
       "name": "python_dictionary",
-      "path": "${userHome}/dotfiles/cspell/dictionaries/user_dictionary_python.txt",
+      "path": "~/dotfiles/cspell/dictionaries/user_dictionary_python.txt",
       "addWords": true,
       "scope": "user"
     },
     {
       "name": "general_dictionary",
-      "path": "${userHome}/dotfiles/cspell/dictionaries/user_dictionary_eng.txt",
+      "path": "~/dotfiles/cspell/dictionaries/user_dictionary_eng.txt",
       "addWords": true,
       "scope": "user"
     }
@@ -320,6 +307,7 @@
   /*SECTION:           Comment Extensions                   */
   /* ------------------------------------------------------ */
   "commentAnchors.tags.separators": [" - ", ": ", " "],
+  "commentAnchors.tagHighlights.enabled": true,
   "commentAnchors.tags.displayHierarchyInWorkspace": true,
   "commentAnchors.tags.displayInGutter": true,
   "commentAnchors.tags.displayLineNumber": true,
@@ -336,58 +324,59 @@
   "commentAnchors.tags.anchors": {
     "ANCHOR": {
       "iconColor": "purple",
-      "highlightColor": "#DDB6F2", // soft lavender (Catppuccin lavender)
+      "highlightColor": "#A8C023",
       "scope": "file"
     },
     "SECTION": {
       "iconColor": "blurple",
-      "highlightColor": "#BD93F9", // soft purple (Catppuccin mauve)
+      "highlightColor": "#896afc",
       "styleMode": "full",
       "scope": "workspace",
       "behavior": "region"
     },
     "SEGMENT": {
       "iconColor": "blue",
-      "highlightColor": "#8AADF4", // soft blue (Catppuccin blue)
+      "highlightColor": "#3ea8ff",
       "styleMode": "full",
       "scope": "file",
       "behavior": "region"
     },
     "REVIEW": {
       "iconColor": "orange",
-      "highlightColor": "#FAB387", // peach tone for active attention
+      "highlightColor": "#FFB300",
       "scope": "workspace"
     },
     "TODO": {
       "iconColor": "yellow",
-      "highlightColor": "#F9E2AF", // yellow highlight (Catppuccin yellow)
+      "highlightColor": "#3ea8ff",
       "scope": "workspace"
     },
     "FIXME": {
       "iconColor": "red",
-      "highlightColor": "#F38BA8", // red highlight (Catppuccin red)
+      "highlightColor": "#F44336",
       "styleMode": "full",
       "scope": "workspace"
     },
     "STUB": {
       "iconColor": "teal",
-      "highlightColor": "#94E2D5", // teal highlight (Catppuccin teal)
+      "highlightColor": "#BA68C8",
       "scope": "file"
     },
+    // Information Tags
     "NOTE": {
       "iconColor": "green",
-      "highlightColor": "#A6E3A1", // soft green (Catppuccin green)
+      "highlightColor": "#64DD17",
       "scope": "file"
     },
     "LINK": {
       "iconColor": "emerald",
-      "highlightColor": "#2ecc71", // keeping original: emerald green
+      "highlightColor": "#2ecc71",
       "scope": "workspace",
       "behavior": "link"
     },
     "SOURCE": {
       "iconColor": "yellow",
-      "highlightColor": "#2ecc71", // matching LINK
+      "highlightColor": "#2ecc71",
       "scope": "workspace",
       "behavior": "link"
     }
@@ -458,7 +447,7 @@
 
   /* ------------------ Comment Divider ----------------- */
   // Docs: https://github.com/stackbreak/comment-divider
-  "comment-divider.length": 64,
+  "comment-divider.length": 60,
 
   // Set whether the divider will be shrink consider indent size,
   // or will be always fixed length.
@@ -488,7 +477,7 @@
   "comment-divider.subheaderAlign": "center",
 
   // Set subheader text transform style.
-  "comment-divider.subheaderTransform": "titlecase",
+  "comment-divider.subheaderTransform": "none",
   "comment-divider.languagesMap": {
     "html": ["<!--", "-->"],
     "just": ["#", "#"],
@@ -496,8 +485,7 @@
     "nu": ["#", "#"],
     "nushell": ["#", "#"],
     "lua": ["--", "--"],
-    "py": ["#", "#"],
-    "toml": ["#", "#"]
+    "py": ["#", "#"]
   },
 
   //!SECTION
@@ -539,7 +527,6 @@
     }
   },
   "python.defaultInterpreterPath": "~/.pyenv/versions/3.13.2/bin/python",
-  "python.languageServer": "None",
   "python.analysis.autoFormatStrings": true,
   "python.analysis.inlayHints.callArgumentNames": "partial",
   "python.analysis.inlayHints.functionReturnTypes": true,
@@ -650,7 +637,7 @@
       "server": "JACK-LENOVO-LAP\\SQLEXPRESS",
       "database": "jolt_professional_abilities_test",
       "authenticationType": "Integrated",
-      "profileName": "Jolt Professional Abilities Test",
+      "profileName": "Jolt Profesional Abilities Test",
       "password": "",
       "id": "9B85E3C8-52ED-4945-811A-CA00D08D2AE4",
       "groupId": "FC8AE99C-9366-4CD8-A953-2E47FB9B5115"
@@ -1094,8 +1081,6 @@
   //SEGMENT - Nix
   "[nix]": {
     "editor.defaultFormatter": "brettm12345.nixfmt-vscode"
-  },
-  "marimo.sandbox": true,
-  "telemetry.feedback.enabled": false
+  }
   //!SEGMENT
 }

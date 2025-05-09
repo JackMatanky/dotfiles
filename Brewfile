@@ -166,7 +166,8 @@ if OS.mac?
 
   # >>> IDEs & Editors <<<
   cask 'zed'                            # Keyboard-centric code editor
-  cask 'vscodium'                       # Open-source version of Visual Studio Code without MS branding/telemetry/licensing
+  cask 'visual-studio-code'             # Microsoft’s official code editor with extensions and debugging
+  # cask 'vscodium'                       # Open-source version of Visual Studio Code without MS branding/telemetry/licensing
 
   # >>> SQL Clients <<<
   cask 'mysqlworkbench'                 # Visual tool to design, develop and administer MySQL servers
@@ -177,7 +178,7 @@ if OS.mac?
   cask 'anki'                           # Spaced repetition flashcard learning
   cask 'xournal++'                      # Handwritten notes and PDF annotation tool
   cask 'calibre'                        # eBook management and library software
-  cask 'zotero'                         # Collect, organise, cite, and share research sources
+  cask 'zotero'                         # Collect, organize, cite, and share research sources
 
   # >>> Office & Document Tools <<<
   cask 'libreoffice'                    # Free cross-platform office suite, fresh version

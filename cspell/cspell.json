@@ -1,7 +1,13 @@
 {
   "version": "0.2",
   "language": "en,he",
-  "ignorePaths": ["node_modules/**", "venv/**", ".venv/**", "__pycache__/**"],
+  "ignorePaths": [
+    "node_modules/**",
+    "venv/**",
+    ".venv/**",
+    "__pycache__/**",
+    "**/**extensions.txt"
+  ],
   "dictionaryDefinitions": [
     // npm install -g @cspell/dict-he
     {

@@ -317,19 +317,6 @@ chmod +x scripts/setup.sh
   brew install --cask zed
   ```
 
-- [VSCodium](https://vscodium.com)
-
-  - GitHub: https://github.com/VSCodium/vscodium
-  - a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code without Microsoft branding, telemetry, and licensing.
-
-  ```sh
-  brew install --cask vscodium
-  ```
-
-  - Microsoft Marketplace Setup:
-    - https://github.com/flathub/com.vscodium.codium/issues/90
-    - https://github.com/VSCodium/vscodium/pull/674
-
 - [VS Code](https://code.visualstudio.com/)
 
   - Extensible code editor.
@@ -626,6 +613,23 @@ chmod +x scripts/setup.sh
 ---
 
 ## Unused / Archived Programs
+
+- [VSCodium](https://vscodium.com)
+
+  - GitHub: https://github.com/VSCodium/vscodium
+  - a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code without Microsoft branding, telemetry, and licensing.
+
+  ```sh
+  brew install --cask vscodium
+  ```
+
+  - Microsoft Marketplace Setup:
+
+    - https://github.com/flathub/com.vscodium.codium/issues/90
+    - https://github.com/VSCodium/vscodium/pull/674
+
+  - Note:
+    - I stopped using VSCodium because it became to slow and often their were glitches in the UI
 
 - [MuPDF Tools](https://mupdf.com/) (Archived)
 

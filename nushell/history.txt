@@ -1717,3 +1717,20 @@ git add .
 git commit -m 'update use_pyenv function in nushell'
 git push
 overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo-data/.venv/bin/activate.nu ; clear
+gcam 'add overlay use to config.nu'
+gps
+stow-all
+use_pyenv_env zed
+which python
+pyenv virtualenvs
+pyenv activate zed
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo-data/.venv/bin/activate.nu ; clear
+gcam 'update justfile'
+gps
+overlay use /Users/jack/Documents/_dev_work/hive_urban_github/geo-data/.venv/bin/activate.nu ; clear
+brew install visual-studio-code
+codium --list-extensions
+codium --list-extensions --show-versions > extensions.txt
+ls -l extensions.txt
+brew uninstall --force vscodium
+gaa

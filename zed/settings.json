@@ -387,10 +387,12 @@
 
   // Configuration for how direnv configuration should be loaded. May take 2 values:
   // 1. Load direnv configuration using `direnv export json` directly.
+  //    Use Case: You don't have shell hooks set up or use an unsupported shell
   //      "load_direnv": "direct"
   // 2. Load direnv configuration through the shell hook, works for POSIX shells and fish.
+  //    Use Case: You use direnv in your shell and have `.direnvrc` logic configured
   //      "load_direnv": "shell_hook"
-  "load_direnv": "direct",
+  "load_direnv": "shell_hook",
 
   // Settings specific to journaling
   "journal": {
@@ -442,7 +444,8 @@
     // Any key-value pairs added to this list will be added to the terminal's
     // environment. Use `:` to separate multiple values.
     "env": {
-      "KEY": "XDG_CONFIG_HOME: $HOME/.config"
+      "XDG_CONFIG_HOME": "/Users/jack/.config",
+      "PYENV_ROOT": "/Users/jack/.pyenv"
     },
     // Activate the python virtual environment, if one is found, in the
     // terminal's working directory (as resolved by the working_directory
@@ -782,7 +785,7 @@
       ]
     },
     "Ruby": {
-      "language_servers": ["solargraph", "!ruby-lsp", "!rubocop", "..."]
+      "language_servers": ["solargraph", "!ruby-lsp", "rubocop", "..."]
     },
     "SCSS": {
       "prettier": {

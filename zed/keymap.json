@@ -5,87 +5,6 @@
 // ----------------------------------------------------------------------------
 
 [
-  // >>> Terminal <<<
-  {
-    "context": "Workspace",
-    "bindings": {
-      "ctrl-/": "workspace::ToggleBottomDock",
-      "ctrl-`": "workspace::ToggleBottomDock"
-    }
-  },
-
-  // >>> Empty Pane <<<
-  {
-    "context": "EmptyPane || SharedScreen",
-    "bindings": {
-      "space space": "file_finder::Toggle",
-      "space f n": "workspace::NewFile",
-      "space f p": "projects::OpenRecent",
-      "space s g": "workspace::NewSearch",
-      "space q q": "zed::Quit"
-    }
-  },
-
-  // >>> Pane Navigation <<<
-  {
-    "context": "Dock || Terminal || Editor",
-    "bindings": {
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-l": "workspace::ActivatePaneRight",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown"
-    }
-  },
-
-  // >>> Dock Panel Controls <<<
-  {
-    "context": "GitPanel",
-    "bindings": {
-      "q": "git_panel::Close"
-    }
-  },
-  {
-    "context": "AgentPanel",
-    "bindings": {
-      "ctrl-\\": "workspace::ToggleRightDock",
-      "cmd-k": "workspace::ToggleRightDock"
-    }
-  },
-
-  // >>> Project Panel (File Explorer) <<<
-  {
-    "context": "ProjectPanel && not_editing",
-    "bindings": {
-      "a": "project_panel::NewFile",
-      "A": "project_panel::NewDirectory",
-      "r": "project_panel::Rename",
-      "d": "project_panel::Delete",
-      "x": "project_panel::Cut",
-      "c": "project_panel::Copy",
-      "p": "project_panel::Paste",
-      "q": "workspace::ToggleLeftDock",
-      "space e": "workspace::ToggleLeftDock",
-      ":": "command_palette::Toggle",
-      "%": "project_panel::NewFile",
-      "/": "project_panel::NewSearchInDirectory",
-      "enter": "project_panel::OpenPermanent",
-      "escape": "project_panel::ToggleFocus",
-      "h": "project_panel::CollapseSelectedEntry",
-      "j": "menu::SelectNext",
-      "k": "menu::SelectPrevious",
-      "l": "project_panel::ExpandSelectedEntry",
-      "o": "project_panel::OpenPermanent",
-      "shift-d": "project_panel::Delete",
-      "shift-r": "project_panel::Rename",
-      "t": "project_panel::OpenPermanent",
-      "v": "project_panel::OpenPermanent",
-      "shift-g": "menu::SelectLast",
-      "g g": "menu::SelectFirst",
-      "-": "project_panel::SelectParent",
-      "ctrl-6": "pane::AlternateFile"
-    }
-  },
-
   // >>> Editor: Main Bindings <<<
   {
     "context": "Editor && VimControl && !VimWaiting && !menu",
@@ -178,6 +97,14 @@
     }
   },
 
+  // >>> Editor: Insert Mode <<<
+  {
+    "context": "Editor && vim_mode == insert && !VimWaiting && !VimObject",
+    "bindings": {
+      "shift-alt-f": "editor::Format"
+    }
+  },
+
   // >>> Editor: Visual Mode <<<
   {
     "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
@@ -206,6 +133,87 @@
     "bindings": {
       "o": "editor::ExpandAllDiffHunks",
       "r": "git::Restore"
+    }
+  },
+
+  // >>> Terminal <<<
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-/": "workspace::ToggleBottomDock",
+      "ctrl-`": "workspace::ToggleBottomDock"
+    }
+  },
+
+  // >>> Empty Pane <<<
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      "space space": "file_finder::Toggle",
+      "space f n": "workspace::NewFile",
+      "space f p": "projects::OpenRecent",
+      "space s g": "workspace::NewSearch",
+      "space q q": "zed::Quit"
+    }
+  },
+
+  // >>> Pane Navigation <<<
+  {
+    "context": "Dock || Terminal || Editor",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown"
+    }
+  },
+
+  // >>> Dock Panel Controls <<<
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "q": "git_panel::Close"
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-\\": "workspace::ToggleRightDock",
+      "cmd-k": "workspace::ToggleRightDock"
+    }
+  },
+
+  // >>> Project Panel (File Explorer) <<<
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "A": "project_panel::NewDirectory",
+      "r": "project_panel::Rename",
+      "d": "project_panel::Delete",
+      "x": "project_panel::Cut",
+      "c": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "q": "workspace::ToggleLeftDock",
+      "space e": "workspace::ToggleLeftDock",
+      ":": "command_palette::Toggle",
+      "%": "project_panel::NewFile",
+      "/": "project_panel::NewSearchInDirectory",
+      "enter": "project_panel::OpenPermanent",
+      "escape": "project_panel::ToggleFocus",
+      "h": "project_panel::CollapseSelectedEntry",
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrevious",
+      "l": "project_panel::ExpandSelectedEntry",
+      "o": "project_panel::OpenPermanent",
+      "shift-d": "project_panel::Delete",
+      "shift-r": "project_panel::Rename",
+      "t": "project_panel::OpenPermanent",
+      "v": "project_panel::OpenPermanent",
+      "shift-g": "menu::SelectLast",
+      "g g": "menu::SelectFirst",
+      "-": "project_panel::SelectParent",
+      "ctrl-6": "pane::AlternateFile"
     }
   },
 
