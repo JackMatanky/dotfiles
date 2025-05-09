@@ -4,13 +4,28 @@ Dotfiles repository managed with **GNU Stow** for **macOS** and **Linux (Ubuntu)
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Core System Tools](#core-system-tools)
-- [Development Environment](#development-environment)
-- [Personal Knowledge Management (PKM)](#personal-knowledge-management-pkm)
-- [Media and Document Processing](#media-and-document-processing)
-- [Browsers](#browsers)
-- [Unused / Archived Programs](#unused--archived-programs)
+- [Dotfiles](#dotfiles)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Core System Tools](#core-system-tools)
+    - [Shells](#shells)
+    - [Terminal Emulators](#terminal-emulators)
+    - [Core CLI Tools](#core-cli-tools)
+    - [Shell Enhancements](#shell-enhancements)
+    - [CLI Utilities](#cli-utilities)
+    - [Terminal Multiplexers](#terminal-multiplexers)
+    - [Version Control](#version-control)
+  - [Development Environment](#development-environment)
+    - [Language Server Protocols (LSPs)](#language-server-protocols-lsps)
+    - [Python Tooling](#python-tooling)
+    - [Java](#java)
+    - [Markdown Tooling](#markdown-tooling)
+    - [Rust](#rust)
+    - [Formatters](#formatters)
+  - [Personal Knowledge Management (PKM)](#personal-knowledge-management-pkm)
+  - [Media and Document Processing](#media-and-document-processing)
+  - [Browsers](#browsers)
+  - [Unused / Archived Programs](#unused--archived-programs)
 
 ---
 
@@ -617,7 +632,8 @@ chmod +x scripts/setup.sh
 - [VSCodium](https://vscodium.com)
 
   - GitHub: https://github.com/VSCodium/vscodium
-  - a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code without Microsoft branding, telemetry, and licensing.
+  - a community-driven, freely-licensed binary distribution of Microsoft’s
+    editor VS Code without Microsoft branding, telemetry, and licensing.
 
   ```sh
   brew install --cask vscodium
@@ -629,7 +645,8 @@ chmod +x scripts/setup.sh
     - https://github.com/VSCodium/vscodium/pull/674
 
   - Note:
-    - I stopped using VSCodium because it became to slow and often their were glitches in the UI
+    - I stopped using VSCodium because it became to slow and often their were
+      glitches in the UI
 
 - [MuPDF Tools](https://mupdf.com/) (Archived)
 
