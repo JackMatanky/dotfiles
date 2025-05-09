@@ -7,28 +7,29 @@
 #              https://docs.brew.sh/Brew-Bundle-and-Brewfile
 # -----------------------------------------------------------------------------
 
-# >>> Homebrew Taps <<<
+# --------------------- Homebrew Taps -------------------- #
 tap 'homebrew/bundle'                   # Manage multiple Homebrew dependencies
 tap 'homebrew/services'                 # Start/stop macOS services
 
-# ---------------------------------------------
-# Terminal Environment
-# ---------------------------------------------
-# >>> Shells <<<
+# -------------------------------------------------------- #
+#                   Terminal Environment                   #
+# -------------------------------------------------------- #
+
+# ------------------------ Shells ------------------------ #
 brew 'bash'                             # Bourne-Again SHell, a UNIX command interpreter
 brew 'nushell'                          # Modern shell with structured data support
 
-# >>> Terminal Utilities <<<
+# ------------------ Terminal Utilities ------------------ #
 brew 'zellij'                           # Terminal workspace manager and multiplexer
 brew 'tmux'                             # Terminal multiplexer
 brew 'tpm'                              # Tmux plugin manager
 
-# >>> Core Shell Tools <<<
+# ------------------- Core Shell Tools ------------------- #
 brew 'stow'                             # Dotfiles symlink manager: Organize software neatly under a single directory tree (e.g. /usr/local)
 brew 'keychain'                         # Securely manage SSH keys
 brew 'just'                             # Handy way to save and run project-specific commands
 
-# >>> Shell Enhancements <<<
+# ------------------ Shell Enhancements ------------------ #
 brew 'direnv'                           # Load/unload environment variables based on $PWD
 brew 'atuin', restart_service: :changed # Improved shell history for zsh, bash, fish and nushell
 brew 'carapace'                         # Multi-shell multi-command argument completer
@@ -36,12 +37,12 @@ brew 'starship'                         # Fast, customizable shell prompt
 brew 'shfmt'                            # Shell formatter for POSIX sh, bash, zsh, ksh, and fish.
 brew 'yazi'                             # Terminal file manager with vim-like keybindings
 
-# >>> Shell Plugins <<<
+# --------------------- Shell Plugins -------------------- #
 brew 'bash-completion@2'                # Completion scripts for Bash 4.1+
 brew 'zsh-autosuggestions'              # Fish-like fast/unobtrusive autosuggestions for zsh
 brew 'zsh-syntax-highlighting'          # Syntax highlights for commands in Zsh
 
-# >>> CLI Utilities <<<
+# --------------------- CLI Utilities -------------------- #
 brew 'zoxide'                           # Smarter `cd` shell command to navigate your filesystem faster
 brew 'eza'                              # Modern, maintained replacement for ls
 brew 'fzf'                              # Command-line fuzzy finder written in Go
@@ -49,19 +50,23 @@ brew 'fd'                               # Simple, fast and user-friendly alterna
 brew 'ripgrep'                          # Fast file content search (grep alternative)
 brew 'bat'                              # File Viewer: Clone of cat(1) with syntax highlighting and Git integration
 
-# ---------------------------------------------
-# Version Control
-# ---------------------------------------------
+
+# -------------------------------------------------------- #
+#                      Version Control                     #
+# -------------------------------------------------------- #
+
 brew 'git'                              # Distributed revision control system
 brew 'git-filter-repo'                  # Filter and rewrite Git repository history
 brew 'git-lfs'                          # Git extension for versioning large files
 brew 'git-delta'                        # Syntax-highlighting pager for git and diff output
 brew 'jesseduffield/lazygit/lazygit'    # Simple terminal UI for Git commands
 
-# ---------------------------------------------
-# Development Environment
-# ---------------------------------------------
-# >>> Languages & Runtimes <<<
+
+# -------------------------------------------------------- #
+#                  Development Environment                 #
+# -------------------------------------------------------- #
+
+# ----------------- Languages & Runtimes ----------------- #
 brew 'lua'                                      # Lightweight scripting language
 brew 'mysql', restart_service: :changed         # MySQL: Open source RDBMS server
 brew 'node'                                     # Node.js runtime platform built on V8 to build network applications
@@ -71,7 +76,7 @@ brew 'python@3.13'                              # Python programming language
 brew 'ruby'                                     # Ruby programming language
 # brew "rust"                                     # Rust programming language
 
-# >>> Language Server Protocols (LSPs) <<<
+# ----------- Language Server Protocols (LSPs) ----------- #
 brew 'marksman'                         # Markdown LSP
 brew 'lua-language-server'              # Lua LSP
 brew 'rust-analyzer'                    # Rust LSP
