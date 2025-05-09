@@ -1760,3 +1760,6 @@ stow-all
 gcam 'update aerospace move node to workspace alt-shift to alt-ctrl-shift (meta)'
 gps
 stow-all
+gcam 'make ghostty partially transparent'
+gps
+stow-all
