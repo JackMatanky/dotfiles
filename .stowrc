@@ -7,6 +7,8 @@
 --ignore='.git/'
 --ignore='.ropeproject/'
 --ignore=\.ropeproject/
+--ignore='.vscode/'
+--ignore=\.vscode/
 
 --ignore='_assets'
 --ignore='_notes'

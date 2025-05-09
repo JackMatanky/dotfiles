@@ -1768,3 +1768,7 @@ SSH_KEY="$HOME/.ssh/id_ed25519"<\n>
 let SSH_KEY = $"($env.HOME)/.ssh/id_ed25519"
 echo $SSH_KEY
 gaa
+gcam 'try adding a zprofile to fix the ssh passphrase problem in vs code'
+gps
+stow-all
+unstow .vscode
