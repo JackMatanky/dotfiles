@@ -1763,3 +1763,4 @@ stow-all
 gcam 'make ghostty partially transparent'
 gps
 stow-all
+gps
