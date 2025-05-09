@@ -38,34 +38,60 @@
 
 theme = catppuccin-macchiato
 
+# --------------------------- Font --------------------------- #
+
 font-family = "FiraCode Nerd Font Mono"
 font-size = 16
 
-background-blur-radius = 20
-# background-opacity = 0.7
-# background-blur-radius = 20
+# Enables thicker font rendering if supported.
+# Only works on macOS. Has no effect on other platforms.
+# Docs: https://ghostty.org/docs/config/reference#font-thicken
+font-thicken = false
+
+# Sets strength of thickened font when enabled.
+# Valid range: 0 (lightest) to 255 (strongest).
+# Only applies when `font-thicken` is `true` and on macOS.
+# Docs: https://ghostty.org/docs/config/reference#font-thicken-strength
+font-thicken-strength = 225
+
+
+# ------------------------ Background ------------------------ #
+
+# Background opacity: 1 = fully opaque, 0 = fully transparent.
+# Values outside [0, 1] are clamped.
+# On macOS, requires restart and is disabled in native fullscreen.
+# Docs: https://ghostty.org/docs/config/reference#background-opacity
+background-opacity = 0.7
+
+# Enables background blur when opacity < 1.
+# Accepts an int (blur level), true (default 20), or false (0).
+# May reduce performance or cause visual glitches.
+# Docs: https://ghostty.org/docs/config/reference#background-blur
+background-blur = false
 
 window-decoration = true
 
 mouse-hide-while-typing = true
 
-# Whether to automatically copy selected text to the clipboard.
-#   `true` will prefer to copy to the selection clipboard,
-#   otherwise it will copy to the system clipboard.
-# The value `clipboard` will always copy text to the selection and system clipboards.
-# Middle-click paste will always use the selection clipboard and is always enabled.
-# The default value is true on Linux and macOS.
+# Automatically copies selected text to the clipboard.
+# `true` uses the selection clipboard;
+# `clipboard` copies to both.
+# Middle-click paste always uses selection clipboard.
+# Docs: https://ghostty.org/docs/config/reference#copy-on-select
 copy-on-select = true
 
-# keybind = global:cmd+/=toggle_quick_terminal
-keybind = performable:cmd+c=copy_to_clipboard
 
-# MacOS
+# --------------------------- MacOS -------------------------- #
+
 # To hide the titlebar without removing the native window borders
 # or rounded corners, use `macos-titlebar-style = hidden` instead.
 # Use `macos-titlebar-style = tabs` to enable tabs within the titlebar.
 macos-titlebar-style = hidden
 macos-option-as-alt = true
+
+
+# keybind = global:cmd+/=toggle_quick_terminal
+keybind = performable:cmd+c=copy_to_clipboard
 
 # Use Nushell as default shell
 command = /opt/homebrew/bin/nu

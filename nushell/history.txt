@@ -1757,3 +1757,6 @@ gaa
 gcam 'update aerospace with vscode on-window-detected'
 gps
 stow-all
+gcam 'update aerospace move node to workspace alt-shift to alt-ctrl-shift (meta)'
+gps
+stow-all
