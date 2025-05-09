@@ -112,7 +112,9 @@ chmod +x scripts/setup.sh
 
 - [GNU Stow](https://www.gnu.org/software/stow/)
 
-  - Dotfiles symlink farm manager which takes distinct sets of software and/or data located in separate directories on the filesystem, and makes them appear to be installed in a single directory tree.
+  - Dotfiles symlink farm manager which takes distinct sets of software and/or
+    data located in separate directories on the filesystem, and makes them
+    appear to be installed in a single directory tree.
   - Docs: https://www.gnu.org/software/stow/manual/stow.html
 
   ```sh
@@ -121,7 +123,10 @@ chmod +x scripts/setup.sh
 
 - [Keychain](https://www.funtoo.org/Keychain)
 
-  - Keychain helps you to manage SSH and GPG keys in a convenient and secure manner. It acts as a frontend to ssh-agent and ssh-add, but allows you to easily have one long running ssh-agent process per system, rather than the norm of one ssh-agent per login session.
+  - Keychain helps you to manage SSH and GPG keys in a convenient and secure
+    manner. It acts as a frontend to ssh-agent and ssh-add, but allows you to
+    easily have one long running ssh-agent process per system, rather than the
+    norm of one ssh-agent per login session.
 
   ```sh
   brew install keychain
@@ -140,7 +145,8 @@ chmod +x scripts/setup.sh
 
 - [Atuin](https://github.com/atuinsh/atuin)
 
-  - Shell history replacement with structured search and optional sync for zsh, bash, fish and nushell
+  - Shell history replacement with structured search and optional sync for zsh,
+    bash, fish and nushell
   - Docs: https://docs.atuin.sh
 
   ```sh
