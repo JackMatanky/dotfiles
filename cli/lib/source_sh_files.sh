@@ -34,10 +34,12 @@ source_sh_files() {
     local file_list
     file_list="$(find "$dir" -maxdepth 1 -type f -name "*.sh" | sort)" || true
 
-    # Convert newline-separated list into an array
+    # Convert newline-separated string to array (Bash + Zsh compatible)
     # IFS=$'\n' → split only on newline, preserving spaces in paths
-    local files=()
-    IFS=$'\n' read -r -a files <<<"$file_list"
+    # Uses () instead of read -a for cross-shell portability
+    IFS=$'\n'
+    files=($file_list)
+    unset IFS
 
     # --------- Source Readable Files And Log Actions -------- #
     # Use `declare -F log_info` to check for presence of the logging function
@@ -56,7 +58,7 @@ source_sh_files() {
 
         # Optionally log if log_info is defined
         if declare -F log_info &>/dev/null; then
-          log_info "Sourced: $file"
+            log_info "Sourced: $file"
         fi
     done
 }
