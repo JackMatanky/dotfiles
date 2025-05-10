@@ -332,6 +332,16 @@ chmod +x scripts/setup.sh
   brew install git-delta
   ```
 
+- [GitLeaks](https://gitleaks.io/)
+  
+  - GitHub: https://github.com/gitleaks/gitleaks
+  - Gitleaks is a tool for detecting secrets like passwords, API keys, and tokens
+    in git repos, files, and whatever else you wanna throw at it via stdin.
+  
+  ```sh
+  brew install gitleaks
+  ```
+
 ## Development Environment
 
 - [Neovim](https://neovim.io/)
