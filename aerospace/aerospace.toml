@@ -130,7 +130,12 @@ run = 'move-node-to-workspace 6'
 
 # Terminal Emulator - Ghostty
 [[on-window-detected]]
-if.app-id = "com.mitchellh.ghostty"
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace 7'
+
+# Neovim GUI - Neovide
+[[on-window-detected]]
+if.app-id = 'com.neovide.neovide'
 run = 'move-node-to-workspace 7'
 
 # [[on-window-detected]]
@@ -149,17 +154,17 @@ run = 'move-node-to-workspace 8'
 
 # ChatGPT
 [[on-window-detected]]
-if.app-id = "com.openai.chat"
+if.app-id = 'com.openai.chat'
 run = 'move-node-to-workspace 9'
 
 # Gemini
 [[on-window-detected]]
-if.app-id = "com.apple.Safari.WebApp.D23A73B0-A971-4778-BA6C-5343B38CA19B"
+if.app-id = 'com.apple.Safari.WebApp.D23A73B0-A971-4778-BA6C-5343B38CA19B'
 run = 'move-node-to-workspace 9'
 
 # NotebookLM
 [[on-window-detected]]
-if.app-id = "com.apple.Safari.WebApp.C353A7A6-36B0-464C-B0C9-99528F2760AB"
+if.app-id = 'com.apple.Safari.WebApp.C353A7A6-36B0-464C-B0C9-99528F2760AB'
 run = 'move-node-to-workspace 10'
 
 # Possible values: (qwerty|dvorak)
