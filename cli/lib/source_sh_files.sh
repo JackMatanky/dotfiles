@@ -20,7 +20,7 @@ source_sh_files() {
     # If the directory is missing, emit a warning using `log_warn` if available,
     # otherwise fall back to stderr with `echo`. This prevents silent failures.
     if [[ ! -d "$dir" ]]; then
-        if declare -F log_warn &>/dev/null; then
+        if typeset -f log_warn &>/dev/null; then
             log_warn "Directory not found: $dir"
         else
             echo "source_sh_files: Directory not found: $dir" >&2
@@ -50,15 +50,24 @@ source_sh_files() {
 
         # Skip the file if it is not readable (e.g., permissions issue or
         # nonexistent)
-        echo ">> Checking: $file"
-        [[ -r "$file" ]] || continue
+        # echo ">> Checking: $file"
+        # [[ -r "$file" ]] || continue
+        # Show a warning instead of silently skipping unreadable files
+        if [[ ! -r "$file" ]]; then
+            if typeset -f log_warn &>/dev/null; then
+                log_warn "Skipping unreadable file: $file"
+            else
+                echo "[WARN] Skipping unreadable file: $file" >&2
+            fi
+        fi
+
 
         # Source the file into the current shell context
         # shellcheck source=/dev/null
         source "$file"
 
         # Optionally log if log_info is defined
-        if declare -F log_info &>/dev/null; then
+        if typeset -f log_info &>/dev/null; then
             log_info "Sourced: $file"
         fi
     done
