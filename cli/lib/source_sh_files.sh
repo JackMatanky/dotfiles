@@ -2,23 +2,22 @@
 # -----------------------------------------------------------------------------
 # Filename: ~/.config/cli/lib/source_sh_files.sh
 # Function: source_sh_files
-# Usage: source_sh_files "$XDG_CONFIG_HOME/cli/env"
-# Description: Sources all readable *.sh files in a directory into the current
-#              shell. Files are loaded in lexicographic order, enabling controlled
-#              sequencing via filename prefixes (e.g., 00-core.sh, 10-brew.sh).
+# Usage: source_sh_files "$XDG_CONFIG_HOME/cli/profile"
+# Description:
+#   Sources all readable *.sh files from a specified directory into the
+#   current shell. Files are loaded in lexicographic order, enabling
+#   structured setups like 00-core.sh, 10-brew.sh, etc.
 #
-#              Designed for modular shell setups. Also logs each sourced file if
-#              a `log_info` function is defined in the current shell context.
+#   Designed for modular shell setups (Bash and Zsh compatible).
+#   Logs each sourced file if a `log_info` function is defined.
 # -----------------------------------------------------------------------------
 
-
 source_sh_files() {
-    # The target directory to search for .sh files
+    # Target directory to source from
     local dir="$1"
 
-    # -------------- Ensure Directory Existence -------------- #
-    # If the directory is missing, emit a warning using `log_warn` if available,
-    # otherwise fall back to stderr with `echo`. This prevents silent failures.
+    # ---------------- Ensure Directory Exists ---------------- #
+    # If not found, log a warning (if available) or fallback to stderr
     if [[ ! -d "$dir" ]]; then
         if typeset -f log_warn &>/dev/null; then
             log_warn "Directory not found: $dir"
@@ -28,45 +27,35 @@ source_sh_files() {
         return
     fi
 
-    # -------------------- Sort .sh Files -------------------- #
-    # Get a sorted list of *.sh files (non-recursive)
-    # `find ... | sort` ensures lexicographic load order (e.g., 00-core.sh first)
-    local file_list
-    file_list="$(find "$dir" -maxdepth 1 -type f -name "*.sh" | sort)" || true
-
-    # Convert newline-separated string to array (Bash + Zsh compatible)
-    # IFS=$'\n' → split only on newline, preserving spaces in paths
-    # Uses () instead of read -a for cross-shell portability
+    # ---------------- Collect and Sort Files ----------------- #
+    # Use find to locate *.sh files at top level and sort them lexically.
+    # This approach supports load ordering via filename prefixes.
+    # IFS=$'\n' ensures file paths with spaces are preserved during word splitting.
     IFS=$'\n'
-    files=($file_list)
+    files=($(find "$dir" \
+        -maxdepth 1 \
+        -type f \
+        -name "*.sh" | sort))
     unset IFS
 
-    # --------- Source Readable Files And Log Actions -------- #
-    # Use `declare -F log_info` to check for presence of the logging function
-    # Suppress ShellCheck dynamic sourcing warning
-
-    # Iterate over each *.sh file in the directory
+    # ----------- Source Each File With Optional Logging ----------- #
     for file in "${files[@]}"; do
 
-        # Skip the file if it is not readable (e.g., permissions issue or
-        # nonexistent)
-        # echo ">> Checking: $file"
-        # [[ -r "$file" ]] || continue
-        # Show a warning instead of silently skipping unreadable files
+        # Warn if file is unreadable instead of failing silently
         if [[ ! -r "$file" ]]; then
             if typeset -f log_warn &>/dev/null; then
                 log_warn "Skipping unreadable file: $file"
             else
                 echo "[WARN] Skipping unreadable file: $file" >&2
             fi
+            continue
         fi
 
-
-        # Source the file into the current shell context
+        # Source file into current shell (e.g., sets env vars, functions, etc.)
         # shellcheck source=/dev/null
         source "$file"
 
-        # Optionally log if log_info is defined
+        # Log successful sourcing if `log_info` is defined
         if typeset -f log_info &>/dev/null; then
             log_info "Sourced: $file"
         fi
