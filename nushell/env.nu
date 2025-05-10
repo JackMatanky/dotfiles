@@ -368,16 +368,10 @@ keychain --eval --quiet $env.SSH_KEY_PATH
     | into record
     | load-env
 
-# if ($OS == "Darwin" or $OS == "Linux") {
-#     keychain --eval --quiet $env.SSH_KEY_PATH
-#         | lines
-#         | where not ($it | is-empty)
-#         | parse "{k}={v}; export {k2};"
-#         | select k v
-#         | transpose --header-row
-#         | into record
-#         | load-env
-# }
+# Export SSH_AUTH_SOCK to launchctl for GUI apps like VS Code
+if ($OS == "Darwin" and $env.SSH_AUTH_SOCK != null) {
+    ^launchctl setenv SSH_AUTH_SOCK $env.SSH_AUTH_SOCK
+}
 
 # -------------------------------------------------------- #
 #                         Defaults                         #
