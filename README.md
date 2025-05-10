@@ -84,11 +84,23 @@ chmod +x scripts/setup.sh
     brew install bash-completion@2
     ```
 
-    Add to `.bash_profile`:
+    [Homebrew](https://formulae.brew.sh/formula/bash-completion@2) reccomends to
+    add the following to `.bash_profile`:
 
     ```sh
     [[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
     ```
+
+    This ensures Bash completion is initialized properly in macOS login shells,
+    which source .bash_profile by default.  
+    However, in this dotfiles setup, all interactive shell logic — including
+    Bash completions — is centralized in .bashrc, and .bash_profile simply
+    sources .bashrc. This avoids duplication, keeps .bash_profile minimal, and
+    ensures that completions are still available in both login and interactive
+    shells without repeating logic.  
+    For a modular and maintainable setup, it is therefore preferable to keep
+    the completion logic in .bashrc only.
+    See, [Bash Startup Files](https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html)
 
 ### Terminal Emulators
 
@@ -115,7 +127,7 @@ chmod +x scripts/setup.sh
   - Dotfiles symlink farm manager which takes distinct sets of software and/or
     data located in separate directories on the filesystem, and makes them
     appear to be installed in a single directory tree.
-  - Docs: https://www.gnu.org/software/stow/manual/stow.html
+  - Docs: <https://www.gnu.org/software/stow/manual/stow.html>
 
   ```sh
   brew install stow
@@ -137,17 +149,33 @@ chmod +x scripts/setup.sh
 - [Direnv](https://direnv.net/)
 
   - Load/unload environment variables based on $PWD
-  - GitHub: https://github.com/direnv/direnv
+  - GitHub: <https://github.com/direnv/direnv>
 
   ```sh
   brew install direnv
+  ```
+
+- [shellcheck](https://www.shellcheck.net/)
+
+  - Static analysis and lint tool, for (ba)sh scripts
+
+  ```sh
+  brew install shellcheck
+  ```
+
+- [shfmt](https://github.com/mvdan/sh)
+
+  - Shell formatter for POSIX sh, bash, zsh, ksh, and fish.
+
+  ```sh
+  brew install shfmt
   ```
 
 - [Atuin](https://github.com/atuinsh/atuin)
 
   - Shell history replacement with structured search and optional sync for zsh,
     bash, fish and nushell
-  - Docs: https://docs.atuin.sh
+  - Docs: <https://docs.atuin.sh>
 
   ```sh
   brew install atuin
@@ -169,17 +197,9 @@ chmod +x scripts/setup.sh
   brew install starship
   ```
 
-- [shfmt](https://github.com/mvdan/sh)
-
-  - Shell formatter for POSIX sh, bash, zsh, ksh, and fish.
-
-  ```sh
-  brew install shfmt
-  ```
-
 - [Yazi](https://github.com/sxyazi/yazi)
 
-  - Docs: https://yazi-rs.github.io/
+  - Docs: <https://yazi-rs.github.io/>
   - Fast, modern terminal file manager with preview support.
 
   ```sh
@@ -305,7 +325,7 @@ chmod +x scripts/setup.sh
 
 - [Delta](https://github.com/dandavison/delta)
 
-  - Docs: https://dandavison.github.io/delta/introduction.html
+  - Docs: <https://dandavison.github.io/delta/introduction.html>
   - A syntax-highlighting pager for git, diff, grep, and blame output
 
   ```sh
@@ -345,6 +365,9 @@ chmod +x scripts/setup.sh
   ```sh
   brew install --cask visual-studio-code
   ```
+
+  - Note: When first opening VS Code, ssh-agent did not work properly.
+    See, [VS Code SSH Passphrase Error and Solution](_notes/vscode_ssh_passphrase_error.md)
 
 ### Language Server Protocols (LSPs)
 
@@ -517,7 +540,7 @@ chmod +x scripts/setup.sh
 
 - [cSpell](https://cspell.org)
 
-  - GitHub: https://github.com/streetsidesoftware/cspell
+  - GitHub: <https://github.com/streetsidesoftware/cspell>
 
   - Spell checker for code and text.
 
@@ -647,8 +670,8 @@ chmod +x scripts/setup.sh
 
   - Microsoft Marketplace Setup:
 
-    - https://github.com/flathub/com.vscodium.codium/issues/90
-    - https://github.com/VSCodium/vscodium/pull/674
+    - <https://github.com/flathub/com.vscodium.codium/issues/90>
+    - <https://github.com/VSCodium/vscodium/pull/674>
 
   - Note:
     - I stopped using VSCodium because it became to slow and often their were

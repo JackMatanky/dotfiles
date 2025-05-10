@@ -1,9 +1,9 @@
 {
-  /* ------------------------------------------------------ */
-  /*                     Global Settings                    */
-  /* ------------------------------------------------------ */
+  /* -------------------------------------------------------- */
+  /*                      Global Settings                     */
+  /* -------------------------------------------------------- */
 
-  /* ------------------------ Fonts ----------------------- */
+  /* ------------------------- Fonts ------------------------ */
   "editor.fontFamily": "FiraCode Nerd Font Mono",
   "editor.fontSize": 15,
   "editor.fontLigatures": true,
@@ -11,7 +11,7 @@
   "editor.insertSpaces": true,
   "editor.wordWrap": "on",
 
-  /* -------------------- Bracket Pairs ------------------- */
+  /* --------------------- Bracket Pairs -------------------- */
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
@@ -29,15 +29,18 @@
   "window.restoreWindows": "preserve",
   "window.newWindowProfile": "Default",
 
+  /* ------------------- File Associations ------------------ */
   "files.associations": {
     "*.html": "html",
     "snippets/*.json": "jsonc",
     "*.nu": "nushell",
     "*.pgsql": "postgres",
-    "brew*": "ruby",
-    "uv.lock": "toml"
+    "brewf*": "ruby",
+    "uv.lock": "toml",
+    "ssh-config": "ssh_config"
   },
 
+  /* ----------------- Security & Telemetry ----------------- */
   "security.workspace.trust.untrustedFiles": "open",
   "telemetry.feedback.enabled": false,
   "telemetry.telemetryLevel": "crash",
@@ -49,9 +52,9 @@
   },
   //!SEGMENT
 
-  /* ------------------------------------------------------ */
-  /*SECTION:                Workbench                       */
-  /* ------------------------------------------------------ */
+  /* -------------------------------------------------------- */
+  /*SECTION:                 Workbench                        */
+  /* -------------------------------------------------------- */
   "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
 
   "workbench.settings.applyToAllProfiles": [
@@ -74,16 +77,16 @@
   ],
 
   "workbench.settings.openDefaultKeybindings": true,
-  "workbench.externalBrowser": "edge",
+  "workbench.externalBrowser": "safari", // "edge"
   "workbench.experimental.enableNewProfilesUI": true,
   "workbench.commandPalette.experimental.suggestCommands": true,
   //!SECTION
 
-  /* ------------------------------------------------------ */
-  /*SECTION:          Appearance and Theme                  */
-  /* ------------------------------------------------------ */
+  /* -------------------------------------------------------- */
+  /*SECTION:            Appearance & Theme                    */
+  /* -------------------------------------------------------- */
   "workbench.colorCustomizations": {
-    "editorCursor.foreground": "#cba6f7"
+    "editorCursor.foreground": "#89b4fa"
   },
   //SEGMENT - Theme
   "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
@@ -102,9 +105,9 @@
 
   //!SECTION
 
-  /* ------------------------------------------------------ */
-  /*SECTION:            Shell & Terminal                    */
-  /* ------------------------------------------------------ */
+  /* -------------------------------------------------------- */
+  /*SECTION:             Shell & Terminal                     */
+  /* -------------------------------------------------------- */
   //SEGMENT - Nushell
   "[nushell]": {
     "editor.defaultFormatter": "constneo.vscode-nushell-format",
@@ -119,6 +122,7 @@
     "/Users/jack/dotfiles/nushell",
     "/Users/jack/dotfiles/nushell/aliases",
     "/Users/jack/dotfiles/nushell/completions",
+    "/Users/jack/dotfiles/nushell/overlays",
     "/Users/jack/dotfiles/nushell/themes"
   ],
   "nushellLanguageServer.nushellExecutablePath": "nu",
@@ -146,9 +150,16 @@
   },
   //!SECTION
 
-  /* ------------------------------------------------------ */
-  /*SECTION:                 NeoVim                         */
-  /* ------------------------------------------------------ */
+  /* -------------------------- SSH ------------------------- */
+  "remote.SSH.configFile": "/Users/jack/dotfiles/ssh/ssh-config",
+  "remote.SSH.showLoginTerminal": true,
+
+  /* ---------------------- Shellcheck ---------------------- */
+  "shellcheck.executablePath": "/opt/homebrew/bin/shellcheck",
+
+  /* -------------------------------------------------------- */
+  /*SECTION:                  NeoVim                          */
+  /* -------------------------------------------------------- */
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
   //"vscode-neovim.neovimExecutablePaths.windows": "C:\\path\\to\\nvim.exe"
   "extensions.experimental.affinity": {
@@ -156,13 +167,13 @@
   },
   "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
 
-  /* ---------------- Neovim UI Modifier ---------------- */
+  /* ------------------ Neovim UI Modifier ------------------ */
   "nvim-ui.nvimColorNormal": "#fab387", // Peach – calm, default state
   "nvim-ui.nvimColorInsert": "#89b4fa", // Blue – active insertion, not alarming
   "nvim-ui.nvimColorVisual": "#cba6f7", // Mauve – selected/visual state
   "nvim-ui.nvimColorReplace": "#f38ba8", // Red – replace/destructive operation
 
-  /* ----------------- NeoVim Dashboard ----------------- */
+  /* ------------------- NeoVim Dashboard ------------------- */
   "nvimDashboard.fontSize": 14,
   "nvimDashboard.keybinds": [
     {
@@ -234,11 +245,11 @@
   "cSpell.languageSettings": [
     {
       "languageId": "python",
-      "dictionaries": ["python"]
+      "dictionaries": [ "python" ]
     },
     {
       "languageId": "javascript",
-      "dictionaries": ["typescript", "node"]
+      "dictionaries": [ "typescript", "node" ]
     }
   ],
   "cSpell.dictionaries": [
@@ -275,14 +286,14 @@
   "spellright.addToSystemDictionary": true,
   "spellright.notificationClass": "warning",
   "spellright.configurationScope": "user",
-  "spellright.language": ["en"],
-  "spellright.documentTypes": ["markdown", "latex"],
+  "spellright.language": [ "en" ],
+  "spellright.documentTypes": [ "markdown", "latex" ],
   //!Section
 
   /* ------------------------------------------------------ */
   /*SECTION:           Formatter Settings                   */
   /* ------------------------------------------------------ */
-  "prettier.documentSelectors": ["*/**.json"],
+  "prettier.documentSelectors": [ "*/**.json" ],
   "prettier.endOfLine": "lf",
   "prettier.htmlWhitespaceSensitivity": "css",
   "prettier.semi": true,
@@ -306,7 +317,7 @@
   /* ------------------------------------------------------ */
   /*SECTION:           Comment Extensions                   */
   /* ------------------------------------------------------ */
-  "commentAnchors.tags.separators": [" - ", ": ", " "],
+  "commentAnchors.tags.separators": [ " - ", ": ", " " ],
   "commentAnchors.tagHighlights.enabled": true,
   "commentAnchors.tags.displayHierarchyInWorkspace": true,
   "commentAnchors.tags.displayInGutter": true,
@@ -445,9 +456,9 @@
   },
   //!SEGMENT
 
-  /* ------------------ Comment Divider ----------------- */
+  /* -------------------- Comment Divider ------------------- */
   // Docs: https://github.com/stackbreak/comment-divider
-  "comment-divider.length": 60,
+  "comment-divider.length": 64,
 
   // Set whether the divider will be shrink consider indent size,
   // or will be always fixed length.
@@ -477,22 +488,22 @@
   "comment-divider.subheaderAlign": "center",
 
   // Set subheader text transform style.
-  "comment-divider.subheaderTransform": "none",
+  "comment-divider.subheaderTransform": "titlecase",
   "comment-divider.languagesMap": {
-    "html": ["<!--", "-->"],
-    "just": ["#", "#"],
-    "justfie": ["#", "#"],
-    "nu": ["#", "#"],
-    "nushell": ["#", "#"],
-    "lua": ["--", "--"],
-    "py": ["#", "#"]
+    "html": [ "<!--", "-->" ],
+    "just": [ "#", "#" ],
+    "justfie": [ "#", "#" ],
+    "nu": [ "#", "#" ],
+    "nushell": [ "#", "#" ],
+    "lua": [ "--", "--" ],
+    "py": [ "#", "#" ]
   },
 
   //!SECTION
 
-  // --------------------------------------------
-  // Extensions
-  // --------------------------------------------
+  /* -------------------------------------------------------- */
+  /*                        Extensions                        */
+  /* -------------------------------------------------------- */
   "liveServer.settings.donotShowInfoMsg": true,
   "latex-workshop.view.pdf.viewer": "browser",
   "redhat.telemetry.enabled": false,
@@ -508,9 +519,9 @@
   // ],
   //!SEGMENT
 
-  // --------------------------------------------
-  // Language Configurations
-  // --------------------------------------------
+  /* -------------------------------------------------------- */
+  /*                  Language Configurations                 */
+  /* -------------------------------------------------------- */
   //SECTION - Python
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
@@ -537,10 +548,10 @@
   "python.terminal.activateEnvironment": true,
   "python.terminal.shellIntegration.enabled": true,
   "python.venvPath": ".venv",
-  "python.venvFolders": ["envs", ".venv"],
+  "python.venvFolders": [ "envs", ".venv" ],
 
   //SEGMENT - Ruff
-  "ruff.path": ["/opt/homebrew/bin/ruff"],
+  "ruff.path": [ "/opt/homebrew/bin/ruff" ],
   "ruff.lineLength": 80,
   "ruff.organizeImports": true,
   //!SEGMENT
@@ -789,7 +800,9 @@
   "html.format.wrapLineLength": 200,
   //!SECTION
 
-  //SECTION - CSS
+  /* ---------------------------------------------------- */
+  /*SECTION -                 CSS                         */
+  /* ---------------------------------------------------- */
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -876,7 +889,9 @@
   ],
   //!SECTION
 
-  //SECTION - Markdown
+  /* ---------------------------------------------------- */
+  /*SECTION -              Markdown                       */
+  /* ---------------------------------------------------- */
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
     "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -986,7 +1001,7 @@
     "no-space-in-links": true,
     // MD040 - Fenced code blocks should have a language specified
     "fenced-code-language": {
-      "allowed_languages": []
+      "allowed_languages": [ ]
     },
     // MD041 - First line in a file should be a top-level heading
     "first-line-heading": {
@@ -996,7 +1011,7 @@
     "no-empty-links": true,
     // MD043 - Required heading structure
     "required-headings": {
-      "headings": ["*"],
+      "headings": [ "*" ],
       "match_case": false
     },
     // MD045 - Images should have alternate text (alt text)
@@ -1047,9 +1062,9 @@
   "evenBetterToml.formatter.arrayAutoExpand": true,
   //!SECTION
 
-  // --------------------------------------------
-  // Miscellaneous
-  // --------------------------------------------
+  /* ---------------------------------------------------- */
+  /*                     Miscellaneous                    */
+  /* ---------------------------------------------------- */
   //SECTION - Git
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "always",

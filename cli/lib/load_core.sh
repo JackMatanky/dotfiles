@@ -1,5 +1,4 @@
 # shellcheck shell=bash
-
 # --------------------------------------------------------
 # Filename: ~/.config/cli/lib/load_core.sh
 # Function: Initializes log_info, log_warn, log_error, source_sh_files
@@ -14,13 +13,9 @@ CLI_LOGGER="$CLI_LIB_DIR/log.sh"
 CLI_SOURCER="$CLI_LIB_DIR/source_sh_files.sh"
 
 # Load logging functions (log_info, log_warn, log_error)
-if [ -f "$CLI_LOGGER" ]; then
-  # shellcheck source=/dev/null
-  source "$CLI_LOGGER"
-fi
+# shellcheck source=/dev/null
+[[ -f "$CLI_LOGGER" ]] && source "$CLI_LOGGER"
 
 # Load the batch sourcing utility (source_sh_files)
-if [ -f "$CLI_SOURCER" ]; then
-  # shellcheck source=/dev/null
-  source "$CLI_SOURCER"
-fi
+# shellcheck source=/dev/null
+[[ -f "$CLI_SOURCER" ]] && source "$CLI_SOURCER"
