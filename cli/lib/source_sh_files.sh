@@ -50,6 +50,7 @@ source_sh_files() {
 
         # Skip the file if it is not readable (e.g., permissions issue or
         # nonexistent)
+        echo ">> Checking: $file"
         [[ -r "$file" ]] || continue
 
         # Source the file into the current shell context

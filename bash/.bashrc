@@ -20,7 +20,7 @@ SCRIPT_LOADER="$LIB_DIR/load_core.sh"
 [[ -f "$SCRIPT_LOADER" ]] && source "$SCRIPT_LOADER"
 
 # Load environment variables (XDG paths, language setup, etc.)
-source_sh_files "$CLI_DIR/env"
+source_sh_files "$CLI_DIR/profile"
 
 # Load shell commands (aliases, functions, helpers, etc.)
 source_sh_files "$CLI_DIR/cmd"
