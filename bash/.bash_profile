@@ -7,7 +7,7 @@
 # -----------------------------------------------------------------------------
 
 # --- Source .bashrc if it exists ---
-BASHRC="$HOME/.config/zsh/.bashrc"
+BASHRC="$HOME/.config/bash/.bashrc"
 [[ -f "$BASHRC" ]] && source "$BASHRC"
 
 # --- Keychain SSH Agent Setup ---

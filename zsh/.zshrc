@@ -13,15 +13,16 @@ touch ~/.hushlogin
 CLI_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/cli"
 LIB_DIR="$CLI_DIR/lib"
 SCRIPT_LOADER="$LIB_DIR/load_core.sh"
-# SHELL_ALIASES="$CLI_DIR/aliases.sh"
-# SHELL_FUNCTIONS="$CLI_DIR/functions.sh"
 
 # Load core CLI support modules (log, source_sh_files)
 # shellcheck source=/dev/null
 [[ -f "$SCRIPT_LOADER" ]] && source "$SCRIPT_LOADER"
 
-# Load all modular *.sh files (e.g., env/core.sh, env/brew.sh, env/lang.sh)
+# Load environment variables (XDG paths, language setup, etc.)
 source_sh_files "$CLI_DIR/env"
+
+# Load shell commands (aliases, functions, helpers, etc.)
+source_sh_files "$CLI_DIR/cmd"
 
 # # ------------------------- Detect OS ------------------------ #
 # OS="$(uname -s)"
@@ -271,19 +272,19 @@ fi
 # export LANG="en_US.UTF-8"
 
 # ----------------- Aliases and Functions ---------------- #
-# CLI Specific Paths
-CLI_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/cli"
-LIB_DIR="$CLI_DIR/lib"
-SCRIPT_LOADER="$LIB_DIR/load_core.sh"
-# SHELL_ALIASES="$CLI_DIR/aliases.sh"
-# SHELL_FUNCTIONS="$CLI_DIR/functions.sh"
+# # CLI Specific Paths
+# CLI_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/cli"
+# LIB_DIR="$CLI_DIR/lib"
+# SCRIPT_LOADER="$LIB_DIR/load_core.sh"
+# # SHELL_ALIASES="$CLI_DIR/aliases.sh"
+# # SHELL_FUNCTIONS="$CLI_DIR/functions.sh"
 
-# Load core CLI support modules (log, source_sh_files)
-# shellcheck source=/dev/null
-[[ -f "$SCRIPT_LOADER" ]] && source "$SCRIPT_LOADER"
+# # Load core CLI support modules (log, source_sh_files)
+# # shellcheck source=/dev/null
+# [[ -f "$SCRIPT_LOADER" ]] && source "$SCRIPT_LOADER"
 
-# Load all CLI scripts (aliases.sh, functions.sh, etc.)
-source_sh_files "$CLI_DIR"
+# # Load all CLI scripts (aliases.sh, functions.sh, etc.)
+# source_sh_files "$CLI_DIR/cmd"
 
 # # Load all CLI scripts, including custom aliases and function
 # # via loader script, or fallback to manual sourcing
