@@ -67,7 +67,7 @@ background-opacity = 0.8
 # Accepts an int (blur level), true (default 20), or false (0).
 # May reduce performance or cause visual glitches.
 # Docs: https://ghostty.org/docs/config/reference#background-blur
-background-blur = 5
+background-blur = 3
 
 # Ensures readable text by enforcing a minimum WCAG contrast ratio (1–21).
 # Values >1 brighten/darken text if it's too similar to the background.
