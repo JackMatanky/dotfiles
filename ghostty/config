@@ -46,7 +46,7 @@ font-size = 16
 # Enables thicker font rendering if supported.
 # Only works on macOS. Has no effect on other platforms.
 # Docs: https://ghostty.org/docs/config/reference#font-thicken
-font-thicken = false
+font-thicken = true
 
 # Sets strength of thickened font when enabled.
 # Valid range: 0 (lightest) to 255 (strongest).
@@ -61,13 +61,20 @@ font-thicken-strength = 225
 # Values outside [0, 1] are clamped.
 # On macOS, requires restart and is disabled in native fullscreen.
 # Docs: https://ghostty.org/docs/config/reference#background-opacity
-background-opacity = 0.7
+background-opacity = 0.8
 
 # Enables background blur when opacity < 1.
 # Accepts an int (blur level), true (default 20), or false (0).
 # May reduce performance or cause visual glitches.
 # Docs: https://ghostty.org/docs/config/reference#background-blur
-background-blur = false
+background-blur = 5
+
+# Ensures readable text by enforcing a minimum WCAG contrast ratio (1–21).
+# Values >1 brighten/darken text if it's too similar to the background.
+# Use 3+ for readability, 7+ for strong contrast, 21 for max (black/white).
+# https://ghostty.org/docs/config/reference#minimum-contrast
+minimum-contrast = 6
+
 
 window-decoration = true
 
