@@ -13,7 +13,7 @@
 
 -- Sets the terminal to use with `vim.o.shell`
 -- and adds some additional configuration:
-LazyVim.terminal.setup("opt/homebrew/bin/nu")
+LazyVim.terminal.setup("/opt/homebrew/bin/nu")
 
 -- Introduced in version 10.x
 -- Docs: https://www.lazyvim.org/news#10x

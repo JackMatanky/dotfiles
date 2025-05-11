@@ -5,7 +5,7 @@
 -- ----------------------------------------------------------------------------
 
 -- Neovide transparency (0 = opaque, 1 = fully transparent)
-vim.g.neovide_opacity = 0.9
+vim.g.neovide_opacity = 0.7
 -- For Catppuccin Macchiato
 vim.g.neovide_background_color = "#24273a"
 
@@ -25,7 +25,7 @@ vim.g.neovide_refresh_rate_idle = 5
 -- Cursor animations and visual effects
 vim.g.neovide_cursor_animate_in_insert_mode = true
 vim.g.neovide_cursor_animate_command_line = true
-vim.g.neovide_cursor_vfx_mode = "sonicboom"
+vim.g.neovide_cursor_vfx_mode = ""
 
 -- Blur effects for floating windows
 vim.g.neovide_window_blurred = true
@@ -33,4 +33,4 @@ vim.g.neovide_floating_blur_amount_x = 2.0
 vim.g.neovide_floating_blur_amount_y = 2.0
 
 -- GUI font (adjust to your installed fonts and preference)
-vim.opt.guifont = "FiraCode Nerd Font:h14"
+vim.opt.guifont = "FiraCode Nerd Font:h15"
