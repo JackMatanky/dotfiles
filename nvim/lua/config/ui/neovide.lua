@@ -6,12 +6,6 @@
 
 -- Neovide transparency (0 = opaque, 1 = fully transparent)
 vim.g.neovide_opacity = 0.6
-vim.cmd [[
-  highlight Normal guibg=NONE ctermbg=NONE
-  highlight NormalNC guibg=NONE ctermbg=NONE
-  highlight SignColumn guibg=NONE ctermbg=NONE
-  highlight VertSplit guibg=NONE ctermbg=NONE
-]]
 -- For Catppuccin Macchiato
 vim.g.neovide_background_color = "#24273a"
 
