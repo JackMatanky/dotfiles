@@ -73,7 +73,7 @@ background-blur = 5
 # Values >1 brighten/darken text if it's too similar to the background.
 # Use 3+ for readability, 7+ for strong contrast, 21 for max (black/white).
 # https://ghostty.org/docs/config/reference#minimum-contrast
-minimum-contrast = 6
+minimum-contrast = 3
 
 
 window-decoration = true
