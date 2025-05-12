@@ -64,8 +64,8 @@
     "body": "from ${1:module} import ${2:item}$0",
     "description": "Import individual objects directly into the caller’s symbol table"
   },
-  "Import From Module": {
-    "prefix": "ifm",
+  "Pydantic BaseModel": {
+    "prefix": "pydbase",
     "body": [
       "from pydantic import BaseModel",
       "",
