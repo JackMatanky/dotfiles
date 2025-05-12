@@ -17,7 +17,7 @@
   },
   "BasedPyright Ignore Report Any": {
     "prefix": "pyignoreany",
-    "body": ["# pyright: ignore[reportExplicitAny]$0"],
+    "body": ["# pyright: ignore[${1:reportAny}]$0"],
     "description": "BasedPyright ignore rule for explicit any, which is used to ignore the error when a variable is annotated as Any."
   },
 
@@ -38,30 +38,39 @@
   },
 
   "py:percent Cell": {
-    "prefix": "jupy",
+    "prefix": "jpy",
     "body": ["# %% ${1:[markdown]}", "$0"],
     "description": "Add new py:percent code or markdown cell"
   },
   "py:percent Code Cell": {
-    "prefix": "jcell",
+    "prefix": "jpc",
     "body": "# %%",
     "description": "Add new py:percent code cell"
   },
   "py:percent Markdown Cell": {
-    "prefix": "jmark",
+    "prefix": "jpm",
     "body": "# %% [markdown]",
     "description": "Add a new py:percent markdown cell"
   },
 
   // >>> IMPORT Statements <<<
-  "import": {
-    "prefix": "import",
-    "body": "import $0",
+  "Import Module": {
+    "prefix": "im",
+    "body": "import ${1:module}",
     "description": "Import Package or Module"
   },
-  "from ... import ...": {
-    "prefix": "fromim",
-    "body": "from $1 import $0",
+  "Import From Module": {
+    "prefix": "ifm",
+    "body": "from ${1:module} import ${2:item}$0",
+    "description": "Import individual objects directly into the caller’s symbol table"
+  },
+  "Import From Module": {
+    "prefix": "ifm",
+    "body": [
+      "from pydantic import BaseModel",
+      "",
+      "class ${1:Model} (${2:BaseModel})$0"
+    ],
     "description": "Import individual objects directly into the caller’s symbol table"
   },
   "from future import ...": {
