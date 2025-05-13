@@ -2,6 +2,9 @@
 # Filename: ~/dotfiles/nushell/aliases/git_aliases.nu
 # Source: https://github.com/nushell/nu_scripts/blob/main/aliases/git/git-aliases.nu
 # -----------------------------------------------------------------------------
+# Lazygit
+alias lg = lazygit
+
 # returns the name of the current branch
 export def git_current_branch [] {
     ^git rev-parse --abbrev-ref HEAD
@@ -58,6 +61,10 @@ alias gco = git checkout
 alias gcom = git checkout (git_main_branch)
 alias gcob = git checkout -b
 alias gcoa = git checkout -- .
+
+# Switch
+export alias gsw = git switch
+export alias gswc = git switch --create
 
 # Remote
 alias gr = git remote
