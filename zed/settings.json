@@ -9,11 +9,11 @@
     "light": "One Light",
     "dark": "Catppuccin Macchiato" // "Gruvbox Dark"
   },
-  // UI Font
+  /* ------------------------ UI Font ----------------------- */
   "ui_font_size": 15,
   "ui_font_weight": 400,
   "ui_font_family": "Ubuntu", //"Zed Plex Sans",
-  "ui_font_fallbacks": ["Fira Code", "JetBrains Mono", "Source Code Pro"],
+  "ui_font_fallbacks": [ "Fira Code", "JetBrains Mono", "Source Code Pro" ],
   "ui_font_features": {
     // Disable ligatures:
     "calt": false
@@ -26,11 +26,13 @@
     "mode": "subtle"
   },
 
-  // Text Editor
+  /* -------------------------------------------------------- */
+  /*                        Text Editor                       */
+  /* -------------------------------------------------------- */
   "buffer_font_size": 16,
   "buffer_font_weight": 400,
   "buffer_font_family": "FiraCode Nerd Font",
-  "buffer_font_fallbacks": ["Fira Code", "JetBrains Mono", "Source Code Pro"],
+  "buffer_font_fallbacks": [ "Fira Code", "JetBrains Mono", "Source Code Pro" ],
   "buffer_font_features": {
     // Disable ligatures:
     // "calt": false
@@ -52,7 +54,9 @@
     "right_padding": 0.2
   },
 
-  // Vim
+  /* -------------------------------------------------------- */
+  /*                            Vim                           */
+  /* -------------------------------------------------------- */
   "vim_mode": true,
   "vim": {
     "use_system_clipboard": "always",
@@ -60,7 +64,7 @@
     "use_smartcase_find": false,
     "toggle_relative_line_numbers": true,
     "highlight_on_yank_duration": 50,
-    "custom_digraphs": {}
+    "custom_digraphs": { }
   },
 
   "hover_popover_enabled": true,
@@ -73,7 +77,9 @@
   // When set to false, Zed will use the built-in keyboard-first pickers.
   "use_system_path_prompts": true,
 
-  // Cursor
+  /* -------------------------------------------------------- */
+  /*                          Cursor                          */
+  /* -------------------------------------------------------- */
   // Key for adding multiple cursors: "alt", "cmd_or_ctrl"
   "multi_cursor_modifier": "alt",
   "cursor_blink": true,
@@ -86,7 +92,7 @@
   "show_edit_predictions": true,
   "edit_predictions": {
     // A list of globs representing files that inline completions should be disabled for.
-    "disabled_globs": [".env"]
+    "disabled_globs": [ ".env" ]
   },
 
   // Show method signatures in the editor, when inside parentheses.
@@ -96,9 +102,11 @@
 
   // Wrap guides (vertical rulers) in the editor.
   "show_wrap_guides": true,
-  "wrap_guides": [],
+  "wrap_guides": [ ],
 
-  // Private Files
+  /* -------------------------------------------------------- */
+  /*                       Private Files                      */
+  /* -------------------------------------------------------- */
   // Hide the values of in variables from visual display in private files
   "redact_private_values": false,
   // The default number of lines to expand excerpts in the multibuffer by.
@@ -125,20 +133,26 @@
   // "selection" (default), "none", "all", "boundary"
   "show_whitespaces": "selection",
 
-  // Calls
+  /* -------------------------------------------------------- */
+  /*                           Calls                          */
+  /* -------------------------------------------------------- */
   "calls": {
     "mute_on_join": false,
     "share_on_join": false
   },
 
-  // Toolbar
+  /* -------------------------------------------------------- */
+  /*                          Toolbar                         */
+  /* -------------------------------------------------------- */
   "toolbar": {
     "breadcrumbs": true,
     "quick_actions": true,
     "selections_menu": true
   },
 
-  // Scrollbar
+  /* -------------------------------------------------------- */
+  /*                         Scrollbar                        */
+  /* -------------------------------------------------------- */
   "scrollbar": {
     "show": "auto", // "auto" (default), "system", "always", "never"
     "cursors": true, // Show cursor positions.
@@ -153,7 +167,9 @@
 
   "double_click_in_multibuffer": "select",
 
-  // Gutter
+  /* -------------------------------------------------------- */
+  /*                          Gutter                          */
+  /* -------------------------------------------------------- */
   "gutter": {
     "line_numbers": true, // Show line numbers.
     "code_actions": true, // Show code action buttons.
@@ -162,7 +178,9 @@
   },
   "relative_line_numbers": true,
 
-  // Indent Guides
+  /* -------------------------------------------------------- */
+  /*                       Indent Guides                      */
+  /* -------------------------------------------------------- */
   "indent_guides": {
     "enabled": true,
     "line_width": 2, // Pixels, between 1 and 10.
@@ -179,7 +197,9 @@
   // to both the horizontal and vertical delta values while scrolling.
   "scroll_sensitivity": 1.0,
 
-  // Search
+  /* -------------------------------------------------------- */
+  /*                          Search                          */
+  /* -------------------------------------------------------- */
   "search": {
     "whole_word": false,
     "case_sensitive": false,
@@ -200,7 +220,9 @@
   "seed_search_query_from_cursor": "always",
   "use_smartcase_search": false,
 
-  // Inlay Hints
+  /* -------------------------------------------------------- */
+  /*                        Inlay Hints                       */
+  /* -------------------------------------------------------- */
   "inlay_hints": {
     "enabled": true,
     "show_type_hints": true,
@@ -214,7 +236,11 @@
     "scroll_debounce_ms": 50 // After scrolling the buffer.
   },
 
-  // Project Panel
+  /* -------------------------------------------------------- */
+  /*                          Panels                          */
+  /* -------------------------------------------------------- */
+
+  /* --------------------- Project Panel -------------------- */
   "project_panel": {
     "button": true,
     "default_width": 240,
@@ -233,7 +259,7 @@
     }
   },
 
-  // Outline Panel
+  /* --------------------- Outline Panel -------------------- */
   "outline_panel": {
     "button": true,
     "default_width": 300,
@@ -249,32 +275,33 @@
     }
   },
 
-  // Collaboration Panel
+  /* ------------------ Collaboration Panel ----------------- */
   "collaboration_panel": {
     "button": true,
     "dock": "left",
     "default_width": 240
   },
 
-  // Chat Panel
+  /* ---------------------- Chat Panel ---------------------- */
   "chat_panel": {
     "button": "always",
     "dock": "right",
     "default_width": 240
   },
 
-  // Message Editor
+  /* -------------------- Message Editor -------------------- */
   "message_editor": {
     "auto_replace_emoji_shortcode": true
   },
 
-  // Notification Panel
+  /* ------------------ Notification Panel ------------------ */
   "notification_panel": {
     "button": true,
     "dock": "right",
     "default_width": 380
   },
 
+  /* ---------------------- Agent Panel --------------------- */
   "agent": {
     "version": "2",
     "enabled": true,
@@ -287,7 +314,10 @@
       "model": "claude-3-5-sonnet-latest"
     }
   },
-  // Slash Commands
+
+  /* -------------------------------------------------------- */
+  /*                      Slash Commands                      */
+  /* -------------------------------------------------------- */
   "slash_commands": {
     "docs": {
       "enabled": true
@@ -302,7 +332,7 @@
   "enable_language_server": true,
   // The list of language servers to use (or disable) for all languages.
   // This is typically customized on a per-language basis.
-  "language_servers": ["snippet-completion-server"],
+  "language_servers": [ "snippet-completion-server" ],
 
   // Whether to perform linked edits of associated ranges, if the language server supports it.
   // For example, when editing opening <html> tag, the contents of the closing </html> tag will be edited as well.
@@ -312,13 +342,17 @@
   // "off", "on_window_change", "on_focus_change", { "after_delay": {"milliseconds": 500} },
   "autosave": "off",
 
-  // Editor's Tab Bar
+  /* -------------------------------------------------------- */
+  /*                      Editor Tabs Bar                     */
+  /* -------------------------------------------------------- */
+
+  /* ----------------------- Tabs Bar ----------------------- */
   "tab_bar": {
     "show": true,
     "show_nav_history_buttons": true
   },
 
-  // Editor's Tabs
+  /* ------------------------- Tabs ------------------------- */
   "tabs": {
     "git_status": true,
     "close_position": "right", // Button Position
@@ -331,14 +365,16 @@
     "show_diagnostics": "off"
   },
 
-  // Preview Tabs.
+  /* --------------------- Preview Tabs. -------------------- */
   "preview_tabs": {
     "enabled": true,
     "enable_preview_from_file_finder": false,
     "enable_preview_from_code_navigation": false
   },
 
-  // File Finder.
+  /* -------------------------------------------------------- */
+  /*                       File Finder.                       */
+  /* -------------------------------------------------------- */
   "file_finder": {
     "file_icons": true
   },
@@ -347,6 +383,9 @@
   "extend_comment_on_newline": true,
   "ensure_final_newline_on_save": true,
 
+  /* -------------------------------------------------------- */
+  /*                         Telemetry                        */
+  /* -------------------------------------------------------- */
   // Control what info is collected by Zed.
   "telemetry": {
     "diagnostics": true,
@@ -356,6 +395,7 @@
   // Automatically update Zed. This setting may be ignored on Linux if
   // installed through a package manager.
   "auto_update": true,
+
   // Diagnostics configuration.
   "diagnostics": {
     "include_warnings": true
@@ -374,7 +414,9 @@
     "**/.settings"
   ],
 
-  // Git Gutter
+  /* -------------------------------------------------------- */
+  /*                        Git Gutter                        */
+  /* -------------------------------------------------------- */
   "git": {
     "git_gutter": "tracked_files",
     "inline_blame": {
@@ -401,7 +443,9 @@
     "hour_format": "hour24"
   },
 
-  // Terminal
+  /* -------------------------------------------------------- */
+  /*                         Terminal                         */
+  /* -------------------------------------------------------- */
   "terminal": {
     // What shell to use when opening a terminal. May take 3 values:
     // 1. Use the system's default terminal configuration in /etc/passwd
@@ -455,7 +499,7 @@
         // Default directories to search for virtual environments, relative
         // to the current working directory. We recommend overriding this
         // in your project's settings, rather than globally.
-        "directories": [".env", "env", ".venv", "venv"],
+        "directories": [ ".env", "env", ".venv", "venv" ],
         // Can also be `csh`, `fish`, `nushell` and `power_shell`
         "activate_script": "nushell"
       }
@@ -472,23 +516,27 @@
     "blinking": "terminal_controlled", // "on" to always blink the cursor
     "font_size": 15, // Default to matching the buffer's font size
     "font_family": "JetBrainsMono Nerd Font", //"FiraCode Nerd Fonts"
-    "font_fallbacks": ["FiraCode Nerd Fonts"]
+    "font_fallbacks": [ "FiraCode Nerd Fonts" ]
     // Sets the maximum number of lines in the terminal's scrollback buffer.
     // Default: 10_000, maximum: 100_000 (all bigger values set will be treated as 100_000), 0 disables the scrolling.
     // Existing terminals will not pick up this change until they are recreated.
     // "max_scroll_history_lines": 10000,
   },
-  "code_actions_on_format": {},
+  "code_actions_on_format": { },
 
-  // Tasks.
+  /* -------------------------------------------------------- */
+  /*                          Tasks.                          */
+  /* -------------------------------------------------------- */
   "tasks": {
-    "variables": {}
+    "variables": { }
   },
   "toolchain": { "name": "default", "path": "default" },
 
-  // >>> File Type Associations <<<
+  /* -------------------------------------------------------- */
+  /*                  File Type Associations                  */
+  /* -------------------------------------------------------- */
   "file_types": {
-    "JSON": ["flake.lock"],
+    "JSON": [ "flake.lock" ],
     "JSONC": [
       "**/.zed/**/*.json",
       "**/zed/**/*.json",
@@ -497,9 +545,9 @@
       "pyrightconfig.json",
       "cspell.json"
     ],
-    "Plain Text": ["txt"],
-    "Ruby": ["rb", "brewfile*"],
-    "TOML": ["uv.lock", "pyproject.toml", ".editorconfig"]
+    "Plain Text": [ "txt" ],
+    "Ruby": [ "rb", "brewfile*" ],
+    "TOML": [ "uv.lock", "pyproject.toml", ".editorconfig" ]
   },
 
   // By default use a recent system version of node, or install our own.
@@ -516,9 +564,11 @@
   //     "ignore_system_version": true,
   //   }
   // NOTE: changing this setting currently requires restarting Zed.
-  "node": {},
+  "node": { },
 
-  // Automatically Installed Extensions
+  /* -------------------------------------------------------- */
+  /*            Automatically Installed Extensions            */
+  /* -------------------------------------------------------- */
   "auto_install_extensions": {
     // AsciiDoc: https://github.com/andreicek/zed-asciidoc
     "asciidoc": true,
@@ -600,7 +650,9 @@
     "xml": true
   },
 
-  // Formatter
+  /* -------------------------------------------------------- */
+  /*                         Formatter                        */
+  /* -------------------------------------------------------- */
   "format_on_save": "on",
   // How to perform a buffer format. This setting can take 4 values:
   //
@@ -655,13 +707,15 @@
   "hard_tabs": false,
   "tab_size": 4,
 
-  // Language Settings
+  /* -------------------------------------------------------- */
+  /*                     Language Settings                    */
+  /* -------------------------------------------------------- */
   "languages": {
     "Astro": {
-      "language_servers": ["astro-language-server", "..."],
+      "language_servers": [ "astro-language-server", "..." ],
       "prettier": {
         "allowed": true,
-        "plugins": ["prettier-plugin-astro"]
+        "plugins": [ "prettier-plugin-astro" ]
       }
     },
     "Blade": {
@@ -690,10 +744,10 @@
       "ensure_final_newline_on_save": false
     },
     "Elixir": {
-      "language_servers": ["elixir-ls", "!next-ls", "!lexical", "..."]
+      "language_servers": [ "elixir-ls", "!next-ls", "!lexical", "..." ]
     },
     "Erlang": {
-      "language_servers": ["erlang-ls", "!elp", "..."]
+      "language_servers": [ "erlang-ls", "!elp", "..." ]
     },
     "Go": {
       "code_actions_on_format": {
@@ -706,7 +760,7 @@
       }
     },
     "HEEX": {
-      "language_servers": ["elixir-ls", "!next-ls", "!lexical", "..."]
+      "language_servers": [ "elixir-ls", "!next-ls", "!lexical", "..." ]
     },
     "HTML": {
       "prettier": {
@@ -716,12 +770,12 @@
     "Java": {
       "prettier": {
         "allowed": true,
-        "plugins": ["prettier-plugin-java"]
+        "plugins": [ "prettier-plugin-java" ]
       }
     },
     "JavaScript": {
       "tab_size": 2,
-      "language_servers": ["!typescript-language-server", "vtsls", "..."],
+      "language_servers": [ "!typescript-language-server", "vtsls", "..." ],
       "prettier": {
         "allowed": true
       }
@@ -739,7 +793,7 @@
       }
     },
     "LaTeX": {
-      "language_servers": ["tex"]
+      "language_servers": [ "tex" ]
     },
     "Markdown": {
       "format_on_save": "off",
@@ -754,20 +808,20 @@
       "formatter": {
         "external": {
           "command": "alejandra",
-          "arguments": ["-"]
+          "arguments": [ "-" ]
         }
       }
     },
     "PHP": {
-      "language_servers": ["phpactor", "!intelephense", "..."],
+      "language_servers": [ "phpactor", "!intelephense", "..." ],
       "prettier": {
         "allowed": true,
-        "plugins": ["@prettier/plugin-php"],
+        "plugins": [ "@prettier/plugin-php" ],
         "parser": "php"
       }
     },
     "Python": {
-      "language_servers": ["basedpyright", "pylyzer", "ruff"], // pylsp, pyright
+      "language_servers": [ "basedpyright", "pylyzer", "ruff" ], // pylsp, pyright
       "tab_size": 4,
       "format_on_save": "on",
       "formatter": [
@@ -785,7 +839,7 @@
       ]
     },
     "Ruby": {
-      "language_servers": ["solargraph", "!ruby-lsp", "rubocop", "..."]
+      "language_servers": [ "solargraph", "!ruby-lsp", "rubocop", "..." ]
     },
     "SCSS": {
       "prettier": {
@@ -796,21 +850,21 @@
       "tab_size": 4,
       "prettier": {
         "allowed": true,
-        "plugins": ["prettier-plugin-sql"]
+        "plugins": [ "prettier-plugin-sql" ]
       }
     },
     "Starlark": {
-      "language_servers": ["starpls", "!buck2-lsp", "..."]
+      "language_servers": [ "starpls", "!buck2-lsp", "..." ]
     },
     "Svelte": {
-      "language_servers": ["svelte-language-server", "..."],
+      "language_servers": [ "svelte-language-server", "..." ],
       "prettier": {
         "allowed": true,
-        "plugins": ["prettier-plugin-svelte"]
+        "plugins": [ "prettier-plugin-svelte" ]
       }
     },
     "TSX": {
-      "language_servers": ["!typescript-language-server", "vtsls", "..."],
+      "language_servers": [ "!typescript-language-server", "vtsls", "..." ],
       "prettier": {
         "allowed": true
       }
@@ -821,13 +875,13 @@
       }
     },
     "TypeScript": {
-      "language_servers": ["!typescript-language-server", "vtsls", "..."],
+      "language_servers": [ "!typescript-language-server", "vtsls", "..." ],
       "prettier": {
         "allowed": true
       }
     },
     "Vue.js": {
-      "language_servers": ["vue-language-server", "..."],
+      "language_servers": [ "vue-language-server", "..." ],
       "prettier": {
         "allowed": true
       }
@@ -835,7 +889,7 @@
     "XML": {
       "prettier": {
         "allowed": true,
-        "plugins": ["@prettier/plugin-xml"]
+        "plugins": [ "@prettier/plugin-xml" ]
       }
     },
     "YAML": {
@@ -845,32 +899,35 @@
     }
   },
 
-  // ------------------------------------------------------
-  // >>> Language Server Protocol (LSP) <<<
-  // ------------------------------------------------------
+  /* -------------------------------------------------------- */
+  /*              Language Server Protocol (LSP)              */
+  /* -------------------------------------------------------- */
   "lsp": {
+    /* -------------------- Spellchecker -------------------- */
     "cspell": {
       "command": "cspell-lsp",
-      "args": ["--stdio", "--config", "/User/jack/dotfiles/cspell/cspell.json"],
+      "args": [ "--stdio", "--config", "/User/jack/dotfiles/cspell/cspell.json" ],
       "settings": {
         "cSpell": {
           "configFile": "/User/jack/dotfiles/cspell/cspell.json"
         }
       }
     },
-    // >>> Python LSP: basedpyright <<<
+    /* ------------------------------------------------------ */
+    /*                Python LSP: Basedpyright                */
+    /* ------------------------------------------------------ */
     // Fast, open-source fork of Pyright for completions, type checking, and more
     "basedpyright": {
       "settings": {
-        // >>> Python Interpreter <<<
+        /* --------------- Python Interpreter --------------- */
         "python": {
           "pythonPath": ".venv/bin/python"
         },
 
-        // >>> General LSP Behavior <<<
+        /* -------------- General LSP Behavior -------------- */
         "disableOrganizeImports": true, // Let Ruff handle import organization
 
-        // >>> Static Analysis Settings <<<
+        /* ------------ Static Analysis Settings ------------ */
         "basedpyright.analysis": {
           // --- Project-Level Settings ---
           "diagnosticMode": "workspace",
@@ -895,7 +952,9 @@
       }
     },
 
-    // >>> Python LSP: pylyzer <<<
+    /* ------------------------------------------------------ */
+    /*                   Python LSP: Pylyzer                  */
+    /* ------------------------------------------------------ */
     // Rust-based static analyzer providing inlay hints and type diagnostics
     "pylyzer": {
       "settings": {
@@ -907,16 +966,20 @@
       }
     },
 
-    // >>> Python LSP: ruff <<<
+    /* ------------------------------------------------------ */
+    /*                    Python LSP: Ruff                    */
+    /* ------------------------------------------------------ */
     // Handles all linting, formatting, and import organization
     "ruff": {
       "initialization_options": {
         "settings": {
+          /* -------------------- Linter -------------------- */
           "lint": {
             "enable": true,
-            "select": ["E", "F", "W", "I"],
-            "fixable": ["ALL"]
+            "select": [ "E", "F", "W", "I" ],
+            "fixable": [ "ALL" ]
           },
+          /* ------------------- Formatter ------------------ */
           "format": {
             "preview": true
           },
@@ -930,7 +993,9 @@
       }
     },
 
-    // >>> Ruby: Solargraph <<<
+    /* ------------------------------------------------------ */
+    /*                  Ruby LSP: Solargraph                  */
+    /* ------------------------------------------------------ */
     "solargraph": {
       "initialization_options": {
         "diagnostics": true,
@@ -938,18 +1003,20 @@
       }
     },
 
-    // >>> TeX LSP: texlab <<<
+    /* ------------------------------------------------------ */
+    /*                     TeX LSP: Texlab                    */
+    /* ------------------------------------------------------ */
     "texlab": {
       "settings": {
         "texlab": {
           "build": {
             "executable": "latexmk",
-            "args": ["-pdf", "-interaction=nonstopmode", "-synctex=1", "%f"],
+            "args": [ "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" ],
             "onSave": true
           },
           "forwardSearch": {
             "executable": "zathura",
-            "args": ["--synctex-forward", "%l:1:%f", "%p"]
+            "args": [ "--synctex-forward", "%l:1:%f", "%p" ]
           },
           "chktex": {
             "onOpenAndSave": true,
@@ -964,7 +1031,9 @@
     }
   },
 
-  // Jupyter Notebook
+  /* -------------------------------------------------------- */
+  /*                     Jupyter Notebook                     */
+  /* -------------------------------------------------------- */
   "jupyter": {
     "enabled": true,
     // Specify the language name as the key and the kernel name as the value.
@@ -974,7 +1043,9 @@
     }
   },
 
-  // >>> Language Models <<<
+  /* -------------------------------------------------------- */
+  /*                      Language Models                     */
+  /* -------------------------------------------------------- */
   "language_models": {
     "anthropic": {
       "version": "1",
@@ -995,10 +1066,10 @@
   },
 
   "server_url": "https://zed.dev",
-  "preview": {},
-  "nightly": {},
-  "stable": {},
-  "dev": {},
+  "preview": { },
+  "nightly": { },
+  "stable": { },
+  "dev": { },
 
   // Task-related settings.
   "task": {
@@ -1020,10 +1091,14 @@
   //   - "proxy": "http://127.0.0.1:10809"
   "proxy": "",
 
-  // Command Palette Aliases
-  "command_aliases": {},
+  /* -------------------------------------------------------- */
+  /*                  Command Palette Aliases                 */
+  /* -------------------------------------------------------- */
+  "command_aliases": { },
 
-  // SSH Connections
+  /* -------------------------------------------------------- */
+  /*                      SSH Connections                     */
+  /* -------------------------------------------------------- */
   // Examples:
   // [
   //   {
@@ -1036,7 +1111,7 @@
   //     ]
   //   }
   // ]
-  "ssh_connections": [],
+  "ssh_connections": [ ],
 
   // Configures the Context Server Protocol binaries
   //
@@ -1047,6 +1122,6 @@
   //   "args": ['arg1", "args2"]
   // }
   "experimental.context_servers": {
-    "servers": []
+    "servers": [ ]
   }
 }
