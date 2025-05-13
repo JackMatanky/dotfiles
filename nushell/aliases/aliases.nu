@@ -28,6 +28,20 @@ def f [] {
     }
 }
 
+# fb: Fuzzy-find a file with inline preview and then view it with bat
+def ffb [] {
+    # Use fd to find all files (including hidden, excluding .git), pipe to fzf
+    let file = (
+        fd --type file --hidden --exclude .git
+        | fzf --preview 'bat --style=numbers --color=always {}'  # Inline preview using bat
+    )
+
+    # If a file was selected, display it with bat
+    if ($file != "") {
+        bat $file
+    }
+}
+
 # ffv: Fuzzy search for a file and open it in nvim
 def ffv [] {
     let file = (fd --type file --hidden --exclude .git | fzf)
