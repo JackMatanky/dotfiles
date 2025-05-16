@@ -11,7 +11,6 @@
 tap 'homebrew/bundle'                   # Manage multiple Homebrew dependencies
 tap 'homebrew/services'                 # Start/stop macOS services
 
-
 # ------------------------------------------------------------ #
 #                     Terminal Environment                     #
 # ------------------------------------------------------------ #
@@ -55,8 +54,6 @@ brew 'fd'                               # Simple, fast and user-friendly alterna
 brew 'ripgrep'                          # Fast file content search (grep alternative)
 brew 'bat'                              # File Viewer: Clone of cat(1) with syntax highlighting and Git integration
 
-
-
 # ------------------------------------------------------------ #
 #                        Version Control                       #
 # ------------------------------------------------------------ #
@@ -66,8 +63,6 @@ brew 'git-filter-repo'                  # Filter and rewrite Git repository hist
 brew 'git-lfs'                          # Git extension for versioning large files
 brew 'git-delta'                        # Syntax-highlighting pager for git and diff output
 brew 'jesseduffield/lazygit/lazygit'    # Simple terminal UI for Git commands
-
-
 
 # ------------------------------------------------------------ #
 #                    Development Environment                   #
@@ -120,13 +115,11 @@ brew 'sqlfluff'                         # SQL linter and auto-formatter for Huma
 brew 'sql-formatter'                    # Whitespace formatter for different query languages
 brew 'stylua'                           # Opinionated Lua code formatter
 
-
 # ------------------------------------------------------------ #
 #                         Modal Editors                        #
 # ------------------------------------------------------------ #
 brew 'neovim'                             # Ambitious Vim-fork focused on extensibility and agility
 brew 'helix'                              # Post-modern modal text editor
-
 
 # ------------------------------------------------------------ #
 #                 Document Processing & Viewing                #
@@ -149,7 +142,6 @@ brew 'poppler'                          # PDF rendering library, based on the xp
 brew 'ocrmypdf'                         # Adds an OCR text layer to scanned PDF files
 brew 'tesseract'                        # OCR (Optical Character Recognition) engine
 
-
 # ------------------------------------------------------------ #
 #                       Image Processing                       #
 # ------------------------------------------------------------ #
@@ -158,12 +150,10 @@ brew 'webp'                             # Image format providing lossless and lo
 brew 'libavif'                          # AVIF image format tools
 brew 'graphviz'                         # Graph visualization tool (produces images)
 
-
 # ------------------------------------------------------------ #
 #              Multimedia (Audio/Video) Processing             #
 # ------------------------------------------------------------ #
-brew 'ffmpeg'                           # Play, record, convert, and stream audio and video
-
+brew 'ffmpeg' # Play, record, convert, and stream audio and video
 
 # ------------------------------------------------------------ #
 #                      MacOS-Only Formulae                     #
@@ -173,7 +163,6 @@ if OS.mac?
   brew 'switchaudio-osx'                # CLI for switching macOS audio devices
   brew 'nowplaying-cli'                 # Retrieves currently playing media, and simulates media actions
   brew 'felixkratz/formulae/borders'    # A window border system for macOS
-
 
   # ---------------------------------------------------------- #
   #                MacOS Casks: GUI Applications               #
@@ -196,7 +185,7 @@ if OS.mac?
   # --------------- Knowledge Management (PKM) --------------- #
   cask 'obsidian'                       # Markdown note-taking and PKM app
   cask 'anki'                           # Spaced repetition flashcard learning
-  cask 'xournal++'                      # Handwritten notes and PDF annotation tool
+  # cask 'xournal++'                      # Handwritten notes and PDF annotation tool
   cask 'calibre'                        # eBook management and library software
   cask 'zotero'                         # Collect, organize, cite, and share research sources
 
@@ -217,15 +206,14 @@ if OS.mac?
   cask 'onedrive'                       # Microsoft cloud storage client
 
   # ------------------------ Browsers ------------------------ #
-  cask 'zen-browser'                    # Minimalist, gecko-based web browser
+  cask 'zen-browser' # Minimalist, gecko-based web browser
 
   # ---------------------- Media Players --------------------- #
-  cask 'vlc'                            # Open-source media player for video and audio
+  cask 'vlc' # Open-source media player for video and audio
 
   # ---------------------- Communication --------------------- #
   cask 'slack'                          # Team communication and collaboration software
   cask 'zoom'                           # Video communication and virtual meeting platform
-
 
   # ---------------------------------------------------------- #
   #                            Fonts                           #
@@ -237,11 +225,10 @@ if OS.mac?
   cask 'font-sf-mono'                   # Apple's SF Mono font
   cask 'font-sf-pro'                    # Apple's SF Pro font
 
-
   # ---------------------------------------------------------- #
   #                 Mac App Store Applications                 #
   # ---------------------------------------------------------- #
-  brew 'mas'                            # Mac App Store command-line interface
+  brew 'mas' # Mac App Store command-line interface
 
   mas 'OneDrive', id: 823_766_827
   mas 'PDFgear', id: 6_469_021_132
@@ -260,7 +247,6 @@ if OS.mac?
   mas 'Documents Translator', id: 1_566_993_561
   mas 'Obsidian Web Clipper', id: 6_720_708_363
 end
-
 
 # ------------------------------------------------------------ #
 #                      VS Code Extensions                      #
