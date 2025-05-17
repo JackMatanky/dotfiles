@@ -225,28 +225,28 @@ install-all:
 [macos]
 update-brew-mac:
     just brew_update_banner "Mac App Store Applications"
-    mas upgrade
+    @mas upgrade
 
 # List outdated Homebrew formulae and casks
 [group("Package Updates")]
 [unix]
 update-brew-outdated:
     just brew_update_banner "Homebrew Packages (Outdated)"
-    brew outdated || true
+    @brew outdated || true
 
 # Upgrade all outdated Homebrew packages
 [group("Package Updates")]
 [unix]
 upgrade-brew:
     just brew_update_banner "Homebrew Packages"
-    brew upgrade
+    @brew upgrade
 
 # Remove old Homebrew downloads and outdated versions
 [group("Package Updates")]
 [unix]
 cleanup-brew:
     echo "Cleaning up Homebrew..."
-    brew cleanup
+    @brew cleanup
 
 # Full Homebrew and App Store Update Routine (Interactive)
 [group("Package Updates")]
@@ -257,26 +257,26 @@ update-brew:
     brew update
 
     # Optionally update Mac App Store apps (macOS only)
-    @if [ "{{ OS }}" == "macos" ]; then just update-brew-mac; fi
+    @if [ "{{ OS }}" = "macos" ]; then just update-brew-mac; fi
 
     # Show outdated packages
     just update-brew-outdated
 
     # Prompt for upgrading packages
-    @read -p "Upgrade all outdated Homebrew packages? [y/N]: " yn; \
-    if [ "$$yn" = "y" ]; then \
+    @bash -c "read -p 'Upgrade all outdated Homebrew packages? [y/N]: ' yn; \
+    if [ \"\$yn\" = \"y\" ]; then \
         just upgrade-brew; \
     else \
-        echo "Skipping Homebrew package upgrades."; \
-    fi
+        echo 'Skipping Homebrew package upgrades.'; \
+    fi"
 
     # Prompt for cleaning up
-    @read -p "Run brew cleanup to free disk space? [y/N]: " yn; \
-    if [ "$$yn" = "y" ]; then \
+    @bash -c "read -p 'Run brew cleanup to free disk space? [y/N]: ' yn; \
+    if [ \"\$yn\" = \"y\" ]; then \
         just cleanup-brew; \
     else \
-        echo "Skipping brew cleanup."; \
-    fi
+        echo 'Skipping brew cleanup.'; \
+    fi"
 
 # -------------------- Rust and Cargo -------------------- #
 
