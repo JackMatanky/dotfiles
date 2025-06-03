@@ -12,13 +12,8 @@
 
   "BasedPyright Ignore Rule Comment": {
     "prefix": "pyignore",
-    "body": ["# pyright: ignore[${1:reportAny}]$0"],
+    "body": "# pyright: ignore[${1|reportAny,reportExplicitAny|}]$0",
     "description": "Ignore specific line diagnostic in pyright (ignore all is unsafe)"
-  },
-  "BasedPyright Ignore Report Any": {
-    "prefix": "pyignoreany",
-    "body": "# pyright: ignore[${1:reportExplicitAny}]$0",
-    "description": "BasedPyright ignore rule for explicit any, which is used to ignore the error when a variable is annotated as Any."
   },
 
   "Multiline string": {
