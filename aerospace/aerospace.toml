@@ -107,6 +107,10 @@ run = 'move-node-to-workspace 2'
 if.app-id = 'dev.zed.Zed'
 run = 'move-node-to-workspace 3'
 
+[[on-window-detected]]
+if.app-id = 'dev.zed.Zed-Preview'
+run = 'move-node-to-workspace 3'
+
 # SRS - Anki
 [[on-window-detected]]
 if.app-id = 'net.ankiweb.dtop'
