@@ -5,11 +5,14 @@
 -- -----------------------------------------------------------------------------
 
 -- ------------------------------------------------------ --
---                       Leader Keys                      --
+--                     LazyVim Defaults                   --
 -- ------------------------------------------------------ --
--- Already set by LazyVim:
--- vim.g.mapleader = " "
--- vim.g.maplocalleader = "\\"
+
+-- Picker to use: "telescope", "fzf", or "auto"
+vim.g.lazyvim_picker = "snacks"
+
+-- Completion engine: "nvim-cmp", "blink.cmp", or "auto"
+vim.g.lazyvim_cmp = "blink.cmp"
 
 -- Sets the terminal to use with `vim.o.shell`
 -- and adds some additional configuration:

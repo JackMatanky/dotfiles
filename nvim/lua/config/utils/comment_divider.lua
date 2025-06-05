@@ -1,81 +1,118 @@
 -- ----------------------------------------------------------------------------
---  Filename      : ~/dotfiles/nvim/lua/config/utils/comment_divider.lua
---  Description   : Wrapper functions to enhance comment-divider.nvim behavior.
---                  These allow automatic use of visual selections or prompts.
+--  Filename: ~/dotfiles/nvim/lua/config/utils/comment_divider.lua
+--  Description: Wrapper functions to enhance comment-divider.nvim behavior.
+--               These auto-execute or prefill :CommentDividerLine/Box with selected text.
 -- ----------------------------------------------------------------------------
 
 ---@class CommentDividerUtils
 local M = {}
 
 -- ---------------------------------------------------------- --
+--                       Constants                            --
+-- ---------------------------------------------------------- --
+
+local TRIM_PATTERN = "^%s*(.-)%s*$"
+
+-- ---------------------------------------------------------- --
 --                      Internal Helpers                      --
 -- ---------------------------------------------------------- --
 
---- Extract a single-line visual selection from the buffer.
---- Used to auto-generate divider titles if text is highlighted.
+-- ------------------ Selection Validation ------------------ --
+--- Check whether the current visual selection is single-line.
+---@return boolean
+local function is_single_line_visual()
+  local _, csrow = unpack(vim.fn.getpos("'<"))
+  local _, cerow = unpack(vim.fn.getpos("'>"))
+  return csrow == cerow
+end
+
+-- ------------------- String Formatting  ------------------- --
+--- Trim leading and trailing whitespace from a string.
+---@param str string
+---@return string
+local function trim_whitespace(str)
+  return (str:gsub(TRIM_PATTERN, "%1"))
+end
+
+--- Sanitize user input: remove newlines and trim whitespace.
+---@param str string
+---@return string
+local function sanitize_input(str)
+  return trim_whitespace((str:gsub("[\n\r]", "")))
+end
+
+-- ---------------------- Detect Text  ---------------------- --
+--- Extract a single-line visual selection and return trimmed text.
 ---@return string|nil  # Selected text or nil if invalid
 function M.get_visual_selection()
-  local _, csrow, cscol = unpack(vim.fn.getpos("'<")) -- visual start
-  local _, cerow, cecol = unpack(vim.fn.getpos("'>")) -- visual end
-
-  -- Only support single-line selections (no multi-line titles)
-  if csrow ~= cerow then
+  if not is_single_line_visual() then
+    print("[Divider] Multi-line selection not supported.")
     return nil
   end
-
+  local _, csrow, cscol = unpack(vim.fn.getpos("'<"))
+  local _, _, cecol = unpack(vim.fn.getpos("'>"))
   local line = vim.fn.getline(csrow)
-  return line:sub(cscol, cecol)
+  local selected = line:sub(cscol, cecol)
+  local trimmed = trim_whitespace(selected)
+  print("[Divider] Visual selection: " .. trimmed)
+  return trimmed
 end
 
---- Check if the user is in visual mode and extract the selection.
---- Escapes visual mode before returning to avoid side effects.
----@return string|nil  # Title from selection or nil
-function M.get_title_from_visual()
+--- Extract the current line content and trim whitespace.
+---@return string
+function M.get_current_line()
+  local line = vim.fn.getline(".")
+  return trim_whitespace(line)
+end
+
+--- Return the best title based on current mode and context.
+---@return string|nil
+local function get_inferred_title()
   local mode = vim.fn.mode()
-
-  -- If not in visual mode, skip
-  if mode ~= "v" and mode ~= "V" then
-    return nil
-  end
-
-  local title = M.get_visual_selection()
-
-  -- Exit visual mode manually (required to prevent interference)
-  vim.api.nvim_feedkeys(
-    vim.api.nvim_replace_termcodes("<Esc>", true, false, true),
-    "n",
-    true
-  )
-
-  return title
-end
-
---- Prompt the user to manually enter a title string.
----@param prompt string
----@return string
-function M.get_title_from_prompt(prompt)
-  return vim.fn.input(prompt)
-end
-
---- Resolve a title for the divider using visual mode or prompt fallback.
----@param prompt string
----@return string
-function M.resolve_title(prompt)
-  return M.get_title_from_visual() or M.get_title_from_prompt(prompt)
-end
-
--- ---------------------------------------------------------- --
---                     Command Execution                      --
--- ---------------------------------------------------------- --
-
---- Run the appropriate divider command with or without a title.
----@param cmd string          # The full command name
----@param title string|nil    # The divider title, or nil to insert a plain line
-function M.run_divider_command(cmd, title)
-  if title and title ~= "" then
-    vim.cmd(cmd .. " " .. title)
+  if mode == "v" or mode == "V" then
+    return M.get_visual_selection()
   else
-    vim.cmd(cmd)
+    return M.get_current_line()
+  end
+end
+
+-- -------------------- Execute Command  -------------------- --
+--- Feed a command to the command-line prompt for manual editing.
+---@param cmd string
+local function feed_command_prompt(cmd)
+  local feed = ":" .. cmd .. " "
+  print("[Divider] Prompting: " .. feed)
+  vim.api.nvim_feedkeys(
+    vim.api.nvim_replace_termcodes(feed, true, false, true),
+    "c",
+    false
+  )
+end
+
+--- Execute the comment-divider command directly.
+---@param cmd string
+---@param title string
+local function execute_comment_divider(cmd, title)
+  local full_cmd = cmd .. " " .. title
+  print("[Divider] Executing: " .. full_cmd)
+  vim.cmd(full_cmd)
+end
+
+-- ---------------------------------------------------------- --
+--                     Command Dispatcher                     --
+-- ---------------------------------------------------------- --
+
+--- Core logic to handle :CommentDivider commands.
+--- If text is found, executes immediately. Otherwise, prompts user.
+---@param cmd string  # "CommentDividerLine" or "CommentDividerBox"
+function M.insert_divider_command(cmd)
+  local raw = get_inferred_title()
+  local input = sanitize_input(raw or "")
+
+  if input == "" then
+    feed_command_prompt(cmd)
+  else
+    execute_comment_divider(cmd, input)
   end
 end
 
@@ -83,25 +120,24 @@ end
 --                      Public Interface                      --
 -- ---------------------------------------------------------- --
 
---- Type-safe base for divider commands
+--- Available base types for comment divider commands.
 ---@alias DividerType "Line"|"Box"
 
---- Insert a divider (line or box), using selection or prompt.
+--- Insert a divider of the specified type using visual or line input.
 ---@param base DividerType
 function M.insert_divider(base)
-  local cmd = "CommentDivider" .. base
-  local prompt = "Comment" .. base .. " title: "
-  local title = M.resolve_title(prompt)
-  M.run_divider_command(cmd, title)
+  M.insert_divider_command("CommentDivider" .. base)
 end
 
---- Insert a titled horizontal divider line
+--- Insert a :CommentDividerLine command.
 function M.insert_divider_line()
+  print("[Divider] insert_divider_line() called")
   M.insert_divider("Line")
 end
 
---- Insert a titled divider box (top and bottom)
+--- Insert a :CommentDividerBox command.
 function M.insert_divider_box()
+  print("[Divider] insert_divider_box() called")
   M.insert_divider("Box")
 end
 

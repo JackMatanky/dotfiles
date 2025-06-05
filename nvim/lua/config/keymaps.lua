@@ -1,8 +1,8 @@
 -- -----------------------------------------------------------------------------
 --  Filename: ~/.config/nvim/lua/config/keymaps.lua
 --  Docs: https://www.lazyvim.org/configuration/general
---  Description: Context-aware keymaps for Neovim and VSCode
 --  Default: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+--  Description: Context-aware keymaps for Neovim and VSCode
 -- -----------------------------------------------------------------------------
 
 -- Keymaps are automatically loaded on the VeryLazy event.
@@ -11,8 +11,12 @@
 -- ------------------------------------------------------ --
 --                  Safe Mapping Utility                  --
 -- ------------------------------------------------------ --
--- Wrapper around vim.keymap.set that respects Lazy.nvim key handlers.
--- Avoids overwriting user-defined Lazy keys. Use this for all mappings.
+---@desc Wrapper around vim.keymap.set that respects Lazy key handlers.
+---      Avoids overwriting user-defined Lazy keys. Use this for all mappings.
+---@param mode string|table
+---@param lhs string
+---@param rhs string|function
+---@param opts table|nil
 local function safeMap(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
   ---@cast keys LazyKeysHandler
@@ -29,26 +33,24 @@ end
 -- ------------------------------------------------------ --
 --                    Helper Functions                    --
 -- ------------------------------------------------------ --
--- Toggle line wrapping and print result
+
+---@desc Toggle line wrapping and print the current state
+---@return nil
 local function toggleWordWrap()
   vim.wo.wrap = not vim.wo.wrap
   print("Word wrap " .. (vim.wo.wrap and "enabled" or "disabled"))
 end
 
--- Temporarily enable clipboard, yank visual selection, then disable
-local function copyToClipboard()
-  vim.cmd("set clipboard+=unnamedplus")
-  vim.cmd("norm! y")
-  vim.cmd("set clipboard-=unnamedplus")
-  print("Copied to clipboard!")
-end
-
--- Helper to invoke VSCode commands using VSCodeCall
+---@desc Call a VSCode command using VSCodeCall
+---@param command string
+---@return nil
 local function vscodeCall(command)
   vim.cmd("call VSCodeCall('" .. command .. "')")
 end
 
--- Helper to invoke VSCode commands using VSCodeNotify
+---@desc Call a VSCode command using VSCodeNotify
+---@param command string
+---@return nil
 local function vscodeNotify(command)
   vim.cmd("call VSCodeNotify('" .. command .. "')")
 end
@@ -56,28 +58,71 @@ end
 -- ------------------------------------------------------ --
 --                 Global Clipboard Maps                  --
 -- ------------------------------------------------------ --
--- Global clipboard support for ⌘V across various modes.
--- These are fallback bindings for edge cases like terminal mode.
-vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("t", "<D-v>", "<C-R>+", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+
+-- Global clipboard support for ⌘V across various modes (macOS)
+vim.api.nvim_set_keymap(
+  "",
+  "<D-v>",
+  "+p<CR>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "!",
+  "<D-v>",
+  "<C-R>+",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "t",
+  "<D-v>",
+  "<C-R>+",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "v",
+  "<D-v>",
+  "<C-R>+",
+  { noremap = true, silent = true }
+)
 
 -- ------------------------------------------------------ --
 --                     Neovim Keymaps                     --
 -- ------------------------------------------------------ --
-local function defineNeovimKeymaps()
-  -- Move current line or block up/down
-  safeMap("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
-  safeMap("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
-  safeMap("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
-  safeMap("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
-  -- Arrow-like cursor movement in insert mode
-  safeMap("i", "<C-h>", "<Left>", { desc = "Move left" })
-  safeMap("i", "<C-l>", "<Right>", { desc = "Move right" })
-  safeMap("i", "<C-j>", "<Down>", { desc = "Move down" })
-  safeMap("i", "<C-k>", "<Up>", { desc = "Move up" })
+---@desc Define Neovim-specific custom keymaps
+---@return nil
+local function defineNeovimKeymaps()
+  -- Move current line or block up/down with Alt + Arrow
+  safeMap(
+    "n",
+    "<A-Down>",
+    "<cmd>execute 'move .+' . v:count1<cr>==",
+    { desc = "Move Down" }
+  )
+  safeMap(
+    "n",
+    "<A-Up>",
+    "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==",
+    { desc = "Move Up" }
+  )
+  safeMap("i", "<A-Down>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+  safeMap("i", "<A-Up>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+  safeMap(
+    "v",
+    "<A-Down>",
+    ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv",
+    { desc = "Move Down" }
+  )
+  safeMap(
+    "v",
+    "<A-Up>",
+    ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv",
+    { desc = "Move Up" }
+  )
+
+  -- Word movement in insert mode using Option+Arrow (macOS)
+  vim.keymap.set("i", "<A-Left>", "<C-Left>", { desc = "Move word left" })
+  vim.keymap.set("i", "<A-Right>", "<C-Right>", { desc = "Move word right" })
 
   -- Search and replace word under cursor
   safeMap("n", "<leader>sr", function()
@@ -88,34 +133,20 @@ local function defineNeovimKeymaps()
     end
   end, { desc = "Search and replace word under cursor" })
 
-  -- Clear search highlight with Esc
-  safeMap("n", "<Esc>", "<cmd>noh<CR>", { desc = "Clear search highlight" })
-
-  -- Window navigation shortcuts
-  safeMap("n", "<C-h>", "<C-w>h")
-  safeMap("n", "<C-j>", "<C-w>j")
-  safeMap("n", "<C-k>", "<C-w>k")
-  safeMap("n", "<C-l>", "<C-w>l")
-
-  -- Window split management
-  safeMap("n", "<leader>ww", "<C-W>p", { desc = "Other window" })
-  safeMap("n", "<leader>wd", "<C-W>c", { desc = "Delete window" })
-  safeMap("n", "<leader>w-", "<C-W>s", { desc = "Split below" })
-  safeMap("n", "<leader>w|", "<C-W>v", { desc = "Split right" })
-  safeMap("n", "<leader>-", "<C-W>s", { desc = "Split below (alias)" })
-  safeMap("n", "<leader>|", "<C-W>v", { desc = "Split right (alias)" })
-
-  -- Misc navigation & toggles
+  -- Toggle options
   safeMap("n", "<leader>ct", toggleWordWrap, { desc = "Toggle word wrap" })
-  safeMap("n", "<leader>bc", "<cmd>BufferLinePick<CR>", { desc = "Pick buffer" })
+  safeMap(
+    "n",
+    "<leader>bc",
+    "<cmd>BufferLinePick<CR>",
+    { desc = "Pick buffer" }
+  )
 end
 
 -- ------------------------------------------------------ --
 --                    Neovide Keymaps                     --
 -- ------------------------------------------------------ --
--- These keymaps enable common macOS-like clipboard shortcuts
--- when running in Neovide (GUI Neovim frontend).
--- Source: https://neovide.dev/faq.html#how-can-i-use-cmd-ccmd-v-to-copy-and-paste
+
 if vim.g.neovide then
   vim.keymap.set("n", "<D-s>", ":w<CR>", { desc = "Save file" })
   vim.keymap.set("v", "<D-c>", '"+y', { desc = "Copy to clipboard" })
@@ -128,51 +159,101 @@ end
 -- ------------------------------------------------------ --
 --                     VSCode Keymaps                     --
 -- ------------------------------------------------------ --
+
+---@desc Define VSCode-specific keymaps using VSCodeNotify and VSCodeCall
+---@return nil
 local function defineVscodeKeymaps()
   -- Terminal controls
-  safeMap("n", "<C-/>", function() vscodeCall("workbench.action.terminal.focus") end)
-  safeMap("t", "<C-h>", function() vscodeCall("workbench.action.terminal.focusPreviousPane") end)
-  safeMap("t", "<C-l>", function() vscodeCall("workbench.action.terminal.focusNextPane") end)
+  safeMap("n", "<C-/>", function()
+    vscodeCall("workbench.action.terminal.focus")
+  end)
+  safeMap("t", "<C-h>", function()
+    vscodeCall("workbench.action.terminal.focusPreviousPane")
+  end)
+  safeMap("t", "<C-l>", function()
+    vscodeCall("workbench.action.terminal.focusNextPane")
+  end)
 
   -- File explorer and quick open
-  safeMap("n", "<leader>fe", function() vscodeNotify("workbench.files.action.focusFilesExplorer") end)
-  safeMap("n", "<leader>ff", function() vscodeNotify("workbench.action.quickOpen") end)
-  safeMap("n", "<leader>gg", function() vscodeNotify("workbench.view.scm") end)
+  safeMap("n", "<leader>fe", function()
+    vscodeNotify("workbench.files.action.focusFilesExplorer")
+  end)
+  safeMap("n", "<leader>ff", function()
+    vscodeNotify("workbench.action.quickOpen")
+  end)
+  safeMap("n", "<leader>gg", function()
+    vscodeNotify("workbench.view.scm")
+  end)
 
   -- Symbol and editor navigation
-  safeMap("n", "<leader>cs", function() vscodeCall("workbench.action.gotoSymbol") end)
-  safeMap("n", "<S-l>", function() vscodeNotify("workbench.action.nextEditor") end)
-  safeMap("n", "<S-h>", function() vscodeNotify("workbench.action.previousEditor") end)
+  safeMap("n", "<leader>cs", function()
+    vscodeCall("workbench.action.gotoSymbol")
+  end)
+  safeMap("n", "<S-l>", function()
+    vscodeNotify("workbench.action.nextEditor")
+  end)
+  safeMap("n", "<S-h>", function()
+    vscodeNotify("workbench.action.previousEditor")
+  end)
 
   -- LSP and diagnostics
-  safeMap("n", "gr", function() vscodeNotify("editor.action.referenceSearch.trigger") end)
-  safeMap("n", "<leader>cr", function() vscodeNotify("editor.action.rename") end)
-  safeMap("n", "<leader>ca", function() vscodeNotify("editor.action.quickFix") end)
-  safeMap("n", "<leader>cA", function() vscodeNotify("editor.action.sourceAction") end)
-  safeMap("n", "<leader>sd", function() vscodeNotify("workbench.action.problems.focus") end)
-  safeMap("n", "<leader>cp", function() vscodeNotify("workbench.panel.markers.view.focus") end)
-  safeMap("n", "<leader>cd", function() vscodeNotify("editor.action.marker.next") end)
+  safeMap("n", "gr", function()
+    vscodeNotify("editor.action.referenceSearch.trigger")
+  end)
+  safeMap("n", "<leader>cr", function()
+    vscodeNotify("editor.action.rename")
+  end)
+  safeMap("n", "<leader>ca", function()
+    vscodeNotify("editor.action.quickFix")
+  end)
+  safeMap("n", "<leader>cA", function()
+    vscodeNotify("editor.action.sourceAction")
+  end)
+  safeMap("n", "<leader>sd", function()
+    vscodeNotify("workbench.action.problems.focus")
+  end)
+  safeMap("n", "<leader>cp", function()
+    vscodeNotify("workbench.panel.markers.view.focus")
+  end)
+  safeMap("n", "<leader>cd", function()
+    vscodeNotify("editor.action.marker.next")
+  end)
 
   -- Bookmark management
-  safeMap("n", "<leader>sml", function() vscodeNotify("bookmarks.list") end)
-  safeMap("n", "<leader>smL", function() vscodeNotify("bookmarks.listFromAllFiles") end)
-  safeMap("n", "<leader>smm", function() vscodeNotify("bookmarks.toggle") end)
-  safeMap("n", "<leader>smd", function() vscodeNotify("bookmarks.clear") end)
-  safeMap("n", "<leader>smr", function() vscodeNotify("bookmarks.clearFromAllFiles") end)
+  safeMap("n", "<leader>sml", function()
+    vscodeNotify("bookmarks.list")
+  end)
+  safeMap("n", "<leader>smL", function()
+    vscodeNotify("bookmarks.listFromAllFiles")
+  end)
+  safeMap("n", "<leader>smm", function()
+    vscodeNotify("bookmarks.toggle")
+  end)
+  safeMap("n", "<leader>smd", function()
+    vscodeNotify("bookmarks.clear")
+  end)
+  safeMap("n", "<leader>smr", function()
+    vscodeNotify("bookmarks.clearFromAllFiles")
+  end)
 
   -- Clipboard and undo/redo
   safeMap("v", "<C-c>", function()
     vscodeNotify("editor.action.clipboardCopyAction")
     print("📎 Copied to clipboard!")
   end)
-  safeMap("n", "u", function() vscodeNotify("undo") end)
-  safeMap("n", "<C-r>", function() vscodeNotify("redo") end)
+  safeMap("n", "u", function()
+    vscodeNotify("undo")
+  end)
+  safeMap("n", "<C-r>", function()
+    vscodeNotify("redo")
+  end)
 end
 
 -- ------------------------------------------------------ --
 --                    Keymap Dispatcher                   --
 -- ------------------------------------------------------ --
--- Load mappings based on whether we're in VSCode
+
+---@desc Load keymaps depending on Neovim host (VSCode or terminal)
 if vim.g.vscode then
   print("⚡ Connected to VSCode-Neovim")
   defineVscodeKeymaps()

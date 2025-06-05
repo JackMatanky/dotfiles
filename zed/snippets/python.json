@@ -12,7 +12,7 @@
 
   "BasedPyright Ignore Rule Comment": {
     "prefix": "pyignore",
-    "body": "# pyright: ignore[${1|reportAny,reportExplicitAny|}]$0",
+    "body": "# pyright: ignore[${1|reportAny,reportExplicitAny,reportUnusedImport,reportUnreachable,reportUnknownParameterType|}]$0",
     "description": "Ignore specific line diagnostic in pyright (ignore all is unsafe)"
   },
 
