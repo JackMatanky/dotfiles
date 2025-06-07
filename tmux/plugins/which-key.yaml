@@ -1,4 +1,9 @@
-# ~/.config/tmux/which-key.yaml
+# -----------------------------------------------------------------------------
+# Filename: ~/dotfiles/tmux/plugins/which-key.yaml
+# GitHub: https://github.com/alexwforsythe/tmux-which-key
+# Description: Modular tmux which-key config with Zellij-inspired UX,
+#              TPM plugin support, structured command hints, and visual grouping.
+# -----------------------------------------------------------------------------
 
 command_alias_start_index: 200
 
