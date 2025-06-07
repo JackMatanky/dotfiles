@@ -8,108 +8,108 @@
 command_alias_start_index: 200
 
 keybindings:
-  prefix_table: " " # Trigger which-key popup with prefix + Space
+  prefix_table: Space # Trigger which-key popup with prefix + Space
 
 title:
-  style: "align=centre,bold"
-  prefix: "tmux"
-  prefix_style: "fg=green,align=centre,bold"
+  style: align=centre,bold
+  prefix: tmux
+  prefix_style: fg=green,align=centre,bold
 
 position:
-  x: "R"
-  y: "P"
+  x: R
+  y: P
 
 items:
   - name: "+Pane"
-    key: "p"
+    key: p
     menu:
       - name: "Split horizontally"
-        key: '"'
+        key: Quote
         command: "split-window -v"
       - name: "Split vertically"
-        key: "%"
+        key: Percent
         command: "split-window -h"
       - name: "Toggle zoom"
-        key: "z"
+        key: z
         command: "resize-pane -Z"
       - name: "Kill pane"
-        key: "x"
+        key: x
         command: "kill-pane"
       - name: "Break into new window"
-        key: "!"
+        key: Exclam
         command: "break-pane"
       - name: "Swap left"
-        key: "{"
+        key: LBrace
         command: "swap-pane -U"
       - name: "Swap right"
-        key: "}"
+        key: RBrace
         command: "swap-pane -D"
       - name: "Display pane numbers"
-        key: "q"
+        key: q
         command: "display-panes"
 
   - name: "+Window"
-    key: "w"
+    key: w
     menu:
       - name: "New window"
-        key: "c"
+        key: c
         command: "new-window"
       - name: "Rename window"
-        key: ","
+        key: Comma
         command: 'command-prompt -I ''#W'' "rename-window ''%%''"'
       - name: "Kill window"
-        key: "&"
+        key: Ampersand
         command: "kill-window"
       - name: "Last window"
-        key: "l"
+        key: l
         command: "last-window"
       - name: "List windows"
-        key: "w"
+        key: w
         command: "choose-window"
       - name: "Next window"
-        key: "n"
+        key: n
         command: "next-window"
       - name: "Previous window"
-        key: "p"
+        key: p
         command: "previous-window"
 
   - name: "+Session"
-    key: "s"
+    key: s
     menu:
       - name: "Session manager"
-        key: "O"
+        key: O
         command: "run-shell 'tmux-sessionx'"
       - name: "List sessions"
-        key: "s"
+        key: s
         command: "choose-session"
       - name: "Detach session"
-        key: "d"
+        key: d
         command: "detach-client"
       - name: "Rename session"
-        key: "$"
+        key: Dollar
         command: 'command-prompt -I ''#S'' "rename-session ''%%''"'
 
   - name: "+Misc"
-    key: "m"
+    key: m
     menu:
       - name: "Reload config"
-        key: "r"
+        key: r
         command: "source-file ~/dotfiles/tmux/tmux.conf"
       - name: "Show time"
-        key: "t"
+        key: t
         command: "display-time"
       - name: "Help popup"
-        key: "?"
+        key: Question
         command: "run-shell 'less ~/.config/tmux/tmux.keybindings'"
       - name: "Choose client"
-        key: "D"
+        key: D
         command: "choose-client"
       - name: "Paste buffer"
-        key: "]"
+        key: RBracket
         command: "paste-buffer"
       - name: "Enter copy mode"
-        key: "["
+        key: LBracket
         command: "copy-mode"
       - name: "Find window"
-        key: "f"
+        key: f
         command: "command-prompt 'find-window %%'"
