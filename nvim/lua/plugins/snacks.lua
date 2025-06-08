@@ -1,6 +1,5 @@
 -- ----------------------------------------------------------------------------
 --  Filename: ~/.config/nvim/lua/plugins/snacks.lua
---  Plugin: snacks.nvim
 --  Docs: https://github.com/folke/snacks.nvim
 --  Description: Snacks config for image viewer and lazygit
 -- ----------------------------------------------------------------------------
