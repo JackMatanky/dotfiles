@@ -214,8 +214,6 @@ brew 'zathura-pdf-mupdf'
 brew 'pandoc'
 # Convert images to PDF via direct JPEG inclusion
 brew 'img2pdf'
-# Convert PDF pages to images
-brew 'pdftoppm'
 # Tools for and transforming and inspecting PDF files
 brew 'qpdf'
 # PDF rendering library, based on the xpdf-3.0 code base
@@ -260,7 +258,6 @@ if OS.mac?
   tap 'felixkratz/formulae'
   brew 'felixkratz/formulae/borders'
 
-
   # ---------------------------------------------------------- #
   #                MacOS Casks: GUI Applications               #
   # ---------------------------------------------------------- #
@@ -274,11 +271,11 @@ if OS.mac?
 
   # --------------------- IDEs & Editors --------------------- #
   # Neovim Client
-  cask "neovide"
+  cask 'neovide'
   # Keyboard-centric code editor
   cask 'zed'
   # Multiplayer code editor
-  cask "zed@preview"
+  cask 'zed@preview'
   # Microsoft’s official code editor with extensions and debugging
   cask 'visual-studio-code'
   # Open-source version of Visual Studio Code without MS branding/telemetry/licensing
@@ -315,7 +312,7 @@ if OS.mac?
   # ------------------- Productivity Tools ------------------- #
   # AeroSpace is an i3-like tiling window manager for macOS
   tap 'nikitabobko/tap'
-  cask 'nikitabobko/tapaerospace'
+  cask 'nikitabobko/tap/aerospace'
   # Drivers for DisplayLink docks, adapters and monitors
   cask 'displaylink'
   # Cross-platform Text Expander written in Rust
@@ -344,7 +341,7 @@ if OS.mac?
   cask 'zoom'
 
   # Peer to peer Bitorrent client
-  cask "qbittorrent"
+  cask 'qbittorrent'
 
   # ---------------------------------------------------------- #
   #                            Fonts                           #
@@ -377,7 +374,7 @@ if OS.mac?
   mas 'darker', id: 1_637_413_102
   mas 'Documents Translator', id: 1_566_993_561
   mas 'G App Launcher', id: 1_543_803_459
-  mas "Mailbutler", id: 1313355438
+  mas 'Mailbutler', id: 1_313_355_438
   mas 'Obsidian Web Clipper', id: 6_720_708_363
   mas 'OneTab', id: 1_540_160_809
 end
@@ -388,148 +385,148 @@ end
 
 # ------------------------ UI & Themes ----------------------- #
 vscode 'catppuccin.catppuccin-vsc'
-vscode "ibm.output-colorizer"
-vscode "naumovs.color-highlight"
-vscode "oderwat.indent-rainbow"
+vscode 'ibm.output-colorizer'
+vscode 'naumovs.color-highlight'
+vscode 'oderwat.indent-rainbow'
 vscode 'vscode-icons-team.vscode-icons'
 
 # -------------- Code Navigation & Productivity -------------- #
 vscode 'alefragnani.project-manager'
-vscode "gruntfuggly.todo-tree"
+vscode 'gruntfuggly.todo-tree'
 # vscode "usernamehw.errorlens"
 
 # ---------------- Productivity & AI Utilities --------------- #
 # vscode "patbenatar.advanced-new-file"
-vscode "albert.tabout"
-vscode "almenon.arepl"
-vscode "codeium.codeium"
-vscode "github.copilot"
-vscode "github.copilot-chat"
-vscode "ionutvmi.path-autocomplete"
-vscode "njpwerner.autodocstring"
-vscode "randomfractalsinc.snippets-viewer"
+vscode 'albert.tabout'
+vscode 'almenon.arepl'
+vscode 'codeium.codeium'
+vscode 'github.copilot'
+vscode 'github.copilot-chat'
+vscode 'ionutvmi.path-autocomplete'
+vscode 'njpwerner.autodocstring'
+vscode 'randomfractalsinc.snippets-viewer'
 
 # ------------------------- Comments ------------------------- #
 vscode 'aaron-bond.better-comments'
-vscode "dnut.rewrap-revived"
-vscode "exodiusstudios.comment-anchors"
-vscode "polymermallard.box-comment"
-vscode "stackbreak.comment-divider"
+vscode 'dnut.rewrap-revived'
+vscode 'exodiusstudios.comment-anchors'
+vscode 'polymermallard.box-comment'
+vscode 'stackbreak.comment-divider'
 
 # --------------------------- RegEx -------------------------- #
-vscode "chrmarti.regex"
-vscode "louiswt.regexp-preview"
+vscode 'chrmarti.regex'
+vscode 'louiswt.regexp-preview'
 
 # -------------------- Vim & Modal Editing ------------------- #
 vscode 'asvetliakov.vscode-neovim'
-vscode "julianiaquinandi.nvim-ui-modifier"
-vscode "lancewilhelm.nvim-dashboard"
+vscode 'julianiaquinandi.nvim-ui-modifier'
+vscode 'lancewilhelm.nvim-dashboard'
 vscode 'vspacecode.whichkey'
 
 # ------------------- Linters & Formatters ------------------- #
-vscode "esbenp.prettier-vscode"
-vscode "editorconfig.editorconfig"
-vscode "lacroixdavid1.vscode-format-context-menu"
-vscode "shardulm94.trailing-spaces"
-vscode "streetsidesoftware.code-spell-checker"
+vscode 'esbenp.prettier-vscode'
+vscode 'editorconfig.editorconfig'
+vscode 'lacroixdavid1.vscode-format-context-menu'
+vscode 'shardulm94.trailing-spaces'
+vscode 'streetsidesoftware.code-spell-checker'
 # vscode "jkillian.custom-local-formatters"
 # vscode "jbockle.jbockle-format-files"
 
 # ------------------------ Environment ----------------------- #
-vscode "mikestead.dotenv"
+vscode 'mikestead.dotenv'
 
 # ---------------------- Shell Utilities --------------------- #
-vscode "constneo.vscode-nushell-format"
-vscode "foxundermoon.shell-format"
-vscode "thenuprojectcontributors.vscode-nushell-lang"
-vscode "timonwong.shellcheck"
+vscode 'constneo.vscode-nushell-format'
+vscode 'foxundermoon.shell-format'
+vscode 'thenuprojectcontributors.vscode-nushell-lang'
+vscode 'timonwong.shellcheck'
 
 # ------------------- Git & Version Control ------------------ #
 # vscode "eamodio.gitlens"
-vscode "github.remotehub"
-vscode "github.vscode-github-actions"
-vscode "github.vscode-pull-request-github"
-vscode "gitlab.gitlab-workflow"
-vscode "mhutchie.git-graph"
+vscode 'github.remotehub'
+vscode 'github.vscode-github-actions'
+vscode 'github.vscode-pull-request-github'
+vscode 'gitlab.gitlab-workflow'
+vscode 'mhutchie.git-graph'
 vscode 'vivaxy.vscode-conventional-commits'
 vscode 'vsls-contrib.gistfs'
 
 # -------------------- Remote Repositories ------------------- #
-vscode "ms-vscode-remote.remote-ssh"
-vscode "ms-vscode-remote.remote-ssh-edit"
-vscode "ms-vscode.azure-repos"
-vscode "ms-vscode.remote-explorer"
-vscode "ms-vscode.remote-repositories"
+vscode 'ms-vscode-remote.remote-ssh'
+vscode 'ms-vscode-remote.remote-ssh-edit'
+vscode 'ms-vscode.azure-repos'
+vscode 'ms-vscode.remote-explorer'
+vscode 'ms-vscode.remote-repositories'
 
 # --------------------- Jupyter Notebooks -------------------- #
-vscode "ms-toolsai.jupyter"
-vscode "ms-toolsai.jupyter-keymap"
-vscode "ms-toolsai.jupyter-renderers"
-vscode "ms-toolsai.vscode-jupyter-cell-tags"
-vscode "ms-toolsai.vscode-jupyter-slideshow"
+vscode 'ms-toolsai.jupyter'
+vscode 'ms-toolsai.jupyter-keymap'
+vscode 'ms-toolsai.jupyter-renderers'
+vscode 'ms-toolsai.vscode-jupyter-cell-tags'
+vscode 'ms-toolsai.vscode-jupyter-slideshow'
 
 # ----------------- Language Server Protocols ---------------- #
-vscode "nefrob.vscode-just-syntax"
-vscode "redhat.java"
-vscode "redhat.vscode-xml"
-vscode "redhat.vscode-yaml"
-vscode "sumneko.lua"
-vscode "tamasfe.even-better-toml"
+vscode 'nefrob.vscode-just-syntax'
+vscode 'redhat.java'
+vscode 'redhat.vscode-xml'
+vscode 'redhat.vscode-yaml'
+vscode 'sumneko.lua'
+vscode 'tamasfe.even-better-toml'
 
 # -------------------------- Python -------------------------- #
 vscode 'charliermarsh.ruff'
-vscode "detachhead.basedpyright"
-vscode "joshrmosier.streamlit-runner"
-vscode "kevinrose.vsc-python-indent"
-vscode "marimo-team.vscode-marimo"
-vscode "ms-python.black-formatter"
-vscode "ms-python.debugpy"
-vscode "ms-python.python"
-vscode "plotlydashsnippets.plotly-dash-snippets"
+vscode 'detachhead.basedpyright'
+vscode 'joshrmosier.streamlit-runner'
+vscode 'kevinrose.vsc-python-indent'
+vscode 'marimo-team.vscode-marimo'
+vscode 'ms-python.black-formatter'
+vscode 'ms-python.debugpy'
+vscode 'ms-python.python'
+vscode 'plotlydashsnippets.plotly-dash-snippets'
 
 # ------------------------ JavaScript ------------------------ #
-vscode "dbaeumer.vscode-eslint"
-vscode "ms-vscode.js-debug-nightly"
+vscode 'dbaeumer.vscode-eslint'
+vscode 'ms-vscode.js-debug-nightly'
 
 # --------------------------- HTML --------------------------- #
-vscode "formulahendry.auto-close-tag"
-vscode "formulahendry.auto-complete-tag"
-vscode "formulahendry.auto-rename-tag"
-vscode "george-alisson.html-preview-vscode"
-vscode "mohd-akram.vscode-html-format"
+vscode 'formulahendry.auto-close-tag'
+vscode 'formulahendry.auto-complete-tag'
+vscode 'formulahendry.auto-rename-tag'
+vscode 'george-alisson.html-preview-vscode'
+vscode 'mohd-akram.vscode-html-format'
 
 # ------------------------- Markdown ------------------------- #
 vscode 'bierner.markdown-mermaid'
 vscode 'bierner.markdown-yaml-preamble'
 vscode 'bpruitt-goddard.mermaid-markdown-syntax-highlighting'
-vscode "darkriszty.markdown-table-prettify"
-vscode "davidanson.vscode-markdownlint"
-vscode "yzhang.markdown-all-in-one"
-vscode "felixzeller.markdown-oxide"
-vscode "marvhen.reflow-markdown"
+vscode 'darkriszty.markdown-table-prettify'
+vscode 'davidanson.vscode-markdownlint'
+vscode 'yzhang.markdown-all-in-one'
+vscode 'felixzeller.markdown-oxide'
+vscode 'marvhen.reflow-markdown'
 
 # ---------------- Markdown, LaTeX, & Writing ---------------- #
 # vscode "shd101wyy.markdown-preview-enhanced"
 # vscode "kortina.vscode-markdown-notes"
 
 # --------------------------- LaTeX -------------------------- #
-vscode "james-yu.latex-workshop"
+vscode 'james-yu.latex-workshop'
 
 # ---------------------------- SQL --------------------------- #
-vscode "inferrinizzard.prettier-sql-vscode"
+vscode 'inferrinizzard.prettier-sql-vscode'
 
 # ------------------ CSV & Spreadsheet Tools ----------------- #
-vscode "grapecity.gc-excelviewer"
-vscode "mechatroner.rainbow-csv"
-vscode "ms-toolsai.datawrangler"
-vscode "janisdd.vscode-edit-csv"
+vscode 'grapecity.gc-excelviewer'
+vscode 'mechatroner.rainbow-csv'
+vscode 'ms-toolsai.datawrangler'
+vscode 'janisdd.vscode-edit-csv'
 
 # ------------------------ Data Viewer ----------------------- #
-vscode "randomfractalsinc.geo-data-viewer"
-vscode "randomfractalsinc.vscode-data-preview"
+vscode 'randomfractalsinc.geo-data-viewer'
+vscode 'randomfractalsinc.vscode-data-preview'
 
 # ------------------ Miscellaneous Utilities ----------------- #
-vscode "spadin.zmk-tools"
-vscode "formulahendry.code-runner"
-vscode "techer.open-in-browser"
-vscode "tomoki1207.pdf"
+vscode 'spadin.zmk-tools'
+vscode 'formulahendry.code-runner'
+vscode 'techer.open-in-browser'
+vscode 'tomoki1207.pdf'
