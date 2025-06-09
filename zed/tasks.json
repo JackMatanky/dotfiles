@@ -367,5 +367,20 @@
     "request": "launch",
     "cwd": "$ZED_WORKTREE_ROOT",
     "tags": ["Python", "debug"]
+  },
+  {
+    "label": "Run Python Script with PYTHONPATH",
+    "command": "python",
+    "args": ["$ZED_FILE"],
+    "env": {
+      "PYTHONPATH": "$ZED_WORKTREE_ROOT/src"
+    },
+    "use_new_terminal": false
+  },
+  {
+    "label": "REPL: Python (direnv + .envrc)",
+    "command": "direnv",
+    "args": ["exec", ".", "python"],
+    "use_new_terminal": true
   }
 ]
