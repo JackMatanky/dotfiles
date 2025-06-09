@@ -343,6 +343,9 @@ if OS.mac?
   # Peer to peer Bitorrent client
   cask 'qbittorrent'
 
+  # Desktop password and login vault
+  cask 'bitwarden'
+
   # ---------------------------------------------------------- #
   #                            Fonts                           #
   # ---------------------------------------------------------- #
