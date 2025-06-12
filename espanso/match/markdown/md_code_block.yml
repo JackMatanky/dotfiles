@@ -1,0 +1,18 @@
+#------------------------------------------------------------------------------
+# Filename: ~/dotfiles/espanso/match/markdown/md_code_block.yml
+#
+# Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------
+---
+matches:
+  - trigger: ":pyblock"
+    replace: "```python\n$|$\n```"
+
+  - trigger: ":jsblock"
+    replace: "```javascript\n$|$\n```"
+
+  - regex: code:(?P<language>.*)\s
+    replace: |-
+      ```{{language}}
+      {{clipboard}}
+      ```

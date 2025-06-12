@@ -1,0 +1,36 @@
+#------------------------------------------------------------------------------
+# Filename: ~/dotfiles/espanso/match/autocorrect.yml
+# Docs: https://espanso.org/docs/
+# Description: Organize all autocorrect configs in a single location. For more
+#              information on imports, see
+#              https://espanso.org/docs/matches/organizing-matches/#imports
+#------------------------------------------------------------------------------
+---
+imports:
+  - "../match/autocorrect/date_weekday.yml"
+  - "../match/autocorrect/autocorrect_a.yml"
+  - "../match/autocorrect/autocorrect_b.yml"
+  - "../match/autocorrect/autocorrect_c.yml"
+  - "../match/autocorrect/autocorrect_d.yml"
+  - "../match/autocorrect/autocorrect_e.yml"
+  - "../match/autocorrect/autocorrect_f.yml"
+  - "../match/autocorrect/autocorrect_g.yml"
+  - "../match/autocorrect/autocorrect_h.yml"
+  - "../match/autocorrect/autocorrect_i.yml"
+  - "../match/autocorrect/autocorrect_j.yml"
+  - "../match/autocorrect/autocorrect_k.yml"
+  - "../match/autocorrect/autocorrect_l.yml"
+  - "../match/autocorrect/autocorrect_m.yml"
+  - "../match/autocorrect/autocorrect_n.yml"
+  - "../match/autocorrect/autocorrect_o.yml"
+  - "../match/autocorrect/autocorrect_p.yml"
+  - "../match/autocorrect/autocorrect_q.yml"
+  - "../match/autocorrect/autocorrect_r.yml"
+  - "../match/autocorrect/autocorrect_s.yml"
+  - "../match/autocorrect/autocorrect_t.yml"
+  - "../match/autocorrect/autocorrect_u.yml"
+  - "../match/autocorrect/autocorrect_v.yml"
+  - "../match/autocorrect/autocorrect_w.yml"
+  - "../match/autocorrect/autocorrect_x.yml"
+  - "../match/autocorrect/autocorrect_y.yml"
+  - "../match/autocorrect/autocorrect_z.yml"

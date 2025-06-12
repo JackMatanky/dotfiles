@@ -297,7 +297,7 @@ if OS.mac?
   # Collect, organise, cite, and share research sources
   cask 'zotero'
   # Handwritten notes and PDF annotation tool
-  # cask 'xournal++'
+  cask 'xournal++'
 
   # ----------------- Office & Document Tools ---------------- #
   # Free cross-platform office suite, fresh version
@@ -339,6 +339,10 @@ if OS.mac?
   cask 'slack'
   # Video communication and virtual meeting platform
   cask 'zoom'
+
+  # ---------------------- Miscellaneous --------------------- #
+  # Electronics design automation suite
+  cask 'kicad'
 
   # Peer to peer Bitorrent client
   cask 'qbittorrent'
