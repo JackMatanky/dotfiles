@@ -41,7 +41,7 @@ def "nu-complete args" [context:string,offset:int] {
 def get-just-arg [name:string,position:int] {
     let recipes = (
         get-recipes
-            | filter {|r| $r.name == $name }
+            | where {|r| $r.name == $name } # Previously used filter instead of where
             | get parameters
             | flatten)
     let len = $recipes | length

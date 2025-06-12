@@ -297,7 +297,7 @@ if OS.mac?
   # Collect, organise, cite, and share research sources
   cask 'zotero'
   # Handwritten notes and PDF annotation tool
-  cask 'xournal++'
+  # cask 'xournal++'
 
   # ----------------- Office & Document Tools ---------------- #
   # Free cross-platform office suite, fresh version

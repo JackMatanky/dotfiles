@@ -318,7 +318,9 @@ if (which starship | is-not-empty) {
 # Docs: https://carapace.sh
 if (which carapace | is-not-empty) {
     mkdir ~/.cache/carapace
-    carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+    carapace _carapace nushell
+      | str replace "default $carapace_completer completer" "default { $carapace_completer } completer"
+      | save --force ~/.cache/carapace/init.nu
     $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 }
 
