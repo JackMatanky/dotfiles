@@ -1,0 +1,7 @@
+{{- if ne .chezmoi.os "darwin" }}
+.config/espanso/**/*.yml
+{{- end }}
+
+{{- if ne .chezmoi.os "linux" }}
+Library/Application Support/espanso/**/*.yml
+{{- end }}
