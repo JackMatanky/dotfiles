@@ -1,0 +1,717 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- T ---
+    # ----------
+    - trigger: tabacco
+      replace: tobacco
+      propagate_case: true
+      word: true
+    - trigger: tahn
+      replace: than
+      propagate_case: true
+      word: true
+    - trigger: taht
+      replace: that
+      propagate_case: true
+      word: true
+    - trigger: talekd
+      replace: talked
+      propagate_case: true
+      word: true
+    - trigger: targetted
+      replace: targeted
+      propagate_case: true
+      word: true
+    - trigger: targetting
+      replace: targeting
+      propagate_case: true
+      word: true
+    - trigger: tast
+      replace: taste
+      propagate_case: true
+      word: true
+    - trigger: tath
+      replace: that
+      propagate_case: true
+      word: true
+    - trigger: tatoo
+      replace: tattoo
+      propagate_case: true
+      word: true
+    - trigger: tattooes
+      replace: tattoos
+      propagate_case: true
+      word: true
+    - trigger: taxanomic
+      replace: taxonomic
+      propagate_case: true
+      word: true
+    - trigger: taxanomy
+      replace: taxonomy
+      propagate_case: true
+      word: true
+    - trigger: teached
+      replace: taught
+      propagate_case: true
+      word: true
+    - trigger: techician
+      replace: technician
+      propagate_case: true
+      word: true
+    - trigger: techicians
+      replace: technicians
+      propagate_case: true
+      word: true
+    - trigger: techiniques
+      replace: techniques
+      propagate_case: true
+      word: true
+    - trigger: technitian
+      replace: technician
+      propagate_case: true
+      word: true
+    - trigger: technnology
+      replace: technology
+      propagate_case: true
+      word: true
+    - trigger: technolgy
+      replace: technology
+      propagate_case: true
+      word: true
+    - trigger: teh
+      replace: the
+      propagate_case: true
+      word: true
+    - trigger: tehy
+      replace: they
+      propagate_case: true
+      word: true
+    - trigger: telelevision
+      replace: television
+      propagate_case: true
+      word: true
+    - trigger: televsion
+      replace: television
+      propagate_case: true
+      word: true
+    - trigger: telphony
+      replace: telephony
+      propagate_case: true
+      word: true
+    - trigger: temerature
+      replace: temperature
+      propagate_case: true
+      word: true
+    - trigger: tempalte
+      replace: template
+      propagate_case: true
+      word: true
+    - trigger: tempaltes
+      replace: templates
+      propagate_case: true
+      word: true
+    - trigger: temparate
+      replace: temperate
+      propagate_case: true
+      word: true
+    - trigger: temperarily
+      replace: temporarily
+      propagate_case: true
+      word: true
+    - trigger: temperment
+      replace: temperament
+      propagate_case: true
+      word: true
+    - trigger: tempertaure
+      replace: temperature
+      propagate_case: true
+      word: true
+    - trigger: temperture
+      replace: temperature
+      propagate_case: true
+      word: true
+    - trigger: temprary
+      replace: temporary
+      propagate_case: true
+      word: true
+    - trigger: tenacle
+      replace: tentacle
+      propagate_case: true
+      word: true
+    - trigger: tenacles
+      replace: tentacles
+      propagate_case: true
+      word: true
+    - trigger: tendacy
+      replace: tendency
+      propagate_case: true
+      word: true
+    - trigger: tendancies
+      replace: tendencies
+      propagate_case: true
+      word: true
+    - trigger: tendancy
+      replace: tendency
+      propagate_case: true
+      word: true
+    - trigger: tennisplayer
+      replace: "tennis\x20player"
+      propagate_case: true
+      word: true
+    - trigger: tepmorarily
+      replace: temporarily
+      propagate_case: true
+      word: true
+    - trigger: terrestial
+      replace: terrestrial
+      propagate_case: true
+      word: true
+    - trigger: terriories
+      replace: territories
+      propagate_case: true
+      word: true
+    - trigger: terriory
+      replace: territory
+      propagate_case: true
+      word: true
+    - trigger: territorist
+      replace: terrorist
+      propagate_case: true
+      word: true
+    - trigger: territoy
+      replace: territory
+      propagate_case: true
+      word: true
+    - trigger: terroist
+      replace: terrorist
+      propagate_case: true
+      word: true
+    - trigger: testiclular
+      replace: testicular
+      propagate_case: true
+      word: true
+    - trigger: testomony
+      replace: testimony
+      propagate_case: true
+      word: true
+    - trigger: tghe
+      replace: the
+      propagate_case: true
+      word: true
+    - trigger: thast
+      replace: "that\x2C\x20that\x27s"
+      propagate_case: true
+      word: true
+    - trigger: theather
+      replace: theater
+      propagate_case: true
+      word: true
+    - trigger: theese
+      replace: these
+      propagate_case: true
+      word: true
+    - trigger: theif
+      replace: thief
+      propagate_case: true
+      word: true
+    - trigger: theives
+      replace: thieves
+      propagate_case: true
+      word: true
+    - trigger: themselfs
+      replace: themselves
+      propagate_case: true
+      word: true
+    - trigger: themslves
+      replace: themselves
+      propagate_case: true
+      word: true
+    - trigger: ther
+      replace: "there\x2C\x20their\x2C\x20the"
+      propagate_case: true
+      word: true
+    - trigger: therafter
+      replace: thereafter
+      propagate_case: true
+      word: true
+    - trigger: therby
+      replace: thereby
+      propagate_case: true
+      word: true
+    - trigger: theri
+      replace: their
+      propagate_case: true
+      word: true
+    - trigger: theyre
+      replace: "they\x27re"
+      propagate_case: true
+      word: true
+    - trigger: thgat
+      replace: that
+      propagate_case: true
+      word: true
+    - trigger: thge
+      replace: the
+      propagate_case: true
+      word: true
+    - trigger: thier
+      replace: their
+      propagate_case: true
+      word: true
+    - trigger: thign
+      replace: thing
+      propagate_case: true
+      word: true
+    - trigger: thigns
+      replace: things
+      propagate_case: true
+      word: true
+    - trigger: thigsn
+      replace: things
+      propagate_case: true
+      word: true
+    - trigger: thikn
+      replace: think
+      propagate_case: true
+      word: true
+    - trigger: thikning
+      replace: "thinking\x2C\x20thickening"
+      propagate_case: true
+      word: true
+    - trigger: thikns
+      replace: thinks
+      propagate_case: true
+      word: true
+    - trigger: thiunk
+      replace: think
+      propagate_case: true
+      word: true
+    - trigger: thn
+      replace: then
+      propagate_case: true
+      word: true
+    - trigger: thna
+      replace: than
+      propagate_case: true
+      word: true
+    - trigger: thne
+      replace: then
+      propagate_case: true
+      word: true
+    - trigger: thnig
+      replace: thing
+      propagate_case: true
+      word: true
+    - trigger: thnigs
+      replace: things
+      propagate_case: true
+      word: true
+    - trigger: thoughout
+      replace: throughout
+      propagate_case: true
+      word: true
+    - trigger: threatend
+      replace: threatened
+      propagate_case: true
+      word: true
+    - trigger: threatning
+      replace: threatening
+      propagate_case: true
+      word: true
+    - trigger: threee
+      replace: three
+      propagate_case: true
+      word: true
+    - trigger: threshhold
+      replace: threshold
+      propagate_case: true
+      word: true
+    - trigger: thrid
+      replace: third
+      propagate_case: true
+      word: true
+    - trigger: throrough
+      replace: thorough
+      propagate_case: true
+      word: true
+    - trigger: throughly
+      replace: thoroughly
+      propagate_case: true
+      word: true
+    - trigger: throught
+      replace: "thought\x2C\x20through\x2C\x20throughout"
+      propagate_case: true
+      word: true
+    - trigger: througout
+      replace: throughout
+      propagate_case: true
+      word: true
+    - trigger: thru
+      replace: through
+      propagate_case: true
+      word: true
+    - trigger: thsi
+      replace: this
+      propagate_case: true
+      word: true
+    - trigger: thsoe
+      replace: those
+      propagate_case: true
+      word: true
+    - trigger: thta
+      replace: that
+      propagate_case: true
+      word: true
+    - trigger: thyat
+      replace: that
+      propagate_case: true
+      word: true
+    - trigger: tiem
+      replace: "time\x2C\x20Tim"
+      propagate_case: true
+      word: true
+    - trigger: tihkn
+      replace: think
+      propagate_case: true
+      word: true
+    - trigger: tihs
+      replace: this
+      propagate_case: true
+      word: true
+    - trigger: timeschedule
+      replace: "time\x20schedule"
+      propagate_case: true
+      word: true
+    - trigger: timne
+      replace: time
+      propagate_case: true
+      word: true
+    - trigger: tiome
+      replace: "time\x2C\x20tome"
+      propagate_case: true
+      word: true
+    - trigger: tje
+      replace: the
+      propagate_case: true
+      word: true
+    - trigger: tjhe
+      replace: the
+      propagate_case: true
+      word: true
+    - trigger: tjpanishad
+      replace: upanishad
+      propagate_case: true
+      word: true
+    - trigger: tkae
+      replace: take
+      propagate_case: true
+      word: true
+    - trigger: tkaes
+      replace: takes
+      propagate_case: true
+      word: true
+    - trigger: tkaing
+      replace: taking
+      propagate_case: true
+      word: true
+    - trigger: tlaking
+      replace: talking
+      propagate_case: true
+      word: true
+    - trigger: tobbaco
+      replace: tobacco
+      propagate_case: true
+      word: true
+    - trigger: todays
+      replace: "today\x27s"
+      propagate_case: true
+      word: true
+    - trigger: todya
+      replace: today
+      propagate_case: true
+      word: true
+    - trigger: toghether
+      replace: together
+      propagate_case: true
+      word: true
+    - trigger: toke
+      replace: took
+      propagate_case: true
+      word: true
+    - trigger: tolerence
+      replace: tolerance
+      propagate_case: true
+      word: true
+    - trigger: Tolkein
+      replace: Tolkien
+      propagate_case: true
+      word: true
+    - trigger: tomatos
+      replace: tomatoes
+      propagate_case: true
+      word: true
+    - trigger: tommorow
+      replace: tomorrow
+      propagate_case: true
+      word: true
+    - trigger: tommorrow
+      replace: tomorrow
+      propagate_case: true
+      word: true
+    - trigger: tongiht
+      replace: tonight
+      propagate_case: true
+      word: true
+    - trigger: toriodal
+      replace: toroidal
+      propagate_case: true
+      word: true
+    - trigger: tormenters
+      replace: tormentors
+      propagate_case: true
+      word: true
+    - trigger: tornadoe
+      replace: tornado
+      propagate_case: true
+      word: true
+    - trigger: torpeados
+      replace: torpedoes
+      propagate_case: true
+      word: true
+    - trigger: torpedos
+      replace: torpedoes
+      propagate_case: true
+      word: true
+    - trigger: tortise
+      replace: tortoise
+      propagate_case: true
+      word: true
+    - trigger: tothe
+      replace: "to\x20the"
+      propagate_case: true
+      word: true
+    - trigger: toubles
+      replace: troubles
+      propagate_case: true
+      word: true
+    - trigger: tounge
+      replace: tongue
+      propagate_case: true
+      word: true
+    - trigger: tourch
+      replace: "torch\x2C\x20touch"
+      propagate_case: true
+      word: true
+    - trigger: towords
+      replace: towards
+      propagate_case: true
+      word: true
+    - trigger: towrad
+      replace: toward
+      propagate_case: true
+      word: true
+    - trigger: tradionally
+      replace: traditionally
+      propagate_case: true
+      word: true
+    - trigger: traditionaly
+      replace: traditionally
+      propagate_case: true
+      word: true
+    - trigger: traditionnal
+      replace: traditional
+      propagate_case: true
+      word: true
+    - trigger: traditition
+      replace: tradition
+      propagate_case: true
+      word: true
+    - trigger: tradtionally
+      replace: traditionally
+      propagate_case: true
+      word: true
+    - trigger: trafficed
+      replace: trafficked
+      propagate_case: true
+      word: true
+    - trigger: trafficing
+      replace: trafficking
+      propagate_case: true
+      word: true
+    - trigger: trafic
+      replace: traffic
+      propagate_case: true
+      word: true
+    - trigger: trancendent
+      replace: transcendent
+      propagate_case: true
+      word: true
+    - trigger: trancending
+      replace: transcending
+      propagate_case: true
+      word: true
+    - trigger: tranform
+      replace: transform
+      propagate_case: true
+      word: true
+    - trigger: tranformed
+      replace: transformed
+      propagate_case: true
+      word: true
+    - trigger: transcendance
+      replace: transcendence
+      propagate_case: true
+      word: true
+    - trigger: transcendant
+      replace: transcendent
+      propagate_case: true
+      word: true
+    - trigger: transcendentational
+      replace: transcendental
+      propagate_case: true
+      word: true
+    - trigger: transcripting
+      replace: "transcribing\x2C\x20transcription"
+      propagate_case: true
+      word: true
+    - trigger: transending
+      replace: transcending
+      propagate_case: true
+      word: true
+    - trigger: transesxuals
+      replace: transsexuals
+      propagate_case: true
+      word: true
+    - trigger: transfered
+      replace: transferred
+      propagate_case: true
+      word: true
+    - trigger: transfering
+      replace: transferring
+      propagate_case: true
+      word: true
+    - trigger: transformaton
+      replace: transformation
+      propagate_case: true
+      word: true
+    - trigger: transistion
+      replace: transition
+      propagate_case: true
+      word: true
+    - trigger: translater
+      replace: translator
+      propagate_case: true
+      word: true
+    - trigger: translaters
+      replace: translators
+      propagate_case: true
+      word: true
+    - trigger: transmissable
+      replace: transmissible
+      propagate_case: true
+      word: true
+    - trigger: transporation
+      replace: transportation
+      propagate_case: true
+      word: true
+    - trigger: tremelo
+      replace: tremolo
+      propagate_case: true
+      word: true
+    - trigger: tremelos
+      replace: tremolos
+      propagate_case: true
+      word: true
+    - trigger: trigered
+      replace: triggered
+      propagate_case: true
+      word: true
+    - trigger: triguered
+      replace: triggered
+      propagate_case: true
+      word: true
+    - trigger: triology
+      replace: trilogy
+      propagate_case: true
+      word: true
+    - trigger: troling
+      replace: trolling
+      propagate_case: true
+      word: true
+    - trigger: troup
+      replace: troupe
+      propagate_case: true
+      word: true
+    - trigger: troups
+      replace: "troupes\x2C\x20troops"
+      propagate_case: true
+      word: true
+    - trigger: truely
+      replace: truly
+      propagate_case: true
+      word: true
+    - trigger: trustworthyness
+      replace: trustworthiness
+      propagate_case: true
+      word: true
+    - trigger: turnk
+      replace: "turnkey\x2C\x20trunk"
+      propagate_case: true
+      word: true
+    - trigger: Tuscon
+      replace: Tucson
+      propagate_case: true
+      word: true
+    - trigger: tust
+      replace: trust
+      propagate_case: true
+      word: true
+    - trigger: tution
+      replace: tuition
+      propagate_case: true
+      word: true
+    - trigger: twelth
+      replace: twelfth
+      propagate_case: true
+      word: true
+    - trigger: twon
+      replace: town
+      propagate_case: true
+      word: true
+    - trigger: twpo
+      replace: two
+      propagate_case: true
+      word: true
+    - trigger: tyhat
+      replace: that
+      propagate_case: true
+      word: true
+    - trigger: tyhe
+      replace: they
+      propagate_case: true
+      word: true
+    - trigger: typcial
+      replace: typical
+      propagate_case: true
+      word: true
+    - trigger: typicaly
+      replace: typically
+      propagate_case: true
+      word: true
+    - trigger: tyranies
+      replace: tyrannies
+      propagate_case: true
+      word: true
+    - trigger: tyrany
+      replace: tyranny
+      propagate_case: true
+      word: true
+    - trigger: tyrranies
+      replace: tyrannies
+      propagate_case: true
+      word: true
+    - trigger: tyrrany
+      replace: tyranny
+      propagate_case: true
+      word: true

@@ -1,0 +1,1101 @@
+{
+  /* -------------------------------------------------------- */
+  /*                      Global Settings                     */
+  /* -------------------------------------------------------- */
+
+  /* ------------------------- Fonts ------------------------ */
+  "editor.fontFamily": "FiraCode Nerd Font Mono",
+  "editor.fontSize": 15,
+  "editor.fontLigatures": true,
+
+  "editor.insertSpaces": true,
+  "editor.wordWrap": "on",
+
+  /* --------------------- Bracket Pairs -------------------- */
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.experimentalGpuAcceleration": "on",
+  "editor.foldingMaximumRegions": 10000,
+  "editor.lineNumbers": "relative",
+  "editor.linkedEditing": true,
+  "editor.snippetSuggestions": "top",
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+
+  "diffEditor.codeLens": true,
+
+  "window.restoreWindows": "preserve",
+  "window.newWindowProfile": "Default",
+
+  /* ------------------- File Associations ------------------ */
+  "files.associations": {
+    "*.html": "html",
+    "snippets/*.json": "jsonc",
+    "*.nu": "nushell",
+    "*.pgsql": "postgres",
+    "brewf*": "ruby",
+    "uv.lock": "toml",
+    "ssh-config": "ssh_config"
+  },
+
+  /* ----------------- Security & Telemetry ----------------- */
+  "security.workspace.trust.untrustedFiles": "open",
+  "telemetry.feedback.enabled": false,
+  "telemetry.telemetryLevel": "crash",
+
+  //SEGMENT - Snippets
+  "[snippets]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true
+  },
+  //!SEGMENT
+
+  /* -------------------------------------------------------- */
+  /*SECTION:                 Workbench                        */
+  /* -------------------------------------------------------- */
+  "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
+
+  "workbench.settings.applyToAllProfiles": [
+    "editor.defaultFormatter",
+    "workbench.commandPalette.experimental.suggestCommands",
+    "workbench.externalBrowser",
+    "python.analysis.inlayHints.variableTypes",
+    "python.analysis.inlayHints.functionReturnTypes",
+    "python.analysis.inlayHints.callArgumentNames",
+    "notebook.defaultFormatter",
+    "SQL-Formatter-VSCode.dataTypeCase",
+    "SQL-Formatter-VSCode.denseOperators",
+    "SQL-Formatter-VSCode.expressionWidth",
+    "SQL-Formatter-VSCode.functionCase",
+    "html.format.extraLiners",
+    "vsicons.presets.hideExplorerArrows",
+    "markdown.preview.lineHeight",
+    "terminal.integrated.defaultProfile.osx",
+    "terminal.integrated.defaultProfile.windows"
+  ],
+
+  "workbench.settings.openDefaultKeybindings": true,
+  "workbench.externalBrowser": "safari", // "edge"
+  "workbench.experimental.enableNewProfilesUI": true,
+  "workbench.commandPalette.experimental.suggestCommands": true,
+  //!SECTION
+
+  /* -------------------------------------------------------- */
+  /*SECTION:            Appearance & Theme                    */
+  /* -------------------------------------------------------- */
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#89b4fa"
+  },
+  //SEGMENT - Theme
+  "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "catppuccin.accentColor": "blue",
+  //!SEGMENT
+
+  //SEGMENT - Icons
+  // Grey - #90a4ae; Light Beige - #f7d88c; Darker Beige - #e6c04c
+  "workbench.iconTheme": "vscode-icons",
+  "material-icon-theme.activeIconPack": "none",
+  "material-icon-theme.files.color": "#90a4ae",
+  "material-icon-theme.folders.color": "#ddbb77",
+  "material-icon-theme.folders.theme": "specific",
+  //!SEGMENT
+
+  //!SECTION
+
+  /* -------------------------------------------------------- */
+  /*SECTION:             Shell & Terminal                     */
+  /* -------------------------------------------------------- */
+  //SEGMENT - Nushell
+  "[nushell]": {
+    "editor.defaultFormatter": "constneo.vscode-nushell-format",
+    "editor.autoIndent": "full",
+    "editor.autoClosingBrackets": "always",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "workbench.editor.languageDetection": true
+  },
+  "nushellLanguageServer.includeDirs": [
+    "/Users/jack/dotfiles/nushell",
+    "/Users/jack/dotfiles/nushell/aliases",
+    "/Users/jack/dotfiles/nushell/completions",
+    "/Users/jack/dotfiles/nushell/overlays",
+    "/Users/jack/dotfiles/nushell/themes"
+  ],
+  "nushellLanguageServer.nushellExecutablePath": "nu",
+  //!SEGMENT
+
+  "terminal.external.osxExec": "Ghostty.app",
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.defaultProfile.windows": "Nushell",
+  "terminal.integrated.defaultProfile.osx": "Nushell",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.fontLigatures.enabled": true,
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.enableImages": true,
+  "terminal.integrated.sendKeybindingsToShell": true,
+  "terminal.integrated.ignoreProcessNames": [
+    "starship",
+    "oh-my-posh",
+    "bash",
+    "zsh",
+    "nu"
+  ],
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  //!SECTION
+
+  /* -------------------------- SSH ------------------------- */
+  "remote.SSH.configFile": "/Users/jack/dotfiles/ssh/ssh-config",
+  "remote.SSH.showLoginTerminal": true,
+
+  /* ---------------------- Shellcheck ---------------------- */
+  "shellcheck.executablePath": "/opt/homebrew/bin/shellcheck",
+
+  /* -------------------------------------------------------- */
+  /*SECTION:                  NeoVim                          */
+  /* -------------------------------------------------------- */
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+  //"vscode-neovim.neovimExecutablePaths.windows": "C:\\path\\to\\nvim.exe"
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
+
+  /* ------------------ Neovim UI Modifier ------------------ */
+  "nvim-ui.nvimColorNormal": "#fab387", // Peach – calm, default state
+  "nvim-ui.nvimColorInsert": "#89b4fa", // Blue – active insertion, not alarming
+  "nvim-ui.nvimColorVisual": "#cba6f7", // Mauve – selected/visual state
+  "nvim-ui.nvimColorReplace": "#f38ba8", // Red – replace/destructive operation
+
+  /* ------------------- NeoVim Dashboard ------------------- */
+  "nvimDashboard.fontSize": 14,
+  "nvimDashboard.keybinds": [
+    {
+      "letter": "f",
+      "name": "files",
+      "command": "workbench.action.quickOpen"
+    },
+    {
+      "letter": "s",
+      "name": "settings",
+      "command": "workbench.action.openSettings"
+    },
+    {
+      "letter": "q",
+      "name": "exit",
+      "command": "nvim-dashboard.close"
+    }
+  ],
+  "nvimDashboard.openOnNoTabs": true,
+  //!SECTION
+
+  /* ------------------------------------------------------ */
+  /*SECTION:               Spellcheck                       */
+  /* ------------------------------------------------------ */
+  "cSpell.enabled": true,
+  "cSpell.language": "en, he",
+  "cSpell.dictionaryDefinitions": [
+    // npm install -g @cspell/dict-he
+    {
+      "name": "hebrew",
+      "path": "/opt/homebrew/lib/node_modules/@cspell/dict-he/hebrew-words.txt",
+      "description": "Hebrew words from cspell-dict-he",
+      "addWords": false
+    },
+    // npm install -g @cspell/dict-python
+    {
+      "name": "python",
+      "path": "/opt/homebrew/lib/node_modules/@cspell/dict-python/python.txt",
+      "description": "Python dictionary words",
+      "addWords": false
+    },
+    {
+      "name": "python_dictionary",
+      "path": "~/dotfiles/cspell/dictionaries/user_dictionary_python.txt",
+      "addWords": true,
+      "scope": "user"
+    },
+    {
+      "name": "general_dictionary",
+      "path": "~/dotfiles/cspell/dictionaries/user_dictionary_eng.txt",
+      "addWords": true,
+      "scope": "user"
+    }
+  ],
+  // "cSpell.customDictionaries": {
+  //   "user_dictionary_eng": {
+  //     "name": "user_dictionary_eng",
+  //     "path": "~/dotfiles/cspell/dictionaries/user_dictionary_eng.txt",
+  //     "addWords": true,
+  //     "scope": "user"
+  //   },
+  //   "user_dictionary_python": {
+  //     "name": "user_dictionary_python",
+  //     "path": "~/dotfiles/cspell/dictionaries/user_dictionary_python.txt",
+  //     "addWords": true,
+  //     "scope": "user"
+  //   }
+  // },
+  "cSpell.languageSettings": [
+    {
+      "languageId": "python",
+      "dictionaries": [ "python" ]
+    },
+    {
+      "languageId": "javascript",
+      "dictionaries": [ "typescript", "node" ]
+    }
+  ],
+  "cSpell.dictionaries": [
+    // User Defined
+    "general_dictionary",
+    "python_dictionary",
+    // cSpell
+    "hebrew",
+    "python"
+  ],
+  "cSpell.ignorePaths": [
+    "node_modules/**",
+    "venv/**",
+    ".venv/**",
+    "__pycache__/**",
+    "settings.json"
+  ],
+  "cSpell.ignoreWords": [
+    "PREMADE",
+    "canonizer",
+    "esbenp",
+    "libexec",
+    "datacls",
+    "docsimple",
+    "enco",
+    "exceptas",
+    "ifmain",
+    "jupy",
+    "pyignore",
+    "pyignoreany",
+    "tryef"
+  ],
+
+  "spellright.addToSystemDictionary": true,
+  "spellright.notificationClass": "warning",
+  "spellright.configurationScope": "user",
+  "spellright.language": [ "en" ],
+  "spellright.documentTypes": [ "markdown", "latex" ],
+  //!Section
+
+  /* ------------------------------------------------------ */
+  /*SECTION:           Formatter Settings                   */
+  /* ------------------------------------------------------ */
+  "prettier.documentSelectors": [ "*/**.json" ],
+  "prettier.endOfLine": "lf",
+  "prettier.htmlWhitespaceSensitivity": "css",
+  "prettier.semi": true,
+  "prettier.singleAttributePerLine": true,
+  "prettier.singleQuote": true,
+  "prettier.bracketSameLine": true,
+
+  "less.format.enable": false,
+  "formatContextMenu.closeAfterSave": true,
+
+  //SEGMENT - .editorconfig
+  "editorconfig.generateAuto": true,
+  "editorconfig.showMenuEntry": true,
+  //!SEGMENT
+
+  "shfmt.executablePath": "/opt/homebrew/bin/shfmt",
+  "shellformat.path": "/opt/homebrew/bin/shfmt",
+
+  //!SECTION
+
+  /* ------------------------------------------------------ */
+  /*SECTION:           Comment Extensions                   */
+  /* ------------------------------------------------------ */
+  "commentAnchors.tags.separators": [ " - ", ": ", " " ],
+  "commentAnchors.tagHighlights.enabled": true,
+  "commentAnchors.tags.displayHierarchyInWorkspace": true,
+  "commentAnchors.tags.displayInGutter": true,
+  "commentAnchors.tags.displayLineNumber": true,
+  "commentAnchors.tags.endTag": "!",
+  "commentAnchors.tags.matchPrefix": [
+    "<!--",
+    "//",
+    "/*",
+    "/**",
+    "*",
+    "#",
+    "--"
+  ],
+  "commentAnchors.tags.anchors": {
+    "ANCHOR": {
+      "iconColor": "purple",
+      "highlightColor": "#A8C023",
+      "scope": "file"
+    },
+    "SECTION": {
+      "iconColor": "blurple",
+      "highlightColor": "#896afc",
+      "styleMode": "full",
+      "scope": "workspace",
+      "behavior": "region"
+    },
+    "SEGMENT": {
+      "iconColor": "blue",
+      "highlightColor": "#3ea8ff",
+      "styleMode": "full",
+      "scope": "file",
+      "behavior": "region"
+    },
+    "REVIEW": {
+      "iconColor": "orange",
+      "highlightColor": "#FFB300",
+      "scope": "workspace"
+    },
+    "TODO": {
+      "iconColor": "yellow",
+      "highlightColor": "#3ea8ff",
+      "scope": "workspace"
+    },
+    "FIXME": {
+      "iconColor": "red",
+      "highlightColor": "#F44336",
+      "styleMode": "full",
+      "scope": "workspace"
+    },
+    "STUB": {
+      "iconColor": "teal",
+      "highlightColor": "#BA68C8",
+      "scope": "file"
+    },
+    // Information Tags
+    "NOTE": {
+      "iconColor": "green",
+      "highlightColor": "#64DD17",
+      "scope": "file"
+    },
+    "LINK": {
+      "iconColor": "emerald",
+      "highlightColor": "#2ecc71",
+      "scope": "workspace",
+      "behavior": "link"
+    },
+    "SOURCE": {
+      "iconColor": "yellow",
+      "highlightColor": "#2ecc71",
+      "scope": "workspace",
+      "behavior": "link"
+    }
+  },
+
+  "better-comments.multilineComments": true,
+  "better-comments.highlightPlainText": false,
+  "better-comments.tags": [
+    {
+      "tag": "<>", // Section
+      "color": "#F1FA8C",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": true
+    },
+    {
+      "tag": "*", // Important
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "!", // Warning
+      "color": "#FF5555",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?", // Question
+      "color": "#b855ff",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+
+  //SEGMENT - TODO Tree
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "icon": "check",
+      "type": "line"
+    },
+    "FIXME": {
+      "iconColour": "#eed49f",
+      "gutterIcon": true
+    }
+  },
+  //!SEGMENT
+
+  /* -------------------- Comment Divider ------------------- */
+  // Docs: https://github.com/stackbreak/comment-divider
+  "comment-divider.length": 64,
+
+  // Set whether the divider will be shrink consider indent size,
+  // or will be always fixed length.
+  "comment-divider.shouldLengthIncludeIndent": true,
+
+  /* -------------------- Main Header ------------------- */
+  // Set symbol for main header line filling (only one).
+  "comment-divider.mainHeaderFiller": "-",
+
+  // Set main header vertical style.
+  "comment-divider.mainHeaderHeight": "block",
+
+  // Set main header text align.
+  "comment-divider.mainHeaderAlign": "center",
+
+  // Set main header text transform style.
+  "comment-divider.mainHeaderTransform": "titlecase",
+
+  /* --------------------- Subheader -------------------- */
+  // Set symbol for subheader line filling (only one).
+  "comment-divider.subheaderFiller": "-",
+
+  // Set subheader vertical style.
+  "comment-divider.subheaderHeight": "line",
+
+  // Set subheader text align.
+  "comment-divider.subheaderAlign": "center",
+
+  // Set subheader text transform style.
+  "comment-divider.subheaderTransform": "titlecase",
+  "comment-divider.languagesMap": {
+    "html": [ "<!--", "-->" ],
+    "just": [ "#", "#" ],
+    "justfie": [ "#", "#" ],
+    "nu": [ "#", "#" ],
+    "nushell": [ "#", "#" ],
+    "lua": [ "--", "--" ],
+    "py": [ "#", "#" ]
+  },
+
+  //!SECTION
+
+  /* -------------------------------------------------------- */
+  /*                        Extensions                        */
+  /* -------------------------------------------------------- */
+  "liveServer.settings.donotShowInfoMsg": true,
+  "latex-workshop.view.pdf.viewer": "browser",
+  "redhat.telemetry.enabled": false,
+  "github.copilot.nextEditSuggestions.enabled": true,
+
+  //SEGMENT - Projects
+  "projectManager.cacheProjectsBetweenSessions": true,
+  "projectManager.openInCurrentWindowIfEmpty": "always",
+  // "projectManager.projectsLocation": "~/dotfiles/vscodium/projects.json",
+  "projectManager.sortList": "Name",
+  // "projectManager.any.baseFolders": [
+  // "/Users/jack/dotfiles"
+  // ],
+  //!SEGMENT
+
+  /* -------------------------------------------------------- */
+  /*                  Language Configurations                 */
+  /* -------------------------------------------------------- */
+  //SECTION - Python
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "python.defaultInterpreterPath": "~/.pyenv/versions/3.13.2/bin/python",
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.inlayHints.callArgumentNames": "partial",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.REPL.sendToNativeREPL": true,
+  "python.terminal.activateEnvironment": true,
+  "python.terminal.shellIntegration.enabled": true,
+  "python.venvPath": ".venv",
+  "python.venvFolders": [ "envs", ".venv" ],
+
+  //SEGMENT - Ruff
+  "ruff.path": [ "/opt/homebrew/bin/ruff" ],
+  "ruff.lineLength": 80,
+  "ruff.organizeImports": true,
+  //!SEGMENT
+
+  //SEGMENT - Pylyzer
+  "pylyzer.diagnostics": false,
+  //!SEGMENT
+
+  //SEGMENT - BasedPyright
+  "basedpyright.analysis.inlayHints.genericTypes": true,
+  "basedpyright.analysis.diagnosticMode": "workspace",
+  "basedpyright.analysis.autoSearchPaths": true,
+  "basedpyright.analysis.typeCheckingMode": "basic",
+  "basedpyright.analysis.diagnosticSeverityOverrides": {
+    // ─── Critical Issues ───
+    "reportMissingImports": "error",
+    // ─── Optional / Informational ───
+    "reportMissingTypeStubs": "hint",
+    "reportUnusedImport": "hint",
+    "reportUnusedClass": "hint",
+    "reportUnusedFunction": "hint",
+    "reportUnusedVariable": "hint",
+    "reportDuplicateImport": "hint",
+    // ─── Silenced Warnings (Noisy or Covered by Ruff) ---
+    "reportImportCycles": "none",
+    "reportRedundantKeywordArg": "none",
+    "reportRedundantCast": "none",
+    "reportUnnecessaryTypeIgnoreComment": "none",
+    "reportUnknownVariableType": "none",
+    "reportUnknownMemberType": "none",
+    "reportUnknownArgumentType": "none",
+    "reportUnknownLambdaType": "none",
+    "reportCallInDefaultInitializer": "none",
+    "reportImplicitOverride": "none",
+    "reportExplicitAny": "none"
+  },
+  //!SEGMENT - Pyright
+
+  //SEGMENT - Marimo
+  "marimo.pythonPath": "${workspaceFolder}/.venv/bin/python",
+  "marimo.marimoPath": "uv run marimo",
+  "marimo.debug": true,
+  "marimo.https": true,
+  //!SEGMENT
+  //!SECTION
+
+  //SECTION - SQL
+  "[sql]": {
+    "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode",
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  },
+
+  //SEGMENT - MS SQL
+  "[mssql]": {
+    "editor.defaultFormatter": "QuantifiedLeap.sql-transformer"
+  },
+  "mssql.connectionGroups": [
+    {
+      "name": "ROOT",
+      "id": "FC8AE99C-9366-4CD8-A953-2E47FB9B5115"
+    }
+  ],
+  "mssql.connections": [
+    {
+      "server": "JACK-LENOVO-LAP\\SQLEXPRESS",
+      "database": "Analiza",
+      "authenticationType": "Integrated",
+      "profileName": "Jolt Data Analysis Course",
+      "password": "",
+      "id": "181681D0-1424-46A9-ADB8-51F9CF5D436C",
+      "groupId": "FC8AE99C-9366-4CD8-A953-2E47FB9B5115"
+    },
+    {
+      "server": "JACK-LENOVO-LAP\\SQLEXPRESS",
+      "database": "Random",
+      "authenticationType": "Integrated",
+      "profileName": "Random Database",
+      "password": "",
+      "id": "CB1385A8-BBF8-45BF-880C-C375703D2D36",
+      "groupId": "FC8AE99C-9366-4CD8-A953-2E47FB9B5115"
+    },
+    {
+      "server": "JACK-LENOVO-LAP\\SQLEXPRESS",
+      "database": "informed_decisions",
+      "authenticationType": "Integrated",
+      "profileName": "Informed Decisions",
+      "password": "",
+      "id": "9A37537E-CCCE-493A-B358-9C2D6BDF3713",
+      "groupId": "FC8AE99C-9366-4CD8-A953-2E47FB9B5115"
+    },
+    {
+      "server": "JACK-LENOVO-LAP\\SQLEXPRESS",
+      "database": "jolt_professional_abilities_test",
+      "authenticationType": "Integrated",
+      "profileName": "Jolt Profesional Abilities Test",
+      "password": "",
+      "id": "9B85E3C8-52ED-4945-811A-CA00D08D2AE4",
+      "groupId": "FC8AE99C-9366-4CD8-A953-2E47FB9B5115"
+    },
+    {
+      "server": "JACK-LENOVO-LAP\\SQLEXPRESS",
+      "database": "jolt_final_project_2",
+      "authenticationType": "Integrated",
+      "profileName": "Jolt Final Project #2",
+      "password": "",
+      "id": "8710995D-E3F2-42E0-8925-4A0F4CF59D4F",
+      "groupId": "FC8AE99C-9366-4CD8-A953-2E47FB9B5115"
+    },
+    {
+      "server": "ID-JACK-DELL-LA",
+      "database": "kuehne_nagel",
+      "authenticationType": "Integrated",
+      "profileName": "ID_Kuehne_Nagel",
+      "password": "",
+      "encrypt": "Mandatory",
+      "trustServerCertificate": true,
+      "id": "C1F79292-3F36-4B9A-BB54-760DA8B81AC8",
+      "groupId": "FC8AE99C-9366-4CD8-A953-2E47FB9B5115"
+    },
+    {
+      "server": "JACK-LENOVO-LAP\\SQLEXPRESS",
+      "database": "taboola_job_exam",
+      "authenticationType": "Integrated",
+      "profileName": "Taboola Job Application",
+      "encrypt": "Mandatory",
+      "trustServerCertificate": true,
+      "user": "",
+      "password": "",
+      "connectTimeout": 15,
+      "commandTimeout": 30,
+      "applicationName": "vscode-mssql",
+      "id": "6317AB21-1CFF-46DC-B460-A7BDE6896AB3",
+      "groupId": "FC8AE99C-9366-4CD8-A953-2E47FB9B5115"
+    }
+  ],
+  "mssql.copyIncludeHeaders": true,
+  "mssql.format.alignColumnDefinitionsInColumns": true,
+  "mssql.format.datatypeCasing": "uppercase",
+  "mssql.format.keywordCasing": "uppercase",
+  "mssql.format.placeSelectStatementReferencesOnNewLine": true,
+  "mssql.showBatchTime": true,
+  "mssql.shortcuts": {
+    "_comment": "Short cuts must follow the format (ctrl)+(shift)+(alt)+[key]",
+    "event.toggleResultPane": "ctrl+alt+R",
+    "event.focusResultsGrid": "ctrl+alt+G",
+    "event.toggleMessagePane": "ctrl+alt+Y",
+    "event.prevGrid": "ctrl+up",
+    "event.nextGrid": "ctrl+down",
+    "event.copySelection": "ctrl+C",
+    "event.copyWithHeaders": "",
+    "event.copyAllHeaders": "",
+    "event.maximizeGrid": "",
+    "event.selectAll": "ctrl+A",
+    "event.saveAsJSON": "",
+    "event.saveAsCSV": "",
+    "event.saveAsExcel": ""
+  },
+  //!SEGMENT
+
+  //SEGMENT - Oracle
+  "[oraclesql]": {
+    "editor.suggest.showSnippets": true,
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    }
+  },
+  "oracledevtools.bookmarkFileFolder": "C:\\Users\\jackm\\Oracle\\oracle.oracledevtools",
+  "oracledevtools.download.otherFolder": "C:\\Users\\jackm\\downloads",
+  "oracledevtools.connectionConfiguration.configFilesFolder": "C:\\Users\\jackm\\Oracle\\network\\admin",
+  "oracledevtools.connectionConfiguration.walletFileFolder": "C:\\Users\\jackm\\Oracle\\network\\admin",
+  //!SEGMENT
+
+  //SEGMENT - Postgres
+  "vscode-postgres.defaultConnection": "Jack's PostgreSQL",
+  //!SEGMENT
+
+  //SEGMENT - SQL Formatter
+  "Prettier-SQL.commaPosition": "after",
+  "Prettier-SQL.denseOperators": false,
+  "Prettier-SQL.expressionWidth": 40,
+  "Prettier-SQL.ignoreTabSettings": true,
+  "Prettier-SQL.indentStyle": "standard",
+  "Prettier-SQL.insertSpacesOverride": true,
+  "Prettier-SQL.keywordCase": "upper",
+  "Prettier-SQL.linesBetweenQueries": 1,
+  "Prettier-SQL.logicalOperatorNewline": "before",
+  "Prettier-SQL.newlineBeforeSemicolon": false,
+  "Prettier-SQL.tabSizeOverride": 2,
+  "sqlTransformer.startingWidth": 4,
+  "concise-sql-formatter.uppercase": true,
+  //!SEGMENT
+  //!SECTION
+
+  //SECTION - DBML
+  "[dbml]": {
+    "editor.defaultFormatter": "aflalo.dbml-formatter"
+  },
+  //!SECTION
+
+  //SECTION - JavaScript
+  "[javascript]": {
+    "editor.maxTokenizationLineLength": 2500,
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  //!SECTION
+
+  //SECTION - JSON
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true,
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace"
+  },
+  "json.format.keepLines": true,
+  //!SECTION
+
+  //SECTION - HTML
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 100,
+    "prettier.bracketSameLine": true
+  },
+  "html.format.indentInnerHtml": true,
+  "html.format.extraLiners": "/html, head, body",
+  "html.format.wrapAttributes": "force-aligned",
+  "html.format.maxPreserveNewLines": 0,
+  "html.format.wrapLineLength": 200,
+  //!SECTION
+
+  /* ---------------------------------------------------- */
+  /*SECTION -                 CSS                         */
+  /* ---------------------------------------------------- */
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "order-custom-css.array": [
+    // Box Model Convention
+    // Source: https://fordinteractive.com/2009/02/order-of-the-day-css-properties/
+    "display",
+    "visibility",
+    "float",
+    "clear",
+    "position",
+    "top",
+    "right",
+    "bottom",
+    "left",
+    "z-index",
+    "width",
+    "min-width",
+    "max-width",
+    "height",
+    "min-height",
+    "max-height",
+    "overflow",
+    "margin",
+    "margin-top",
+    "margin-right",
+    "margin-bottom",
+    "margin-left",
+    "padding",
+    "padding-top",
+    "padding-right",
+    "padding-bottom",
+    "padding-left",
+    "border",
+    "border-top",
+    "border-right",
+    "border-bottom",
+    "border-left",
+    "border-width",
+    "border-top-width",
+    "border-right-width",
+    "border-bottom-width",
+    "border-left-width",
+    "border-style",
+    "border-top-style",
+    "border-right-style",
+    "border-bottom-style",
+    "border-left-style",
+    "border-color",
+    "border-top-color",
+    "border-right-color",
+    "border-bottom-color",
+    "border-left-color",
+    "outline",
+    "list-style",
+    "table-layout",
+    "caption-side",
+    "border-collapse",
+    "border-spacing",
+    "empty-cells",
+    "font",
+    "font-family",
+    "font-size",
+    "line-height",
+    "font-weight",
+    "text-align",
+    "text-indent",
+    "text-transform",
+    "text-decoration",
+    "letter-spacing",
+    "word-spacing",
+    "white-space",
+    "vertical-align",
+    "color",
+    "background",
+    "background-color",
+    "background-image",
+    "background-repeat",
+    "background-position",
+    "opacity",
+    "cursor",
+    "content",
+    "quotes"
+  ],
+  //!SECTION
+
+  /* ---------------------------------------------------- */
+  /*SECTION -              Markdown                       */
+  /* ---------------------------------------------------- */
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.wordWrap": "on",
+    "editor.tabSize": 2,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": false
+    }
+  },
+  "markdown.preview.fontFamily": "'-apple-system', 'BlinkMacSystemFont', 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif, 'Brill'",
+  "markdown.preview.lineHeight": 1.25,
+  "markdown.preview.typographer": true,
+  "markdown-preview-enhanced.enableExtendedTableSyntax": true,
+  "markdown-preview-enhanced.frontMatterRenderingOption": "table",
+  "markdown.math.enabled": false,
+  "markdownlint.configFile": "/Users/jack/dotfiles/formatters/.markdownlint.jsonc",
+  "markdownlint.config": {
+    // MD001 - Heading levels should only increment by one level at a time
+    "heading-increment": true,
+    // MD003 - Heading style
+    "heading-style": {
+      "style": "atx"
+    },
+    // MD004 - Unordered list style
+    "ul-style": {
+      "style": "dash"
+    },
+    // MD005 - Inconsistent indentation for list items at the same level
+    "list-indent": true,
+    // MD007 - Unordered list indentation
+    "ul-indent": {
+      "indent": 4
+    },
+    // MD009 - Trailing spaces
+    "no-trailing-spaces": {
+      "br_spaces": 2,
+      "list_item_empty_lines": true
+    },
+    // MD010 - Hard tabs
+    "no-hard-tabs": {
+      "code_blocks": false,
+      "spaces_per_tab": 4
+    },
+    // MD011 - Reversed link syntax
+    "no-reversed-links": true,
+    // MD012 - Multiple consecutive blank lines
+    "no-multiple-blanks": {
+      "maximum": 1
+    },
+    // MD013 - Line length
+    "line-length": false,
+    // MD014 - Dollar signs used before commands without showing output
+    "commands-show-output": true,
+    // MD018 - No space after hash on atx style heading
+    "no-missing-space-atx": true,
+    // MD022 - Headings should be surrounded by blank lines
+    "blanks-around-headings": {
+      "lines_above": 1,
+      "lines_below": 1
+    },
+    // MD023 - Headings must start at the beginning of the line
+    "heading-start-left": true,
+    // MD024 - Multiple headings with the same content
+    "no-duplicate-heading": false,
+    // MD025 - Multiple top-level headings in the same document
+    "single-h1": {
+      "level": 1
+    },
+    // MD026 - Trailing punctuation in heading
+    "no-trailing-punctuation": {
+      "punctuation": ".,;:。，；："
+    },
+    // MD027 - Multiple spaces after blockquote symbol
+    "no-multiple-space-blockquote": true,
+    // MD028 - Blank line inside blockquote
+    "no-blanks-blockquote": false,
+    // MD029 - Ordered list item prefix
+    "ol-prefix": {
+      "style": "one_or_ordered"
+    },
+    // MD030 - Spaces after list markers
+    "list-marker-space": {
+      "ol_multi": 1,
+      "ol_single": 1,
+      "ul_multi": 1,
+      "ul_single": 1
+    },
+    // MD031 - Fenced code blocks should be surrounded by blank lines
+    "blanks-around-fences": true,
+    // MD032 - Lists should be surrounded by blank lines
+    "blanks-around-lists": true,
+    // MD033 - Inline HTML
+    "no-inline-html": false,
+    // MD034 - Bare URL used
+    "no-bare-urls": true,
+    // MD035 - Horizontal rule style
+    "hr-style": false,
+    // MD036 - Emphasis used instead of a heading
+    "no-emphasis-as-heading": true,
+    // MD037 - Spaces inside emphasis markers
+    "no-space-in-emphasis": true,
+    // MD038 - Spaces inside code span elements
+    "no-space-in-code": true,
+    // MD039 - Spaces inside link text
+    "no-space-in-links": true,
+    // MD040 - Fenced code blocks should have a language specified
+    "fenced-code-language": {
+      "allowed_languages": [ ]
+    },
+    // MD041 - First line in a file should be a top-level heading
+    "first-line-heading": {
+      "level": 1
+    },
+    // MD042 - No empty links
+    "no-empty-links": true,
+    // MD043 - Required heading structure
+    "required-headings": {
+      "headings": [ "*" ],
+      "match_case": false
+    },
+    // MD045 - Images should have alternate text (alt text)
+    "no-alt-text": false,
+    // MD046 - Code block style
+    "code-block-style": {
+      "style": "fenced"
+    },
+    // MD047 - Files should end with a single newline character
+    "single-trailing-newline": true,
+    // MD048 - Code fence style
+    "code-fence-style": {
+      "style": "backtick"
+    },
+    // MD049 - Emphasis style
+    "emphasis-style": {
+      "style": "asterisk"
+    },
+    // MD050 - Strong style
+    "strong-style": {
+      "style": "asterisk"
+    },
+    // MD051 - Link fragments should be valid
+    "link-fragments": false,
+    // MD052 - Reference links and images should use a label that is defined
+    "reference-links-images": false,
+    // MD053 - Link and image reference definitions should be needed
+    "link-image-reference-definitions": false,
+    // MD055 - Table pipe style
+    "table-pipe-style": {
+      "style": "leading_and_trailing"
+    },
+    // MD058 - Tables should be surrounded by blank lines
+    "blanks-around-tables": true
+  },
+  //SEGMENT - Notes
+  "vscodeMarkdownNotes.allowPipedWikiLinks": true,
+  "obsidianmd.vaultPath": "D:\\obsidian_vault",
+  //!SEGMENT
+  //!SECTION
+
+  //SECTION - TOML
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "evenBetterToml.formatter.alignComments": true,
+  "evenBetterToml.formatter.allowedBlankLines": 2,
+  "evenBetterToml.formatter.arrayAutoExpand": true,
+  //!SECTION
+
+  /* ---------------------------------------------------- */
+  /*                     Miscellaneous                    */
+  /* ---------------------------------------------------- */
+  //SECTION - Git
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "always",
+  //!SECTION
+
+  //SEGMENT - Justfie
+  "vscode-just.formatOnSave": true,
+  "vscode-just.runInTerminal": true,
+  //!SEGMENT
+
+  //SEGMENT - ZMK
+  "zmk.configPath": "/Users/jack/Documents/keyboard_dev/zmk-config",
+  "zmk.buildMatrixPath": "/Users/jack/Documents/keyboard_dev/zmk-config/build.yaml",
+  //!SEGMENT
+
+  //SECTION - AutoHotkey
+  "AutoHotkey2.AutoLibInclude": "All",
+  "AutoHotkey2.CompleteFunctionParens": true,
+  //!SECTION
+
+  //SECTION - NPM
+  "npm.keybindingsChangedWarningShown": true,
+  //!SECTION
+
+  //SECTION - Powershell
+  "powershell.powerShellDefaultVersion": "Windows PowerShell (x64)",
+  //!SECTION
+
+  //SEGMENT - Nix
+  "[nix]": {
+    "editor.defaultFormatter": "brettm12345.nixfmt-vscode"
+  }
+  //!SEGMENT
+}

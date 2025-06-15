@@ -1,0 +1,296 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------------------------------------------------- #
+    #                          WA                          #
+    # ---------------------------------------------------- #
+    - trigger: watn
+      replace: want
+      propagate_case: true
+      word: true
+    - trigger: whant
+      replace: want
+      propagate_case: true
+      word: true
+    - trigger: wnat
+      replace: want
+      propagate_case: true
+      word: true
+    - trigger: wnated
+      replace: wanted
+      propagate_case: true
+      word: true
+    - trigger: whants
+      replace: wants
+      propagate_case: true
+      word: true
+    - trigger: wnats
+      replace: wants
+      propagate_case: true
+      word: true
+    - trigger: wardobe
+      replace: wardrobe
+      propagate_case: true
+      word: true
+    - trigger: warrent
+      replace: warrant
+      propagate_case: true
+      word: true
+    - trigger: warantee
+      replace: warranty
+      propagate_case: true
+      word: true
+    - trigger: warrriors
+      replace: warriors
+      propagate_case: true
+      word: true
+    - trigger: wass
+      replace: was
+      propagate_case: true
+      word: true
+    - trigger: weas
+      replace: was
+      propagate_case: true
+      word: true
+    - trigger: wasnt
+      replace: "wasn\x27t"
+      propagate_case: true
+      word: true
+    - trigger: wayword
+      replace: wayward
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          WE                          #
+    # ---------------------------------------------------- #
+    - trigger: wendsay
+      replace: Wednesday
+      propagate_case: true
+      word: true
+    - trigger: wensday
+      replace: Wednesday
+      propagate_case: true
+      word: true
+    - trigger: weaponary
+      replace: weaponry
+      propagate_case: true
+      word: true
+    - trigger: wierd
+      replace: weird
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          WH                          #
+    # ---------------------------------------------------- #
+    - trigger: waht
+      replace: what
+      propagate_case: true
+      word: true
+    - trigger: whta
+      replace: what
+      propagate_case: true
+      word: true
+    - trigger: wehn
+      replace: when
+      propagate_case: true
+      word: true
+    - trigger: whn
+      replace: when
+      propagate_case: true
+      word: true
+    - trigger: wereabouts
+      replace: whereabouts
+      propagate_case: true
+      word: true
+    - trigger: wheras
+      replace: whereas
+      propagate_case: true
+      word: true
+    - trigger: wherease
+      replace: whereas
+      propagate_case: true
+      word: true
+    - trigger: whereever
+      replace: wherever
+      propagate_case: true
+      word: true
+    - trigger: whther
+      replace: whether
+      propagate_case: true
+      word: true
+    - trigger: whcih
+      replace: which
+      propagate_case: true
+      word: true
+    - trigger: whic
+      replace: which
+      propagate_case: true
+      word: true
+    - trigger: whihc
+      replace: which
+      propagate_case: true
+      word: true
+    - trigger: whlch
+      replace: which
+      propagate_case: true
+      word: true
+    - trigger: wich
+      replace: "which\x2C\x20witch"
+      propagate_case: true
+      word: true
+    - trigger: wohle
+      replace: whole
+      propagate_case: true
+      word: true
+    - trigger: wholey
+      replace: wholly
+      propagate_case: true
+      word: true
+    - trigger: wholy
+      replace: "wholly\x2C\x20holy"
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          WI                          #
+    # ---------------------------------------------------- #
+    - trigger: wief
+      replace: wife
+      propagate_case: true
+      word: true
+    - trigger: wiht
+      replace: with
+      propagate_case: true
+      word: true
+    - trigger: wih
+      replace: with
+      propagate_case: true
+      word: true
+    - trigger: withh
+      replace: with
+      propagate_case: true
+      word: true
+    - trigger: witht
+      replace: with
+      propagate_case: true
+      word: true
+    - trigger: witn
+      replace: with
+      propagate_case: true
+      word: true
+    - trigger: wtih
+      replace: with
+      propagate_case: true
+      word: true
+    - trigger: withing
+      replace: within
+      propagate_case: true
+      word: true
+    - trigger: withold
+      replace: withhold
+      propagate_case: true
+      word: true
+    - trigger: witheld
+      replace: withheld
+      propagate_case: true
+      word: true
+    - trigger: weild
+      replace: "wield\x2C\x20wild"
+      propagate_case: true
+      word: true
+    - trigger: weilded
+      replace: wielded
+      propagate_case: true
+      word: true
+    - trigger: wille
+      replace: will
+      propagate_case: true
+      word: true
+    - trigger: willk
+      replace: will
+      propagate_case: true
+      word: true
+    - trigger: wiull
+      replace: will
+      propagate_case: true
+      word: true
+    - trigger: willingless
+      replace: willingness
+      propagate_case: true
+      word: true
+    - trigger: withdrawl
+      replace: "withdrawal\x2C\x20withdraw"
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          WO                          #
+    # ---------------------------------------------------- #
+    - trigger: wokr
+      replace: work
+      propagate_case: true
+      word: true
+    - trigger: wrok
+      replace: work
+      propagate_case: true
+      word: true
+    - trigger: wokring
+      replace: working
+      propagate_case: true
+      word: true
+    - trigger: wroking
+      replace: working
+      propagate_case: true
+      word: true
+    - trigger: wonderfull
+      replace: wonderful
+      propagate_case: true
+      word: true
+    - trigger: wordlwide
+      replace: worldwide
+      propagate_case: true
+      word: true
+    - trigger: workststion
+      replace: workstation
+      propagate_case: true
+      word: true
+    - trigger: worls
+      replace: world
+      propagate_case: true
+      word: true
+    - trigger: worstened
+      replace: worsened
+      propagate_case: true
+      word: true
+    - trigger: woudl
+      replace: would
+      propagate_case: true
+      word: true
+    - trigger: w}ld
+      replace: would
+      propagate_case: true
+      word: true
+    - trigger: wouldnt
+      replace: "would\x20not"
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          WR                          #
+    # ---------------------------------------------------- #
+    - trigger: wresters
+      replace: wrestlers
+      propagate_case: true
+      word: true
+    - trigger: wriet
+      replace: write
+      propagate_case: true
+      word: true
+    - trigger: wirting
+      replace: writing
+      propagate_case: true
+      word: true
+    - trigger: writen
+      replace: written
+      propagate_case: true
+      word: true
+    - trigger: wroet
+      replace: wrote
+      propagate_case: true
+      word: true

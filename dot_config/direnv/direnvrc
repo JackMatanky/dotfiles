@@ -1,0 +1,49 @@
+# shellcheck shell=bash
+# -----------------------------------------------------------------------------
+# File: ~/dotfiles/direnv/direnvrc
+# Docs: https://direnv.net/docs/hook.html
+# Description: Global direnv shell configuration and layout helpers
+# -----------------------------------------------------------------------------
+
+
+# -------------------- Shell Compatibility ------------------- #
+# Prevent issues in non-interactive shells
+export SHELL=${SHELL:-/bin/bash}
+
+
+# ------------------------------------------------------------ #
+#                        Custom Layouts                        #
+# ------------------------------------------------------------ #
+
+# ------------------------ Python + Uv ----------------------- #
+# Docs: https://github.com/direnv/direnv/wiki/Python#uv
+layout_uv() {
+  if [[ -d ".venv" ]]; then
+    VIRTUAL_ENV="$(pwd)/.venv"
+  fi
+
+  if [[ -z "$VIRTUAL_ENV" || ! -d "$VIRTUAL_ENV" ]]; then
+    log_status "No uv project exists. Executing \`uv init\` to create one."
+    uv init --no-readme
+    rm -f hello.py
+    uv venv
+    VIRTUAL_ENV="$(pwd)/.venv"
+  fi
+
+  PATH_add "$VIRTUAL_ENV/bin"
+  export UV_ACTIVE=1
+  export VIRTUAL_ENV
+}
+
+
+# ------------------- Future Custom Layouts ------------------ #
+# Add more layout_foo() helpers here if needed, e.g.:
+# layout_poetry, layout_node, layout_rust, etc.
+
+
+# ------------------------------------------------------------ #
+#                        Default Editors                       #
+# ------------------------------------------------------------ #
+# Used by tools like git, direnv, or anything that prompts for edits
+export EDITOR="${EDITOR:-nvim}"
+export VISUAL="${VISUAL:-zed}"

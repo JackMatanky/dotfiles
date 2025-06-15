@@ -1,0 +1,15 @@
+#------------------------------------------------------------------------------
+# Filename: ~/dotfiles/espanso/match/obsidian.yml
+#
+# Espanso Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------
+---
+filter_class: md.obsidian
+
+extra_includes:
+  - "../match/00_base.yml"
+  # Markdown
+  - "../match/markdown.yml"
+  - "../match/obsidian_callout.yml"
+  # Autocorrect
+  - "../match/autocorrect.yml"

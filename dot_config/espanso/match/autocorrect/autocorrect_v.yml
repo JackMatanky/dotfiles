@@ -1,0 +1,288 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- V ---
+    # ---------
+    - trigger: vaccum
+      replace: vacuum
+      propagate_case: true
+      word: true
+    - trigger: vaccume
+      replace: vacuum
+      propagate_case: true
+      word: true
+    - trigger: vacinity
+      replace: vicinity
+      propagate_case: true
+      word: true
+    - trigger: vaguaries
+      replace: vagaries
+      propagate_case: true
+      word: true
+    - trigger: vaieties
+      replace: varieties
+      propagate_case: true
+      word: true
+    - trigger: vailidty
+      replace: validity
+      propagate_case: true
+      word: true
+    - trigger: valetta
+      replace: valletta
+      propagate_case: true
+      word: true
+    - trigger: valuble
+      replace: valuable
+      propagate_case: true
+      word: true
+    - trigger: valueable
+      replace: valuable
+      propagate_case: true
+      word: true
+    - trigger: varations
+      replace: variations
+      propagate_case: true
+      word: true
+    - trigger: varient
+      replace: variant
+      propagate_case: true
+      word: true
+    - trigger: variey
+      replace: variety
+      propagate_case: true
+      word: true
+    - trigger: varing
+      replace: varying
+      propagate_case: true
+      word: true
+    - trigger: varities
+      replace: varieties
+      propagate_case: true
+      word: true
+    - trigger: varity
+      replace: variety
+      propagate_case: true
+      word: true
+    - trigger: vasall
+      replace: vassal
+      propagate_case: true
+      word: true
+    - trigger: vasalls
+      replace: vassals
+      propagate_case: true
+      word: true
+    - trigger: vegatarian
+      replace: vegetarian
+      propagate_case: true
+      word: true
+    - trigger: vegitable
+      replace: vegetable
+      propagate_case: true
+      word: true
+    - trigger: vegitables
+      replace: vegetables
+      propagate_case: true
+      word: true
+    - trigger: vegtable
+      replace: vegetable
+      propagate_case: true
+      word: true
+    - trigger: vehicule
+      replace: vehicle
+      propagate_case: true
+      word: true
+    - trigger: vell
+      replace: well
+      propagate_case: true
+      word: true
+    - trigger: venemous
+      replace: venomous
+      propagate_case: true
+      word: true
+    - trigger: vengance
+      replace: vengeance
+      propagate_case: true
+      word: true
+    - trigger: vengence
+      replace: vengeance
+      propagate_case: true
+      word: true
+    - trigger: verfication
+      replace: verification
+      propagate_case: true
+      word: true
+    - trigger: verison
+      replace: version
+      propagate_case: true
+      word: true
+    - trigger: verisons
+      replace: versions
+      propagate_case: true
+      word: true
+    - trigger: vermillion
+      replace: vermilion
+      propagate_case: true
+      word: true
+    - trigger: versitilaty
+      replace: versatility
+      propagate_case: true
+      word: true
+    - trigger: versitlity
+      replace: versatility
+      propagate_case: true
+      word: true
+    - trigger: vetween
+      replace: between
+      propagate_case: true
+      word: true
+    - trigger: veyr
+      replace: very
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          VI                          #
+    # ---------------------------------------------------- #
+    - trigger: wiew
+      replace: view
+      propagate_case: true
+      word: true
+    - trigger: vigeur
+      replace: "vigueur\x2C\x20vigour\x2C\x20vigor"
+      propagate_case: true
+      word: true
+    - trigger: vigilence
+      replace: vigilance
+      propagate_case: true
+      word: true
+    - trigger: vigourous
+      replace: vigorous
+      propagate_case: true
+      word: true
+    - trigger: villian
+      replace: villain
+      propagate_case: true
+      word: true
+    - trigger: villification
+      replace: vilification
+      propagate_case: true
+      word: true
+    - trigger: villify
+      replace: vilify
+      propagate_case: true
+      word: true
+    - trigger: villin
+      replace: "villi\x2C\x20villain\x2C\x20villein"
+      propagate_case: true
+      word: true
+    - trigger: vincinity
+      replace: vicinity
+      propagate_case: true
+      word: true
+    - trigger: violentce
+      replace: violence
+      propagate_case: true
+      word: true
+    - trigger: virtualy
+      replace: virtually
+      propagate_case: true
+      word: true
+    - trigger: virutal
+      replace: virtual
+      propagate_case: true
+      word: true
+    - trigger: virutally
+      replace: virtually
+      propagate_case: true
+      word: true
+    - trigger: visable
+      replace: visible
+      propagate_case: true
+      word: true
+    - trigger: visably
+      replace: visibly
+      propagate_case: true
+      word: true
+    - trigger: visting
+      replace: visiting
+      propagate_case: true
+      word: true
+    - trigger: vistors
+      replace: visitors
+      propagate_case: true
+      word: true
+    - trigger: vitories
+      replace: victories
+      propagate_case: true
+      word: true
+    - trigger: volcanoe
+      replace: volcano
+      propagate_case: true
+      word: true
+    - trigger: voleyball
+      replace: volleyball
+      propagate_case: true
+      word: true
+    - trigger: volontary
+      replace: voluntary
+      propagate_case: true
+      word: true
+    - trigger: volonteer
+      replace: volunteer
+      propagate_case: true
+      word: true
+    - trigger: volonteered
+      replace: volunteered
+      propagate_case: true
+      word: true
+    - trigger: volonteering
+      replace: volunteering
+      propagate_case: true
+      word: true
+    - trigger: volonteers
+      replace: volunteers
+      propagate_case: true
+      word: true
+    - trigger: volounteer
+      replace: volunteer
+      propagate_case: true
+      word: true
+    - trigger: volounteered
+      replace: volunteered
+      propagate_case: true
+      word: true
+    - trigger: volounteering
+      replace: volunteering
+      propagate_case: true
+      word: true
+    - trigger: volounteers
+      replace: volunteers
+      propagate_case: true
+      word: true
+    - trigger: volumne
+      replace: volume
+      propagate_case: true
+      word: true
+    - trigger: vreity
+      replace: variety
+      propagate_case: true
+      word: true
+    - trigger: vrey
+      replace: very
+      propagate_case: true
+      word: true
+    - trigger: vriety
+      replace: variety
+      propagate_case: true
+      word: true
+    - trigger: vulnerablility
+      replace: vulnerability
+      propagate_case: true
+      word: true
+    - trigger: vyer
+      replace: very
+      propagate_case: true
+      word: true
+    - trigger: vyre
+      replace: very
+      propagate_case: true
+      word: true

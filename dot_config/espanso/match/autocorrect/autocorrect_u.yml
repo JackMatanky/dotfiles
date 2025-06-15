@@ -1,0 +1,441 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- U ---
+    # ---------
+    - trigger: ubiquitious
+      replace: ubiquitous
+      propagate_case: true
+      word: true
+    - trigger: ublisher
+      replace: publisher
+      propagate_case: true
+      word: true
+    - trigger: uise
+      replace: use
+      propagate_case: true
+      word: true
+    - trigger: Ukranian
+      replace: Ukrainian
+      propagate_case: true
+      word: true
+    - trigger: ultimely
+      replace: ultimately
+      propagate_case: true
+      word: true
+    - trigger: unacompanied
+      replace: unaccompanied
+      propagate_case: true
+      word: true
+    - trigger: unahppy
+      replace: unhappy
+      propagate_case: true
+      word: true
+    - trigger: unanymous
+      replace: unanimous
+      propagate_case: true
+      word: true
+    - trigger: unathorised
+      replace: unauthorised
+      propagate_case: true
+      word: true
+    - trigger: unavailible
+      replace: unavailable
+      propagate_case: true
+      word: true
+    - trigger: unballance
+      replace: unbalance
+      propagate_case: true
+      word: true
+    - trigger: unbeknowst
+      replace: unbeknownst
+      propagate_case: true
+      word: true
+    - trigger: unbeleivable
+      replace: unbelievable
+      propagate_case: true
+      word: true
+    - trigger: uncertainity
+      replace: uncertainty
+      propagate_case: true
+      word: true
+    - trigger: unchallengable
+      replace: unchallengeable
+      propagate_case: true
+      word: true
+    - trigger: unchangable
+      replace: unchangeable
+      propagate_case: true
+      word: true
+    - trigger: uncompetive
+      replace: uncompetitive
+      propagate_case: true
+      word: true
+    - trigger: unconcious
+      replace: unconscious
+      propagate_case: true
+      word: true
+    - trigger: unconciousness
+      replace: unconsciousness
+      propagate_case: true
+      word: true
+    - trigger: unconfortability
+      replace: discomfort
+      propagate_case: true
+      word: true
+    - trigger: uncontitutional
+      replace: unconstitutional
+      propagate_case: true
+      word: true
+    - trigger: unconvential
+      replace: unconventional
+      propagate_case: true
+      word: true
+    - trigger: undecideable
+      replace: undecidable
+      propagate_case: true
+      word: true
+    - trigger: understoon
+      replace: understood
+      propagate_case: true
+      word: true
+    - trigger: undesireable
+      replace: undesirable
+      propagate_case: true
+      word: true
+    - trigger: undetecable
+      replace: undetectable
+      propagate_case: true
+      word: true
+    - trigger: undoubtely
+      replace: undoubtedly
+      propagate_case: true
+      word: true
+    - trigger: undreground
+      replace: underground
+      propagate_case: true
+      word: true
+    - trigger: uneccesary
+      replace: unnecessary
+      propagate_case: true
+      word: true
+    - trigger: unecessary
+      replace: unnecessary
+      propagate_case: true
+      word: true
+    - trigger: unequalities
+      replace: inequalities
+      propagate_case: true
+      word: true
+    - trigger: unforetunately
+      replace: unfortunately
+      propagate_case: true
+      word: true
+    - trigger: unforgetable
+      replace: unforgettable
+      propagate_case: true
+      word: true
+    - trigger: unforgiveable
+      replace: unforgivable
+      propagate_case: true
+      word: true
+    - trigger: unforseen
+      replace: unforeseen
+      propagate_case: true
+      word: true
+    - trigger: unfortunatley
+      replace: unfortunately
+      propagate_case: true
+      word: true
+    - trigger: unfortunatly
+      replace: unfortunately
+      propagate_case: true
+      word: true
+    - trigger: unfourtunately
+      replace: unfortunately
+      propagate_case: true
+      word: true
+    - trigger: unihabited
+      replace: uninhabited
+      propagate_case: true
+      word: true
+    - trigger: unilateraly
+      replace: unilaterally
+      propagate_case: true
+      word: true
+    - trigger: unilatreal
+      replace: unilateral
+      propagate_case: true
+      word: true
+    - trigger: unilatreally
+      replace: unilaterally
+      propagate_case: true
+      word: true
+    - trigger: uninterruped
+      replace: uninterrupted
+      propagate_case: true
+      word: true
+    - trigger: uninterupted
+      replace: uninterrupted
+      propagate_case: true
+      word: true
+    - trigger: UnitesStates
+      replace: UnitedStates
+      propagate_case: true
+      word: true
+    - trigger: univeral
+      replace: universal
+      propagate_case: true
+      word: true
+    - trigger: univeristies
+      replace: universities
+      propagate_case: true
+      word: true
+    - trigger: univeristy
+      replace: university
+      propagate_case: true
+      word: true
+    - trigger: univerity
+      replace: university
+      propagate_case: true
+      word: true
+    - trigger: universtiy
+      replace: university
+      propagate_case: true
+      word: true
+    - trigger: univesities
+      replace: universities
+      propagate_case: true
+      word: true
+    - trigger: univesity
+      replace: university
+      propagate_case: true
+      word: true
+    - trigger: unkown
+      replace: unknown
+      propagate_case: true
+      word: true
+    - trigger: unlikey
+      replace: unlikely
+      propagate_case: true
+      word: true
+    - trigger: unmanouverable
+      replace: "unmaneuverable\x2C\x20unmanoeuvrable"
+      propagate_case: true
+      word: true
+    - trigger: unmistakeably
+      replace: unmistakably
+      propagate_case: true
+      word: true
+    - trigger: unneccesarily
+      replace: unnecessarily
+      propagate_case: true
+      word: true
+    - trigger: unneccesary
+      replace: unnecessary
+      propagate_case: true
+      word: true
+    - trigger: unneccessarily
+      replace: unnecessarily
+      propagate_case: true
+      word: true
+    - trigger: unneccessary
+      replace: unnecessary
+      propagate_case: true
+      word: true
+    - trigger: unnecesarily
+      replace: unnecessarily
+      propagate_case: true
+      word: true
+    - trigger: unnecesary
+      replace: unnecessary
+      propagate_case: true
+      word: true
+    - trigger: unoffical
+      replace: unofficial
+      propagate_case: true
+      word: true
+    - trigger: unoperational
+      replace: nonoperational
+      propagate_case: true
+      word: true
+    - trigger: unoticeable
+      replace: unnoticeable
+      propagate_case: true
+      word: true
+    - trigger: unplease
+      replace: displease
+      propagate_case: true
+      word: true
+    - trigger: unplesant
+      replace: unpleasant
+      propagate_case: true
+      word: true
+    - trigger: unprecendented
+      replace: unprecedented
+      propagate_case: true
+      word: true
+    - trigger: unprecidented
+      replace: unprecedented
+      propagate_case: true
+      word: true
+    - trigger: unrepentent
+      replace: unrepentant
+      propagate_case: true
+      word: true
+    - trigger: unrepetant
+      replace: unrepentant
+      propagate_case: true
+      word: true
+    - trigger: unrepetent
+      replace: unrepentant
+      propagate_case: true
+      word: true
+    - trigger: unsed
+      replace: "used\x2C\x20unused\x2C\x20unsaid"
+      propagate_case: true
+      word: true
+    - trigger: unsubstanciated
+      replace: unsubstantiated
+      propagate_case: true
+      word: true
+    - trigger: unsuccesful
+      replace: unsuccessful
+      propagate_case: true
+      word: true
+    - trigger: unsuccesfully
+      replace: unsuccessfully
+      propagate_case: true
+      word: true
+    - trigger: unsuccessfull
+      replace: unsuccessful
+      propagate_case: true
+      word: true
+    - trigger: unsucesful
+      replace: unsuccessful
+      propagate_case: true
+      word: true
+    - trigger: unsucesfuly
+      replace: unsuccessfully
+      propagate_case: true
+      word: true
+    - trigger: unsucessful
+      replace: unsuccessful
+      propagate_case: true
+      word: true
+    - trigger: unsucessfull
+      replace: unsuccessful
+      propagate_case: true
+      word: true
+    - trigger: unsucessfully
+      replace: unsuccessfully
+      propagate_case: true
+      word: true
+    - trigger: unsuprised
+      replace: unsurprised
+      propagate_case: true
+      word: true
+    - trigger: unsuprising
+      replace: unsurprising
+      propagate_case: true
+      word: true
+    - trigger: unsuprisingly
+      replace: unsurprisingly
+      propagate_case: true
+      word: true
+    - trigger: unsuprized
+      replace: unsurprised
+      propagate_case: true
+      word: true
+    - trigger: unsuprizing
+      replace: unsurprising
+      propagate_case: true
+      word: true
+    - trigger: unsuprizingly
+      replace: unsurprisingly
+      propagate_case: true
+      word: true
+    - trigger: unsurprized
+      replace: unsurprised
+      propagate_case: true
+      word: true
+    - trigger: unsurprizing
+      replace: unsurprising
+      propagate_case: true
+      word: true
+    - trigger: unsurprizingly
+      replace: unsurprisingly
+      propagate_case: true
+      word: true
+    - trigger: untill
+      replace: until
+      propagate_case: true
+      word: true
+    - trigger: untranslateable
+      replace: untranslatable
+      propagate_case: true
+      word: true
+    - trigger: unuseable
+      replace: unusable
+      propagate_case: true
+      word: true
+    - trigger: unusuable
+      replace: unusable
+      propagate_case: true
+      word: true
+    - trigger: unviersity
+      replace: university
+      propagate_case: true
+      word: true
+    - trigger: unwarrented
+      replace: unwarranted
+      propagate_case: true
+      word: true
+    - trigger: unweildly
+      replace: unwieldy
+      propagate_case: true
+      word: true
+    - trigger: unwieldly
+      replace: unwieldy
+      propagate_case: true
+      word: true
+    - trigger: upcomming
+      replace: upcoming
+      propagate_case: true
+      word: true
+    - trigger: upgradded
+      replace: upgraded
+      propagate_case: true
+      word: true
+    - trigger: upto
+      replace: "up\x20to"
+      propagate_case: true
+      word: true
+    - trigger: usally
+      replace: usually
+      propagate_case: true
+      word: true
+    - trigger: useage
+      replace: usage
+      propagate_case: true
+      word: true
+    - trigger: usefull
+      replace: useful
+      propagate_case: true
+      word: true
+    - trigger: usefuly
+      replace: usefully
+      propagate_case: true
+      word: true
+    - trigger: useing
+      replace: using
+      propagate_case: true
+      word: true
+    - trigger: usualy
+      replace: usually
+      propagate_case: true
+      word: true
+    - trigger: ususally
+      replace: usually
+      propagate_case: true
+      word: true

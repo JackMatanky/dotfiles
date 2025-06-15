@@ -1,0 +1,14 @@
+# .shellcheckrc
+
+# GitHub: https://github.com/koalaman/shellcheck/tree/master
+# Docs: https://github.com/koalaman/shellcheck/wiki
+# GUI: https://www.shellcheck.net
+
+# Default shell dialect for files without shebangs
+shell=bash
+
+# Enable following sourced files (with caution)
+external-sources=true
+
+# Ignore common dynamic-path warnings
+exclude=SC1090,SC1091

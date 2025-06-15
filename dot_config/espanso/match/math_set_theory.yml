@@ -1,0 +1,28 @@
+#------------------------------------------------------------------------------
+# Filename: ~/dotfiles/espanso/match/math_set_theory.yml
+#
+# Espanso Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------
+---
+matches:
+    # Sets
+    - trigger: ":inset"
+      replace: "∈"
+    - trigger: ":notin"
+      replace: "∉"
+    - trigger: ":niset"
+      replace: "∋"
+    - trigger: ":notni"
+      replace: "∌"
+    - trigger: ":subset"
+      replace: "⊂"
+    - trigger: ":subseq"
+      replace: "⊆"
+    - trigger: ":supset"
+      replace: "⊃"
+    - trigger: ":supseq"
+      replace: "⊇"
+    - trigger: ":union"
+      replace: "∪"
+    - trigger: ":intersect"
+      replace: "∩"

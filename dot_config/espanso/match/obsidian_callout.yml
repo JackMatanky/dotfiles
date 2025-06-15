@@ -1,0 +1,155 @@
+#------------------------------------------------------------------------------#
+# Filename: ~/dotfiles/espanso/match/obsidian_callout.yml
+#
+# Espanso Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------#
+---
+matches:
+    # SECT: GENERAL
+    - trigger: ">abst"
+      replace: "> [!Abstract]\n> \n"
+    - trigger: ">exam"
+      replace: "> [!Example]\n> \n"
+    - trigger: ">impor"
+      replace: "> [!Important]\n> \n"
+    - trigger: ">info"
+      replace: "> [!Info]\n> \n"
+    - trigger: ">note"
+      replace: "> [!Note]\n> \n"
+    - trigger: ">tip"
+      replace: "> [!Tip]\n> \n"
+    - trigger: ">warn"
+      replace: "> [!Warning]\n> \n"
+
+    # SECT: 10_CALENDAR
+    - trigger: ">year"
+      replace: "> [!Year]\n> \n"
+    - trigger: ">quarter"
+      replace: "> [!Quarter]\n> \n"
+    - trigger: ">month"
+      replace: "> [!Month]\n> \n"
+    - trigger: ">week"
+      replace: "> [!Week]\n> \n"
+    - trigger: ">day"
+      replace: "> [!Day]\n> \n"
+
+    # SECT: 30_GOALS
+    - trigger: ">value_goal"
+      replace: "> [!value_goal]\n> \n"
+    - trigger: ">outcome_goal"
+      replace: "> [!outcome_goal]\n> \n"
+
+    # SECT: 40_PROJECTS
+    - trigger: ">task"
+      replace: "> [!task]\n> \n"
+    - trigger: ">proj"
+      replace: "> [!Project]\n> \n"
+    - trigger: ">paren"
+      replace: "> [!parent_task] Parent Task\n> \n"
+    - trigger: ">act"
+      replace: "> [!action_item] Action Item\n> \n"
+    - trigger: ">meet"
+      replace: "> [!Meeting]\n> \n"
+
+    - trigger: ">habit_ritual"
+      replace: "> [!habit_ritual]\n> \n"
+    - trigger: ">habit"
+      replace: "> [!habit]\n> \n"
+    - trigger: ">morning_ritual"
+      replace: "> [!morning_ritual]\n> \n"
+    - trigger: ">workday_startup_ritual"
+      replace: "> [!workday_startup_ritual]\n> \n"
+    - trigger: ">workday_shutdown_ritual"
+      replace: "> [!workday_shutdown_ritual]\n> \n"
+    - trigger: ">evening_ritual"
+      replace: "> [!evening_ritual]\n> \n"
+
+    - trigger: ">task_preview"
+      replace: "> [!task_preview]\n> \n"
+    - trigger: ">task_plan"
+      replace: "> [!task_plan]\n> \n"
+    - trigger: ">task_review"
+      replace: "> [!task_review]\n> \n"
+
+    # SECT: 50_DIRECTORY
+    - trigger: ">contact"
+      replace: "> [!contact]\n> \n"
+    - trigger: ">organization"
+      replace: "> [!organization]\n> \n"
+
+    # SECT: 60_LIBRARY
+    - trigger: ">video"
+      replace: "> [!Video]\n> \n"
+    - trigger: ">book"
+      replace: "> [!Book]\n> \n"
+    - trigger: ">book_chapter"
+      replace: "> [!book_chapter]\n> \n"
+
+    # SECT: 70_PKM
+    - trigger: ">pkm"
+      replace: "> [!PKM]\n> \n"
+
+    # SECT: 71_PKM_TREE
+    - trigger: ">tree"
+      replace: "> [!tree]\n> \n"
+
+    # SECT: 72_PKM_LAB
+    - trigger: ">note_relation"
+      replace: "> [!note_relation]\n> \n"
+
+    - trigger: ">quot"
+      replace: "> [!Quote]\n> \n"
+    - trigger: ">thought"
+      replace: "> [!Thought]\n> \n"
+
+    - trigger: ">ques"
+      replace: "> [!Question]\n> \n"
+    - trigger: ">evidence"
+      replace: "> [!Evidence]\n> \n"
+    - trigger: ">conclusion"
+      replace: "> [!Conclusion]\n> \n"
+
+    - trigger: ">problem"
+      replace: "> [!Problem]\n> \n"
+    - trigger: ">step"
+      replace: "> [!Step]\n> \n"
+    - trigger: ">answer"
+      replace: "> [!Answer]\n> \n"
+
+    - trigger: ">def"
+      replace: "> [!Definition]\n> \n"
+    - trigger: ">concept"
+      replace: "> [!Concept]\n> \n"
+
+    - trigger: ">north"
+      replace: "> [!North]\n> \n"
+    - trigger: ">west"
+      replace: "> [!West]\n> \n"
+    - trigger: ">east"
+      replace: "> [!East]\n> \n"
+    - trigger: ">south"
+      replace: "> [!South]\n> \n"
+
+    - trigger: ">code"
+      replace: "> [!code]\n> \n"
+    - trigger: ">function"
+      replace: "> [!Function]\n> \n"
+    - trigger: ">snippet"
+      replace: "> [!Snippet]\n> \n"
+    - trigger: ">param"
+      replace: "> [!Param]\n> \n"
+
+    - trigger: ">math_problem"
+      replace: "> [!math_problem]\n> \n"
+    - trigger: ">theorem"
+      replace: "> [!Theorem]\n> \n"
+    - trigger: ">example"
+      replace: "> [!Example]\n> \n"
+    - trigger: ">corollary"
+      replace: "> [!Corollary]\n> \n"
+    - trigger: ">proposition"
+      replace: "> [!Proposition]\n> \n"
+
+    # SECT: 80_INSIGHT
+    - trigger: ">insight"
+      replace: "> [!Insight]\n> \n"

@@ -1,0 +1,15 @@
+# -----------------------------------------------------------------------------
+#  Filename: ~/dotfiles/yazi/yazi.toml
+#  Yazi Docs: https://yazi-rs.github.io/docs/configuration/yazi
+#  Yazi Github: https://yazi-rs.github.io/
+# -----------------------------------------------------------------------------
+
+Yazelix
+[manager]
+ratio = [0, 4, 0]
+
+[opener]
+edit = [
+  { run = '~/.config/yazi/open_file.sh "$1"', desc = "Open File in a new pane" },
+  { run = 'nu ~/.config/yazi/open_file.nu "$1"', desc = "Open File in a new pane" },
+]

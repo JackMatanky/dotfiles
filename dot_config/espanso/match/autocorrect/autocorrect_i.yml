@@ -1,0 +1,1006 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+  # ---------------------------------------------------- #
+  #                          IC                          #
+  # ---------------------------------------------------- #
+  - trigger: iconclastic
+    replace: iconoclastic
+    propagate_case: true
+    word: true
+    # ---------------------------------------------------- #
+    #                          ID                          #
+    # ---------------------------------------------------- #
+  - trigger: idaeidae
+    replace: idea
+    propagate_case: true
+    word: true
+  - trigger: idaes
+    replace: ideas
+    propagate_case: true
+    word: true
+  - trigger: idealogies
+    replace: ideologies
+    propagate_case: true
+    word: true
+  - trigger: idealogy
+    replace: ideology
+    propagate_case: true
+    word: true
+  - trigger: identicial
+    replace: identical
+    propagate_case: true
+    word: true
+  - trigger: identifers
+    replace: identifiers
+    propagate_case: true
+    word: true
+  - trigger: ideosyncratic
+    replace: idiosyncratic
+    propagate_case: true
+    word: true
+  - trigger: idesa
+    replace: "ideas\x2C\x20ides"
+    propagate_case: true
+    word: true
+  - trigger: idiosyncracy
+    replace: idiosyncrasy
+    propagate_case: true
+    word: true
+    # ---------------------------------------------------- #
+    #                          IH                          #
+    # ---------------------------------------------------- #
+  - trigger: Ihaca
+    replace: Ithaca
+    propagate_case: true
+    word: true
+    # ---------------------------------------------------- #
+    #                          IL                          #
+    # ---------------------------------------------------- #
+  - trigger: illegimacy
+    replace: illegitimacy
+    propagate_case: true
+    word: true
+  - trigger: illegitmate
+    replace: illegitimate
+    propagate_case: true
+    word: true
+  - trigger: illess
+    replace: illness
+    propagate_case: true
+    word: true
+  - trigger: illiegal
+    replace: illegal
+    propagate_case: true
+    word: true
+  - trigger: illution
+    replace: illusion
+    propagate_case: true
+    word: true
+  - trigger: ilness
+    replace: illness
+    propagate_case: true
+    word: true
+  - trigger: ilogical
+    replace: illogical
+    propagate_case: true
+    word: true
+    # ---------------------------------------------------- #
+    #                          IM                          #
+    # ---------------------------------------------------- #
+  - trigger: imagenary
+    replace: imaginary
+    propagate_case: true
+    word: true
+  - trigger: imagin
+    replace: imagine
+    propagate_case: true
+    word: true
+  - trigger: imaginery
+    replace: "imaginary\x2C\x20imagery"
+    propagate_case: true
+    word: true
+  - trigger: imanent
+    replace: "eminent\x2C\x20imminent"
+    propagate_case: true
+    word: true
+  - trigger: imcomplete
+    replace: incomplete
+    propagate_case: true
+    word: true
+  - trigger: imediately
+    replace: immediately
+    propagate_case: true
+    word: true
+  - trigger: imense
+    replace: immense
+    propagate_case: true
+    word: true
+  - trigger: imigrant
+    replace: "emigrant\x2C\x20immigrant"
+    propagate_case: true
+    word: true
+  - trigger: imigrated
+    replace: "emigrated\x2C\x20immigrated"
+    propagate_case: true
+    word: true
+  - trigger: imigration
+    replace: "emigration\x2C\x20immigration"
+    propagate_case: true
+    word: true
+  - trigger: iminent
+    replace: "eminent\x2C\x20imminent\x2C\x20immanent"
+    propagate_case: true
+    word: true
+  - trigger: immediatley
+    replace: immediately
+    propagate_case: true
+    word: true
+  - trigger: immediatly
+    replace: immediately
+    propagate_case: true
+    word: true
+  - trigger: immidately
+    replace: immediately
+    propagate_case: true
+    word: true
+  - trigger: immidiately
+    replace: immediately
+    propagate_case: true
+    word: true
+  - trigger: immitate
+    replace: imitate
+    propagate_case: true
+    word: true
+  - trigger: immitated
+    replace: imitated
+    propagate_case: true
+    word: true
+  - trigger: immitating
+    replace: imitating
+    propagate_case: true
+    word: true
+  - trigger: immitator
+    replace: imitator
+    propagate_case: true
+    word: true
+  - trigger: immunosupressant
+    replace: immunosuppressant
+    propagate_case: true
+    word: true
+  - trigger: impecabbly
+    replace: impeccably
+    propagate_case: true
+    word: true
+  - trigger: impedence
+    replace: impedance
+    propagate_case: true
+    word: true
+  - trigger: implamenting
+    replace: implementing
+    propagate_case: true
+    word: true
+  - trigger: impliment
+    replace: implement
+    propagate_case: true
+    word: true
+  - trigger: implimented
+    replace: implemented
+    propagate_case: true
+    word: true
+  - trigger: imploys
+    replace: employs
+    propagate_case: true
+    word: true
+  - trigger: importamt
+    replace: important
+    propagate_case: true
+    word: true
+  - trigger: impressario
+    replace: impresario
+    propagate_case: true
+    word: true
+  - trigger: imprioned
+    replace: imprisoned
+    propagate_case: true
+    word: true
+  - trigger: imprisonned
+    replace: imprisoned
+    propagate_case: true
+    word: true
+  - trigger: improvision
+    replace: improvisation
+    propagate_case: true
+    word: true
+  - trigger: improvments
+    replace: improvements
+    propagate_case: true
+    word: true
+    # ---------------------------------------------------- #
+    #                          IN                          #
+    # ---------------------------------------------------- #
+  - trigger: inablility
+    replace: inability
+    propagate_case: true
+    word: true
+  - trigger: inaccessable
+    replace: inaccessible
+    propagate_case: true
+    word: true
+  - trigger: inadiquate
+    replace: inadequate
+    propagate_case: true
+    word: true
+  - trigger: inadquate
+    replace: inadequate
+    propagate_case: true
+    word: true
+  - trigger: inadvertant
+    replace: inadvertent
+    propagate_case: true
+    word: true
+  - trigger: inadvertantly
+    replace: inadvertently
+    propagate_case: true
+    word: true
+  - trigger: inagurated
+    replace: inaugurated
+    propagate_case: true
+    word: true
+  - trigger: inaguration
+    replace: inauguration
+    propagate_case: true
+    word: true
+  - trigger: inappropiate
+    replace: inappropriate
+    propagate_case: true
+    word: true
+  - trigger: inaugures
+    replace: inaugurates
+    propagate_case: true
+    word: true
+  - trigger: inbalance
+    replace: imbalance
+    propagate_case: true
+    word: true
+  - trigger: inbalanced
+    replace: imbalanced
+    propagate_case: true
+    word: true
+  - trigger: inbetween
+    replace: between
+    propagate_case: true
+    word: true
+  - trigger: incarcirated
+    replace: incarcerated
+    propagate_case: true
+    word: true
+  - trigger: incidentially
+    replace: incidentally
+    propagate_case: true
+    word: true
+  - trigger: incidently
+    replace: incidentally
+    propagate_case: true
+    word: true
+  - trigger: inclreased
+    replace: increased
+    propagate_case: true
+    word: true
+  - trigger: includ
+    replace: include
+    propagate_case: true
+    word: true
+  - trigger: includng
+    replace: including
+    propagate_case: true
+    word: true
+  - trigger: incompatabilities
+    replace: incompatibilities
+    propagate_case: true
+    word: true
+  - trigger: incompatability
+    replace: incompatibility
+    propagate_case: true
+    word: true
+  - trigger: incompatable
+    replace: incompatible
+    propagate_case: true
+    word: true
+  - trigger: incompatablities
+    replace: incompatibilities
+    propagate_case: true
+    word: true
+  - trigger: incompatablity
+    replace: incompatibility
+    propagate_case: true
+    word: true
+  - trigger: incompatiblities
+    replace: incompatibilities
+    propagate_case: true
+    word: true
+  - trigger: incompatiblity
+    replace: incompatibility
+    propagate_case: true
+    word: true
+  - trigger: incompetance
+    replace: incompetence
+    propagate_case: true
+    word: true
+  - trigger: incompetant
+    replace: incompetent
+    propagate_case: true
+    word: true
+  - trigger: incomptable
+    replace: incompatible
+    propagate_case: true
+    word: true
+  - trigger: incomptetent
+    replace: incompetent
+    propagate_case: true
+    word: true
+  - trigger: inconsistant
+    replace: inconsistent
+    propagate_case: true
+    word: true
+  - trigger: incoroporated
+    replace: incorporated
+    propagate_case: true
+    word: true
+  - trigger: incorperation
+    replace: incorporation
+    propagate_case: true
+    word: true
+  - trigger: incorportaed
+    replace: incorporated
+    propagate_case: true
+    word: true
+  - trigger: incorprates
+    replace: incorporates
+    propagate_case: true
+    word: true
+  - trigger: incorruptable
+    replace: incorruptible
+    propagate_case: true
+    word: true
+  - trigger: incramentally
+    replace: incrementally
+    propagate_case: true
+    word: true
+  - trigger: increadible
+    replace: incredible
+    propagate_case: true
+    word: true
+  - trigger: incredable
+    replace: incredible
+    propagate_case: true
+    word: true
+  - trigger: inctroduce
+    replace: introduce
+    propagate_case: true
+    word: true
+  - trigger: inctroduced
+    replace: introduced
+    propagate_case: true
+    word: true
+  - trigger: incuding
+    replace: including
+    propagate_case: true
+    word: true
+  - trigger: incunabla
+    replace: incunabula
+    propagate_case: true
+    word: true
+  - trigger: indefinately
+    replace: indefinitely
+    propagate_case: true
+    word: true
+  - trigger: indefineable
+    replace: undefinable
+    propagate_case: true
+    word: true
+  - trigger: indefinitly
+    replace: indefinitely
+    propagate_case: true
+    word: true
+  - trigger: indentical
+    replace: identical
+    propagate_case: true
+    word: true
+  - trigger: indepedantly
+    replace: independently
+    propagate_case: true
+    word: true
+  - trigger: indepedence
+    replace: independence
+    propagate_case: true
+    word: true
+  - trigger: independance
+    replace: independence
+    propagate_case: true
+    word: true
+  - trigger: independant
+    replace: independent
+    propagate_case: true
+    word: true
+  - trigger: independantly
+    replace: independently
+    propagate_case: true
+    word: true
+  - trigger: independece
+    replace: independence
+    propagate_case: true
+    word: true
+  - trigger: independendet
+    replace: independent
+    propagate_case: true
+    word: true
+  - trigger: indespensable
+    replace: indispensable
+    propagate_case: true
+    word: true
+  - trigger: indespensible
+    replace: indispensable
+    propagate_case: true
+    word: true
+  - trigger: indictement
+    replace: indictment
+    propagate_case: true
+    word: true
+  - trigger: indigineous
+    replace: indigenous
+    propagate_case: true
+    word: true
+  - trigger: indipendence
+    replace: independence
+    propagate_case: true
+    word: true
+  - trigger: indipendent
+    replace: independent
+    propagate_case: true
+    word: true
+  - trigger: indipendently
+    replace: independently
+    propagate_case: true
+    word: true
+  - trigger: indispensible
+    replace: indispensable
+    propagate_case: true
+    word: true
+  - trigger: indisputible
+    replace: indisputable
+    propagate_case: true
+    word: true
+  - trigger: indisputibly
+    replace: indisputably
+    propagate_case: true
+    word: true
+  - trigger: indite
+    replace: indict
+    propagate_case: true
+    word: true
+  - trigger: individualy
+    replace: individually
+    propagate_case: true
+    word: true
+  - trigger: indpendent
+    replace: independent
+    propagate_case: true
+    word: true
+  - trigger: indpendently
+    replace: independently
+    propagate_case: true
+    word: true
+  - trigger: indulgue
+    replace: indulge
+    propagate_case: true
+    word: true
+  - trigger: indutrial
+    replace: industrial
+    propagate_case: true
+    word: true
+  - trigger: indviduals
+    replace: individuals
+    propagate_case: true
+    word: true
+  - trigger: inefficienty
+    replace: inefficiently
+    propagate_case: true
+    word: true
+  - trigger: inevatible
+    replace: inevitable
+    propagate_case: true
+    word: true
+  - trigger: inevitible
+    replace: inevitable
+    propagate_case: true
+    word: true
+  - trigger: inevititably
+    replace: inevitably
+    propagate_case: true
+    word: true
+  - trigger: infalability
+    replace: infallibility
+    propagate_case: true
+    word: true
+  - trigger: infallable
+    replace: infallible
+    propagate_case: true
+    word: true
+  - trigger: infectuous
+    replace: infectious
+    propagate_case: true
+    word: true
+  - trigger: infered
+    replace: inferred
+    propagate_case: true
+    word: true
+  - trigger: infilitrate
+    replace: infiltrate
+    propagate_case: true
+    word: true
+  - trigger: infilitrated
+    replace: infiltrated
+    propagate_case: true
+    word: true
+  - trigger: infilitration
+    replace: infiltration
+    propagate_case: true
+    word: true
+  - trigger: infinit
+    replace: infinite
+    propagate_case: true
+    word: true
+  - trigger: inflamation
+    replace: inflammation
+    propagate_case: true
+    word: true
+  - trigger: influencial
+    replace: influential
+    propagate_case: true
+    word: true
+  - trigger: influented
+    replace: influenced
+    propagate_case: true
+    word: true
+  - trigger: infomation
+    replace: information
+    propagate_case: true
+    word: true
+  - trigger: informtion
+    replace: information
+    propagate_case: true
+    word: true
+  - trigger: infrantryman
+    replace: infantryman
+    propagate_case: true
+    word: true
+  - trigger: infrigement
+    replace: infringement
+    propagate_case: true
+    word: true
+  - trigger: ingenius
+    replace: ingenious
+    propagate_case: true
+    word: true
+  - trigger: injestion
+    replace: ingestion
+    propagate_case: true
+    word: true
+  - trigger: ingreediants
+    replace: ingredients
+    propagate_case: true
+    word: true
+  - trigger: inhabitans
+    replace: inhabitants
+    propagate_case: true
+    word: true
+  - trigger: inherantly
+    replace: inherently
+    propagate_case: true
+    word: true
+  - trigger: inheritage
+    replace: "heritage\x2C\x20inheritance"
+    propagate_case: true
+    word: true
+  - trigger: inheritence
+    replace: inheritance
+    propagate_case: true
+    word: true
+  - trigger: inital
+    replace: initial
+    propagate_case: true
+    word: true
+  - trigger: initally
+    replace: initially
+    propagate_case: true
+    word: true
+  - trigger: initation
+    replace: initiation
+    propagate_case: true
+    word: true
+  - trigger: initiaitive
+    replace: initiative
+    propagate_case: true
+    word: true
+  - trigger: inlcuding
+    replace: including
+    propagate_case: true
+    word: true
+  - trigger: inmigrant
+    replace: immigrant
+    propagate_case: true
+    word: true
+  - trigger: inmigrants
+    replace: immigrants
+    propagate_case: true
+    word: true
+  - trigger: innoculated
+    replace: inoculated
+    propagate_case: true
+    word: true
+  - trigger: inocence
+    replace: innocence
+    propagate_case: true
+    word: true
+  - trigger: inofficial
+    replace: unofficial
+    propagate_case: true
+    word: true
+  - trigger: inot
+    replace: into
+    propagate_case: true
+    word: true
+  - trigger: inpeach
+    replace: impeach
+    propagate_case: true
+    word: true
+  - trigger: inpending
+    replace: impending
+    propagate_case: true
+    word: true
+  - trigger: inpenetrable
+    replace: impenetrable
+    propagate_case: true
+    word: true
+  - trigger: inpolite
+    replace: impolite
+    propagate_case: true
+    word: true
+  - trigger: inprisonment
+    replace: imprisonment
+    propagate_case: true
+    word: true
+  - trigger: inproving
+    replace: improving
+    propagate_case: true
+    word: true
+  - trigger: insectiverous
+    replace: insectivorous
+    propagate_case: true
+    word: true
+  - trigger: insensative
+    replace: insensitive
+    propagate_case: true
+    word: true
+  - trigger: inseperable
+    replace: inseparable
+    propagate_case: true
+    word: true
+  - trigger: insistance
+    replace: insistence
+    propagate_case: true
+    word: true
+  - trigger: insitution
+    replace: institution
+    propagate_case: true
+    word: true
+  - trigger: insitutions
+    replace: institutions
+    propagate_case: true
+    word: true
+  - trigger: inspite
+    replace: "in\x20spite\x2C\x20inspire"
+    propagate_case: true
+    word: true
+  - trigger: instade
+    replace: instead
+    propagate_case: true
+    word: true
+  - trigger: instatance
+    replace: instance
+    propagate_case: true
+    word: true
+  - trigger: institue
+    replace: institute
+    propagate_case: true
+    word: true
+  - trigger: instuction
+    replace: instruction
+    propagate_case: true
+    word: true
+  - trigger: instuments
+    replace: instruments
+    propagate_case: true
+    word: true
+  - trigger: instutionalized
+    replace: institutionalized
+    propagate_case: true
+    word: true
+  - trigger: instutions
+    replace: "institutions\x2C\x20intuitions"
+    propagate_case: true
+    word: true
+  - trigger: insurence
+    replace: insurance
+    propagate_case: true
+    word: true
+  - trigger: intelectual
+    replace: intellectual
+    propagate_case: true
+    word: true
+  - trigger: inteligence
+    replace: intelligence
+    propagate_case: true
+    word: true
+  - trigger: inteligent
+    replace: intelligent
+    propagate_case: true
+    word: true
+  - trigger: intenational
+    replace: international
+    propagate_case: true
+    word: true
+  - trigger: intented
+    replace: "intended\x2C\x20indented"
+    propagate_case: true
+    word: true
+  - trigger: intepretation
+    replace: interpretation
+    propagate_case: true
+    word: true
+  - trigger: intepretator
+    replace: interpretor
+    propagate_case: true
+    word: true
+  - trigger: interational
+    replace: international
+    propagate_case: true
+    word: true
+  - trigger: interbread
+    replace: "interbreed\x2C\x20interbred"
+    propagate_case: true
+    word: true
+  - trigger: interchangable
+    replace: interchangeable
+    propagate_case: true
+    word: true
+  - trigger: interchangably
+    replace: interchangeably
+    propagate_case: true
+    word: true
+  - trigger: intercontinential
+    replace: intercontinental
+    propagate_case: true
+    word: true
+  - trigger: intercontinetal
+    replace: intercontinental
+    propagate_case: true
+    word: true
+  - trigger: intered
+    replace: "interred\x2C\x20interned"
+    propagate_case: true
+    word: true
+  - trigger: interelated
+    replace: interrelated
+    propagate_case: true
+    word: true
+  - trigger: interferance
+    replace: interference
+    propagate_case: true
+    word: true
+  - trigger: interfereing
+    replace: interfering
+    propagate_case: true
+    word: true
+  - trigger: intergrated
+    replace: integrated
+    propagate_case: true
+    word: true
+  - trigger: intergration
+    replace: integration
+    propagate_case: true
+    word: true
+  - trigger: interm
+    replace: interim
+    propagate_case: true
+    word: true
+  - trigger: internation
+    replace: international
+    propagate_case: true
+    word: true
+  - trigger: interpet
+    replace: interpret
+    propagate_case: true
+    word: true
+  - trigger: interrim
+    replace: interim
+    propagate_case: true
+    word: true
+  - trigger: interrugum
+    replace: interregnum
+    propagate_case: true
+    word: true
+  - trigger: intertaining
+    replace: entertaining
+    propagate_case: true
+    word: true
+  - trigger: interupt
+    replace: interrupt
+    propagate_case: true
+    word: true
+  - trigger: intervines
+    replace: intervenes
+    propagate_case: true
+    word: true
+  - trigger: intevene
+    replace: intervene
+    propagate_case: true
+    word: true
+  - trigger: intial
+    replace: initial
+    propagate_case: true
+    word: true
+  - trigger: intially
+    replace: initially
+    propagate_case: true
+    word: true
+  - trigger: intrduced
+    replace: introduced
+    propagate_case: true
+    word: true
+  - trigger: intrest
+    replace: interest
+    propagate_case: true
+    word: true
+  - trigger: introdued
+    replace: introduced
+    propagate_case: true
+    word: true
+  - trigger: intruduced
+    replace: introduced
+    propagate_case: true
+    word: true
+  - trigger: intrument
+    replace: instrument
+    propagate_case: true
+    word: true
+  - trigger: intrumental
+    replace: instrumental
+    propagate_case: true
+    word: true
+  - trigger: intruments
+    replace: instruments
+    propagate_case: true
+    word: true
+  - trigger: intrusted
+    replace: entrusted
+    propagate_case: true
+    word: true
+  - trigger: intutive
+    replace: intuitive
+    propagate_case: true
+    word: true
+  - trigger: intutively
+    replace: intuitively
+    propagate_case: true
+    word: true
+  - trigger: inudstry
+    replace: industry
+    propagate_case: true
+    word: true
+  - trigger: inumerable
+    replace: "enumerable\x2C\x20innumerable"
+    propagate_case: true
+    word: true
+  - trigger: inventer
+    replace: inventor
+    propagate_case: true
+    word: true
+  - trigger: invertibrates
+    replace: invertebrates
+    propagate_case: true
+    word: true
+  - trigger: investingate
+    replace: investigate
+    propagate_case: true
+    word: true
+  - trigger: involvment
+    replace: involvement
+    propagate_case: true
+    word: true
+    # ---------------------------------------------------- #
+    #                          IR                          #
+    # ---------------------------------------------------- #
+  - trigger: irelevent
+    replace: irrelevant
+    propagate_case: true
+    word: true
+  - trigger: iresistable
+    replace: irresistible
+    propagate_case: true
+    word: true
+  - trigger: iresistably
+    replace: irresistibly
+    propagate_case: true
+    word: true
+  - trigger: iresistible
+    replace: irresistible
+    propagate_case: true
+    word: true
+  - trigger: iresistibly
+    replace: irresistibly
+    propagate_case: true
+    word: true
+  - trigger: iritable
+    replace: irritable
+    propagate_case: true
+    word: true
+  - trigger: iritated
+    replace: irritated
+    propagate_case: true
+    word: true
+  - trigger: ironicly
+    replace: ironically
+    propagate_case: true
+    word: true
+  - trigger: irregardless
+    replace: regardless
+    propagate_case: true
+    word: true
+  - trigger: irrelevent
+    replace: irrelevant
+    propagate_case: true
+    word: true
+  - trigger: irreplacable
+    replace: irreplaceable
+    propagate_case: true
+    word: true
+  - trigger: irresistable
+    replace: irresistible
+    propagate_case: true
+    word: true
+  - trigger: irresistably
+    replace: irresistibly
+    propagate_case: true
+    word: true
+    # ---------------------------------------------------- #
+    #                          IS                          #
+    # ---------------------------------------------------- #
+  - trigger: isnt
+    replace: "isn\x27t"
+    propagate_case: true
+    word: true
+  - trigger: Israelies
+    replace: Israelis
+    propagate_case: true
+    word: true
+  - trigger: issueing
+    replace: issuing
+    propagate_case: true
+    word: true
+  - trigger: itnroduced
+    replace: introduced
+    propagate_case: true
+    word: true
+  - trigger: iunior
+    replace: junior
+    propagate_case: true
+    word: true
+  - trigger: iwll
+    replace: will
+    propagate_case: true
+    word: true
+  - trigger: iwth
+    replace: with
+    propagate_case: true
+    word: true

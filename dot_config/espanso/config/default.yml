@@ -1,0 +1,63 @@
+#------------------------------------------------------------------------------
+# Filename: ~/dotfiles/espanso/match/default.yml
+#
+# Espanso Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------
+# espanso configuration file
+
+# You can use this file to define the global configuration options for espanso.
+# These are the parameters that will be used by default on every application,
+# but you can also override them on a per-application basis.
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+---
+# If true, instructs the daemon process to restart the worker
+# after a configuration file change is detected on disk.
+auto_restart: true
+
+# >>> Backspace <<<
+# How many backspaces espanso tracks to correct misspelled keywordsMaximum
+# number of backspace presses espanso keeps track of.
+# For example, this is needed to correctly expand even if typos are typed.
+backspace_limit: 5
+
+# When enabled, automatically "reverts" an expansion if the user presses
+# the Backspace key afterwards. This is not available on some platform/configurations.
+undo_backspace: true
+
+# >>> Clipboard <<<
+# If true, Espanso will attempt to preserve the previous clipboard
+# content after an expansion has taken place.
+preserve_clipboard: true
+
+# >>> Notifications <<<
+show_notifications: false
+
+# >>> Search Bar <<<
+# Hotkey used to show the Search UI.
+search_shortcut: ALT+SHIFT+SPACE
+# Trigger used to show the Search UI.
+search_trigger: ":search"
+
+# >>> Status Icon <<<
+# Show or hide the Espanso status icon on the MacOS menu bar.
+show_icon: true
+# >>> Toggle Key <<<
+# Key used to disable and enable espanso (when double tapped)
+# Options: CTRL, SHIFT, ALT, CMD, OFF (including all left and right variants)
+# toggle_key: ALT
+
+# >>> Injection Backend <<<
+# Espanso supports multiple ways of injecting text into applications. Each of
+# them has its quirks, therefore you may want to change it if you are having problems.
+# By default, espanso uses the "Auto" backend which should work well in most cases,
+# but you may want to try the "Clipboard" or "Inject" backend in case of issues.
+# backend: Clipboard
+
+# --- Clipboard threshold
+
+# Because injecting long texts char-by-char is a slow operation, espanso automatically
+# uses the clipboard if the text is longer than 'clipboard_threshold' characters.
+# clipboard_threshold: 100
+
+# For a list of all the available options, visit the official docs at: https://espanso.org/docs/

@@ -1,0 +1,9 @@
+#------------------------------------------------------------------------------
+# Filename: ~/dotfiles/espanso/match/wezterm.yml
+#
+# Espanso Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------
+---
+filter_class: ^org\.wezfurlong\.wezterm$
+
+paste_shortcut: CTRL+SHIFT+V

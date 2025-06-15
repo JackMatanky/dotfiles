@@ -1,0 +1,51 @@
+{
+  "version": "0.2",
+  "language": "en,he",
+  "ignorePaths": [
+    "node_modules/**",
+    "venv/**",
+    ".venv/**",
+    "__pycache__/**",
+    "**/**extensions.txt"
+  ],
+  "dictionaryDefinitions": [
+    // npm install -g @cspell/dict-he
+    {
+      "name": "hebrew",
+      "path": "/opt/homebrew/lib/node_modules/@cspell/dict-he/hebrew-words.txt",
+      "description": "Hebrew words from cspell-dict-he",
+      "addWords": false
+    },
+    // npm install -g @cspell/dict-python
+    {
+      "name": "python",
+      "path": "/opt/homebrew/lib/node_modules/@cspell/dict-python/python.txt",
+      "description": "Python dictionary words",
+      "addWords": false
+    },
+    {
+      "name": "python_dictionary",
+      "path": "${env:HOME}/.config/cspell/dictionaries/user_dictionary_python.txt",
+      "addWords": true,
+      "scope": "user"
+    },
+    {
+      "name": "general_dictionary",
+      "path": "${env:HOME}/.config/cspell/dictionaries/user_dictionary_eng.txt",
+      "addWords": true,
+      "scope": "user"
+    }
+  ],
+  "dictionaries": ["general_dictionary", "hebrew", "python"],
+  "ignoreWords": ["PREMADE", "canonizer", "inshellisense"],
+  "languageSettings": [
+    {
+      "languageId": "python",
+      "dictionaries": ["python"]
+    },
+    {
+      "languageId": "javascript",
+      "dictionaries": ["typescript", "node"]
+    }
+  ]
+}

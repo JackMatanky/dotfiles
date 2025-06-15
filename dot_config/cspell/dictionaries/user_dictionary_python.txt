@@ -1,0 +1,32 @@
+# --- Python Packages ---
+basedpyright
+erdantic
+geopandas
+graphviz
+ipykernel
+isort
+jupytext
+mkdocs
+mkdocs-material
+numpy
+pyarrow
+pydantic
+pydoc
+pylyzer
+pyproject
+pyright
+setuptools
+
+# --- Python Concepts / Keywords ---
+dataclass
+dataclasses
+housenumber
+ipynb
+isinstance
+itertuples
+kernelspec
+pycache
+typestubs
+Pyenv
+venv
+venvPath

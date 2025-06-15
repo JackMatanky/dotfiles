@@ -1,0 +1,8 @@
+#------------------------------------------------------------------------------#
+# Filename: ~/dotfiles/git/config_work
+#
+# Git Docs: https://git-scm.com/docs/git-config
+#------------------------------------------------------------------------------#
+[user]
+    name = JackMatanky                  # Replace with your name
+    email = Jack_M@hiveurban.com        # Replace with your Hive Urban work email

@@ -1,0 +1,11 @@
+#------------------------------------------------------------------------------
+# Filename: ~/dotfiles/espanso/match/zed.yml
+#
+# Espanso Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------
+---
+filter_class: ^dev\.zed\.Zed$
+
+key_delay: 5
+
+backend: clipboard

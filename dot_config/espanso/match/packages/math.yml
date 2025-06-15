@@ -1,0 +1,642 @@
+matches:
+    #
+    #   ARROWS
+    #
+
+    # right arrow
+    - trigger: ":to:"
+      replace: "⟶"
+
+    # right arrow
+    - trigger: ":arrow_right:"
+      replace: "⟶"
+
+    # left arrow
+    - trigger: ":ot:"
+      replace: "⟵"
+
+    # left arrow
+    - trigger: ":arrow_left:"
+      replace: "⟵"
+
+    # upwards arrow
+    - trigger: ":arrow_up:"
+      replace: "↑"
+
+    # downwards arrow
+    - trigger: ":arrow_down:"
+      replace: "↓"
+
+    # left and right arrow
+    - trigger: ":arrow_left_and_right:"
+      replace: "⇄"
+
+    # leftrightarrow
+    - trigger: ":arrow_leftright:"
+      replace: "⟷"
+
+    # short right arrow
+    - trigger: ":to_short:"
+      replace: "→"
+
+    # epimorphism
+    - trigger: ":epi:"
+      replace: "↠"
+
+    # backwards epimorphism
+    - trigger: ":epi_left:"
+      replace: "↞"
+
+    # monomorphism
+    - trigger: ":mono:"
+      replace: "⮩"
+
+    # backwards monomorphism
+    - trigger: ":mono_left:"
+      replace: "⮨"
+
+    # acts
+    - trigger: ":acts:"
+      replace: "↷"
+
+    # backwards acts
+    - trigger: ":acts_left:"
+      replace: "↶"
+
+    # auto
+    - trigger: ":auto:"
+      replace: "⟲"
+
+    # isomorphism
+    - trigger: ":simto:"
+      replace: "⭇"
+
+    # backwards isomorphism
+    - trigger: ":simot:"
+      replace: "⭁"
+
+    # open embedding
+    - trigger: ":emb_open:"
+      replace: "⇴"
+
+    # closed embedding
+    - trigger: ":emb_closed:"
+      replace: "↛"
+
+    # mapsto
+    - trigger: ":mapsto:"
+      replace: "⟼"
+
+    # short mapsto
+    - trigger: ":mapsto_short:"
+      replace: "↦"
+
+    # rrarrow
+    - trigger: ":rrarrow:"
+      replace: "⇉"
+
+    # rrrarrow
+    - trigger: ":rrrarrow:"
+      replace: "⇶"
+
+    # arroww
+    - trigger: ":arroww:"
+      replace: "⟹"
+
+    # arrowww
+    - trigger: ":arrowww:"
+      replace: "⇛"
+
+    # squiggly arrow
+    - trigger: ":arrow_squiggly:"
+      replace: "⇝"
+
+    # left squiggly arrow
+    - trigger: ":arrow_squiggly_left:"
+      replace: "⇜"
+
+    # long squiggly arrow
+    - trigger: ":arrow_squiggly_long:"
+      replace: "⟿"
+
+    #
+    #   LOGICS & CATEGORY THEORY
+
+    # not equal
+    - trigger: ":not_equals:"
+      replace: "≠"
+
+    # logical xor
+    - trigger: ":xor:"
+      replace: "⩛"
+
+    # simeq
+    - trigger: ":simeq:"
+      replace: "⋍"
+    - trigger: ":approx"
+      replace: "≈"
+
+    # not simeq
+    - trigger: ":not_simeq:"
+      replace: "≄"
+
+    # cong
+    - trigger: ":cong:"
+      replace: "≌"
+    - trigger: ":congr:"
+      replace: "≅"
+
+    # coloneqq
+    - trigger: ":coloneqq:"
+      replace: "≔"
+
+    # eqqcolon
+    - trigger: ":eqqcolon:"
+      replace: "≕"
+
+    # leq
+    - trigger: ":leq"
+      replace: "≦"
+
+    # geq
+    - trigger: ":geq"
+      replace: "≧"
+
+    # ladj
+    - trigger: ":ladj:"
+      replace: "⊣"
+
+    # radj
+    - trigger: ":radj:"
+      replace: "⊢"
+
+    # times
+    - trigger: ":times:"
+      replace: "×"
+
+    # point
+    - trigger: ":point:"
+      replace: "∗"
+
+    # n-th root
+    - trigger: ":sqrt:"
+      replace: "√"
+
+    # circ
+    - trigger: ":circ:"
+      replace: "∘"
+
+    # product
+    - trigger: ":prod:"
+      replace: "∏"
+
+    # coproduct
+    - trigger: ":coprod:"
+      replace: "∐"
+
+    # sum
+    - trigger: ":sum:"
+      replace: "∑"
+
+    # integral
+    - trigger: ":integral"
+      replace: "∫"
+
+    # dagger
+    - trigger: ":dagger"
+      replace: "†"
+
+    #
+    #  mathbb
+    #
+
+    - trigger: ":bbA:"
+      replace: "𝔸"
+
+    - trigger: ":bbB:"
+      replace: "𝔹"
+
+    - trigger: ":bbC:"
+      replace: "ℂ"
+
+    - trigger: ":bbD:"
+      replace: "𝔻"
+
+    - trigger: ":bbE:"
+      replace: "𝔼"
+
+    - trigger: ":bbF:"
+      replace: "𝔽"
+
+    - trigger: ":bbG:"
+      replace: "𝔾"
+
+    - trigger: ":bbH:"
+      replace: "ℍ"
+
+    - trigger: ":bbI:"
+      replace: "𝕀"
+
+    - trigger: ":bbJ:"
+      replace: "𝕁"
+
+    - trigger: ":bbK:"
+      replace: "𝕂"
+
+    - trigger: ":bbL:"
+      replace: "𝕃"
+
+    - trigger: ":bbM:"
+      replace: "𝕄"
+
+    - trigger: ":bbN:"
+      replace: "ℕ"
+
+    - trigger: ":bbO:"
+      replace: "𝕆"
+
+    - trigger: ":bbP:"
+      replace: "ℙ"
+
+    - trigger: ":bbQ:"
+      replace: "ℚ"
+
+    - trigger: ":bbR:"
+      replace: "ℝ"
+
+    - trigger: ":bbS:"
+      replace: "𝕊"
+
+    - trigger: ":bbT:"
+      replace: "𝕋"
+
+    - trigger: ":bbU:"
+      replace: "𝕌"
+
+    - trigger: ":bbV:"
+      replace: "𝕍"
+
+    - trigger: ":bbW:"
+      replace: "𝕎"
+
+    - trigger: ":bbX:"
+      replace: "𝕏"
+
+    - trigger: ":bbY:"
+      replace: "𝕐"
+
+    - trigger: ":bbZ:"
+      replace: "ℤ"
+
+    #
+    #  mathsf
+    #
+
+    - trigger: ":sfA:"
+      replace: "𝖠"
+
+    - trigger: ":sfB:"
+      replace: "𝖡"
+
+    - trigger: ":sfC:"
+      replace: "𝖢"
+
+    - trigger: ":sfD:"
+      replace: "𝖣"
+
+    - trigger: ":sfE:"
+      replace: "𝖤"
+
+    - trigger: ":sfF:"
+      replace: "𝖥"
+
+    - trigger: ":sfG:"
+      replace: "𝖦"
+
+    - trigger: ":sfH:"
+      replace: "𝖧"
+
+    - trigger: ":sfI:"
+      replace: "𝖨"
+
+    - trigger: ":sfJ:"
+      replace: "𝖩"
+
+    - trigger: ":sfK:"
+      replace: "𝖪"
+
+    - trigger: ":sfL:"
+      replace: "𝖫"
+
+    - trigger: ":sfM:"
+      replace: "𝖬"
+
+    - trigger: ":sfN:"
+      replace: "𝖭"
+
+    - trigger: ":sfO:"
+      replace: "𝖮"
+
+    - trigger: ":sfP:"
+      replace: "𝖯"
+
+    - trigger: ":sfQ:"
+      replace: "𝖰"
+
+    - trigger: ":sfR:"
+      replace: "𝖱"
+
+    - trigger: ":sfS:"
+      replace: "𝖲"
+
+    - trigger: ":sfT:"
+      replace: "𝖳"
+
+    - trigger: ":sfU:"
+      replace: "𝖴"
+
+    - trigger: ":sfV:"
+      replace: "𝖵"
+
+    - trigger: ":sfW:"
+      replace: "𝖶"
+
+    - trigger: ":sfX:"
+      replace: "𝖷"
+
+    - trigger: ":sfY:"
+      replace: "𝖸"
+
+    - trigger: ":sfZ:"
+      replace: "𝖹"
+
+    #
+    #  mathbf
+    #
+
+    - trigger: ":bfA:"
+      replace: "𝐀"
+
+    - trigger: ":bfB:"
+      replace: "𝐁"
+
+    - trigger: ":bfC:"
+      replace: "𝐂"
+
+    - trigger: ":bfD:"
+      replace: "𝐃"
+
+    - trigger: ":bfE:"
+      replace: "𝐄"
+
+    - trigger: ":bfF:"
+      replace: "𝐅"
+
+    - trigger: ":bfG:"
+      replace: "𝐆"
+
+    - trigger: ":bfH:"
+      replace: "𝐇"
+
+    - trigger: ":bfI:"
+      replace: "𝐈"
+
+    - trigger: ":bfJ:"
+      replace: "𝐉"
+
+    - trigger: ":bfK:"
+      replace: "𝐊"
+
+    - trigger: ":bfL:"
+      replace: "𝐋"
+
+    - trigger: ":bfM:"
+      replace: "𝐌"
+
+    - trigger: ":bfN:"
+      replace: "𝐍"
+
+    - trigger: ":bfO:"
+      replace: "𝐎"
+
+    - trigger: ":bfP:"
+      replace: "𝐏"
+
+    - trigger: ":bfQ:"
+      replace: "𝐐"
+
+    - trigger: ":bfR:"
+      replace: "𝐑"
+
+    - trigger: ":bfS:"
+      replace: "𝐒"
+
+    - trigger: ":bfT:"
+      replace: "𝐓"
+
+    - trigger: ":bfU:"
+      replace: "𝐔"
+
+    - trigger: ":bfV:"
+      replace: "𝐕"
+
+    - trigger: ":bfW:"
+      replace: "𝐖"
+
+    - trigger: ":bfX:"
+      replace: "𝐗"
+
+    - trigger: ":bfY:"
+      replace: "𝐘"
+
+    - trigger: ":bfZ:"
+      replace: "𝐙"
+
+    #
+    #  mathsc
+    #
+
+    - trigger: ":scA:"
+      replace: "𝒜"
+
+    - trigger: ":scC:"
+      replace: "𝒞"
+
+    - trigger: ":scD:"
+      replace: "𝒟"
+
+    - trigger: ":scG:"
+      replace: "𝒢"
+
+    - trigger: ":scJ:"
+      replace: "𝒥"
+
+    - trigger: ":scK:"
+      replace: "𝒦"
+
+    - trigger: ":scN:"
+      replace: "𝒩"
+
+    - trigger: ":scO:"
+      replace: "𝒪"
+
+    - trigger: ":scP:"
+      replace: "𝒫"
+
+    - trigger: ":scQ:"
+      replace: "𝒬"
+
+    - trigger: ":scS:"
+      replace: "𝒮"
+
+    - trigger: ":scT:"
+      replace: "𝒯"
+
+    - trigger: ":scU:"
+      replace: "𝒰"
+
+    - trigger: ":scV:"
+      replace: "𝒱"
+
+    - trigger: ":scW:"
+      replace: "𝒲"
+
+    - trigger: ":scX:"
+      replace: "𝒳"
+
+    - trigger: ":scY:"
+      replace: "𝒴"
+
+    - trigger: ":scZ:"
+      replace: "𝒵"
+
+    #
+    #  mathcal
+    #
+
+    - trigger: ":calA:"
+      replace: "𝓐"
+
+    - trigger: ":calB:"
+      replace: "𝓑"
+
+    - trigger: ":calC:"
+      replace: "𝓒"
+
+    - trigger: ":calD:"
+      replace: "𝓓"
+
+    - trigger: ":calE:"
+      replace: "𝓔"
+
+    - trigger: ":calF:"
+      replace: "𝓕"
+
+    - trigger: ":calG:"
+      replace: "𝓖"
+
+    - trigger: ":calH:"
+      replace: "𝓗"
+
+    - trigger: ":calI:"
+      replace: "𝓘"
+
+    - trigger: ":calJ:"
+      replace: "𝓙"
+
+    - trigger: ":calK:"
+      replace: "𝓚"
+
+    - trigger: ":calL:"
+      replace: "𝓛"
+
+    - trigger: ":calM:"
+      replace: "𝓜"
+
+    - trigger: ":calN:"
+      replace: "𝓝"
+
+    - trigger: ":calO:"
+      replace: "𝓞"
+
+    - trigger: ":calP:"
+      replace: "𝓟"
+
+    - trigger: ":calQ:"
+      replace: "𝓠"
+
+    - trigger: ":calR:"
+      replace: "𝓡"
+
+    - trigger: ":calS:"
+      replace: "𝓢"
+
+    - trigger: ":calT:"
+      replace: "𝓣"
+
+    - trigger: ":calU:"
+      replace: "𝓤"
+
+    - trigger: ":calV:"
+      replace: "𝓥"
+
+    - trigger: ":calW:"
+      replace: "𝓦"
+
+    - trigger: ":calX:"
+      replace: "𝓧"
+
+    - trigger: ":calY:"
+      replace: "𝓨"
+
+    - trigger: ":calZ:"
+      replace: "𝓩"
+
+    #
+    # miscellaneous
+    #
+
+    # double slash
+    - trigger: ":doubleslash:"
+      replace: "⫽"
+
+    # qed symbol
+    - trigger: ":qed:"
+      replace: "□"
+
+    # Č
+    - trigger: ":vC:"
+      replace: "Č"
+
+    # mid
+    - trigger: ":mid:"
+      replace: "∣"
+
+    # not mid
+    - trigger: ":not_mid:"
+      replace: "∤"
+
+    # infinity
+    - trigger: ":infty:"
+      replace: "∞"
+
+    - trigger: ":^infty:"
+      replace: " ᪲"
+
+    # acute e
+    - trigger: ":e_acute:"
+      replace: "é"
+
+    # etale letters
+
+    - trigger: ":etale:"
+      replace: "étale"
+
+    - trigger: ":et:"
+      replace: "ét"
+
+    - trigger: ":^et:"
+      replace: "ᵉᵗ"
+
+    - trigger: ":_et:"
+      replace: "ₑₜ"

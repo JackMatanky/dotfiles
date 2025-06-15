@@ -1,0 +1,2117 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- A ---
+    # ---------
+    - trigger: abandonned
+      replace: abandoned
+      propagate_case: true
+      word: true
+    - trigger: abbout
+      replace: about
+      propagate_case: true
+      word: true
+    - trigger: aberation
+      replace: aberration
+      propagate_case: true
+      word: true
+    - trigger: abilityes
+      replace: abilities
+      propagate_case: true
+      word: true
+    - trigger: abilties
+      replace: abilities
+      propagate_case: true
+      word: true
+    - trigger: abilty
+      replace: ability
+      propagate_case: true
+      word: true
+    - trigger: abondon
+      replace: abandon
+      propagate_case: true
+      word: true
+    - trigger: abondoned
+      replace: abandoned
+      propagate_case: true
+      word: true
+    - trigger: abondoning
+      replace: abandoning
+      propagate_case: true
+      word: true
+    - trigger: abondons
+      replace: abandons
+      propagate_case: true
+      word: true
+    - trigger: aborigene
+      replace: aborigine
+      propagate_case: true
+      word: true
+    - trigger: abortificant
+      replace: abortifacient
+      propagate_case: true
+      word: true
+    - trigger: abotu
+      replace: about
+      propagate_case: true
+      word: true
+    - trigger: abouta
+      replace: "about\x20a"
+      propagate_case: true
+      word: true
+    - trigger: aboutit
+      replace: "about\x20it"
+      propagate_case: true
+      word: true
+    - trigger: aboutthe
+      replace: "about\x20the"
+      propagate_case: true
+      word: true
+    - trigger: abreviate
+      replace: abbreviate
+      propagate_case: true
+      word: true
+    - trigger: abreviated
+      replace: abbreviated
+      propagate_case: true
+      word: true
+    - trigger: abreviation
+      replace: abbreviation
+      propagate_case: true
+      word: true
+    - trigger: abritrary
+      replace: arbitrary
+      propagate_case: true
+      word: true
+    - trigger: absail
+      replace: abseil
+      propagate_case: true
+      word: true
+    - trigger: absailing
+      replace: abseiling
+      propagate_case: true
+      word: true
+    - trigger: abscence
+      replace: absence
+      propagate_case: true
+      word: true
+    - trigger: absense
+      replace: absence
+      propagate_case: true
+      word: true
+    - trigger: absolutly
+      replace: absolutely
+      propagate_case: true
+      word: true
+    - trigger: absorbsion
+      replace: absorption
+      propagate_case: true
+      word: true
+    - trigger: absorbtion
+      replace: absorption
+      propagate_case: true
+      word: true
+    - trigger: abudance
+      replace: abundance
+      propagate_case: true
+      word: true
+    - trigger: abundacies
+      replace: abundances
+      propagate_case: true
+      word: true
+    - trigger: abundancies
+      replace: abundances
+      propagate_case: true
+      word: true
+    - trigger: abundunt
+      replace: abundant
+      propagate_case: true
+      word: true
+    - trigger: abutts
+      replace: abuts
+      propagate_case: true
+      word: true
+    - trigger: acadamy
+      replace: academy
+      propagate_case: true
+      word: true
+    - trigger: acadmic
+      replace: academic
+      propagate_case: true
+      word: true
+    - trigger: accademic
+      replace: academic
+      propagate_case: true
+      word: true
+    - trigger: accademy
+      replace: academy
+      propagate_case: true
+      word: true
+    - trigger: acccused
+      replace: accused
+      propagate_case: true
+      word: true
+    - trigger: accelleration
+      replace: acceleration
+      propagate_case: true
+      word: true
+    - trigger: accension
+      replace: "accession\x2C\x20ascension"
+      propagate_case: true
+      word: true
+    - trigger: acceptence
+      replace: acceptance
+      propagate_case: true
+      word: true
+    - trigger: acceptible
+      replace: acceptable
+      propagate_case: true
+      word: true
+    - trigger: accesories
+      replace: accessories
+      propagate_case: true
+      word: true
+    - trigger: accessable
+      replace: accessible
+      propagate_case: true
+      word: true
+    - trigger: accidant
+      replace: accident
+      propagate_case: true
+      word: true
+    - trigger: accidentaly
+      replace: accidentally
+      propagate_case: true
+      word: true
+    - trigger: accidently
+      replace: accidentally
+      propagate_case: true
+      word: true
+    - trigger: acclimitization
+      replace: acclimatization
+      propagate_case: true
+      word: true
+    - trigger: accomadate
+      replace: accommodate
+      propagate_case: true
+      word: true
+    - trigger: accomadated
+      replace: accommodated
+      propagate_case: true
+      word: true
+    - trigger: accomadates
+      replace: accommodates
+      propagate_case: true
+      word: true
+    - trigger: accomadating
+      replace: accommodating
+      propagate_case: true
+      word: true
+    - trigger: accomadation
+      replace: accommodation
+      propagate_case: true
+      word: true
+    - trigger: accomadations
+      replace: accommodations
+      propagate_case: true
+      word: true
+    - trigger: accomdate
+      replace: accommodate
+      propagate_case: true
+      word: true
+    - trigger: accomodate
+      replace: accommodate
+      propagate_case: true
+      word: true
+    - trigger: accomodated
+      replace: accommodated
+      propagate_case: true
+      word: true
+    - trigger: accomodates
+      replace: accommodates
+      propagate_case: true
+      word: true
+    - trigger: accomodating
+      replace: accommodating
+      propagate_case: true
+      word: true
+    - trigger: accomodation
+      replace: accommodation
+      propagate_case: true
+      word: true
+    - trigger: accomodations
+      replace: accommodations
+      propagate_case: true
+      word: true
+    - trigger: accompanyed
+      replace: accompanied
+      propagate_case: true
+      word: true
+    - trigger: accordeon
+      replace: accordion
+      propagate_case: true
+      word: true
+    - trigger: accordian
+      replace: accordion
+      propagate_case: true
+      word: true
+    - trigger: accoring
+      replace: according
+      propagate_case: true
+      word: true
+    - trigger: accoustic
+      replace: acoustic
+      propagate_case: true
+      word: true
+    - trigger: accquainted
+      replace: acquainted
+      propagate_case: true
+      word: true
+    - trigger: accrediation
+      replace: accreditation
+      propagate_case: true
+      word: true
+    - trigger: accredidation
+      replace: accreditation
+      propagate_case: true
+      word: true
+    - trigger: accross
+      replace: across
+      propagate_case: true
+      word: true
+    - trigger: accussed
+      replace: accused
+      propagate_case: true
+      word: true
+    - trigger: acedemic
+      replace: academic
+      propagate_case: true
+      word: true
+    - trigger: acheive
+      replace: achieve
+      propagate_case: true
+      word: true
+    - trigger: acheived
+      replace: achieved
+      propagate_case: true
+      word: true
+    - trigger: acheivement
+      replace: achievement
+      propagate_case: true
+      word: true
+    - trigger: acheivements
+      replace: achievements
+      propagate_case: true
+      word: true
+    - trigger: acheives
+      replace: achieves
+      propagate_case: true
+      word: true
+    - trigger: acheiving
+      replace: achieving
+      propagate_case: true
+      word: true
+    - trigger: acheivment
+      replace: achievement
+      propagate_case: true
+      word: true
+    - trigger: acheivments
+      replace: achievements
+      propagate_case: true
+      word: true
+    - trigger: achievment
+      replace: achievement
+      propagate_case: true
+      word: true
+    - trigger: achievments
+      replace: achievements
+      propagate_case: true
+      word: true
+    - trigger: achive
+      replace: "achieve\x2C\x20archive"
+      propagate_case: true
+      word: true
+    - trigger: achived
+      replace: "achieved\x2C\x20archived"
+      propagate_case: true
+      word: true
+    - trigger: achivement
+      replace: achievement
+      propagate_case: true
+      word: true
+    - trigger: achivements
+      replace: achievements
+      propagate_case: true
+      word: true
+    - trigger: acident
+      replace: accident
+      propagate_case: true
+      word: true
+    - trigger: acknowldeged
+      replace: acknowledged
+      propagate_case: true
+      word: true
+    - trigger: acknowledgeing
+      replace: acknowledging
+      propagate_case: true
+      word: true
+    - trigger: ackward
+      replace: "awkward\x2C\x20backward"
+      propagate_case: true
+      word: true
+    - trigger: acommodate
+      replace: accommodate
+      propagate_case: true
+      word: true
+    - trigger: acomplish
+      replace: accomplish
+      propagate_case: true
+      word: true
+    - trigger: acomplished
+      replace: accomplished
+      propagate_case: true
+      word: true
+    - trigger: acomplishment
+      replace: accomplishment
+      propagate_case: true
+      word: true
+    - trigger: acomplishments
+      replace: accomplishments
+      propagate_case: true
+      word: true
+    - trigger: acording
+      replace: according
+      propagate_case: true
+      word: true
+    - trigger: acordingly
+      replace: accordingly
+      propagate_case: true
+      word: true
+    - trigger: acquaintence
+      replace: acquaintance
+      propagate_case: true
+      word: true
+    - trigger: acquaintences
+      replace: acquaintances
+      propagate_case: true
+      word: true
+    - trigger: acquiantence
+      replace: acquaintance
+      propagate_case: true
+      word: true
+    - trigger: acquiantences
+      replace: acquaintances
+      propagate_case: true
+      word: true
+    - trigger: acquited
+      replace: acquitted
+      propagate_case: true
+      word: true
+    - trigger: activites
+      replace: activities
+      propagate_case: true
+      word: true
+    - trigger: activly
+      replace: actively
+      propagate_case: true
+      word: true
+    - trigger: actualy
+      replace: actually
+      propagate_case: true
+      word: true
+    - trigger: acuracy
+      replace: accuracy
+      propagate_case: true
+      word: true
+    - trigger: acused
+      replace: accused
+      propagate_case: true
+      word: true
+    - trigger: acustom
+      replace: accustom
+      propagate_case: true
+      word: true
+    - trigger: acustommed
+      replace: accustomed
+      propagate_case: true
+      word: true
+    - trigger: adavanced
+      replace: advanced
+      propagate_case: true
+      word: true
+    - trigger: adbandon
+      replace: abandon
+      propagate_case: true
+      word: true
+    - trigger: addional
+      replace: additional
+      propagate_case: true
+      word: true
+    - trigger: addionally
+      replace: additionally
+      propagate_case: true
+      word: true
+    - trigger: additinally
+      replace: additionally
+      propagate_case: true
+      word: true
+    - trigger: additionaly
+      replace: additionally
+      propagate_case: true
+      word: true
+    - trigger: additonal
+      replace: additional
+      propagate_case: true
+      word: true
+    - trigger: additonally
+      replace: additionally
+      propagate_case: true
+      word: true
+    - trigger: addmission
+      replace: admission
+      propagate_case: true
+      word: true
+    - trigger: addopt
+      replace: adopt
+      propagate_case: true
+      word: true
+    - trigger: addopted
+      replace: adopted
+      propagate_case: true
+      word: true
+    - trigger: addoptive
+      replace: adoptive
+      propagate_case: true
+      word: true
+    - trigger: addres
+      replace: "address\x2C\x20adders"
+      propagate_case: true
+      word: true
+    - trigger: addresable
+      replace: addressable
+      propagate_case: true
+      word: true
+    - trigger: addresed
+      replace: addressed
+      propagate_case: true
+      word: true
+    - trigger: addresing
+      replace: addressing
+      propagate_case: true
+      word: true
+    - trigger: addressess
+      replace: addresses
+      propagate_case: true
+      word: true
+    - trigger: addtion
+      replace: addition
+      propagate_case: true
+      word: true
+    - trigger: addtional
+      replace: additional
+      propagate_case: true
+      word: true
+    - trigger: adecuate
+      replace: adequate
+      propagate_case: true
+      word: true
+    - trigger: adequit
+      replace: adequate
+      propagate_case: true
+      word: true
+    - trigger: adhearing
+      replace: adhering
+      propagate_case: true
+      word: true
+    - trigger: adherance
+      replace: adherence
+      propagate_case: true
+      word: true
+    - trigger: admendment
+      replace: amendment
+      propagate_case: true
+      word: true
+    - trigger: admininistrative
+      replace: administrative
+      propagate_case: true
+      word: true
+    - trigger: adminstered
+      replace: administered
+      propagate_case: true
+      word: true
+    - trigger: adminstrate
+      replace: administrate
+      propagate_case: true
+      word: true
+    - trigger: adminstration
+      replace: administration
+      propagate_case: true
+      word: true
+    - trigger: adminstrative
+      replace: administrative
+      propagate_case: true
+      word: true
+    - trigger: adminstrator
+      replace: administrator
+      propagate_case: true
+      word: true
+    - trigger: admissability
+      replace: admissibility
+      propagate_case: true
+      word: true
+    - trigger: admissable
+      replace: admissible
+      propagate_case: true
+      word: true
+    - trigger: admited
+      replace: admitted
+      propagate_case: true
+      word: true
+    - trigger: admitedly
+      replace: admittedly
+      propagate_case: true
+      word: true
+    - trigger: adn
+      replace: and
+      propagate_case: true
+      word: true
+    - trigger: adolecent
+      replace: adolescent
+      propagate_case: true
+      word: true
+    - trigger: adquire
+      replace: acquire
+      propagate_case: true
+      word: true
+    - trigger: adquired
+      replace: acquired
+      propagate_case: true
+      word: true
+    - trigger: adquires
+      replace: acquires
+      propagate_case: true
+      word: true
+    - trigger: adquiring
+      replace: acquiring
+      propagate_case: true
+      word: true
+    - trigger: adres
+      replace: address
+      propagate_case: true
+      word: true
+    - trigger: adresable
+      replace: addressable
+      propagate_case: true
+      word: true
+    - trigger: adresing
+      replace: addressing
+      propagate_case: true
+      word: true
+    - trigger: adress
+      replace: address
+      propagate_case: true
+      word: true
+    - trigger: adressable
+      replace: addressable
+      propagate_case: true
+      word: true
+    - trigger: adressed
+      replace: addressed
+      propagate_case: true
+      word: true
+    - trigger: adressing
+      replace: "addressing\x2C\x20dressing"
+      propagate_case: true
+      word: true
+    - trigger: adventrous
+      replace: adventurous
+      propagate_case: true
+      word: true
+    - trigger: advertisment
+      replace: advertisement
+      propagate_case: true
+      word: true
+    - trigger: advertisments
+      replace: advertisements
+      propagate_case: true
+      word: true
+    - trigger: advesary
+      replace: adversary
+      propagate_case: true
+      word: true
+    - trigger: adviced
+      replace: advised
+      propagate_case: true
+      word: true
+    - trigger: aeriel
+      replace: aerial
+      propagate_case: true
+      word: true
+    - trigger: aeriels
+      replace: aerials
+      propagate_case: true
+      word: true
+    - trigger: afair
+      replace: affair
+      propagate_case: true
+      word: true
+    - trigger: afficianados
+      replace: aficionados
+      propagate_case: true
+      word: true
+    - trigger: afficionado
+      replace: aficionado
+      propagate_case: true
+      word: true
+    - trigger: afficionados
+      replace: aficionados
+      propagate_case: true
+      word: true
+    - trigger: affilate
+      replace: affiliate
+      propagate_case: true
+      word: true
+    - trigger: affilliate
+      replace: affiliate
+      propagate_case: true
+      word: true
+    - trigger: affort
+      replace: "afford\x2C\x20effort"
+      propagate_case: true
+      word: true
+    - trigger: aforememtioned
+      replace: aforementioned
+      propagate_case: true
+      word: true
+    - trigger: againnst
+      replace: against
+      propagate_case: true
+      word: true
+    - trigger: agains
+      replace: against
+      propagate_case: true
+      word: true
+    - trigger: agaisnt
+      replace: against
+      propagate_case: true
+      word: true
+    - trigger: aganist
+      replace: against
+      propagate_case: true
+      word: true
+    - trigger: aggaravates
+      replace: aggravates
+      propagate_case: true
+      word: true
+    - trigger: aggreed
+      replace: agreed
+      propagate_case: true
+      word: true
+    - trigger: aggreement
+      replace: agreement
+      propagate_case: true
+      word: true
+    - trigger: aggregious
+      replace: egregious
+      propagate_case: true
+      word: true
+    - trigger: aggresive
+      replace: aggressive
+      propagate_case: true
+      word: true
+    - trigger: agian
+      replace: again
+      propagate_case: true
+      word: true
+    - trigger: agianst
+      replace: against
+      propagate_case: true
+      word: true
+    - trigger: agin
+      replace: again
+      propagate_case: true
+      word: true
+    - trigger: agina
+      replace: "again\x2C\x20angina"
+      propagate_case: true
+      word: true
+    - trigger: aginst
+      replace: against
+      propagate_case: true
+      word: true
+    - trigger: agravate
+      replace: aggravate
+      propagate_case: true
+      word: true
+    - trigger: agre
+      replace: agree
+      propagate_case: true
+      word: true
+    - trigger: agred
+      replace: agreed
+      propagate_case: true
+      word: true
+    - trigger: agreeement
+      replace: agreement
+      propagate_case: true
+      word: true
+    - trigger: agreemnt
+      replace: agreement
+      propagate_case: true
+      word: true
+    - trigger: agregate
+      replace: aggregate
+      propagate_case: true
+      word: true
+    - trigger: agregates
+      replace: aggregates
+      propagate_case: true
+      word: true
+    - trigger: agreing
+      replace: agreeing
+      propagate_case: true
+      word: true
+    - trigger: agression
+      replace: aggression
+      propagate_case: true
+      word: true
+    - trigger: agressive
+      replace: aggressive
+      propagate_case: true
+      word: true
+    - trigger: agressively
+      replace: aggressively
+      propagate_case: true
+      word: true
+    - trigger: agressor
+      replace: aggressor
+      propagate_case: true
+      word: true
+    - trigger: agricultue
+      replace: agriculture
+      propagate_case: true
+      word: true
+    - trigger: agriculure
+      replace: agriculture
+      propagate_case: true
+      word: true
+    - trigger: agricuture
+      replace: agriculture
+      propagate_case: true
+      word: true
+    - trigger: agrieved
+      replace: aggrieved
+      propagate_case: true
+      word: true
+    - trigger: ahev
+      replace: have
+      propagate_case: true
+      word: true
+    - trigger: ahppen
+      replace: happen
+      propagate_case: true
+      word: true
+    - trigger: ahve
+      replace: have
+      propagate_case: true
+      word: true
+    - trigger: aicraft
+      replace: aircraft
+      propagate_case: true
+      word: true
+    - trigger: aiport
+      replace: airport
+      propagate_case: true
+      word: true
+    - trigger: airbourne
+      replace: airborne
+      propagate_case: true
+      word: true
+    - trigger: aircaft
+      replace: aircraft
+      propagate_case: true
+      word: true
+    - trigger: aircrafts
+      replace: aircraft
+      propagate_case: true
+      word: true
+    - trigger: "aircrafts\x27"
+      replace: "aircraft\x27s"
+      propagate_case: true
+      word: true
+    - trigger: airporta
+      replace: airports
+      propagate_case: true
+      word: true
+    - trigger: airrcraft
+      replace: aircraft
+      propagate_case: true
+      word: true
+    - trigger: aisian
+      replace: asian
+      propagate_case: true
+      word: true
+    - trigger: albiet
+      replace: albeit
+      propagate_case: true
+      word: true
+    - trigger: alchohol
+      replace: alcohol
+      propagate_case: true
+      word: true
+    - trigger: alchoholic
+      replace: alcoholic
+      propagate_case: true
+      word: true
+    - trigger: alchol
+      replace: alcohol
+      propagate_case: true
+      word: true
+    - trigger: alcholic
+      replace: alcoholic
+      propagate_case: true
+      word: true
+    - trigger: alcohal
+      replace: alcohol
+      propagate_case: true
+      word: true
+    - trigger: alcoholical
+      replace: alcoholic
+      propagate_case: true
+      word: true
+    - trigger: aledge
+      replace: allege
+      propagate_case: true
+      word: true
+    - trigger: aledged
+      replace: alleged
+      propagate_case: true
+      word: true
+    - trigger: aledges
+      replace: alleges
+      propagate_case: true
+      word: true
+    - trigger: alege
+      replace: allege
+      propagate_case: true
+      word: true
+    - trigger: aleged
+      replace: alleged
+      propagate_case: true
+      word: true
+    - trigger: alegience
+      replace: allegiance
+      propagate_case: true
+      word: true
+    - trigger: algebraical
+      replace: algebraic
+      propagate_case: true
+      word: true
+    - trigger: algorhitms
+      replace: algorithms
+      propagate_case: true
+      word: true
+    - trigger: algoritm
+      replace: algorithm
+      propagate_case: true
+      word: true
+    - trigger: algoritms
+      replace: algorithms
+      propagate_case: true
+      word: true
+    - trigger: alientating
+      replace: alienating
+      propagate_case: true
+      word: true
+    - trigger: alledge
+      replace: allege
+      propagate_case: true
+      word: true
+    - trigger: alledged
+      replace: alleged
+      propagate_case: true
+      word: true
+    - trigger: alledgedly
+      replace: allegedly
+      propagate_case: true
+      word: true
+    - trigger: alledges
+      replace: alleges
+      propagate_case: true
+      word: true
+    - trigger: allegedely
+      replace: allegedly
+      propagate_case: true
+      word: true
+    - trigger: allegedy
+      replace: allegedly
+      propagate_case: true
+      word: true
+    - trigger: allegely
+      replace: allegedly
+      propagate_case: true
+      word: true
+    - trigger: allegence
+      replace: allegiance
+      propagate_case: true
+      word: true
+    - trigger: allegience
+      replace: allegiance
+      propagate_case: true
+      word: true
+    - trigger: allign
+      replace: align
+      propagate_case: true
+      word: true
+    - trigger: alligned
+      replace: aligned
+      propagate_case: true
+      word: true
+    - trigger: alliviate
+      replace: alleviate
+      propagate_case: true
+      word: true
+    - trigger: allopone
+      replace: allophone
+      propagate_case: true
+      word: true
+    - trigger: allopones
+      replace: allophones
+      propagate_case: true
+      word: true
+    - trigger: allready
+      replace: already
+      propagate_case: true
+      word: true
+    - trigger: allthough
+      replace: although
+      propagate_case: true
+      word: true
+    - trigger: alltime
+      replace: "all-time"
+      propagate_case: true
+      word: true
+    - trigger: alltogether
+      replace: altogether
+      propagate_case: true
+      word: true
+    - trigger: almsot
+      replace: almost
+      propagate_case: true
+      word: true
+    - trigger: alochol
+      replace: alcohol
+      propagate_case: true
+      word: true
+    - trigger: alomst
+      replace: almost
+      propagate_case: true
+      word: true
+    - trigger: alot
+      replace: "a\x20lot\x2C\x20allot"
+      propagate_case: true
+      word: true
+    - trigger: alotted
+      replace: allotted
+      propagate_case: true
+      word: true
+    - trigger: alowed
+      replace: allowed
+      propagate_case: true
+      word: true
+    - trigger: alowing
+      replace: allowing
+      propagate_case: true
+      word: true
+    - trigger: alreayd
+      replace: already
+      propagate_case: true
+      word: true
+    - trigger: alse
+      replace: else
+      propagate_case: true
+      word: true
+    - trigger: alsot
+      replace: also
+      propagate_case: true
+      word: true
+    - trigger: alternitives
+      replace: alternatives
+      propagate_case: true
+      word: true
+    - trigger: altho
+      replace: although
+      propagate_case: true
+      word: true
+    - trigger: althought
+      replace: although
+      propagate_case: true
+      word: true
+    - trigger: altough
+      replace: although
+      propagate_case: true
+      word: true
+    - trigger: alusion
+      replace: "allusion\x2C\x20illusion"
+      propagate_case: true
+      word: true
+    - trigger: alwasy
+      replace: always
+      propagate_case: true
+      word: true
+    - trigger: alwyas
+      replace: always
+      propagate_case: true
+      word: true
+    - trigger: amalgomated
+      replace: amalgamated
+      propagate_case: true
+      word: true
+    - trigger: amatuer
+      replace: amateur
+      propagate_case: true
+      word: true
+    - trigger: amature
+      replace: "armature\x2C\x20amateur"
+      propagate_case: true
+      word: true
+    - trigger: amendmant
+      replace: amendment
+      propagate_case: true
+      word: true
+    - trigger: Amercia
+      replace: America
+      propagate_case: true
+      word: true
+    - trigger: amerliorate
+      replace: ameliorate
+      propagate_case: true
+      word: true
+    - trigger: amke
+      replace: make
+      propagate_case: true
+      word: true
+    - trigger: amking
+      replace: making
+      propagate_case: true
+      word: true
+    - trigger: ammend
+      replace: amend
+      propagate_case: true
+      word: true
+    - trigger: ammended
+      replace: amended
+      propagate_case: true
+      word: true
+    - trigger: ammendment
+      replace: amendment
+      propagate_case: true
+      word: true
+    - trigger: ammendments
+      replace: amendments
+      propagate_case: true
+      word: true
+    - trigger: ammount
+      replace: amount
+      propagate_case: true
+      word: true
+    - trigger: ammused
+      replace: amused
+      propagate_case: true
+      word: true
+    - trigger: amoung
+      replace: among
+      propagate_case: true
+      word: true
+    - trigger: amoungst
+      replace: amongst
+      propagate_case: true
+      word: true
+    - trigger: amung
+      replace: among
+      propagate_case: true
+      word: true
+    - trigger: amunition
+      replace: ammunition
+      propagate_case: true
+      word: true
+    - trigger: analagous
+      replace: analogous
+      propagate_case: true
+      word: true
+    - trigger: analitic
+      replace: analytic
+      propagate_case: true
+      word: true
+    - trigger: analogeous
+      replace: analogous
+      propagate_case: true
+      word: true
+    - trigger: anarchim
+      replace: anarchism
+      propagate_case: true
+      word: true
+    - trigger: anarchistm
+      replace: anarchism
+      propagate_case: true
+      word: true
+    - trigger: anbd
+      replace: and
+      propagate_case: true
+      word: true
+    - trigger: ancestory
+      replace: ancestry
+      propagate_case: true
+      word: true
+    - trigger: ancilliary
+      replace: ancillary
+      propagate_case: true
+      word: true
+    - trigger: andd
+      replace: and
+      propagate_case: true
+      word: true
+    - trigger: androgenous
+      replace: androgynous
+      propagate_case: true
+      word: true
+    - trigger: androgeny
+      replace: androgyny
+      propagate_case: true
+      word: true
+    - trigger: anihilation
+      replace: annihilation
+      propagate_case: true
+      word: true
+    - trigger: aniversary
+      replace: anniversary
+      propagate_case: true
+      word: true
+    - trigger: annoint
+      replace: anoint
+      propagate_case: true
+      word: true
+    - trigger: annointed
+      replace: anointed
+      propagate_case: true
+      word: true
+    - trigger: annointing
+      replace: anointing
+      propagate_case: true
+      word: true
+    - trigger: annoints
+      replace: anoints
+      propagate_case: true
+      word: true
+    - trigger: annouced
+      replace: announced
+      propagate_case: true
+      word: true
+    - trigger: annualy
+      replace: annually
+      propagate_case: true
+      word: true
+    - trigger: annuled
+      replace: annulled
+      propagate_case: true
+      word: true
+    - trigger: anohter
+      replace: another
+      propagate_case: true
+      word: true
+    - trigger: anomolies
+      replace: anomalies
+      propagate_case: true
+      word: true
+    - trigger: anomolous
+      replace: anomalous
+      propagate_case: true
+      word: true
+    - trigger: anomoly
+      replace: anomaly
+      propagate_case: true
+      word: true
+    - trigger: anonimity
+      replace: anonymity
+      propagate_case: true
+      word: true
+    - trigger: anounced
+      replace: announced
+      propagate_case: true
+      word: true
+    - trigger: anouncement
+      replace: announcement
+      propagate_case: true
+      word: true
+    - trigger: ansalisation
+      replace: nasalisation
+      propagate_case: true
+      word: true
+    - trigger: ansalization
+      replace: nasalization
+      propagate_case: true
+      word: true
+    - trigger: ansestors
+      replace: ancestors
+      propagate_case: true
+      word: true
+    - trigger: antartic
+      replace: antarctic
+      propagate_case: true
+      word: true
+    - trigger: anthromorphization
+      replace: anthropomorphization
+      propagate_case: true
+      word: true
+    - trigger: anthropolgist
+      replace: anthropologist
+      propagate_case: true
+      word: true
+    - trigger: anthropolgy
+      replace: anthropology
+      propagate_case: true
+      word: true
+    - trigger: antiapartheid
+      replace: "anti-apartheid"
+      propagate_case: true
+      word: true
+    - trigger: anual
+      replace: annual
+      propagate_case: true
+      word: true
+    - trigger: anulled
+      replace: annulled
+      propagate_case: true
+      word: true
+    - trigger: anwsered
+      replace: answered
+      propagate_case: true
+      word: true
+    - trigger: anyhwere
+      replace: anywhere
+      propagate_case: true
+      word: true
+    - trigger: anyother
+      replace: "any\x20other"
+      propagate_case: true
+      word: true
+    - trigger: anytying
+      replace: anything
+      propagate_case: true
+      word: true
+    - trigger: aparent
+      replace: apparent
+      propagate_case: true
+      word: true
+    - trigger: aparment
+      replace: apartment
+      propagate_case: true
+      word: true
+    - trigger: apenines
+      replace: "apennines\x2C\x20Apennines"
+      propagate_case: true
+      word: true
+    - trigger: aplication
+      replace: application
+      propagate_case: true
+      word: true
+    - trigger: aplied
+      replace: applied
+      propagate_case: true
+      word: true
+    - trigger: apolegetics
+      replace: apologetics
+      propagate_case: true
+      word: true
+    - trigger: apon
+      replace: "upon\x2C\x20apron"
+      propagate_case: true
+      word: true
+    - trigger: apparant
+      replace: apparent
+      propagate_case: true
+      word: true
+    - trigger: apparantly
+      replace: apparently
+      propagate_case: true
+      word: true
+    - trigger: appart
+      replace: apart
+      propagate_case: true
+      word: true
+    - trigger: appartment
+      replace: apartment
+      propagate_case: true
+      word: true
+    - trigger: appartments
+      replace: apartments
+      propagate_case: true
+      word: true
+    - trigger: appealling
+      replace: "appealing\x2C\x20appalling"
+      propagate_case: true
+      word: true
+    - trigger: appeareance
+      replace: appearance
+      propagate_case: true
+      word: true
+    - trigger: appearence
+      replace: appearance
+      propagate_case: true
+      word: true
+    - trigger: appearences
+      replace: appearances
+      propagate_case: true
+      word: true
+    - trigger: appenines
+      replace: "apennines\x2C\x20Apennines"
+      propagate_case: true
+      word: true
+    - trigger: apperance
+      replace: appearance
+      propagate_case: true
+      word: true
+    - trigger: apperances
+      replace: appearances
+      propagate_case: true
+      word: true
+    - trigger: appereance
+      replace: appearance
+      propagate_case: true
+      word: true
+    - trigger: appereances
+      replace: appearances
+      propagate_case: true
+      word: true
+    - trigger: applicaiton
+      replace: application
+      propagate_case: true
+      word: true
+    - trigger: applicaitons
+      replace: applications
+      propagate_case: true
+      word: true
+    - trigger: appologies
+      replace: apologies
+      propagate_case: true
+      word: true
+    - trigger: appology
+      replace: apology
+      propagate_case: true
+      word: true
+    - trigger: apprearance
+      replace: appearance
+      propagate_case: true
+      word: true
+    - trigger: apprieciate
+      replace: appreciate
+      propagate_case: true
+      word: true
+    - trigger: approachs
+      replace: approaches
+      propagate_case: true
+      word: true
+    - trigger: appropiate
+      replace: appropriate
+      propagate_case: true
+      word: true
+    - trigger: appropraite
+      replace: appropriate
+      propagate_case: true
+      word: true
+    - trigger: appropropiate
+      replace: appropriate
+      propagate_case: true
+      word: true
+    - trigger: approproximate
+      replace: approximate
+      propagate_case: true
+      word: true
+    - trigger: approxamately
+      replace: approximately
+      propagate_case: true
+      word: true
+    - trigger: approxiately
+      replace: approximately
+      propagate_case: true
+      word: true
+    - trigger: approximitely
+      replace: approximately
+      propagate_case: true
+      word: true
+    - trigger: aprehensive
+      replace: apprehensive
+      propagate_case: true
+      word: true
+    - trigger: apropriate
+      replace: appropriate
+      propagate_case: true
+      word: true
+    - trigger: aproval
+      replace: approval
+      propagate_case: true
+      word: true
+    - trigger: aproximate
+      replace: approximate
+      propagate_case: true
+      word: true
+    - trigger: aproximately
+      replace: approximately
+      propagate_case: true
+      word: true
+    - trigger: aquaduct
+      replace: aqueduct
+      propagate_case: true
+      word: true
+    - trigger: aquaintance
+      replace: acquaintance
+      propagate_case: true
+      word: true
+    - trigger: aquainted
+      replace: acquainted
+      propagate_case: true
+      word: true
+    - trigger: aquiantance
+      replace: acquaintance
+      propagate_case: true
+      word: true
+    - trigger: aquire
+      replace: acquire
+      propagate_case: true
+      word: true
+    - trigger: aquired
+      replace: acquired
+      propagate_case: true
+      word: true
+    - trigger: aquiring
+      replace: acquiring
+      propagate_case: true
+      word: true
+    - trigger: aquisition
+      replace: acquisition
+      propagate_case: true
+      word: true
+    - trigger: aquitted
+      replace: acquitted
+      propagate_case: true
+      word: true
+    - trigger: aranged
+      replace: arranged
+      propagate_case: true
+      word: true
+    - trigger: arangement
+      replace: arrangement
+      propagate_case: true
+      word: true
+    - trigger: arbitarily
+      replace: arbitrarily
+      propagate_case: true
+      word: true
+    - trigger: arbitary
+      replace: arbitrary
+      propagate_case: true
+      word: true
+    - trigger: archaelogical
+      replace: archaeological
+      propagate_case: true
+      word: true
+    - trigger: archaelogists
+      replace: archaeologists
+      propagate_case: true
+      word: true
+    - trigger: archaelogy
+      replace: archaeology
+      propagate_case: true
+      word: true
+    - trigger: archaoelogy
+      replace: "archeology\x2C\x20archaeology"
+      propagate_case: true
+      word: true
+    - trigger: archaology
+      replace: "archeology\x2C\x20archaeology"
+      propagate_case: true
+      word: true
+    - trigger: archeaologist
+      replace: "archeologist\x2C\x20archaeologist"
+      propagate_case: true
+      word: true
+    - trigger: archeaologists
+      replace: "archeologists\x2C\x20archaeologists"
+      propagate_case: true
+      word: true
+    - trigger: archetect
+      replace: architect
+      propagate_case: true
+      word: true
+    - trigger: archetects
+      replace: architects
+      propagate_case: true
+      word: true
+    - trigger: archetectural
+      replace: architectural
+      propagate_case: true
+      word: true
+    - trigger: archetecturally
+      replace: architecturally
+      propagate_case: true
+      word: true
+    - trigger: archetecture
+      replace: architecture
+      propagate_case: true
+      word: true
+    - trigger: archiac
+      replace: archaic
+      propagate_case: true
+      word: true
+    - trigger: archictect
+      replace: architect
+      propagate_case: true
+      word: true
+    - trigger: archimedian
+      replace: archimedean
+      propagate_case: true
+      word: true
+    - trigger: architecht
+      replace: architect
+      propagate_case: true
+      word: true
+    - trigger: architechturally
+      replace: architecturally
+      propagate_case: true
+      word: true
+    - trigger: architechture
+      replace: architecture
+      propagate_case: true
+      word: true
+    - trigger: architechtures
+      replace: architectures
+      propagate_case: true
+      word: true
+    - trigger: architectual
+      replace: architectural
+      propagate_case: true
+      word: true
+    - trigger: archtype
+      replace: archetype
+      propagate_case: true
+      word: true
+    - trigger: archtypes
+      replace: archetypes
+      propagate_case: true
+      word: true
+    - trigger: aready
+      replace: already
+      propagate_case: true
+      word: true
+    - trigger: areodynamics
+      replace: aerodynamics
+      propagate_case: true
+      word: true
+    - trigger: argubly
+      replace: arguably
+      propagate_case: true
+      word: true
+    - trigger: arguement
+      replace: argument
+      propagate_case: true
+      word: true
+    - trigger: arguements
+      replace: arguments
+      propagate_case: true
+      word: true
+    - trigger: arised
+      replace: arose
+      propagate_case: true
+      word: true
+    - trigger: arival
+      replace: arrival
+      propagate_case: true
+      word: true
+    - trigger: armamant
+      replace: armament
+      propagate_case: true
+      word: true
+    - trigger: armistace
+      replace: armistice
+      propagate_case: true
+      word: true
+    - trigger: arogant
+      replace: arrogant
+      propagate_case: true
+      word: true
+    - trigger: arogent
+      replace: arrogant
+      propagate_case: true
+      word: true
+    - trigger: aroud
+      replace: around
+      propagate_case: true
+      word: true
+    - trigger: arrangment
+      replace: arrangement
+      propagate_case: true
+      word: true
+    - trigger: arrangments
+      replace: arrangements
+      propagate_case: true
+      word: true
+    - trigger: arrengement
+      replace: arrangement
+      propagate_case: true
+      word: true
+    - trigger: arrengements
+      replace: arrangements
+      propagate_case: true
+      word: true
+    - trigger: arround
+      replace: around
+      propagate_case: true
+      word: true
+    - trigger: artcile
+      replace: article
+      propagate_case: true
+      word: true
+    - trigger: artical
+      replace: article
+      propagate_case: true
+      word: true
+    - trigger: artice
+      replace: article
+      propagate_case: true
+      word: true
+    - trigger: articel
+      replace: article
+      propagate_case: true
+      word: true
+    - trigger: artifical
+      replace: artificial
+      propagate_case: true
+      word: true
+    - trigger: artifically
+      replace: artificially
+      propagate_case: true
+      word: true
+    - trigger: artillary
+      replace: artillery
+      propagate_case: true
+      word: true
+    - trigger: arund
+      replace: around
+      propagate_case: true
+      word: true
+    - trigger: asetic
+      replace: ascetic
+      propagate_case: true
+      word: true
+    - trigger: asfar
+      replace: "as\x20far"
+      propagate_case: true
+      word: true
+    - trigger: asign
+      replace: assign
+      propagate_case: true
+      word: true
+    - trigger: aslo
+      replace: also
+      propagate_case: true
+      word: true
+    - trigger: asociated
+      replace: associated
+      propagate_case: true
+      word: true
+    - trigger: asorbed
+      replace: absorbed
+      propagate_case: true
+      word: true
+    - trigger: asphyxation
+      replace: asphyxiation
+      propagate_case: true
+      word: true
+    - trigger: assasin
+      replace: assassin
+      propagate_case: true
+      word: true
+    - trigger: assasinate
+      replace: assassinate
+      propagate_case: true
+      word: true
+    - trigger: assasinated
+      replace: assassinated
+      propagate_case: true
+      word: true
+    - trigger: assasinates
+      replace: assassinates
+      propagate_case: true
+      word: true
+    - trigger: assasination
+      replace: assassination
+      propagate_case: true
+      word: true
+    - trigger: assasinations
+      replace: assassinations
+      propagate_case: true
+      word: true
+    - trigger: assasined
+      replace: assassinated
+      propagate_case: true
+      word: true
+    - trigger: assasins
+      replace: assassins
+      propagate_case: true
+      word: true
+    - trigger: assassintation
+      replace: assassination
+      propagate_case: true
+      word: true
+    - trigger: assemple
+      replace: assemble
+      propagate_case: true
+      word: true
+    - trigger: assertation
+      replace: assertion
+      propagate_case: true
+      word: true
+    - trigger: asside
+      replace: aside
+      propagate_case: true
+      word: true
+    - trigger: assisnate
+      replace: assassinate
+      propagate_case: true
+      word: true
+    - trigger: assit
+      replace: assist
+      propagate_case: true
+      word: true
+    - trigger: assitant
+      replace: assistant
+      propagate_case: true
+      word: true
+    - trigger: assocation
+      replace: association
+      propagate_case: true
+      word: true
+    - trigger: assoicate
+      replace: associate
+      propagate_case: true
+      word: true
+    - trigger: assoicated
+      replace: associated
+      propagate_case: true
+      word: true
+    - trigger: assoicates
+      replace: associates
+      propagate_case: true
+      word: true
+    - trigger: assosication
+      replace: assassination
+      propagate_case: true
+      word: true
+    - trigger: asssassans
+      replace: assassins
+      propagate_case: true
+      word: true
+    - trigger: assualt
+      replace: assault
+      propagate_case: true
+      word: true
+    - trigger: assualted
+      replace: assaulted
+      propagate_case: true
+      word: true
+    - trigger: assymetric
+      replace: asymmetric
+      propagate_case: true
+      word: true
+    - trigger: assymetrical
+      replace: asymmetrical
+      propagate_case: true
+      word: true
+    - trigger: asteriod
+      replace: asteroid
+      propagate_case: true
+      word: true
+    - trigger: asthetic
+      replace: aesthetic
+      propagate_case: true
+      word: true
+    - trigger: asthetical
+      replace: aesthetical
+      propagate_case: true
+      word: true
+    - trigger: asthetically
+      replace: aesthetically
+      propagate_case: true
+      word: true
+    - trigger: asume
+      replace: assume
+      propagate_case: true
+      word: true
+    - trigger: aswell
+      replace: "as\x20well"
+      propagate_case: true
+      word: true
+    - trigger: atain
+      replace: attain
+      propagate_case: true
+      word: true
+    - trigger: atempting
+      replace: attempting
+      propagate_case: true
+      word: true
+    - trigger: atheistical
+      replace: atheistic
+      propagate_case: true
+      word: true
+    - trigger: athenean
+      replace: athenian
+      propagate_case: true
+      word: true
+    - trigger: atheneans
+      replace: athenians
+      propagate_case: true
+      word: true
+    - trigger: athiesm
+      replace: atheism
+      propagate_case: true
+      word: true
+    - trigger: athiest
+      replace: atheist
+      propagate_case: true
+      word: true
+    - trigger: atorney
+      replace: attorney
+      propagate_case: true
+      word: true
+    - trigger: atribute
+      replace: attribute
+      propagate_case: true
+      word: true
+    - trigger: atributed
+      replace: attributed
+      propagate_case: true
+      word: true
+    - trigger: atributes
+      replace: attributes
+      propagate_case: true
+      word: true
+    - trigger: attaindre
+      replace: "attainder\x2C\x20attained"
+      propagate_case: true
+      word: true
+    - trigger: attemp
+      replace: attempt
+      propagate_case: true
+      word: true
+    - trigger: attemped
+      replace: attempted
+      propagate_case: true
+      word: true
+    - trigger: attemt
+      replace: attempt
+      propagate_case: true
+      word: true
+    - trigger: attemted
+      replace: attempted
+      propagate_case: true
+      word: true
+    - trigger: attemting
+      replace: attempting
+      propagate_case: true
+      word: true
+    - trigger: attemts
+      replace: attempts
+      propagate_case: true
+      word: true
+    - trigger: attendence
+      replace: attendance
+      propagate_case: true
+      word: true
+    - trigger: attendent
+      replace: attendant
+      propagate_case: true
+      word: true
+    - trigger: attendents
+      replace: attendants
+      propagate_case: true
+      word: true
+    - trigger: attened
+      replace: attended
+      propagate_case: true
+      word: true
+    - trigger: attension
+      replace: attention
+      propagate_case: true
+      word: true
+    - trigger: attitide
+      replace: attitude
+      propagate_case: true
+      word: true
+    - trigger: attributred
+      replace: attributed
+      propagate_case: true
+      word: true
+    - trigger: attrocities
+      replace: atrocities
+      propagate_case: true
+      word: true
+    - trigger: audeince
+      replace: audience
+      propagate_case: true
+      word: true
+    - trigger: auromated
+      replace: automated
+      propagate_case: true
+      word: true
+    - trigger: austrailia
+      replace: Australia
+      propagate_case: true
+      word: true
+    - trigger: austrailian
+      replace: Australian
+      propagate_case: true
+      word: true
+    - trigger: auther
+      replace: author
+      propagate_case: true
+      word: true
+    - trigger: authobiographic
+      replace: autobiographic
+      propagate_case: true
+      word: true
+    - trigger: authobiography
+      replace: autobiography
+      propagate_case: true
+      word: true
+    - trigger: authorative
+      replace: authoritative
+      propagate_case: true
+      word: true
+    - trigger: authorites
+      replace: authorities
+      propagate_case: true
+      word: true
+    - trigger: authorithy
+      replace: authority
+      propagate_case: true
+      word: true
+    - trigger: authoritiers
+      replace: authorities
+      propagate_case: true
+      word: true
+    - trigger: authoritive
+      replace: authoritative
+      propagate_case: true
+      word: true
+    - trigger: authrorities
+      replace: authorities
+      propagate_case: true
+      word: true
+    - trigger: autochtonous
+      replace: autochthonous
+      propagate_case: true
+      word: true
+    - trigger: autoctonous
+      replace: autochthonous
+      propagate_case: true
+      word: true
+    - trigger: automaticly
+      replace: automatically
+      propagate_case: true
+      word: true
+    - trigger: automibile
+      replace: automobile
+      propagate_case: true
+      word: true
+    - trigger: automonomous
+      replace: autonomous
+      propagate_case: true
+      word: true
+    - trigger: autor
+      replace: author
+      propagate_case: true
+      word: true
+    - trigger: autority
+      replace: authority
+      propagate_case: true
+      word: true
+    - trigger: auxilary
+      replace: auxiliary
+      propagate_case: true
+      word: true
+    - trigger: auxillaries
+      replace: auxiliaries
+      propagate_case: true
+      word: true
+    - trigger: auxillary
+      replace: auxiliary
+      propagate_case: true
+      word: true
+    - trigger: auxilliaries
+      replace: auxiliaries
+      propagate_case: true
+      word: true
+    - trigger: auxilliary
+      replace: auxiliary
+      propagate_case: true
+      word: true
+    - trigger: availabe
+      replace: available
+      propagate_case: true
+      word: true
+    - trigger: availablity
+      replace: availability
+      propagate_case: true
+      word: true
+    - trigger: availaible
+      replace: available
+      propagate_case: true
+      word: true
+    - trigger: availble
+      replace: available
+      propagate_case: true
+      word: true
+    - trigger: availiable
+      replace: available
+      propagate_case: true
+      word: true
+    - trigger: availible
+      replace: available
+      propagate_case: true
+      word: true
+    - trigger: avalable
+      replace: available
+      propagate_case: true
+      word: true
+    - trigger: avalance
+      replace: avalanche
+      propagate_case: true
+      word: true
+    - trigger: avaliable
+      replace: available
+      propagate_case: true
+      word: true
+    - trigger: avation
+      replace: aviation
+      propagate_case: true
+      word: true
+    - trigger: avengence
+      replace: "a\x20vengeance"
+      propagate_case: true
+      word: true
+    - trigger: averageed
+      replace: averaged
+      propagate_case: true
+      word: true
+    - trigger: avilable
+      replace: available
+      propagate_case: true
+      word: true
+    - trigger: awared
+      replace: awarded
+      propagate_case: true
+      word: true
+    - trigger: awya
+      replace: away
+      propagate_case: true
+      word: true

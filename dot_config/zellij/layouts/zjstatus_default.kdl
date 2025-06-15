@@ -1,0 +1,25 @@
+// --------------------------------------------------------------------
+//  Filename: ~/dotfiles/zellij/layouts/zjstatus.kdl
+//  Zellij Docs: https://zellij.dev/documentation/configuration
+//  Zellij Github: https://github.com/zellij-org/zellij
+//  zjstatus Github: https://github.com/dj95/zjstatus
+// --------------------------------------------------------------------
+
+// >>> LAYOUT DEFINITIONS <<<
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zjstatus"
+        }
+        children
+        pane size=1 borderless=true {
+           plugin location="zellij:status-bar"
+        }
+    }
+    tab name="Shell" {
+        pane
+    }
+    tab name="Editor" {
+        pane
+    }
+}

@@ -1,0 +1,96 @@
+# -----------------------------------------------------------------------------
+#  Filename: ~/dotfiles/zathura/zathurarc
+#
+#  Zathura Docs: https://pwmt.org/projects/zathura/documentation/
+# -----------------------------------------------------------------------------
+
+# >>> Basic Settings <<<
+set window-title-basename "true"
+set window-title-page "true"
+set selection-clipboard "clipboard"
+
+# Open document in fit-width mode by default
+# set window-width 1000
+set adjust-open "best-fit"
+
+# >>> Zoom & Scrolling <<<
+set zoom-min 0.1
+set zoom-max 10
+set zoom-step 0.1
+
+# Scrollbars
+set scroll-step 40
+set scroll-page-aware true  # Ensures better continuous scrolling
+
+# >>> Appearance <<<
+set font "FiraCode Nerd Font 14"
+
+# --- Catppuccin Latte ---
+
+# Recolor
+set recolor false
+set recolor-lightcolor      #eff1f5  # rgba(239,241,245,1)
+set recolor-darkcolor       #4c4f69  # rgba(76,79,105,1)
+
+# Statusbar
+set statusbar-fg            #4c4f69  # rgba(76,79,105,1)
+set statusbar-bg            #ccd0da  # rgba(204,208,218,1)
+
+# Inputbar
+set inputbar-fg             #4c4f69  # rgba(76,79,105,1)
+set inputbar-bg             #ccd0da  # rgba(204,208,218,1)
+
+# Index
+set index-fg                #4c4f69  # rgba(76,79,105,1)
+set index-bg                #eff1f5  # rgba(239,241,245,1)
+set index-active-fg         #4c4f69  # rgba(76,79,105,1)
+set index-active-bg         #ccd0da  # rgba(204,208,218,1)
+
+# Render Loading
+set render-loading-bg       #eff1f5  # rgba(239,241,245,1)
+set render-loading-fg       #4c4f69  # rgba(76,79,105,1)
+
+# Highlight
+set highlight-color         rgba(87,82,104,0.5)
+set highlight-fg            rgba(234,118,203,0.5)
+set highlight-active-color  rgba(234,118,203,0.5)
+
+# Notification
+set notification-bg         #ccd0da  # rgba(204,208,218,1)
+set notification-fg         #4c4f69  # rgba(76,79,105,1)
+set notification-error-bg   #ccd0da  # rgba(204,208,218,1)
+set notification-error-fg   #d20f39  # rgba(210,15,57,1)
+set notification-warning-bg #ccd0da  # rgba(204,208,218,1)
+set notification-warning-fg #fae3b0  # rgba(250,227,176,1)
+
+# Completion (If Zathura uses completion features)
+set completion-bg           #ccd0da  # rgba(204,208,218,1)
+set completion-fg           #4c4f69  # rgba(76,79,105,1)
+set completion-highlight-bg #575268  # rgba(87,82,104,1)
+set completion-highlight-fg #4c4f69  # rgba(76,79,105,1)
+set completion-group-bg     #ccd0da  # rgba(204,208,218,1)
+set completion-group-fg     #1e66f5  # rgba(30,102,245,1)
+
+# Default Foreground and Background. These might not be directly used,
+# but can influence some elements depending on Zathura's behavior.
+set default-fg              #4c4f69  # rgba(76,79,105,1)
+set default-bg              #eff1f5  # rgba(239,241,245,1)
+
+# >>> Keybindings <<<
+map r reload
+map g navigate top
+map G navigate bottom
+map j navigate next
+map k navigate previous
+map h navigate left
+map l navigate right
+map + zoom in
+map - zoom out
+map q quit
+map / search
+map n search forward
+map N search backward
+map o recolor
+# map i index
+# map b toggle-fullscreen
+map <C-r> recolor

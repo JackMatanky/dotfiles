@@ -1,0 +1,25 @@
+#------------------------------------------------------------------------------#
+# Filename: ~/dotfiles/espanso/match/md_headings.yml
+#
+# Espanso Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------#
+---
+matches:
+    - trigger: ":h1"
+      replace: "#"
+      word: true
+    - trigger: ":h2"
+      replace: "##"
+      word: true
+    - trigger: ":h3"
+      replace: "###"
+      word: true
+    - trigger: ":h4"
+      replace: "####"
+      word: true
+    - trigger: ":h5"
+      replace: "#####"
+      word: true
+    - trigger: ":h6"
+      replace: "######"
+      word: true

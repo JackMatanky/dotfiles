@@ -1,0 +1,36 @@
+# -----------------------------------------------------------------------------
+#  Filename: ~/dotfiles/yazi/yazi.toml
+#  Yazi Docs: https://yazi-rs.github.io/docs/configuration/yazi
+#  Yazi Github: https://yazi-rs.github.io/
+# -----------------------------------------------------------------------------
+
+# Zide
+[manager]
+ratio = [1, 1, 2]
+
+[opener]
+edit = [
+    { run = '$EDITOR "$@"', block = false, for = "unix" },
+    { run = "%EDITOR% %*",  block = false, for = "windows" },
+]
+
+# PDF Opener (opens in a new Zellij pane)
+# pdff = [
+#     { run = 'zellij action new-pane --layout vertical -- sioyek "$@"', desc = "Open in Sioyek (Zellij)", block = false, for = "unix" }
+# ]
+
+# pdff = [
+#     { run = 'sioyek "$@"', desc = "Open in Sioyek (Zellij)", block = false, for = "unix" }
+# ]
+
+# # Default file opener for non-PDF files (uses xdg-open)
+# default_opener = [
+#     { run = "xdg-open \"$@\"", block = false, for = "unix" }
+# ]
+
+# # Ensure PDFs open in Zellij, but other files open normally
+# [open]
+# rules = [
+#     { mime = "application/pdf", use = [ "pdff", "reveal" ] },
+#     { mime = "*", use = [ "default_opener", "reveal" ] }
+# ]

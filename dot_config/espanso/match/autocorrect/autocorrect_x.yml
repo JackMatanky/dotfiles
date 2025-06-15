@@ -1,0 +1,9 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- X ---
+    # ---------
+    - trigger: xenophoby
+      replace: xenophobia
+      propagate_case: true
+      word: true

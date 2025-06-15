@@ -1,0 +1,10 @@
+#------------------------------------------------------------------------------#
+# Filename: ~/dotfiles/git/.gitattributes
+#
+# Git Docs: https://git-scm.com/docs/git-config
+#------------------------------------------------------------------------------#
+*.pdf diff=pdf
+*.gif binary
+*.jpg binary
+*.png binary
+*.webp binary

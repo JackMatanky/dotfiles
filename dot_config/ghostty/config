@@ -1,0 +1,110 @@
+#--------------------------------------------------------------------
+# Filename: ~/dotfiles/ghostty/config
+# Ghostty Docs: https://ghostty.org/docs
+#--------------------------------------------------------------------
+
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+
+# Config syntax crash course
+# ==========================
+# # The config file consists of simple key-value pairs,
+# # separated by equals signs.
+# font-family = Iosevka
+# window-padding-x = 2
+#
+# # Spacing around the equals sign does not matter.
+# # All of these are identical:
+# key=value
+# key= value
+# key =value
+# key = value
+#
+# # Any line beginning with a # is a comment. It's not possible to put
+# # a comment after a config option, since it would be interpreted as a
+# # part of the value. For example, this will have a value of "#123abc":
+# background = #123abc
+#
+# # Empty values are used to reset config keys to default.
+# key =
+#
+# # Some config options have unique syntaxes for their value,
+# # which is explained in the docs for that config option.
+# # Just for example:
+# resize-overlay-duration = 4s 200ms
+
+theme = catppuccin-macchiato
+
+# --------------------------- Font --------------------------- #
+
+font-family = "FiraCode Nerd Font Mono"
+font-size = 16
+
+# Enables thicker font rendering if supported.
+# Only works on macOS. Has no effect on other platforms.
+# Docs: https://ghostty.org/docs/config/reference#font-thicken
+font-thicken = true
+
+# Sets strength of thickened font when enabled.
+# Valid range: 0 (lightest) to 255 (strongest).
+# Only applies when `font-thicken` is `true` and on macOS.
+# Docs: https://ghostty.org/docs/config/reference#font-thicken-strength
+font-thicken-strength = 225
+
+
+# ------------------------ Background ------------------------ #
+
+# Background opacity: 1 = fully opaque, 0 = fully transparent.
+# Values outside [0, 1] are clamped.
+# On macOS, requires restart and is disabled in native fullscreen.
+# Docs: https://ghostty.org/docs/config/reference#background-opacity
+background-opacity = 0.9
+
+# Enables background blur when opacity < 1.
+# Accepts an int (blur level), true (default 20), or false (0).
+# May reduce performance or cause visual glitches.
+# Docs: https://ghostty.org/docs/config/reference#background-blur
+background-blur = 4
+
+# Ensures readable text by enforcing a minimum WCAG contrast ratio (1–21).
+# Values >1 brighten/darken text if it's too similar to the background.
+# Use 3+ for readability, 7+ for strong contrast, 21 for max (black/white).
+# https://ghostty.org/docs/config/reference#minimum-contrast
+#
+# minimum-contrast = 3
+
+
+window-decoration = true
+
+mouse-hide-while-typing = true
+
+# Automatically copies selected text to the clipboard.
+# `true` uses the selection clipboard;
+# `clipboard` copies to both.
+# Middle-click paste always uses selection clipboard.
+# Docs: https://ghostty.org/docs/config/reference#copy-on-select
+copy-on-select = true
+
+
+# --------------------------- MacOS -------------------------- #
+
+# To hide the titlebar without removing the native window borders
+# or rounded corners, use `macos-titlebar-style = hidden` instead.
+# Use `macos-titlebar-style = tabs` to enable tabs within the titlebar.
+macos-titlebar-style = hidden
+macos-option-as-alt = true
+
+
+# keybind = global:cmd+/=toggle_quick_terminal
+keybind = performable:cmd+c=copy_to_clipboard
+
+# Use Nushell as default shell
+command = /opt/homebrew/bin/nu
+shell-integration = none
+
+# Open Zellij with the welcome screen
+# command = "/opt/homebrew/bin/zellij -l welcome --config-dir ~/.config/zellij options --layout-dir ~/.config/zellij/layouts"
+# command = "/opt/homebrew/bin/zellij -l welcome"

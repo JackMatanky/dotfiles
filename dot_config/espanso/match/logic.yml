@@ -1,0 +1,54 @@
+#------------------------------------------------------------------------------
+# Filename: ~/dotfiles/espanso/match/logic.yml
+#
+# Espanso Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------
+---
+matches:
+    - trigger: ":lnot"
+      replace: "¬"
+    - trigger: ":land"
+      replace: "∧"
+    - trigger: ":lor"
+      replace: "∨"
+    - trigger: ":lxor"
+      replace: "⊕"
+    - triggers: [":limp", ":lif", ":lto"]
+      replace: "→"
+    - trigger: ":impl"
+      replace: "⇒"
+    - triggers: [":bimp", ":iff"]
+      replace: "⇔"
+    - triggers: [":eq", ":def"]
+      replace: "≡"
+
+    # Quantifiers
+    - trigger: ":forall"
+      replace: "∀"
+    - trigger: ":lall"
+      replace: "∀"
+    - trigger: ":lsome"
+      replace: "∃"
+    - trigger: ":lsome"
+      replace: "∃"
+    - trigger: ":not_exists:"
+      replace: "∄"
+
+    - trigger: ":proves"
+      replace: "⊢"
+    - trigger: ":models"
+      replace: "⊨"
+
+    # Proofs
+    - trigger: ":therefore"
+      replace: "∴"
+    - trigger: ":because"
+      replace: "∵"
+    - trigger: ":qed"
+      replace: "■"
+
+    # True/False
+    - triggers: [":true", ":top"]
+      replace: "⊤"
+    - triggers: [":false", ":bot"]
+      replace: "⊥"

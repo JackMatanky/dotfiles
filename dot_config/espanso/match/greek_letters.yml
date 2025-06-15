@@ -1,0 +1,202 @@
+#------------------------------------------------------------------------------
+# Filename: ~/dotfiles/espanso/match/greek_letters.yml
+#
+# Espanso Docs: https://espanso.org/docs/
+#------------------------------------------------------------------------------
+---
+matches:
+    # alpha
+    - trigger: ":alpha:"
+      replace: "α"
+
+    # Alpha
+    - trigger: ":Alpha:"
+      replace: "Α"
+
+    # beta
+    - trigger: ":beta:"
+      replace: "β"
+
+    # Beta
+    - trigger: ":Beta:"
+      replace: "Β"
+
+    # gamma
+    - trigger: ":gamma:"
+      replace: "γ"
+
+    # Gamma
+    - trigger: ":Gamma:"
+      replace: "Γ"
+
+    # delta
+    - trigger: ":delta:"
+      replace: "δ"
+
+    # Delta
+    - trigger: ":Delta:"
+      replace: "Δ"
+
+    # epsilon
+    - trigger: ":epsilon:"
+      replace: "ε"
+
+    # Epsilon
+    - trigger: ":Epsilon:"
+      replace: "Ε"
+
+    # zeta
+    - trigger: ":zeta:"
+      replace: "ζ"
+
+    # Zeta
+    - trigger: ":Zeta:"
+      replace: "Ζ"
+
+    # eta
+    - trigger: ":eta:"
+      replace: "η"
+
+    # Eta
+    - trigger: ":Eta:"
+      replace: "Η"
+
+    # theta
+    - trigger: ":theta:"
+      replace: "θ"
+
+    # Theta
+    - trigger: ":Theta:"
+      replace: "Θ"
+
+    # iota
+    - trigger: ":iota:"
+      replace: "ι"
+
+    # Iota
+    - trigger: ":Iota:"
+      replace: "Ι"
+
+    # kappa
+    - trigger: ":kappa:"
+      replace: "κ"
+
+    # Kappa
+    - trigger: ":Iota:"
+      replace: "Κ"
+
+    # lambda
+    - trigger: ":lambda:"
+      replace: "λ"
+
+    # Lambda
+    - trigger: ":Lambda:"
+      replace: "Λ"
+
+    # mu
+    - trigger: ":mu:"
+      replace: "μ"
+
+    # Mu
+    - trigger: ":Mu:"
+      replace: "Μ"
+
+    # nu
+    - trigger: ":nu:"
+      replace: "ν"
+
+    # Nu
+    - trigger: ":Nu:"
+      replace: "Ν"
+
+    # xi
+    - trigger: ":xi:"
+      replace: "ξ"
+
+    # Xi
+    - trigger: ":Xi:"
+      replace: "Ξ"
+
+    # omicron
+    - trigger: ":omicron:"
+      replace: "ο"
+
+    # Omicron
+    - trigger: ":Omicron:"
+      replace: "Ο"
+
+    # pi
+    - trigger: ":pi:"
+      replace: "π"
+
+    # Pi
+    - trigger: ":Pi:"
+      replace: "Π"
+
+    # rho
+    - trigger: ":rho:"
+      replace: "ρ"
+
+    # Rho
+    - trigger: ":Rho:"
+      replace: "Ρ"
+
+    # sigma
+    - trigger: ":sigma:"
+      replace: "σ"
+
+    # Sigma
+    - trigger: ":Sigma:"
+      replace: "Σ"
+
+    # tau
+    - trigger: ":tau:"
+      replace: "τ"
+
+    # Tau
+    - trigger: ":Tau:"
+      replace: "Τ"
+
+    # upsilon
+    - trigger: ":upsilon:"
+      replace: "υ"
+
+    # Upsilon
+    - trigger: ":Upsilon:"
+      replace: "Υ"
+
+    # phi
+    - trigger: ":phi:"
+      replace: "φ"
+
+    # varphi
+    - trigger: ":varphi:"
+      replace: "ϕ"
+
+    # Phi
+    - trigger: ":Phi:"
+      replace: "Φ"
+
+    # chi
+    - trigger: ":chi:"
+      replace: "χ"
+
+    # Chi
+    - trigger: ":Chi:"
+      replace: "Χ"
+
+    # psi
+    - trigger: ":psi:"
+      replace: "ψ"
+
+    # Psi
+    - trigger: ":Psi:"
+      replace: "Ψ"
+
+    # omega
+    - trigger: ":omega:"
+      replace: "ω"
+
+    # Omega
+    - trigger: ":Omega:"
+      replace: "Ω"

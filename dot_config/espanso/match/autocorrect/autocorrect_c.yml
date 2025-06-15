@@ -1,0 +1,1941 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------------------------------------------------- #
+    #                          CA                          #
+    # ---------------------------------------------------- #
+    - trigger: caculater
+      replace: calculator
+      propagate_case: true
+      word: true
+    - trigger: cacuses
+      replace: caucuses
+      propagate_case: true
+      word: true
+    - trigger: cahracters
+      replace: characters
+      propagate_case: true
+      word: true
+    - trigger: calaber
+      replace: caliber
+      propagate_case: true
+      word: true
+    - trigger: calander
+      replace: "calendar\x2C\x20calender\x2C\x20colander"
+      propagate_case: true
+      word: true
+    - trigger: calculater
+      replace: calculator
+      propagate_case: true
+      word: true
+    - trigger: calculs
+      replace: calculus
+      propagate_case: true
+      word: true
+    - trigger: calenders
+      replace: calendars
+      propagate_case: true
+      word: true
+    - trigger: caligraphy
+      replace: calligraphy
+      propagate_case: true
+      word: true
+    - trigger: caluclate
+      replace: calculate
+      propagate_case: true
+      word: true
+    - trigger: caluclated
+      replace: calculated
+      propagate_case: true
+      word: true
+    - trigger: caluculate
+      replace: calculate
+      propagate_case: true
+      word: true
+    - trigger: caluculated
+      replace: calculated
+      propagate_case: true
+      word: true
+    - trigger: calulate
+      replace: calculate
+      propagate_case: true
+      word: true
+    - trigger: calulated
+      replace: calculated
+      propagate_case: true
+      word: true
+    - trigger: calulater
+      replace: calculator
+      propagate_case: true
+      word: true
+    - trigger: Cambrige
+      replace: Cambridge
+      propagate_case: true
+      word: true
+    - trigger: camoflage
+      replace: camouflage
+      propagate_case: true
+      word: true
+    - trigger: campagin
+      replace: campaign
+      propagate_case: true
+      word: true
+    - trigger: campain
+      replace: campaign
+      propagate_case: true
+      word: true
+    - trigger: campains
+      replace: campaigns
+      propagate_case: true
+      word: true
+    - trigger: candadate
+      replace: candidate
+      propagate_case: true
+      word: true
+    - trigger: candiate
+      replace: candidate
+      propagate_case: true
+      word: true
+    - trigger: candidiate
+      replace: candidate
+      propagate_case: true
+      word: true
+    - trigger: cannister
+      replace: canister
+      propagate_case: true
+      word: true
+    - trigger: cannisters
+      replace: canisters
+      propagate_case: true
+      word: true
+    - trigger: cannnot
+      replace: cannot
+      propagate_case: true
+      word: true
+    - trigger: cannonical
+      replace: canonical
+      propagate_case: true
+      word: true
+    - trigger: cannotation
+      replace: connotation
+      propagate_case: true
+      word: true
+    - trigger: cannotations
+      replace: connotations
+      propagate_case: true
+      word: true
+    - trigger: caost
+      replace: coast
+      propagate_case: true
+      word: true
+    - trigger: caperbility
+      replace: capability
+      propagate_case: true
+      word: true
+    - trigger: Capetown
+      replace: "Cape\x20Town"
+      propagate_case: true
+      word: true
+    - trigger: capible
+      replace: capable
+      propagate_case: true
+      word: true
+    - trigger: captial
+      replace: capital
+      propagate_case: true
+      word: true
+    - trigger: captued
+      replace: captured
+      propagate_case: true
+      word: true
+    - trigger: capturd
+      replace: captured
+      propagate_case: true
+      word: true
+    - trigger: carachter
+      replace: character
+      propagate_case: true
+      word: true
+    - trigger: caracterized
+      replace: characterized
+      propagate_case: true
+      word: true
+    - trigger: carcas
+      replace: "carcass\x2C\x20Caracas"
+      propagate_case: true
+      word: true
+    - trigger: carefull
+      replace: careful
+      propagate_case: true
+      word: true
+    - trigger: careing
+      replace: caring
+      propagate_case: true
+      word: true
+    - trigger: carismatic
+      replace: charismatic
+      propagate_case: true
+      word: true
+    - trigger: Carmalite
+      replace: Carmelite
+      propagate_case: true
+      word: true
+    - trigger: "Carnagie-Mellon"
+      replace: "Carnegie-Mellon"
+      propagate_case: true
+      word: true
+    - trigger: Carnagie
+      replace: Carnegie
+      propagate_case: true
+      word: true
+    - trigger: carnege
+      replace: "carnage\x2C\x20Carnegie"
+      propagate_case: true
+      word: true
+    - trigger: carnige
+      replace: "carnage\x2C\x20Carnegie"
+      propagate_case: true
+      word: true
+    - trigger: "Carnigie-Mellon"
+      replace: "Carnegie-Mellon"
+      propagate_case: true
+      word: true
+    - trigger: Carnigie
+      replace: Carnegie
+      propagate_case: true
+      word: true
+    - trigger: carreer
+      replace: career
+      propagate_case: true
+      word: true
+    - trigger: carrers
+      replace: careers
+      propagate_case: true
+      word: true
+    - trigger: Carribbean
+      replace: Caribbean
+      propagate_case: true
+      word: true
+    - trigger: Carribean
+      replace: Caribbean
+      propagate_case: true
+      word: true
+    - trigger: carryng
+      replace: carrying
+      propagate_case: true
+      word: true
+    - trigger: cartdridge
+      replace: cartridge
+      propagate_case: true
+      word: true
+    - trigger: Carthagian
+      replace: Carthaginian
+      propagate_case: true
+      word: true
+    - trigger: carthographer
+      replace: cartographer
+      propagate_case: true
+      word: true
+    - trigger: cartilege
+      replace: cartilage
+      propagate_case: true
+      word: true
+    - trigger: cartilidge
+      replace: cartilage
+      propagate_case: true
+      word: true
+    - trigger: cartrige
+      replace: cartridge
+      propagate_case: true
+      word: true
+    - trigger: casette
+      replace: cassette
+      propagate_case: true
+      word: true
+    - trigger: casion
+      replace: caisson
+      propagate_case: true
+      word: true
+    - trigger: cassawory
+      replace: cassowary
+      propagate_case: true
+      word: true
+    - trigger: cassowarry
+      replace: cassowary
+      propagate_case: true
+      word: true
+    - trigger: casue
+      replace: cause
+      propagate_case: true
+      word: true
+    - trigger: casued
+      replace: caused
+      propagate_case: true
+      word: true
+    - trigger: casues
+      replace: causes
+      propagate_case: true
+      word: true
+    - trigger: casuing
+      replace: causing
+      propagate_case: true
+      word: true
+    - trigger: casulaties
+      replace: casualties
+      propagate_case: true
+      word: true
+    - trigger: casulaty
+      replace: casualty
+      propagate_case: true
+      word: true
+    - trigger: catagories
+      replace: categories
+      propagate_case: true
+      word: true
+    - trigger: catagorized
+      replace: categorized
+      propagate_case: true
+      word: true
+    - trigger: catagory
+      replace: category
+      propagate_case: true
+      word: true
+    - trigger: Cataline
+      replace: "Catiline\x2C\x20Catalina"
+      propagate_case: true
+      word: true
+    - trigger: catapillar
+      replace: caterpillar
+      propagate_case: true
+      word: true
+    - trigger: catapillars
+      replace: caterpillars
+      propagate_case: true
+      word: true
+    - trigger: catapiller
+      replace: caterpillar
+      propagate_case: true
+      word: true
+    - trigger: catapillers
+      replace: caterpillars
+      propagate_case: true
+      word: true
+    - trigger: catepillar
+      replace: caterpillar
+      propagate_case: true
+      word: true
+    - trigger: catepillars
+      replace: caterpillars
+      propagate_case: true
+      word: true
+    - trigger: catergorize
+      replace: categorize
+      propagate_case: true
+      word: true
+    - trigger: catergorized
+      replace: categorized
+      propagate_case: true
+      word: true
+    - trigger: caterpilar
+      replace: caterpillar
+      propagate_case: true
+      word: true
+    - trigger: caterpilars
+      replace: caterpillars
+      propagate_case: true
+      word: true
+    - trigger: caterpiller
+      replace: caterpillar
+      propagate_case: true
+      word: true
+    - trigger: caterpillers
+      replace: caterpillars
+      propagate_case: true
+      word: true
+    - trigger: cathlic
+      replace: catholic
+      propagate_case: true
+      word: true
+    - trigger: catholocism
+      replace: catholicism
+      propagate_case: true
+      word: true
+    - trigger: catterpilar
+      replace: caterpillar
+      propagate_case: true
+      word: true
+    - trigger: catterpilars
+      replace: caterpillars
+      propagate_case: true
+      word: true
+    - trigger: catterpillar
+      replace: caterpillar
+      propagate_case: true
+      word: true
+    - trigger: catterpillars
+      replace: caterpillars
+      propagate_case: true
+      word: true
+    - trigger: cattleship
+      replace: battleship
+      propagate_case: true
+      word: true
+    - trigger: causalities
+      replace: casualties
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          CE                          #
+    # ---------------------------------------------------- #
+    - trigger: Ceasar
+      replace: Caesar
+      propagate_case: true
+      word: true
+    - trigger: Celcius
+      replace: Celsius
+      propagate_case: true
+      word: true
+    - trigger: cellpading
+      replace: cellpadding
+      propagate_case: true
+      word: true
+    - trigger: cementary
+      replace: cemetery
+      propagate_case: true
+      word: true
+    - trigger: cemetarey
+      replace: cemetery
+      propagate_case: true
+      word: true
+    - trigger: cemetaries
+      replace: cemeteries
+      propagate_case: true
+      word: true
+    - trigger: cemetary
+      replace: cemetery
+      propagate_case: true
+      word: true
+    - trigger: cencus
+      replace: census
+      propagate_case: true
+      word: true
+    - trigger: censur
+      replace: "censor\x2C\x20censure"
+      propagate_case: true
+      word: true
+    - trigger: cententenial
+      replace: centennial
+      propagate_case: true
+      word: true
+    - trigger: centruies
+      replace: centuries
+      propagate_case: true
+      word: true
+    - trigger: centruy
+      replace: century
+      propagate_case: true
+      word: true
+    - trigger: centuties
+      replace: centuries
+      propagate_case: true
+      word: true
+    - trigger: centuty
+      replace: century
+      propagate_case: true
+      word: true
+    - trigger: ceratin
+      replace: "certain\x2C\x20keratin"
+      propagate_case: true
+      word: true
+    - trigger: cerimonial
+      replace: ceremonial
+      propagate_case: true
+      word: true
+    - trigger: cerimonies
+      replace: ceremonies
+      propagate_case: true
+      word: true
+    - trigger: cerimonious
+      replace: ceremonious
+      propagate_case: true
+      word: true
+    - trigger: cerimony
+      replace: ceremony
+      propagate_case: true
+      word: true
+    - trigger: ceromony
+      replace: ceremony
+      propagate_case: true
+      word: true
+    - trigger: certainity
+      replace: certainty
+      propagate_case: true
+      word: true
+    - trigger: certaintly
+      replace: certainly
+      propagate_case: true
+      word: true
+    - trigger: certian
+      replace: certain
+      propagate_case: true
+      word: true
+    - trigger: cervial
+      replace: "cervical\x2C\x20servile\x2C\x20serval"
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          CH                          #
+    # ---------------------------------------------------- #
+    - trigger: chalenging
+      replace: challenging
+      propagate_case: true
+      word: true
+    - trigger: challange
+      replace: challenge
+      propagate_case: true
+      word: true
+    - trigger: challanged
+      replace: challenged
+      propagate_case: true
+      word: true
+    - trigger: challege
+      replace: challenge
+      propagate_case: true
+      word: true
+    - trigger: Champange
+      replace: Champagne
+      propagate_case: true
+      word: true
+    - trigger: changable
+      replace: changeable
+      propagate_case: true
+      word: true
+    - trigger: charachter
+      replace: character
+      propagate_case: true
+      word: true
+    - trigger: charachters
+      replace: characters
+      propagate_case: true
+      word: true
+    - trigger: charactersistic
+      replace: characteristic
+      propagate_case: true
+      word: true
+    - trigger: charactor
+      replace: character
+      propagate_case: true
+      word: true
+    - trigger: charactors
+      replace: characters
+      propagate_case: true
+      word: true
+    - trigger: charasmatic
+      replace: charismatic
+      propagate_case: true
+      word: true
+    - trigger: charaterized
+      replace: characterized
+      propagate_case: true
+      word: true
+    - trigger: chariman
+      replace: chairman
+      propagate_case: true
+      word: true
+    - trigger: charistics
+      replace: characteristics
+      propagate_case: true
+      word: true
+    - trigger: chasr
+      replace: "chaser\x2C\x20chase"
+      propagate_case: true
+      word: true
+    - trigger: cheif
+      replace: chief
+      propagate_case: true
+      word: true
+    - trigger: cheifs
+      replace: chiefs
+      propagate_case: true
+      word: true
+    - trigger: chemcial
+      replace: chemical
+      propagate_case: true
+      word: true
+    - trigger: chemcially
+      replace: chemically
+      propagate_case: true
+      word: true
+    - trigger: chemestry
+      replace: chemistry
+      propagate_case: true
+      word: true
+    - trigger: chemicaly
+      replace: chemically
+      propagate_case: true
+      word: true
+    - trigger: childbird
+      replace: childbirth
+      propagate_case: true
+      word: true
+    - trigger: childen
+      replace: children
+      propagate_case: true
+      word: true
+    - trigger: choclate
+      replace: chocolate
+      propagate_case: true
+      word: true
+    - trigger: choosen
+      replace: chosen
+      propagate_case: true
+      word: true
+    - trigger: chracter
+      replace: character
+      propagate_case: true
+      word: true
+    - trigger: chuch
+      replace: church
+      propagate_case: true
+      word: true
+    - trigger: churchs
+      replace: churches
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          CI                          #
+    # ---------------------------------------------------- #
+    - trigger: Cincinatti
+      replace: Cincinnati
+      propagate_case: true
+      word: true
+    - trigger: Cincinnatti
+      replace: Cincinnati
+      propagate_case: true
+      word: true
+    - trigger: circulaton
+      replace: circulation
+      propagate_case: true
+      word: true
+    - trigger: circumsicion
+      replace: circumcision
+      propagate_case: true
+      word: true
+    - trigger: circut
+      replace: circuit
+      propagate_case: true
+      word: true
+    - trigger: ciricuit
+      replace: circuit
+      propagate_case: true
+      word: true
+    - trigger: ciriculum
+      replace: curriculum
+      propagate_case: true
+      word: true
+    - trigger: civillian
+      replace: civilian
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          CL                          #
+    # ---------------------------------------------------- #
+    - trigger: claer
+      replace: clear
+      propagate_case: true
+      word: true
+    - trigger: claerer
+      replace: clearer
+      propagate_case: true
+      word: true
+    - trigger: claerly
+      replace: clearly
+      propagate_case: true
+      word: true
+    - trigger: claimes
+      replace: claims
+      propagate_case: true
+      word: true
+    - trigger: clas
+      replace: class
+      propagate_case: true
+      word: true
+    - trigger: clasic
+      replace: classic
+      propagate_case: true
+      word: true
+    - trigger: clasical
+      replace: classical
+      propagate_case: true
+      word: true
+    - trigger: clasically
+      replace: classically
+      propagate_case: true
+      word: true
+    - trigger: cleareance
+      replace: clearance
+      propagate_case: true
+      word: true
+    - trigger: clera
+      replace: "clear\x2C\x20sclera"
+      propagate_case: true
+      word: true
+    - trigger: clincial
+      replace: clinical
+      propagate_case: true
+      word: true
+    - trigger: clinicaly
+      replace: clinically
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          CO                          #
+    # ---------------------------------------------------- #
+    - trigger: cmo
+      replace: com
+      propagate_case: true
+      word: true
+    - trigger: cmoputer
+      replace: computer
+      propagate_case: true
+      word: true
+    - trigger: "co-incided"
+      replace: coincided
+      propagate_case: true
+      word: true
+    - trigger: "Coca\x20Cola"
+      replace: "Coca-Cola"
+      propagate_case: true
+      word: true
+    - trigger: coctail
+      replace: cocktail
+      propagate_case: true
+      word: true
+    - trigger: coform
+      replace: conform
+      propagate_case: true
+      word: true
+    - trigger: cognizent
+      replace: cognizant
+      propagate_case: true
+      word: true
+    - trigger: coincedentally
+      replace: coincidentally
+      propagate_case: true
+      word: true
+    - trigger: colaborations
+      replace: collaborations
+      propagate_case: true
+      word: true
+    - trigger: colateral
+      replace: collateral
+      propagate_case: true
+      word: true
+    - trigger: colelctive
+      replace: collective
+      propagate_case: true
+      word: true
+    - trigger: collaberative
+      replace: collaborative
+      propagate_case: true
+      word: true
+    - trigger: collecton
+      replace: collection
+      propagate_case: true
+      word: true
+    - trigger: collegue
+      replace: colleague
+      propagate_case: true
+      word: true
+    - trigger: collegues
+      replace: colleagues
+      propagate_case: true
+      word: true
+    - trigger: collonade
+      replace: colonnade
+      propagate_case: true
+      word: true
+    - trigger: collonies
+      replace: colonies
+      propagate_case: true
+      word: true
+    - trigger: collony
+      replace: colony
+      propagate_case: true
+      word: true
+    - trigger: collosal
+      replace: colossal
+      propagate_case: true
+      word: true
+    - trigger: colonizators
+      replace: colonizers
+      propagate_case: true
+      word: true
+    - trigger: comander
+      replace: "commander\x2C\x20commandeer"
+      propagate_case: true
+      word: true
+    - trigger: comando
+      replace: commando
+      propagate_case: true
+      word: true
+    - trigger: comandos
+      replace: commandos
+      propagate_case: true
+      word: true
+    - trigger: comany
+      replace: company
+      propagate_case: true
+      word: true
+    - trigger: comapany
+      replace: company
+      propagate_case: true
+      word: true
+    - trigger: comback
+      replace: comeback
+      propagate_case: true
+      word: true
+    - trigger: combanations
+      replace: combinations
+      propagate_case: true
+      word: true
+    - trigger: combinatins
+      replace: combinations
+      propagate_case: true
+      word: true
+    - trigger: combusion
+      replace: combustion
+      propagate_case: true
+      word: true
+    - trigger: comdemnation
+      replace: condemnation
+      propagate_case: true
+      word: true
+    - trigger: comemmorates
+      replace: commemorates
+      propagate_case: true
+      word: true
+    - trigger: comemoretion
+      replace: commemoration
+      propagate_case: true
+      word: true
+    - trigger: comision
+      replace: commission
+      propagate_case: true
+      word: true
+    - trigger: comisioned
+      replace: commissioned
+      propagate_case: true
+      word: true
+    - trigger: comisioner
+      replace: commissioner
+      propagate_case: true
+      word: true
+    - trigger: comisioning
+      replace: commissioning
+      propagate_case: true
+      word: true
+    - trigger: comisions
+      replace: commissions
+      propagate_case: true
+      word: true
+    - trigger: comission
+      replace: commission
+      propagate_case: true
+      word: true
+    - trigger: comissioned
+      replace: commissioned
+      propagate_case: true
+      word: true
+    - trigger: comissioner
+      replace: commissioner
+      propagate_case: true
+      word: true
+    - trigger: comissioning
+      replace: commissioning
+      propagate_case: true
+      word: true
+    - trigger: comissions
+      replace: commissions
+      propagate_case: true
+      word: true
+    - trigger: comited
+      replace: committed
+      propagate_case: true
+      word: true
+    - trigger: comiting
+      replace: committing
+      propagate_case: true
+      word: true
+    - trigger: comitted
+      replace: committed
+      propagate_case: true
+      word: true
+    - trigger: comittee
+      replace: committee
+      propagate_case: true
+      word: true
+    - trigger: comitting
+      replace: committing
+      propagate_case: true
+      word: true
+    - trigger: commandoes
+      replace: commandos
+      propagate_case: true
+      word: true
+    - trigger: commedic
+      replace: comedic
+      propagate_case: true
+      word: true
+    - trigger: commemerative
+      replace: commemorative
+      propagate_case: true
+      word: true
+    - trigger: commemmorate
+      replace: commemorate
+      propagate_case: true
+      word: true
+    - trigger: commemmorating
+      replace: commemorating
+      propagate_case: true
+      word: true
+    - trigger: commerical
+      replace: commercial
+      propagate_case: true
+      word: true
+    - trigger: commerically
+      replace: commercially
+      propagate_case: true
+      word: true
+    - trigger: commericial
+      replace: commercial
+      propagate_case: true
+      word: true
+    - trigger: commericially
+      replace: commercially
+      propagate_case: true
+      word: true
+    - trigger: commerorative
+      replace: commemorative
+      propagate_case: true
+      word: true
+    - trigger: comming
+      replace: coming
+      propagate_case: true
+      word: true
+    - trigger: comminication
+      replace: communication
+      propagate_case: true
+      word: true
+    - trigger: commision
+      replace: commission
+      propagate_case: true
+      word: true
+    - trigger: commisioned
+      replace: commissioned
+      propagate_case: true
+      word: true
+    - trigger: commisioner
+      replace: commissioner
+      propagate_case: true
+      word: true
+    - trigger: commisioning
+      replace: commissioning
+      propagate_case: true
+      word: true
+    - trigger: commisions
+      replace: commissions
+      propagate_case: true
+      word: true
+    - trigger: commited
+      replace: committed
+      propagate_case: true
+      word: true
+    - trigger: commitee
+      replace: committee
+      propagate_case: true
+      word: true
+    - trigger: commiting
+      replace: committing
+      propagate_case: true
+      word: true
+    - trigger: committe
+      replace: committee
+      propagate_case: true
+      word: true
+    - trigger: committment
+      replace: commitment
+      propagate_case: true
+      word: true
+    - trigger: committments
+      replace: commitments
+      propagate_case: true
+      word: true
+    - trigger: commmemorated
+      replace: commemorated
+      propagate_case: true
+      word: true
+    - trigger: commongly
+      replace: commonly
+      propagate_case: true
+      word: true
+    - trigger: commonweath
+      replace: commonwealth
+      propagate_case: true
+      word: true
+    - trigger: commuications
+      replace: communications
+      propagate_case: true
+      word: true
+    - trigger: commuinications
+      replace: communications
+      propagate_case: true
+      word: true
+    - trigger: communciation
+      replace: communication
+      propagate_case: true
+      word: true
+    - trigger: communiation
+      replace: communication
+      propagate_case: true
+      word: true
+    - trigger: communites
+      replace: communities
+      propagate_case: true
+      word: true
+    - trigger: compability
+      replace: compatibility
+      propagate_case: true
+      word: true
+    - trigger: comparision
+      replace: comparison
+      propagate_case: true
+      word: true
+    - trigger: comparisions
+      replace: comparisons
+      propagate_case: true
+      word: true
+    - trigger: comparitive
+      replace: comparative
+      propagate_case: true
+      word: true
+    - trigger: comparitively
+      replace: comparatively
+      propagate_case: true
+      word: true
+    - trigger: compatabilities
+      replace: compatibilities
+      propagate_case: true
+      word: true
+    - trigger: compatability
+      replace: compatibility
+      propagate_case: true
+      word: true
+    - trigger: compatable
+      replace: compatible
+      propagate_case: true
+      word: true
+    - trigger: compatablities
+      replace: compatibilities
+      propagate_case: true
+      word: true
+    - trigger: compatablity
+      replace: compatibility
+      propagate_case: true
+      word: true
+    - trigger: compatiable
+      replace: compatible
+      propagate_case: true
+      word: true
+    - trigger: compatiblities
+      replace: compatibilities
+      propagate_case: true
+      word: true
+    - trigger: compatiblity
+      replace: compatibility
+      propagate_case: true
+      word: true
+    - trigger: compeitions
+      replace: competitions
+      propagate_case: true
+      word: true
+    - trigger: compensantion
+      replace: compensation
+      propagate_case: true
+      word: true
+    - trigger: competance
+      replace: competence
+      propagate_case: true
+      word: true
+    - trigger: competant
+      replace: competent
+      propagate_case: true
+      word: true
+    - trigger: competative
+      replace: competitive
+      propagate_case: true
+      word: true
+    - trigger: competion
+      replace: "competition\x2C\x20completion"
+      propagate_case: true
+      word: true
+    - trigger: competitiion
+      replace: competition
+      propagate_case: true
+      word: true
+    - trigger: competive
+      replace: competitive
+      propagate_case: true
+      word: true
+    - trigger: competiveness
+      replace: competitiveness
+      propagate_case: true
+      word: true
+    - trigger: comphrehensive
+      replace: comprehensive
+      propagate_case: true
+      word: true
+    - trigger: compitent
+      replace: competent
+      propagate_case: true
+      word: true
+    - trigger: completedthe
+      replace: "completed\x20the"
+      propagate_case: true
+      word: true
+    - trigger: completelyl
+      replace: completely
+      propagate_case: true
+      word: true
+    - trigger: completetion
+      replace: completion
+      propagate_case: true
+      word: true
+    - trigger: complier
+      replace: compiler
+      propagate_case: true
+      word: true
+    - trigger: componant
+      replace: component
+      propagate_case: true
+      word: true
+    - trigger: comprable
+      replace: comparable
+      propagate_case: true
+      word: true
+    - trigger: comprimise
+      replace: compromise
+      propagate_case: true
+      word: true
+    - trigger: compulsary
+      replace: compulsory
+      propagate_case: true
+      word: true
+    - trigger: compulsery
+      replace: compulsory
+      propagate_case: true
+      word: true
+    - trigger: computarized
+      replace: computerized
+      propagate_case: true
+      word: true
+    - trigger: concensus
+      replace: consensus
+      propagate_case: true
+      word: true
+    - trigger: concider
+      replace: consider
+      propagate_case: true
+      word: true
+    - trigger: concidered
+      replace: considered
+      propagate_case: true
+      word: true
+    - trigger: concidering
+      replace: considering
+      propagate_case: true
+      word: true
+    - trigger: conciders
+      replace: considers
+      propagate_case: true
+      word: true
+    - trigger: concieted
+      replace: conceited
+      propagate_case: true
+      word: true
+    - trigger: concieved
+      replace: conceived
+      propagate_case: true
+      word: true
+    - trigger: concious
+      replace: conscious
+      propagate_case: true
+      word: true
+    - trigger: conciously
+      replace: consciously
+      propagate_case: true
+      word: true
+    - trigger: conciousness
+      replace: consciousness
+      propagate_case: true
+      word: true
+    - trigger: condamned
+      replace: condemned
+      propagate_case: true
+      word: true
+    - trigger: condemmed
+      replace: condemned
+      propagate_case: true
+      word: true
+    - trigger: condidtion
+      replace: condition
+      propagate_case: true
+      word: true
+    - trigger: condidtions
+      replace: conditions
+      propagate_case: true
+      word: true
+    - trigger: conditionsof
+      replace: "conditions\x20of"
+      propagate_case: true
+      word: true
+    - trigger: conected
+      replace: connected
+      propagate_case: true
+      word: true
+    - trigger: conection
+      replace: connection
+      propagate_case: true
+      word: true
+    - trigger: conesencus
+      replace: consensus
+      propagate_case: true
+      word: true
+    - trigger: confidental
+      replace: confidential
+      propagate_case: true
+      word: true
+    - trigger: confidentally
+      replace: confidentially
+      propagate_case: true
+      word: true
+    - trigger: confids
+      replace: confides
+      propagate_case: true
+      word: true
+    - trigger: configureable
+      replace: configurable
+      propagate_case: true
+      word: true
+    - trigger: confortable
+      replace: comfortable
+      propagate_case: true
+      word: true
+    - trigger: congradulations
+      replace: congratulations
+      propagate_case: true
+      word: true
+    - trigger: congresional
+      replace: congressional
+      propagate_case: true
+      word: true
+    - trigger: conived
+      replace: connived
+      propagate_case: true
+      word: true
+    - trigger: conjecutre
+      replace: conjecture
+      propagate_case: true
+      word: true
+    - trigger: conjuction
+      replace: conjunction
+      propagate_case: true
+      word: true
+    - trigger: Conneticut
+      replace: Connecticut
+      propagate_case: true
+      word: true
+    - trigger: conotations
+      replace: connotations
+      propagate_case: true
+      word: true
+    - trigger: conquerd
+      replace: conquered
+      propagate_case: true
+      word: true
+    - trigger: conquerer
+      replace: conqueror
+      propagate_case: true
+      word: true
+    - trigger: conquerers
+      replace: conquerors
+      propagate_case: true
+      word: true
+    - trigger: conqured
+      replace: conquered
+      propagate_case: true
+      word: true
+    - trigger: conscent
+      replace: consent
+      propagate_case: true
+      word: true
+    - trigger: consciouness
+      replace: consciousness
+      propagate_case: true
+      word: true
+    - trigger: consdider
+      replace: consider
+      propagate_case: true
+      word: true
+    - trigger: consdidered
+      replace: considered
+      propagate_case: true
+      word: true
+    - trigger: consdiered
+      replace: considered
+      propagate_case: true
+      word: true
+    - trigger: consectutive
+      replace: consecutive
+      propagate_case: true
+      word: true
+    - trigger: consenquently
+      replace: consequently
+      propagate_case: true
+      word: true
+    - trigger: consentrate
+      replace: concentrate
+      propagate_case: true
+      word: true
+    - trigger: consentrated
+      replace: concentrated
+      propagate_case: true
+      word: true
+    - trigger: consentrates
+      replace: concentrates
+      propagate_case: true
+      word: true
+    - trigger: consept
+      replace: concept
+      propagate_case: true
+      word: true
+    - trigger: consequentually
+      replace: consequently
+      propagate_case: true
+      word: true
+    - trigger: consequeseces
+      replace: consequences
+      propagate_case: true
+      word: true
+    - trigger: consern
+      replace: concern
+      propagate_case: true
+      word: true
+    - trigger: conserned
+      replace: concerned
+      propagate_case: true
+      word: true
+    - trigger: conserning
+      replace: concerning
+      propagate_case: true
+      word: true
+    - trigger: conservitive
+      replace: conservative
+      propagate_case: true
+      word: true
+    - trigger: consiciousness
+      replace: consciousness
+      propagate_case: true
+      word: true
+    - trigger: consicousness
+      replace: consciousness
+      propagate_case: true
+      word: true
+    - trigger: considerd
+      replace: considered
+      propagate_case: true
+      word: true
+    - trigger: consideres
+      replace: considered
+      propagate_case: true
+      word: true
+    - trigger: consious
+      replace: conscious
+      propagate_case: true
+      word: true
+    - trigger: consistant
+      replace: consistent
+      propagate_case: true
+      word: true
+    - trigger: consistantly
+      replace: consistently
+      propagate_case: true
+      word: true
+    - trigger: consituencies
+      replace: constituencies
+      propagate_case: true
+      word: true
+    - trigger: consituency
+      replace: constituency
+      propagate_case: true
+      word: true
+    - trigger: consituted
+      replace: constituted
+      propagate_case: true
+      word: true
+    - trigger: consitution
+      replace: constitution
+      propagate_case: true
+      word: true
+    - trigger: consitutional
+      replace: constitutional
+      propagate_case: true
+      word: true
+    - trigger: consolodate
+      replace: consolidate
+      propagate_case: true
+      word: true
+    - trigger: consolodated
+      replace: consolidated
+      propagate_case: true
+      word: true
+    - trigger: consonent
+      replace: consonant
+      propagate_case: true
+      word: true
+    - trigger: consonents
+      replace: consonants
+      propagate_case: true
+      word: true
+    - trigger: consorcium
+      replace: consortium
+      propagate_case: true
+      word: true
+    - trigger: conspiracys
+      replace: conspiracies
+      propagate_case: true
+      word: true
+    - trigger: conspiriator
+      replace: conspirator
+      propagate_case: true
+      word: true
+    - trigger: constaints
+      replace: constraints
+      propagate_case: true
+      word: true
+    - trigger: constanly
+      replace: constantly
+      propagate_case: true
+      word: true
+    - trigger: constarnation
+      replace: consternation
+      propagate_case: true
+      word: true
+    - trigger: constatn
+      replace: constant
+      propagate_case: true
+      word: true
+    - trigger: constinually
+      replace: continually
+      propagate_case: true
+      word: true
+    - trigger: constituant
+      replace: constituent
+      propagate_case: true
+      word: true
+    - trigger: constituants
+      replace: constituents
+      propagate_case: true
+      word: true
+    - trigger: constituion
+      replace: constitution
+      propagate_case: true
+      word: true
+    - trigger: constituional
+      replace: constitutional
+      propagate_case: true
+      word: true
+    - trigger: consttruction
+      replace: construction
+      propagate_case: true
+      word: true
+    - trigger: constuction
+      replace: construction
+      propagate_case: true
+      word: true
+    - trigger: consulant
+      replace: consultant
+      propagate_case: true
+      word: true
+    - trigger: consumate
+      replace: consummate
+      propagate_case: true
+      word: true
+    - trigger: consumated
+      replace: consummated
+      propagate_case: true
+      word: true
+    - trigger: contaiminate
+      replace: contaminate
+      propagate_case: true
+      word: true
+    - trigger: containes
+      replace: contains
+      propagate_case: true
+      word: true
+    - trigger: contamporaries
+      replace: contemporaries
+      propagate_case: true
+      word: true
+    - trigger: contamporary
+      replace: contemporary
+      propagate_case: true
+      word: true
+    - trigger: contempoary
+      replace: contemporary
+      propagate_case: true
+      word: true
+    - trigger: contemporaneus
+      replace: contemporaneous
+      propagate_case: true
+      word: true
+    - trigger: contempory
+      replace: contemporary
+      propagate_case: true
+      word: true
+    - trigger: contendor
+      replace: contender
+      propagate_case: true
+      word: true
+    - trigger: contian
+      replace: contain
+      propagate_case: true
+      word: true
+    - trigger: contians
+      replace: contains
+      propagate_case: true
+      word: true
+    - trigger: contibute
+      replace: contribute
+      propagate_case: true
+      word: true
+    - trigger: contibuted
+      replace: contributed
+      propagate_case: true
+      word: true
+    - trigger: contibutes
+      replace: contributes
+      propagate_case: true
+      word: true
+    - trigger: contigent
+      replace: contingent
+      propagate_case: true
+      word: true
+    - trigger: contined
+      replace: continued
+      propagate_case: true
+      word: true
+    - trigger: continential
+      replace: continental
+      propagate_case: true
+      word: true
+    - trigger: continous
+      replace: continuous
+      propagate_case: true
+      word: true
+    - trigger: continously
+      replace: continuously
+      propagate_case: true
+      word: true
+    - trigger: continueing
+      replace: continuing
+      propagate_case: true
+      word: true
+    - trigger: contravercial
+      replace: controversial
+      propagate_case: true
+      word: true
+    - trigger: contraversy
+      replace: controversy
+      propagate_case: true
+      word: true
+    - trigger: contributer
+      replace: contributor
+      propagate_case: true
+      word: true
+    - trigger: contributers
+      replace: contributors
+      propagate_case: true
+      word: true
+    - trigger: contritutions
+      replace: contributions
+      propagate_case: true
+      word: true
+    - trigger: controled
+      replace: controlled
+      propagate_case: true
+      word: true
+    - trigger: controling
+      replace: controlling
+      propagate_case: true
+      word: true
+    - trigger: controll
+      replace: control
+      propagate_case: true
+      word: true
+    - trigger: controlls
+      replace: controls
+      propagate_case: true
+      word: true
+    - trigger: controvercial
+      replace: controversial
+      propagate_case: true
+      word: true
+    - trigger: controvercy
+      replace: controversy
+      propagate_case: true
+      word: true
+    - trigger: controveries
+      replace: controversies
+      propagate_case: true
+      word: true
+    - trigger: controversal
+      replace: controversial
+      propagate_case: true
+      word: true
+    - trigger: controversey
+      replace: controversy
+      propagate_case: true
+      word: true
+    - trigger: controvertial
+      replace: controversial
+      propagate_case: true
+      word: true
+    - trigger: controvery
+      replace: controversy
+      propagate_case: true
+      word: true
+    - trigger: contruction
+      replace: construction
+      propagate_case: true
+      word: true
+    - trigger: contstruction
+      replace: construction
+      propagate_case: true
+      word: true
+    - trigger: conveinent
+      replace: convenient
+      propagate_case: true
+      word: true
+    - trigger: convenant
+      replace: covenant
+      propagate_case: true
+      word: true
+    - trigger: convential
+      replace: conventional
+      propagate_case: true
+      word: true
+    - trigger: convertables
+      replace: convertibles
+      propagate_case: true
+      word: true
+    - trigger: convertion
+      replace: conversion
+      propagate_case: true
+      word: true
+    - trigger: conviced
+      replace: convinced
+      propagate_case: true
+      word: true
+    - trigger: convienient
+      replace: convenient
+      propagate_case: true
+      word: true
+    - trigger: coordiantion
+      replace: coordination
+      propagate_case: true
+      word: true
+    - trigger: coorperation
+      replace: "cooperation\x2C\x20corporation"
+      propagate_case: true
+      word: true
+    - trigger: coorperations
+      replace: corporations
+      propagate_case: true
+      word: true
+    - trigger: copmetitors
+      replace: competitors
+      propagate_case: true
+      word: true
+    - trigger: coputer
+      replace: computer
+      propagate_case: true
+      word: true
+    - trigger: copywrite
+      replace: copyright
+      propagate_case: true
+      word: true
+    - trigger: coridal
+      replace: cordial
+      propagate_case: true
+      word: true
+    - trigger: cornmitted
+      replace: committed
+      propagate_case: true
+      word: true
+    - trigger: corosion
+      replace: corrosion
+      propagate_case: true
+      word: true
+    - trigger: corrolary
+      replace: corollary
+      propagate_case: true
+      word: true
+    - trigger: corparate
+      replace: corporate
+      propagate_case: true
+      word: true
+    - trigger: corperations
+      replace: corporations
+      propagate_case: true
+      word: true
+    - trigger: correcters
+      replace: correctors
+      propagate_case: true
+      word: true
+    - trigger: correponding
+      replace: corresponding
+      propagate_case: true
+      word: true
+    - trigger: correposding
+      replace: corresponding
+      propagate_case: true
+      word: true
+    - trigger: correspondant
+      replace: correspondent
+      propagate_case: true
+      word: true
+    - trigger: correspondants
+      replace: correspondents
+      propagate_case: true
+      word: true
+    - trigger: corridoors
+      replace: corridors
+      propagate_case: true
+      word: true
+    - trigger: corrispond
+      replace: correspond
+      propagate_case: true
+      word: true
+    - trigger: corrispondant
+      replace: correspondent
+      propagate_case: true
+      word: true
+    - trigger: corrispondants
+      replace: correspondents
+      propagate_case: true
+      word: true
+    - trigger: corrisponded
+      replace: corresponded
+      propagate_case: true
+      word: true
+    - trigger: corrisponding
+      replace: corresponding
+      propagate_case: true
+      word: true
+    - trigger: corrisponds
+      replace: corresponds
+      propagate_case: true
+      word: true
+    - trigger: costitution
+      replace: constitution
+      propagate_case: true
+      word: true
+    - trigger: coucil
+      replace: council
+      propagate_case: true
+      word: true
+    - trigger: coudl
+      replace: "could"
+      propagate_case: true
+      word: true
+    - trigger: c}ld
+      replace: "could"
+      propagate_case: true
+      word: true
+    - trigger: couldnt
+      replace: "could\x20not"
+      propagate_case: true
+      word: true
+    - trigger: councellor
+      replace: "councillor\x2C\x20counselor\x2C\x20councilor"
+      propagate_case: true
+      word: true
+    - trigger: councellors
+      replace: "councillors\x2C\x20counselors\x2C\x20councilors"
+      propagate_case: true
+      word: true
+    - trigger: counries
+      replace: countries
+      propagate_case: true
+      word: true
+    - trigger: countains
+      replace: contains
+      propagate_case: true
+      word: true
+    - trigger: countires
+      replace: countries
+      propagate_case: true
+      word: true
+    - trigger: "countrie\x27s"
+      replace: "countries\x2C\x20countries\x27\x2C\x20country\x27s"
+      propagate_case: true
+      word: true
+    - trigger: coururier
+      replace: "courier\x2C\x20couturier"
+      propagate_case: true
+      word: true
+    - trigger: coverted
+      replace: "converted\x2C\x20covered\x2C\x20coveted"
+      propagate_case: true
+      word: true
+    - trigger: cpoy
+      replace: "coy\x2C\x20copy"
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          CR                          #
+    # ---------------------------------------------------- #
+    - trigger: creaeted
+      replace: created
+      propagate_case: true
+      word: true
+    - trigger: creche
+      replace: "cr\xE8che"
+      propagate_case: true
+      word: true
+    - trigger: creedence
+      replace: credence
+      propagate_case: true
+      word: true
+    - trigger: critereon
+      replace: criterion
+      propagate_case: true
+      word: true
+    - trigger: criterias
+      replace: criteria
+      propagate_case: true
+      word: true
+    - trigger: criticists
+      replace: critics
+      propagate_case: true
+      word: true
+    - trigger: critising
+      replace: "criticising\x2C\x20criticizing"
+      propagate_case: true
+      word: true
+    - trigger: critisising
+      replace: criticising
+      propagate_case: true
+      word: true
+    - trigger: critisism
+      replace: criticism
+      propagate_case: true
+      word: true
+    - trigger: critisisms
+      replace: criticisms
+      propagate_case: true
+      word: true
+    - trigger: critisize
+      replace: "criticise\x2C\x20criticize"
+      propagate_case: true
+      word: true
+    - trigger: critisized
+      replace: "criticised\x2C\x20criticized"
+      propagate_case: true
+      word: true
+    - trigger: critisizes
+      replace: "criticises\x2C\x20criticizes"
+      propagate_case: true
+      word: true
+    - trigger: critisizing
+      replace: "criticising\x2C\x20criticizing"
+      propagate_case: true
+      word: true
+    - trigger: critized
+      replace: criticized
+      propagate_case: true
+      word: true
+    - trigger: critizing
+      replace: criticizing
+      propagate_case: true
+      word: true
+    - trigger: crockodiles
+      replace: crocodiles
+      propagate_case: true
+      word: true
+    - trigger: crowm
+      replace: crown
+      propagate_case: true
+      word: true
+    - trigger: crtical
+      replace: critical
+      propagate_case: true
+      word: true
+    - trigger: crticised
+      replace: criticised
+      propagate_case: true
+      word: true
+    - trigger: crucifiction
+      replace: crucifixion
+      propagate_case: true
+      word: true
+    - trigger: crusies
+      replace: cruises
+      propagate_case: true
+      word: true
+    - trigger: crutial
+      replace: crucial
+      propagate_case: true
+      word: true
+    - trigger: crystalisation
+      replace: crystallisation
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          CU                          #
+    # ---------------------------------------------------- #
+    - trigger: culiminating
+      replace: culminating
+      propagate_case: true
+      word: true
+    - trigger: cumulatative
+      replace: cumulative
+      propagate_case: true
+      word: true
+    - trigger: curch
+      replace: church
+      propagate_case: true
+      word: true
+    - trigger: curcuit
+      replace: circuit
+      propagate_case: true
+      word: true
+    - trigger: currenly
+      replace: currently
+      propagate_case: true
+      word: true
+    - trigger: curriculem
+      replace: curriculum
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          CY                          #
+    # ---------------------------------------------------- #
+    - trigger: cxan
+      replace: cyan
+      propagate_case: true
+      word: true
+    - trigger: cyclinder
+      replace: cylinder
+      propagate_case: true
+      word: true

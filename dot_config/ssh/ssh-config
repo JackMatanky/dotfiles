@@ -1,0 +1,17 @@
+# GitHub SSH config
+Host github.com
+    HostName github.com
+    User git
+    AddKeysToAgent yes
+    UseKeychain yes  # macOS-specific
+    IdentityFile ~/.ssh/id_ed25519
+    IdentitiesOnly yes
+
+# GitLab SSH config
+Host gitlab.com
+    HostName gitlab.com
+    User git
+    AddKeysToAgent yes
+    UseKeychain yes  # macOS-specific
+    IdentityFile ~/.ssh/id_ed25519
+    IdentitiesOnly yes

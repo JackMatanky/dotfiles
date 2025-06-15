@@ -1,0 +1,1093 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- E ---
+    # ---------
+    - trigger: eahc
+      replace: each
+      propagate_case: true
+      word: true
+    - trigger: eaach
+      replace: each
+      propagate_case: true
+      word: true
+    - trigger: eeach
+      replace: each
+      propagate_case: true
+      word: true
+    - trigger: ealier
+      replace: earlier
+      propagate_case: true
+      word: true
+    - trigger: earlies
+      replace: earliest
+      propagate_case: true
+      word: true
+    - trigger: earnt
+      replace: earned
+      propagate_case: true
+      word: true
+    - trigger: ecclectic
+      replace: eclectic
+      propagate_case: true
+      word: true
+    - trigger: eceonomy
+      replace: economy
+      propagate_case: true
+      word: true
+    - trigger: ecidious
+      replace: deciduous
+      propagate_case: true
+      word: true
+    - trigger: eclispe
+      replace: eclipse
+      propagate_case: true
+      word: true
+    - trigger: ecomonic
+      replace: economic
+      propagate_case: true
+      word: true
+    - trigger: ect
+      replace: etc
+      propagate_case: true
+      word: true
+    - trigger: eearly
+      replace: early
+      propagate_case: true
+      word: true
+    - trigger: efel
+      replace: evil
+      propagate_case: true
+      word: true
+    - trigger: effeciency
+      replace: efficiency
+      propagate_case: true
+      word: true
+    - trigger: effecient
+      replace: efficient
+      propagate_case: true
+      word: true
+    - trigger: effeciently
+      replace: efficiently
+      propagate_case: true
+      word: true
+    - trigger: efficency
+      replace: efficiency
+      propagate_case: true
+      word: true
+    - trigger: efficent
+      replace: efficient
+      propagate_case: true
+      word: true
+    - trigger: efficently
+      replace: efficiently
+      propagate_case: true
+      word: true
+    - trigger: efford
+      replace: "effort\x2C\x20afford"
+      propagate_case: true
+      word: true
+    - trigger: effords
+      replace: "efforts\x2C\x20affords"
+      propagate_case: true
+      word: true
+    - trigger: effulence
+      replace: effluence
+      propagate_case: true
+      word: true
+    - trigger: eigth
+      replace: "eighth\x2C\x20eight"
+      propagate_case: true
+      word: true
+    - trigger: eiter
+      replace: either
+      propagate_case: true
+      word: true
+    - trigger: elction
+      replace: election
+      propagate_case: true
+      word: true
+    - trigger: electic
+      replace: "eclectic\x2C\x20electric"
+      propagate_case: true
+      word: true
+    - trigger: electon
+      replace: "election\x2C\x20electron"
+      propagate_case: true
+      word: true
+    - trigger: electrial
+      replace: electrical
+      propagate_case: true
+      word: true
+    - trigger: electricly
+      replace: electrically
+      propagate_case: true
+      word: true
+    - trigger: electricty
+      replace: electricity
+      propagate_case: true
+      word: true
+    - trigger: elementay
+      replace: elementary
+      propagate_case: true
+      word: true
+    - trigger: eleminated
+      replace: eliminated
+      propagate_case: true
+      word: true
+    - trigger: eleminating
+      replace: eliminating
+      propagate_case: true
+      word: true
+    - trigger: eles
+      replace: eels
+      propagate_case: true
+      word: true
+    - trigger: eletricity
+      replace: electricity
+      propagate_case: true
+      word: true
+    - trigger: elicided
+      replace: elicited
+      propagate_case: true
+      word: true
+    - trigger: eligable
+      replace: eligible
+      propagate_case: true
+      word: true
+    - trigger: elimentary
+      replace: elementary
+      propagate_case: true
+      word: true
+    - trigger: ellected
+      replace: elected
+      propagate_case: true
+      word: true
+    - trigger: elphant
+      replace: elephant
+      propagate_case: true
+      word: true
+    - trigger: embarass
+      replace: embarrass
+      propagate_case: true
+      word: true
+    - trigger: embarassed
+      replace: embarrassed
+      propagate_case: true
+      word: true
+    - trigger: embarassing
+      replace: embarrassing
+      propagate_case: true
+      word: true
+    - trigger: embarassment
+      replace: embarrassment
+      propagate_case: true
+      word: true
+    - trigger: embargos
+      replace: embargoes
+      propagate_case: true
+      word: true
+    - trigger: embarras
+      replace: embarrass
+      propagate_case: true
+      word: true
+    - trigger: embarrased
+      replace: embarrassed
+      propagate_case: true
+      word: true
+    - trigger: embarrasing
+      replace: embarrassing
+      propagate_case: true
+      word: true
+    - trigger: embarrasment
+      replace: embarrassment
+      propagate_case: true
+      word: true
+    - trigger: embezelled
+      replace: embezzled
+      propagate_case: true
+      word: true
+    - trigger: emblamatic
+      replace: emblematic
+      propagate_case: true
+      word: true
+    - trigger: eminate
+      replace: emanate
+      propagate_case: true
+      word: true
+    - trigger: eminated
+      replace: emanated
+      propagate_case: true
+      word: true
+    - trigger: emision
+      replace: emission
+      propagate_case: true
+      word: true
+    - trigger: emited
+      replace: emitted
+      propagate_case: true
+      word: true
+    - trigger: emiting
+      replace: emitting
+      propagate_case: true
+      word: true
+    - trigger: emition
+      replace: "emission\x2C\x20emotion"
+      propagate_case: true
+      word: true
+    - trigger: emmediately
+      replace: immediately
+      propagate_case: true
+      word: true
+    - trigger: emmigrated
+      replace: "emigrated\x2C\x20immigrated"
+      propagate_case: true
+      word: true
+    - trigger: emminent
+      replace: "eminent\x2C\x20imminent"
+      propagate_case: true
+      word: true
+    - trigger: emminently
+      replace: eminently
+      propagate_case: true
+      word: true
+    - trigger: emmisaries
+      replace: emissaries
+      propagate_case: true
+      word: true
+    - trigger: emmisarries
+      replace: emissaries
+      propagate_case: true
+      word: true
+    - trigger: emmisarry
+      replace: emissary
+      propagate_case: true
+      word: true
+    - trigger: emmisary
+      replace: emissary
+      propagate_case: true
+      word: true
+    - trigger: emmision
+      replace: emission
+      propagate_case: true
+      word: true
+    - trigger: emmisions
+      replace: emissions
+      propagate_case: true
+      word: true
+    - trigger: emmited
+      replace: emitted
+      propagate_case: true
+      word: true
+    - trigger: emmiting
+      replace: emitting
+      propagate_case: true
+      word: true
+    - trigger: emmitted
+      replace: emitted
+      propagate_case: true
+      word: true
+    - trigger: emmitting
+      replace: emitting
+      propagate_case: true
+      word: true
+    - trigger: emnity
+      replace: enmity
+      propagate_case: true
+      word: true
+    - trigger: emperical
+      replace: empirical
+      propagate_case: true
+      word: true
+    - trigger: emphaised
+      replace: emphasised
+      propagate_case: true
+      word: true
+    - trigger: emphsis
+      replace: emphasis
+      propagate_case: true
+      word: true
+    - trigger: emphysyma
+      replace: emphysema
+      propagate_case: true
+      word: true
+    - trigger: empirial
+      replace: "empirical\x2C\x20imperial"
+      propagate_case: true
+      word: true
+    - trigger: emporer
+      replace: emperor
+      propagate_case: true
+      word: true
+    - trigger: emprisoned
+      replace: imprisoned
+      propagate_case: true
+      word: true
+    - trigger: enameld
+      replace: enameled
+      propagate_case: true
+      word: true
+    - trigger: enchancement
+      replace: enhancement
+      propagate_case: true
+      word: true
+    - trigger: encouraing
+      replace: encouraging
+      propagate_case: true
+      word: true
+    - trigger: encryptiion
+      replace: encryption
+      propagate_case: true
+      word: true
+    - trigger: encylopedia
+      replace: encyclopedia
+      propagate_case: true
+      word: true
+    - trigger: endevors
+      replace: endeavors
+      propagate_case: true
+      word: true
+    - trigger: endevour
+      replace: endeavour
+      propagate_case: true
+      word: true
+    - trigger: endig
+      replace: ending
+      propagate_case: true
+      word: true
+    - trigger: endolithes
+      replace: endoliths
+      propagate_case: true
+      word: true
+    - trigger: enduce
+      replace: induce
+      propagate_case: true
+      word: true
+    - trigger: ened
+      replace: need
+      propagate_case: true
+      word: true
+    - trigger: enforceing
+      replace: enforcing
+      propagate_case: true
+      word: true
+    - trigger: engagment
+      replace: engagement
+      propagate_case: true
+      word: true
+    - trigger: engeneer
+      replace: engineer
+      propagate_case: true
+      word: true
+    - trigger: engeneering
+      replace: engineering
+      propagate_case: true
+      word: true
+    - trigger: engieneer
+      replace: engineer
+      propagate_case: true
+      word: true
+    - trigger: engieneers
+      replace: engineers
+      propagate_case: true
+      word: true
+    - trigger: enlargment
+      replace: enlargement
+      propagate_case: true
+      word: true
+    - trigger: enlargments
+      replace: enlargements
+      propagate_case: true
+      word: true
+    - trigger: Enlish
+      replace: "English\x2C\x20enlist"
+      propagate_case: true
+      word: true
+    - trigger: enourmous
+      replace: enormous
+      propagate_case: true
+      word: true
+    - trigger: enourmously
+      replace: enormously
+      propagate_case: true
+      word: true
+    - trigger: ensconsed
+      replace: ensconced
+      propagate_case: true
+      word: true
+    - trigger: entaglements
+      replace: entanglements
+      propagate_case: true
+      word: true
+    - trigger: enteratinment
+      replace: entertainment
+      propagate_case: true
+      word: true
+    - trigger: enthusiatic
+      replace: enthusiastic
+      propagate_case: true
+      word: true
+    - trigger: entitity
+      replace: entity
+      propagate_case: true
+      word: true
+    - trigger: entitlied
+      replace: entitled
+      propagate_case: true
+      word: true
+    - trigger: entrepeneur
+      replace: entrepreneur
+      propagate_case: true
+      word: true
+    - trigger: entrepeneurs
+      replace: entrepreneurs
+      propagate_case: true
+      word: true
+    - trigger: enviorment
+      replace: environment
+      propagate_case: true
+      word: true
+    - trigger: enviormental
+      replace: environmental
+      propagate_case: true
+      word: true
+    - trigger: enviormentally
+      replace: environmentally
+      propagate_case: true
+      word: true
+    - trigger: enviorments
+      replace: environments
+      propagate_case: true
+      word: true
+    - trigger: enviornment
+      replace: environment
+      propagate_case: true
+      word: true
+    - trigger: enviornmental
+      replace: environmental
+      propagate_case: true
+      word: true
+    - trigger: enviornmentalist
+      replace: environmentalist
+      propagate_case: true
+      word: true
+    - trigger: enviornmentally
+      replace: environmentally
+      propagate_case: true
+      word: true
+    - trigger: enviornments
+      replace: environments
+      propagate_case: true
+      word: true
+    - trigger: enviroment
+      replace: environment
+      propagate_case: true
+      word: true
+    - trigger: enviromental
+      replace: environmental
+      propagate_case: true
+      word: true
+    - trigger: enviromentalist
+      replace: environmentalist
+      propagate_case: true
+      word: true
+    - trigger: enviromentally
+      replace: environmentally
+      propagate_case: true
+      word: true
+    - trigger: enviroments
+      replace: environments
+      propagate_case: true
+      word: true
+    - trigger: envolutionary
+      replace: evolutionary
+      propagate_case: true
+      word: true
+    - trigger: envrionments
+      replace: environments
+      propagate_case: true
+      word: true
+    - trigger: enxt
+      replace: next
+      propagate_case: true
+      word: true
+    - trigger: epidsodes
+      replace: episodes
+      propagate_case: true
+      word: true
+    - trigger: epsiode
+      replace: episode
+      propagate_case: true
+      word: true
+    - trigger: equalibrium
+      replace: equilibrium
+      propagate_case: true
+      word: true
+    - trigger: equelibrium
+      replace: equilibrium
+      propagate_case: true
+      word: true
+    - trigger: equialent
+      replace: equivalent
+      propagate_case: true
+      word: true
+    - trigger: equilibium
+      replace: equilibrium
+      propagate_case: true
+      word: true
+    - trigger: equilibrum
+      replace: equilibrium
+      propagate_case: true
+      word: true
+    - trigger: equiped
+      replace: equipped
+      propagate_case: true
+      word: true
+    - trigger: equippment
+      replace: equipment
+      propagate_case: true
+      word: true
+    - trigger: equitorial
+      replace: equatorial
+      propagate_case: true
+      word: true
+    - trigger: equivelant
+      replace: equivalent
+      propagate_case: true
+      word: true
+    - trigger: equivelent
+      replace: equivalent
+      propagate_case: true
+      word: true
+    - trigger: equivilant
+      replace: equivalent
+      propagate_case: true
+      word: true
+    - trigger: equivilent
+      replace: equivalent
+      propagate_case: true
+      word: true
+    - trigger: equivlalent
+      replace: equivalent
+      propagate_case: true
+      word: true
+    - trigger: erally
+      replace: "orally\x2C\x20really"
+      propagate_case: true
+      word: true
+    - trigger: eratic
+      replace: erratic
+      propagate_case: true
+      word: true
+    - trigger: eratically
+      replace: erratically
+      propagate_case: true
+      word: true
+    - trigger: eraticly
+      replace: erratically
+      propagate_case: true
+      word: true
+    - trigger: erested
+      replace: "arrested\x2C\x20erected"
+      propagate_case: true
+      word: true
+    - trigger: errupted
+      replace: erupted
+      propagate_case: true
+      word: true
+    - trigger: esential
+      replace: essential
+      propagate_case: true
+      word: true
+    - trigger: esitmated
+      replace: estimated
+      propagate_case: true
+      word: true
+    - trigger: esle
+      replace: else
+      propagate_case: true
+      word: true
+    - trigger: especialy
+      replace: especially
+      propagate_case: true
+      word: true
+    - trigger: essencial
+      replace: essential
+      propagate_case: true
+      word: true
+    - trigger: essense
+      replace: essence
+      propagate_case: true
+      word: true
+    - trigger: essentail
+      replace: essential
+      propagate_case: true
+      word: true
+    - trigger: essentialy
+      replace: essentially
+      propagate_case: true
+      word: true
+    - trigger: essentual
+      replace: essential
+      propagate_case: true
+      word: true
+    - trigger: essesital
+      replace: essential
+      propagate_case: true
+      word: true
+    - trigger: estabishes
+      replace: establishes
+      propagate_case: true
+      word: true
+    - trigger: establising
+      replace: establishing
+      propagate_case: true
+      word: true
+    - trigger: ethnocentricm
+      replace: ethnocentrism
+      propagate_case: true
+      word: true
+    - trigger: ethose
+      replace: "those\x2C\x20ethos"
+      propagate_case: true
+      word: true
+    - trigger: Europian
+      replace: European
+      propagate_case: true
+      word: true
+    - trigger: Europians
+      replace: Europeans
+      propagate_case: true
+      word: true
+    - trigger: Eurpean
+      replace: European
+      propagate_case: true
+      word: true
+    - trigger: Eurpoean
+      replace: European
+      propagate_case: true
+      word: true
+    - trigger: evenhtually
+      replace: eventually
+      propagate_case: true
+      word: true
+    - trigger: eventally
+      replace: eventually
+      propagate_case: true
+      word: true
+    - trigger: eventhough
+      replace: "even\x20though"
+      propagate_case: true
+      word: true
+    - trigger: eventially
+      replace: eventually
+      propagate_case: true
+      word: true
+    - trigger: eventualy
+      replace: eventually
+      propagate_case: true
+      word: true
+    - trigger: everthing
+      replace: everything
+      propagate_case: true
+      word: true
+    - trigger: everytime
+      replace: "every\x20time"
+      propagate_case: true
+      word: true
+    - trigger: everyting
+      replace: everything
+      propagate_case: true
+      word: true
+    - trigger: eveyr
+      replace: every
+      propagate_case: true
+      word: true
+    - trigger: evidentally
+      replace: evidently
+      propagate_case: true
+      word: true
+    - trigger: exagerate
+      replace: exaggerate
+      propagate_case: true
+      word: true
+    - trigger: exagerated
+      replace: exaggerated
+      propagate_case: true
+      word: true
+    - trigger: exagerates
+      replace: exaggerates
+      propagate_case: true
+      word: true
+    - trigger: exagerating
+      replace: exaggerating
+      propagate_case: true
+      word: true
+    - trigger: exagerrate
+      replace: exaggerate
+      propagate_case: true
+      word: true
+    - trigger: exagerrated
+      replace: exaggerated
+      propagate_case: true
+      word: true
+    - trigger: exagerrates
+      replace: exaggerates
+      propagate_case: true
+      word: true
+    - trigger: exagerrating
+      replace: exaggerating
+      propagate_case: true
+      word: true
+    - trigger: examinated
+      replace: examined
+      propagate_case: true
+      word: true
+    - trigger: exampt
+      replace: exempt
+      propagate_case: true
+      word: true
+    - trigger: exapansion
+      replace: expansion
+      propagate_case: true
+      word: true
+    - trigger: excact
+      replace: exact
+      propagate_case: true
+      word: true
+    - trigger: excange
+      replace: exchange
+      propagate_case: true
+      word: true
+    - trigger: excecute
+      replace: execute
+      propagate_case: true
+      word: true
+    - trigger: excecuted
+      replace: executed
+      propagate_case: true
+      word: true
+    - trigger: excecutes
+      replace: executes
+      propagate_case: true
+      word: true
+    - trigger: excecuting
+      replace: executing
+      propagate_case: true
+      word: true
+    - trigger: excecution
+      replace: execution
+      propagate_case: true
+      word: true
+    - trigger: excedded
+      replace: exceeded
+      propagate_case: true
+      word: true
+    - trigger: excelent
+      replace: excellent
+      propagate_case: true
+      word: true
+    - trigger: excell
+      replace: excel
+      propagate_case: true
+      word: true
+    - trigger: excellance
+      replace: excellence
+      propagate_case: true
+      word: true
+    - trigger: excellant
+      replace: excellent
+      propagate_case: true
+      word: true
+    - trigger: excells
+      replace: excels
+      propagate_case: true
+      word: true
+    - trigger: excercise
+      replace: exercise
+      propagate_case: true
+      word: true
+    - trigger: exchanching
+      replace: exchanging
+      propagate_case: true
+      word: true
+    - trigger: excisted
+      replace: existed
+      propagate_case: true
+      word: true
+    - trigger: exculsivly
+      replace: exclusively
+      propagate_case: true
+      word: true
+    - trigger: execising
+      replace: exercising
+      propagate_case: true
+      word: true
+    - trigger: exection
+      replace: execution
+      propagate_case: true
+      word: true
+    - trigger: exectued
+      replace: executed
+      propagate_case: true
+      word: true
+    - trigger: exeedingly
+      replace: exceedingly
+      propagate_case: true
+      word: true
+    - trigger: exelent
+      replace: excellent
+      propagate_case: true
+      word: true
+    - trigger: exellent
+      replace: excellent
+      propagate_case: true
+      word: true
+    - trigger: exemple
+      replace: example
+      propagate_case: true
+      word: true
+    - trigger: exept
+      replace: except
+      propagate_case: true
+      word: true
+    - trigger: exeptional
+      replace: exceptional
+      propagate_case: true
+      word: true
+    - trigger: exerbate
+      replace: exacerbate
+      propagate_case: true
+      word: true
+    - trigger: exerbated
+      replace: exacerbated
+      propagate_case: true
+      word: true
+    - trigger: exerciese
+      replace: exercises
+      propagate_case: true
+      word: true
+    - trigger: exerpt
+      replace: excerpt
+      propagate_case: true
+      word: true
+    - trigger: exerpts
+      replace: excerpts
+      propagate_case: true
+      word: true
+    - trigger: exersize
+      replace: exercise
+      propagate_case: true
+      word: true
+    - trigger: exerternal
+      replace: external
+      propagate_case: true
+      word: true
+    - trigger: exhalted
+      replace: exalted
+      propagate_case: true
+      word: true
+    - trigger: exhibtion
+      replace: exhibition
+      propagate_case: true
+      word: true
+    - trigger: exibition
+      replace: exhibition
+      propagate_case: true
+      word: true
+    - trigger: exibitions
+      replace: exhibitions
+      propagate_case: true
+      word: true
+    - trigger: exicting
+      replace: exciting
+      propagate_case: true
+      word: true
+    - trigger: exinct
+      replace: extinct
+      propagate_case: true
+      word: true
+    - trigger: existance
+      replace: existence
+      propagate_case: true
+      word: true
+    - trigger: existant
+      replace: existent
+      propagate_case: true
+      word: true
+    - trigger: existince
+      replace: existence
+      propagate_case: true
+      word: true
+    - trigger: exliled
+      replace: exiled
+      propagate_case: true
+      word: true
+    - trigger: exludes
+      replace: excludes
+      propagate_case: true
+      word: true
+    - trigger: exmaple
+      replace: example
+      propagate_case: true
+      word: true
+    - trigger: exonorate
+      replace: exonerate
+      propagate_case: true
+      word: true
+    - trigger: exoskelaton
+      replace: exoskeleton
+      propagate_case: true
+      word: true
+    - trigger: expalin
+      replace: explain
+      propagate_case: true
+      word: true
+    - trigger: expatriot
+      replace: expatriate
+      propagate_case: true
+      word: true
+    - trigger: expeced
+      replace: expected
+      propagate_case: true
+      word: true
+    - trigger: expecially
+      replace: especially
+      propagate_case: true
+      word: true
+    - trigger: expeditonary
+      replace: expeditionary
+      propagate_case: true
+      word: true
+    - trigger: expeiments
+      replace: experiments
+      propagate_case: true
+      word: true
+    - trigger: expell
+      replace: expel
+      propagate_case: true
+      word: true
+    - trigger: expells
+      replace: expels
+      propagate_case: true
+      word: true
+    - trigger: experiance
+      replace: experience
+      propagate_case: true
+      word: true
+    - trigger: experianced
+      replace: experienced
+      propagate_case: true
+      word: true
+    - trigger: expiditions
+      replace: expeditions
+      propagate_case: true
+      word: true
+    - trigger: expierence
+      replace: experience
+      propagate_case: true
+      word: true
+    - trigger: explaination
+      replace: explanation
+      propagate_case: true
+      word: true
+    - trigger: explaning
+      replace: explaining
+      propagate_case: true
+      word: true
+    - trigger: explictly
+      replace: explicitly
+      propagate_case: true
+      word: true
+    - trigger: exploititive
+      replace: exploitative
+      propagate_case: true
+      word: true
+    - trigger: explotation
+      replace: exploitation
+      propagate_case: true
+      word: true
+    - trigger: expropiated
+      replace: expropriated
+      propagate_case: true
+      word: true
+    - trigger: expropiation
+      replace: expropriation
+      propagate_case: true
+      word: true
+    - trigger: exressed
+      replace: expressed
+      propagate_case: true
+      word: true
+    - trigger: extemely
+      replace: extremely
+      propagate_case: true
+      word: true
+    - trigger: extention
+      replace: extension
+      propagate_case: true
+      word: true
+    - trigger: extentions
+      replace: extensions
+      propagate_case: true
+      word: true
+    - trigger: extered
+      replace: exerted
+      propagate_case: true
+      word: true
+    - trigger: extermist
+      replace: extremist
+      propagate_case: true
+      word: true
+    - trigger: extint
+      replace: "extinct\x2C\x20extant"
+      propagate_case: true
+      word: true
+    - trigger: extradiction
+      replace: extradition
+      propagate_case: true
+      word: true
+    - trigger: extraterrestial
+      replace: extraterrestrial
+      propagate_case: true
+      word: true
+    - trigger: extraterrestials
+      replace: extraterrestrials
+      propagate_case: true
+      word: true
+    - trigger: extravagent
+      replace: extravagant
+      propagate_case: true
+      word: true
+    - trigger: extrememly
+      replace: extremely
+      propagate_case: true
+      word: true
+    - trigger: extremeophile
+      replace: extremophile
+      propagate_case: true
+      word: true
+    - trigger: extremly
+      replace: extremely
+      propagate_case: true
+      word: true
+    - trigger: extrordinarily
+      replace: extraordinarily
+      propagate_case: true
+      word: true
+    - trigger: extrordinary
+      replace: extraordinary
+      propagate_case: true
+      word: true
+    - trigger: eyar
+      replace: "year\x2C\x20eyas"
+      propagate_case: true
+      word: true
+    - trigger: eyars
+      replace: "years\x2C\x20eyas"
+      propagate_case: true
+      word: true
+    - trigger: eyasr
+      replace: "years\x2C\x20eyas"
+      propagate_case: true
+      word: true

@@ -1,0 +1,401 @@
+{
+  "header": {
+    "prefix": "hdr",
+    "body": ["${0|#, ##, ###, ####, #####, ######|} $1"],
+    "description": "Add header level 1"
+  },
+  "header 1": {
+    "prefix": "h1",
+    "body": ["# $0"],
+    "description": "Add header level 1"
+  },
+  "header 2": {
+    "prefix": "h2",
+    "body": ["## $0"],
+    "description": "Add header level 2"
+  },
+  "header 3": {
+    "prefix": "h3",
+    "body": ["### $0"],
+    "description": "Add header level 3"
+  },
+  "header 4": {
+    "prefix": "h4",
+    "body": ["#### $0"],
+    "description": "Add header level 4"
+  },
+  "header 5": {
+    "prefix": "h5",
+    "body": ["##### $0"],
+    "description": "Add header level 5"
+  },
+  "header 6": {
+    "prefix": "h6",
+    "body": ["###### $0"],
+    "description": "Add header level 6"
+  },
+  "Links": {
+    "prefix": ["l", "link"],
+    "body": ["[$1]($2) $0"], // [text](url)
+    "description": "Add links"
+  },
+  "URLS": {
+    "prefix": ["u", "url"],
+    "body": ["<$1> $0"],
+    "description": "Add urls"
+  },
+  "Images": {
+    "prefix": "img",
+    "body": ["![$1]($2) $0"], // ![alt text](path)
+    "description": "Add images"
+  },
+  "Insert strikethrough": {
+    "prefix": "strikethrough",
+    "body": "~~$1~~ $0",
+    "description": "Insert strikethrough"
+  },
+  "Insert bold text": {
+    "prefix": ["bold", "b"],
+    "body": "**$1** $0",
+    "description": "Insert bold text"
+  },
+  "Insert italic text": {
+    "prefix": ["i", "italic"],
+    "body": "*$1* $0",
+    "description": "Insert italic text"
+  },
+  "Insert bold and italic text": {
+    "prefix": ["bold and italic", "bi"],
+    "body": "***$1*** $0",
+    "description": "Insert bold and italic text"
+  },
+  "Insert quoted text": {
+    "prefix": "quote",
+    "body": "> $1",
+    "description": "Insert quoted text"
+  },
+  "Insert code": {
+    "prefix": "code",
+    "body": "`$1` $0",
+    "description": "Insert code"
+  },
+  "Insert code block": {
+    "prefix": "codeblock",
+    "body": [
+      "```${1|python, sql, javascript, typescript, r, markdown|}",
+      "$0",
+      "```"
+    ],
+    "description": "Insert fenced code block"
+  },
+  "Insert unordered list": {
+    "prefix": "ul",
+    "body": ["- $1", "- $2", "- $3", "$0"],
+    "description": "Insert unordered list"
+  },
+  "Insert ordered list": {
+    "prefix": "ol",
+    "body": ["1. $1", "2. $2", "3. $3", "$0"],
+    "description": "Insert ordered list"
+  },
+  "Insert horizontal rule": {
+    "prefix": "hr",
+    "body": "---\n",
+    "description": "Insert horizontal rule"
+  },
+  "Insert task list": {
+    "prefix": "task",
+    "body": ["- [${1| ,x|}] $2", "$0"],
+    "description": "Insert task list"
+  },
+  "Insert task list 2": {
+    "prefix": "task2",
+    "body": ["- [${1| ,x|}] $2", "- [${3| ,x|}] $4", "$0"],
+    "description": "Insert task list with 2 tasks"
+  },
+  "Insert task list 3": {
+    "prefix": "task3",
+    "body": ["- [${1| ,x|}] $2", "- [${3| ,x|}] $4", "- [${5| ,x|}] $6", "$0"],
+    "description": "Insert task list with 3 tasks"
+  },
+  "Insert task list 4": {
+    "prefix": "task4",
+    "body": [
+      "- [${1| ,x|}] $2",
+      "- [${3| ,x|}] $4",
+      "- [${5| ,x|}] $6",
+      "- [${7| ,x|}] $8",
+      "$0"
+    ],
+    "description": "Insert task list with 4 tasks"
+  },
+  "Insert task list 5": {
+    "prefix": "task5",
+    "body": [
+      "- [${1| ,x|}] $2",
+      "- [${3| ,x|}] $4",
+      "- [${5| ,x|}] $6",
+      "- [${7| ,x|}] $8",
+      "- [${9| ,x|}] $10",
+      "$0"
+    ],
+    "description": "Insert task list with 5 tasks"
+  },
+  "Insert table": {
+    "prefix": "table",
+    "body": [
+      "| $1 | $2 | $3 |",
+      "| ------------- | -------------- | -------------- |",
+      "| $4 | $5 | $6 |",
+      "$0"
+    ],
+    "description": "Insert table with 2 rows and 3 columns. First row is heading."
+  },
+  "Insert 2x1 table": {
+    "prefix": "2x1table",
+    "body": ["| $1 |", "| ------------- |", "| $2 |", "$0"],
+    "description": "Insert table with 2 rows and 1 column. First row is heading."
+  },
+  "Insert 3x1 table": {
+    "prefix": "3x1table",
+    "body": ["| $1 |", "| ------------- |", "| $2 |", "| $3 |", "$0"],
+    "description": "Insert table with 3 rows and 1 column. First row is heading."
+  },
+  "Insert 4x1 table": {
+    "prefix": "4x1table",
+    "body": ["| $1 |", "| ------------- |", "| $2 |", "| $3 |", "| $4 |", "$0"],
+    "description": "Insert table with 4 rows and 1 column. First row is heading."
+  },
+  "Insert 5x1 table": {
+    "prefix": "5x1table",
+    "body": [
+      "| $1 |",
+      "| ------------- |",
+      "| $2 |",
+      "| $3 |",
+      "| $4 |",
+      "| $5 |",
+      "$0"
+    ],
+    "description": "Insert table with 5 rows and 1 column. First row is heading."
+  },
+  "Insert 2x2 table": {
+    "prefix": "2x2table",
+    "body": [
+      "| $1 | $2 |",
+      "| -------------- | --------------- |",
+      "| $3 | $4 |",
+      "$0"
+    ],
+    "description": "Insert table with 2 rows and 2 columns. First row is heading."
+  },
+  "Insert 3x2 table": {
+    "prefix": "3x2table",
+    "body": [
+      "| $1 | $2 |",
+      "| -------------- | --------------- |",
+      "| $3 | $4 |",
+      "| $5 | $6 |",
+      "$0"
+    ],
+    "description": "Insert table with 3 rows and 2 columns. First row is heading."
+  },
+  "Insert 4x2 table": {
+    "prefix": "4x2table",
+    "body": [
+      "| $1 | $2 |",
+      "| -------------- | --------------- |",
+      "| $3 | $4 |",
+      "| $5 | $6 |",
+      "| $7 | $8 |",
+      "$0"
+    ],
+    "description": "Insert table with 4 rows and 2 columns. First row is heading."
+  },
+  "Insert 5x2 table": {
+    "prefix": "5x2table",
+    "body": [
+      "| $1   | $2    |",
+      "|--------------- | --------------- |",
+      "| $3   | $4   |",
+      "| $5   | $6   |",
+      "| $7   | $8   |",
+      "| $9   | $10   |",
+      "$0"
+    ],
+    "description": "Insert table with 5 rows and 2 columns. First row is heading."
+  },
+  "Insert 2x3 table": {
+    "prefix": "2x3table",
+    "body": [
+      "| $1 | $2 | $3 |",
+      "| --------------- | --------------- | --------------- |",
+      "| $4 | $5 | $6 |",
+      "$0"
+    ],
+    "description": "Insert table with 2 rows and 3 columns. First row is heading."
+  },
+  "Insert 3x3 table": {
+    "prefix": "3x3table",
+    "body": [
+      "| $1 | $2 | $3 |",
+      "| --------------- | --------------- | --------------- |",
+      "| $4 | $5 | $6 |",
+      "| $7 | $8 | $9 |",
+      "$0"
+    ],
+    "description": "Insert table with 3 rows and 3 columns. First row is heading."
+  },
+  "Insert 4x3 table": {
+    "prefix": "4x3table",
+    "body": [
+      "| $1 | $2 | $3 |",
+      "| --------------- | --------------- | --------------- |",
+      "| $4 | $5 | $6 |",
+      "| $7 | $8 | $9 |",
+      "| $10 | $11 | $12 |",
+      "$0"
+    ],
+    "description": "Insert table with 4 rows and 3 columns. First row is heading."
+  },
+  "Insert 5x3 table": {
+    "prefix": "5x3table",
+    "body": [
+      "| $1 | $2 | $3 |",
+      "| --------------- | --------------- | --------------- |",
+      "| $4 | $5 | $6 |",
+      "| $7 | $8 | $9 |",
+      "| $10 | $11 | $12 |",
+      "| $13 | $14 | $15 |",
+      "$0"
+    ],
+    "description": "Insert table with 5 rows and 3 columns. First row is heading."
+  },
+  "Insert 2x4 table": {
+    "prefix": "2x4table",
+    "body": [
+      "| $1 | $2 | $3 | $4 |",
+      "| --------------- | --------------- | --------------- | --------------- |",
+      "| $5 | $6 | $7 | $8 |",
+      "$0"
+    ],
+    "description": "Insert table with 2 rows and 4 columns. First row is heading."
+  },
+  "Insert 3x4 table": {
+    "prefix": "3x4table",
+    "body": [
+      "| $1 | $2 | $3 | $4 |",
+      "| --------------- | --------------- | --------------- | --------------- |",
+      "| $5 | $6 | $7 | $8 |",
+      "| $9 | $10 | $11 | $12 |",
+      "$0"
+    ],
+    "description": "Insert table with 3 rows and 4 columns. First row is heading."
+  },
+  "Insert 4x4 table": {
+    "prefix": "4x4table",
+    "body": [
+      "| $1 | $2 | $3 | $4 |",
+      "| --------------- | --------------- | --------------- | --------------- |",
+      "| $5 | $6 | $7 | $8 |",
+      "| $9 | $10 | $11 | $12 |",
+      "| $13 | $14 | $15 | $16 |",
+      "$0"
+    ],
+    "description": "Insert table with 4 rows and 4 columns. First row is heading."
+  },
+  "Insert 5x4 table": {
+    "prefix": "5x4table",
+    "body": [
+      "| $1 | $2 | $3 | $4 |",
+      "| --------------- | --------------- | --------------- | --------------- |",
+      "| $5 | $6 | $7 | $8 |",
+      "| $9 | $10 | $11 | $12 |",
+      "| $13 | $14 | $15 | $16 |",
+      "| $17 | $18 | $19 | $20 |",
+      "$0"
+    ],
+    "description": "Insert table with 5 rows and 4 columns. First row is heading."
+  },
+  "Insert 2x5 table": {
+    "prefix": "2x5table",
+    "body": [
+      "| $1 | $2 | $3 | $4 | $5 |",
+      "| --------------- | --------------- | --------------- | --------------- | --------------- |",
+      "| $6 | $7 | $8 | $9 | $10 |",
+      "$0"
+    ],
+    "description": "Insert table with 2 rows and 5 columns. First row is heading."
+  },
+  "Insert 3x5 table": {
+    "prefix": "3x5table",
+    "body": [
+      "| $1 | $2 | $3 | $4 | $5 |",
+      "| --------------- | --------------- | --------------- | --------------- | --------------- |",
+      "| $6 | $7 | $8 | $9 | $10 |",
+      "| $11 | $12 | $13 | $14 | $15 |",
+      "$0"
+    ],
+    "description": "Insert table with 3 rows and 5 columns. First row is heading."
+  },
+  "Insert 4x5 table": {
+    "prefix": "4x5table",
+    "body": [
+      "| $1 | $2 | $3 | $4 | $5 |",
+      "| --------------- | --------------- | --------------- | --------------- | --------------- |",
+      "| $6 | $7 | $8 | $9 | $10 |",
+      "| $11 | $12 | $13 | $14 | $15 |",
+      "| $16 | $17 | $18 | $19 | $20 |",
+      "$0"
+    ],
+    "description": "Insert table with 4 rows and 5 columns. First row is heading."
+  },
+  "Insert 5x5 table": {
+    "prefix": "5x5table",
+    "body": [
+      "| $1 | $2 | $3 | $4 | $5 |",
+      "| --------------- | --------------- | --------------- | --------------- | --------------- |",
+      "| $6 | $7 | $8 | $9 | $10 |",
+      "| $11 | $12 | $13 | $14 | $15 |",
+      "| $16 | $17 | $18 | $19 | $20 |",
+      "| $21 | $22 | $23 | $24 | $25 |",
+      "$0"
+    ],
+    "description": "Insert table with 5 rows and 5 columns. First row is heading."
+  },
+  "Insert subscript": {
+    "prefix": "sub",
+    "body": ["$1<sub>$0</sub>"],
+    "description": "Create a subscript."
+  },
+  "Insert superscript": {
+    "prefix": "sup",
+    "body": ["$1<sup>$0</sup>"],
+    "description": "Create a superscript."
+  },
+  "Insert Note": {
+    "prefix": ["note", "n"],
+    "body": "> [!NOTE]\n> ",
+    "description": "Insert Note"
+  },
+  "Insert Tip": {
+    "prefix": ["tip", "t"],
+    "body": "> [!TIP]\n> ",
+    "description": "Insert Tip"
+  },
+  "Insert Important": {
+    "prefix": ["important", "imp"],
+    "body": "> [!IMPORTANT]\n> ",
+    "description": "Insert Important"
+  },
+  "Insert Warning": {
+    "prefix": ["warning", "w"],
+    "body": "> [!WARNING]\n> ",
+    "description": "Insert Warning"
+  },
+  "Insert Caution": {
+    "prefix": ["caution", "c"],
+    "body": "> [!CAUTION]\n> ",
+    "description": "Insert Caution"
+  }
+}

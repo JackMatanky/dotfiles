@@ -1,0 +1,1675 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------------------------------------------------- #
+    #                          SA                          #
+    # ---------------------------------------------------- #
+    - trigger: sacrafice
+      replace: sacrifice
+      propagate_case: true
+      word: true
+    - trigger: sacreligious
+      replace: sacrilegious
+      propagate_case: true
+      word: true
+    - trigger: Sacremento
+      replace: Sacramento
+      propagate_case: true
+      word: true
+    - trigger: sacrifical
+      replace: sacrificial
+      propagate_case: true
+      word: true
+    - trigger: saftey
+      replace: safety
+      propagate_case: true
+      word: true
+    - trigger: safty
+      replace: safety
+      propagate_case: true
+      word: true
+    - trigger: salery
+      replace: salary
+      propagate_case: true
+      word: true
+    - trigger: sanctionning
+      replace: sanctioning
+      propagate_case: true
+      word: true
+    - trigger: sandwhich
+      replace: sandwich
+      propagate_case: true
+      word: true
+    - trigger: Sanhedrim
+      replace: Sanhedrin
+      propagate_case: true
+      word: true
+    - trigger: santioned
+      replace: sanctioned
+      propagate_case: true
+      word: true
+    - trigger: sargant
+      replace: sergeant
+      propagate_case: true
+      word: true
+    - trigger: sargeant
+      replace: sergeant
+      propagate_case: true
+      word: true
+    - trigger: sasy
+      replace: "says\x2C\x20sassy"
+      propagate_case: true
+      word: true
+    - trigger: satelite
+      replace: satellite
+      propagate_case: true
+      word: true
+    - trigger: satelites
+      replace: satellites
+      propagate_case: true
+      word: true
+    - trigger: Saterday
+      replace: Saturday
+      propagate_case: true
+      word: true
+    - trigger: Saterdays
+      replace: Saturdays
+      propagate_case: true
+      word: true
+    - trigger: satisfactority
+      replace: satisfactorily
+      propagate_case: true
+      word: true
+    - trigger: satric
+      replace: satiric
+      propagate_case: true
+      word: true
+    - trigger: satrical
+      replace: satirical
+      propagate_case: true
+      word: true
+    - trigger: satrically
+      replace: satirically
+      propagate_case: true
+      word: true
+    - trigger: sattelite
+      replace: satellite
+      propagate_case: true
+      word: true
+    - trigger: sattelites
+      replace: satellites
+      propagate_case: true
+      word: true
+    - trigger: saught
+      replace: sought
+      propagate_case: true
+      word: true
+    - trigger: saveing
+      replace: saving
+      propagate_case: true
+      word: true
+    - trigger: saxaphone
+      replace: saxophone
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          SC                          #
+    # ---------------------------------------------------- #
+    - trigger: scaleable
+      replace: scalable
+      propagate_case: true
+      word: true
+    - trigger: scandanavia
+      replace: Scandinavia
+      propagate_case: true
+      word: true
+    - trigger: scaricity
+      replace: scarcity
+      propagate_case: true
+      word: true
+    - trigger: scavanged
+      replace: scavenged
+      propagate_case: true
+      word: true
+    - trigger: schedual
+      replace: schedule
+      propagate_case: true
+      word: true
+    - trigger: scholarhip
+      replace: scholarship
+      propagate_case: true
+      word: true
+    - trigger: scholarstic
+      replace: "scholastic\x2C\x20scholarly"
+      propagate_case: true
+      word: true
+    - trigger: scientfic
+      replace: scientific
+      propagate_case: true
+      word: true
+    - trigger: scientifc
+      replace: scientific
+      propagate_case: true
+      word: true
+    - trigger: scientis
+      replace: scientist
+      propagate_case: true
+      word: true
+    - trigger: scince
+      replace: science
+      propagate_case: true
+      word: true
+    - trigger: scinece
+      replace: science
+      propagate_case: true
+      word: true
+    - trigger: scirpt
+      replace: script
+      propagate_case: true
+      word: true
+    - trigger: scoll
+      replace: scroll
+      propagate_case: true
+      word: true
+    - trigger: screenwrighter
+      replace: screenwriter
+      propagate_case: true
+      word: true
+    - trigger: scrutinity
+      replace: scrutiny
+      propagate_case: true
+      word: true
+    - trigger: scuptures
+      replace: sculptures
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          SE                          #
+    # ---------------------------------------------------- #
+    - trigger: seach
+      replace: search
+      propagate_case: true
+      word: true
+    - trigger: seached
+      replace: searched
+      propagate_case: true
+      word: true
+    - trigger: seaches
+      replace: searches
+      propagate_case: true
+      word: true
+    - trigger: secceeded
+      replace: "seceded\x2C\x20succeeded"
+      propagate_case: true
+      word: true
+    - trigger: seceed
+      replace: "succeed\x2C\x20secede"
+      propagate_case: true
+      word: true
+    - trigger: seceeded
+      replace: "succeeded\x2C\x20seceded"
+      propagate_case: true
+      word: true
+    - trigger: secratary
+      replace: secretary
+      propagate_case: true
+      word: true
+    - trigger: secretery
+      replace: secretary
+      propagate_case: true
+      word: true
+    - trigger: sedereal
+      replace: sidereal
+      propagate_case: true
+      word: true
+    - trigger: seeked
+      replace: sought
+      propagate_case: true
+      word: true
+    - trigger: segementation
+      replace: segmentation
+      propagate_case: true
+      word: true
+    - trigger: seguoys
+      replace: segues
+      propagate_case: true
+      word: true
+    - trigger: seige
+      replace: siege
+      propagate_case: true
+      word: true
+    - trigger: seing
+      replace: seeing
+      propagate_case: true
+      word: true
+    - trigger: seinor
+      replace: senior
+      propagate_case: true
+      word: true
+    - trigger: seldomly
+      replace: seldom
+      propagate_case: true
+      word: true
+    - trigger: senarios
+      replace: scenarios
+      propagate_case: true
+      word: true
+    - trigger: sence
+      replace: "sense\x2C\x20since"
+      propagate_case: true
+      word: true
+    - trigger: senstive
+      replace: sensitive
+      propagate_case: true
+      word: true
+    - trigger: sensure
+      replace: censure
+      propagate_case: true
+      word: true
+    - trigger: seperate
+      replace: separate
+      propagate_case: true
+      word: true
+    - trigger: seperated
+      replace: separated
+      propagate_case: true
+      word: true
+    - trigger: seperately
+      replace: separately
+      propagate_case: true
+      word: true
+    - trigger: seperates
+      replace: separates
+      propagate_case: true
+      word: true
+    - trigger: seperating
+      replace: separating
+      propagate_case: true
+      word: true
+    - trigger: seperation
+      replace: separation
+      propagate_case: true
+      word: true
+    - trigger: seperatism
+      replace: separatism
+      propagate_case: true
+      word: true
+    - trigger: seperatist
+      replace: separatist
+      propagate_case: true
+      word: true
+    - trigger: sepina
+      replace: subpoena
+      propagate_case: true
+      word: true
+    - trigger: sepulchure
+      replace: "sepulchre\x2C\x20sepulcher"
+      propagate_case: true
+      word: true
+    - trigger: sepulcre
+      replace: "sepulchre\x2C\x20sepulcher"
+      propagate_case: true
+      word: true
+    - trigger: sergent
+      replace: sergeant
+      propagate_case: true
+      word: true
+    - trigger: sesion
+      replace: session
+      propagate_case: true
+      word: true
+    - trigger: settelement
+      replace: settlement
+      propagate_case: true
+      word: true
+    - trigger: settlment
+      replace: settlement
+      propagate_case: true
+      word: true
+    - trigger: severeal
+      replace: several
+      propagate_case: true
+      word: true
+    - trigger: severley
+      replace: severely
+      propagate_case: true
+      word: true
+    - trigger: severly
+      replace: severely
+      propagate_case: true
+      word: true
+    - trigger: sevice
+      replace: service
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          SH                          #
+    # ---------------------------------------------------- #
+    - trigger: shadasloo
+      replace: shadaloo
+      propagate_case: true
+      word: true
+    - trigger: shaddow
+      replace: shadow
+      propagate_case: true
+      word: true
+    - trigger: shadoloo
+      replace: shadaloo
+      propagate_case: true
+      word: true
+    - trigger: shamen
+      replace: "shaman\x2C\x20shamans"
+      propagate_case: true
+      word: true
+    - trigger: sheat
+      replace: "sheath\x2C\x20sheet\x2C\x20cheat"
+      propagate_case: true
+      word: true
+    - trigger: sheild
+      replace: shield
+      propagate_case: true
+      word: true
+    - trigger: sherif
+      replace: sheriff
+      propagate_case: true
+      word: true
+    - trigger: shineing
+      replace: shining
+      propagate_case: true
+      word: true
+    - trigger: shiped
+      replace: shipped
+      propagate_case: true
+      word: true
+    - trigger: shiping
+      replace: shipping
+      propagate_case: true
+      word: true
+    - trigger: shopkeeepers
+      replace: shopkeepers
+      propagate_case: true
+      word: true
+    - trigger: shorly
+      replace: shortly
+      propagate_case: true
+      word: true
+    - trigger: shortwhile
+      replace: "short\x20while"
+      propagate_case: true
+      word: true
+    - trigger: shoudl
+      replace: should
+      propagate_case: true
+      word: true
+    - trigger: sh}ld
+      replace: should
+      propagate_case: true
+      word: true
+    - trigger: shoudln
+      replace: "should\x2C\x20shouldn\x27t"
+      propagate_case: true
+      word: true
+    - trigger: shouldnt
+      replace: "should\x20not"
+      propagate_case: true
+      word: true
+    - trigger: shreak
+      replace: shriek
+      propagate_case: true
+      word: true
+    - trigger: shrinked
+      replace: shrunk
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          SI                          #
+    # ---------------------------------------------------- #
+    - trigger: sicne
+      replace: since
+      propagate_case: true
+      word: true
+    - trigger: sideral
+      replace: sidereal
+      propagate_case: true
+      word: true
+    - trigger: sieze
+      replace: "seize\x2C\x20size"
+      propagate_case: true
+      word: true
+    - trigger: siezed
+      replace: "seized\x2C\x20sized"
+      propagate_case: true
+      word: true
+    - trigger: siezing
+      replace: "seizing\x2C\x20sizing"
+      propagate_case: true
+      word: true
+    - trigger: siezure
+      replace: seizure
+      propagate_case: true
+      word: true
+    - trigger: siezures
+      replace: seizures
+      propagate_case: true
+      word: true
+    - trigger: siginificant
+      replace: significant
+      propagate_case: true
+      word: true
+    - trigger: signficant
+      replace: significant
+      propagate_case: true
+      word: true
+    - trigger: signficiant
+      replace: significant
+      propagate_case: true
+      word: true
+    - trigger: signfies
+      replace: signifies
+      propagate_case: true
+      word: true
+    - trigger: signifantly
+      replace: significantly
+      propagate_case: true
+      word: true
+    - trigger: significently
+      replace: significantly
+      propagate_case: true
+      word: true
+    - trigger: signifigant
+      replace: significant
+      propagate_case: true
+      word: true
+    - trigger: signifigantly
+      replace: significantly
+      propagate_case: true
+      word: true
+    - trigger: signitories
+      replace: signatories
+      propagate_case: true
+      word: true
+    - trigger: signitory
+      replace: signatory
+      propagate_case: true
+      word: true
+    - trigger: similarily
+      replace: similarly
+      propagate_case: true
+      word: true
+    - trigger: similiar
+      replace: similar
+      propagate_case: true
+      word: true
+    - trigger: similiarity
+      replace: similarity
+      propagate_case: true
+      word: true
+    - trigger: similiarly
+      replace: similarly
+      propagate_case: true
+      word: true
+    - trigger: simmilar
+      replace: similar
+      propagate_case: true
+      word: true
+    - trigger: simpley
+      replace: simply
+      propagate_case: true
+      word: true
+    - trigger: simplier
+      replace: simpler
+      propagate_case: true
+      word: true
+    - trigger: simultanous
+      replace: simultaneous
+      propagate_case: true
+      word: true
+    - trigger: simultanously
+      replace: simultaneously
+      propagate_case: true
+      word: true
+    - trigger: sincerley
+      replace: sincerely
+      propagate_case: true
+      word: true
+    - trigger: singsog
+      replace: singsong
+      propagate_case: true
+      word: true
+    - trigger: sinse
+      replace: "sines\x2C\x20since"
+      propagate_case: true
+      word: true
+    - trigger: Sionist
+      replace: Zionist
+      propagate_case: true
+      word: true
+    - trigger: Sionists
+      replace: Zionists
+      propagate_case: true
+      word: true
+    - trigger: Sixtin
+      replace: Sistine
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          SK                          #
+    # ---------------------------------------------------- #
+    - trigger: Skagerak
+      replace: Skagerrak
+      propagate_case: true
+      word: true
+    - trigger: skateing
+      replace: skating
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          SL                          #
+    # ---------------------------------------------------- #
+    - trigger: slaugterhouses
+      replace: slaughterhouses
+      propagate_case: true
+      word: true
+    - trigger: slighly
+      replace: slightly
+      propagate_case: true
+      word: true
+    - trigger: slippy
+      replace: slippery
+      propagate_case: true
+      word: true
+    - trigger: slowy
+      replace: slowly
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          SM                          #
+    # ---------------------------------------------------- #
+    - trigger: smae
+      replace: same
+      propagate_case: true
+      word: true
+    - trigger: smealting
+      replace: smelting
+      propagate_case: true
+      word: true
+    - trigger: smoe
+      replace: some
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          SN                          #
+    # ---------------------------------------------------- #
+    - trigger: sneeks
+      replace: sneaks
+      propagate_case: true
+      word: true
+    - trigger: snese
+      replace: sneeze
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          SO                          #
+    # ---------------------------------------------------- #
+    - trigger: socalism
+      replace: socialism
+      propagate_case: true
+      word: true
+    - trigger: socities
+      replace: societies
+      propagate_case: true
+      word: true
+    - trigger: soem
+      replace: some
+      propagate_case: true
+      word: true
+    - trigger: sofware
+      replace: software
+      propagate_case: true
+      word: true
+    - trigger: sohw
+      replace: show
+      propagate_case: true
+      word: true
+    - trigger: soilders
+      replace: soldiers
+      propagate_case: true
+      word: true
+    - trigger: solatary
+      replace: solitary
+      propagate_case: true
+      word: true
+    - trigger: soley
+      replace: solely
+      propagate_case: true
+      word: true
+    - trigger: soliders
+      replace: soldiers
+      propagate_case: true
+      word: true
+    - trigger: soliliquy
+      replace: soliloquy
+      propagate_case: true
+      word: true
+    - trigger: soluable
+      replace: soluble
+      propagate_case: true
+      word: true
+    - trigger: somene
+      replace: someone
+      propagate_case: true
+      word: true
+    - trigger: somtimes
+      replace: sometimes
+      propagate_case: true
+      word: true
+    - trigger: somwhere
+      replace: somewhere
+      propagate_case: true
+      word: true
+    - trigger: sophicated
+      replace: sophisticated
+      propagate_case: true
+      word: true
+    - trigger: sophmore
+      replace: sophomore
+      propagate_case: true
+      word: true
+    - trigger: sorceror
+      replace: sorcerer
+      propagate_case: true
+      word: true
+    - trigger: sorrounding
+      replace: surrounding
+      propagate_case: true
+      word: true
+    - trigger: sotry
+      replace: story
+      propagate_case: true
+      word: true
+    - trigger: sotyr
+      replace: "satyr\x2C\x20story"
+      propagate_case: true
+      word: true
+    - trigger: soudn
+      replace: sound
+      propagate_case: true
+      word: true
+    - trigger: soudns
+      replace: sounds
+      propagate_case: true
+      word: true
+    - trigger: sould
+      replace: "could\x2C\x20should\x2C\x20sold\x2C\x20soul"
+      propagate_case: true
+      word: true
+    - trigger: sountrack
+      replace: soundtrack
+      propagate_case: true
+      word: true
+    - trigger: sourth
+      replace: south
+      propagate_case: true
+      word: true
+    - trigger: sourthern
+      replace: southern
+      propagate_case: true
+      word: true
+    - trigger: souvenier
+      replace: souvenir
+      propagate_case: true
+      word: true
+    - trigger: souveniers
+      replace: souvenirs
+      propagate_case: true
+      word: true
+    - trigger: soveits
+      replace: soviets
+      propagate_case: true
+      word: true
+    - trigger: sovereignity
+      replace: sovereignty
+      propagate_case: true
+      word: true
+    - trigger: soverign
+      replace: sovereign
+      propagate_case: true
+      word: true
+    - trigger: soverignity
+      replace: sovereignty
+      propagate_case: true
+      word: true
+    - trigger: soverignty
+      replace: sovereignty
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          SP                          #
+    # ---------------------------------------------------- #
+    - trigger: spainish
+      replace: Spanish
+      propagate_case: true
+      word: true
+    - trigger: speach
+      replace: speech
+      propagate_case: true
+      word: true
+    - trigger: specfic
+      replace: specific
+      propagate_case: true
+      word: true
+    - trigger: speciallized
+      replace: "specialised\x2C\x20specialized"
+      propagate_case: true
+      word: true
+    - trigger: specif
+      replace: "specific\x2C\x20specify"
+      propagate_case: true
+      word: true
+    - trigger: specifiying
+      replace: specifying
+      propagate_case: true
+      word: true
+    - trigger: speciman
+      replace: specimen
+      propagate_case: true
+      word: true
+    - trigger: spectauclar
+      replace: spectacular
+      propagate_case: true
+      word: true
+    - trigger: spectaulars
+      replace: spectaculars
+      propagate_case: true
+      word: true
+    - trigger: spects
+      replace: "aspects\x2C\x20expects"
+      propagate_case: true
+      word: true
+    - trigger: spectum
+      replace: spectrum
+      propagate_case: true
+      word: true
+    - trigger: speices
+      replace: species
+      propagate_case: true
+      word: true
+    - trigger: spendour
+      replace: splendour
+      propagate_case: true
+      word: true
+    - trigger: spermatozoan
+      replace: spermatozoon
+      propagate_case: true
+      word: true
+    - trigger: spoace
+      replace: space
+      propagate_case: true
+      word: true
+    - trigger: sponser
+      replace: sponsor
+      propagate_case: true
+      word: true
+    - trigger: sponsered
+      replace: sponsored
+      propagate_case: true
+      word: true
+    - trigger: spontanous
+      replace: spontaneous
+      propagate_case: true
+      word: true
+    - trigger: sponzored
+      replace: sponsored
+      propagate_case: true
+      word: true
+    - trigger: spoonfulls
+      replace: spoonfuls
+      propagate_case: true
+      word: true
+    - trigger: sppeches
+      replace: speeches
+      propagate_case: true
+      word: true
+    - trigger: spreaded
+      replace: spread
+      propagate_case: true
+      word: true
+    - trigger: sprech
+      replace: speech
+      propagate_case: true
+      word: true
+    - trigger: spred
+      replace: spread
+      propagate_case: true
+      word: true
+    - trigger: spriritual
+      replace: spiritual
+      propagate_case: true
+      word: true
+    - trigger: spritual
+      replace: spiritual
+      propagate_case: true
+      word: true
+    - trigger: sqaure
+      replace: square
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          ST                          #
+    # ---------------------------------------------------- #
+    - trigger: stablility
+      replace: stability
+      propagate_case: true
+      word: true
+    - trigger: stainlees
+      replace: stainless
+      propagate_case: true
+      word: true
+    - trigger: staion
+      replace: station
+      propagate_case: true
+      word: true
+    - trigger: standars
+      replace: standards
+      propagate_case: true
+      word: true
+    - trigger: stange
+      replace: strange
+      propagate_case: true
+      word: true
+    - trigger: startegic
+      replace: strategic
+      propagate_case: true
+      word: true
+    - trigger: startegies
+      replace: strategies
+      propagate_case: true
+      word: true
+    - trigger: startegy
+      replace: strategy
+      propagate_case: true
+      word: true
+    - trigger: stateman
+      replace: statesman
+      propagate_case: true
+      word: true
+    - trigger: statememts
+      replace: statements
+      propagate_case: true
+      word: true
+    - trigger: statment
+      replace: statement
+      propagate_case: true
+      word: true
+    - trigger: steriods
+      replace: steroids
+      propagate_case: true
+      word: true
+    - trigger: sterotypes
+      replace: stereotypes
+      propagate_case: true
+      word: true
+    - trigger: stilus
+      replace: stylus
+      propagate_case: true
+      word: true
+    - trigger: stingent
+      replace: stringent
+      propagate_case: true
+      word: true
+    - trigger: stiring
+      replace: stirring
+      propagate_case: true
+      word: true
+    - trigger: stirrs
+      replace: stirs
+      propagate_case: true
+      word: true
+    - trigger: stlye
+      replace: style
+      propagate_case: true
+      word: true
+    - trigger: stomache
+      replace: stomach
+      propagate_case: true
+      word: true
+    - trigger: stong
+      replace: strong
+      propagate_case: true
+      word: true
+    - trigger: stopry
+      replace: story
+      propagate_case: true
+      word: true
+    - trigger: storeis
+      replace: stories
+      propagate_case: true
+      word: true
+    - trigger: storise
+      replace: stories
+      propagate_case: true
+      word: true
+    - trigger: stornegst
+      replace: strongest
+      propagate_case: true
+      word: true
+    - trigger: stoyr
+      replace: story
+      propagate_case: true
+      word: true
+    - trigger: stpo
+      replace: stop
+      propagate_case: true
+      word: true
+    - trigger: stradegies
+      replace: strategies
+      propagate_case: true
+      word: true
+    - trigger: stradegy
+      replace: strategy
+      propagate_case: true
+      word: true
+    - trigger: strat
+      replace: "start\x2C\x20strata"
+      propagate_case: true
+      word: true
+    - trigger: stratagically
+      replace: strategically
+      propagate_case: true
+      word: true
+    - trigger: streemlining
+      replace: streamlining
+      propagate_case: true
+      word: true
+    - trigger: stregth
+      replace: strength
+      propagate_case: true
+      word: true
+    - trigger: strenghen
+      replace: strengthen
+      propagate_case: true
+      word: true
+    - trigger: strenghened
+      replace: strengthened
+      propagate_case: true
+      word: true
+    - trigger: strenghening
+      replace: strengthening
+      propagate_case: true
+      word: true
+    - trigger: strenght
+      replace: strength
+      propagate_case: true
+      word: true
+    - trigger: strenghten
+      replace: strengthen
+      propagate_case: true
+      word: true
+    - trigger: strenghtened
+      replace: strengthened
+      propagate_case: true
+      word: true
+    - trigger: strenghtening
+      replace: strengthening
+      propagate_case: true
+      word: true
+    - trigger: strengtened
+      replace: strengthened
+      propagate_case: true
+      word: true
+    - trigger: strenous
+      replace: strenuous
+      propagate_case: true
+      word: true
+    - trigger: strictist
+      replace: strictest
+      propagate_case: true
+      word: true
+    - trigger: strikely
+      replace: strikingly
+      propagate_case: true
+      word: true
+    - trigger: strnad
+      replace: strand
+      propagate_case: true
+      word: true
+    - trigger: stroy
+      replace: "story\x2C\x20destroy"
+      propagate_case: true
+      word: true
+    - trigger: structual
+      replace: structural
+      propagate_case: true
+      word: true
+    - trigger: stubborness
+      replace: stubbornness
+      propagate_case: true
+      word: true
+    - trigger: stucture
+      replace: structure
+      propagate_case: true
+      word: true
+    - trigger: stuctured
+      replace: structured
+      propagate_case: true
+      word: true
+    - trigger: studdy
+      replace: study
+      propagate_case: true
+      word: true
+    - trigger: studing
+      replace: studying
+      propagate_case: true
+      word: true
+    - trigger: stuggling
+      replace: struggling
+      propagate_case: true
+      word: true
+    - trigger: sturcture
+      replace: structure
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          SU                          #
+    # ---------------------------------------------------- #
+    - trigger: subcatagories
+      replace: subcategories
+      propagate_case: true
+      word: true
+    - trigger: subcatagory
+      replace: subcategory
+      propagate_case: true
+      word: true
+    - trigger: subconsiously
+      replace: subconsciously
+      propagate_case: true
+      word: true
+    - trigger: subdivisio
+      replace: subdivision
+      propagate_case: true
+      word: true
+    - trigger: subjudgation
+      replace: subjugation
+      propagate_case: true
+      word: true
+    - trigger: submachne
+      replace: submachine
+      propagate_case: true
+      word: true
+    - trigger: subpecies
+      replace: subspecies
+      propagate_case: true
+      word: true
+    - trigger: subsidary
+      replace: subsidiary
+      propagate_case: true
+      word: true
+    - trigger: subsiduary
+      replace: subsidiary
+      propagate_case: true
+      word: true
+    - trigger: subsquent
+      replace: subsequent
+      propagate_case: true
+      word: true
+    - trigger: subsquently
+      replace: subsequently
+      propagate_case: true
+      word: true
+    - trigger: substace
+      replace: substance
+      propagate_case: true
+      word: true
+    - trigger: substancial
+      replace: substantial
+      propagate_case: true
+      word: true
+    - trigger: substatial
+      replace: substantial
+      propagate_case: true
+      word: true
+    - trigger: substituded
+      replace: substituted
+      propagate_case: true
+      word: true
+    - trigger: substract
+      replace: subtract
+      propagate_case: true
+      word: true
+    - trigger: substracted
+      replace: subtracted
+      propagate_case: true
+      word: true
+    - trigger: substracting
+      replace: subtracting
+      propagate_case: true
+      word: true
+    - trigger: substraction
+      replace: subtraction
+      propagate_case: true
+      word: true
+    - trigger: substracts
+      replace: subtracts
+      propagate_case: true
+      word: true
+    - trigger: subtances
+      replace: substances
+      propagate_case: true
+      word: true
+    - trigger: subterranian
+      replace: subterranean
+      propagate_case: true
+      word: true
+    - trigger: suburburban
+      replace: suburban
+      propagate_case: true
+      word: true
+    - trigger: succceeded
+      replace: succeeded
+      propagate_case: true
+      word: true
+    - trigger: succcesses
+      replace: successes
+      propagate_case: true
+      word: true
+    - trigger: succedded
+      replace: succeeded
+      propagate_case: true
+      word: true
+    - trigger: succeded
+      replace: succeeded
+      propagate_case: true
+      word: true
+    - trigger: succeds
+      replace: succeeds
+      propagate_case: true
+      word: true
+    - trigger: succesful
+      replace: successful
+      propagate_case: true
+      word: true
+    - trigger: succesfully
+      replace: successfully
+      propagate_case: true
+      word: true
+    - trigger: succesfuly
+      replace: successfully
+      propagate_case: true
+      word: true
+    - trigger: succesion
+      replace: succession
+      propagate_case: true
+      word: true
+    - trigger: succesive
+      replace: successive
+      propagate_case: true
+      word: true
+    - trigger: successfull
+      replace: successful
+      propagate_case: true
+      word: true
+    - trigger: successully
+      replace: successfully
+      propagate_case: true
+      word: true
+    - trigger: succsess
+      replace: success
+      propagate_case: true
+      word: true
+    - trigger: succsessfull
+      replace: successful
+      propagate_case: true
+      word: true
+    - trigger: suceed
+      replace: succeed
+      propagate_case: true
+      word: true
+    - trigger: suceeded
+      replace: succeeded
+      propagate_case: true
+      word: true
+    - trigger: suceeding
+      replace: succeeding
+      propagate_case: true
+      word: true
+    - trigger: suceeds
+      replace: succeeds
+      propagate_case: true
+      word: true
+    - trigger: sucesful
+      replace: successful
+      propagate_case: true
+      word: true
+    - trigger: sucesfully
+      replace: successfully
+      propagate_case: true
+      word: true
+    - trigger: sucesfuly
+      replace: successfully
+      propagate_case: true
+      word: true
+    - trigger: sucesion
+      replace: succession
+      propagate_case: true
+      word: true
+    - trigger: sucess
+      replace: success
+      propagate_case: true
+      word: true
+    - trigger: sucesses
+      replace: successes
+      propagate_case: true
+      word: true
+    - trigger: sucessful
+      replace: successful
+      propagate_case: true
+      word: true
+    - trigger: sucessfull
+      replace: successful
+      propagate_case: true
+      word: true
+    - trigger: sucessfully
+      replace: successfully
+      propagate_case: true
+      word: true
+    - trigger: sucessfuly
+      replace: successfully
+      propagate_case: true
+      word: true
+    - trigger: sucession
+      replace: succession
+      propagate_case: true
+      word: true
+    - trigger: sucessive
+      replace: successive
+      propagate_case: true
+      word: true
+    - trigger: sucessor
+      replace: successor
+      propagate_case: true
+      word: true
+    - trigger: sucessot
+      replace: successor
+      propagate_case: true
+      word: true
+    - trigger: sucide
+      replace: suicide
+      propagate_case: true
+      word: true
+    - trigger: sucidial
+      replace: suicidal
+      propagate_case: true
+      word: true
+    - trigger: sudent
+      replace: student
+      propagate_case: true
+      word: true
+    - trigger: sudents
+      replace: students
+      propagate_case: true
+      word: true
+    - trigger: sufferage
+      replace: suffrage
+      propagate_case: true
+      word: true
+    - trigger: sufferred
+      replace: suffered
+      propagate_case: true
+      word: true
+    - trigger: sufferring
+      replace: suffering
+      propagate_case: true
+      word: true
+    - trigger: sufficent
+      replace: sufficient
+      propagate_case: true
+      word: true
+    - trigger: sufficently
+      replace: sufficiently
+      propagate_case: true
+      word: true
+    - trigger: sumary
+      replace: summary
+      propagate_case: true
+      word: true
+    - trigger: sunglases
+      replace: sunglasses
+      propagate_case: true
+      word: true
+    - trigger: suop
+      replace: soup
+      propagate_case: true
+      word: true
+    - trigger: superceeded
+      replace: superseded
+      propagate_case: true
+      word: true
+    - trigger: superintendant
+      replace: superintendent
+      propagate_case: true
+      word: true
+    - trigger: suphisticated
+      replace: sophisticated
+      propagate_case: true
+      word: true
+    - trigger: suplimented
+      replace: supplemented
+      propagate_case: true
+      word: true
+    - trigger: supose
+      replace: suppose
+      propagate_case: true
+      word: true
+    - trigger: suposed
+      replace: supposed
+      propagate_case: true
+      word: true
+    - trigger: suposedly
+      replace: supposedly
+      propagate_case: true
+      word: true
+    - trigger: suposes
+      replace: supposes
+      propagate_case: true
+      word: true
+    - trigger: suposing
+      replace: supposing
+      propagate_case: true
+      word: true
+    - trigger: supplamented
+      replace: supplemented
+      propagate_case: true
+      word: true
+    - trigger: suppliementing
+      replace: supplementing
+      propagate_case: true
+      word: true
+    - trigger: suppoed
+      replace: supposed
+      propagate_case: true
+      word: true
+    - trigger: supposingly
+      replace: supposedly
+      propagate_case: true
+      word: true
+    - trigger: suppy
+      replace: supply
+      propagate_case: true
+      word: true
+    - trigger: wupport
+      replace: support
+      propagate_case: true
+      word: true
+    - trigger: suprassing
+      replace: surpassing
+      propagate_case: true
+      word: true
+    - trigger: supress
+      replace: suppress
+      propagate_case: true
+      word: true
+    - trigger: supressed
+      replace: suppressed
+      propagate_case: true
+      word: true
+    - trigger: supresses
+      replace: suppresses
+      propagate_case: true
+      word: true
+    - trigger: supressing
+      replace: suppressing
+      propagate_case: true
+      word: true
+    - trigger: suprise
+      replace: surprise
+      propagate_case: true
+      word: true
+    - trigger: suprised
+      replace: surprised
+      propagate_case: true
+      word: true
+    - trigger: suprising
+      replace: surprising
+      propagate_case: true
+      word: true
+    - trigger: suprisingly
+      replace: surprisingly
+      propagate_case: true
+      word: true
+    - trigger: suprize
+      replace: surprise
+      propagate_case: true
+      word: true
+    - trigger: suprized
+      replace: surprised
+      propagate_case: true
+      word: true
+    - trigger: suprizing
+      replace: surprising
+      propagate_case: true
+      word: true
+    - trigger: suprizingly
+      replace: surprisingly
+      propagate_case: true
+      word: true
+    - trigger: surfce
+      replace: surface
+      propagate_case: true
+      word: true
+    - trigger: surley
+      replace: "surly\x2C\x20surely"
+      propagate_case: true
+      word: true
+    - trigger: suround
+      replace: surround
+      propagate_case: true
+      word: true
+    - trigger: surounded
+      replace: surrounded
+      propagate_case: true
+      word: true
+    - trigger: surounding
+      replace: surrounding
+      propagate_case: true
+      word: true
+    - trigger: suroundings
+      replace: surroundings
+      propagate_case: true
+      word: true
+    - trigger: surounds
+      replace: surrounds
+      propagate_case: true
+      word: true
+    - trigger: surplanted
+      replace: supplanted
+      propagate_case: true
+      word: true
+    - trigger: surpress
+      replace: suppress
+      propagate_case: true
+      word: true
+    - trigger: surpressed
+      replace: suppressed
+      propagate_case: true
+      word: true
+    - trigger: surprize
+      replace: surprise
+      propagate_case: true
+      word: true
+    - trigger: surprized
+      replace: surprised
+      propagate_case: true
+      word: true
+    - trigger: surprizing
+      replace: surprising
+      propagate_case: true
+      word: true
+    - trigger: surprizingly
+      replace: surprisingly
+      propagate_case: true
+      word: true
+    - trigger: surrended
+      replace: "surrounded\x2C\x20surrendered"
+      propagate_case: true
+      word: true
+    - trigger: surrepetitious
+      replace: surreptitious
+      propagate_case: true
+      word: true
+    - trigger: surrepetitiously
+      replace: surreptitiously
+      propagate_case: true
+      word: true
+    - trigger: surreptious
+      replace: surreptitious
+      propagate_case: true
+      word: true
+    - trigger: surreptiously
+      replace: surreptitiously
+      propagate_case: true
+      word: true
+    - trigger: surronded
+      replace: surrounded
+      propagate_case: true
+      word: true
+    - trigger: surrouded
+      replace: surrounded
+      propagate_case: true
+      word: true
+    - trigger: surrouding
+      replace: surrounding
+      propagate_case: true
+      word: true
+    - trigger: surrundering
+      replace: surrendering
+      propagate_case: true
+      word: true
+    - trigger: surveilence
+      replace: surveillance
+      propagate_case: true
+      word: true
+    - trigger: surveill
+      replace: surveil
+      propagate_case: true
+      word: true
+    - trigger: surveyer
+      replace: surveyor
+      propagate_case: true
+      word: true
+    - trigger: surviver
+      replace: survivor
+      propagate_case: true
+      word: true
+    - trigger: survivers
+      replace: survivors
+      propagate_case: true
+      word: true
+    - trigger: survivied
+      replace: survived
+      propagate_case: true
+      word: true
+    - trigger: suseptable
+      replace: susceptible
+      propagate_case: true
+      word: true
+    - trigger: suseptible
+      replace: susceptible
+      propagate_case: true
+      word: true
+    - trigger: suspention
+      replace: suspension
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          SW                          #
+    # ---------------------------------------------------- #
+    - trigger: swaer
+      replace: swear
+      propagate_case: true
+      word: true
+    - trigger: swaers
+      replace: swears
+      propagate_case: true
+      word: true
+    - trigger: swepth
+      replace: swept
+      propagate_case: true
+      word: true
+    - trigger: swiming
+      replace: swimming
+      propagate_case: true
+      word: true
+    # ---------------------------------------------------- #
+    #                          SY                          #
+    # ---------------------------------------------------- #
+    - trigger: syas
+      replace: says
+      propagate_case: true
+      word: true
+    - trigger: symetrical
+      replace: symmetrical
+      propagate_case: true
+      word: true
+    - trigger: symetrically
+      replace: symmetrically
+      propagate_case: true
+      word: true
+    - trigger: symetry
+      replace: symmetry
+      propagate_case: true
+      word: true
+    - trigger: symettric
+      replace: symmetric
+      propagate_case: true
+      word: true
+    - trigger: symmetral
+      replace: symmetric
+      propagate_case: true
+      word: true
+    - trigger: symmetricaly
+      replace: symmetrically
+      propagate_case: true
+      word: true
+    - trigger: synagouge
+      replace: synagogue
+      propagate_case: true
+      word: true
+    - trigger: syncronization
+      replace: synchronization
+      propagate_case: true
+      word: true
+    - trigger: synonomous
+      replace: synonymous
+      propagate_case: true
+      word: true
+    - trigger: synonymns
+      replace: synonyms
+      propagate_case: true
+      word: true
+    - trigger: synphony
+      replace: symphony
+      propagate_case: true
+      word: true
+    - trigger: syphyllis
+      replace: syphilis
+      propagate_case: true
+      word: true
+    - trigger: sypmtoms
+      replace: symptoms
+      propagate_case: true
+      word: true
+    - trigger: syrap
+      replace: syrup
+      propagate_case: true
+      word: true
+    - trigger: sysmatically
+      replace: systematically
+      propagate_case: true
+      word: true
+    - trigger: sytem
+      replace: system
+      propagate_case: true
+      word: true
+    - trigger: sytle
+      replace: style
+      propagate_case: true
+      word: true

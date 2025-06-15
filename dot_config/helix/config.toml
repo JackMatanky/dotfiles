@@ -1,0 +1,346 @@
+# --------------------------------------------------------------------
+# Filename: ~/dotfiles/helix/config.toml
+# Configuration file for Helix Editor
+# Documentation: https://docs.helix-editor.com/configuration.html
+# --------------------------------------------------------------------
+
+# >>> Theme <<<
+theme = "catppuccin_macchiato"
+
+# >>> Editor Settings <<<
+# --- General ---
+[editor]
+# Enable auto-completion suggestions
+auto-completion = true
+# Automatically format files on save
+auto-format = true
+# Display contextual info while editing
+auto-info = true
+# Automatically save files periodically
+auto-save = true
+# Show bufferline (tabs) always
+bufferline = "always"
+# Enable color modes
+color-modes = true
+# Replace words with completion suggestions
+completion-replace = true
+# Timeout for completion suggestions
+completion-timeout = 5
+# Trigger completion after 1 character
+completion-trigger-len = 1
+# Highlight the column of the cursor
+cursorcolumn = true
+# Highlight the current line
+cursorline = true
+# Use LF as the default line ending
+default-line-ending = "lf"
+# Minimum severity to show a diagnostic after the end of a line:
+end-of-line-diagnostics = "hint"
+# Timeout for idle actions
+idle-timeout = 5
+# Use hybrid indenting
+indent-heuristic = "hybrid"
+# Always insert a final newline in files
+insert-final-newline = true
+# Alphabet for jump labels
+jump-label-alphabet = "asdfghjklweruio"
+# Display relative line numbers
+line-number = "relative"
+# Enable middle-click paste
+middle-click-paste = true
+# Enable mouse support
+mouse = true
+# Preview completions during insert
+preview-completion-insert = true
+# Vertical rulers for guiding line length
+rulers = [
+    80,
+]
+# Number of lines to scroll at a time
+scroll-lines = 5
+# Number of lines of context when scrolling
+scrolloff = 5
+# Recommended text width
+text-width = 80
+# Use 24-bit true color
+true-color = true
+# Display undercurls for errors
+undercurl = true
+
+# --- Cursor Shape ---
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+# --- File Picker ---
+[editor.file-picker]
+# Show hidden files
+hidden = true
+# Follow symbolic links
+follow-symlinks = true
+# Remove duplicate links
+deduplicate-links = true
+# Show parent directories
+parents = true
+# Ignore files from `.ignore`
+ignore = true
+# Respect `.gitignore`
+git-ignore = true
+# Use global gitignore rules
+git-global = true
+# Use git exclude rules
+git-exclude = true
+# Max directory depth for file picker
+max-depth = 5
+
+# --- Gutter ---
+[editor.gutters]
+layout = [
+    "line-numbers",         # Display line numbers
+    "diagnostics",          # Show diagnostics (e.g., errors)
+    "diff",                 # Indicate file diffs
+]
+
+# --- Indent Guides ---
+[editor.indent-guides]
+character = "|"
+render = true
+skip-levels = 0
+
+# --- Inline Diagnostics ---
+[editor.inline-diagnostics]
+# Minimum severity to show a diagnostic on the primary cursor's line.
+# Note that `cursor-line` diagnostics are hidden in insert mode.
+cursor-line = "error"
+# Minimum severity to show a diagnostic on other lines:
+# other-lines = "error"
+
+# --- LSP Configuration ---
+[editor.lsp]
+# Automatically display signature help
+auto-signature-help = true
+# Show inline hints for types, parameters
+display-inlay-hints = true
+# Display LSP messages
+display-messages = true
+# Show signature documentation
+display-signature-help-docs = true
+# Enable LSP support
+enable = true
+# Include declarations in references
+goto-reference-include-declaration = true
+# Enable snippet support
+snippets = true
+
+# --- Search Settings ---
+[editor.search]
+smart-case = false
+
+# --- Smart Tab ---
+[editor.smart-tab]
+enable = true
+
+# --- Soft Wrap ---
+[editor.soft-wrap]
+enable = true
+# Maximum lines for wrapping
+max-wrap = 10
+max-indent-retain = 40
+
+# --- Statusline ---
+[editor.statusline]
+left = [
+    "mode",                         # Show current mode
+    "spinner",                      # Display spinner during background tasks
+    "version-control",              # Show version control status
+    "file-name",                    # Display file name
+    "file-modification-indicator",  # Indicator for unsaved changes
+]
+center = [
+    "workspace-diagnostics",# Show workspace diagnostics summary
+    "spacer",               # Add spacing
+]
+right = [
+    "primary-selection-length", # Length of selected text
+    "spacer",                   # Add spacing
+    "register",                 # Show current register
+    "spacer",                   # Add spacing
+    "position",                 # Cursor position
+    "separator",                # Separator character
+    "total-line-numbers",       # Total number of lines in file
+    "separator",                # Separator character
+    "position-percentage",      # Percentage through the file
+    "file-type",                # File type (e.g., Markdown, Python)
+    "file-encoding",            # File encoding (e.g., UTF-8)
+    "file-line-ending",         # Line ending (e.g., LF, CRLF)
+]
+separator = ":"
+
+mode.insert = "INSERT"
+mode.normal = "NORMAL"
+mode.select = "SELECT"
+
+# >>> Keybindings <<<
+
+# --- Normal Mode ---
+[keys.normal]
+# Escape key: Collapse all selections and keep the primary selection
+esc = [
+    "collapse_selection",
+    "keep_primary_selection",
+]
+
+# Enter key: Align the view to center on the current line and move to the next word
+ret = [
+    "align_view_center",
+    "goto_word",
+]
+
+# Shift + Tab: Switch to the previous buffer
+S-tab = [":bp"]
+
+# Tab: Switch to the next buffer
+tab = [":bn"]
+
+# Shift + S: Add surrounding characters (e.g., quotes)
+S = ["surround_add"]
+
+# Arrow key replacements for movement:
+h = [
+    "move_char_left",
+    "align_view_center",
+]
+j = [
+    "move_line_down",
+    "align_view_center",
+]
+k = [
+    "move_line_up",
+    "align_view_center",
+]
+l = [
+    "move_char_right",
+    "align_view_center",
+]
+
+# Ctrl + K: Move a line up while preserving its selection and content
+C-k = [
+    "extend_to_line_bounds",
+    "delete_selection",
+    "move_line_up",
+    "paste_before",
+]
+
+# Ctrl + J: Move a line down while preserving its selection and content
+C-j = [
+    "extend_to_line_bounds",
+    "delete_selection",
+    "move_line_down",
+    "paste_before",
+]
+
+# Ctrl + B: Jump to the start of the current line
+C-b = ["goto_line_start"]
+
+# Ctrl + E: Jump to the end of the current line
+C-e = ["goto_line_end"]
+
+# Asterisk: Highlight the current selection and search for it in the document
+"*" = [
+    "move_prev_word_start",
+    "move_next_word_end",
+    "search_selection",
+]
+
+# Alt + H: Extend the selection to the start of the parent node in the syntax tree
+A-h = ["extend_parent_node_start"]
+
+# Alt + L: Extend the selection to the end of the parent node in the syntax tree
+A-l = ["extend_parent_node_end"]
+
+[keys.normal.space]
+# Space + ,: Save, append a comma, and navigate backward
+"," = [
+    "save_selection",          # Save the current selection
+    "goto_line_end",           # Move the cursor to the end of the line
+    ":append-output echo ','", # Append a comma to the output
+    "collapse_selection",      # Collapse the selection
+    "delete_selection",        # Delete the selected text
+    "jump_backward",           # Jump backward
+]
+
+# Space + ;: Save, append a semicolon, and navigate backward
+";" = [
+    "save_selection",          # Save the current selection
+    "goto_line_end",           # Move the cursor to the end of the line
+    ":append-output echo ';'", # Append a semicolon to the output
+    "collapse_selection",      # Collapse the selection
+    "delete_selection",        # Delete the selected text
+    "jump_backward",           # Jump backward
+]
+
+# Space + T: Toggle various settings
+[keys.normal.space.t]
+a = ":toggle-option auto-completion" # Toggle auto-completion
+s = ":toggle-option auto-save"       # Toggle auto-save
+f = ":toggle-option auto-format"     # Toggle auto-formatting
+h = ":toggle-option lsp.display-inlay-hints" # Toggle inlay hints from LSP
+l = ":toggle-option lsp.enable"      # Toggle LSP support
+
+# Space + C: Open configuration-related files or reload settings
+[keys.normal.space.c]
+l = ":o ~/.config/helix/languages.toml" # Open the language configuration file
+o = ":config-open"                      # Open the general configuration file
+r = [
+    ":w",                               # Save the current file
+    ":config-reload",                   # Reload the configuration
+    ":reload-all",                      # Reload all buffers
+]
+
+# --- Insert Mode ---
+[keys.insert]
+# Alt + J: Move a line down while in insert mode
+A-j = [
+    "normal_mode",             # Switch to normal mode
+    "extend_to_line_bounds",   # Extend the selection to the line boundaries
+    "delete_selection",        # Delete the selected line
+    "move_line_down",          # Move the line down
+    "paste_before",            # Paste the line before the cursor
+    "insert_mode",             # Return to insert mode
+]
+
+# Alt + K: Move a line up while in insert mode
+A-k = [
+    "normal_mode",             # Switch to normal mode
+    "extend_to_line_bounds",   # Extend the selection to the line boundaries
+    "delete_selection",        # Delete the selected line
+    "move_line_up",            # Move the line up
+    "paste_before",            # Paste the line before the cursor
+    "insert_mode",             # Return to insert mode
+]
+
+# Ctrl + B/E/H/J/K/L: Navigate or align text in insert mode
+C-b = ["insert_at_line_start", "align_view_center"]  # Move to line start and align
+C-e = ["insert_at_line_end", "align_view_center"]    # Move to line end and align
+C-h = ["move_char_left", "align_view_center"]        # Move left
+C-j = ["move_line_down", "align_view_center"]        # Move down
+C-k = ["move_line_up", "align_view_center"]          # Move up
+C-l = ["move_char_right", "align_view_center"]       # Move right
+
+# --- Select Mode ---
+[keys.select]
+pageup = ["half_page_up"]
+pagedown = ["half_page_down"]
+"C-u" = ["half_page_up"]
+"C-d" = ["half_page_down"]
+esc = ["collapse_selection", "normal_mode"] # Exit select mode and collapse selections
+c = ["trim_selections", "change_selection"] # Trim selections and change text
+";" = ["flip_selections"]
+"," = ["repeat_last_motion"]
+
+[keys.select."]"]
+"]" = ["goto_prev_paragraph"]
+
+[keys.select."["]
+"[" = ["goto_next_paragraph"]

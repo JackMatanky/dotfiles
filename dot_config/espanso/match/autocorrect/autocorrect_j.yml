@@ -1,0 +1,89 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- J ---
+    # ----------
+    - trigger: Janurary
+      replace: January
+      propagate_case: true
+      word: true
+    - trigger: Januray
+      replace: January
+      propagate_case: true
+      word: true
+    - trigger: Japanes
+      replace: Japanese
+      propagate_case: true
+      word: true
+    - trigger: jaques
+      replace: jacques
+      propagate_case: true
+      word: true
+    - trigger: jeapardy
+      replace: jeopardy
+      propagate_case: true
+      word: true
+    - trigger: jewllery
+      replace: jewellery
+      propagate_case: true
+      word: true
+    - trigger: Johanine
+      replace: Johannine
+      propagate_case: true
+      word: true
+    - trigger: jorunal
+      replace: journal
+      propagate_case: true
+      word: true
+    - trigger: Jospeh
+      replace: Joseph
+      propagate_case: true
+      word: true
+    - trigger: jouney
+      replace: journey
+      propagate_case: true
+      word: true
+    - trigger: journied
+      replace: journeyed
+      propagate_case: true
+      word: true
+    - trigger: journies
+      replace: journeys
+      propagate_case: true
+      word: true
+    - trigger: jstu
+      replace: just
+      propagate_case: true
+      word: true
+    - trigger: jsut
+      replace: just
+      propagate_case: true
+      word: true
+    - trigger: Juadaism
+      replace: Judaism
+      propagate_case: true
+      word: true
+    - trigger: Juadism
+      replace: Judaism
+      propagate_case: true
+      word: true
+    - trigger: judical
+      replace: judicial
+      propagate_case: true
+      word: true
+    - trigger: judisuary
+      replace: judiciary
+      propagate_case: true
+      word: true
+    - trigger: juducial
+      replace: judicial
+      propagate_case: true
+      word: true
+    - trigger: juristiction
+      replace: jurisdiction
+      propagate_case: true
+      word: true
+    - trigger: juristictions
+      replace: jurisdictions
+      propagate_case: true
+      word: true

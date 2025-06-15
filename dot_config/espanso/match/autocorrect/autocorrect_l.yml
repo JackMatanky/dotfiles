@@ -1,0 +1,313 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- L ---
+    # ----------
+    - trigger: labatory
+      replace: "lavatory\x2C\x20laboratory"
+      propagate_case: true
+      word: true
+    - trigger: labled
+      replace: "labelled\x2C\x20labeled"
+      propagate_case: true
+      word: true
+    - trigger: labratory
+      replace: laboratory
+      propagate_case: true
+      word: true
+    - trigger: laguage
+      replace: language
+      propagate_case: true
+      word: true
+    - trigger: laguages
+      replace: languages
+      propagate_case: true
+      word: true
+    - trigger: larg
+      replace: large
+      propagate_case: true
+      word: true
+    - trigger: largst
+      replace: largest
+      propagate_case: true
+      word: true
+    - trigger: larrry
+      replace: larry
+      propagate_case: true
+      word: true
+    - trigger: lastr
+      replace: last
+      propagate_case: true
+      word: true
+    - trigger: lattitude
+      replace: latitude
+      propagate_case: true
+      word: true
+    - trigger: launchs
+      replace: "launch\x2C\x20launches"
+      propagate_case: true
+      word: true
+    - trigger: launhed
+      replace: launched
+      propagate_case: true
+      word: true
+    - trigger: lavae
+      replace: larvae
+      propagate_case: true
+      word: true
+    - trigger: layed
+      replace: laid
+      propagate_case: true
+      word: true
+    - trigger: lazyness
+      replace: laziness
+      propagate_case: true
+      word: true
+    - trigger: leage
+      replace: league
+      propagate_case: true
+      word: true
+    - trigger: leanr
+      replace: "lean\x2C\x20learn\x2C\x20leaner"
+      propagate_case: true
+      word: true
+    - trigger: leathal
+      replace: lethal
+      propagate_case: true
+      word: true
+    - trigger: lefted
+      replace: left
+      propagate_case: true
+      word: true
+    - trigger: legitamate
+      replace: legitimate
+      propagate_case: true
+      word: true
+    - trigger: legitmate
+      replace: legitimate
+      propagate_case: true
+      word: true
+    - trigger: leibnitz
+      replace: leibniz
+      propagate_case: true
+      word: true
+    - trigger: lenght
+      replace: length
+      propagate_case: true
+      word: true
+    - trigger: leran
+      replace: learn
+      propagate_case: true
+      word: true
+    - trigger: lerans
+      replace: learns
+      propagate_case: true
+      word: true
+    - trigger: leutenant
+      replace: lieutenant
+      propagate_case: true
+      word: true
+    - trigger: levetate
+      replace: levitate
+      propagate_case: true
+      word: true
+    - trigger: levetated
+      replace: levitated
+      propagate_case: true
+      word: true
+    - trigger: levetates
+      replace: levitates
+      propagate_case: true
+      word: true
+    - trigger: levetating
+      replace: levitating
+      propagate_case: true
+      word: true
+    - trigger: levle
+      replace: level
+      propagate_case: true
+      word: true
+    - trigger: liasion
+      replace: liaison
+      propagate_case: true
+      word: true
+    - trigger: liason
+      replace: liaison
+      propagate_case: true
+      word: true
+    - trigger: liasons
+      replace: liaisons
+      propagate_case: true
+      word: true
+    - trigger: libary
+      replace: library
+      propagate_case: true
+      word: true
+    - trigger: libell
+      replace: libel
+      propagate_case: true
+      word: true
+    - trigger: libguistic
+      replace: linguistic
+      propagate_case: true
+      word: true
+    - trigger: libguistics
+      replace: linguistics
+      propagate_case: true
+      word: true
+    - trigger: libitarianisn
+      replace: libertarianism
+      propagate_case: true
+      word: true
+    - trigger: lible
+      replace: "libel\x2C\x20liable"
+      propagate_case: true
+      word: true
+    - trigger: lieing
+      replace: lying
+      propagate_case: true
+      word: true
+    - trigger: liek
+      replace: like
+      propagate_case: true
+      word: true
+    - trigger: liekd
+      replace: liked
+      propagate_case: true
+      word: true
+    - trigger: liesure
+      replace: leisure
+      propagate_case: true
+      word: true
+    - trigger: lieuenant
+      replace: lieutenant
+      propagate_case: true
+      word: true
+    - trigger: lieved
+      replace: lived
+      propagate_case: true
+      word: true
+    - trigger: liftime
+      replace: lifetime
+      propagate_case: true
+      word: true
+    - trigger: lightyear
+      replace: "light\x20year"
+      propagate_case: true
+      word: true
+    - trigger: lightyears
+      replace: "light\x20years"
+      propagate_case: true
+      word: true
+    - trigger: likelyhood
+      replace: likelihood
+      propagate_case: true
+      word: true
+    - trigger: linnaena
+      replace: linnaean
+      propagate_case: true
+      word: true
+    - trigger: lippizaner
+      replace: lipizzaner
+      propagate_case: true
+      word: true
+    - trigger: liquify
+      replace: liquefy
+      propagate_case: true
+      word: true
+    - trigger: liscense
+      replace: "license\x2C\x20licence"
+      propagate_case: true
+      word: true
+    - trigger: lisence
+      replace: "license\x2C\x20licence"
+      propagate_case: true
+      word: true
+    - trigger: lisense
+      replace: "license\x2C\x20licence"
+      propagate_case: true
+      word: true
+    - trigger: listners
+      replace: listeners
+      propagate_case: true
+      word: true
+    - trigger: litature
+      replace: literature
+      propagate_case: true
+      word: true
+    - trigger: literaly
+      replace: literally
+      propagate_case: true
+      word: true
+    - trigger: literture
+      replace: literature
+      propagate_case: true
+      word: true
+    - trigger: littel
+      replace: little
+      propagate_case: true
+      word: true
+    - trigger: litterally
+      replace: literally
+      propagate_case: true
+      word: true
+    - trigger: liuke
+      replace: like
+      propagate_case: true
+      word: true
+    - trigger: livley
+      replace: lively
+      propagate_case: true
+      word: true
+    - trigger: lmits
+      replace: limits
+      propagate_case: true
+      word: true
+    - trigger: loev
+      replace: love
+      propagate_case: true
+      word: true
+    - trigger: lonelyness
+      replace: loneliness
+      propagate_case: true
+      word: true
+    - trigger: longitudonal
+      replace: longitudinal
+      propagate_case: true
+      word: true
+    - trigger: lonley
+      replace: lonely
+      propagate_case: true
+      word: true
+    - trigger: lonly
+      replace: "lonely\x2C\x20only"
+      propagate_case: true
+      word: true
+    - trigger: loosing
+      replace: losing
+      propagate_case: true
+      word: true
+    - trigger: lotharingen
+      replace: lothringen
+      propagate_case: true
+      word: true
+    - trigger: lsat
+      replace: last
+      propagate_case: true
+      word: true
+    - trigger: lukid
+      replace: likud
+      propagate_case: true
+      word: true
+    - trigger: lveo
+      replace: love
+      propagate_case: true
+      word: true
+    - trigger: lvoe
+      replace: love
+      propagate_case: true
+      word: true
+    - trigger: Lybia
+      replace: Libya
+      propagate_case: true
+      word: true

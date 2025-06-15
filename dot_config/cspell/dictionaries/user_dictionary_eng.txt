@@ -1,0 +1,18 @@
+# Custom Dictionary Words
+Dizengoff
+docstrings
+geocoder
+geocoordinate
+geoentities
+geospatial
+Geostatistical
+jackm
+Matanky
+moshav
+moshavim
+Pyenv
+Pyright
+venv
+virtualenv
+Nushell
+Atuin

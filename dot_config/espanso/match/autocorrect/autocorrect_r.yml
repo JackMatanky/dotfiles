@@ -1,0 +1,1153 @@
+# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+matches:
+    # ---------
+    # --- R ---
+    # ----------
+    - trigger: rabinnical
+      replace: rabbinical
+      propagate_case: true
+      word: true
+    - trigger: racaus
+      replace: raucous
+      propagate_case: true
+      word: true
+    - trigger: radiactive
+      replace: radioactive
+      propagate_case: true
+      word: true
+    - trigger: radify
+      replace: ratify
+      propagate_case: true
+      word: true
+    - trigger: raelly
+      replace: really
+      propagate_case: true
+      word: true
+    - trigger: rarified
+      replace: rarefied
+      propagate_case: true
+      word: true
+    - trigger: reaccurring
+      replace: recurring
+      propagate_case: true
+      word: true
+    - trigger: reacing
+      replace: reaching
+      propagate_case: true
+      word: true
+    - trigger: readmition
+      replace: readmission
+      propagate_case: true
+      word: true
+    - trigger: realitvely
+      replace: relatively
+      propagate_case: true
+      word: true
+    - trigger: realsitic
+      replace: realistic
+      propagate_case: true
+      word: true
+    - trigger: realtions
+      replace: relations
+      propagate_case: true
+      word: true
+    - trigger: realy
+      replace: really
+      propagate_case: true
+      word: true
+    - trigger: realyl
+      replace: really
+      propagate_case: true
+      word: true
+    - trigger: rearange
+      replace: rearrange
+      propagate_case: true
+      word: true
+    - trigger: rearangement
+      replace: rearrangement
+      propagate_case: true
+      word: true
+    - trigger: reasearch
+      replace: research
+      propagate_case: true
+      word: true
+    - trigger: rebiulding
+      replace: rebuilding
+      propagate_case: true
+      word: true
+    - trigger: rebllions
+      replace: rebellions
+      propagate_case: true
+      word: true
+    - trigger: rebounce
+      replace: rebound
+      propagate_case: true
+      word: true
+    - trigger: reacll
+      replace: recall
+      propagate_case: true
+      word: true
+    - trigger: reccomend
+      replace: recommend
+      propagate_case: true
+      word: true
+    - trigger: reccomendations
+      replace: recommendations
+      propagate_case: true
+      word: true
+    - trigger: reccomended
+      replace: recommended
+      propagate_case: true
+      word: true
+    - trigger: reccomending
+      replace: recommending
+      propagate_case: true
+      word: true
+    - trigger: reccommend
+      replace: recommend
+      propagate_case: true
+      word: true
+    - trigger: reccommended
+      replace: recommended
+      propagate_case: true
+      word: true
+    - trigger: reccommending
+      replace: recommending
+      propagate_case: true
+      word: true
+    - trigger: reccuring
+      replace: recurring
+      propagate_case: true
+      word: true
+    - trigger: receeded
+      replace: receded
+      propagate_case: true
+      word: true
+    - trigger: receeding
+      replace: receding
+      propagate_case: true
+      word: true
+    - trigger: receivedfrom
+      replace: "received\x20from"
+      propagate_case: true
+      word: true
+    - trigger: recepient
+      replace: recipient
+      propagate_case: true
+      word: true
+    - trigger: recepients
+      replace: recipients
+      propagate_case: true
+      word: true
+    - trigger: receving
+      replace: receiving
+      propagate_case: true
+      word: true
+    - trigger: rechargable
+      replace: rechargeable
+      propagate_case: true
+      word: true
+    - trigger: reched
+      replace: reached
+      propagate_case: true
+      word: true
+    - trigger: recide
+      replace: reside
+      propagate_case: true
+      word: true
+    - trigger: recided
+      replace: resided
+      propagate_case: true
+      word: true
+    - trigger: recident
+      replace: resident
+      propagate_case: true
+      word: true
+    - trigger: recidents
+      replace: residents
+      propagate_case: true
+      word: true
+    - trigger: reciding
+      replace: residing
+      propagate_case: true
+      word: true
+    - trigger: reciepents
+      replace: recipients
+      propagate_case: true
+      word: true
+    - trigger: reciept
+      replace: receipt
+      propagate_case: true
+      word: true
+    - trigger: recieve
+      replace: receive
+      propagate_case: true
+      word: true
+    - trigger: recieved
+      replace: received
+      propagate_case: true
+      word: true
+    - trigger: reciever
+      replace: receiver
+      propagate_case: true
+      word: true
+    - trigger: recievers
+      replace: receivers
+      propagate_case: true
+      word: true
+    - trigger: recieves
+      replace: receives
+      propagate_case: true
+      word: true
+    - trigger: recieving
+      replace: receiving
+      propagate_case: true
+      word: true
+    - trigger: recipiant
+      replace: recipient
+      propagate_case: true
+      word: true
+    - trigger: recipricol
+      replace: reciprocal
+      propagate_case: true
+      word: true
+    - trigger: recipricols
+      replace: reciprocals
+      propagate_case: true
+      word: true
+    - trigger: reciprocol
+      replace: reciprocal
+      propagate_case: true
+      word: true
+    - trigger: reciprocols
+      replace: reciprocals
+      propagate_case: true
+      word: true
+    - trigger: recipiants
+      replace: recipients
+      propagate_case: true
+      word: true
+    - trigger: recived
+      replace: received
+      propagate_case: true
+      word: true
+    - trigger: recivership
+      replace: receivership
+      propagate_case: true
+      word: true
+    - trigger: recogise
+      replace: recognise
+      propagate_case: true
+      word: true
+    - trigger: recogize
+      replace: recognize
+      propagate_case: true
+      word: true
+    - trigger: recomend
+      replace: recommend
+      propagate_case: true
+      word: true
+    - trigger: recomended
+      replace: recommended
+      propagate_case: true
+      word: true
+    - trigger: recomending
+      replace: recommending
+      propagate_case: true
+      word: true
+    - trigger: recomends
+      replace: recommends
+      propagate_case: true
+      word: true
+    - trigger: recommedations
+      replace: recommendations
+      propagate_case: true
+      word: true
+    - trigger: recompence
+      replace: recompense
+      propagate_case: true
+      word: true
+    - trigger: reconaissance
+      replace: reconnaissance
+      propagate_case: true
+      word: true
+    - trigger: reconcilation
+      replace: reconciliation
+      propagate_case: true
+      word: true
+    - trigger: reconized
+      replace: recognized
+      propagate_case: true
+      word: true
+    - trigger: reconnaisance
+      replace: reconnaissance
+      propagate_case: true
+      word: true
+    - trigger: reconnaissence
+      replace: reconnaissance
+      propagate_case: true
+      word: true
+    - trigger: recontructed
+      replace: reconstructed
+      propagate_case: true
+      word: true
+    - trigger: recordproducer
+      replace: "record\x20producer"
+      propagate_case: true
+      word: true
+    - trigger: recquired
+      replace: required
+      propagate_case: true
+      word: true
+    - trigger: recrational
+      replace: recreational
+      propagate_case: true
+      word: true
+    - trigger: recrod
+      replace: record
+      propagate_case: true
+      word: true
+    - trigger: recuiting
+      replace: recruiting
+      propagate_case: true
+      word: true
+    - trigger: recuring
+      replace: recurring
+      propagate_case: true
+      word: true
+    - trigger: recurrance
+      replace: recurrence
+      propagate_case: true
+      word: true
+    - trigger: rediculous
+      replace: ridiculous
+      propagate_case: true
+      word: true
+    - trigger: reedeming
+      replace: redeeming
+      propagate_case: true
+      word: true
+    - trigger: reenforced
+      replace: reinforced
+      propagate_case: true
+      word: true
+    - trigger: refect
+      replace: reflect
+      propagate_case: true
+      word: true
+    - trigger: refedendum
+      replace: referendum
+      propagate_case: true
+      word: true
+    - trigger: referal
+      replace: referral
+      propagate_case: true
+      word: true
+    - trigger: referece
+      replace: reference
+      propagate_case: true
+      word: true
+    - trigger: refereces
+      replace: references
+      propagate_case: true
+      word: true
+    - trigger: refered
+      replace: referred
+      propagate_case: true
+      word: true
+    - trigger: referemce
+      replace: reference
+      propagate_case: true
+      word: true
+    - trigger: referemces
+      replace: references
+      propagate_case: true
+      word: true
+    - trigger: referencs
+      replace: references
+      propagate_case: true
+      word: true
+    - trigger: referenece
+      replace: reference
+      propagate_case: true
+      word: true
+    - trigger: refereneced
+      replace: referenced
+      propagate_case: true
+      word: true
+    - trigger: refereneces
+      replace: references
+      propagate_case: true
+      word: true
+    - trigger: referiang
+      replace: referring
+      propagate_case: true
+      word: true
+    - trigger: refering
+      replace: referring
+      propagate_case: true
+      word: true
+    - trigger: refernce
+      replace: "reference\x2C\x20references"
+      propagate_case: true
+      word: true
+    - trigger: refernces
+      replace: references
+      propagate_case: true
+      word: true
+    - trigger: referrence
+      replace: reference
+      propagate_case: true
+      word: true
+    - trigger: referrences
+      replace: references
+      propagate_case: true
+      word: true
+    - trigger: referrs
+      replace: refers
+      propagate_case: true
+      word: true
+    - trigger: reffered
+      replace: referred
+      propagate_case: true
+      word: true
+    - trigger: refference
+      replace: reference
+      propagate_case: true
+      word: true
+    - trigger: reffering
+      replace: referring
+      propagate_case: true
+      word: true
+    - trigger: refrence
+      replace: reference
+      propagate_case: true
+      word: true
+    - trigger: refrences
+      replace: references
+      propagate_case: true
+      word: true
+    - trigger: refrers
+      replace: refers
+      propagate_case: true
+      word: true
+    - trigger: refridgeration
+      replace: refrigeration
+      propagate_case: true
+      word: true
+    - trigger: refridgerator
+      replace: refrigerator
+      propagate_case: true
+      word: true
+    - trigger: refromist
+      replace: reformist
+      propagate_case: true
+      word: true
+    - trigger: refusla
+      replace: refusal
+      propagate_case: true
+      word: true
+    - trigger: regardes
+      replace: regards
+      propagate_case: true
+      word: true
+    - trigger: regluar
+      replace: regular
+      propagate_case: true
+      word: true
+    - trigger: reguarly
+      replace: regularly
+      propagate_case: true
+      word: true
+    - trigger: regulaion
+      replace: regulation
+      propagate_case: true
+      word: true
+    - trigger: regulaotrs
+      replace: regulators
+      propagate_case: true
+      word: true
+    - trigger: regularily
+      replace: regularly
+      propagate_case: true
+      word: true
+    - trigger: rehersal
+      replace: rehearsal
+      propagate_case: true
+      word: true
+    - trigger: reicarnation
+      replace: reincarnation
+      propagate_case: true
+      word: true
+    - trigger: reigining
+      replace: reigning
+      propagate_case: true
+      word: true
+    - trigger: reknown
+      replace: renown
+      propagate_case: true
+      word: true
+    - trigger: reknowned
+      replace: renowned
+      propagate_case: true
+      word: true
+    - trigger: rela
+      replace: real
+      propagate_case: true
+      word: true
+    - trigger: relaly
+      replace: really
+      propagate_case: true
+      word: true
+    - trigger: relatiopnship
+      replace: relationship
+      propagate_case: true
+      word: true
+    - trigger: relativly
+      replace: relatively
+      propagate_case: true
+      word: true
+    - trigger: relected
+      replace: reelected
+      propagate_case: true
+      word: true
+    - trigger: releive
+      replace: relieve
+      propagate_case: true
+      word: true
+    - trigger: releived
+      replace: relieved
+      propagate_case: true
+      word: true
+    - trigger: releiver
+      replace: reliever
+      propagate_case: true
+      word: true
+    - trigger: releses
+      replace: releases
+      propagate_case: true
+      word: true
+    - trigger: relevence
+      replace: relevance
+      propagate_case: true
+      word: true
+    - trigger: relevent
+      replace: relevant
+      propagate_case: true
+      word: true
+    - trigger: reliablity
+      replace: reliability
+      propagate_case: true
+      word: true
+    - trigger: relient
+      replace: reliant
+      propagate_case: true
+      word: true
+    - trigger: religeous
+      replace: religious
+      propagate_case: true
+      word: true
+    - trigger: religous
+      replace: religious
+      propagate_case: true
+      word: true
+    - trigger: religously
+      replace: religiously
+      propagate_case: true
+      word: true
+    - trigger: relinqushment
+      replace: relinquishment
+      propagate_case: true
+      word: true
+    - trigger: relitavely
+      replace: relatively
+      propagate_case: true
+      word: true
+    - trigger: relized
+      replace: "realised\x2C\x20realized"
+      propagate_case: true
+      word: true
+    - trigger: relpacement
+      replace: replacement
+      propagate_case: true
+      word: true
+    - trigger: remaing
+      replace: remaining
+      propagate_case: true
+      word: true
+    - trigger: remeber
+      replace: remember
+      propagate_case: true
+      word: true
+    - trigger: rememberable
+      replace: memorable
+      propagate_case: true
+      word: true
+    - trigger: rememberance
+      replace: remembrance
+      propagate_case: true
+      word: true
+    - trigger: remembrence
+      replace: remembrance
+      propagate_case: true
+      word: true
+    - trigger: remenant
+      replace: remnant
+      propagate_case: true
+      word: true
+    - trigger: remenicent
+      replace: reminiscent
+      propagate_case: true
+      word: true
+    - trigger: reminent
+      replace: remnant
+      propagate_case: true
+      word: true
+    - trigger: reminescent
+      replace: reminiscent
+      propagate_case: true
+      word: true
+    - trigger: reminscent
+      replace: reminiscent
+      propagate_case: true
+      word: true
+    - trigger: reminsicent
+      replace: reminiscent
+      propagate_case: true
+      word: true
+    - trigger: rendevous
+      replace: rendezvous
+      propagate_case: true
+      word: true
+    - trigger: rendezous
+      replace: rendezvous
+      propagate_case: true
+      word: true
+    - trigger: renedered
+      replace: rende
+      propagate_case: true
+      word: true
+    - trigger: renewl
+      replace: renewal
+      propagate_case: true
+      word: true
+    - trigger: rennovate
+      replace: renovate
+      propagate_case: true
+      word: true
+    - trigger: rennovated
+      replace: renovated
+      propagate_case: true
+      word: true
+    - trigger: rennovating
+      replace: renovating
+      propagate_case: true
+      word: true
+    - trigger: rennovation
+      replace: renovation
+      propagate_case: true
+      word: true
+    - trigger: rentors
+      replace: renters
+      propagate_case: true
+      word: true
+    - trigger: reoccurrence
+      replace: recurrence
+      propagate_case: true
+      word: true
+    - trigger: reorganision
+      replace: reorganisation
+      propagate_case: true
+      word: true
+    - trigger: repatition
+      replace: "repetition\x2C\x20repartition"
+      propagate_case: true
+      word: true
+    - trigger: repblic
+      replace: republic
+      propagate_case: true
+      word: true
+    - trigger: repblican
+      replace: republican
+      propagate_case: true
+      word: true
+    - trigger: repblicans
+      replace: republicans
+      propagate_case: true
+      word: true
+    - trigger: repblics
+      replace: republics
+      propagate_case: true
+      word: true
+    - trigger: repectively
+      replace: respectively
+      propagate_case: true
+      word: true
+    - trigger: repeition
+      replace: repetition
+      propagate_case: true
+      word: true
+    - trigger: repentence
+      replace: repentance
+      propagate_case: true
+      word: true
+    - trigger: repentent
+      replace: repentant
+      propagate_case: true
+      word: true
+    - trigger: repeteadly
+      replace: repeatedly
+      propagate_case: true
+      word: true
+    - trigger: repetion
+      replace: repetition
+      propagate_case: true
+      word: true
+    - trigger: repid
+      replace: rapid
+      propagate_case: true
+      word: true
+    - trigger: reponse
+      replace: response
+      propagate_case: true
+      word: true
+    - trigger: reponsible
+      replace: responsible
+      propagate_case: true
+      word: true
+    - trigger: reportadly
+      replace: reportedly
+      propagate_case: true
+      word: true
+    - trigger: represantative
+      replace: representative
+      propagate_case: true
+      word: true
+    - trigger: representive
+      replace: representative
+      propagate_case: true
+      word: true
+    - trigger: representives
+      replace: representatives
+      propagate_case: true
+      word: true
+    - trigger: reproducable
+      replace: reproducible
+      propagate_case: true
+      word: true
+    - trigger: reprtoire
+      replace: repertoire
+      propagate_case: true
+      word: true
+    - trigger: repsectively
+      replace: respectively
+      propagate_case: true
+      word: true
+    - trigger: reptition
+      replace: repetition
+      propagate_case: true
+      word: true
+    - trigger: repubic
+      replace: republic
+      propagate_case: true
+      word: true
+    - trigger: repubican
+      replace: republican
+      propagate_case: true
+      word: true
+    - trigger: repubicans
+      replace: republicans
+      propagate_case: true
+      word: true
+    - trigger: repubics
+      replace: republics
+      propagate_case: true
+      word: true
+    - trigger: republi
+      replace: republic
+      propagate_case: true
+      word: true
+    - trigger: republian
+      replace: republican
+      propagate_case: true
+      word: true
+    - trigger: republians
+      replace: republicans
+      propagate_case: true
+      word: true
+    - trigger: republis
+      replace: republics
+      propagate_case: true
+      word: true
+    - trigger: repulic
+      replace: republic
+      propagate_case: true
+      word: true
+    - trigger: repulican
+      replace: republican
+      propagate_case: true
+      word: true
+    - trigger: repulicans
+      replace: republicans
+      propagate_case: true
+      word: true
+    - trigger: repulics
+      replace: republics
+      propagate_case: true
+      word: true
+    - trigger: requirment
+      replace: requirement
+      propagate_case: true
+      word: true
+    - trigger: requred
+      replace: required
+      propagate_case: true
+      word: true
+    - trigger: resaurant
+      replace: restaurant
+      propagate_case: true
+      word: true
+    - trigger: resembelance
+      replace: resemblance
+      propagate_case: true
+      word: true
+    - trigger: resembes
+      replace: resembles
+      propagate_case: true
+      word: true
+    - trigger: resemblence
+      replace: resemblance
+      propagate_case: true
+      word: true
+    - trigger: resevoir
+      replace: reservoir
+      propagate_case: true
+      word: true
+    - trigger: residental
+      replace: residential
+      propagate_case: true
+      word: true
+    - trigger: resignement
+      replace: resignment
+      propagate_case: true
+      word: true
+    - trigger: resistable
+      replace: resistible
+      propagate_case: true
+      word: true
+    - trigger: resistence
+      replace: resistance
+      propagate_case: true
+      word: true
+    - trigger: resistent
+      replace: resistant
+      propagate_case: true
+      word: true
+    - trigger: respectivly
+      replace: respectively
+      propagate_case: true
+      word: true
+    - trigger: responce
+      replace: response
+      propagate_case: true
+      word: true
+    - trigger: responibilities
+      replace: responsibilities
+      propagate_case: true
+      word: true
+    - trigger: responisble
+      replace: responsible
+      propagate_case: true
+      word: true
+    - trigger: responnsibilty
+      replace: responsibility
+      propagate_case: true
+      word: true
+    - trigger: responsability
+      replace: responsibility
+      propagate_case: true
+      word: true
+    - trigger: responsibile
+      replace: responsible
+      propagate_case: true
+      word: true
+    - trigger: responsibilites
+      replace: responsibilities
+      propagate_case: true
+      word: true
+    - trigger: responsiblities
+      replace: responsibilities
+      propagate_case: true
+      word: true
+    - trigger: responsiblity
+      replace: responsibility
+      propagate_case: true
+      word: true
+    - trigger: ressemblance
+      replace: resemblance
+      propagate_case: true
+      word: true
+    - trigger: ressemble
+      replace: resemble
+      propagate_case: true
+      word: true
+    - trigger: ressembled
+      replace: resembled
+      propagate_case: true
+      word: true
+    - trigger: ressemblence
+      replace: resemblance
+      propagate_case: true
+      word: true
+    - trigger: ressembling
+      replace: resembling
+      propagate_case: true
+      word: true
+    - trigger: resssurecting
+      replace: resurrecting
+      propagate_case: true
+      word: true
+    - trigger: ressurect
+      replace: resurrect
+      propagate_case: true
+      word: true
+    - trigger: ressurected
+      replace: resurrected
+      propagate_case: true
+      word: true
+    - trigger: ressurection
+      replace: resurrection
+      propagate_case: true
+      word: true
+    - trigger: ressurrection
+      replace: resurrection
+      propagate_case: true
+      word: true
+    - trigger: restarant
+      replace: restaurant
+      propagate_case: true
+      word: true
+    - trigger: restarants
+      replace: restaurants
+      propagate_case: true
+      word: true
+    - trigger: restaraunt
+      replace: restaurant
+      propagate_case: true
+      word: true
+    - trigger: restaraunteur
+      replace: restaurateur
+      propagate_case: true
+      word: true
+    - trigger: restaraunteurs
+      replace: restaurateurs
+      propagate_case: true
+      word: true
+    - trigger: restaraunts
+      replace: restaurants
+      propagate_case: true
+      word: true
+    - trigger: restauranteurs
+      replace: restaurateurs
+      propagate_case: true
+      word: true
+    - trigger: restauration
+      replace: restoration
+      propagate_case: true
+      word: true
+    - trigger: restauraunt
+      replace: restaurant
+      propagate_case: true
+      word: true
+    - trigger: resteraunt
+      replace: restaurant
+      propagate_case: true
+      word: true
+    - trigger: resteraunts
+      replace: restaurants
+      propagate_case: true
+      word: true
+    - trigger: resticted
+      replace: restricted
+      propagate_case: true
+      word: true
+    - trigger: restraunt
+      replace: "restraint\x2C\x20restaurant"
+      propagate_case: true
+      word: true
+    - trigger: resturant
+      replace: restaurant
+      propagate_case: true
+      word: true
+    - trigger: resturants
+      replace: restaurants
+      propagate_case: true
+      word: true
+    - trigger: resturaunt
+      replace: restaurant
+      propagate_case: true
+      word: true
+    - trigger: resturaunts
+      replace: restaurants
+      propagate_case: true
+      word: true
+    - trigger: resurecting
+      replace: resurrecting
+      propagate_case: true
+      word: true
+    - trigger: retalitated
+      replace: retaliated
+      propagate_case: true
+      word: true
+    - trigger: retalitation
+      replace: retaliation
+      propagate_case: true
+      word: true
+    - trigger: retreive
+      replace: retrieve
+      propagate_case: true
+      word: true
+    - trigger: returnd
+      replace: returned
+      propagate_case: true
+      word: true
+    - trigger: revaluated
+      replace: reevaluated
+      propagate_case: true
+      word: true
+    - trigger: reveiw
+      replace: review
+      propagate_case: true
+      word: true
+    - trigger: reveral
+      replace: reversal
+      propagate_case: true
+      word: true
+    - trigger: reversable
+      replace: reversible
+      propagate_case: true
+      word: true
+    - trigger: revolutionar
+      replace: revolutionary
+      propagate_case: true
+      word: true
+    - trigger: rewitten
+      replace: rewritten
+      propagate_case: true
+      word: true
+    - trigger: rewriet
+      replace: rewrite
+      propagate_case: true
+      word: true
+    - trigger: rference
+      replace: reference
+      propagate_case: true
+      word: true
+    - trigger: rferences
+      replace: references
+      propagate_case: true
+      word: true
+    - trigger: rhymme
+      replace: rhyme
+      propagate_case: true
+      word: true
+    - trigger: rhythem
+      replace: rhythm
+      propagate_case: true
+      word: true
+    - trigger: rhythim
+      replace: rhythm
+      propagate_case: true
+      word: true
+    - trigger: rhytmic
+      replace: rhythmic
+      propagate_case: true
+      word: true
+    - trigger: rigeur
+      replace: "rigueur\x2C\x20rigour\x2C\x20rigor"
+      propagate_case: true
+      word: true
+    - trigger: rigourous
+      replace: rigorous
+      propagate_case: true
+      word: true
+    - trigger: rininging
+      replace: ringing
+      propagate_case: true
+      word: true
+    - trigger: rised
+      replace: "raised\x2C\x20rose"
+      propagate_case: true
+      word: true
+    - trigger: Rockerfeller
+      replace: Rockefeller
+      propagate_case: true
+      word: true
+    - trigger: rococco
+      replace: rococo
+      propagate_case: true
+      word: true
+    - trigger: rocord
+      replace: record
+      propagate_case: true
+      word: true
+    - trigger: roomate
+      replace: roommate
+      propagate_case: true
+      word: true
+    - trigger: rougly
+      replace: roughly
+      propagate_case: true
+      word: true
+    - trigger: rucuperate
+      replace: recuperate
+      propagate_case: true
+      word: true
+    - trigger: rudimentatry
+      replace: rudimentary
+      propagate_case: true
+      word: true
+    - trigger: rulle
+      replace: rule
+      propagate_case: true
+      word: true
+    - trigger: runing
+      replace: running
+      propagate_case: true
+      word: true
+    - trigger: runnung
+      replace: running
+      propagate_case: true
+      word: true
+    - trigger: russina
+      replace: Russian
+      propagate_case: true
+      word: true
+    - trigger: Russion
+      replace: Russian
+      propagate_case: true
+      word: true
+    - trigger: rwite
+      replace: write
+      propagate_case: true
+      word: true
+    - trigger: rythem
+      replace: rhythm
+      propagate_case: true
+      word: true
+    - trigger: rythim
+      replace: rhythm
+      propagate_case: true
+      word: true
+    - trigger: rythm
+      replace: rhythm
+      propagate_case: true
+      word: true
+    - trigger: rythmic
+      replace: rhythmic
+      propagate_case: true
+      word: true
+    - trigger: rythyms
+      replace: rhythms
+      propagate_case: true
+      word: true

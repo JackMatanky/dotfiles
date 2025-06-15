@@ -1,0 +1,386 @@
+[
+  // --------------------------------------------
+  // General Tasks
+  // --------------------------------------------
+  // Replaces all curly single and double quotes in the current file with ASCII equivalents.
+  {
+    "label": "Replace Non-Standard Quotes",
+    "command": "open $ZED_FILE | str replace --all '‘' '\"' | str replace --all '’' '\"' | str replace --all '“' '\"' | str replace --all '”' '\"' | save --force $ZED_FILE",
+    "shell": {
+      "with_arguments": {
+        "program": "nu",
+        "args": ["--stdin"]
+      }
+    },
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always",
+    "hide": "on_success",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "show_summary": true,
+    "show_output": true,
+    "tags": ["format", "text"]
+    // Replaces curly quotes with straight quotes and saves file in-place using --force
+  },
+  // >>> Comment Diveder <<<
+  {
+    "label": "Insert Comment Divider: Main",
+    "command": "~/dotfiles/zed/scripts/comment-divider.sh --file $ZED_FILE --title '%%' --type main",
+    "prompt": {
+      "input": {
+        "placeholder": "Enter main header title",
+        "default": "Main Section"
+      }
+    },
+    "shell": {
+      "with_arguments": {
+        "program": "bash"
+      }
+    },
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always",
+    "hide": "on_success",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "show_summary": true,
+    "show_output": true,
+    "tags": ["divider", "comment", "main"]
+  },
+  {
+    "label": "Insert Comment Divider: Sub",
+    "command": "~/dotfiles/zed/scripts/comment-divider.sh --file $ZED_FILE --title '%%' --type sub",
+    "prompt": {
+      "input": {
+        "placeholder": "Enter subheader title",
+        "default": "Subsection"
+      }
+    },
+    "shell": {
+      "with_arguments": {
+        "program": "bash"
+      }
+    },
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always",
+    "hide": "on_success",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "show_summary": true,
+    "show_output": true,
+    "tags": ["divider", "comment", "sub"]
+  },
+
+  // --------------------------------------------
+  // >>> Python Virtual Environment & Setup <<<
+  // --------------------------------------------
+
+  // Creates a new virtual environment using uv + pyenv.
+  {
+    "label": "Create Virtual Environment",
+    "command": "uv",
+    "args": ["venv", "--python", "$(pyenv which python)"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always",
+    "tags": ["Python", "setup"]
+  },
+
+  // Installs only the project's core dependencies.
+  {
+    "label": "Install Core Dependencies",
+    "command": "uv",
+    "args": ["pip", "install", "-e", "."],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always",
+    "tags": ["Python", "setup"]
+  },
+
+  // Installs dev tools like linters, test runners, type checkers.
+  {
+    "label": "Install Dev Dependencies",
+    "command": "uv",
+    "args": ["pip", "install", "-e", ".[dev]"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always",
+    "tags": ["Python", "setup"]
+  },
+
+  // Installs optional documentation tools like Graphviz or pdoc.
+  {
+    "label": "Install Docs Dependencies",
+    "command": "uv",
+    "args": ["pip", "install", "-e", ".[docs]"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always",
+    "tags": ["Python", "setup"]
+  },
+
+  // Installs all optional dependency groups (dev + docs).
+  {
+    "label": "Full Setup (All Extras)",
+    "command": "uv",
+    "args": ["pip", "install", "-e", ".", "--all-extras"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always",
+    "tags": ["Python", "setup"]
+  },
+
+  // >>> Python Linting & Formatting <<<
+
+  {
+    "label": "Lint Code with Ruff",
+    "command": "ruff",
+    "args": ["check", "src", "tests", "notebooks"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always",
+    "hide": "on_success",
+    "tags": ["Python", "lint"]
+    // Runs Ruff on all code folders to report linting issues.
+  },
+  {
+    "label": "Format Code with Ruff",
+    "command": "ruff",
+    "args": ["format", "src", "tests", "notebooks"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always",
+    "hide": "on_success",
+    "tags": ["Python", "format"]
+    // Auto-formats code using Ruff's formatter.
+  },
+  {
+    "label": "Run Pre-commit Hooks",
+    "command": "pre-commit",
+    "args": ["run", "--all-files"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always",
+    "tags": ["Python", "lint", "format"]
+    // Runs all pre-commit hooks manually across the repo.
+  },
+
+  // >>> 🧪 Testing <<<
+
+  {
+    "label": "Run Tests with Pytest",
+    "command": "pytest",
+    "args": ["tests"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always",
+    "tags": ["Python", "test"]
+    // Runs all test files in the 'tests' directory.
+  },
+  {
+    "label": "Run Tests with Coverage",
+    "command": "bash",
+    "args": [
+      "-c",
+      "coverage run -m pytest && coverage report && coverage html"
+    ],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always",
+    "tags": ["Python", "test", "coverage"]
+    // Runs tests with coverage tracking and generates a report.
+  },
+
+  // >>> 🔍 Type Checking <<<
+
+  {
+    "label": "Type Check with BasedPyright",
+    "command": "basedpyright",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always",
+    "tags": ["Python", "typecheck"]
+    // Checks static types using BasedPyright.
+  },
+  {
+    "label": "Type Check with Pylyzer",
+    "command": "pylyzer",
+    "args": ["src"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always",
+    "tags": ["Python", "typecheck"]
+    // Type-checks your code using Pylyzer (Rust-based).
+  },
+
+  // >>> 📓 Jupytext & Notebooks <<<
+
+  {
+    "label": "Pair Notebooks with Jupytext",
+    "command": "jupytext",
+    "args": [
+      "--set-formats",
+      "ipynb,/_scripts//py:percent",
+      "notebooks/**/*.ipynb"
+    ],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["Python", "Jupytext", "notebooks"]
+    // Creates pairing between .ipynb and .py percent scripts.
+  },
+  {
+    "label": "Sync Notebooks to Py Scripts",
+    "command": "jupytext",
+    "args": ["--sync", "notebooks/**/*.ipynb"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["Python", "Jupytext", "notebooks"]
+    // Syncs latest changes from notebooks into paired .py files.
+  },
+  {
+    "label": "Launch Jupyter Notebook",
+    "command": "jupyter",
+    "args": ["notebook", "notebooks/"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always",
+    "tags": ["Python", "Jupytext", "notebooks"]
+    // Launches the Jupyter interface in the notebooks folder.
+  },
+
+  // >>> 📚 Documentation <<<
+
+  // Runs a custom script to generate ERD diagrams from Pydantic models.
+  {
+    "label": "Render ER Diagrams",
+    "command": ".venv/bin/python",
+    "args": ["docs/scripts/render_erds.py"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["Python", "ER Diagrams"]
+  },
+
+  // Runs a custom pdoc-based Markdown generator.
+  {
+    "label": "Generate Docs with pdoc",
+    "command": ".venv/bin/python",
+    "args": ["docs/scripts/render_docs.py"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["Python", "pdoc", "docs"]
+  },
+
+  // Uses pydoc-markdown to generate Markdown API docs.
+  {
+    "label": "Generate Docs with pydoc-markdown",
+    "command": "pydoc-markdown",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["Python", "pydoc-markdown", "docs"]
+  },
+
+  // >>> 🚀 Script Execution <<<
+
+  // Executes the main application script.
+  {
+    "label": "Run Main Script",
+    "command": ".venv/bin/python",
+    "args": ["src/main.py"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["Python", "run"]
+  },
+
+  // Runs the CLI entry point.
+  {
+    "label": "Run CLI Script",
+    "command": ".venv/bin/python",
+    "args": ["src/cli.py"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["Python", "run"]
+  },
+
+  // Executes a custom data processing pipeline script.
+  {
+    "label": "Run Data Pipeline",
+    "command": ".venv/bin/python",
+    "args": ["scripts/process_data.py"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["Python", "run"]
+  },
+
+  // >>> 🧼 Maintenance <<<
+
+  // Removes build and cache artifacts from the project.
+  {
+    "label": "Clean Project Artifacts",
+    "command": "rm",
+    "args": [
+      "-rf",
+      ".venv",
+      "__pycache__",
+      ".ruff_cache",
+      ".pytest_cache",
+      ".mypy_cache",
+      ".ipynb_checkpoints"
+    ],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["maintenance"]
+  },
+
+  // Removes all environment and build artifacts for a fresh reset.
+  {
+    "label": "Purge All Artifacts",
+    "command": "rm",
+    "args": [
+      "-rf",
+      ".venv",
+      "__pycache__",
+      ".pytest_cache",
+      "build",
+      "dist",
+      "*.egg-info",
+      ".coverage",
+      "coverage_html_report"
+    ],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["maintenance"]
+  },
+
+  // >>> 🐞 Debugging <<<
+
+  // Launches a debug session for the currently open file.
+  {
+    "label": "Debug Active Python File",
+    "adapter": "python",
+    "program": "$ZED_FILE",
+    "request": "launch",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["Python", "debug"]
+  },
+
+  // Launches debugger on src/main.py.
+  {
+    "label": "Debug Main Script",
+    "adapter": "python",
+    "program": "src/main.py",
+    "request": "launch",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["Python", "debug"]
+  },
+
+  // Launches debugger on CLI entry point.
+  {
+    "label": "Debug CLI Script",
+    "adapter": "python",
+    "program": "src/cli.py",
+    "request": "launch",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["Python", "debug"]
+  },
+
+  // Debugs the custom data pipeline processor.
+  {
+    "label": "Debug Data Pipeline Script",
+    "adapter": "python",
+    "program": "scripts/process_data.py",
+    "request": "launch",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["Python", "debug"]
+  },
+  {
+    "label": "Run Python Script with PYTHONPATH",
+    "command": "python",
+    "args": ["$ZED_FILE"],
+    "env": {
+      "PYTHONPATH": "$ZED_WORKTREE_ROOT/src"
+    },
+    "use_new_terminal": false
+  },
+  {
+    "label": "REPL: Python (direnv + .envrc)",
+    "command": "direnv",
+    "args": ["exec", ".", "python"],
+    "use_new_terminal": true
+  }
+]
