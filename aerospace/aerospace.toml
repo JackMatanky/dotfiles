@@ -137,6 +137,11 @@ run = 'move-node-to-workspace 6'
 if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace 7'
 
+# Terminal Emulator - Warp
+[[on-window-detected]]
+if.app-id = 'dev.warp.Warp-Stable'
+run = 'move-node-to-workspace 7'
+
 # Neovim GUI - Neovide
 [[on-window-detected]]
 if.app-id = 'com.neovide.neovide'
