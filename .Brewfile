@@ -266,6 +266,8 @@ if OS.mac?
   # ------------------- Terminal Emulators ------------------- #
   # Terminal emulator that uses platform-native UI and GPU acceleration
   cask 'ghostty'
+  # AI terminal
+  cask 'warp'
   # GPU-accelerated cross-platform terminal emulator and multiplexer
   cask 'wezterm'
 
