@@ -1,0 +1,70 @@
+# -----------------------------------------------------------------------------
+# Filename: ~/dotfiles/.gitignore
+# Description: Prevents Git from tracking system, environment, editor,
+#              and cache files
+# -----------------------------------------------------------------------------
+
+# -------------------------------------------------------- #
+#           Environments And Dependency Managers           #
+# -------------------------------------------------------- #
+
+ENV/
+env/
+.env
+env.bak/
+.env.bak/
+.envrc
+
+
+# -------------------------------------------------------- #
+#                     Python Artifacts                     #
+# -------------------------------------------------------- #
+
+# -------------- Python Virtual Environments ------------- #
+venv/
+venv.bak/
+.venv/
+.venv.bak/
+
+# ------------------ Bytecode And Cache ------------------ #
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+
+# --------------------- Build Outputs -------------------- #
+build/
+dist/
+.eggs/
+*.egg
+*.egg-info/
+wheels/
+
+# ----------------- Coverage And Testing ----------------- #
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+.tox/
+.nox/
+
+# ----------- Type Checking And Static Analysis ---------- #
+.pyre/
+.pytype/
+.ropeproject/
+.cache/
+
+# ----------------- Notebooks And IPython ---------------- #
+*.ipynb
+*.ipynb_checkpoints/
+.ipython/
+.jupyter/
+
+# -------------------------------------------------------- #
+#                     Editors And IDEs                     #
+# -------------------------------------------------------- #
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
