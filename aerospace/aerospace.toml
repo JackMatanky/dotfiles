@@ -1,3 +1,9 @@
+#------------------------------------------------------------------------------
+# Filename: ~/dotfiles/aerospace/aerospace.toml
+# Docs: https://github.com/nikitabobko/AeroSpace
+# Description: Window tiling manager
+#------------------------------------------------------------------------------
+
 after-startup-command = [
   # JankyBorders has a built-in detection of already running process,
   # so it won't be run twice on AeroSpace restart

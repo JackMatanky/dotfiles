@@ -1,0 +1,79 @@
+# #------------------------------------------------------------------------------
+# # Filename: ~/dotfiles/chezmoi/chezmoi.toml
+# # Docs: https://www.chezmoi.io
+# # Description: Secure cross-platform dotfiles manager
+# #------------------------------------------------------------------------------
+
+# # Where to find your source state (override default ~/.local/share/chezmoi)
+# # sourceDir = "~/dotfiles"
+
+# # Destination directory (defaults to $HOME)
+# # destDir = "~"
+
+# # ------------------------------------------------------------ #
+# #                        Git Integration                       #
+# # ------------------------------------------------------------ #
+# [git]
+# # Commit changes to the source state after any change
+# autoCommit = true
+
+# # Push changes to the source state after any change
+# autoPush = true
+
+# # Commit message template (lists changed files)
+# commitMessageTemplate = "chezmoi: apply changes {{ range .Actions }}{{ .Action }} {{ .RelPath }}; {{ end }}"
+
+# # ------------------------------------------------------------ #
+# #                       File Permissions                       #
+# # ------------------------------------------------------------ #
+# # https://www.chezmoi.io/reference/configuration-file/umask/
+# # File-creation permission mask (octal)
+# umask = 0o22
+
+# #--------------------------------------------------
+# # Diff and editor settings
+# #--------------------------------------------------
+# # Pager for diff and vault commands
+# pager = "less -R"
+# # Editor command for `chezmoi edit` (overrides $EDITOR)
+# # edit.command = ["code", "--wait"]
+
+# #--------------------------------------------------
+# # Template processing
+# #--------------------------------------------------
+# [template]
+# # missingkey=error (default), zero, invalid, or default
+# options = ["missingkey=error"]
+
+# #--------------------------------------------------
+# # Encryption settings
+# #--------------------------------------------------
+# [encrypt]
+# # Encryption backends: gpg (default) or age
+# gpg = false
+# age = true
+
+# #--------------------------------------------------
+# # Temporary directories
+# #--------------------------------------------------
+# # Directory for running scripts, templates, etc.
+# scriptTempDir = "~/.cache/chezmoi"
+
+# #--------------------------------------------------
+# # Template data
+# #--------------------------------------------------
+# [data]
+# # You can override or supplement these in .chezmoidata.toml
+# username = "jack"
+# email    = "jack@example.com"
+
+# #--------------------------------------------------
+# # Custom scripts and hooks
+# #--------------------------------------------------
+# [[script]]
+# # A named script to run on every apply
+# name    = "refresh-shell"
+# # Command and args
+# command = ["zsh", "-ic", "echo 'Shell refreshed'"]
+# # runOnce=false means run on every apply
+# runOnce = false
