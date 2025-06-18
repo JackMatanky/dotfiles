@@ -7,7 +7,7 @@
 filter_class: md.obsidian
 
 extra_includes:
-  - "../match/00_base.yml"
+  - "../match/base.yml"
   # Markdown
   - "../match/markdown.yml"
   - "../match/obsidian_callout.yml"
