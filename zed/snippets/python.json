@@ -10,6 +10,11 @@
     "description": "Set default python3 encoding specification to utf-8, by default this is the encoding for python3.x as it is mentioned in pep-3120."
   },
 
+  "Pyright: Ignore 'Any' Type Diagnostic": {
+    "prefix": "pyignoreAny",
+    "body": "# pyright: ignore[${1|reportAny,reportExplicitAny|}]$0",
+    "description": "Selectively ignore a Pyright diagnostic for implicit (reportAny) or explicit (reportExplicitAny) 'Any' types on a single line."
+  },
   "BasedPyright Ignore Rule Comment": {
     "prefix": "pyignore",
     "body": "# pyright: ignore[${1|reportAny,reportUnusedImport,reportUnreachable,reportUnknownParameterType|}]$0",
