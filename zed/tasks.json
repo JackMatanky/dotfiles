@@ -2,6 +2,11 @@
   // --------------------------------------------
   // General Tasks
   // --------------------------------------------
+  {
+    "label": "Lazygit",
+    "command": "lazygit",
+    "hide": "on_success"
+  },
   // Replaces all curly single and double quotes in the current file with ASCII equivalents.
   {
     "label": "Replace Non-Standard Quotes",
