@@ -1,32 +1,45 @@
+// ----------------------------------------------------------------------------
+//  Filename: ~/dotfiles/zed/debug.json
+//  Docs: https://zed.dev/docs/debugger
+// ----------------------------------------------------------------------------
 [
+  /* -------------------------------------------------------- */
+  /*                Default Debug Configuration               */
+  /* -------------------------------------------------------- */
+  /*
   {
-    "label": "Debug active PHP file",
-    "adapter": "php",
+    // The label for the debug configuration and used to identify
+    // the debug session inside the debug panel & new session modal
+    "label": "Example Start debugger config",
+    // The debug adapter that Zed should use to debug the program
+    "adapter": "Example adapter name",
+    // Request:
+    //  - launch: Zed will launch the program if specified or shows
+    //            a debug terminal with the right configuration
+    //  - attach: Zed will attach to a running program to debug it or
+    //            when the process_id is not specified we will show a
+    //            process picker (only supported for node currently)
+    "request": "launch",
+    // program: The program that you want to debug
+    // This field supports path resolution with ~ or . symbols
+    "program": "path_to_program",
+    // cwd: defaults to the project's current working directory
+    "cwd": "$ZED_WORKTREE_ROOT"
+  },
+  */
+  {
+    "label": "Debug active Python file (Debugpy)",
+    "adapter": "debugpy",
     "program": "$ZED_FILE",
     "request": "launch",
     "cwd": "$ZED_WORKTREE_ROOT"
   },
   {
-    "label": "Debug active Python file",
-    "adapter": "python",
+    "label": "Debug active JavaScript file (Node)",
+    "adapter": "JavaScript",
     "program": "$ZED_FILE",
     "request": "launch",
-    "cwd": "$ZED_WORKTREE_ROOT"
-  },
-  {
-    "label": "Debug active JavaScript file",
-    "adapter": "javascript",
-    "program": "$ZED_FILE",
-    "request": "launch",
-    "cwd": "$ZED_WORKTREE_ROOT"
-  },
-  {
-    "label": "JavaScript debug terminal",
-    "adapter": "javascript",
-    "request": "launch",
-    "cwd": "$ZED_WORKTREE_ROOT",
-    "initialize_args": {
-      "console": "integratedTerminal"
-    }
+    "console": "integratedTerminal",
+    "type": "pwa-node"
   }
 ]

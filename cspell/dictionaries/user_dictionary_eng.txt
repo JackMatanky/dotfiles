@@ -1,4 +1,5 @@
 # Custom Dictionary Words
+Atuin
 Dizengoff
 docstrings
 geocoder
@@ -10,9 +11,9 @@ jackm
 Matanky
 moshav
 moshavim
+Nushell
 Pyenv
 Pyright
 venv
 virtualenv
-Nushell
-Atuin
+worktree
