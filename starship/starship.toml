@@ -1,12 +1,16 @@
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/starship.toml
-# Source: Community Developed Catppuccin Theme
-# Source Link: https://github.com/nataziel/starship
+#  Filename: ~/dotfiles/starship/starship.toml
+#  Docs: https://starship.rs
+#  Source: Community Developed Catppuccin Theme
+#  Source Link: https://github.com/nataziel/starship
 # -----------------------------------------------------------------------------
 
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# ------------------------------------------------------------ #
+#                         Prompt Format                        #
+# ------------------------------------------------------------ #
 format = """
 [╭](fg:overlay1)\
 $os\
@@ -42,6 +46,10 @@ palette = 'catppuccin_macchiato'
 [line_break]
 disabled = false
 
+
+# ------------------------------------------------------------ #
+#                              OS                              #
+# ------------------------------------------------------------ #
 [os]
 disabled = false
 style = "bg:mauve fg:crust"
@@ -81,12 +89,20 @@ Ubuntu = ''
 Unknown = ''
 Windows = ''
 
+
+# ------------------------------------------------------------ #
+#                           User Name                          #
+# ------------------------------------------------------------ #
 [username]
 show_always = true
 style_user = "bg:red fg:crust"
 style_root = "bg:red fg:crust"
 format = "[  ($user) ]($style)[](bg:peach fg:red)"
 
+
+# ------------------------------------------------------------ #
+#                           Directory                          #
+# ------------------------------------------------------------ #
 [directory]
 style = "bg:peach fg:crust"
 format = "[ $path ]($style)"
@@ -120,6 +136,10 @@ symbol = ' '
 # style = 'fg:current_line'
 disabled = false
 
+
+# ------------------------------------------------------------ #
+#                              Git                             #
+# ------------------------------------------------------------ #
 [git_branch]
 symbol = ""
 style = "bg:yellow"
@@ -129,6 +149,9 @@ format = '[[ $symbol $branch ](fg:crust bg:yellow)]($style)'
 style = "bg:yellow"
 format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
 
+# ------------------------------------------------------------ #
+#                Language-specific Configuration               #
+# ------------------------------------------------------------ #
 [nodejs]
 symbol = ""
 style = "bg:green"
@@ -185,6 +208,10 @@ style = "fg:crust bg:sapphire"
 format = '[$symbol$environment ]($style)'
 ignore_base = false
 
+
+# ------------------------------------------------------------ #
+#                             Shell                            #
+# ------------------------------------------------------------ #
 [shell]
 format = '[ $indicator   ](fg:crust bg:blue)'
 powershell_indicator = 'powershell'
@@ -194,6 +221,10 @@ nu_indicator = 'nu'
 unknown_indicator = 'shell'
 disabled = false
 
+
+# ------------------------------------------------------------ #
+#                             Time                             #
+# ------------------------------------------------------------ #
 [time]
 disabled = false
 time_format = "%R"
@@ -201,6 +232,10 @@ time_format = "%R"
 style = "bg:lavender"
 format = '[[ $time   ](fg:crust bg:lavender)]($style)[](fg:lavender)'
 
+
+# ------------------------------------------------------------ #
+#                            Battery                           #
+# ------------------------------------------------------------ #
 [battery]
 format = "[ $percentage $symbol]($style)"
 full_symbol = "█"
@@ -232,6 +267,10 @@ vimcmd_replace_symbol = '[](bold fg:lavender)'
 vimcmd_visual_symbol = '[](bold fg:yellow)'
 disabled = false
 
+
+# ------------------------------------------------------------ #
+#                       Command Duration                       #
+# ------------------------------------------------------------ #
 [cmd_duration]
 show_milliseconds = true
 format = " in $duration "
@@ -240,6 +279,10 @@ disabled = false
 show_notifications = true
 min_time_to_notify = 45000
 
+
+# ------------------------------------------------------------ #
+#                        Color Palettes                        #
+# ------------------------------------------------------------ #
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
 flamingo = "#f2cdcd"

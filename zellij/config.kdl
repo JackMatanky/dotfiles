@@ -1,8 +1,12 @@
-// --------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 //  Filename: ~/dotfiles/zellij/config.kdl
-//  Zellij Docs: https://zellij.dev/documentation/configuration
-//  Zellij Github: https://github.com/zellij-org/zellij
-// --------------------------------------------------------------------
+//  Docs: https://zellij.dev/documentation/configuration
+//  Github: https://github.com/zellij-org/zellij
+// -----------------------------------------------------------------------------
+
+/* ---------------------------------------------------------- */
+/*                         Keybindings                        */
+/* ---------------------------------------------------------- */
 
 // If you'd like to override the default keybindings completely,
 // be sure to change "keybinds" to "keybinds clear-defaults=true"
@@ -206,7 +210,9 @@ keybinds clear-defaults=true{
         // bind "Ctrl b" { SwitchToMode "Tmux"; }
     }
 
-// YAZELIX
+    /* ------------------------------------------------------ */
+    /*                         YAZELIX                        */
+    /* ------------------------------------------------------ */
     shared {
         // Previously: Ctrl + o (in helix: jump_backward)
         bind "Ctrl e" { SwitchToMode "Session"; }
@@ -248,12 +254,13 @@ keybinds clear-defaults=true{
     }
 }
 
+/* ---------------------------------------------------------- */
+/*                           Plugins                          */
+/* ---------------------------------------------------------- */
 // Plugin aliases - can be used to change the implementation of Zellij
 // changing these requires a restart to take effect
 plugins {
-    // --------------------------------------------------------------
-    // Built-in Plugins
-    // --------------------------------------------------------------
+    /* ------------------ Built-in Plugins ------------------ */
     tab-bar location="zellij:tab-bar"
     status-bar location="zellij:status-bar"
     strider location="zellij:strider"
@@ -268,16 +275,11 @@ plugins {
     configuration location="zellij:configuration"
     plugin-manager location="zellij:plugin-manager"
 
-
-    // --------------------------------------------------------------
-    // Extra Plugins
-    // --------------------------------------------------------------
-
-    // zjstatus
+    /* ---------------------- Zjstatus ---------------------- */
     zjstatus location="file:~/dotfiles/zellij/plugins/zjstatus/zjstatus.wasm" {
         first_start true // Enable navigation to the status bar
 
-        // -- Catppuccin Macchiato --
+        // >>> Catppuccin Macchiato <<<
         color_rosewater "#f4dbd6"
         color_flamingo "#f0c6c6"
         color_pink "#f5bde6"
@@ -366,6 +368,7 @@ plugins {
     }
 }
 
+/* --------------------- Startup Plugins -------------------- */
 // Plugins to load in the background when a new session starts
 load_plugins {
   // "file:/path/to/my-plugin.wasm"
@@ -378,19 +381,19 @@ load_plugins {
 // Options:
 //   - detach (Default)
 //   - quit
-//
+
 on_force_close "detach"
 
 //  Send a request for a simplified ui (without arrow fonts) to plugins
 //  Options:
 //    - true
 //    - false (Default)
-//
+
 simplified_ui true
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
-//
+
 default_shell "nu"
 
 // Choose the path to override cwd that zellij will use for opening new panes
@@ -401,7 +404,7 @@ default_shell "nu"
 // Options:
 //   - true (default)
 //   - false
-//
+
 pane_frames true
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
@@ -411,7 +414,8 @@ pane_frames true
 //
 // auto_layout true
 
-// Whether sessions should be serialized to the cache folder (including their tabs/panes, cwds and running commands) so that they can later be resurrected
+// Whether sessions should be serialized to the cache folder (including their
+// tabs/panes, cwds and running commands) so that they can later be resurrected
 // (Requires restart)
 // Options:
 //   - true (default)
@@ -425,9 +429,10 @@ pane_frames true
 //   - false (default)
 // serialize_pane_viewport true
 
-// Scrollback lines to serialize along with the pane viewport when serializing sessions, 0
-// defaults to the scrollback size. If this number is higher than the scrollback size, it will
-// also default to the scrollback size. This does nothing if `serialize_pane_viewport` is not true.
+// Scrollback lines to serialize along with the pane viewport when serializing
+// sessions, 0 defaults to the scrollback size. If this number is higher than
+// the scrollback size, it will also default to the scrollback size. This does
+// nothing if `serialize_pane_viewport` is not true.
 //
 // scrollback_lines_to_serialize 10000
 
@@ -534,6 +539,9 @@ ui {
 //     }
 // }
 
+/* ---------------------------------------------------------- */
+/*                            Theme                           */
+/* ---------------------------------------------------------- */
 // The folder in which Zellij will look for themes
 //
 theme_dir "/Users/jack/dotfiles/zellij/themes"
@@ -543,6 +551,9 @@ theme_dir "/Users/jack/dotfiles/zellij/themes"
 //
 theme "catppuccin-macchiato"
 
+/* ---------------------------------------------------------- */
+/*                           Layout                           */
+/* ---------------------------------------------------------- */
 // The folder in which Zellij will look for layouts
 // here you can set the absolute path to layout dir
 layout_dir "/Users/jack/dotfiles/zellij/layouts"

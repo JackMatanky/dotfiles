@@ -1,8 +1,9 @@
-#------------------------------------------------------------------------------#
-# Filename: ~/dotfiles/git/config
-# Git Docs: https://git-scm.com/docs/git-config
-# Delta Docs: https://dandavison.github.io/delta
-#------------------------------------------------------------------------------#
+# -----------------------------------------------------------------------------
+#  Filename: ~/dotfiles/git/config
+#  Git Docs: https://git-scm.com/docs/git-config
+#  Delta Docs: https://dandavison.github.io/delta
+#  Description:
+# -----------------------------------------------------------------------------
 
 [user]
     name = JackMatanky                    # Replace with your name
@@ -20,13 +21,16 @@
     # Convert CRLF to LF on input
     autocrlf = input
 
-    # Use LF as the end-of-line character
+    # ----------------- End-of-Line Character ---------------- #
     eol = lf
+
+    # ------------------ Whitespace Checking ----------------- #
+    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 
     # Use delta for all core Git paging (diff/log/etc.)
     pager = delta
 
-    # Global config files for Git attributes and ignores
+    # ------------------ Global Config Files ----------------- #
     attributesfile = ~/.config/git/.gitattributes
     excludesfile = ~/.config/git/.gitignore_global
 
@@ -49,13 +53,14 @@
     # Force dark theme (disable auto detection)
     dark = true
 
-# PDF diffing via pdftotext
-[diff "pdf"]
-    textconv = pdftotext -layout -enc UTF-8 -
-
 [diff]
     # Highlight moved lines (helps with refactoring)
     colorMoved = default
+
+[diff "pdf"]
+    # --------------- PDF Diffing via PdfToText -------------- #
+    # Enables text-based diffs of PDFs when not using Git LFS
+    textconv = pdftotext -layout -enc UTF-8 -
 
 [merge]
     # Enhanced conflict marker layout (Delta-compatible)
@@ -75,7 +80,7 @@
 [includeIf "gitdir:~/Documents/_dev_work/"]
     path = ~/.config/git/config_work
 
-
+# -------------------------- Aliases ------------------------- #
 [alias]
     # Common Git Commands
     st = status                          # Shortcut for `git status`

@@ -1,8 +1,11 @@
-#------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Filename: ~/dotfiles/aerospace/aerospace.toml
 # Docs: https://github.com/nikitabobko/AeroSpace
-# Description: Window tiling manager
-#------------------------------------------------------------------------------
+# Description: Configuration file for the AeroSpace window manager on macOS. It
+#              defines startup commands, window rules for specific applications,
+#              workspace layouts, keybindings, gaps, and monitor assignments to
+#              customize window management behavior.
+# -----------------------------------------------------------------------------
 
 after-startup-command = [
   # JankyBorders has a built-in detection of already running process,
@@ -29,10 +32,18 @@ after-startup-command = [
 # Start AeroSpace at login
 start-at-login = true
 
-# Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
+
+# ------------------------------------------------------------ #
+#                        Normalizations                        #
+# ------------------------------------------------------------ #
+# See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
+
+# ------------------------------------------------------------ #
+#                            Layouts                           #
+# ------------------------------------------------------------ #
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
@@ -42,9 +53,11 @@ accordion-padding = 300
 default-root-container-layout = 'tiles'
 
 # Possible values: horizontal|vertical|auto
-# 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
-#               tall monitor (anything higher than wide) gets vertical orientation
+# 'auto' means:
+#     - wide monitor (anything wider than high) gets horizontal orientation,
+#     - tall monitor (anything higher than wide) gets vertical orientation
 default-root-container-orientation = 'auto'
+
 
 # Mouse follows focus when focused monitor changes
 # Drop it from your config, if you don't like this behavior
@@ -53,11 +66,18 @@ default-root-container-orientation = 'auto'
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
-# You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
-# Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
+# You can effectively turn off macOS "Hide application" (cmd-h)
+# feature by toggling this flag Useful if you don't use this macOS
+# feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodness#disable-hide-app
 automatically-unhide-macos-hidden-apps = false
 
+
+# ------------------------------------------------------------ #
+#                   Window Detected Callbacks                  #
+# ------------------------------------------------------------ #
+
+# ------------------- Default Configuration ------------------ #
 # [[on-window-detected]]
 # if.app-id = 'com.apple.systempreferences'
 # if.app-name-regex-substring = 'settings'
@@ -67,7 +87,7 @@ automatically-unhide-macos-hidden-apps = false
 # check-further-callbacks = true
 # run = ['layout floating', 'move-node-to-workspace S']  # The callback itsel
 
-# Floating Window Layouts
+# ------------------ Floating Window Layouts ----------------- #
 # System Settings
 [[on-window-detected]]
 if.app-id = 'com.apple.systempreferences'
@@ -93,7 +113,8 @@ run = 'layout floating'
 if.app-id = 'org.videolan.vlc'
 run = 'layout floating'
 
-# Predifined Workspace Layouts
+# --------------- Predifined Workspace Layouts --------------- #
+# Obsidian
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace 1'
@@ -113,6 +134,7 @@ run = 'move-node-to-workspace 2'
 if.app-id = 'dev.zed.Zed'
 run = 'move-node-to-workspace 3'
 
+# IDE - Zed Preview
 [[on-window-detected]]
 if.app-id = 'dev.zed.Zed-Preview'
 run = 'move-node-to-workspace 3'
@@ -182,15 +204,24 @@ run = 'move-node-to-workspace 9'
 if.app-id = 'com.apple.Safari.WebApp.C353A7A6-36B0-464C-B0C9-99528F2760AB'
 run = 'move-node-to-workspace 10'
 
+# ------------------------------------------------------------ #
+#                          Key Mapping                         #
+# ------------------------------------------------------------ #
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
 [key-mapping]
 preset = 'qwerty'
 
+# ------------------------------------------------------------ #
+#                      Window Spacing Gaps                     #
+# ------------------------------------------------------------ #
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
 # - Constant:     gaps.outer.top = 8
-# - Per monitor:  gaps.outer.top = [{ monitor.main = 16 }, { monitor."some-pattern" = 32 }, 24]
+# - Per monitor:  gaps.outer.top = [
+#                    { monitor.main = 16 },
+#                    { monitor."some-pattern" = 32 },
+#                 24]
 #                 In this example, 24 is a default value when there is no match.
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
@@ -200,10 +231,15 @@ inner.horizontal = 20
 inner.vertical = 20
 outer.left = 30
 outer.bottom = 30
-outer.top = [{ monitor.'^built-in retina display$' = 30 }, 30]
+outer.top = [
+  { monitor.'^built-in retina display$' = 30 },
+  30
+]
 outer.right = 30
 
-# >>> Main Binding Mode <<<
+# ------------------------------------------------------------ #
+#                       Main Binding Mode                      #
+# ------------------------------------------------------------ #
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
@@ -298,7 +334,10 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 alt-shift-comma = 'mode service'
 # alt-shift-enter = 'mode apps'
 
-# >>> App Launcher <<<
+
+# ------------------------------------------------------------ #
+#                         App Launcher                         #
+# ------------------------------------------------------------ #
 alt-ctrl-shift-a = 'exec-and-forget open /Applications/Anki.app'                        # SRS - Anki
 alt-ctrl-shift-b = 'exec-and-forget open /Applications/Zen.app'                         # Browser - Zen
 alt-ctrl-shift-c = '''exec-and-forget open /Applications/Visual Studio Code.app'''      # IDE - Visual Studio Code
@@ -306,11 +345,13 @@ alt-ctrl-shift-m = 'exec-and-forget open /Applications/Mail.app'                
 alt-ctrl-shift-n = 'exec-and-forget open /Applications/Obsidian.app'                    # Notes - Obsidian
 alt-ctrl-shift-s = 'exec-and-forget open /Applications/Safari.app'                      # Browser - Safari
 alt-ctrl-shift-t = 'exec-and-forget open /Applications/Ghostty.app'                     # Terminal - Ghostty
-# alt-ctrl-shift-t = 'exec-and-forget open /Applications/WezTerm.app'                   # Terminal - WezTerm
+alt-ctrl-shift-w = 'exec-and-forget open /Applications/Warp.app'                        # Terminal - Warp
 alt-ctrl-shift-z = 'exec-and-forget open /Applications/Zed.app'                         # IDE - Zed Code Editor
 
 
-# >>> Multiple Monitors <<<
+# ------------------------------------------------------------ #
+#                       Multiple Monitors                      #
+# ------------------------------------------------------------ #
 # See: https://nikitabobko.github.io/AeroSpace/guide#multiple-monitors
 [workspace-to-monitor-force-assignment]
 1 = ['VC279', 'main']
@@ -324,8 +365,10 @@ alt-ctrl-shift-z = 'exec-and-forget open /Applications/Zed.app'                 
 9 = 'Built-in Retina Display'
 10 = 'Built-in Retina Display'
 
-# >>> Layout Tree Services <<<
-# --- Service Binding Mode ---
+
+# ------------------------------------------------------------ #
+#                     Service Binding Mode                     #
+# ------------------------------------------------------------ #
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
 esc = ['reload-config', 'mode main']

@@ -1,8 +1,7 @@
-#------------------------------------------------------------------------------#
-# Filename: ~/dotfiles/espanso/match/obsidian_callout.yml
-#
-# Espanso Docs: https://espanso.org/docs/
-#------------------------------------------------------------------------------#
+# -----------------------------------------------------------------------------
+#  Filename: ~/dotfiles/espanso/match/obsidian_callout.yml
+#  Docs: https://espanso.org/docs/
+# -----------------------------------------------------------------------------
 ---
 matches:
     # SECT: GENERAL

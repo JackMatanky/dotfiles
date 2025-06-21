@@ -1,10 +1,10 @@
-#------------------------------------------------------------------------------
-# Filename: ~/dotfiles/espanso/match/autocorrect.yml
-# Docs: https://espanso.org/docs/
-# Description: Organize all autocorrect configs in a single location. For more
-#              information on imports, see
-#              https://espanso.org/docs/matches/organizing-matches/#imports
-#------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+#  Filename: ~/dotfiles/espanso/match/autocorrect.yml
+#  Docs: https://espanso.org/docs/
+#  Description: Organize all autocorrect configs in a single location. For more
+#               information on imports, see
+#               https://espanso.org/docs/matches/organizing-matches/#imports
+# -----------------------------------------------------------------------------
 ---
 imports:
   - "../match/autocorrect/date_weekday.yml"

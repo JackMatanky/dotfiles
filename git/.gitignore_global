@@ -1,19 +1,101 @@
-#------------------------------------------------------------------------------#
+# -----------------------------------------------------------------------------
 # Filename: ~/dotfiles/git/.gitignore_global
-#
-# Git Docs: https://git-scm.com/docs/git-config
-#------------------------------------------------------------------------------#
+# Docs: https://git-scm.com/docs/gitignore
+# Description: Global ignore file for Git. Handles OS files, editors, Python,
+#              notebooks, and typical developer tool artifacts.
+# -----------------------------------------------------------------------------
 
-# >>> Google Drive <<<
+# ------------------------------------------------------------ #
+#                      System-Level Files                      #
+# ------------------------------------------------------------ #
+
+# --------------------------- MacOS -------------------------- #
+.DS_Store
+__MACOSX/
+.Spotlight-V100
+.Trashes
+._*
+
+# -------------------------- Windows ------------------------- #
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ---------------------- Temporary Files --------------------- #
+*.swp
+*.bak
+*.tmp
+*.temp
+*.log
+
+# --------------------- Google Drive Sync -------------------- #
 .tmp.driveupload/
 .tmp.drivedownload/
 
-# >>> MacOS <<<
-.DS_Store
-DS_Store
 
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# ------------------------------------------------------------ #
+#                  Editor & IDE Configurations                 #
+# ------------------------------------------------------------ #
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.ropeproject/
+
+
+# ------------------------------------------------------------ #
+#                 Python Environments & Tooling                #
+# ------------------------------------------------------------ #
+
+# --------------------- Bytecode & Cache --------------------- #
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ------------------- Virtual Environments ------------------- #
+.venv/
+.venv.bak/
+.env/
+.env.*
+.envrc
+.Python
+
+# ---------------------- Build Artifacts --------------------- #
+build/
+dist/
+wheels/
+.eggs/
+*.egg-info/
+*.egg
+
+# ----------------------- Pip Artifacts ---------------------- #
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ------------- Python Lint/test/type Check Tools ------------ #
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.dmypy.json
+.pyre/
+.pytype/
+.cache/
+.ruff_cache/
+.pyright/
+.basedpyright/
+
+# ------------------- Modern Python Tooling ------------------ #
+.uv/
+.mojo/
+
+# ------------------------------------------------------------ #
+#               Jupyter & Interactive Shell Files              #
+# ------------------------------------------------------------ #
+*.ipynb
+*.ipynb_checkpoints/
+.ipython/
+.jupyter/

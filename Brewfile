@@ -161,6 +161,8 @@ brew 'pyenv-virtualenv'
 brew 'uv'
 # Interactive computing in Python Shell
 brew 'ipython'
+# Interactive environments for writing and running code
+brew 'jupyterlab'
 # Jupyter notebooks as Markdown documents, Julia, Python or R scripts
 brew 'jupytext'
 

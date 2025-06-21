@@ -1,13 +1,8 @@
-#------------------------------------------------------------------------------
-# Filename: ~/dotfiles/espanso/match/base.yml
-#
-# Espanso Docs: https://espanso.org/docs/
-#------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+#  Filename: ~/dotfiles/espanso/match/base.yml
+#  Docs: https://espanso.org/docs/
+# -----------------------------------------------------------------------------
 
-# For a complete introduction, visit the official docs at: https://espanso.org/docs/
-
-# You can use this file to define the base matches (aka snippets)
-# that will be available in every application when using espanso.
 ---
 global_vars:
   - name: my_first_name

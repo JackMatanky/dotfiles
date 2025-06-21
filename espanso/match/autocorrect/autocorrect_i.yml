@@ -1,4 +1,8 @@
-# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
+#  Filename: ~/dotfiles/espanso/match/autocorrect/autocorrect_i.yml
+#  Docs: https://espanso.org/docs/
+#  Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
 matches:
   # ---------------------------------------------------- #
   #                          IC                          #

@@ -1,10 +1,10 @@
 # -----------------------------------------------------------------------------
 #  Filename: ~/dotfiles/yazi/yazi.toml
-#  Yazi Docs: https://yazi-rs.github.io/docs/configuration/yazi
-#  Yazi Github: https://yazi-rs.github.io/
+#  Docs: https://yazi-rs.github.io/docs/configuration/yazi
+#  Github: https://yazi-rs.github.io/
 # -----------------------------------------------------------------------------
 
-Yazelix
+# -------------------------- Yazelix ------------------------- #
 [manager]
 ratio = [0, 4, 0]
 

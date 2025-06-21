@@ -1,10 +1,10 @@
-#------------------------------------------------------------------------------
-# Filename: ~/dotfiles/espanso/match/superscript_subscript.yml
-# Docs: https://espanso.org/docs/
-# Description: Organize all superscript and subscript related match configs in a
-#              single location. For more information on imports, see
-#              https://espanso.org/docs/matches/organizing-matches/#imports
-#------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+#  Filename: ~/dotfiles/espanso/match/superscript_subscript.yml
+#  Docs: https://espanso.org/docs/
+#  Description: Organize all superscript and subscript related match configs in
+#               a single location. For more information on imports, see
+#               https://espanso.org/docs/matches/organizing-matches/#imports
+# -----------------------------------------------------------------------------
 ---
 imports:
   - "../match/superscript_subscript/subscript_latin_lowercase.yml"

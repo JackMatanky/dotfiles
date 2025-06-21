@@ -1,10 +1,97 @@
-#------------------------------------------------------------------------------#
-# Filename: ~/dotfiles/git/.gitattributes
-#
-# Git Docs: https://git-scm.com/docs/git-config
-#------------------------------------------------------------------------------#
-*.pdf diff=pdf
-*.gif binary
-*.jpg binary
-*.png binary
-*.webp binary
+# -----------------------------------------------------------------------------
+#  Filename: ~/dotfiles/git/.gitattributes
+#  Docs: https://git-scm.com/docs/gitattributes
+#  Description: Defines Git behavior for diffing, merging, and cross-platform
+#               compatibility
+# -----------------------------------------------------------------------------
+
+# ------------------------------------------------------------ #
+#               Line Endings & Text Normalization              #
+# ------------------------------------------------------------ #
+# NOTE: Ensures cross-platform LF line-ending consistency
+* text=auto eol=lf
+
+
+# ------------------------------------------------------------ #
+#                      Text Based Formats                      #
+# ------------------------------------------------------------ #
+
+# -------------------------- Images -------------------------- #
+# SVG is text-based XML, not binary
+*.svg         text
+
+# ----------------- Tabular & Structured Data ---------------- #
+*.csv         text
+*.json        text
+# *.geojson     text
+
+# --------------------- Jupyter Notebooks -------------------- #
+# NOTE: Use JupyText diffing when not ignored
+*.ipynb       diff=jupytext
+*.ipynb       linguist-documentation
+
+# ------------------- Dependency Lockfiles ------------------- #
+# NOTE: Helps reduce merge conflicts
+poetry.lock   merge=union
+uv.lock       merge=union
+
+
+# ------------------------------------------------------------ #
+#                 Binary & Non-Diffable Formats                #
+# ------------------------------------------------------------ #
+
+# -------------------------- Images -------------------------- #
+*.avif        binary
+*.gif         binary
+*.ico         binary
+*.jpeg        binary
+*.jpg         binary
+*.png         binary
+*.webp        binary
+
+
+# ------------------------- Documents ------------------------ #
+# *.pdf         binary
+
+# -------------------- Archives & Packages ------------------- #
+*.tar.gz      binary
+*.zip         binary
+*.whl         binary
+
+# ----------------- Cache & Columnar Storage ----------------- #
+# *.parquet     binary
+# *.feather     binary
+
+# ------------------------- Database ------------------------- #
+*.db          binary
+*.sqlite      binary
+
+# Geospatial Database
+# NOTE: GDB (ESRI Geodatabase) and GPKG are treated as binary blobs
+# *.gdb         binary
+*.gpkg        binary
+
+# ----------------- ESRI Shapefile Components ---------------- #
+# NOTE: All components of a shapefile must be treated as binary
+*.shp         binary
+*.shx         binary
+*.dbf         binary
+*.prj         binary
+*.cpg         binary
+# Metadata sidecars (optional)
+*.xml         binary
+
+# ------------- Geospatial Web-Compatible Formats ------------ #
+*.kml         binary
+*.kmz         binary
+
+# ------------------------------------------------------------ #
+#                 Optional: Git LFS Integration                #
+# ------------------------------------------------------------ #
+# NOTE: Uncomment these if using Git LFS for large binary formats
+
+*.pdf         filter=lfs diff=lfs merge=lfs -text
+*.gdb         filter=lfs diff=lfs merge=lfs -text
+*.geojson     filter=lfs diff=lfs merge=lfs -text
+*.parquet     filter=lfs diff=lfs merge=lfs -text
+*.feather     filter=lfs diff=lfs merge=lfs -text

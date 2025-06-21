@@ -1,8 +1,12 @@
-# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
+#  Filename: ~/dotfiles/espanso/match/autocorrect/autocorrect_r.yml
+#  Docs: https://espanso.org/docs/
+#  Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
 matches:
-    # ---------
-    # --- R ---
-    # ----------
+    # -------------------------------------------------------- #
+    #                            RA                            #
+    # -------------------------------------------------------- #
     - trigger: rabinnical
       replace: rabbinical
       propagate_case: true
@@ -27,6 +31,9 @@ matches:
       replace: rarefied
       propagate_case: true
       word: true
+    # -------------------------------------------------------- #
+    #                            RE                            #
+    # -------------------------------------------------------- #
     - trigger: reaccurring
       replace: recurring
       propagate_case: true
@@ -1047,6 +1054,9 @@ matches:
       replace: references
       propagate_case: true
       word: true
+    # -------------------------------------------------------- #
+    #                            RH                            #
+    # -------------------------------------------------------- #
     - trigger: rhymme
       replace: rhyme
       propagate_case: true
@@ -1063,6 +1073,9 @@ matches:
       replace: rhythmic
       propagate_case: true
       word: true
+    # -------------------------------------------------------- #
+    #                            RI                            #
+    # -------------------------------------------------------- #
     - trigger: rigeur
       replace: "rigueur\x2C\x20rigour\x2C\x20rigor"
       propagate_case: true
@@ -1079,6 +1092,9 @@ matches:
       replace: "raised\x2C\x20rose"
       propagate_case: true
       word: true
+    # -------------------------------------------------------- #
+    #                            RO                            #
+    # -------------------------------------------------------- #
     - trigger: Rockerfeller
       replace: Rockefeller
       propagate_case: true
@@ -1103,6 +1119,9 @@ matches:
       replace: recuperate
       propagate_case: true
       word: true
+    # -------------------------------------------------------- #
+    #                            RU                            #
+    # -------------------------------------------------------- #
     - trigger: rudimentatry
       replace: rudimentary
       propagate_case: true
