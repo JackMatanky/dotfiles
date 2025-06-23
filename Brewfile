@@ -96,14 +96,17 @@ brew 'ollama'
 # ------------------------------------------------------------ #
 # Distributed revision control system
 brew 'git'
-# Audit git repos for secrets
-brew 'gitleaks'
-# Filter and rewrite Git repository history
-brew 'git-filter-repo'
+# Compute various size metrics for a Git repository
+brew 'git-sizer'
 # Git extension for versioning large files
 brew 'git-lfs'
+# Filter and rewrite Git repository history
+brew 'git-filter-repo'
 # Syntax-highlighting pager for git and diff output
 brew 'git-delta'
+
+# Audit git repos for secrets
+brew 'gitleaks'
 
 # A simple terminal UI for git commands, written in Go
 tap 'jesseduffield/lazygit'
