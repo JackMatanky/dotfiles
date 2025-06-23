@@ -88,6 +88,9 @@ brew 'bat'
 # Official tldr client written in Rust
 brew 'tlrc'
 
+# Create, run, and share large language models (LLMs)
+brew 'ollama'
+
 # ------------------------------------------------------------ #
 #                        Version Control                       #
 # ------------------------------------------------------------ #
@@ -150,7 +153,8 @@ brew 'yaml-language-server'
 brew 'basedpyright'
 # Fast static code analyzer & language server for Python
 brew 'pylyzer'
-# brew "python-lsp-server"                # Language server for Python development
+# Language server for Python development
+# brew "python-lsp-server"
 
 # --------------------- Python Toolchain --------------------- #
 # Python version management
@@ -321,8 +325,13 @@ if OS.mac?
   cask 'displaylink'
   # Cross-platform Text Expander written in Rust
   cask 'espanso'
+
   # OpenAI's official ChatGPT desktop app
   cask 'chatgpt'
+  # Discover, download, and run local LLMs
+  cask 'lm-studio'
+  # Get up and running with large language models locally
+  cask 'ollama'
 
   # ---------------------- Cloud Storage --------------------- #
   # Google Drive client for macOS
