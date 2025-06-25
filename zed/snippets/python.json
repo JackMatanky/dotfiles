@@ -13,14 +13,12 @@
   "BasedPyright Ignore Rule Comment": {
     "prefix": "pyignore",
     "body": [
-      "# pyright: ignore[${1|reportAny,reportExplicitAny,reportUnusedImport,reportUnreachable,reportUnknownParameterType,reportUnnecessaryComparison|}]$0"
+      "# pyright: ignore[report${1|Any,ExplicitAny,UnnecessaryComparison,Unreachable,UnknownArgumentType,UnknownParameterType,UnusedImport,UnusedParameter|}]$0"
     ],
-    "description": "Ignore specific line diagnostic in pyright (ignore all is unsafe)"
-  },
-  "Pyright: Ignore 'Any' Type Diagnostic": {
-    "prefix": "pyignoreAny",
-    "body": ["# pyright: ignore[${1|reportAny,reportExplicitAny|}]$0"],
-    "description": "Selectively ignore a Pyright diagnostic for implicit (reportAny) or explicit (reportExplicitAny) 'Any' types on a single line."
+    //   "body": [
+    //     "# pyright: ignore[${1|reportAny,reportExplicitAny,reportUnnecessaryComparison,reportUnreachable,reportUnknownArgumentType,reportUnknownParameterType,reportUnusedImport,reportUnusedParameter|}]$0"
+    //   ],
+    "description": "Insert a comment to ignore a specific Pyright diagnostic on the current line (avoid ignoring all diagnostics)."
   },
 
   "Multiline string": {
