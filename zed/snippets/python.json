@@ -15,11 +15,11 @@
     "body": [
       "# pyright: ignore[report${1|Any,ExplicitAny,UnnecessaryComparison,Unreachable,UnknownArgumentType,UnknownParameterType,UnusedImport,UnusedParameter|}]$0"
     ],
-    //   "body": [
-    //     "# pyright: ignore[${1|reportAny,reportExplicitAny,reportUnnecessaryComparison,reportUnreachable,reportUnknownArgumentType,reportUnknownParameterType,reportUnusedImport,reportUnusedParameter|}]$0"
-    //   ],
     "description": "Insert a comment to ignore a specific Pyright diagnostic on the current line (avoid ignoring all diagnostics)."
   },
+  //   "body": [
+  //     "# pyright: ignore[${1|reportAny,reportExplicitAny,reportUnnecessaryComparison,reportUnreachable,reportUnknownArgumentType,reportUnknownParameterType,reportUnusedImport,reportUnusedParameter|}]$0"
+  //   ],
 
   "Multiline string": {
     "prefix": "#",
