@@ -570,6 +570,7 @@
 
   /* ---------------------- Agent Panel --------------------- */
   "agent": {
+    "default_profile": "ask",
     "version": "2",
     "enabled": true,
     "button": true,
@@ -1360,7 +1361,7 @@
         {
           "name": "qwen3:8b",
           "display_name": "Qwen3 8B",
-          "max_tokens": 32768,
+          "max_tokens": 40960,
           "supports_tools": true,
           "supports_thinking": true,
           "supports_images": false
