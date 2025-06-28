@@ -22,7 +22,7 @@
   "ui_font_size": 15,
   "ui_font_weight": 400,
   "ui_font_family": "Ubuntu", //"Zed Plex Sans",
-  "ui_font_fallbacks": [ "Fira Code", "JetBrains Mono", "Source Code Pro" ],
+  "ui_font_fallbacks": ["Fira Code", "JetBrains Mono", "Source Code Pro"],
   "ui_font_features": {
     // Disable ligatures:
     "calt": true
@@ -32,7 +32,7 @@
   "buffer_font_size": 16,
   "buffer_font_weight": 400,
   "buffer_font_family": "FiraCode Nerd Font",
-  "buffer_font_fallbacks": [ "Fira Code", "JetBrains Mono", "Source Code Pro" ],
+  "buffer_font_fallbacks": ["Fira Code", "JetBrains Mono", "Source Code Pro"],
   "buffer_font_features": {
     // Disable ligatures:
     // "calt": false
@@ -91,7 +91,7 @@
 
   // Wrap guides (vertical rulers) in the editor.
   "show_wrap_guides": true,
-  "wrap_guides": [ 80 ],
+  "wrap_guides": [80],
 
   /* ------------------------- Tabs ------------------------- */
   "tab_size": 4,
@@ -126,7 +126,7 @@
     "use_smartcase_find": false,
     "toggle_relative_line_numbers": true,
     "highlight_on_yank_duration": 50,
-    "custom_digraphs": { },
+    "custom_digraphs": {},
     // Options: "block", "bar", "underline", "hollow"
     "cursor_shape": {
       "normal": "block",
@@ -233,7 +233,7 @@
   "show_edit_predictions": false,
   // Source: https://zed.dev/docs/configuring-zed#edit-predictions-disabled-in
   // A list of language scopes in which edit predictions should be disabled.
-  "edit_predictions_disabled_in": [ "comment" ],
+  "edit_predictions_disabled_in": ["comment"],
 
   // Show method signatures in the editor, when inside parentheses.
   "auto_signature_help": false,
@@ -580,8 +580,8 @@
     "default_width": 640,
     "default_height": 320,
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "provider": "ollama",
+      "model": "qwen3:8b"
     }
   },
 
@@ -602,7 +602,7 @@
   "enable_language_server": true,
   // The list of language servers to use (or disable) for all languages.
   // This is typically customized on a per-language basis.
-  "language_servers": [ "snippet-completion-server" ],
+  "language_servers": ["snippet-completion-server"],
 
   // Whether to perform linked edits of associated ranges, if the language server supports it.
   // For example, when editing opening <html> tag, the contents of the closing </html> tag will be edited as well.
@@ -779,7 +779,7 @@
         // Default directories to search for virtual environments, relative
         // to the current working directory. We recommend overriding this
         // in your project's settings, rather than globally.
-        "directories": [ ".env", "env", ".venv", "venv" ],
+        "directories": [".env", "env", ".venv", "venv"],
         // Options: `csh`, `fish`, `nushell` and `power_shell`
         "activate_script": "nushell"
       }
@@ -796,20 +796,20 @@
     "blinking": "terminal_controlled", // "on" to always blink the cursor
     "font_size": 15, // Default to matching the buffer's font size
     "font_family": "JetBrainsMono Nerd Font", //"FiraCode Nerd Fonts"
-    "font_fallbacks": [ "FiraCode Nerd Fonts" ]
+    "font_fallbacks": ["FiraCode Nerd Fonts"]
     // Sets the maximum number of lines in the terminal's scrollback buffer.
     // Default: 10_000, maximum: 100_000 (all bigger values set will be treated as 100_000), 0 disables the scrolling.
     // Existing terminals will not pick up this change until they are recreated.
     // "max_scroll_history_lines": 10000,
   },
-  "code_actions_on_format": { },
+  "code_actions_on_format": {},
 
   /* -------------------------------------------------------- */
   /*                          Tasks.                          */
   /* -------------------------------------------------------- */
   "tasks": {
     "enabled": true,
-    "variables": { },
+    "variables": {},
     // Use LSP tasks over Zed language extension ones.
     // If no LSP tasks are returned due to error/timeout or regular execution,
     // Zed language extension tasks will be used instead.
@@ -828,14 +828,14 @@
   /* -------------------------------------------------------- */
   // https://zed.dev/docs/configuring-zed#file-types
   "file_types": {
-    "Git Attributes": [ ".gitattributes" ],
-    "Git Config": [ ".gitconfig", "**/git/config*", "**/git/**/config*" ],
+    "Git Attributes": [".gitattributes"],
+    "Git Config": [".gitconfig", "**/git/config*", "**/git/**/config*"],
     "Git Ignore": [
       ".gitignore",
       "**/git/.gitignore_global",
       "**/git/**/.gitignore_global"
     ],
-    "JSON": [ "flake.lock" ],
+    "JSON": ["flake.lock"],
     "JSONC": [
       "**/.zed/**/*.json",
       "**/zed/**/*.json",
@@ -845,10 +845,10 @@
       "pyrightconfig.json",
       "cspell.json"
     ],
-    "Plain Text": [ "txt" ],
-    "Ruby": [ "rb", "brewfile**" ],
-    "Shell Script": [ ".env.*" ],
-    "TOML": [ "uv.lock", "pyproject.toml", ".editorconfig" ]
+    "Plain Text": ["txt"],
+    "Ruby": ["rb", "brewfile**"],
+    "Shell Script": [".env.*"],
+    "TOML": ["uv.lock", "pyproject.toml", ".editorconfig"]
   },
 
   // By default use a recent system version of node, or install our own.
@@ -865,7 +865,7 @@
   //     "ignore_system_version": true,
   //   }
   // NOTE: changing this setting currently requires restarting Zed.
-  "node": { },
+  "node": {},
 
   /* -------------------------------------------------------- */
   /*                         Formatter                        */
@@ -997,10 +997,10 @@
   /* -------------------------------------------------------- */
   "languages": {
     "Astro": {
-      "language_servers": [ "astro-language-server", "..." ],
+      "language_servers": ["astro-language-server", "..."],
       "prettier": {
         "allowed": true,
-        "plugins": [ "prettier-plugin-astro" ]
+        "plugins": ["prettier-plugin-astro"]
       }
     },
     "Blade": {
@@ -1029,10 +1029,10 @@
       "ensure_final_newline_on_save": false
     },
     "Elixir": {
-      "language_servers": [ "elixir-ls", "!next-ls", "!lexical", "..." ]
+      "language_servers": ["elixir-ls", "!next-ls", "!lexical", "..."]
     },
     "Erlang": {
-      "language_servers": [ "erlang-ls", "!elp", "..." ]
+      "language_servers": ["erlang-ls", "!elp", "..."]
     },
     "Go": {
       "code_actions_on_format": {
@@ -1045,7 +1045,7 @@
       }
     },
     "HEEX": {
-      "language_servers": [ "elixir-ls", "!next-ls", "!lexical", "..." ]
+      "language_servers": ["elixir-ls", "!next-ls", "!lexical", "..."]
     },
     "HTML": {
       "prettier": {
@@ -1055,12 +1055,12 @@
     "Java": {
       "prettier": {
         "allowed": true,
-        "plugins": [ "prettier-plugin-java" ]
+        "plugins": ["prettier-plugin-java"]
       }
     },
     "JavaScript": {
       "tab_size": 2,
-      "language_servers": [ "!typescript-language-server", "vtsls", "..." ],
+      "language_servers": ["!typescript-language-server", "vtsls", "..."],
       "prettier": {
         "allowed": true
       }
@@ -1078,7 +1078,7 @@
       }
     },
     "LaTeX": {
-      "language_servers": [ "tex" ]
+      "language_servers": ["tex"]
     },
     "Markdown": {
       "format_on_save": "off",
@@ -1093,20 +1093,20 @@
       "formatter": {
         "external": {
           "command": "alejandra",
-          "arguments": [ "-" ]
+          "arguments": ["-"]
         }
       }
     },
     "PHP": {
-      "language_servers": [ "phpactor", "!intelephense", "..." ],
+      "language_servers": ["phpactor", "!intelephense", "..."],
       "prettier": {
         "allowed": true,
-        "plugins": [ "@prettier/plugin-php" ],
+        "plugins": ["@prettier/plugin-php"],
         "parser": "php"
       }
     },
     "Python": {
-      "language_servers": [ "basedpyright", "pylyzer", "ruff" ], // pylsp, pyright
+      "language_servers": ["basedpyright", "pylyzer", "ruff"],
       "tab_size": 4,
       "format_on_save": "on",
       "formatter": [
@@ -1124,7 +1124,7 @@
       ]
     },
     "Ruby": {
-      "language_servers": [ "solargraph", "!ruby-lsp", "!rubocop", "..." ]
+      "language_servers": ["solargraph", "!ruby-lsp", "!rubocop", "..."]
     },
     "SCSS": {
       "prettier": {
@@ -1135,21 +1135,21 @@
       "tab_size": 4,
       "prettier": {
         "allowed": true,
-        "plugins": [ "prettier-plugin-sql" ]
+        "plugins": ["prettier-plugin-sql"]
       }
     },
     "Starlark": {
-      "language_servers": [ "starpls", "!buck2-lsp", "..." ]
+      "language_servers": ["starpls", "!buck2-lsp", "..."]
     },
     "Svelte": {
-      "language_servers": [ "svelte-language-server", "..." ],
+      "language_servers": ["svelte-language-server", "..."],
       "prettier": {
         "allowed": true,
-        "plugins": [ "prettier-plugin-svelte" ]
+        "plugins": ["prettier-plugin-svelte"]
       }
     },
     "TSX": {
-      "language_servers": [ "!typescript-language-server", "vtsls", "..." ],
+      "language_servers": ["!typescript-language-server", "vtsls", "..."],
       "prettier": {
         "allowed": true
       }
@@ -1160,13 +1160,13 @@
       }
     },
     "TypeScript": {
-      "language_servers": [ "!typescript-language-server", "vtsls", "..." ],
+      "language_servers": ["!typescript-language-server", "vtsls", "..."],
       "prettier": {
         "allowed": true
       }
     },
     "Vue.js": {
-      "language_servers": [ "vue-language-server", "..." ],
+      "language_servers": ["vue-language-server", "..."],
       "prettier": {
         "allowed": true
       }
@@ -1174,7 +1174,7 @@
     "XML": {
       "prettier": {
         "allowed": true,
-        "plugins": [ "@prettier/plugin-xml" ]
+        "plugins": ["@prettier/plugin-xml"]
       }
     },
     "YAML": {
@@ -1191,7 +1191,7 @@
     /* -------------------- Spellchecker -------------------- */
     "cspell": {
       "command": "cspell-lsp",
-      "args": [ "--stdio", "--config", "/User/jack/dotfiles/cspell/cspell.json" ],
+      "args": ["--stdio", "--config", "/User/jack/dotfiles/cspell/cspell.json"],
       "settings": {
         "cSpell": {
           "configFile": "/User/jack/dotfiles/cspell/cspell.json"
@@ -1261,8 +1261,8 @@
           /* -------------------- Linter -------------------- */
           "lint": {
             "enable": true,
-            "select": [ "E", "F", "W", "I" ],
-            "fixable": [ "ALL" ]
+            "select": ["E", "F", "W", "I"],
+            "fixable": ["ALL"]
           },
           /* ------------------- Formatter ------------------ */
           "format": {
@@ -1296,12 +1296,12 @@
         "texlab": {
           "build": {
             "executable": "latexmk",
-            "args": [ "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" ],
+            "args": ["-pdf", "-interaction=nonstopmode", "-synctex=1", "%f"],
             "onSave": true
           },
           "forwardSearch": {
             "executable": "zathura",
-            "args": [ "--synctex-forward", "%l:1:%f", "%p" ]
+            "args": ["--synctex-forward", "%l:1:%f", "%p"]
           },
           "chktex": {
             "onOpenAndSave": true,
@@ -1339,22 +1339,35 @@
     "google": {
       "api_url": "https://generativelanguage.googleapis.com"
     },
-    "ollama": {
-      "api_url": "http://localhost:11434",
-      "low_speed_timeout_in_seconds": 60
-    },
     "openai": {
       "version": "1",
       "api_url": "https://api.openai.com/v1",
+      "low_speed_timeout_in_seconds": 600
+    },
+    "ollama": {
+      "api_url": "http://localhost:11434",
+      "available_models": [
+        {
+          "name": "qwen3:8b",
+          "display_name": "Qwen3 8B",
+          "max_tokens": 32768,
+          "supports_tools": true,
+          "supports_thinking": true,
+          "supports_images": true
+        }
+      ]
+    },
+    "lmstudio": {
+      "api_url": "http://localhost:1234/v1",
       "low_speed_timeout_in_seconds": 600
     }
   },
 
   "server_url": "https://zed.dev",
-  "preview": { },
-  "nightly": { },
-  "stable": { },
-  "dev": { },
+  "preview": {},
+  "nightly": {},
+  "stable": {},
+  "dev": {},
 
   // Task-related settings.
   "task": {
@@ -1379,7 +1392,7 @@
   /* -------------------------------------------------------- */
   /*                  Command Palette Aliases                 */
   /* -------------------------------------------------------- */
-  "command_aliases": { },
+  "command_aliases": {},
 
   /* -------------------------------------------------------- */
   /*                      SSH Connections                     */
@@ -1396,7 +1409,7 @@
   //     ]
   //   }
   // ]
-  "ssh_connections": [ ],
+  "ssh_connections": [],
 
   // Configures the Context Server Protocol binaries
   //
@@ -1407,6 +1420,6 @@
   //   "args": ['arg1", "args2"]
   // }
   "experimental.context_servers": {
-    "servers": [ ]
+    "servers": []
   }
 }
