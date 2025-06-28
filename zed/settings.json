@@ -216,7 +216,7 @@
   // Source: https://zed.dev/docs/configuring-zed#edit-predictions
   "edit_predictions": {
     // A list of globs representing files that inline completions should be disabled for.
-    "mode": "subtle",
+    "mode": "eager", // "subtle",
     "disabled_globs": [
       "**/.env*",
       "**/*.pem",
@@ -227,7 +227,7 @@
       "**/secrets.yml"
     ]
   },
-  "show_edit_predictions": false,
+  "show_edit_predictions": true,
   // Source: https://zed.dev/docs/configuring-zed#edit-predictions-disabled-in
   // A list of language scopes in which edit predictions should be disabled.
   "edit_predictions_disabled_in": ["comment"],
