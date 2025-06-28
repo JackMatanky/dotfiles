@@ -40,9 +40,6 @@
   // Line height: "comfortable", "standard", {"custom": #}
   "buffer_line_height": "comfortable",
 
-  /* ------------------- Agent Panel Font ------------------- */
-  "agent_font_size": 16,
-
   // https://zed.dev/docs/configuring-zed#unnecessary-code-fade
   // The opacity at which to fade out unused code.
   "unnecessary_code_fade": 0.3,
@@ -580,10 +577,23 @@
     "default_width": 640,
     "default_height": 320,
     "default_model": {
+      "provider": "lmstudio",
+      "model": "Qwen2.5-Coder-14B-Instruct"
+    },
+    "inline_assistant_model": {
+      "provider": "lmstudio",
+      "model": "Qwen2.5-Coder-14B-Instruct"
+    },
+    "commit_message_model": {
+      "provider": "openai",
+      "model": "gpt-4o"
+    },
+    "thread_summary_model": {
       "provider": "ollama",
       "model": "qwen3:8b"
     }
   },
+  "agent_font_size": 16,
 
   /* -------------------------------------------------------- */
   /*                      Slash Commands                      */
@@ -1360,6 +1370,15 @@
     "lmstudio": {
       "api_url": "http://localhost:1234/v1",
       "low_speed_timeout_in_seconds": 600
+      // "available_models": [
+      //   {
+      //     "name": "Qwen2.5-Coder-14B-Instruct",
+      //     "display_name": "Qwen 2.5 Coder 14B",
+      //     "max_tokens": 128000,
+      //     "supports_tools": true,
+      //     "supports_thinking": true
+      //   }
+      // ]
     }
   },
 
