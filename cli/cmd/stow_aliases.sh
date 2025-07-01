@@ -6,15 +6,15 @@
 # -----------------------------------------------------------------------------
 
 stow-all() {
-  cd ~/dotfiles/ && stow .
+    cd ~/dotfiles/ && stow .
 }
 
 unstow-all() {
-  cd ~/dotfiles/ && stow -D .
+    cd ~/dotfiles/ && stow -D .
 }
 
 restow-all() {
-  cd ~/dotfiles/ && stow -R .
+    cd ~/dotfiles/ && stow -R .
 }
 
 alias unstow='stow -D'
