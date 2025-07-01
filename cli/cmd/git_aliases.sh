@@ -7,11 +7,13 @@
 # Description: Aliases and functions for common git operations
 # -----------------------------------------------------------------------------
 
-# Fail on errors, unset variables, and pipeline errors.
-set -euo pipefail
+if [ -n "${BASH_VERSION-}" ]; then
+    # Fail on errors, unset variables, and pipeline errors.
+    set -euo pipefail
 
-# Set IFS to newline and tab to ensure safe word splitting.
-IFS=$'\n\t'
+    # Set IFS to newline and tab to ensure safe word splitting.
+    IFS=$'\n\t'
+fi
 
 # ------------------------------------------------------------ #
 #                            Lazygit                           #

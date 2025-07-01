@@ -8,11 +8,13 @@
 #              sessions, and various tooling integrations.
 # -----------------------------------------------------------------------------
 
-# Fail on errors, unset variables, and pipeline errors.
-set -euo pipefail
+if [ -n "${BASH_VERSION-}" ]; then
+    # Fail on errors, unset variables, and pipeline errors.
+    set -euo pipefail
 
-# Set IFS to newline and tab to ensure safe word splitting.
-IFS=$'\n\t'
+    # Set IFS to newline and tab to ensure safe word splitting.
+    IFS=$'\n\t'
+fi
 
 # ------------------------------------------------------------ #
 #                          Navigation                          #
@@ -117,9 +119,10 @@ alias obsidian='cd ~/obsidian_vault'
 #
 # Usage:
 #   obsidian_gpl
-obsidian-gpl() {
+obsidian_gpl() {
     cd ~/obsidian_vault && git pull
 }
+alias obsidian-gpl='obsidian_gpl'
 
 # ----------------------- Keyboard Dev ----------------------- #
 alias kb-dev='cd ~/Documents/keyboard_dev'
@@ -249,6 +252,7 @@ tmx() {
 zj_dot() {
     cd "$HOME/dotfiles" && zellij
 }
+alias zj-dot='zj_dot'
 
 # Launch zellij in ~/obsidian_vault
 #
@@ -257,6 +261,7 @@ zj_dot() {
 zj_obsidian() {
     cd "$HOME/obsidian_vault" && zellij
 }
+alias zj-obsidian='zj_obsidian'
 
 # Open or attach to a zellij session for a given directory key.
 #
@@ -303,9 +308,9 @@ zj() {
 
 # Open zellij with the welcome screen.
 #
-# Usage: zj_welcome
+# Usage: zj-welcome
 # No arguments.
-alias zj_welcome='zellij -l welcome'
+alias zj-welcome='zellij -l welcome'
 
 # ------------------------------------------------------------ #
 #                    Tooling & Integrations                    #
