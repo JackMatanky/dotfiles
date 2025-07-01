@@ -1,39 +1,81 @@
+#!/usr/bin/env bash
 # shellcheck shell=bash
 
 # -----------------------------------------------------------------------------
 # Filename: ~/dotfiles/cli/aliases.sh
-# Description: Aliases for common commands
+# Dependencies: fd, fzf, eza, bat, pbcopy (macOS), tmux, zellij, zoxide
+# Description: Aliases and functions for navigation, fuzzy finding, tmux/zellij
+#              sessions, and various tooling integrations.
 # -----------------------------------------------------------------------------
+
+# Fail on errors, unset variables, and pipeline errors.
+set -euo pipefail
+
+# Set IFS to newline and tab to ensure safe word splitting.
+IFS=$'\n\t'
 
 # ------------------------------------------------------------ #
 #                          Navigation                          #
 # ------------------------------------------------------------ #
-# cx: cd into a dir (arg or fzf with eza preview) and list with eza
+# cx: Change to a directory by name or via fzf, then list contents with eza.
+#
+# If no argument is provided, fzf is used to select a directory, with
+# a preview of the target directory's tree. If a target is chosen, the
+# shell will change into it and list its contents with the eza command.
+#
+# Usage:
+#   cx [DIR]
+#
+# Args:
+#   DIR: Optional. Directory path or tag; if omitted, select via fzf.
 cx() {
-  local target="$1"
-  if [ -z "$target" ]; then
-    target="$(fd --type directory --hidden --exclude .git | fzf --preview 'eza --tree --level=2 --color=always {}')"
-  fi
-  [ -n "$target" ] && cd "$target" && eza -la --group-directories-first --icons
+    local target="${1:-}"
+    if [ -z "$target" ]; then
+        # select a directory with fzf and preview its tree
+        target=$(fd --type directory --hidden --exclude .git |
+            fzf --preview 'eza --tree --level=2 --color=always {}')
+    fi
+    # if a target is chosen, cd into it and list contents
+    [ -n "$target" ] && cd "$target" && eza -la --group-directories-first --icons
 }
 
-# f: Fuzzy search for a file with bat preview enabled and copy its path to clipboard
+# f: Fuzzy-find a file, preview with bat (or cat), and copy its path to clipboard.
+# The preview window displays the contents of the selected file with bat.
+# If a file is selected, its path is copied to the system clipboard.
+#
+# Usage:
+#   f
 f() {
-  local file
-  file="$(fd --type file --hidden --exclude .git | fzf --preview 'bat --style=full --color=always {} || cat {}')"
-  [ -n "$file" ] && printf %s "$file" | pbcopy
+    local file
+    # find files and preview
+    file=$(fd --type file --hidden --exclude .git |
+        fzf --preview 'bat --style=full --color=always {} || cat {}')
+    # copy selection if any
+    [ -n "$file" ] && printf '%s' "$file" | pbcopy
 }
 
-# rgf: Hybrid fd and ripgrep fuzzy file search
+# rgf: Hybrid fd + ripgrep fuzzy file finder with bat preview.
+#
+# This function combines the best of both worlds from fd and rg:
+#   1. fd: fast file discovery with fuzzy matching
+#   2. rg: ability to search file contents with ripgrep
+# The preview window displays the contents of the selected file with bat.
+#
+# Usage:
+#   rgf [QUERY...]
 rgf() (
-  RELOAD_RG='reload:rg --column --line-number --no-heading --color=always --smart-case {q} || :'
-  INITIAL_FD='fd --type f --hidden --follow --exclude .git'
-
-  eval "$INITIAL_FD" | fzf --ansi --multi --preview 'bat --style=full --color=always {} || cat {}' \
-    --bind "change:$RELOAD_RG" \
-    --delimiter : \
-    --preview-window 'right:60%' \
-    --query "$*"
+    local reload_cmd
+    # define reload on query change: ripgrep or no-op, split for readability
+    reload_cmd=$'reload:rg --column --line-number \
+                --no-heading --color=always \
+                --smart-case {q} || :'
+    # initial file list
+    eval 'fd --type file --hidden --follow --exclude .git' |
+        fzf --ansi --multi --preview 'bat --style=full --color=always {} || cat {}' \
+            --bind "$reload_cmd" \
+            --delimiter : \
+            --preview-window 'right:60%' \
+            --query "$*"
 )
 
 # ------------------------------------------------------------ #
@@ -45,18 +87,18 @@ alias l='ls -l'
 # ------------------------- Justfile ------------------------- #
 alias j='just'
 
-# ---------------------------- Eza --------------------------- #
+# ---------------------------- EZA --------------------------- #
+# Docs: https://github.com/eza-community/eza
 # Detailed File List
 alias ll='eza --long --icons --git --all --group-directories-first'
 # Tree Views
-alias lt='eza --tree --level=2 --icons --git' # 2 levels
-alias ltree='eza --tree --level=2 --icons --git' # 3 levels
+alias lt='eza --tree --level=2 --icons --git'    # 2 levels
+alias ltree='eza --tree --level=3 --icons --git' # 3 levels
 
 # -------------------------- Zoxide -------------------------- #
 # Docs: https://github.com/ajeetdsouza/zoxide
 alias za='zoxide add'
 alias zq='zoxide query'
-
 
 # ------------------------------------------------------------ #
 #                          Directories                         #
@@ -70,8 +112,13 @@ alias dot-nix='cd ~/dotfiles/nixos'
 
 # ---------------------- Obsidian Vault ---------------------- #
 alias obsidian='cd ~/obsidian_vault'
+
+# Pull latest in Obsidian vault
+#
+# Usage:
+#   obsidian_gpl
 obsidian-gpl() {
-  cd ~/obsidian_vault && git pull
+    cd ~/obsidian_vault && git pull
 }
 
 # ----------------------- Keyboard Dev ----------------------- #
@@ -85,7 +132,6 @@ alias dev-work='cd ~/Documents/_dev_work'
 alias dev-hive='cd ~/Documents/_dev_work/hive_urban_github'
 alias dev-geo-data='cd ~/Documents/_dev_work/hive_urban_github/geo-data'
 
-
 # ------------------------------------------------------------ #
 #                             NixOS                            #
 # ------------------------------------------------------------ #
@@ -98,25 +144,44 @@ alias hm_switch_trace='home-manager switch --flake . --show-trace'
 alias cg_empty='sudo nix-collect-garbage'
 alias cg_empty_all='sudo nix-collect-garbage -d'
 
-
 # ------------------------------------------------------------ #
 #                            NeoVim                            #
 # ------------------------------------------------------------ #
 alias v='nvim'
 alias vdiff='nvim -d'
 
-# ffv: Fuzzy search for a file with bat preview enabled and open it in Neovim
+# ffv: Fuzzy-find a file and open it in Neovim, with bat preview.
+#
+# The previewer shows the contents of the file with bat if it's
+# a text file, or simply cat if it's not. The result is opened
+# in Neovim if a file is selected.
+#
+# Usage:
+#   ffv
 ffv() {
-  local file
-  file="$(fd --type file --hidden --exclude .git | fzf --preview 'bat --style=full --color=always {} || cat {}')"
-  [ -n "$file" ] && nvim "$file"
+    local file
+    # select file with fzf and preview
+    file=$(fd --type file --hidden --exclude .git |
+        fzf --preview 'bat --style=full --color=always {} || cat {}')
+    # open in Neovim if selected
+    [ -n "$file" ] && nvim "$file"
 }
 
-# fdv: Fuzzy search for a directory with eza preview and open it in Neovim
+# fdv: Fuzzy-find a directory and open it in Neovim, with eza preview.
+#
+# The previewer shows the contents of the selected directory with eza,
+# with a tree view of up to 2 levels. The result is opened in Neovim
+# if a directory is selected.
+#
+# Usage:
+#   fdv
 fdv() {
-  local dir
-  dir="$(fd --type directory --hidden --exclude .git | fzf --preview 'eza --tree --level=2 --color=always {}')"
-  [ -n "$dir" ] && nvim "$dir"
+    local dir
+    # select directory with fzf and preview
+    dir=$(fd --type directory --hidden --exclude .git |
+        fzf --preview 'eza --tree --level=2 --color=always {}')
+    # open in Neovim if selected
+    [ -n "$dir" ] && nvim "$dir"
 }
 
 # ------------------------------------------------------------ #
@@ -124,40 +189,122 @@ fdv() {
 # ------------------------------------------------------------ #
 
 # --------------------------- Tmux --------------------------- #
-alias tmx_src='tmux source ~/.tmux.conf'
+# Docs: https://github.com/tmux/tmux
+# Reload tmux configuration from your dotfiles.
+#
+# Usage:
+#   tmx_src
+alias tmx-src='tmux source-file "$HOME/.config/tmux/tmux.conf"'
+
+# Open or attach to a tmux session for a given directory key.
+#
+# Usage:
+#   tmx [dir]
+#
+# Args:
+#   dir: Optional. One of dot, dotvim, obsidian, kb, or a path. Defaults to ~/.
+tmx() {
+    local dir="${1:-~/}"
+    local name dirpath
+
+    case "$dir" in
+    dot)
+        name="dotfiles"
+        dirpath="$HOME/dotfiles"
+        ;;
+    dotvim)
+        name="neovim_config"
+        dirpath="$HOME/dotfiles/nvim"
+        ;;
+    obsidian)
+        name="obsidian_vault"
+        dirpath="$HOME/obsidian_vault"
+        ;;
+    kb)
+        name="keyboard_dev"
+        dirpath="$HOME/Documents/keyboard_dev"
+        ;;
+    *)
+        name="general"
+        dirpath="$dir"
+        ;;
+    esac
+
+    cd "$dirpath" || return
+
+    if tmux list-sessions | grep -xq "$name"; then
+        tmux attach-session -t "$name"
+    else
+        tmux new-session -s "$name"
+    fi
+}
 
 # -------------------------- Zellij -------------------------- #
 # Docs: https://zellij.dev/documentation/
-# Run Zellij in a particular directory
+
+# Launch zellij in ~/dotfiles
+#
+# Usage:
+#   zj_dot
 zj_dot() {
-  cd ~/dotfiles && zellij
+    cd "$HOME/dotfiles" && zellij
 }
 
+# Launch zellij in ~/obsidian_vault
+#
+# Usage:
+#   zj_obsidian
 zj_obsidian() {
-  cd ~/obsidian_vault && zellij
+    cd "$HOME/obsidian_vault" && zellij
 }
 
+# Open or attach to a zellij session for a given directory key.
+#
+# Usage:
+#   zj [DIR]
+#
+# Args:
+#   DIR: Optional. One of dot, dotvim, obsidian, kb, or a path; defaults to '~/'
 zj() {
-  local session="$1"
-  local name=""
-  local dir=""
+    local session="${1:-~/}"
+    local name dirpath
 
-  case "$session" in
-    dot)      name="dotfiles"; dir=~/dotfiles ;;
-    dotvim)   name="neovim_config"; dir=~/dotfiles/nvim ;;
-    obsidian) name="obsidian_vault"; dir=~/obsidian_vault ;;
-    kb)       name="keyboard_dev"; dir=~/Documents/keyboard_dev ;;
-    *)        name="general"; dir="${session:-~}" ;;
-  esac
+    case "$session" in
+    dot)
+        name="dotfiles"
+        dirpath="$HOME/dotfiles"
+        ;;
+    dotvim)
+        name="neovim_config"
+        dirpath="$HOME/dotfiles/nvim"
+        ;;
+    obsidian)
+        name="obsidian_vault"
+        dirpath="$HOME/obsidian_vault"
+        ;;
+    kb)
+        name="keyboard_dev"
+        dirpath="$HOME/Documents/keyboard_dev"
+        ;;
+    *)
+        name="general"
+        dirpath="$session"
+        ;;
+    esac
 
-  cd "$dir"
-  if zellij list-sessions | grep -q "$name"; then
-    zellij attach "$name"
-  else
-    zellij --session "$name"
-  fi
+    cd "$dirpath" || return
+
+    if zellij list-sessions | grep -xq "$name"; then
+        zellij attach "$name"
+    else
+        zellij --session "$name"
+    fi
 }
 
+# Open zellij with the welcome screen.
+#
+# Usage: zj_welcome
+# No arguments.
 alias zj_welcome='zellij -l welcome'
 
 # ------------------------------------------------------------ #
@@ -165,44 +312,66 @@ alias zj_welcome='zellij -l welcome'
 # ------------------------------------------------------------ #
 
 # --------------------------- Yazi --------------------------- #
-# yz: Launch Yazi and cd into its last path
+# Launch Yazi, then cd into its last working directory
+#
+# Usage:
+#   yz [ARGS...]
 yz() {
-  local tmp
-  tmp="$(mktemp -t yazi-cwd.XXXXXX)"
+    # create temp file for cwd tracking
+    local tmp
+    tmp="$(mktemp -t yazi-cwd.XXXXXX)"
 
-  yazi --cwd-file "$tmp" "$@"
+    # launch Yazi with cwd-file
+    yazi --cwd-file "$tmp" "$@"
 
-  if [[ -s "$tmp" ]]; then
-    local cwd
-    cwd="$(<"$tmp")"
-    if [[ -n "$cwd" && "$cwd" != "$PWD" ]]; then
-      cd "$cwd"
+    # if cwd changed, cd into it
+    if [[ -s "$tmp" ]]; then
+        local cwd
+        cwd="$(<"$tmp")"
+        if [[ -n "$cwd" && "$cwd" != "$PWD" ]]; then
+            cd "$cwd"
+        fi
     fi
-  fi
 
-  rm -f "$tmp"
+    rm -f "$tmp"
 }
-
 
 # ------------------------- Aerospace ------------------------ #
+# Wrapper for aerospace commands: load, debug, monitor, app, window
+#
+# Usage:
+#   as <command>
+#
+# Available commands:
+#   load, debug, monitor, app, window
 as() {
-  case "$1" in
-    load) aerospace reload-config ;;
-    debug) aerospace debug-windows ;;
-    monitor) aerospace list-monitors ;;
-    app) aerospace list-apps ;;
+    case "$1" in
+    load)
+        aerospace reload-config
+        ;;
+    debug)
+        aerospace debug-windows
+        ;;
+    monitor)
+        aerospace list-monitors
+        ;;
+    app)
+        aerospace list-apps
+        ;;
     window)
-      aerospace list-windows --all \
-        | fzf --bind 'enter:execute(aerospace focus --window-id {1})+abort' \
-        | xargs -r aerospace focus --window-id
-      ;;
+        # fuzzy-select window to focus
+        aerospace list-windows --all |
+            fzf --bind 'enter:execute(aerospace focus --window-id {1})+abort' |
+            xargs -r aerospace focus --window-id
+        ;;
     *)
-      echo "Usage: as <command>"
-      echo "Available: load, debug, monitor, app, window"
-      ;;
-  esac
+        cat <<-EOF
+Usage: as <command>
+Available commands: load, debug, monitor, app, window
+EOF
+        ;;
+    esac
 }
-
 
 # ------------------------ Sketchybar ------------------------ #
 alias bar_load='sketchybar --reload'
