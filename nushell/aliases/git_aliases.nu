@@ -5,7 +5,7 @@
 # Lazygit
 alias lg = lazygit
 
-# returns the name of the current branch
+# Returns the name of the current branch
 export def git_current_branch [] {
     ^git rev-parse --abbrev-ref HEAD
 }
@@ -27,7 +27,7 @@ alias gau = git add --update
 
 # Commit
 alias gc = git commit --message
-def gcmsg [message: string] {
+def gcm [message: string] {
     git commit --message $message
 }
 def gcam [message: string] {

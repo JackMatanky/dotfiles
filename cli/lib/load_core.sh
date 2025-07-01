@@ -1,11 +1,11 @@
 # shellcheck shell=bash
-# --------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Filename: ~/.config/cli/lib/load_core.sh
 # Function: Initializes log_info, log_warn, log_error, source_sh_files
 # Usage: source "$XDG_CONFIG_HOME/cli/lib/load_core.sh"
-# Description: Load core shell support modules such as logging
-#              and batch sourcing of CLI shell files.
-# --------------------------------------------------------
+# Description: Load core shell support modules such as logging and batch
+#              sourcing of CLI shell files.
+# -----------------------------------------------------------------------------
 
 # Determine library directory path (fallback to ~/.config)
 CLI_LIB_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/cli/lib"
