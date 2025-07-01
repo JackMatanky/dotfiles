@@ -570,6 +570,10 @@
 
   /* ---------------------- Agent Panel --------------------- */
   "agent": {
+    "inline_assistant_model": {
+      "provider": "lmstudio",
+      "model": "qwen/qwen2.5-coder-14b"
+    },
     "default_profile": "ask",
     "version": "2",
     "enabled": true,
@@ -578,8 +582,8 @@
     "default_width": 500,
     "default_height": 350,
     "default_model": {
-      "provider": "ollama",
-      "model": "qwen3:8b"
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-thinking"
     }
     // "inline_assistant_model": {
     //   "provider": "lmstudio",
