@@ -12,11 +12,11 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Catppuccin Macchiato" // "Gruvbox Dark"
+    "dark": "Catppuccin Macchiato (Blur)" // "Gruvbox Dark"
   },
 
   /* ------------------------- Icons ------------------------ */
-  "icon_theme": "VSCode Icons (Dark)",
+  "icon_theme": "Modern Icons (Dark)",
 
   /* ------------------------ UI Font ----------------------- */
   "ui_font_size": 15,

@@ -356,14 +356,14 @@ alt-ctrl-shift-z = 'exec-and-forget open /Applications/Zed.app'                 
 # ------------------------------------------------------------ #
 # See: https://nikitabobko.github.io/AeroSpace/guide#multiple-monitors
 [workspace-to-monitor-force-assignment]
-1 = ['VC279', 'main']
-2 = ['ASUS VA27EHE', 'secondary']
-3 = ['VC279', 'main']
-4 = ['ASUS VA27EHE', 'secondary']
-5 = ['VC279', 'main']
-6 = ['ASUS VA27EHE', 'secondary']
-7 = ['VC279', 'main']
-8 = ['ASUS VA27EHE', 'secondary']
+1 = ['VC279', 'S27R65', 'main']
+2 = ['ASUS VA27EHE', 'DELL P2419H', 'secondary']
+3 = ['VC279', 'S27R65', 'main']
+4 = ['ASUS VA27EHE', 'DELL P2419H', 'secondary']
+5 = ['VC279', 'S27R65', 'main']
+6 = ['ASUS VA27EHE', 'DELL P2419H', 'secondary']
+7 = ['VC279', 'S27R65', 'main']
+8 = ['ASUS VA27EHE', 'DELL P2419H', 'secondary']
 9 = 'Built-in Retina Display'
 10 = 'Built-in Retina Display'
 
