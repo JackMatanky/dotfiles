@@ -1098,22 +1098,8 @@
     "Markdown": {
       "format_on_save": "off",
       "use_on_type_format": false,
-      // "prettier": {
-      //   "allowed": true
-      // }
-      "format_on_save": "on",
-      "formatter": {
-        "external": {
-          "command": "markdownlint-cli2",
-          "arguments": [
-            "--fix",
-            "--config",
-            "/Users/jack/.config/formatters/.markdownlint.jsonc",
-            "--ignore",
-            "MD013,MD029",
-            "{buffer_path}"
-          ]
-        }
+      "prettier": {
+        "allowed": true
       }
     },
     "Nix": {
