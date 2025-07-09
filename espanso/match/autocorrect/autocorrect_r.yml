@@ -94,34 +94,6 @@ matches:
     replace: recall
     propagate_case: true
     word: true
-  - trigger: reccomend
-    replace: recommend
-    propagate_case: true
-    word: true
-  - trigger: reccommend
-    replace: recommend
-    propagate_case: true
-    word: true
-  - trigger: reccomendations
-    replace: recommendations
-    propagate_case: true
-    word: true
-  - trigger: reccomended
-    replace: recommended
-    propagate_case: true
-    word: true
-  - trigger: reccommended
-    replace: recommended
-    propagate_case: true
-    word: true
-  - trigger: reccomending
-    replace: recommending
-    propagate_case: true
-    word: true
-  - trigger: reccommending
-    replace: recommending
-    propagate_case: true
-    word: true
   - trigger: reccuring
     replace: recurring
     propagate_case: true
@@ -258,6 +230,10 @@ matches:
     replace: recommend
     propagate_case: true
     word: true
+  - trigger: reccommend
+    replace: recommend
+    propagate_case: true
+    word: true
   - trigger: recomends
     replace: recommends
     propagate_case: true
@@ -274,11 +250,19 @@ matches:
     replace: recommended
     propagate_case: true
     word: true
+  - trigger: reccommended
+    replace: recommended
+    propagate_case: true
+    word: true
   - trigger: recomending
     replace: recommending
     propagate_case: true
     word: true
   - trigger: reccomending
+    replace: recommending
+    propagate_case: true
+    word: true
+  - trigger: reccommending
     replace: recommending
     propagate_case: true
     word: true
