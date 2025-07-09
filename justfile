@@ -304,6 +304,13 @@ update-flatpak:
     @echo "🔄 Updating Flatpak applications..."
     flatpak update -y
 
+# Update npm packages
+[group("Package Updates")]
+[unix]
+update-npm-packages:
+    @echo "🔄 Updating npm packages..."
+    npm update -g
+
 # 🔄 Update homebrew packages, flatpak, rust, cargo packages
 [group("Package Updates")]
 update-all:

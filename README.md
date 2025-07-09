@@ -256,20 +256,22 @@ chmod +x scripts/setup.sh
   brew install bat
   ```
 
-- [mermaid-cli](https://github.com/mermaid-js/mermaid-cli)
-
-  - Command line tool for the Mermaid library.
-
-  ```sh
-  brew install mermaid-cli
-  ```
-
 - [ollama](https://github.com/ollama/ollama)
 
   - Command line tool for the Ollama library.
 
   ```sh
   brew install ollama
+  ```
+
+- [mermaid-cli](https://github.com/mermaid-js/mermaid-cli)
+
+  - Command line tool for the Mermaid library.
+    - Note: Requires [Puppeteer](https://pptr.dev/)
+
+  ```sh
+  npm install -g mermaid-cli
+  npm install -g puppeteer
   ```
 
 ### Terminal Multiplexers

@@ -92,7 +92,7 @@ brew 'tlrc'
 brew 'ollama'
 
 # Command line tool for the Mermaid library
-brew 'mermaid-cli'
+# brew 'mermaid-cli'
 
 # ------------------------------------------------------------ #
 #                        Version Control                       #
