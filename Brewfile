@@ -91,6 +91,9 @@ brew 'tlrc'
 # Create, run, and share large language models (LLMs)
 brew 'ollama'
 
+# Command line tool for the Mermaid library
+brew 'mermaid-cli'
+
 # ------------------------------------------------------------ #
 #                        Version Control                       #
 # ------------------------------------------------------------ #
