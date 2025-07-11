@@ -113,6 +113,16 @@ run = 'layout floating'
 if.app-id = 'org.videolan.vlc'
 run = 'layout floating'
 
+# Password Manager - Bitwarden
+[[on-window-detected]]
+if.app-id = 'com.bitwarden.desktop'
+run = 'layout floating'
+
+# Password Manager - Apple Passwords
+[[on-window-detected]]
+if.app-id = 'com.apple.Passwords'
+run = 'layout floating'
+
 # --------------- Predifined Workspace Layouts --------------- #
 # Obsidian
 [[on-window-detected]]
@@ -141,7 +151,7 @@ run = 'move-node-to-workspace 3'
 
 # SRS - Anki
 [[on-window-detected]]
-if.app-id = 'net.ankiweb.dtop'
+if.app-id = 'net.ankiweb.launcher' # Previously 'net.ankiweb.dtop'
 run = 'move-node-to-workspace 4'
 
 # [[on-window-detected]]
@@ -197,6 +207,11 @@ run = 'move-node-to-workspace 9'
 # Gemini
 [[on-window-detected]]
 if.app-id = 'com.apple.Safari.WebApp.D23A73B0-A971-4778-BA6C-5343B38CA19B'
+run = 'move-node-to-workspace 9'
+
+# LM Studio
+[[on-window-detected]]
+if.app-id = 'com.openai.chat'
 run = 'move-node-to-workspace 9'
 
 # NotebookLM
