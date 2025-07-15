@@ -334,6 +334,8 @@ if OS.mac?
 
   # OpenAI's official ChatGPT desktop app
   cask 'chatgpt'
+  # Anthropic's official Claude AI desktop app
+  cask 'claude'
   # Discover, download, and run local LLMs
   cask 'lm-studio'
   # Get up and running with large language models locally
