@@ -1,4 +1,5 @@
 # shellcheck shell=bash
+
 # -----------------------------------------------------------------------------
 # Filename: ~/.config/cli/profile/10-brew.sh
 # Description: Sets up Homebrew environment for macOS and Linux. Defines

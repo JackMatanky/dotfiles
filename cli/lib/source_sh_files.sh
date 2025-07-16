@@ -1,4 +1,5 @@
 # shellcheck shell=bash
+
 # -----------------------------------------------------------------------------
 # Filename: ~/.config/cli/lib/source_sh_files.sh
 # Function: source_sh_files

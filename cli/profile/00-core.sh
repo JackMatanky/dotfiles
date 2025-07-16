@@ -1,4 +1,5 @@
 # shellcheck shell=bash
+
 # -----------------------------------------------------------------------------
 # Filename: ~/.config/cli/profile/00-core.sh
 # Description: Core shell environment setup. Detects OS, defines XDG base

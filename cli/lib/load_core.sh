@@ -1,4 +1,5 @@
 # shellcheck shell=bash
+
 # -----------------------------------------------------------------------------
 # Filename: ~/.config/cli/lib/load_core.sh
 # Function: Initializes log_info, log_warn, log_error, source_sh_files
@@ -11,6 +12,7 @@
 CLI_LIB_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/cli/lib"
 CLI_LOGGER="$CLI_LIB_DIR/log.sh"
 CLI_SOURCER="$CLI_LIB_DIR/source_sh_files.sh"
+CLI_NAV_HELPERS="$CLI_LIB_DIR/nav_helpers.sh"
 
 # Load logging functions (log_info, log_warn, log_error)
 # shellcheck source=/dev/null
@@ -19,3 +21,7 @@ CLI_SOURCER="$CLI_LIB_DIR/source_sh_files.sh"
 # Load the batch sourcing utility (source_sh_files)
 # shellcheck source=/dev/null
 [[ -f "$CLI_SOURCER" ]] && source "$CLI_SOURCER"
+
+# Load navigation helpers (fzf_pick_file, cd_and_run, etc.)
+# shellcheck source=/dev/null
+[[ -f "$CLI_NAV_HELPERS" ]] && source "$CLI_NAV_HELPERS"

@@ -1,4 +1,5 @@
 # shellcheck shell=bash
+
 # -----------------------------------------------------------------------------
 # Filename: ~/.config/cli/profile/20-lang.sh
 # Description: Configures environment variables and runtime initialization

@@ -2,7 +2,7 @@
 # shellcheck shell=bash
 
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/cli/aliases.sh
+# Filename: ~/dotfiles/cli/cmd/aliases.sh
 # Dependencies: fd, fzf, eza, bat, pbcopy (macOS), tmux, zellij, zoxide
 # Description: Aliases and functions for navigation, fuzzy finding, tmux/zellij
 #              sessions, and various tooling integrations.
@@ -19,42 +19,75 @@ fi
 # ------------------------------------------------------------ #
 #                          Navigation                          #
 # ------------------------------------------------------------ #
+
+#######################################
 # cx: Change to a directory by name or via fzf, then list contents with eza.
 #
 # If no argument is provided, fzf is used to select a directory, with
 # a preview of the target directory's tree. If a target is chosen, the
 # shell will change into it and list its contents with the eza command.
 #
-# Usage:
-#   cx [DIR]
-#
-# Args:
-#   DIR: Optional. Directory path or tag; if omitted, select via fzf.
+# Globals:
+#   None
+# Arguments:
+#   $1 [DIR]: Optional. Directory path or tag; if omitted, select via fzf.
+# Outputs:
+#   Directory listing via eza to STDOUT.
+# Returns:
+#   0 if navigation succeeds, non-zero on failure.
+#######################################
 cx() {
-    local target="${1:-}"
-    if [ -z "$target" ]; then
-        # select a directory with fzf and preview its tree
-        target=$(fd --type directory --hidden --exclude .git |
-            fzf --preview 'eza --tree --level=2 --color=always {}')
-    fi
-    # if a target is chosen, cd into it and list contents
-    [ -n "$target" ] && cd "$target" && eza -la --group-directories-first --icons
+  local target="${1:-}"
+  if [ -z "$target" ]; then
+    target="$(__fzf_pick_dir)"
+  fi
+
+  if [ -n "$target" ]; then
+    __cd_and_run "$target" eza -la --group-directories-first --icons
+  fi
 }
 
+# cx() {
+#     local target="${1:-}"
+#     if [ -z "$target" ]; then
+#         # select a directory with fzf and preview its tree
+#         target=$(fd --type directory --hidden --exclude .git |
+#             fzf --preview 'eza --tree --level=2 --color=always {}')
+#     fi
+#     # if a target is chosen, cd into it and list contents
+#     [ -n "$target" ] && cd "$target" && eza -la --group-directories-first --icons
+# }
+
+#######################################
 # f: Fuzzy-find a file, preview with bat (or cat), and copy its path to clipboard.
 # The preview window displays the contents of the selected file with bat.
 # If a file is selected, its path is copied to the system clipboard.
 #
-# Usage:
-#   f
+# Globals:
+#   None
+# Arguments:
+#   None
+# Outputs:
+#   Copies selected path to the system clipboard.
+# Returns:
+#   0 if successful, non-zero otherwise.
+#######################################
 f() {
-    local file
-    # find files and preview
-    file=$(fd --type file --hidden --exclude .git |
-        fzf --preview 'bat --style=full --color=always {} || cat {}')
-    # copy selection if any
-    [ -n "$file" ] && printf '%s' "$file" | pbcopy
+  local file
+  file="$(__fzf_pick_file)"
+  if [ -n "$file" ]; then
+    printf '%s' "$file" | pbcopy
+  fi
 }
+
+# f() {
+#     local file
+#     # find files and preview
+#     file=$(fd --type file --hidden --exclude .git |
+#         fzf --preview 'bat --style=full --color=always {} || cat {}')
+#     # copy selection if any
+#     [ -n "$file" ] && printf '%s' "$file" | pbcopy
+# }
 
 # rgf: Hybrid fd + ripgrep fuzzy file finder with bat preview.
 #
@@ -85,6 +118,109 @@ rgf() (
 # ------------------------------------------------------------ #
 alias c='clear'
 alias l='ls -l'
+
+# -----------------------------
+#  Interactive mv Helper (mvf)
+# -----------------------------
+#
+# Description:
+#   Move one or more files to a selected directory using fd and fzf.
+#   Supports optional source directory filtering, bat previews,
+#   dry-run simulation, and confirmation prompts.
+#
+# Usage:
+#   mvf [--dir <source_dir>] [--current-dir] [--dry-run] [--confirm]
+#
+# Flags:
+#   --dir <source_dir>     Select files only from this directory.
+#   --current-dir          Shortcut for '--dir .'.
+#   --dry-run              Show the move commands without executing them.
+#   --confirm              Ask for confirmation before moving files.
+#
+# Dependencies:
+#   - fd: for finding files and directories
+#   - fzf: for interactive fuzzy selection
+#   - bat: for file preview (optional, but recommended)
+#
+# Example:
+#   mvf --dir ~/Downloads --dry-run
+#
+mvf() {
+  local dir="."
+  local dry_run=false
+  local confirm=false
+  local arg
+
+  # --- Parse arguments ---
+  while [[ $# -gt 0 ]]; do
+    arg="$1"
+    case "$arg" in
+      --current-dir)
+        dir="."
+        shift
+        ;;
+      --dir)
+        dir="$2"
+        shift 2
+        ;;
+      --dry-run)
+        dry_run=true
+        shift
+        ;;
+      --confirm)
+        confirm=true
+        shift
+        ;;
+      *)
+        echo "Unknown option: $arg" >&2
+        return 1
+        ;;
+    esac
+  done
+
+  # --- File Selection ---
+  local files
+  files=$(fd --type f . "$dir" | fzf --multi \
+    --prompt="Select file(s) to move: " \
+    --preview="bat --style=plain --color=always --line-range :40 {}")
+
+  if [[ -z "$files" ]]; then
+    echo "No files selected."
+    return 1
+  fi
+
+  # --- Destination Directory Selection ---
+  local dest
+  dest=$(fd --type d . | fzf --prompt="Select target directory: ")
+
+  if [[ -z "$dest" ]]; then
+    echo "No destination selected."
+    return 1
+  fi
+
+  # --- Confirmation Prompt ---
+  if $confirm; then
+    echo
+    echo "Selected files:"
+    echo "$files"
+    echo "Destination: $dest"
+    read -rp "Proceed with move? [y/N]: " choice
+    if [[ ! "$choice" =~ ^[Yy]$ ]]; then
+      echo "Operation cancelled."
+      return 1
+    fi
+  fi
+
+  # --- Move Files ---
+  local file
+  while IFS= read -r file; do
+    if $dry_run; then
+      echo "[Dry Run] mv \"$file\" \"$dest/\""
+    else
+      mv "$file" "$dest" && echo "Moved '$file' -> '$dest/'"
+    fi
+  done <<< "$files"
+}
 
 # ------------------------- Justfile ------------------------- #
 alias j='just'
