@@ -760,7 +760,7 @@
     },
     "dock": "bottom", // `left`, `right`, `bottom`.
     "default_width": 640, // For side docking
-    "default_height": 300, // For bottom docking
+    "default_height": 250, // For bottom docking
     // What working directory to use when launching the terminal.
     // May take 4 values:
     // 1. Use the current file's project directory.  Will Fallback to the
