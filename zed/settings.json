@@ -19,7 +19,7 @@
   "icon_theme": "Modern Icons (Dark)",
 
   /* ------------------------ UI Font ----------------------- */
-  "ui_font_size": 15,
+  "ui_font_size": 14,
   "ui_font_weight": 400,
   "ui_font_family": "Ubuntu", //"Zed Plex Sans",
   "ui_font_fallbacks": ["Fira Code", "JetBrains Mono", "Source Code Pro"],
@@ -345,7 +345,7 @@
     //    "always"
     // 3. Never show the minimap:
     //    "never" (default)
-    "show": "never",
+    "show": "auto",
     // Where to show the minimap in the editor.
     // This setting can take two values:
     // 1. Show the minimap on the focused editor only:
@@ -575,7 +575,6 @@
       "model": "qwen/qwen2.5-coder-14b"
     },
     "default_profile": "ask",
-    "version": "2",
     "enabled": true,
     "button": true,
     "dock": "right",
@@ -761,7 +760,7 @@
     },
     "dock": "bottom", // `left`, `right`, `bottom`.
     "default_width": 640, // For side docking
-    "default_height": 320, // For bottom docking
+    "default_height": 300, // For bottom docking
     // What working directory to use when launching the terminal.
     // May take 4 values:
     // 1. Use the current file's project directory.  Will Fallback to the
@@ -809,7 +808,7 @@
     "line_height": "standard",
     "cursor_shape": "bar",
     "blinking": "terminal_controlled", // "on" to always blink the cursor
-    "font_size": 15, // Default to matching the buffer's font size
+    "font_size": 13.5, // Default to matching the buffer's font size
     "font_family": "JetBrainsMono Nerd Font", //"FiraCode Nerd Fonts"
     "font_fallbacks": ["FiraCode Nerd Fonts"]
     // Sets the maximum number of lines in the terminal's scrollback buffer.
@@ -1348,14 +1347,12 @@
   /* -------------------------------------------------------- */
   "language_models": {
     "anthropic": {
-      "version": "1",
       "api_url": "https://api.anthropic.com"
     },
     "google": {
       "api_url": "https://generativelanguage.googleapis.com"
     },
     "openai": {
-      "version": "1",
       "api_url": "https://api.openai.com/v1",
       "low_speed_timeout_in_seconds": 600
     },
