@@ -117,7 +117,7 @@ gui:
 
     # Background color of selected line.
     selectedLineBgColor:
-      - blue # Fix: avoids washed-out light blue and improves focus visibility
+      - blue - bold # Fix: avoids washed-out light blue and improves focus visibility
 
     # Background color of selected line when view doesn't have focus.
     inactiveViewSelectedLineBgColor:
@@ -216,7 +216,6 @@ git:
   # If true, do not allow force pushes
   disableForcePushing: false # Set to true if you want stricter safeguards
 
-
 # ------------------------------------------------------------ #
 #                    Periodic Update Checks                    #
 # ------------------------------------------------------------ #
@@ -226,7 +225,6 @@ update:
 
   # Period in days between update checks
   days: 14
-
 
 # ------------------------------------------------------------ #
 #                     Background Refreshes                     #
