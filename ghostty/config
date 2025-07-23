@@ -41,7 +41,7 @@ theme = catppuccin-macchiato
 # --------------------------- Font --------------------------- #
 
 font-family = "FiraCode Nerd Font Mono"
-font-size = 16
+font-size = 15
 
 # Enables thicker font rendering if supported.
 # Only works on macOS. Has no effect on other platforms.
@@ -90,7 +90,6 @@ copy-on-select = true
 
 
 # --------------------------- MacOS -------------------------- #
-
 # To hide the titlebar without removing the native window borders
 # or rounded corners, use `macos-titlebar-style = hidden` instead.
 # Use `macos-titlebar-style = tabs` to enable tabs within the titlebar.
@@ -98,9 +97,26 @@ macos-titlebar-style = hidden
 macos-option-as-alt = true
 
 
+# ----------------------- Keybindings  ----------------------- #
 # keybind = global:cmd+/=toggle_quick_terminal
 keybind = performable:cmd+c=copy_to_clipboard
+keybind = ctrl+n=new_window
 
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+k=goto_split:top
+keybind = ctrl+l=goto_split:right
+
+keybind = ctrl+a>h=new_split:left
+keybind = ctrl+a>j=new_split:down
+keybind = ctrl+a>k=new_split:up
+keybind = ctrl+a>l=new_split:right
+keybind = ctrl+a>f=toggle_split_zoom
+
+keybind = ctrl+a>n=next_tab
+keybind = ctrl+a>p=previous_tab
+
+# ------------------- Shell Configuration  ------------------- #
 # Use Nushell as default shell
 command = /opt/homebrew/bin/nu
 shell-integration = none
