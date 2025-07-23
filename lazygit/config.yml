@@ -101,7 +101,7 @@ gui:
   theme:
     # Border color of focused window
     activeBorderColor:
-      - brightCyan
+      - cyan
       - bold
 
     # Border color of non-focused windows
