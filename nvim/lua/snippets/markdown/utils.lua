@@ -15,11 +15,16 @@ local M = {}
 -- inside a math zone.
 -- @return (boolean) True if in a math zone, false otherwise.
 function M.is_in_mathzone()
-  local line_to_cursor = vim.api.nvim_buf_get_lines(0, vim.fn.line('.') - 1, vim.fn.line('.'), true)[1]
-  line_to_cursor = line_to_cursor:sub(1, vim.fn.col('.') - 1)
+  local line_to_cursor = vim.api.nvim_buf_get_lines(
+    0,
+    vim.fn.line(".") - 1,
+    vim.fn.line("."),
+    true
+  )[1]
+  line_to_cursor = line_to_cursor:sub(1, vim.fn.col(".") - 1)
   -- Count non-escaped dollar signs.
   local dollars = 0
-  for _ in string.gmatch(line_to_cursor, "[^%\]$") do
+  for _ in string.gmatch(line_to_cursor, "[^%]$") do
     dollars = dollars + 1
   end
   return dollars % 2 ~= 0

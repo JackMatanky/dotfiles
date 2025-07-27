@@ -30,35 +30,52 @@ return {
     i(0),
   }),
 
-  s({
-    trig = "ifmain",
-    name = "if __name__ == __main__",
-    dscr = "Execute code if the file is executed directly",
-  }, fmt([[
+  s(
+    {
+      trig = "ifmain",
+      name = "if __name__ == __main__",
+      dscr = "Execute code if the file is executed directly",
+    },
+    fmt(
+      [[
   if __name__ == "__main__":
       {}
-  ]], {
-    i(0)
-  })),
+  ]],
+      {
+        i(0),
+      }
+    )
+  ),
 
-  s({
-    trig = "#",
-    name = "Multiline string",
-    dscr = 'Avoid autopair plugin annoyances when typing multiple "',
-  }, fmt([[
+  s(
+    {
+      trig = "#",
+      name = "Multiline string",
+      dscr = 'Avoid autopair plugin annoyances when typing multiple "',
+    },
+    fmt(
+      [[
   """
   {}
   """
   {}
-  ]], {
-    i(1), i(0)
-  })),
+  ]],
+      {
+        i(1),
+        i(0),
+      }
+    )
+  ),
 
-  s({
-    trig = "##",
-    name = "One-line multiline string",
-    dscr = 'Avoid autopair plugin annoyances when typing multiple "',
-  }, fmt('"""{}"""{}', {
-    i(1), i(0)
-  })),
+  s(
+    {
+      trig = "##",
+      name = "One-line multiline string",
+      dscr = 'Avoid autopair plugin annoyances when typing multiple "',
+    },
+    fmt('"""{}"""{}', {
+      i(1),
+      i(0),
+    })
+  ),
 }
