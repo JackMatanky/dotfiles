@@ -45,17 +45,21 @@ return {
 
   -- --------------------- JUPYTER CELLS -------------------- --
   -- This single snippet handles both code and markdown cells.
-  s({
-    trig = "jpy",
-    name = "py:percent Cell",
-    dscr = "Add new py:percent code or markdown cell for interactive REPLs.",
-  }, {
-    t("# %%"),
-    c(1, {
-      t(""),
-      t(" [markdown]"),
-    }),
-    t({ "\n" }),
-    i(0),
-  }),
+  s(
+    {
+      trig = "jpy",
+      name = "py:percent Cell",
+      dscr = "Add new py:percent code or markdown cell for interactive REPLs.",
+    },
+    fmt(
+      [[
+    # %%{}
+    {}
+    ]],
+      {
+        c(1, { t(""), t(" [markdown]") }),
+        i(0),
+      }
+    )
+  ),
 }

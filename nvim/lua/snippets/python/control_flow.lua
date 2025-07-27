@@ -6,6 +6,7 @@
 
 local ls = require("luasnip")
 local s = ls.snippet
+local sn = ls.snippet_node
 local t = ls.text_node
 local i = ls.insert_node
 local c = ls.choice_node
@@ -13,65 +14,45 @@ local d = ls.dynamic_node
 local fmt = require("luasnip.extras.fmt").fmt
 
 return {
+  -- if statement
   s(
-    {
-      trig = "if",
-      name = "if",
-      dscr = "if statement",
-    },
+    { trig = "if", name = "if", dscr = "if statement" },
     fmt(
       [[
 if {}:
     {}
 ]],
-      {
-        i(1, "condition"),
-        i(0, "pass"),
-      }
+      { i(1, "condition"), i(0, "pass") }
     )
   ),
 
+  -- elif statement
   s(
-    {
-      trig = "elif",
-      name = "elif",
-      dscr = "elif statement",
-    },
+    { trig = "elif", name = "elif", dscr = "elif statement" },
     fmt(
       [[
 elif {}:
     {}
 ]],
-      {
-        i(1, "condition"),
-        i(0, "pass"),
-      }
+      { i(1, "condition"), i(0, "pass") }
     )
   ),
 
+  -- else statement
   s(
-    {
-      trig = "else",
-      name = "else",
-      dscr = "else statement",
-    },
+    { trig = "else", name = "else", dscr = "else statement" },
     fmt(
       [[
 else:
     {}
 ]],
-      {
-        i(0, "pass"),
-      }
+      { i(0, "pass") }
     )
   ),
 
+  -- if/else block
   s(
-    {
-      trig = "ifelse",
-      name = "if/else",
-      dscr = "if statement with else",
-    },
+    { trig = "ifelse", name = "if/else", dscr = "if statement with else" },
     fmt(
       [[
 if {}:
@@ -79,14 +60,11 @@ if {}:
 else:
     {}
 ]],
-      {
-        i(1, "condition"),
-        i(2, "action"),
-        i(0),
-      }
+      { i(1, "condition"), i(2, "action"), i(0) }
     )
   ),
 
+  -- for loop (dynamic choice)
   s({
     trig = "for",
     name = "for loop (dynamic)",
@@ -96,92 +74,76 @@ else:
     i(1, "item"),
     t(" in "),
     c(2, {
-      i(3, "iterable"),
-      s(nil, { t("range("), i(4, "10"), t(")") }),
+      i(1, "iterable"),
+      sn(nil, { t("range("), i(1, "10"), t(")") }),
     }),
-    t(":\n    "),
-    i(0, "pass"),
+    t(":\n"),
+    fmt(
+      [[
+    {}
+]],
+      { i(0, "pass") }
+    ),
   }),
 
-  -- Corrected: Replaced one complex dynamic snippet with two simple, explicit snippets.
-  s(
-    {
-      trig = "while",
-      name = "while loop",
-      dscr = "Creates a standard while loop.",
-    },
-    fmt(
-      [[
-while {}:
+  -- while / do-while (dynamic)
+  s({
+    trig = "while",
+    name = "while / do-while (dynamic)",
+    dscr = 'Creates a while loop. If condition is "True", becomes a do-while structure.',
+  }, {
+    t("while "),
+    i(1, "condition"),
+    t(":\n"),
+    d(2, function(args)
+      local cond = args[1][1] or ""
+      if cond == "True" then
+        return fmt(
+          [[
     {}
-]],
-      {
-        i(1, "condition"),
-        i(0, "pass"),
-      }
-    )
-  ),
-
-  s(
-    {
-      trig = "whilet",
-      name = "while True loop (do-while)",
-      dscr = "Creates a `while True:` loop for a do-while pattern.",
-    },
-    fmt(
-      [[
-while True:
-    {}
-    if not ({}):
+    if not ({}) then
         break
-{}
+    {}
 ]],
-      {
-        i(1, "action"),
-        i(2, "exit_condition"),
-        i(0),
-      }
-    )
-  ),
+          { i(1, "action"), i(2, "condition"), i(0) }
+        )
+      else
+        return fmt(
+          [[
+    {}
+]],
+          { i(0, "pass") }
+        )
+      end
+    end, { 1 }),
+  }),
 
+  -- match/case
   s(
-    {
-      trig = "match",
-      name = "match/case",
-      dscr = "match/case statements",
-    },
+    { trig = "match", name = "match/case", dscr = "match/case statements" },
     fmt(
       [[
 match {}:
     case {}:
         {}
 ]],
-      {
-        i(1, "subject"),
-        i(2, "pattern"),
-        i(0, "pass"),
-      }
+      { i(1, "subject"), i(2, "pattern"), i(0, "pass") }
     )
   ),
 
+  -- single case
   s(
-    {
-      trig = "case",
-      name = "case",
-      dscr = "case block",
-    },
+    { trig = "case", name = "case", dscr = "case block" },
     fmt(
       [[
 case {}:
     {}
 ]],
-      {
-        i(1, "pattern"),
-        i(0, "pass"),
-      }
+      { i(1, "pattern"), i(0, "pass") }
     )
   ),
 
+  -- wildcard case
   s(
     {
       trig = "casew",
@@ -193,9 +155,7 @@ case {}:
 case _:
     {}
 ]],
-      {
-        i(0, "pass"),
-      }
+      { i(0, "pass") }
     )
   ),
 }
