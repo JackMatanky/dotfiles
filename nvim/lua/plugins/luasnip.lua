@@ -1,5 +1,5 @@
 -- --------------------------------------------------------------------
---  Filename: ~/dotfiles/nvim/lua/plugins/rainbow_csv.lua
+--  Filename: ~/dotfiles/nvim/lua/plugins/luasnip.lua
 --  LazyVim Docs: https://www.lazyvim.org/extras/coding/luasnip
 --  LuaSnip Docs: https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md
 -- --------------------------------------------------------------------
@@ -7,30 +7,21 @@
 return {
   {
     "L3MON4D3/LuaSnip",
-    -- keep LazyVim defaults, but add our Lua loader:
-    dependencies = {
-      {
-        "rafamadriz/friendly-snippets",
-        config = function()
-          require("luasnip.loaders.from_vscode").lazy_load()
-        end,
-      },
-    },
-    opts = {
-      history             = true,
-      delete_check_events = "TextChanged",
-      -- you can enable autosnippets if desired:
-      enable_autosnippets = true,
-    },
-    config = function(_, opts)
-      local ls = require("luasnip")
-      ls.setup(opts)
-      -- load your Lua-style snippets folder:
+    -- The `init` function is used to load custom snippets without overriding
+    -- the default `config` function from LazyVim. This ensures that LuaSnip
+    -- is correctly integrated with the configured completion engine (e.g., nvim-cmp or blink.cmp).
+    init = function()
       require("luasnip.loaders.from_lua").lazy_load({
-        paths = { vim.fn.stdpath("config") .. "/snippets" },
+        paths = { vim.fn.stdpath("config") .. "/lua/snippets" },
       })
-      -- still load VSCode snippets too:
-      require("luasnip.loaders.from_vscode").lazy_load()
     end,
+    -- Add any custom `opts` here to override the defaults.
+    -- For example, to enable autosnippets:
+    opts = {
+      enable_autosnippets = true,
+      -- Additional options can also be kept here
+      history = true,
+      delete_check_events = "TextChanged",
+    },
   },
 }
