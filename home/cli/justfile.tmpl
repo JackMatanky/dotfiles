@@ -1,0 +1,218 @@
+# -----------------------------------------------------------------------------
+# Filename: ~/.config/justfile (managed by chezmoi)
+# Github: https://github.com/casey/just
+# Docs: https://just.systems/man/en/
+# Description: Justfile for automating system setup and package installations.
+#              Enhanced with chezmoi templating for cross-platform compatibility.
+# -----------------------------------------------------------------------------
+
+# -------------------------------------------------------- #
+#                        OS Metadata                       #
+# -------------------------------------------------------- #
+OS_FAMILY := os_family()
+
+# Options: "android", "bitrig", "dragonfly", "emscripten", "freebsd", "haiku",
+# "ios", "linux", "macos", "netbsd", "openbsd", "solaris", "windows"
+OS := os()
+
+# 🎯 Human-readable OS name for display/logging
+OS_NAME := if OS =~ '.*os$' {
+    replace(OS, "os", "OS")
+} else if OS =~ '.*bsd$' {
+    replace(OS, "bsd", "BSD")
+} else if OS == "dragonfly" {
+    "DragonFly"
+} else {
+    capitalize(OS)
+}
+
+# -------------------------------------------------------- #
+#                   Directory Definitions                  #
+# -------------------------------------------------------- #
+
+# Configuration directories (using chezmoi data)
+CONFIG_DIR := "{{ .chezmoi.homeDir }}/.config"
+PACKAGES_DIR := CONFIG_DIR / "packages"
+
+# Platform-specific paths from chezmoi data
+{{- if eq .chezmoi.os "darwin" }}
+BREW_PREFIX := {{- if eq .chezmoi.arch "arm64" }} "/opt/homebrew" {{- else }} "/usr/local" {{- end }}
+BREW_BIN := BREW_PREFIX / "bin/brew"
+PACKAGE_MANAGER := "brew"
+{{- else if eq .chezmoi.os "linux" }}
+BREW_PREFIX := "/home/linuxbrew/.linuxbrew"
+BREW_BIN := BREW_PREFIX / "bin/brew"
+PACKAGE_MANAGER := "{{ .platform.package_manager | default "apt" }}"
+{{- end }}
+
+# Package files
+BREWFILE := CONFIG_DIR / "Brewfile"
+CARGO_PACKAGES := PACKAGES_DIR / "cargo-packages.txt"
+{{- if eq .chezmoi.os "linux" }}
+FLATPAK_MANIFEST := PACKAGES_DIR / "flatpak-manifest.json"
+{{- end }}
+
+# -------------------------------------------------------- #
+#                     Main Commands                        #
+# -------------------------------------------------------- #
+
+# 📋 Display available commands
+default:
+    @just --list
+
+# 🚀 Complete system setup (install all dependencies)
+install-all: && brew-install cargo-install {{- if eq .chezmoi.os "linux" }} flatpak-install{{- end }}
+    @echo "🎉 System setup complete!"
+
+# 🔄 Update all package managers
+update-all: brew-update cargo-update {{- if eq .chezmoi.os "linux" }} flatpak-update{{- end }}
+    @echo "📦 All packages updated!"
+
+# -------------------------------------------------------- #
+#                    Homebrew Commands                     #
+# -------------------------------------------------------- #
+
+# 🍺 Install Homebrew if not present
+install-homebrew:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    if ! command -v brew &> /dev/null; then
+        echo "Installing Homebrew..."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        {{- if eq .chezmoi.os "darwin" }}
+        echo 'eval "$({{ .paths.brew_bin }} shellenv)"' >> ~/.zprofile
+        {{- else if eq .chezmoi.os "linux" }}
+        echo 'eval "$({{ .paths.brew_bin }} shellenv)"' >> ~/.bashrc
+        {{- end }}
+        eval "$({{ .paths.brew_bin }} shellenv)"
+    else
+        echo "✅ Homebrew already installed"
+    fi
+
+# 📦 Install packages from Brewfile
+brew-install: install-homebrew
+    {{ .paths.brew_bin }} bundle --file="{{ BREWFILE }}"
+
+# 🔄 Update Homebrew and packages
+brew-update:
+    {{ .paths.brew_bin }} update && {{ .paths.brew_bin }} upgrade
+
+# 🧹 Clean up Homebrew
+brew-cleanup:
+    {{ .paths.brew_bin }} cleanup && {{ .paths.brew_bin }} autoremove
+
+# -------------------------------------------------------- #
+#                      Rust Commands                       #
+# -------------------------------------------------------- #
+
+# 🦀 Install Rust if not present
+install-rust:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    if ! command -v rustc &> /dev/null; then
+        echo "Installing Rust..."
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+        source ~/.cargo/env
+    else
+        echo "✅ Rust already installed"
+    fi
+
+# 📦 Install Cargo packages
+cargo-install: install-rust
+    #!/usr/bin/env bash
+    set -euo pipefail
+    if [[ -f "{{ CARGO_PACKAGES }}" ]]; then
+        while IFS= read -r package; do
+            [[ -z "$package" || "$package" =~ ^# ]] && continue
+            echo "Installing cargo package: $package"
+            cargo install "$package"
+        done < "{{ CARGO_PACKAGES }}"
+    else
+        echo "⚠️  Cargo packages file not found: {{ CARGO_PACKAGES }}"
+    fi
+
+# 🔄 Update Cargo packages
+cargo-update:
+    cargo install-update -a
+
+{{- if eq .chezmoi.os "linux" }}
+# -------------------------------------------------------- #
+#                    Flatpak Commands                      #
+# -------------------------------------------------------- #
+
+# 📱 Install Flatpak packages
+flatpak-install:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    if [[ -f "{{ FLATPAK_MANIFEST }}" ]]; then
+        jq -r '.apps[]' "{{ FLATPAK_MANIFEST }}" | while IFS= read -r app; do
+            echo "Installing flatpak: $app"
+            flatpak install flathub "$app" -y
+        done
+    else
+        echo "⚠️  Flatpak manifest not found: {{ FLATPAK_MANIFEST }}"
+    fi
+
+# 🔄 Update Flatpak packages
+flatpak-update:
+    flatpak update -y
+{{- end }}
+
+# -------------------------------------------------------- #
+#                   Development Tools                      #
+# -------------------------------------------------------- #
+
+# 🛠️  Setup development environment
+setup-dev: install-all
+    @echo "Setting up development environment..."
+    {{- if .dev.use_python }}
+    @echo "🐍 Python development tools..."
+    python3 -m pip install --upgrade pip
+    {{- end }}
+    {{- if .dev.use_node }}
+    @echo "🟩 Node.js development tools..."
+    npm install -g npm@latest
+    {{- end }}
+    {{- if .dev.use_docker }}
+    @echo "🐳 Docker development tools..."
+    # Add Docker setup if needed
+    {{- end }}
+
+# 🧹 Clean development caches
+clean-dev:
+    @echo "Cleaning development caches..."
+    {{- if .dev.use_python }}
+    python3 -m pip cache purge
+    {{- end }}
+    {{- if .dev.use_node }}
+    npm cache clean --force
+    {{- end }}
+    {{- if .dev.use_rust }}
+    cargo clean
+    {{- end }}
+
+# -------------------------------------------------------- #
+#                     System Commands                      #
+# -------------------------------------------------------- #
+
+# 🔧 Apply chezmoi configurations
+apply-dotfiles:
+    chezmoi apply -v
+
+# 📝 Edit chezmoi configurations
+edit-dotfiles:
+    chezmoi edit --apply
+
+# 🔍 Check system dependencies
+check-deps:
+    @{{ .chezmoi.sourceDir }}/.chezmoiscripts/check-deps.sh
+
+# 💾 Backup important configs
+backup:
+    @echo "Creating backup of important configurations..."
+    @echo "Backup functionality to be implemented"
+
+# 🧪 Test configurations
+test:
+    @echo "Running configuration tests..."
+    @echo "Test functionality to be implemented"

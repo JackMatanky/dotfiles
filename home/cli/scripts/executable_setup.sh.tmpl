@@ -1,0 +1,246 @@
+#!/bin/bash
+# Enhanced setup script with chezmoi templating
+# Automatically adapts to different platforms and user preferences
+
+set -e  # Exit on error
+
+# Platform information from chezmoi
+OS="{{ .chezmoi.os }}"
+ARCH="{{ .chezmoi.arch }}"
+USERNAME="{{ .chezmoi.username }}"
+HOME_DIR="{{ .chezmoi.homeDir }}"
+
+# User preferences from chezmoi data
+EDITOR="{{ .preferences.editor }}"
+SHELL="{{ .preferences.shell }}"
+TERMINAL="{{ .preferences.terminal }}"
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+log_info() {
+    echo -e "${BLUE}[INFO]${NC} $1"
+}
+
+log_success() {
+    echo -e "${GREEN}[SUCCESS]${NC} $1"
+}
+
+log_warn() {
+    echo -e "${YELLOW}[WARN]${NC} $1"
+}
+
+log_error() {
+    echo -e "${RED}[ERROR]${NC} $1"
+}
+
+# Repository URLs (from chezmoi data or defaults)
+DOTFILES_REPO="{{ .repository.dotfiles | default "https://github.com/JackMatanky/dotfiles.git" }}"
+OBSIDIAN_REPO="{{ .repository.obsidian | default "https://gitlab.com/JackMatanky/obsidian_vault.git" }}"
+
+# Directories
+DOTFILES_DIR="$HOME_DIR/dotfiles"
+OBSIDIAN_DIR="$HOME_DIR/obsidian_vault"
+CONFIG_DIR="$HOME_DIR/.config"
+
+# Package files
+PACKAGES_DIR="$CONFIG_DIR/packages"
+{{- if eq .chezmoi.os "darwin" }}
+BREWFILE="$CONFIG_DIR/Brewfile"
+{{- else if eq .chezmoi.os "linux" }}
+BREWFILE="$CONFIG_DIR/Brewfile"
+FLATPAK_MANIFEST="$PACKAGES_DIR/flatpak-manifest.json"
+{{- end }}
+CARGO_PACKAGES="$PACKAGES_DIR/cargo-packages.txt"
+
+# Platform-specific Homebrew paths
+{{- if eq .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.arch "arm64" }}
+BREW_PATH="/opt/homebrew/bin/brew"
+HOMEBREW_PREFIX="/opt/homebrew"
+{{- else }}
+BREW_PATH="/usr/local/bin/brew"
+HOMEBREW_PREFIX="/usr/local"
+{{- end }}
+{{- else if eq .chezmoi.os "linux" }}
+BREW_PATH="/home/linuxbrew/.linuxbrew/bin/brew"
+HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+{{- end }}
+
+log_info "Starting enhanced dotfiles setup for $OS ($ARCH)..."
+log_info "User: $USERNAME, Editor: $EDITOR, Shell: $SHELL"
+
+# Request sudo upfront
+if ! sudo -v; then
+    log_error "Failed to obtain sudo privileges. Please run the script again with the correct password."
+    exit 1
+fi
+
+# Install System Dependencies
+install_system_dependencies() {
+    log_info "Installing system dependencies..."
+    
+    {{- if eq .chezmoi.os "darwin" }}
+    # macOS: Install Xcode Command Line Tools
+    if ! xcode-select -p &>/dev/null; then
+        log_info "Installing Xcode Command Line Tools..."
+        xcode-select --install
+        log_success "Xcode Command Line Tools installed"
+    else
+        log_success "Xcode Command Line Tools already installed"
+    fi
+    {{- else if eq .chezmoi.os "linux" }}
+    # Linux: Install build essentials based on distribution
+    if command -v apt &> /dev/null; then
+        log_info "Installing build essentials (Debian/Ubuntu)..."
+        sudo apt update
+        sudo apt install -y build-essential curl git
+    elif command -v pacman &> /dev/null; then
+        log_info "Installing build essentials (Arch)..."
+        sudo pacman -S --noconfirm base-devel curl git
+    elif command -v dnf &> /dev/null; then
+        log_info "Installing build essentials (Fedora)..."
+        sudo dnf groupinstall -y "Development Tools"
+        sudo dnf install -y curl git
+    else
+        log_warn "Unknown package manager. Please install build essentials manually."
+    fi
+    {{- end }}
+}
+
+# Install Homebrew
+install_homebrew() {
+    if command -v brew &> /dev/null; then
+        log_success "Homebrew already installed"
+        return
+    fi
+    
+    log_info "Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    
+    # Add Homebrew to PATH
+    {{- if eq .chezmoi.os "darwin" }}
+    echo 'eval "$($BREW_PATH shellenv)"' >> "$HOME_DIR/.zprofile"
+    {{- else if eq .chezmoi.os "linux" }}
+    echo 'eval "$($BREW_PATH shellenv)"' >> "$HOME_DIR/.bashrc"
+    {{- end }}
+    
+    eval "$($BREW_PATH shellenv)"
+    log_success "Homebrew installed successfully"
+}
+
+# Install packages from Brewfile
+install_brew_packages() {
+    if [[ -f "$BREWFILE" ]]; then
+        log_info "Installing packages from Brewfile..."
+        $BREW_PATH bundle --file="$BREWFILE"
+        log_success "Brew packages installed"
+    else
+        log_warn "Brewfile not found at $BREWFILE"
+    fi
+}
+
+{{- if and (eq .chezmoi.os "linux") (.packages.use_flatpak) }}
+# Install Flatpak packages (Linux only)
+install_flatpak_packages() {
+    if [[ -f "$FLATPAK_MANIFEST" ]]; then
+        log_info "Installing Flatpak packages..."
+        if command -v flatpak &> /dev/null; then
+            jq -r '.apps[]' "$FLATPAK_MANIFEST" | while read -r app; do
+                log_info "Installing: $app"
+                flatpak install flathub "$app" -y
+            done
+            log_success "Flatpak packages installed"
+        else
+            log_warn "Flatpak not found. Please install flatpak first."
+        fi
+    else
+        log_warn "Flatpak manifest not found at $FLATPAK_MANIFEST"
+    fi
+}
+{{- end }}
+
+{{- if .dev.use_rust }}
+# Install Rust packages
+install_rust_packages() {
+    if [[ -f "$CARGO_PACKAGES" ]]; then
+        log_info "Installing Rust packages..."
+        while IFS= read -r package; do
+            [[ -z "$package" || "$package" =~ ^# ]] && continue
+            log_info "Installing cargo package: $package"
+            cargo install "$package"
+        done < "$CARGO_PACKAGES"
+        log_success "Rust packages installed"
+    else
+        log_warn "Cargo packages file not found at $CARGO_PACKAGES"
+    fi
+}
+{{- end }}
+
+# Configure shell
+configure_shell() {
+    log_info "Configuring shell environment..."
+    
+    # Set default shell to preferred choice
+    {{- if eq .preferences.shell "zsh" }}
+    if [[ "$SHELL" != *"zsh"* ]] && command -v zsh &> /dev/null; then
+        log_info "Setting Zsh as default shell..."
+        if ! grep -q "$(which zsh)" /etc/shells; then
+            echo "$(which zsh)" | sudo tee -a /etc/shells
+        fi
+        chsh -s "$(which zsh)"
+        log_success "Default shell changed to Zsh"
+    fi
+    {{- else if eq .preferences.shell "bash" }}
+    if [[ "$SHELL" != *"bash"* ]] && command -v bash &> /dev/null; then
+        log_info "Setting Bash as default shell..."
+        chsh -s "$(which bash)"
+        log_success "Default shell changed to Bash"
+    fi
+    {{- end }}
+    
+    # Create shell cache directories
+    mkdir -p "$CONFIG_DIR/zsh/cache"
+    mkdir -p "$CONFIG_DIR/bash"
+    
+    log_success "Shell environment configured"
+}
+
+# Main setup function
+main() {
+    log_info "=== Enhanced Dotfiles Setup ===" 
+    log_info "Platform: $OS ($ARCH)"
+    log_info "Target: $HOME_DIR"
+    
+    install_system_dependencies
+    install_homebrew
+    install_brew_packages
+    
+    {{- if and (eq .chezmoi.os "linux") (.packages.use_flatpak) }}
+    install_flatpak_packages
+    {{- end }}
+    
+    {{- if .dev.use_rust }}
+    install_rust_packages
+    {{- end }}
+    
+    configure_shell
+    
+    log_success "=== Setup Complete! ==="
+    log_info "Please restart your shell or run 'exec \$SHELL' to apply all changes"
+    
+    {{- if .preferences.editor }}
+    log_info "Your configured editor is: {{ .preferences.editor }}"
+    {{- end }}
+    
+    {{- if .preferences.terminal }}
+    log_info "Your configured terminal is: {{ .preferences.terminal }}"
+    {{- end }}
+}
+
+# Run main function
+main "$@"

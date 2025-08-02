@@ -1,7 +1,99 @@
+# Platform-specific ignores
 {{- if ne .chezmoi.os "darwin" }}
+# Ignore macOS-specific files on non-macOS systems
 .config/espanso/**/*.yml
+.config/borders/
+.config/mac-terminal/
+Library/
+Applications/
 {{- end }}
 
 {{- if ne .chezmoi.os "linux" }}
+# Ignore Linux-specific files on non-Linux systems
 Library/Application Support/espanso/**/*.yml
+.config/packages/flatpak-manifest.json
+.config/packages/Flatpakfile
 {{- end }}
+
+{{- if not .dev.use_docker }}
+# Ignore Docker configs if not using Docker
+.config/docker/
+.docker/
+{{- end }}
+
+{{- if not .dev.use_kubernetes }}
+# Ignore Kubernetes configs if not using Kubernetes
+.config/kubectl/
+.kube/
+{{- end }}
+
+{{- if not .dev.use_python }}
+# Ignore Python configs if not using Python
+.config/python/
+.pythonrc
+{{- end }}
+
+{{- if not .dev.use_rust }}
+# Ignore Rust configs if not using Rust
+.cargo/
+.rustup/
+{{- end }}
+
+{{- if not .dev.use_node }}
+# Ignore Node.js configs if not using Node.js
+.npmrc
+.config/npm/
+{{- end }}
+
+# Temporary and cache files
+**/.DS_Store
+**/Thumbs.db
+**/*.tmp
+**/*.temp
+**/.cache/
+**/cache/
+**/*.log
+
+# Personal/private files that shouldn't be synced
+**/private_*
+**/*.private
+**/*.secret
+**/.env.local
+**/.env.*.local
+
+# OS-specific system files
+{{- if eq .chezmoi.os "darwin" }}
+.Trash/
+.fseventsd/
+.Spotlight-V100/
+.TemporaryItems/
+.DocumentRevisions-V100/
+{{- end }}
+
+{{- if eq .chezmoi.os "linux" }}
+.local/share/Trash/
+.cache/
+{{- end }}
+
+# Development artifacts that shouldn't be in dotfiles
+node_modules/
+target/
+dist/
+build/
+*.pyc
+__pycache__/
+.pytest_cache/
+.coverage
+.nyc_output/
+
+# IDE/Editor specific files (these should be in global gitignore)
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Backup files
+*.bak
+*.backup
+*.old

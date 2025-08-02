@@ -1,0 +1,275 @@
+# -----------------------------------------------------------------------------
+# Filename: ~/.config/Brewfile (managed by chezmoi)
+# Source: https://formulae.brew.sh/formula/
+# Github: https://github.com/Homebrew/homebrew-core
+# Description: Homebrew packages with platform-specific adaptations.
+#              Generated from chezmoi template with user preferences.
+# -----------------------------------------------------------------------------
+
+# ----------------------- Homebrew Taps ---------------------- #
+# Manage multiple Homebrew dependencies
+tap 'homebrew/bundle'
+# Start/stop macOS services
+tap 'homebrew/services'
+{{- if eq .chezmoi.os "darwin" }}
+# macOS-specific taps
+tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
+{{- end }}
+
+# ------------------------------------------------------------ #
+#                     Terminal Environment                     #
+# ------------------------------------------------------------ #
+
+# -------------------------- Shells -------------------------- #
+# Bourne-Again SHell, a UNIX command interpreter
+brew 'bash'
+# UNIX shell (zsh)
+brew 'zsh'
+# Modern shell for the GitHub era
+brew 'nushell'
+
+# -------------------- Terminal Utilities -------------------- #
+# Cross-platform, fast, feature-rich, GPU based terminal
+{{- if eq .chezmoi.os "darwin" }}
+cask 'ghostty'
+{{- else }}
+# Note: Install Ghostty manually on Linux from https://ghostty.org/
+{{- end }}
+
+# Terminal multiplexer options
+{{- if .preferences.terminal == "tmux" }}
+# Terminal multiplexer
+brew 'tmux'
+# Plugin manager for tmux
+brew 'tpm'
+{{- else if .preferences.terminal == "zellij" }}
+# Pluggable terminal workspace, with terminal multiplexer as the base feature
+brew 'zellij'
+{{- else }}
+# Install both for flexibility
+brew 'tmux'
+brew 'tpm'
+brew 'zellij'
+{{- end }}
+
+# --------------------- Dotfiles Managers -------------------- #
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew 'stow'
+# Manage your dotfiles across multiple diverse machines, securely
+brew 'chezmoi'
+
+# ------------------ Environment Management ------------------ #
+# Load/unload environment variables based on $PWD
+brew 'direnv'
+# Handy way to save and run project-specific commands
+brew 'just'
+# User-friendly front-end to ssh-agent to securely manage SSH keys
+brew 'keychain'
+# Cross-platform starship prompt
+brew 'starship'
+
+# ---------------------- Text Editors ----------------------- #
+{{- if .preferences.editor == "zed" }}
+# Fast, collaborative code editor
+{{- if eq .chezmoi.os "darwin" }}
+cask 'zed'
+{{- else }}
+# Note: Install Zed manually on Linux
+{{- end }}
+{{- end }}
+
+{{- if or (eq .preferences.editor "nvim") (.preferences.editor == "neovim") }}
+# Ambitious Vim-fork focused on extensibility and agility
+brew 'neovim'
+{{- end }}
+
+{{- if or (eq .preferences.editor "helix") (.dev.use_helix) }}
+# Post-modern modal text editor
+brew 'helix'
+{{- end }}
+
+# ------------------------------------------------------------ #
+#                      Development Tools                       #
+# ------------------------------------------------------------ #
+
+# ---------------------- Version Control ---------------------- #
+# Distributed revision control system
+brew 'git'
+# Git extension for versioning large files
+brew 'git-lfs'
+# Simple terminal UI for git commands
+brew 'lazygit'
+# Better git diffs
+brew 'delta'
+
+{{- if .dev.use_python }}
+# ----------------------- Python Tools ----------------------- #
+# Python version management
+brew 'pyenv'
+# Python dependency management
+brew 'pipenv'
+# Python package installer
+brew 'python@3.11'
+# Python package manager
+brew 'pip-tools'
+{{- end }}
+
+{{- if .dev.use_node }}
+# ----------------------- Node.js Tools ---------------------- #
+# Platform built on V8 to build network applications
+brew 'node'
+# Node version management
+brew 'fnm'
+# Package manager for JavaScript
+brew 'yarn'
+{{- end }}
+
+{{- if .dev.use_rust }}
+# ------------------------ Rust Tools ------------------------ #
+# Rust toolchain installer
+brew 'rustup-init'
+# Rust package manager
+# Note: cargo comes with rustup
+{{- end }}
+
+{{- if .dev.use_go }}
+# ------------------------- Go Tools ------------------------- #
+# Open source programming language to build simple/reliable/efficient software
+brew 'go'
+{{- end }}
+
+{{- if .dev.use_docker }}
+# ---------------------- Container Tools --------------------- #
+{{- if eq .chezmoi.os "darwin" }}
+# Docker Desktop for Mac
+cask 'docker'
+{{- else }}
+# Docker Engine (install manually on Linux)
+# Note: Use your distribution's package manager for Docker
+{{- end }}
+# Docker Compose
+brew 'docker-compose'
+{{- end }}
+
+{{- if .dev.use_kubernetes }}
+# ------------------- Kubernetes Tools ---------------------- #
+# Kubernetes command-line interface
+brew 'kubectl'
+# Package manager for Kubernetes
+brew 'helm'
+# Kubernetes context switcher
+brew 'kubectx'
+{{- end }}
+
+# ---------------------- System Tools ----------------------- #
+# Monitor system activity
+brew 'htop'
+# Modern replacement for 'ls'
+brew 'eza'
+# Cat clone with wings
+brew 'bat'
+# Search tool like grep and The Silver Searcher
+brew 'ripgrep'
+# Command-line fuzzy finder written in Go
+brew 'fzf'
+# Modern replacement for 'du'
+brew 'dust'
+# File manager
+brew 'yazi'
+
+# ---------------------- Network Tools ---------------------- #
+# Internet file retriever
+brew 'wget'
+# Command-line HTTP client
+brew 'curl'
+# HTTP/2 command-line client
+brew 'httpie'
+
+# ---------------------- Archive Tools ---------------------- #
+# General-purpose data compression with high compression ratio
+brew 'xz'
+# Extract, view, and test RAR archives
+brew 'unrar'
+
+# ----------------------- AI/ML Tools ----------------------- #
+{{- if .dev.use_ai_tools }}
+# AI-powered terminal assistant
+brew 'aichat'
+# GitHub Copilot for CLI
+brew 'gh'
+{{- end }}
+
+{{- if eq .chezmoi.os "darwin" }}
+# ------------------------------------------------------------ #
+#                     macOS-Specific Tools                     #
+# ------------------------------------------------------------ #
+
+# ----------------------- macOS Apps ------------------------ #
+# Terminal emulator for macOS
+cask 'iterm2'
+# Web browser
+cask 'firefox'
+# Web browser
+cask 'google-chrome'
+# Code editor
+cask 'visual-studio-code'
+# Window management utility
+cask 'rectangle'
+# Application launcher and productivity software
+cask 'alfred'
+# Password manager
+cask 'bitwarden'
+
+# ---------------------- macOS Utilities -------------------- #
+# Display directories as trees (with optional color/HTML output)
+brew 'tree'
+# Mac App Store command-line interface
+brew 'mas'
+# Automates the installation of macOS software updates
+brew 'mas'
+
+# ----------------------- macOS Fonts ----------------------- #
+# Programming fonts
+cask 'font-fira-code'
+cask 'font-jetbrains-mono'
+cask 'font-source-code-pro'
+{{- end }}
+
+{{- if eq .chezmoi.os "linux" }}
+# ------------------------------------------------------------ #
+#                     Linux-Specific Tools                     #
+# ------------------------------------------------------------ #
+
+# Note: Many GUI applications on Linux are better installed via:
+# - Flatpak (see flatpak-manifest.json)
+# - Your distribution's package manager
+# - AppImage or Snap packages
+
+# Linux-specific command-line tools
+brew 'patchelf'
+brew 'strace'
+{{- end }}
+
+# ---------------------- Optional Tools ---------------------- #
+# Uncomment based on your needs
+
+# Database tools
+# brew 'postgresql'
+# brew 'mysql'
+# brew 'redis'
+
+# Media tools
+# brew 'ffmpeg'
+# brew 'imagemagick'
+# brew 'youtube-dl'
+
+# Security tools
+# brew 'gnupg'
+# brew 'age'
+# brew 'sops'
+
+# Monitoring tools
+# brew 'bandwhich'
+# brew 'procs'
+# brew 'bottom'
