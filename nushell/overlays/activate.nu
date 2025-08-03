@@ -1,12 +1,12 @@
 # -----------------------------------------------------------------------------
 # Filename: ~/dotfiles/nushell/overlays/pyenv_activate.nu
-# Source: https://github.com/pypa/virtualenv/blob/main/src/virtualenv/activation/nushell/activate.nu
+# Source: adapted from https://github.com/pypa/virtualenv/blob/main/src/virtualenv/activation/nushell/activate.nu
 # -----------------------------------------------------------------------------
 # virtualenv activation module
-# Activate with `overlay use activate.nu`
+# Activate with `overlay use pyenv_activate.nu`
 # Deactivate with `deactivate`, as usual
 #
-# To customize the overlay name, you can call `overlay use activate.nu as foo`,
+# To customize the overlay name, you can call `overlay use pyenv_activate.nu as foo`,
 # but then simply `deactivate` won't work because it is just an alias to hide
 # the "activate" overlay. You'd need to call `overlay hide foo` manually.
 
@@ -21,25 +21,46 @@ export-env {
         } | all {|i| $i == true}
     }
 
-    # Emulates a `test -z`, but better as it handles e.g 'false'
+    # Emulates a `test -z`, but better as it handles e.g. 'false'
     def is-env-true [name: string] {
       if (has-env $name) {
         # Try to parse 'true', '0', '1', and fail if not convertible
-        let parsed = (do -i { $env | get $name | into bool })
+        let parsed = (do -o { $env.$name | into bool })
         if ($parsed | describe) == 'bool' {
           $parsed
         } else {
-          not ($env | get -i $name | is-empty)
+          not ($env.$name | is-empty)
         }
       } else {
         false
       }
     }
 
-    let virtual_env = __VIRTUAL_ENV__
-    let bin = __BIN_NAME__
+    # Primary virtual environment value: placeholder wins, then standard
+    let virtual_env = if (has-env '__VIRTUAL_ENV__') {
+        $env.__VIRTUAL_ENV__
+    } elif (has-env 'VIRTUAL_ENV') {
+        $env.VIRTUAL_ENV
+    } else {
+        ''
+    }
 
-    let is_windows = ($nu.os-info.family) == 'windows'
+    # Bin directory name: placeholder wins, else platform-specific default
+    let bin_name = if (has-env '__BIN_NAME__') {
+        $env.__BIN_NAME__
+    } else {
+        let is_windows = ($nu.os-info.family) == 'windows'
+        if $is_windows { 'Scripts' } else { 'bin' }
+    }
+
+    # Compose venv path to prepend to PATH if we have a virtual_env
+    let venv_path = if (not ($virtual_env | is-empty)) {
+        ([$virtual_env $bin_name] | path join)
+    } else {
+        ''
+    }
+
+    # Determine correct PATH key (Path vs PATH)
     let path_name = (if (has-env 'Path') {
             'Path'
         } else {
@@ -47,16 +68,30 @@ export-env {
         }
     )
 
-    let venv_path = ([$virtual_env $bin] | path join)
-    let new_path = ($env | get $path_name | prepend $venv_path)
+    let new_path = if (not ($venv_path | is-empty)) {
+        ($env | get $path_name | prepend $venv_path)
+    } else {
+        ($env | get $path_name)
+    }
 
-    # If there is no default prompt, then use the env name instead
-    let virtual_env_prompt = (if (__VIRTUAL_PROMPT__ | is-empty) {
+    # Virtual prompt: placeholder, then VIRTUAL_PROMPT, then basename of virtual_env
+    let raw_prompt_override = if (has-env '__VIRTUAL_PROMPT__') {
+        $env.__VIRTUAL_PROMPT__
+    } elif (has-env 'VIRTUAL_PROMPT') {
+        $env.VIRTUAL_PROMPT
+    } else {
+        ''
+    }
+
+    let virtual_env_prompt = if (not ($raw_prompt_override | is-empty)) {
+        $raw_prompt_override
+    } else if (not ($virtual_env | is-empty)) {
         ($virtual_env | path basename)
     } else {
-        __VIRTUAL_PROMPT__
-    })
+        ''
+    }
 
+    # Base new environment
     let new_env = {
         $path_name         : $new_path
         VIRTUAL_ENV        : $virtual_env
@@ -66,10 +101,10 @@ export-env {
     let new_env = (if (is-env-true 'VIRTUAL_ENV_DISABLE_PROMPT') {
       $new_env
     } else {
-      # Creating the new prompt for the session
+      # Creating the new prompt prefix
       let virtual_prefix = $'(char lparen)($virtual_env_prompt)(char rparen) '
 
-      # Back up the old prompt builder
+      # Back up existing PROMPT_COMMAND if any
       let old_prompt_command = (if (has-env 'PROMPT_COMMAND') {
               $env.PROMPT_COMMAND
           } else {
@@ -92,7 +127,7 @@ export-env {
       }
     })
 
-    # Environment variables that will be loaded as the virtual env
+    # Apply the environment overlay
     load-env $new_env
 }
 

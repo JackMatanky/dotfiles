@@ -581,8 +581,8 @@
     "default_width": 500,
     "default_height": 350,
     "default_model": {
-      "provider": "ollama",
-      "model": "qwen3:8b"
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
     }
     // "inline_assistant_model": {
     //   "provider": "lmstudio",

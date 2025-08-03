@@ -68,3 +68,5 @@ htmlcov/
 .vscode/
 *.sublime-project
 *.sublime-workspace
+
+.github/copilot-instructions.md
