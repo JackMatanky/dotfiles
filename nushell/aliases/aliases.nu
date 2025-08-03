@@ -297,7 +297,6 @@ def use_pyenv_env [env_name: string] {
     print $"❌ pyenv environment not found: ($env_path)"
   }
 }
-
 # --- uv ---
 # Activate virtual environment
 # alias uv_activate = ['use' ['.venv' (if (uname | get operating-system) == 'Windows' { 'Scripts' } else { 'bin' }) 'activate.nu'] | path join] str join ' '
