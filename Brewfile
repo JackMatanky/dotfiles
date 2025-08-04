@@ -120,6 +120,8 @@ brew 'jesseduffield/lazygit/lazygit'
 # ------------------------------------------------------------ #
 
 # ------------------- Languages & Runtimes ------------------- #
+# Open source programming language to build simple/reliable/efficient software
+brew 'go'
 # Powerful, lightweight programming language
 brew 'lua'
 # MySQL: Open source RDBMS server
@@ -189,6 +191,8 @@ brew 'prettier'
 brew 'cspell'
 
 # >>> Language Specific Formatters <<<
+# Fast linters runner for Go
+brew 'golangci-lint'
 # Markdown: Fast, flexible, config-based cli for linting Markdown/CommonMark files
 brew 'markdownlint-cli2'
 # Python: Fast Python linter and formatter, written in Rust
