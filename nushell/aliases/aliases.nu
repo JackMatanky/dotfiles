@@ -281,22 +281,28 @@ alias bar-load = sketchybar --reload
 def use_pyenv_env [env_name: string] {
   let pyenv_root = ($env.HOME | path join ".pyenv")
   let env_path = ($pyenv_root | path join "versions" $env_name)
-  let bin_path = ($env_path | path join "bin")
 
   if ($env_path | path exists) {
-    # Set required environment variables before loading overlay
+    # Set required environment variables directly in the current scope.
+    # We will use these in the activation script.
     load-env {
       __VIRTUAL_ENV__: $env_path
       __BIN_NAME__: "bin"
       __VIRTUAL_PROMPT__: $env_name
+      VIRTUAL_ENV_DISABLE_PROMPT: "false"
     }
 
-    # Load the overlay which uses these env vars
-    overlay use ~/.config/nushell/overlays/activate.nu
+    # Source the activate.nu script directly. It will now find the variables
+    # we just set because we are in the same shell process.
+    source ~/.config/nushell/overlays/activate.nu
+
+    # Since `source` does not create an alias for deactivate, we need to add it manually.
+    export alias deactivate = overlay hide activate
   } else {
     print $"❌ pyenv environment not found: ($env_path)"
   }
 }
+
 # --- uv ---
 # Activate virtual environment
 # alias uv_activate = ['use' ['.venv' (if (uname | get operating-system) == 'Windows' { 'Scripts' } else { 'bin' }) 'activate.nu'] | path join] str join ' '
