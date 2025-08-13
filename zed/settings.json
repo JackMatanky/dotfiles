@@ -574,15 +574,15 @@
       "provider": "lmstudio",
       "model": "qwen/qwen2.5-coder-14b"
     },
-    "default_profile": "ask",
+    "default_profile": "write",
     "enabled": true,
     "button": true,
     "dock": "right",
     "default_width": 500,
     "default_height": 350,
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "provider": "lmstudio",
+      "model": "deepseek/deepseek-r1-0528-qwen3-8b"
     }
     // "inline_assistant_model": {
     //   "provider": "lmstudio",

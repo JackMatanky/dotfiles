@@ -222,7 +222,7 @@ alias ll='eza --long --icons --git --all --group-directories-first'
 # Tree Views
 alias lt='eza --tree --level=2 --icons --git --ignore-glob "__pycache__"'    # 2 levels
 alias ltree='eza --tree --level=3 --icons --git --ignore-glob "__pycache__"' # 3 levels
-alias ltree-full='eza --tree --level=5 --icons --git --ignore-glob "__pycache__"' # 3 levels
+alias ltree-full='eza --tree --level=5 --icons --git --ignore-glob "__pycache__"' # 5 levels
 
 # -------------------------- Zoxide -------------------------- #
 # Docs: https://github.com/ajeetdsouza/zoxide

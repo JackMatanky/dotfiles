@@ -17,10 +17,17 @@
     ],
     "description": "Insert a comment to ignore a specific Pyright diagnostic on the current line (avoid ignoring all diagnostics)."
   },
+  "Ruff Ignore Rule Comment": {
+    "prefix": "ruffignore",
+    "body": [
+      "# noqa: ${1|E501,F401,F403,F405,F841|}$0"
+    ],
+    "description": "Insert a comment to ignore a specific Ruff diagnostic on the current line (avoid ignoring all diagnostics)."
+  },
 
   "Multiline string": {
     "prefix": "#",
-    "body": ["\"\"\"$0", "\"\"\""],
+    "body": [ "\"\"\"$0", "\"\"\"" ],
     "description": "Avoid autopair plugin annoyances when typing multiple \""
   },
   "One-line multiline string": {
@@ -30,13 +37,13 @@
   },
   "if __name__ == __main__": {
     "prefix": "ifmain",
-    "body": ["if __name__ == \"__main__\":", "    $0"],
+    "body": [ "if __name__ == \"__main__\":", "    $0" ],
     "description": "Execute code if the file is executed directly"
   },
 
   "py:percent Cell": {
     "prefix": "jpy",
-    "body": ["# %% ${1:[markdown]}", "$0"],
+    "body": [ "# %% ${1:[markdown]}", "$0" ],
     "description": "Add new py:percent code or markdown cell"
   },
   "py:percent Code Cell": {
@@ -50,7 +57,7 @@
     "description": "Add a new py:percent markdown cell"
   },
 
-  // >>> IMPORT Statements <<<
+  /* ------------------- IMPORT Statements ------------------ */
   "Import Module": {
     "prefix": "im",
     "body": "import ${1:module}",
@@ -87,53 +94,53 @@
     "description": "Import future statement definitions for python3.x scripts using utf-8 as encoding."
   },
 
-  // >>> IF Statements <<<
+  /* --------------------- IF Statements -------------------- */
   "if": {
     "prefix": "if",
-    "body": ["if ${1:condition}:", "    $0"],
+    "body": [ "if ${1:condition}:", "    $0" ],
     "description": "if statement"
   },
   "elif": {
     "prefix": "elif",
-    "body": ["elif ${1:condition}:", "    $0"],
+    "body": [ "elif ${1:condition}:", "    $0" ],
     "description": "elif statement"
   },
   "else": {
     "prefix": "else",
-    "body": ["else:", "    $0"],
+    "body": [ "else:", "    $0" ],
     "description": "else statement"
   },
   "if/else": {
     "prefix": "ifelse",
-    "body": ["if ${1:condition}:", "    ${2:action}", "else:", "    $0"],
+    "body": [ "if ${1:condition}:", "    ${2:action}", "else:", "    $0" ],
     "description": "if statement with else"
   },
 
-  // >>> FOR Statements <<<
+  /* -------------------- FOR Statements -------------------- */
   "for": {
     "prefix": "for",
-    "body": ["for ${1:target} in ${2:iterable}:", "    $0"],
+    "body": [ "for ${1:target} in ${2:iterable}:", "    $0" ],
     "description": "for loop"
   },
   "for w/ range": {
     "prefix": "forr",
-    "body": ["for ${1:target} in range(${2:...}):", "    $0"],
+    "body": [ "for ${1:target} in range(${2:...}):", "    $0" ],
     "description": "for loop that iterates over range of integers"
   },
 
-  // >>> WHILE Statements <<<
+  /* ------------------- WHILE Statements ------------------- */
   "while": {
     "prefix": "while",
-    "body": ["while ${1:condition}:", "    $0"],
+    "body": [ "while ${1:condition}:", "    $0" ],
     "description": "while loop"
   },
   "dowhile": {
     "prefix": "dowhile",
-    "body": ["do = True", "while do or $1:", "    do = False", "    $0"],
+    "body": [ "do = True", "while do or $1:", "    do = False", "    $0" ],
     "description": "Code snippet to create a do-while loop structure."
   },
 
-  // >>> LIST COMPREHENSIONS <<<
+  /* ------------------ LIST COMPREHENSIONS ----------------- */
   "List comprehension": {
     "prefix": "lc",
     "body": "[${1:expr} for ${2:item} in ${3:iterable}]$0",
@@ -179,74 +186,75 @@
     "body": "(${1:item} for ${2:item} in ${3:iterable} if ${4:condition})$0",
     "description": "Generator with filter."
   },
-  // >>> MATCH/CASE Statements <<<
+
+  /* ----------------- MATCH/CASE Statements ---------------- */
   "match/case": {
     "prefix": "match",
-    "body": ["match ${1:subject}:", "    case ${2:pattern}:", "        $0"],
+    "body": [ "match ${1:subject}:", "    case ${2:pattern}:", "        $0" ],
     "description": "match/case statements"
   },
   "case": {
     "prefix": "case",
-    "body": ["case ${1:pattern}:", "    $0"],
+    "body": [ "case ${1:pattern}:", "    $0" ],
     "description": "case block"
   },
   "case wildcard": {
     "prefix": "casew",
-    "body": ["case _:", "    $0"],
+    "body": [ "case _:", "    $0" ],
     "description": "case wildcard block if other cases fail"
   },
 
-  // >>> WITH Statements <<<
+  /* -------------------- WITH Statements ------------------- */
   "With Statement": {
     "prefix": "with",
-    "body": ["with $1 as $2:", "    $0"],
+    "body": [ "with $1 as $2:", "    $0" ],
     "description": "'with' statement"
   },
   "With Statement for File": {
     "prefix": "withf",
-    "body": ["with open(${1:filename}, 'r') as ${2:file}:", "    $0"],
+    "body": [ "with open(${1:filename}, 'r') as ${2:file}:", "    $0" ],
     "description": "'with' statement for reading files"
   },
   "With Statement for SQLite Database Connection": {
     "prefix": "withsq",
-    "body": ["with sqlite3.connect(${1:database}) as ${2:conn}:", "    $0"],
+    "body": [ "with sqlite3.connect(${1:database}) as ${2:conn}:", "    $0" ],
     "description": "'with' statement for SQLite database connection"
   },
   "With Statement Async": {
     "prefix": "witha",
-    "body": ["async with $1 as $2:", "    $0"],
+    "body": [ "async with $1 as $2:", "    $0" ],
     "description": "'async with' statement"
   },
 
-  // >>> FUNCTION Definitions <<<
+  /* ----------------- FUNCTION Definitions ----------------- */
   "Function Definition w/Return Type": {
     "prefix": "def",
-    "body": ["def ${1:func}(${2:args}) -> ${3:None}:", "    ${0:pass}"],
+    "body": [ "def ${1:func}(${2:args}) -> ${3:None}:", "    ${0:pass}" ],
     "description": "Function definition with return type"
   },
 
   "async Function": {
     "prefix": "adef",
-    "body": ["async def ${1:func}(${2:args}) -> ${3:None}:", "    ${0:pass}"],
+    "body": [ "async def ${1:func}(${2:args}) -> ${3:None}:", "    ${0:pass}" ],
     "description": "Asynchronous function definition"
   },
 
   "Lambda Function": {
     "prefix": "lam",
-    "body": ["lambda ${1:x}: ${2:...}"],
+    "body": [ "lambda ${1:x}: ${2:...}" ],
     "description": "Lambda function"
   },
 
-  // >>> CLASS Definitions <<<
+  /* ------------------- CLASS Definitions ------------------ */
   "Class": {
     "prefix": "class",
-    "body": ["class ${1:ClassName}:", "    $0"],
+    "body": [ "class ${1:ClassName}:", "    $0" ],
     "description": "Class definition"
   },
 
   "Derived Class": {
     "prefix": "classd",
-    "body": ["class ${1:ClassName}(${2:BaseClass}):", "    $0"],
+    "body": [ "class ${1:ClassName}(${2:BaseClass}):", "    $0" ],
     "description": "Class definition with inheritance"
   },
 
@@ -265,7 +273,7 @@
 
   "Class Method w/ Return Type": {
     "prefix": "defst",
-    "body": ["def ${1:method}(self, ${2:args}) -> ${3:None}:", "    $0"],
+    "body": [ "def ${1:method}(self, ${2:args}) -> ${3:None}:", "    $0" ],
     "description": "Class method definition"
   },
 
@@ -324,22 +332,22 @@
 
   "except": {
     "prefix": "except",
-    "body": ["except$1:", "    $0"],
+    "body": [ "except$1:", "    $0" ],
     "description": "except statement"
   },
   "except as": {
     "prefix": "exceptas",
-    "body": ["except $1 as $2:", "    $0"],
+    "body": [ "except $1 as $2:", "    $0" ],
     "description": "'except as' statement"
   },
   "try/except": {
     "prefix": "try",
-    "body": ["try:", "    $1", "except $2 as $3:", "    $0"],
+    "body": [ "try:", "    $1", "except $2 as $3:", "    $0" ],
     "description": "try/except blocks"
   },
   "try/except/else": {
     "prefix": "trya",
-    "body": ["try:", "    $1", "except $2 as $3:", "    $4", "else:", "    $0"],
+    "body": [ "try:", "    $1", "except $2 as $3:", "    $4", "else:", "    $0" ],
     "description": "try/except/else blocks"
   },
   "try/except/finally": {
@@ -393,7 +401,7 @@
   },
   "comment simple": {
     "prefix": "##",
-    "body": ["\"\"\"", "$1", "", "$0", "\"\"\""],
+    "body": [ "\"\"\"", "$1", "", "$0", "\"\"\"" ],
     "description": "A simple Python docstring comment. Useful when you prefer to add the docstrings manually on functions."
   },
   "module docstring": {
@@ -413,7 +421,7 @@
   },
   "test module docstring": {
     "prefix": "###test",
-    "body": ["\"\"\"", "$1", "", "$2", "\"\"\"", "$0"],
+    "body": [ "\"\"\"", "$1", "", "$2", "\"\"\"", "$0" ],
     "description": "Module-level docstrings for test files are not required. They should be included only when there is additional information that can be provided.\n\nExamples include some specifics on how the test should be run, an explanation of an unusual setup pattern, dependency on the external environment, and so on. Docstrings that do not provide any new information should not be used, such as \"\"\"Tests for foo.bar.\"\"\""
   },
   "function docstring": {
@@ -514,7 +522,7 @@
   },
   "raises docstring": {
     "prefix": "###raises",
-    "body": ["Raises:", "    $1: $0"],
+    "body": [ "Raises:", "    $1: $0" ],
     "description": "A Python docstring for methods when we want to be exclicit about the errors it Raises. Use it only when is relevant."
   }
 }
