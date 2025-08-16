@@ -210,7 +210,7 @@
   /*                     Edit Predictions                     */
   /* -------------------------------------------------------- */
   "features": {
-    "edit_prediction_provider": "zed" // "supermaven"
+    "edit_prediction_provider": "zed" // "copilot" "supermaven"
   },
 
   // Source: https://zed.dev/docs/configuring-zed#edit-predictions
@@ -928,8 +928,6 @@
   "auto_install_extensions": {
     // AsciiDoc: https://github.com/andreicek/zed-asciidoc
     "asciidoc": true,
-    // Base16 Theme: https://github.com/bswinnerton/base16-zed
-    "base16": true,
     // Bash: https://github.com/d1y/bash.zed
     "basher": true,
     // Basedpyright: https://github.com/m1guer/basedpyright-zed
@@ -976,8 +974,6 @@
     "nix": true,
     // Nushell: https://github.com/zed-extensions/nu
     "nu": true,
-    // Postgrs Context Server: https://github.com/rowillia/zed-postgres-context-server
-    "postgres-context-server": true,
     // Python Refactoring: https://github.com/rowillia/zed-python-refactoring
     "python-refactoring": true,
     // Python Requirements: https://github.com/rowillia/zed-python-requirements

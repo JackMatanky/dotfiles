@@ -29,7 +29,11 @@ vim.g.python3_host_prog = vim.fn.expand("~/.pyenv/versions/neovim/bin/python3")
 
 -- Introduced in version 10.x
 -- Docs: https://www.lazyvim.org/news#10x
+-- Use BasedPyright as the primary Python LSP (better than Pyright)
 vim.g.lazyvim_python_lsp = "basedpyright"
+
+-- Python formatter preferences (Ruff is much faster than Black)
+vim.g.lazyvim_python_ruff = "ruff_lsp" -- Use Ruff LSP for formatting
 
 -- ---------------------------------------------------------- --
 --                      Editor Behavior                       --

@@ -353,7 +353,7 @@ if OS.mac?
 
   # ------------------------ Browsers ------------------------ #
   # Minimalist, gecko-based web browser
-  cask 'zen'
+  # cask 'zen'
 
   # ---------------------- Media Players --------------------- #
   # Open-source media player for video and audio

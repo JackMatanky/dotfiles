@@ -16,6 +16,7 @@ local modules = {
   "functions",
   "imports",
   "tooling",
+  "converted_from_zed",
 }
 
 local all_snippets = {}

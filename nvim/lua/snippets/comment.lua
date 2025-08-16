@@ -4,14 +4,26 @@ local t = ls.text_node
 local i = ls.insert_node
 local f = ls.function_node
 
-local divider = require("config.utils.luasnip_comment")
+-- Load divider snippets
+local divider_snippets = require("snippets.comment.dividers")
 
--- Centered title box snippet
-return {
-  s("cbox", f(function(_, snip)
+-- Original centered title box snippet (if the utility still exists)
+local original_snippets = {}
+-- Check if the old utility exists before using it
+local ok, divider_util = pcall(require, "config.utils.luasnip_comment")
+if ok then
+  table.insert(original_snippets, s("cbox", f(function(_, snip)
     local title = snip.captures[1] or snip.env.TM_SELECTED_TEXT[1] or snip.env.TM_CURRENT_LINE
-    return divider.box(title)
+    return divider_util.box(title)
   end, {}, {
     user_args = {},
-  })),
-}
+  })))
+end
+
+-- Combine all comment snippets
+local all_snippets = original_snippets
+for _, snippet in ipairs(divider_snippets) do
+  table.insert(all_snippets, snippet)
+end
+
+return all_snippets

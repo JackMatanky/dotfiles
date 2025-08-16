@@ -6,13 +6,24 @@
 --              snippet tables from different files.
 -- ----------------------------------------------------------------------------
 
+-- Helper function to extend tables
+local function extend(t1, t2)
+  for _, v in ipairs(t2) do
+    table.insert(t1, v)
+  end
+end
+
 -- Load snippets from their respective files.
-local base_snippets = require('snippets.markdown.base')
+local all_snippets = require('snippets.markdown.base')
 local latex_snippets = require('snippets.markdown.latex')
 
 -- Combine the tables into one for Luasnip to use.
 for _, snip in ipairs(latex_snippets) do
-  table.insert(base_snippets, snip)
+  table.insert(all_snippets, snip)
 end
 
-return base_snippets
+-- Load and extend with converted Zed snippets
+local converted_snippets = require("snippets.markdown.converted_from_zed")
+extend(all_snippets, converted_snippets)
+
+return all_snippets
