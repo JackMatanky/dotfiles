@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+{{/* vim: set filetype=bash: */}}
+{{- if .packages.cargo.crates }}
+# -----------------------------------------------------------------------------
+# Script: run_onchange_upgrade-cargo-packages.sh.tmpl
+# Purpose: Upgrade Rust/Cargo packages when package list changes
+# Dependencies: Rust, Cargo
+# Hash based on: {{ .packages.cargo.crates | join "," }}
+# -----------------------------------------------------------------------------
+
+set -euo pipefail
+
+{{ template "logging.sh" . }}
+
+log_header "🔄 CARGO PACKAGE UPGRADES"
+
+# Ensure cargo is available
+if ! command -v cargo &> /dev/null; then
+    log_warning "Cargo not available. Skipping Cargo package upgrades."
+    exit 0
+fi
+
+# Update Rust toolchain
+log_info "Updating Rust toolchain..."
+rustup update
+
+# Update all installed packages if cargo-update is available
+if command -v cargo-install-update &> /dev/null; then
+    log_info "🔄 Updating all installed Cargo packages..."
+    if cargo install-update --all; then
+        log_success "All Cargo packages updated"
+    else
+        log_warning "Some Cargo packages failed to update"
+    fi
+else
+    log_info "cargo-update not available, install with: cargo install cargo-update"
+fi
+
+log_success "✅ Cargo package upgrades completed!"
+{{- else }}
+#!/usr/bin/env bash
+# Cargo packages list is empty - skipping Cargo package upgrades
+exit 0
+{{- end }}

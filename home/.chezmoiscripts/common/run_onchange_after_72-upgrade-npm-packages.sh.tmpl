@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+{{/* vim: set filetype=bash: */}}
+{{- if .packages.npm.global }}
+# -----------------------------------------------------------------------------
+# Script: run_onchange_upgrade-npm-packages.sh.tmpl
+# Purpose: Upgrade NPM global packages when package list changes
+# Dependencies: Node.js, NPM
+# Hash based on: {{ .packages.npm.global | join "," }}
+# -----------------------------------------------------------------------------
+
+set -euo pipefail
+
+{{ template "logging.sh" . }}
+
+log_header "🔄 NPM PACKAGE UPGRADES"
+
+# Check if npm is available
+if ! command -v npm &> /dev/null; then
+    log_warning "NPM not available. Skipping NPM package upgrades."
+    exit 0
+fi
+
+log_info "Node.js version: $(node --version)"
+log_info "npm version: $(npm --version)"
+
+# Update npm itself
+log_info "Updating npm to latest version..."
+npm install -g npm@latest || log_warning "Failed to update npm"
+
+# Update all global packages
+log_info "🔄 Updating all global npm packages..."
+if npm update -g; then
+    log_success "All global NPM packages updated"
+else
+    log_warning "Some NPM packages failed to update"
+fi
+
+log_success "✅ NPM package upgrades completed!"
+{{- else }}
+#!/usr/bin/env bash
+# NPM packages list is empty - skipping NPM package upgrades
+exit 0
+{{- end }}

@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+{{/* vim: set filetype=bash: */}}
+{{- if .packages.python.global }}
+# -----------------------------------------------------------------------------
+# Script: run_onchange_upgrade-python-packages.sh.tmpl
+# Purpose: Upgrade Python packages when package list changes
+# Dependencies: Python, pip
+# Hash based on: {{ .packages.python.global | join "," }}
+# -----------------------------------------------------------------------------
+
+set -euo pipefail
+
+{{ template "logging.sh" . }}
+
+log_header "🔄 PYTHON PACKAGE UPGRADES"
+
+# Detect Python and pip commands
+PYTHON_CMD=""
+if command -v python3 &> /dev/null; then
+    PYTHON_CMD="python3"
+elif command -v python &> /dev/null; then
+    PYTHON_CMD="python"
+else
+    log_warning "Python not available. Skipping Python package upgrades."
+    exit 0
+fi
+
+PIP_CMD=""
+if command -v pip3 &> /dev/null; then
+    PIP_CMD="pip3"
+elif command -v pip &> /dev/null; then
+    PIP_CMD="pip"
+else
+    log_warning "pip not available. Skipping Python package upgrades."
+    exit 0
+fi
+
+log_success "Python $($PYTHON_CMD --version | cut -d' ' -f2) and pip $($PIP_CMD --version | cut -d' ' -f2) are available"
+
+# Upgrade pip first
+log_info "Upgrading pip to latest version..."
+$PIP_CMD install --user --upgrade pip
+
+# Get list of outdated packages
+log_info "🔄 Checking for outdated user packages..."
+outdated_output=$($PIP_CMD list --user --outdated 2>/dev/null | tail -n +3)
+
+if [[ -n "$outdated_output" ]]; then
+    log_info "Updating outdated packages..."
+    echo "$outdated_output" | awk '{print $1}' | while read -r package; do
+        if [[ -n "$package" ]]; then
+            log_info "Updating: $package"
+            $PIP_CMD install --user --upgrade "$package" || log_warning "Failed to update $package"
+        fi
+    done
+    log_success "Python package upgrades completed"
+else
+    log_success "All user Python packages are up to date"
+fi
+
+log_success "✅ Python package upgrades completed!"
+{{- else }}
+#!/usr/bin/env bash
+# Python packages list is empty - skipping Python package upgrades
+exit 0
+{{- end }}
