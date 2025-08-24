@@ -1,0 +1,49 @@
+{{/* vim: set filetype=bash: */}}
+# shellcheck shell=bash
+# -----------------------------------------------------------------------------
+# Filename: ~/.bash_profile (managed by chezmoi)
+# Description: Bash login shell configuration for macOS and Linux.
+#              Sources .bashrc, initializes SSH agent via keychain, and exports
+#              SSH_AUTH_SOCK to GUI apps on macOS.
+# Template Variables:
+#   - .chezmoi.os: Operating system ("darwin" or "linux")
+#   - .chezmoi.homeDir: User's home directory
+#   - .paths.brew_prefix: Homebrew installation prefix
+# -----------------------------------------------------------------------------
+
+# Require HOME; exit with error if unset/empty
+: "${HOME:?HOME must be set}"
+
+# ---------------------- Source .bashrc ---------------------- #
+# Load interactive shell configuration
+readonly BASHRC="{{ .chezmoi.homeDir }}/.bashrc"
+# shellcheck source=/dev/null
+[[ -f "$BASHRC" ]] && source "$BASHRC"
+
+# ----------------- Keychain SSH Agent Setup ----------------- #
+# Initialize SSH agent via keychain for secure key management
+readonly SSH_KEY="{{ .chezmoi.homeDir }}/.ssh/id_ed25519"
+if [[ -f "$SSH_KEY" ]] && command -v keychain >/dev/null 2>&1; then
+    eval "$(keychain --eval --quiet --nogui "$SSH_KEY")"
+fi
+
+{{- if eq .chezmoi.os "darwin" }}
+# ------- Export SSH_AUTH_SOCK to GUI Apps (macOS Only) ------ #
+# Make SSH agent available to GUI applications via launchd
+if [[ -n "${SSH_AUTH_SOCK:-}" ]]; then
+    launchctl setenv SSH_AUTH_SOCK "$SSH_AUTH_SOCK"
+fi
+{{- end }}
+
+# ---------------------- Bash Completion --------------------- #
+# Load Homebrew's bash completion if available
+# Note: This is typically handled in .bashrc for consistency,
+# but can be enabled here if needed for login shell specific behavior
+{{- if .packages.use_homebrew | default true }}
+readonly HOMEBREW_PREFIX="{{ .paths.brew_prefix | default "/opt/homebrew" }}"
+readonly BASH_COMPLETION_SCRIPT="$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
+if [[ -r "$BASH_COMPLETION_SCRIPT" ]]; then
+    # shellcheck source=/dev/null
+    source "$BASH_COMPLETION_SCRIPT"
+fi
+{{- end }}
