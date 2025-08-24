@@ -1,0 +1,44 @@
+# Warp Launch Configuration
+#
+#
+# Use this to start a certain configuration of windows, tabs, and panes.
+# Open the launch configuration palette to access and open any launch configuration.
+#
+# This file defines your launch configuration.
+# More on how to do so here:
+# https://docs.warp.dev/features/sessions/launch-configurations
+#
+# All launch configurations are stored under ~/.warp/launch_configurations.
+# Edit them anytime!
+#
+# You can also add commands that run on-start for your launch configurations like so:
+# ---
+# name: Example with Command
+# windows:
+#  - tabs:
+#      - layout:
+#          cwd: /Users/warp-user/project
+#          commands:
+#            - exec: code .
+
+---
+name: Basic
+active_window_index: 1
+windows:
+    - active_tab_index: 3
+      tabs:
+          - title: "Dotfiles"
+            layout:
+                cwd: /Users/jack/dotfiles
+                is_focused: true
+            color: magenta
+          - title: "Hive Geo"
+            layout:
+                cwd: /Users/jack/Documents/_dev_work/hive_urban_github/geo-data
+                is_focused: true
+            color: blue
+          - title: "New Geo Feature"
+            layout:
+                cwd: /Users/jack/Documents/_dev_work/hive_urban_github/geo-data
+                is_focused: true
+            color: green
