@@ -38,12 +38,12 @@ cask 'ghostty'
 {{- end }}
 
 # Terminal multiplexer options
-{{- if .preferences.terminal == "tmux" }}
+{{- if eq .preferences.terminal "tmux" }}
 # Terminal multiplexer
 brew 'tmux'
 # Plugin manager for tmux
 brew 'tpm'
-{{- else if .preferences.terminal == "zellij" }}
+{{- else if eq .preferences.terminal "zellij" }}
 # Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew 'zellij'
 {{- else }}
@@ -70,7 +70,7 @@ brew 'keychain'
 brew 'starship'
 
 # ---------------------- Text Editors ----------------------- #
-{{- if .preferences.editor == "zed" }}
+{{- if eq .preferences.editor "zed" }}
 # Fast, collaborative code editor
 {{- if eq .chezmoi.os "darwin" }}
 cask 'zed'
@@ -79,7 +79,7 @@ cask 'zed'
 {{- end }}
 {{- end }}
 
-{{- if or (eq .preferences.editor "nvim") (.preferences.editor == "neovim") }}
+{{- if or (eq .preferences.editor "nvim") (eq .preferences.editor "neovim") }}
 # Ambitious Vim-fork focused on extensibility and agility
 brew 'neovim'
 {{- end }}
@@ -225,8 +225,6 @@ cask 'bitwarden'
 # Display directories as trees (with optional color/HTML output)
 brew 'tree'
 # Mac App Store command-line interface
-brew 'mas'
-# Automates the installation of macOS software updates
 brew 'mas'
 
 # ----------------------- macOS Fonts ----------------------- #

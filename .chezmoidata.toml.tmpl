@@ -1,6 +1,8 @@
 # Platform-specific data file for chezmoi
-# This file can contain templates and is processed before .chezmoi.toml
+# This file contains templates and is processed before .chezmoi.toml
+# Provides comprehensive configuration data for all templates
 
+# Platform detection and configuration
 [platform]
 {{- if eq .chezmoi.os "darwin" }}
     os = "macos"
@@ -23,7 +25,24 @@
     brew_prefix = "/home/linuxbrew/.linuxbrew"
 {{- end }}
 
-# Tool availability (can be checked in templates)
+# User preferences (matches .chezmoi.toml data section)
+[preferences]
+    shell = "zsh"
+    editor = "zed"
+    terminal = "ghostty"
+
+# Development tools configuration (matches .chezmoi.toml data.dev section)
+[dev]
+    use_docker = true
+    use_kubernetes = true
+    use_python = true
+    use_node = true
+    use_rust = true
+    use_go = true
+    use_ai_tools = true
+    use_helix = false
+
+# Tool availability (dynamic detection)
 [tools]
     has_docker = {{ lookPath "docker" | not | not }}
     has_kubernetes = {{ lookPath "kubectl" | not | not }}

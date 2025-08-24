@@ -1,8 +1,7 @@
 # Chezmoi configuration file
 # Documentation: https://www.chezmoi.io/reference/configuration-file/
 
-# Set source directory (default is the current directory)
-sourceDir = "{{ .chezmoi.sourceDir }}"
+# Source directory is automatically detected from .chezmoiroot
 
 # Working tree settings
 [edit]
@@ -37,10 +36,10 @@ sourceDir = "{{ .chezmoi.sourceDir }}"
     name = "Jack Matanky"
     email = "JackMatanky@gmail.com"
     
-    # System preferences
+    # System preferences (must match template variable references)
     [data.preferences]
         shell = "zsh"
-        editor = "zed"  # Updated to reflect primary tool from copilot instructions
+        editor = "zed"
         terminal = "ghostty"
     
     # Theme configuration

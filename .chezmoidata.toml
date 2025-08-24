@@ -1,33 +1,29 @@
 # Platform-specific data file for chezmoi
-# This file can contain templates and is processed before .chezmoi.toml
+# Data file processed before .chezmoi.toml
 
+# User preferences
+[preferences]
+    shell = "zsh"
+    editor = "zed"
+    terminal = "ghostty"
+
+# Development tools configuration
+[dev]
+    use_docker = true
+    use_kubernetes = true
+    use_python = true
+    use_node = true
+    use_rust = true
+    use_go = true
+    use_ai_tools = true
+    use_helix = false
+
+# Platform-specific configuration
 [platform]
-{{ if eq .chezmoi.os "darwin" -}}
     os = "macos"
-    homebrew_prefix = {{ if eq .chezmoi.arch "arm64" }}"/opt/homebrew"{{ else }}"/usr/local"{{ end }}
     package_manager = "brew"
-    shell_config_dir = "/Users/{{ .chezmoi.username }}/.config"
-{{ else if eq .chezmoi.os "linux" -}}
-    os = "linux"
-    package_manager = "apt"  # Update based on your distro
-    shell_config_dir = "/home/{{ .chezmoi.username }}/.config"
-{{ end -}}
 
-# Homebrew paths for templates
+# Paths
 [paths]
-{{ if eq .chezmoi.os "darwin" -}}
-    brew_bin = {{ if eq .chezmoi.arch "arm64" }}"/opt/homebrew/bin/brew"{{ else }}"/usr/local/bin/brew"{{ end }}
-    brew_prefix = {{ if eq .chezmoi.arch "arm64" }}"/opt/homebrew"{{ else }}"/usr/local"{{ end }}
-{{ else if eq .chezmoi.os "linux" -}}
-    brew_bin = "/home/linuxbrew/.linuxbrew/bin/brew"
-    brew_prefix = "/home/linuxbrew/.linuxbrew"
-{{ end -}}
-
-# Tool availability (can be checked in templates)
-[tools]
-    has_docker = {{ lookPath "docker" | not | not }}
-    has_kubernetes = {{ lookPath "kubectl" | not | not }}
-    has_python = {{ lookPath "python3" | not | not }}
-    has_node = {{ lookPath "node" | not | not }}
-    has_rust = {{ lookPath "rustc" | not | not }}
-    has_go = {{ lookPath "go" | not | not }}
+    brew_bin = "/opt/homebrew/bin/brew"
+    brew_prefix = "/opt/homebrew"

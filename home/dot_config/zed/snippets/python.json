@@ -12,9 +12,15 @@
 
   "BasedPyright Ignore Rule Comment": {
     "prefix": "pyignore",
-    "body": "# pyright: ignore[${1|reportAny,reportUnusedImport,reportUnreachable,reportUnknownParameterType|}]$0",
-    // "body": "# pyright: ignore[${1|reportAny,reportExplicitAny,reportUnusedImport,reportUnreachable,reportUnknownParameterType|}]$0",
-    "description": "Ignore specific line diagnostic in pyright (ignore all is unsafe)"
+    "body": [
+      "# pyright: ignore[${1|reportAny,reportExplicitAny,reportUnnecessaryComparison,reportUnreachable,reportUnknownArgumentType,reportUnknownParameterType,reportUnusedImport,reportUnusedParameter|}]$0"
+    ],
+    "description": "Insert a comment to ignore a specific Pyright diagnostic on the current line (avoid ignoring all diagnostics)."
+  },
+  "Ruff Ignore Rule Comment": {
+    "prefix": "ruffignore",
+    "body": ["# noqa: ${1|E501,F401,F403,F405,F841|}$0"],
+    "description": "Insert a comment to ignore a specific Ruff diagnostic on the current line (avoid ignoring all diagnostics)."
   },
 
   "Multiline string": {
@@ -49,7 +55,7 @@
     "description": "Add a new py:percent markdown cell"
   },
 
-  // >>> IMPORT Statements <<<
+  /* ------------------- IMPORT Statements ------------------ */
   "Import Module": {
     "prefix": "im",
     "body": "import ${1:module}",
@@ -86,7 +92,7 @@
     "description": "Import future statement definitions for python3.x scripts using utf-8 as encoding."
   },
 
-  // >>> IF Statements <<<
+  /* --------------------- IF Statements -------------------- */
   "if": {
     "prefix": "if",
     "body": ["if ${1:condition}:", "    $0"],
@@ -108,7 +114,7 @@
     "description": "if statement with else"
   },
 
-  // >>> FOR Statements <<<
+  /* -------------------- FOR Statements -------------------- */
   "for": {
     "prefix": "for",
     "body": ["for ${1:target} in ${2:iterable}:", "    $0"],
@@ -120,7 +126,7 @@
     "description": "for loop that iterates over range of integers"
   },
 
-  // >>> WHILE Statements <<<
+  /* ------------------- WHILE Statements ------------------- */
   "while": {
     "prefix": "while",
     "body": ["while ${1:condition}:", "    $0"],
@@ -132,7 +138,7 @@
     "description": "Code snippet to create a do-while loop structure."
   },
 
-  // >>> LIST COMPREHENSIONS <<<
+  /* ------------------ LIST COMPREHENSIONS ----------------- */
   "List comprehension": {
     "prefix": "lc",
     "body": "[${1:expr} for ${2:item} in ${3:iterable}]$0",
@@ -178,7 +184,8 @@
     "body": "(${1:item} for ${2:item} in ${3:iterable} if ${4:condition})$0",
     "description": "Generator with filter."
   },
-  // >>> MATCH/CASE Statements <<<
+
+  /* ----------------- MATCH/CASE Statements ---------------- */
   "match/case": {
     "prefix": "match",
     "body": ["match ${1:subject}:", "    case ${2:pattern}:", "        $0"],
@@ -195,7 +202,7 @@
     "description": "case wildcard block if other cases fail"
   },
 
-  // >>> WITH Statements <<<
+  /* -------------------- WITH Statements ------------------- */
   "With Statement": {
     "prefix": "with",
     "body": ["with $1 as $2:", "    $0"],
@@ -217,7 +224,7 @@
     "description": "'async with' statement"
   },
 
-  // >>> FUNCTION Definitions <<<
+  /* ----------------- FUNCTION Definitions ----------------- */
   "Function Definition w/Return Type": {
     "prefix": "def",
     "body": ["def ${1:func}(${2:args}) -> ${3:None}:", "    ${0:pass}"],
@@ -236,7 +243,7 @@
     "description": "Lambda function"
   },
 
-  // >>> CLASS Definitions <<<
+  /* ------------------- CLASS Definitions ------------------ */
   "Class": {
     "prefix": "class",
     "body": ["class ${1:ClassName}:", "    $0"],
