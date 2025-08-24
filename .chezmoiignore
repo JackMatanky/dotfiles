@@ -61,6 +61,14 @@ Library/Application Support/espanso/**/*.yml
 **/.env.local
 **/.env.*.local
 
+# Shell history files (should remain local to each machine)
+**/*history*
+.config/nushell/history.txt
+.config/atuin/history.db*
+.bash_history
+.zsh_history
+.local/share/fish/fish_history
+
 # OS-specific system files
 {{- if eq .chezmoi.os "darwin" }}
 .Trash/
