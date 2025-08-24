@@ -2,12 +2,55 @@
 # File: ~/.local/share/chezmoi/.chezmoidata/packages.toml
 # Purpose: Declarative package list consumed by chezmoi run_onchange script(s).
 # Docs: https://www.chezmoi.io/user-guide/advanced/install-packages-declaratively/
-# Notes:
-# - Keys and arrays are data-only. Your install script should implement the
-#   actual brew/mas code paths.
-# - services_restart_on_change is advisory: your script can call `brew services`
-#   to (re)start only when packages change.
+# Reference: https://www.chezmoi.io/reference/special-directories/chezmoidata/
+# 
+# Structure:
+# - [packages.common.*] - Cross-platform packages available on most systems
+# - [packages.darwin.*] - macOS specific packages (Homebrew, Casks, MAS)
+# - [packages.linux.*] - Linux specific packages (apt, flatpak, snap)
+# - [packages.cargo.*] - Rust packages (cargo install)
+# - [packages.npm.*] - Node.js packages (npm install -g)
+# - [packages.python.*] - Python packages (pip install)
 # -----------------------------------------------------------------------------
+
+# ============================================================================ #
+#                              COMMON PACKAGES                                #
+# ============================================================================ #
+# Cross-platform packages that work on both macOS and Linux
+
+[packages.common]
+
+# Core development tools available across platforms
+dev_tools = [
+  "git",
+  "git-lfs",
+  "go",
+  "node",
+  "python3",
+  "rust"  # May need platform-specific installation
+]
+
+# Essential CLI utilities
+cli_tools = [
+  "curl",
+  "jq",
+  "ripgrep",
+  "fd",
+  "bat",
+  "fzf",
+  "eza",
+  "zoxide"
+]
+
+# Text editors and IDEs that are cross-platform
+editors = [
+  "neovim"
+  # "helix" - available on some platforms
+]
+
+# ============================================================================ #
+#                                MACOS PACKAGES                               #
+# ============================================================================ #
 
 [packages]
 
@@ -417,4 +460,302 @@ vscode = [
   "formulahendry.code-runner",
   "techer.open-in-browser",
   "tomoki1207.pdf"
+]
+
+# ============================================================================ #
+#                               LINUX PACKAGES                                #
+# ============================================================================ #
+
+[packages.linux]
+
+# Core packages available via APT (Ubuntu/Debian)
+apt = [
+  # Development essentials
+  "build-essential",
+  "curl",
+  "wget",
+  "git",
+  "vim",
+  "neovim",
+  
+  # Shell and terminal tools
+  "zsh",
+  "tmux",
+  "htop",
+  "tree",
+  "unzip",
+  "zip",
+  
+  # Languages and runtimes
+  "nodejs",
+  "npm",
+  "python3",
+  "python3-pip",
+  "python3-venv",
+  
+  # Additional utilities (if available in repos)
+  "ripgrep",
+  "fd-find",
+  "bat",
+  "exa",  # or "eza" on newer systems
+  
+  # Development tools
+  "shellcheck",
+  "jq",
+  
+  # System utilities
+  "software-properties-common",
+  "apt-transport-https",
+  "ca-certificates",
+  "gnupg",
+  "lsb-release"
+]
+
+# Flatpak applications (cross-distribution)
+# Based on your existing .config/Flatpakfile
+flatpak = [
+  "com.calibre_ebook.calibre",
+  "com.slack.Slack",
+  "md.obsidian.Obsidian",
+  "me.iepure.devtoolbox",
+  "org.inkscape.Inkscape",
+  "org.jupyter.JupyterLab",
+  "org.kicad.KiCad",
+  "org.libreoffice.LibreOffice",
+  "org.mozilla.firefox",
+  "org.sqlitebrowser.sqlitebrowser",
+  "org.videolan.VLC",
+  "org.zotero.Zotero",
+  "us.zoom.Zoom"
+]
+
+# Snap packages (Ubuntu and derivatives)
+snap = [
+  "code",           # Visual Studio Code
+  "discord",
+  "postman",
+  "insomnia",
+  # "docker",       # Better installed via apt for most systems
+  # "kubectl",
+  # "helm"
+]
+
+# ============================================================================ #
+#                           LANGUAGE-SPECIFIC PACKAGES                        #
+# ============================================================================ #
+
+# Rust packages (cargo install)
+[packages.cargo]
+crates = [
+  # Core utilities (faster alternatives to standard tools)
+  "ripgrep",          # rg - faster grep
+  "fd-find",          # fd - faster find
+  "exa",              # Modern ls replacement (or "eza" for newer version)
+  "bat",              # Better cat with syntax highlighting
+  "zoxide",           # Smart cd replacement
+  "tokei",            # Count code, quickly
+  "hyperfine",        # Command-line benchmarking tool
+  "dust",             # More intuitive version of du
+  "procs",            # Modern replacement for ps
+  
+  # Development tools
+  "cargo-update",     # Update installed cargo packages
+  "cargo-edit",       # Add/remove dependencies from command line
+  "cargo-watch",      # Watch for changes and run cargo commands
+  "cargo-expand",     # Show macro-expanded code
+  "cargo-audit",      # Audit dependencies for security vulnerabilities
+  "cargo-outdated",   # Display outdated dependencies
+  "cargo-tree",       # Visualize dependency graphs
+  "cargo-bloat",      # Find what takes most space in the executable
+  
+  # Productivity tools
+  "starship",         # Cross-shell prompt
+  "navi",             # Interactive cheatsheet tool
+  "xh",               # HTTPie clone (user-friendly HTTP client)
+  "git-delta",        # Better git diff
+  "bottom",           # System monitor (btm command)
+  "bandwhich",        # Terminal bandwidth utilization tool
+  "lsd",              # Next gen ls command
+  "tealdeer",         # Fast tldr client (tldr command)
+  
+  # Text processing
+  "sd",               # Intuitive find & replace CLI
+  "choose",           # Human-friendly cut alternative
+  "htmlq",            # jq but for HTML
+  
+  # System utilities
+  "grex",             # Generate regular expressions from test cases
+  "skim",             # Fuzzy finder (sk command)
+  "mcfly",            # Smart command history search
+  "zellij",           # Terminal workspace
+  
+  # Fun/experimental
+  "onefetch",         # Git repository summary (like neofetch for git)
+  "commitizen",       # Conventional commit tool
+]
+
+# Node.js packages (npm install -g)
+[packages.npm]
+global = [
+  # Development tools
+  "typescript",
+  "ts-node",
+  "@typescript-eslint/eslint-plugin",
+  "@typescript-eslint/parser",
+  "eslint",
+  "prettier",
+  "nodemon",
+  "concurrently",
+  
+  # Build tools
+  "webpack",
+  "webpack-cli",
+  "vite",
+  "rollup",
+  "parcel",
+  
+  # Testing
+  "jest",
+  "mocha",
+  "cypress",
+  "playwright",
+  
+  # Utilities
+  "http-server",
+  "json-server",
+  "serve",
+  "npm-check-updates",
+  "npm-check",
+  
+  # Documentation
+  "mermaid-cli",      # Diagram generation
+  "@marp-team/marp-cli", # Markdown presentations
+  
+  # Productivity
+  "fkill-cli",        # Kill processes
+  "speed-test",       # Internet speed test
+  "gtop",             # System monitoring
+  "tldr",             # Simplified man pages
+  
+  # Development servers
+  "live-server",
+  "browser-sync",
+  
+  # API tools
+  "newman",           # Postman CLI
+  
+  # Package management
+  "yarn",
+  "pnpm"
+]
+
+# Python packages (pip install --user)
+[packages.python]
+global = [
+  # Development tools
+  "black",             # Code formatter
+  "flake8",           # Linter
+  "mypy",             # Type checker
+  "isort",            # Import sorter
+  "autopep8",         # PEP8 formatter
+  "bandit",           # Security linter
+  "pre-commit",       # Git hooks
+  
+  # Testing
+  "pytest",
+  "pytest-cov",
+  "coverage",
+  
+  # Jupyter ecosystem
+  "jupyter",
+  "jupyterlab",
+  "notebook",
+  "ipython",
+  "ipykernel",
+  
+  # Data science (optional, heavy dependencies)
+  # "numpy",
+  # "pandas",
+  # "matplotlib",
+  # "seaborn",
+  # "scikit-learn",
+  
+  # Web development
+  "flask",
+  "fastapi",
+  "uvicorn",
+  "requests",
+  "httpx",
+  
+  # Utilities
+  "pipenv",           # Virtual environment management
+  "poetry",           # Dependency management
+  "cookiecutter",     # Project templates
+  "rich",             # Rich text library for terminal
+  "click",            # Command line interface creation
+  "typer",            # Modern CLI framework
+  
+  # System utilities
+  "psutil",           # System monitoring
+  "python-dotenv",    # Environment variable management
+  
+  # Documentation
+  "mkdocs",
+  "mkdocs-material",
+  "sphinx"
+]
+
+# Ruby gems (gem install)
+[packages.ruby]
+gems = [
+  "bundler",
+  "rake",
+  "pry",              # Better IRB
+  "rubocop",          # Linter
+  "solargraph",       # Language server
+  "jekyll",           # Static site generator
+  "rouge",            # Syntax highlighter
+  "ffi",              # Foreign function interface
+  "sassc",            # Sass compiler
+]
+
+# Go packages (go install)
+[packages.go]
+binaries = [
+  "github.com/junegunn/fzf@latest",
+  "github.com/charmbracelet/glow@latest",        # Markdown renderer
+  "github.com/charmbracelet/vhs@latest",         # Terminal GIFs
+  "github.com/jesseduffield/lazygit@latest",     # Git TUI
+  "github.com/jesseduffield/lazydocker@latest",  # Docker TUI
+  "github.com/cli/cli/v2/cmd/gh@latest",         # GitHub CLI
+  "github.com/goreleaser/goreleaser@latest",     # Release automation
+  "github.com/golangci/golangci-lint/cmd/golangci-lint@latest", # Linter
+]
+
+# ============================================================================ #
+#                                 ALTERNATIVES                                #
+# ============================================================================ #
+# Alternative installation methods for packages that might not be available
+# in primary repositories
+
+[packages.alternatives]
+
+# Manual installation URLs or commands
+# These would need custom scripts to handle
+manual = [
+  # "https://github.com/sharkdp/bat/releases",
+  # "https://github.com/BurntSushi/ripgrep/releases",
+  # "https://github.com/ajeetdsouza/zoxide/releases"
+]
+
+# AppImage applications (Linux)
+appimage = [
+  # "neovim",
+  # "obsidian",
+]
+
+# Binary releases to download
+binary_releases = [
+  # Structure: "name" = { url = "...", version = "latest" }
+  # These would need custom installation scripts
 ]
