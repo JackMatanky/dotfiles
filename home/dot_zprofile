@@ -9,7 +9,6 @@
 ZSHRC="$HOME/.config/zsh/.zshrc"
 [[ -f "$ZSHRC" ]] && source "$ZSHRC"
 
-
 # --- Keychain SSH Agent Setup ---
 export SSH_KEY="$HOME/.ssh/id_ed25519"
 eval "$(keychain --eval --quiet --nogui "$SSH_KEY")"
