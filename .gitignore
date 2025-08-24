@@ -68,3 +68,5 @@ htmlcov/
 .vscode/
 *.sublime-project
 *.sublime-workspace
+
+WARP.md

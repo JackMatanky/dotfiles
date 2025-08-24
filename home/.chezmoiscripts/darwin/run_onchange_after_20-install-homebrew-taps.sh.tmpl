@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+{{/* vim: set filetype=bash: */}}
+{{- if eq .chezmoi.os "darwin" }}
+# -----------------------------------------------------------------------------
+# Script: run_onchange_install-homebrew-taps.sh.tmpl
+# Purpose: Install Homebrew taps (runs only when taps list changes)
+# Dependencies: Homebrew
+# Hash based on: {{ .packages.darwin.taps | join "," }}
+# -----------------------------------------------------------------------------
+
+set -euo pipefail
+
+{{ template "logging.sh" . }}
+
+log_header "🔗 HOMEBREW TAPS"
+
+# Ensure Homebrew is available
+if ! command -v brew &> /dev/null; then
+    log_error "Homebrew not found. Please run the Homebrew setup script first."
+    exit 1
+fi
+
+# Track installation stats
+added_count=0
+already_added_count=0
+failed_count=0
+
+{{- range .packages.darwin.taps }}
+if ! brew tap | grep -q "{{ . }}"; then
+    log_info "Adding tap: {{ . }}"
+    if brew tap {{ . | quote }}; then
+        log_success "Added: {{ . }}"
+        ((added_count++))
+    else
+        log_warning "Failed to add: {{ . }}"
+        ((failed_count++))
+    fi
+else
+    log_success "Already added: {{ . }}"
+    ((already_added_count++))
+fi
+{{- end }}
+
+log_success "✅ Homebrew taps installation completed!"
+log_info "📊 Summary:"
+log_info "  • New taps added: $added_count"
+log_info "  • Already added: $already_added_count"
+log_info "  • Failed: $failed_count"
+log_info "  • Total taps managed: {{ len .packages.darwin.taps }}"
+{{- end }}

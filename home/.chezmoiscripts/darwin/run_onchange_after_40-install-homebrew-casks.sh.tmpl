@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+{{/* vim: set filetype=bash: */}}
+{{- if eq .chezmoi.os "darwin" }}
+# -----------------------------------------------------------------------------
+# Script: run_onchange_install-homebrew-casks.sh.tmpl
+# Purpose: Install Homebrew casks (runs only when cask list changes)
+# Dependencies: Homebrew
+# Hash based on: {{ .packages.darwin.casks | join "," }}
+# -----------------------------------------------------------------------------
+
+set -euo pipefail
+
+{{ template "logging.sh" . }}
+
+log_header "📱 HOMEBREW CASKS"
+
+# Ensure Homebrew is available
+if ! command -v brew &> /dev/null; then
+    log_error "Homebrew not found. Please run the Homebrew setup script first."
+    exit 1
+fi
+
+# Set cask installation directory
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
+
+# Track installation stats
+installed_count=0
+already_installed_count=0
+failed_count=0
+
+{{- range .packages.darwin.casks }}
+if ! brew list --cask {{ . | quote }} &> /dev/null; then
+    log_info "Installing cask: {{ . }}"
+    if brew install --cask {{ . | quote }}; then
+        log_success "Installed: {{ . }}"
+        ((installed_count++))
+    else
+        log_warning "Failed to install: {{ . }}"
+        ((failed_count++))
+    fi
+else
+    log_success "Already installed: {{ . }}"
+    ((already_installed_count++))
+fi
+{{- end }}
+
+# Cleanup
+if [[ $installed_count -gt 0 ]]; then
+    log_info "🧹 Cleaning up Homebrew caches..."
+    brew cleanup --prune=all || log_warning "Cleanup had issues"
+fi
+
+log_success "✅ Homebrew casks installation completed!"
+log_info "📊 Summary:"
+log_info "  • New installations: $installed_count"
+log_info "  • Already installed: $already_installed_count"
+log_info "  • Failed: $failed_count"
+log_info "  • Total casks managed: {{ len .packages.darwin.casks }}"
+
+if [[ $failed_count -gt 0 ]]; then
+    log_info "💡 Some casks failed - they may require manual installation or approval"
+fi
+{{- end }}

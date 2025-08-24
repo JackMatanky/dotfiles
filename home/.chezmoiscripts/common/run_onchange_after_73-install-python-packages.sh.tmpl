@@ -1,10 +1,12 @@
 {{/* vim: set filetype=bash: */}}
+{{- if .packages.python.global }}
 #!/usr/bin/env bash
 # -----------------------------------------------------------------------------
 # Script: run_onchange_install-python-packages.sh.tmpl
 # Purpose: Install Python packages using pip when packages.toml changes
 # Docs: https://www.chezmoi.io/user-guide/advanced/install-packages-declaratively/
 # Dependencies: Python, pip
+# Hash based on: {{ .packages.python.global | join "," }}
 # -----------------------------------------------------------------------------
 
 set -euo pipefail
@@ -211,3 +213,8 @@ log_info "  • Ensure $USER_LOCAL_BIN is in your PATH"
 log_info "  • Run 'pip list --user --outdated' to check for updates"
 log_info "  • Consider using virtual environments for projects"
 log_info "  • Configure installed tools as needed"
+{{- else }}
+#!/usr/bin/env bash
+# Python packages list is empty - skipping Python package installation
+exit 0
+{{- end }}

@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+{{/* vim: set filetype=bash: */}}
+{{- if and (eq .chezmoi.os "linux") .packages.linux.apt }}
+# -----------------------------------------------------------------------------
+# Script: run_onchange_install-apt-packages.sh.tmpl
+# Purpose: Install APT packages (runs only when APT package list changes)
+# Dependencies: APT (Debian/Ubuntu systems)
+# Hash based on: {{ .packages.linux.apt | join "," }}
+# -----------------------------------------------------------------------------
+
+set -euo pipefail
+
+{{ template "logging.sh" . }}
+
+log_header "📦 APT PACKAGES"
+
+# Check if APT is available (Debian/Ubuntu systems)
+if ! command -v apt &> /dev/null; then
+    log_error "APT not found. This script is for Debian/Ubuntu systems."
+    exit 1
+fi
+
+# Update package lists
+log_info "Updating APT package lists..."
+if sudo apt update; then
+    log_success "Package lists updated"
+else
+    log_warning "Failed to update package lists"
+fi
+
+# Track installation stats
+installed_count=0
+already_installed_count=0
+failed_count=0
+
+{{- range .packages.linux.apt }}
+if ! dpkg-query -W -f='${Status}' "{{ . }}" 2>/dev/null | grep -q "^install ok installed"; then
+    log_info "Installing APT package: {{ . }}"
+    if sudo apt install -y "{{ . }}"; then
+        log_success "Installed: {{ . }}"
+        ((installed_count++))
+    else
+        log_warning "Failed to install: {{ . }}"
+        ((failed_count++))
+    fi
+else
+    log_success "Already installed: {{ . }}"
+    ((already_installed_count++))
+fi
+{{- end }}
+
+# Clean up if we installed any packages
+if [[ $installed_count -gt 0 ]]; then
+    log_info "🧹 Cleaning up APT cache..."
+    sudo apt autoremove -y || log_warning "Autoremove had issues"
+    sudo apt autoclean || log_warning "Autoclean had issues"
+fi
+
+log_success "✅ APT package installation completed!"
+log_info "📊 Summary:"
+log_info "  • New installations: $installed_count"
+log_info "  • Already installed: $already_installed_count" 
+log_info "  • Failed: $failed_count"
+log_info "  • Total APT packages managed: {{ len .packages.linux.apt }}"
+
+if [[ $failed_count -gt 0 ]]; then
+    log_info "💡 Failed packages may require:"
+    log_info "  • Running 'sudo apt update' first"
+    log_info "  • Additional repositories or PPAs"
+    log_info "  • Different package names for your Ubuntu/Debian version"
+fi
+{{- else }}
+#!/usr/bin/env bash
+# APT packages list is empty or not on Linux - skipping APT installation
+exit 0
+{{- end }}

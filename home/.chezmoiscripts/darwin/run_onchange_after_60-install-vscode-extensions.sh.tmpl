@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+{{/* vim: set filetype=bash: */}}
+{{- if eq .chezmoi.os "darwin" }}
+# -----------------------------------------------------------------------------
+# Script: run_onchange_install-vscode-extensions.sh.tmpl
+# Purpose: Install VS Code extensions (runs only when extension list changes)
+# Dependencies: Visual Studio Code
+# Hash based on: {{ .packages.darwin.vscode | join "," }}
+# -----------------------------------------------------------------------------
+
+set -euo pipefail
+
+{{ template "logging.sh" . }}
+
+log_header "🔧 VS CODE EXTENSIONS"
+
+# Check if VS Code is available
+if ! command -v code &> /dev/null; then
+    log_warning "VS Code not available. Extensions will be skipped."
+    log_info "Install VS Code first, then run chezmoi apply again"
+    exit 0
+fi
+
+log_success "VS Code found: $(code --version | head -1)"
+
+# Track installation stats
+installed_count=0
+already_installed_count=0
+failed_count=0
+
+{{- range .packages.darwin.vscode }}
+if ! code --list-extensions | grep -q "{{ . }}"; then
+    log_info "Installing VS Code extension: {{ . }}"
+    if code --install-extension {{ . | quote }} --force; then
+        log_success "Installed: {{ . }}"
+        ((installed_count++))
+    else
+        log_warning "Failed to install: {{ . }}"
+        ((failed_count++))
+    fi
+else
+    log_success "Already installed: {{ . }}"
+    ((already_installed_count++))
+fi
+{{- end }}
+
+log_success "✅ VS Code extensions installation completed!"
+log_info "📊 Summary:"
+log_info "  • New installations: $installed_count"
+log_info "  • Already installed: $already_installed_count"
+log_info "  • Failed: $failed_count"
+log_info "  • Total extensions managed: {{ len .packages.darwin.vscode }}"
+
+if [[ $installed_count -gt 0 ]]; then
+    log_info "🔧 Next steps:"
+    log_info "  • Restart VS Code to load new extensions"
+    log_info "  • Configure extensions in VS Code settings"
+fi
+
+if [[ $failed_count -gt 0 ]]; then
+    log_info "💡 Failed extensions may require:"
+    log_info "  • Manual installation via VS Code marketplace"
+    log_info "  • Check extension ID spelling"
+    log_info "  • VS Code restart and retry"
+fi
+{{- end }}

@@ -1,0 +1,104 @@
+#!/usr/bin/env bash
+{{/* vim: set filetype=bash: */}}
+# -----------------------------------------------------------------------------
+# Script: run_onchange_package-management-system.sh.tmpl
+# Purpose: Document the new modular package management system
+# Hash based on: modular-v1.0
+# -----------------------------------------------------------------------------
+
+set -euo pipefail
+
+{{ template "logging.sh" . }}
+
+log_header "🔧 Modular Package Management System"
+log_success "Package management has been modernized with efficient modular scripts!"
+log_info ""
+log_info "✨ New Organized Architecture:"
+
+{{- if eq .chezmoi.os "darwin" }}
+log_info "  📁 darwin/ - macOS Package Scripts (Ordered):"
+log_info "    • run_once_before_10-homebrew-setup.sh.tmpl - Install/update Homebrew (once)"
+log_info "    • run_onchange_after_20-install-homebrew-taps.sh.tmpl - Add taps (hash-based)"
+log_info "    • run_onchange_after_30-install-homebrew-formulas.sh.tmpl - Install formulas (hash-based)"
+log_info "    • run_onchange_after_40-install-homebrew-casks.sh.tmpl - Install casks (hash-based)"
+log_info "    • run_onchange_after_50-install-mas-apps.sh.tmpl - Install Mac App Store apps (hash-based)"
+log_info "    • run_onchange_after_60-install-vscode-extensions.sh.tmpl - Install VS Code extensions (hash-based)"
+{{- end }}
+
+log_info ""
+log_info "  📁 common/ - Cross-Platform Scripts (Ordered):"
+log_info "    • run_onchange_after_70-install-cargo-packages.sh.tmpl - Rust/Cargo packages (hash-based)"
+log_info "    • run_onchange_after_71-install-npm-packages.sh.tmpl - Node.js/NPM global packages (hash-based)"
+log_info "    • run_onchange_after_72-install-go-packages.sh.tmpl - Go packages (hash-based)"
+log_info "    • run_onchange_after_73-install-python-packages.sh.tmpl - Python packages (hash-based)"
+
+log_info ""
+{{- if eq .chezmoi.os "linux" }}
+log_info "  📁 linux/ - Linux Package Scripts (Ordered):"
+log_info "    • run_onchange_after_20-install-flatpak-apps.sh.tmpl - Install Flatpak apps (hash-based)"
+log_info "    • run_onchange_after_30-install-apt-packages.sh.tmpl - Install APT packages (hash-based)"
+log_info "    • run_onchange_after_40-install-snap-packages.sh.tmpl - Install Snap packages (hash-based)"
+{{- else }}
+log_info "  📁 linux/ - Linux Package Scripts:"
+log_info "    • Available for Linux systems (Flatpak → APT → Snap priority)"
+{{- end }}
+
+log_info ""
+log_info "  📁 windows/ - Windows Package Scripts:"
+log_info "    • (Available for future Windows package management)"
+
+log_info ""
+log_info "  🔄 Package Manager Priority:"
+log_info "    macOS: Homebrew (brews/casks) → MAS → Language-specific"
+log_info "    Linux: Flatpak → APT → Snap → Language-specific"
+log_info "    Cross-platform: Cargo, NPM, Python, Go (work everywhere)"
+log_info ""
+log_info "⚙️ Benefits:"
+log_info "  • Scripts run ONLY when their related package lists change"
+log_info "  • Hash-based detection prevents unnecessary re-runs"
+log_info "  • Better logging with shared logging template"
+log_info "  • Modular design allows for targeted updates"
+log_info "  • Efficient resource usage and faster chezmoi apply"
+log_info "  • Proper execution order using chezmoi attributes"
+log_info ""
+log_info "🔄 Execution Order (using chezmoi attributes):"
+log_info "  1. run_once_before_00-install-essentials.sh.tmpl (Essential tools first)"
+{{- if eq .chezmoi.os "darwin" }}
+log_info "  2. run_once_before_10-homebrew-setup.sh.tmpl (Platform setup)"
+log_info "  3. run_onchange_after_20-60-* (Darwin packages in order)"
+{{- else if eq .chezmoi.os "linux" }}
+log_info "  2. Linux platform setup (via essentials script)"
+log_info "  3. run_onchange_after_20-40-* (Linux packages in order)"
+{{- end }}
+log_info "  4. run_onchange_after_70-73-* (Cross-platform languages)"
+log_info "  5. run_after_configure-shell.sh.tmpl (Shell config after packages)"
+log_info "  6. run_onchange_after_99-* (Documentation/status)"
+log_info ""
+log_info "🎯 How it works:"
+log_info "  • Each script embeds a hash of its package list in content"
+log_info "  • When packages change, content hash changes, triggering re-run"
+log_info "  • Unchanged lists = no execution, faster deployments"
+log_info "  • before_/after_ attributes control execution timing"
+log_info ""
+
+# Show total managed packages
+{{- if eq .chezmoi.os "darwin" }}
+log_info "📊 Currently managing {{ add (len .packages.darwin.taps) (len .packages.darwin.brews) (len .packages.darwin.casks) (len .packages.darwin.mas) (len .packages.darwin.vscode) }}+ macOS packages"
+{{- else if eq .chezmoi.os "linux" }}
+log_info "📊 Currently managing {{ add (len .packages.linux.flatpak) (len .packages.linux.apt) (len .packages.linux.snap) }}+ Linux packages"
+{{- end }}
+
+{{- if .packages.cargo.crates }}
+log_info "📊 Managing {{ len .packages.cargo.crates }} Rust/Cargo packages"
+{{- end }}
+
+{{- if .packages.npm.global }}
+log_info "📊 Managing {{ len .packages.npm.global }} NPM global packages"
+{{- end }}
+
+{{- if .packages.python.global }}
+log_info "📊 Managing {{ len .packages.python.global }} Python packages"
+{{- end }}
+
+log_info ""
+log_success "System ready! Package management is now efficient and modular."

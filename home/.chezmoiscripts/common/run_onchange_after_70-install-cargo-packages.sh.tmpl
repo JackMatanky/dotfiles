@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+{{/* vim: set filetype=bash: */}}
+{{- if .packages.cargo.crates }}
+# -----------------------------------------------------------------------------
+# Script: run_onchange_install-cargo-packages.sh.tmpl
+# Purpose: Install Rust packages using Cargo (runs only when crate list changes)
+# Dependencies: Rust, Cargo
+# Hash based on: {{ .packages.cargo.crates | join "," }}
+# -----------------------------------------------------------------------------
+
+set -euo pipefail
+
+{{ template "logging.sh" . }}
+
+log_header "🦀 RUST/CARGO PACKAGES"
+
+# Install Rust if not present
+if ! command -v rustc &> /dev/null; then
+    log_info "Installing Rust..."
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain stable
+    
+    # Source the cargo environment
+    source ~/.cargo/env
+    
+    log_success "Rust installed successfully"
+else
+    log_success "Rust already installed"
+fi
+
+# Ensure cargo is available
+if ! command -v cargo &> /dev/null; then
+    log_error "Cargo not available. Please install Rust properly."
+    exit 1
+fi
+
+# Update Rust toolchain
+log_info "Updating Rust toolchain..."
+rustup update
+
+# Install cargo-update if not present (for managing updates)
+if ! cargo install --list | grep -q "cargo-update"; then
+    log_info "Installing cargo-update for package management..."
+    cargo install cargo-update
+fi
+
+# Function to check if a crate is installed
+is_crate_installed() {
+    cargo install --list | grep -q "^$1 "
+}
+
+# Track installation stats
+installed_count=0
+already_installed_count=0
+failed_count=0
+
+{{- range .packages.cargo.crates }}
+if ! is_crate_installed "{{ . }}"; then
+    log_info "Installing crate: {{ . }}"
+    if cargo install "{{ . }}"; then
+        log_success "Installed: {{ . }}"
+        ((installed_count++))
+    else
+        log_warning "Failed to install: {{ . }}"
+        ((failed_count++))
+    fi
+else
+    log_success "Already installed: {{ . }}"
+    ((already_installed_count++))
+fi
+{{- end }}
+
+# Update installed packages if we installed any new ones
+if [[ $installed_count -gt 0 ]] && command -v cargo-install-update &> /dev/null; then
+    log_info "🔄 Updating installed Cargo packages..."
+    cargo install-update --all || log_warning "Some packages failed to update"
+fi
+
+log_success "✅ Cargo package installation completed!"
+log_info "📊 Summary:"
+log_info "  • New installations: $installed_count"
+log_info "  • Already installed: $already_installed_count"
+log_info "  • Failed: $failed_count"
+log_info "  • Total crates managed: {{ len .packages.cargo.crates }}"
+
+if [[ $installed_count -gt 0 ]]; then
+    log_info "🔧 Next steps:"
+    log_info "  • Restart terminal or source ~/.cargo/env to use new tools"
+    log_info "  • Run 'cargo install-update --all' periodically to update packages"
+fi
+{{- else }}
+#!/usr/bin/env bash
+# Cargo packages list is empty - skipping Rust/Cargo package installation
+exit 0
+{{- end }}

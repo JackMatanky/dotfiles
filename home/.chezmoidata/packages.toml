@@ -1,62 +1,8 @@
 # -----------------------------------------------------------------------------
-# File: ~/.local/share/chezmoi/.chezmoidata/packages.toml
-# Purpose: Declarative package list consumed by chezmoi run_onchange script(s).
-# Docs: https://www.chezmoi.io/user-guide/advanced/install-packages-declaratively/
-# Reference: https://www.chezmoi.io/reference/special-directories/chezmoidata/
-#
-# Structure:
-# - [packages.common.*] - Cross-platform packages available on most systems
-# - [packages.darwin.*] - macOS specific packages (Homebrew, Casks, MAS)
-# - [packages.linux.*] - Linux specific packages (apt, flatpak, snap)
-# - [packages.cargo.*] - Rust packages (cargo install)
-# - [packages.npm.*] - Node.js packages (npm install -g)
-# - [packages.python.*] - Python packages (pip install)
+# File: packages.toml - Based exactly on ~/dotfiles/Brewfile
+# Purpose: Declarative package list consumed by chezmoi run_onchange scripts
 # -----------------------------------------------------------------------------
 
-# ------------------------------------------------------------ #
-#                        COMMON PACKAGES                       #
-# ------------------------------------------------------------ #
-# Cross-platform packages that work on both macOS and Linux
-
-[packages.common]
-
-# Core development tools available across platforms
-dev_tools = [
-  "git",
-  "git-lfs",
-  "go",
-  "node",
-  "python3",
-  "rust"  # May need platform-specific installation
-]
-
-# Essential CLI utilities
-cli_tools = [
-  "curl",
-  "jq",
-  "ripgrep",
-  "fd",
-  "bat",
-  "fzf",
-  "eza",
-  "zoxide"
-]
-
-# Text editors and IDEs that are cross-platform
-editors = [
-  "neovim"
-  # "helix" - available on some platforms
-]
-
-# ------------------------------------------------------------ #
-#                        MACOS PACKAGES                        #
-# ------------------------------------------------------------ #
-
-[packages]
-
-# Everything here targets macOS (darwin). If you later support Linux,
-# add a parallel [packages.linux] (or [packages.common]) section and
-# split cross-platform formulae accordingly.
 [packages.darwin]
 
 # ----------------------- Homebrew Taps ---------------------- #
@@ -64,48 +10,47 @@ taps = [
   "homebrew/bundle",
   "homebrew/services",
   "zegervdv/zathura",
+  "jesseduffield/lazygit",
   "felixkratz/formulae",
-  "nikitabobko/tap",
-  "jesseduffield/lazygit"
+  "nikitabobko/tap"
 ]
 
-# ------------------------ Brew (CLI) ------------------------ #
+# ------------------------ Brew Packages --------------------- #
 brews = [
   # Shells
   "bash",
   "nushell",
 
-  # Terminal environment
+  # Terminal Environment
   "zellij",
   "tmux",
   "tpm",
 
-  # Dotfiles managers
+  # Dotfiles Managers
   "stow",
   "chezmoi",
 
-  # Environment management
+  # Environment Management
   "direnv",
   "just",
   "keychain",
-  # "sops",  # commented in Brewfile
 
-  # Scripting & development
+  # Scripting & Development
   "shellcheck",
   "shfmt",
 
-  # Shell enhancements
+  # Shell Enhancements
   "atuin",
   "carapace",
   "starship",
   "yazi",
 
-  # Shell plugins
+  # Shell Plugins
   "bash-completion@2",
   "zsh-autosuggestions",
   "zsh-syntax-highlighting",
 
-  # CLI utilities
+  # CLI Utilities
   "eza",
   "fzf",
   "zoxide",
@@ -116,13 +61,12 @@ brews = [
   "tlrc",
   "jq",
   "sourcemeta/apps/jsonschema",
-  # "mermaid-cli", # commented in Brewfile
 
-  # AI tools
+  # AI Tools
   "gemini-cli",
   "ollama",
 
-  # Version control
+  # Version Control
   "git",
   "git-sizer",
   "git-lfs",
@@ -132,7 +76,7 @@ brews = [
   "jesseduffield/lazygit/lazygit",
   "gh",
 
-  # Languages & runtimes
+  # Languages & Runtimes
   "go",
   "lua",
   "mysql",
@@ -141,9 +85,8 @@ brews = [
   "postgresql@17",
   "python@3.13",
   "ruby",
-  # "rust",  # commented in Brewfile
 
-  # Language servers
+  # Language Servers
   "lua-language-server",
   "marksman",
   "basedpyright",
@@ -154,7 +97,7 @@ brews = [
   "vscode-langservers-extracted",
   "yaml-language-server",
 
-  # Python toolchain
+  # Python Toolchain
   "pyenv",
   "pyenv-virtualenv",
   "uv",
@@ -162,11 +105,11 @@ brews = [
   "jupyterlab",
   "jupytext",
 
-  # Lua toolchain
+  # Lua Toolchain
   "luajit",
   "luarocks",
 
-  # Linters & formatters
+  # Linters & Formatters
   "prettier",
   "cspell",
   "golangci-lint",
@@ -176,10 +119,12 @@ brews = [
   "sql-formatter",
   "stylua",
 
-  # Modal editors
+  # Modal Editors
   "neovim",
 
-  # Document processing & viewing (CLI libs)
+  # Document Processing & Viewing
+  "zathura",
+  "zathura-pdf-mupdf",
   "pandoc",
   "img2pdf",
   "qpdf",
@@ -189,7 +134,7 @@ brews = [
   "ocrmypdf",
   "tesseract",
 
-  # Image processing
+  # Image Processing
   "imagemagick",
   "webp",
   "libavif",
@@ -202,78 +147,71 @@ brews = [
   "ical-buddy",
   "switchaudio-osx",
   "nowplaying-cli",
+  "felixkratz/formulae/borders",
 
   # Mac App Store helper
   "mas"
 ]
 
-# ---------- Services: Restart on Change (Advisory) ---------- #
-# Your script can use this to conditionally (re)start services when the
-# package list changes, e.g.:
-#   for p in ${services_restart_on_change[@]}; do brew services restart "$p"; done
+# Services to restart on change
 services_restart_on_change = [
   "atuin",
   "mysql",
   "postgresql@17"
 ]
 
-# ------------------------ Brew Casks ------------------------ #
+# ------------------------ Casks (GUI Apps) ------------------ #
 casks = [
-  # Terminal emulators
+  # Terminal Emulators
   "ghostty",
   "warp",
-  # "wezterm",   # commented in Brewfile
 
-  # Neovim client
-  # "neovide",   # commented in Brewfile
-
-  # IDEs & editors
+  # IDEs & Editors
   "zed",
   "zed@preview",
   "visual-studio-code",
-  # "vscodium",  # commented in Brewfile
 
-  # SQL clients
+  # SQL Clients
   "mysqlworkbench",
   "pgadmin4",
 
-  # PKM / knowledge tools
+  # Knowledge Management (PKM)
   "obsidian",
   "anki",
   "calibre",
   "zotero",
   "xournal++",
 
-  # Office & document tools
+  # Office & Document Tools
   "libreoffice",
   "libreoffice-language-pack",
   "sioyek",
   "adobe-digital-editions",
 
-  # Productivity
+  # Productivity Tools
   "nikitabobko/tap/aerospace",
   "displaylink",
   "espanso",
 
-  # AI tools (desktop)
+  # AI Tools
   "chatgpt",
   "claude",
   "claude-code",
   "lm-studio",
-  "ollama",  # note: also installed as brew formula above
+  "ollama",
 
-  # Cloud storage
+  # Cloud Storage
   "google-drive",
   "onedrive",
 
-  # Media
+  # Media Players
   "vlc",
 
   # Communication
   "slack",
   "zoom",
 
-  # Misc
+  # Miscellaneous
   "kicad",
   "qbittorrent",
   "bitwarden",
@@ -284,53 +222,43 @@ casks = [
   "font-hack-nerd-font",
   "font-jetbrains-mono-nerd-font",
   "font-sf-mono",
-  "font-sf-pro",
-
-  # Zathura (PDF) stack from tap added above
-  "zathura",
-  "zathura-pdf-mupdf"
+  "font-sf-pro"
 ]
 
-# -------------------- Mac App Store (mas) ------------------- #
-# Keys are the visible app names; values are numeric MAS IDs.
-# (Underscores are allowed as digit separators in TOML numbers.)
+# -------------------- Mac App Store (MAS) ------------------- #
 [packages.darwin.mas]
 OneDrive = 823_766_827
-PDFgear  = 6_469_021_132
+PDFgear = 6_469_021_132
 
-# Apple built-ins (from MAS)
-iMovie  = 408_981_434
+# Apple Built-ins
+iMovie = 408_981_434
 Keynote = 409_183_694
 Numbers = 409_203_825
-Pages   = 409_201_541
+Pages = 409_201_541
 
-# Safari extensions
-AdBlock                 = 1_402_042_596
-Bitwarden               = 1_352_778_147
-"Documents Translator"  = 1_566_993_561
-"G App Launcher"        = 1_543_803_459
-Mailbutler              = 1_313_355_438
-"Obsidian Web Clipper"  = 6_720_708_363
-OneTab                  = 1_540_160_809
-# darker                = 1_637_413_102  # commented in Brewfile
+# Safari Extensions
+AdBlock = 1_402_042_596
+Bitwarden = 1_352_778_147
+"Documents Translator" = 1_566_993_561
+"G App Launcher" = 1_543_803_459
+Mailbutler = 1_313_355_438
+"Obsidian Web Clipper" = 6_720_708_363
+OneTab = 1_540_160_809
 
 # -------------------- VS Code Extensions -------------------- #
-# Install via `code --install-extension ...`
 vscode = [
-  # UI & themes
+  # UI & Themes
   "catppuccin.catppuccin-vsc",
   "ibm.output-colorizer",
   "naumovs.color-highlight",
   "oderwat.indent-rainbow",
   "vscode-icons-team.vscode-icons",
 
-  # Code navigation & productivity
+  # Code Navigation & Productivity
   "alefragnani.project-manager",
   "gruntfuggly.todo-tree",
-  # "usernamehw.errorlens",
 
-  # Productivity & AI utilities
-  # "patbenatar.advanced-new-file",
+  # Productivity & AI Utilities
   "albert.tabout",
   "almenon.arepl",
   "codeium.codeium",
@@ -351,32 +279,29 @@ vscode = [
   "chrmarti.regex",
   "louiswt.regexp-preview",
 
-  # Vim & modal editing
+  # Vim & Modal Editing
   "asvetliakov.vscode-neovim",
   "julianiaquinandi.nvim-ui-modifier",
   "lancewilhelm.nvim-dashboard",
   "vspacecode.whichkey",
 
-  # Linters & formatters
+  # Linters & Formatters
   "esbenp.prettier-vscode",
   "editorconfig.editorconfig",
   "lacroixdavid1.vscode-format-context-menu",
   "shardulm94.trailing-spaces",
   "streetsidesoftware.code-spell-checker",
-  # "jkillian.custom-local-formatters",
-  # "jbockle.jbockle-format-files",
 
   # Environment
   "mikestead.dotenv",
 
-  # Shell utilities
+  # Shell Utilities
   "constneo.vscode-nushell-format",
   "foxundermoon.shell-format",
   "thenuprojectcontributors.vscode-nushell-lang",
   "timonwong.shellcheck",
 
-  # Git & VCS
-  # "eamodio.gitlens",
+  # Git & Version Control
   "github.remotehub",
   "github.vscode-github-actions",
   "github.vscode-pull-request-github",
@@ -385,21 +310,21 @@ vscode = [
   "vivaxy.vscode-conventional-commits",
   "vsls-contrib.gistfs",
 
-  # Remote repos
+  # Remote Repositories
   "ms-vscode-remote.remote-ssh",
   "ms-vscode-remote.remote-ssh-edit",
   "ms-vscode.azure-repos",
   "ms-vscode.remote-explorer",
   "ms-vscode.remote-repositories",
 
-  # Jupyter
+  # Jupyter Notebooks
   "ms-toolsai.jupyter",
   "ms-toolsai.jupyter-keymap",
   "ms-toolsai.jupyter-renderers",
   "ms-toolsai.vscode-jupyter-cell-tags",
   "ms-toolsai.vscode-jupyter-slideshow",
 
-  # LSPs and friends
+  # Language Server Protocols
   "nefrob.vscode-just-syntax",
   "redhat.java",
   "redhat.vscode-xml",
@@ -445,17 +370,17 @@ vscode = [
   # SQL
   "inferrinizzard.prettier-sql-vscode",
 
-  # CSV & spreadsheets
+  # CSV & Spreadsheet Tools
   "grapecity.gc-excelviewer",
   "mechatroner.rainbow-csv",
   "ms-toolsai.datawrangler",
   "janisdd.vscode-edit-csv",
 
-  # Data viewers
+  # Data Viewer
   "randomfractalsinc.geo-data-viewer",
   "randomfractalsinc.vscode-data-preview",
 
-  # Misc utilities
+  # Miscellaneous Utilities
   "spadin.zmk-tools",
   "formulahendry.code-runner",
   "techer.open-in-browser",
@@ -463,299 +388,111 @@ vscode = [
 ]
 
 # ------------------------------------------------------------ #
-#                        LINUX PACKAGES                        #
+#                          LINUX PACKAGES                      #
 # ------------------------------------------------------------ #
 
 [packages.linux]
 
-# Core packages available via APT (Ubuntu/Debian)
+# -------------------- Flatpak (Cask equivalents) ------------ #
+flatpak = [
+  # IDEs & Editors (cask equivalents)
+  "com.visualstudio.code",           # visual-studio-code
+  "dev.zed.Zed",                     # zed
+
+  # Knowledge Management (cask equivalents)
+  "md.obsidian.Obsidian",            # obsidian
+  "net.ankiweb.Anki",                # anki
+  "com.calibre_ebook.calibre",       # calibre
+  "org.zotero.Zotero",               # zotero
+  "com.github.xournalpp.xournalpp",  # xournal++
+
+  # Office & Document Tools (cask equivalents)
+  "org.libreoffice.LibreOffice",     # libreoffice
+  "com.github.ahrm.sioyek",          # sioyek
+  "com.adobe.Reader",                # adobe-digital-editions
+
+  # Productivity Tools (cask equivalents)
+  "org.espanso.Espanso",             # espanso
+
+  # AI Tools (cask equivalents)  
+  "io.github.lmstudio.LMStudio",     # lm-studio
+
+  # Media Players (cask equivalents)
+  "org.videolan.VLC",                # vlc
+
+  # Communication (cask equivalents)
+  "com.slack.Slack",                 # slack
+  "us.zoom.Zoom",                    # zoom
+
+  # Miscellaneous (cask equivalents)
+  "org.kicad.KiCad",                 # kicad
+  "org.qbittorrent.qBittorrent",     # qbittorrent
+  "com.bitwarden.desktop"            # bitwarden
+]
+
+# ---------------------- APT (System/CLI) -------------------- #
+# Only packages found in Brewfile brew section
 apt = [
-  # Development essentials
-  "build-essential",
-  "curl",
-  "wget",
+  # Core brew equivalents
+  "bash",
   "git",
-  "vim",
+  "git-lfs", 
   "neovim",
-
-  # Shell and terminal tools
-  "zsh",
   "tmux",
-  "htop",
-  "tree",
-  "unzip",
-  "zip",
-
-  # Languages and runtimes
+  "zsh",
   "nodejs",
   "npm",
   "python3",
   "python3-pip",
   "python3-venv",
-
-  # Additional utilities (if available in repos)
-  "ripgrep",
-  "fd-find",
-  "bat",
-  "exa",  # or "eza" on newer systems
-
-  # Development tools
-  "shellcheck",
+  "golang-go",
+  "ruby",
+  "openjdk-21-jdk",
+  "lua5.4",
   "jq",
-
-  # System utilities
-  "software-properties-common",
-  "apt-transport-https",
-  "ca-certificates",
-  "gnupg",
-  "lsb-release"
+  "shellcheck",
+  "pandoc",
+  "imagemagick",
+  "ffmpeg",
+  "tesseract-ocr",
+  "poppler-utils",
+  "graphviz"
 ]
 
-# Flatpak applications (cross-distribution)
-# Based on your existing .config/Flatpakfile
-flatpak = [
-  "com.calibre_ebook.calibre",
-  "com.slack.Slack",
-  "md.obsidian.Obsidian",
-  "me.iepure.devtoolbox",
-  "org.inkscape.Inkscape",
-  "org.jupyter.JupyterLab",
-  "org.kicad.KiCad",
-  "org.libreoffice.LibreOffice",
-  "org.mozilla.firefox",
-  "org.sqlitebrowser.sqlitebrowser",
-  "org.videolan.VLC",
-  "org.zotero.Zotero",
-  "us.zoom.Zoom"
-]
-
-# Snap packages (Ubuntu and derivatives)
+# --------------------- Snap (Fallback) ---------------------- #
+# Only Brewfile brew packages not available in APT
 snap = [
-  "code",           # Visual Studio Code
-  "discord",
-  "postman",
-  "insomnia",
-  # "docker",       # Better installed via apt for most systems
-  # "kubectl",
-  # "helm"
+  # Development Tools (from Brewfile)
+  "gh",                      # GitHub CLI (brew 'gh')
+  
+  # Modern CLI Tools (from Brewfile, if not in APT)
+  "ripgrep",                 # brew 'ripgrep'
+  "fd",                      # brew 'fd' 
+  "bat",                     # brew 'bat'
+  
+  # Languages & Runtimes (if APT versions too old)
+  "node",                    # brew 'node'
+  "go",                      # brew 'go'
 ]
 
 # ------------------------------------------------------------ #
-#                  LANGUAGE-SPECIFIC PACKAGES                  #
+#                     CROSS-PLATFORM (MINIMAL)                #
 # ------------------------------------------------------------ #
 
-# Rust packages (cargo install)
+# Only Rust/Cargo tools (rust-analyzer is in Brewfile)
 [packages.cargo]
 crates = [
-  # Core utilities (faster alternatives to standard tools)
-  "ripgrep",          # rg - faster grep
-  "fd-find",          # fd - faster find
-  "eza",              # Modern ls replacement
-  "bat",              # Better cat with syntax highlighting
-  "zoxide",           # Smart cd replacement
-  "tokei",            # Count code, quickly
-  "hyperfine",        # Command-line benchmarking tool
-  "dust",             # More intuitive version of du
-  "procs",            # Modern replacement for ps
-
-  # Development tools
-  "cargo-update",     # Update installed cargo packages
-  "cargo-edit",       # Add/remove dependencies from command line
-  "cargo-watch",      # Watch for changes and run cargo commands
-  "cargo-expand",     # Show macro-expanded code
-  "cargo-audit",      # Audit dependencies for security vulnerabilities
-  "cargo-outdated",   # Display outdated dependencies
-  "cargo-tree",       # Visualize dependency graphs
-  "cargo-bloat",      # Find what takes most space in the executable
-
-  # Productivity tools
-  "starship",         # Cross-shell prompt
-  "navi",             # Interactive cheatsheet tool
-  "xh",               # HTTPie clone (user-friendly HTTP client)
-  "git-delta",        # Better git diff
-  "bottom",           # System monitor (btm command)
-  "bandwhich",        # Terminal bandwidth utilization tool
-  "lsd",              # Next gen ls command
-  "tealdeer",         # Fast tldr client (tldr command)
-
-  # Text processing
-  "sd",               # Intuitive find & replace CLI
-  "choose",           # Human-friendly cut alternative
-  "htmlq",            # jq but for HTML
-
-  # System utilities
-  "grex",             # Generate regular expressions from test cases
-  "skim",             # Fuzzy finder (sk command)
-  "mcfly",            # Smart command history search
-  "zellij",           # Terminal workspace
-
-  # Fun/experimental
-  "onefetch",         # Git repository summary (like neofetch for git)
-  "commitizen",       # Conventional commit tool
+  "cargo-update"      # Essential for managing cargo packages
 ]
 
-# Node.js packages (npm install -g)
+# Only if prettier not available via brew/apt
 [packages.npm]
 global = [
-  # Development tools
-  "typescript",
-  "ts-node",
-  "@typescript-eslint/eslint-plugin",
-  "@typescript-eslint/parser",
-  "eslint",
-  "prettier",
-  "nodemon",
-  "concurrently",
-
-  # Build tools
-  "webpack",
-  "webpack-cli",
-  "vite",
-  "rollup",
-  "parcel",
-
-  # Testing
-  "jest",
-  "mocha",
-  "cypress",
-  "playwright",
-
-  # Utilities
-  "http-server",
-  "json-server",
-  "serve",
-  "npm-check-updates",
-  "npm-check",
-
-  # Documentation
-  "mermaid-cli",      # Diagram generation
-  "@marp-team/marp-cli", # Markdown presentations
-
-  # Productivity
-  "fkill-cli",        # Kill processes
-  "speed-test",       # Internet speed test
-  "gtop",             # System monitoring
-  "tldr",             # Simplified man pages
-
-  # Development servers
-  "live-server",
-  "browser-sync",
-
-  # API tools
-  "newman",           # Postman CLI
-
-  # Package management
-  "yarn",
-  "pnpm"
+  # Empty - prettier available via brew
 ]
 
-# Python packages (pip install --user)
+# Only if black not available via brew/apt  
 [packages.python]
 global = [
-  # Development tools
-  "black",            # Code formatter
-  "flake8",           # Linter
-  "mypy",             # Type checker
-  "isort",            # Import sorter
-  "autopep8",         # PEP8 formatter
-  "bandit",           # Security linter
-  "pre-commit",       # Git hooks
-
-  # Testing
-  "pytest",
-  "pytest-cov",
-  "coverage",
-
-  # Jupyter ecosystem
-  "jupyter",
-  "jupyterlab",
-  "notebook",
-  "ipython",
-  "ipykernel",
-
-  # Data science (optional, heavy dependencies)
-  # "numpy",
-  # "pandas",
-  # "matplotlib",
-  # "seaborn",
-  # "scikit-learn",
-
-  # Web development
-  "flask",
-  "fastapi",
-  "uvicorn",
-  "requests",
-  "httpx",
-
-  # Utilities
-  "pipenv",           # Virtual environment management
-  "poetry",           # Dependency management
-  "cookiecutter",     # Project templates
-  "rich",             # Rich text library for terminal
-  "click",            # Command line interface creation
-  "typer",            # Modern CLI framework
-
-  # System utilities
-  "psutil",           # System monitoring
-  "python-dotenv",    # Environment variable management
-
-  # Documentation
-  "mkdocs",
-  "mkdocs-material",
-  "sphinx"
-]
-
-# Ruby gems (gem install)
-[packages.ruby]
-gems = [
-  "bundler",
-  "rake",
-  "pry",              # Better IRB
-  "rubocop",          # Linter
-  "solargraph",       # Language server
-  "jekyll",           # Static site generator
-  "rouge",            # Syntax highlighter
-  "ffi",              # Foreign function interface
-  "sassc",            # Sass compiler
-]
-
-# Go packages (go install)
-[packages.go]
-binaries = [
-  "github.com/junegunn/fzf@latest",
-  "github.com/charmbracelet/glow@latest",        # Markdown renderer
-  "github.com/charmbracelet/vhs@latest",         # Terminal GIFs
-  "github.com/jesseduffield/lazygit@latest",     # Git TUI
-  "github.com/jesseduffield/lazydocker@latest",  # Docker TUI
-  "github.com/cli/cli/v2/cmd/gh@latest",         # GitHub CLI
-  "github.com/goreleaser/goreleaser@latest",     # Release automation
-  "github.com/golangci/golangci-lint/cmd/golangci-lint@latest", # Linter
-]
-
-# ------------------------------------------------------------ #
-#                         ALTERNATIVES                         #
-# ------------------------------------------------------------ #
-# Alternative installation methods for packages that might not be available
-# in primary repositories
-
-[packages.alternatives]
-
-# Manual installation URLs or commands
-# These would need custom scripts to handle
-manual = [
-  # "https://github.com/sharkdp/bat/releases",
-  # "https://github.com/BurntSushi/ripgrep/releases",
-  # "https://github.com/ajeetdsouza/zoxide/releases"
-]
-
-# AppImage applications (Linux)
-appimage = [
-  # "neovim",
-  # "obsidian",
-]
-
-# Binary releases to download
-binary_releases = [
-  # Structure: "name" = { url = "...", version = "latest" }
-  # These would need custom installation scripts
+  # Empty - black available via brew (ruff includes black functionality)
 ]

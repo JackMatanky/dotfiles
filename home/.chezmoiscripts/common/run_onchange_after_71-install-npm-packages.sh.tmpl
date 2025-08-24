@@ -1,0 +1,105 @@
+#!/usr/bin/env bash
+{{/* vim: set filetype=bash: */}}
+{{- if .packages.npm.global }}
+# -----------------------------------------------------------------------------
+# Script: run_onchange_install-npm-packages.sh.tmpl
+# Purpose: Install global NPM packages (runs only when package list changes)
+# Dependencies: Node.js, NPM
+# Hash based on: {{ .packages.npm.global | join "," }}
+# -----------------------------------------------------------------------------
+
+set -euo pipefail
+
+{{ template "logging.sh" . }}
+
+log_header "📦 NODE.JS/NPM PACKAGES"
+
+# Check if Node.js is installed
+if ! command -v node &> /dev/null; then
+    log_error "Node.js not found. Please install Node.js first."
+    log_info "Recommended: Use 'n' or 'nvm' for Node.js version management"
+    exit 1
+fi
+
+# Check if npm is available
+if ! command -v npm &> /dev/null; then
+    log_error "npm not found. Node.js installation may be incomplete."
+    exit 1
+fi
+
+log_info "Node.js version: $(node --version)"
+log_info "npm version: $(npm --version)"
+
+# Update npm to latest version
+log_info "Updating npm to latest version..."
+npm install -g npm@latest || log_warning "Failed to update npm"
+
+# Function to check if a global package is installed
+is_npm_package_installed() {
+    npm list -g --depth=0 "$1" &> /dev/null
+}
+
+# Function to get installed package version
+get_npm_package_version() {
+    npm list -g --depth=0 "$1" 2>/dev/null | grep "$1" | sed 's/.*@//' | sed 's/ .*//'
+}
+
+# Track installation stats
+installed_count=0
+already_installed_count=0
+failed_count=0
+
+{{- range .packages.npm.global }}
+if ! is_npm_package_installed "{{ . }}"; then
+    log_info "Installing global package: {{ . }}"
+    if npm install -g "{{ . }}"; then
+        version=$(get_npm_package_version "{{ . }}" 2>/dev/null || echo "unknown")
+        log_success "Installed: {{ . }}@${version}"
+        ((installed_count++))
+    else
+        log_warning "Failed to install: {{ . }}"
+        ((failed_count++))
+    fi
+else
+    version=$(get_npm_package_version "{{ . }}" 2>/dev/null || echo "unknown")
+    log_success "Already installed: {{ . }}@${version}"
+    ((already_installed_count++))
+fi
+{{- end }}
+
+# Update all global packages if we installed any new ones
+if [[ $installed_count -gt 0 ]]; then
+    log_info "🔄 Updating all global npm packages..."
+    npm update -g || log_warning "Some packages failed to update"
+fi
+
+# Check for outdated packages
+log_info "🔍 Checking for outdated global packages..."
+if outdated_output=$(npm outdated -g 2>/dev/null); then
+    if [[ -n "$outdated_output" ]]; then
+        log_warning "Some global packages are outdated:"
+        echo "$outdated_output"
+    else
+        log_success "All global packages are up to date"
+    fi
+else
+    log_info "Unable to check for outdated packages"
+fi
+
+log_success "✅ NPM package installation completed!"
+log_info "📊 Summary:"
+log_info "  • New installations: $installed_count"
+log_info "  • Already installed: $already_installed_count"
+log_info "  • Failed: $failed_count"
+log_info "  • Total packages managed: {{ len .packages.npm.global }}"
+
+if [[ $installed_count -gt 0 ]]; then
+    log_info "🔧 Next steps:"
+    log_info "  • Run 'npm update -g' periodically to update packages"
+    log_info "  • Use 'npm list -g --depth=0' to see installed packages"
+fi
+{{- else }}
+#!/usr/bin/env bash
+# NPM packages list is empty - skipping NPM global package installation
+exit 0
+{{- end }}
