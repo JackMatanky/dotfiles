@@ -38,9 +38,9 @@ log_error() {
     echo -e "${RED}[ERROR]${NC} $1"
 }
 
-# Repository URLs (from chezmoi data or defaults)
-DOTFILES_REPO="{{ .repository.dotfiles | default "https://github.com/JackMatanky/dotfiles.git" }}"
-OBSIDIAN_REPO="{{ .repository.obsidian | default "https://gitlab.com/JackMatanky/obsidian_vault.git" }}"
+# Repository URLs (from .chezmoidata)
+DOTFILES_REPO="{{ .repositories.dotfiles.github }}"
+OBSIDIAN_REPO="{{ .repositories.obsidian.gitlab }}"
 
 # Directories
 DOTFILES_DIR="$HOME_DIR/dotfiles"

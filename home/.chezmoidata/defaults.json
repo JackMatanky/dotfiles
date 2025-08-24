@@ -1,0 +1,45 @@
+{
+  "shell": {
+    "history_size": 10000,
+    "completion_timeout": 500,
+    "auto_suggestions": true
+  },
+  "editor": {
+    "tab_size": 2,
+    "insert_spaces": true,
+    "auto_save": true,
+    "word_wrap": true
+  },
+  "git": {
+    "default_branch": "main",
+    "pull_strategy": "rebase", 
+    "auto_crlf": false,
+    "core_editor": "nvim"
+  },
+  "terminal": {
+    "scrollback": 10000,
+    "bell": false,
+    "cursor_blink": true,
+    "opacity": 0.95
+  },
+  "development": {
+    "indent_size": 2,
+    "line_endings": "lf",
+    "trim_whitespace": true,
+    "insert_final_newline": true
+  },
+  "package_managers": {
+    "homebrew": {
+      "auto_update": true,
+      "cleanup_interval": "weekly"
+    },
+    "cargo": {
+      "check_updates": true,
+      "parallel_jobs": 0
+    },
+    "npm": {
+      "fund": false,
+      "audit": true
+    }
+  }
+}

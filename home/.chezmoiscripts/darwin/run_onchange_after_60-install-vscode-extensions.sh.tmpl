@@ -5,7 +5,7 @@
 # Script: run_onchange_install-vscode-extensions.sh.tmpl
 # Purpose: Install VS Code extensions (runs only when extension list changes)
 # Dependencies: Visual Studio Code
-# Hash based on: {{ .packages.darwin.vscode | join "," }}
+# Hash based on: {{ .packages.darwin.mas.vscode | join "," }}
 # -----------------------------------------------------------------------------
 
 set -euo pipefail
@@ -28,7 +28,7 @@ installed_count=0
 already_installed_count=0
 failed_count=0
 
-{{- range .packages.darwin.vscode }}
+{{- range .packages.darwin.mas.vscode }}
 if ! code --list-extensions | grep -q "{{ . }}"; then
     log_info "Installing VS Code extension: {{ . }}"
     if code --install-extension {{ . | quote }} --force; then
@@ -49,7 +49,7 @@ log_info "📊 Summary:"
 log_info "  • New installations: $installed_count"
 log_info "  • Already installed: $already_installed_count"
 log_info "  • Failed: $failed_count"
-log_info "  • Total extensions managed: {{ len .packages.darwin.vscode }}"
+log_info "  • Total extensions managed: {{ len .packages.darwin.mas.vscode }}"
 
 if [[ $installed_count -gt 0 ]]; then
     log_info "🔧 Next steps:"

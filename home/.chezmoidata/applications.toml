@@ -1,0 +1,28 @@
+# Static application configuration data
+# This file contains static information about tools, applications, and their configurations
+# that don't change based on the system environment
+
+[terminals]
+ghostty = { name = "Ghostty", config_dir = ".config/ghostty", supports_themes = true }
+warp = { name = "Warp", config_dir = ".warp", supports_themes = true }
+alacritty = { name = "Alacritty", config_dir = ".config/alacritty", config_file = "alacritty.toml" }
+
+[editors]
+nvim = { name = "Neovim", config_dir = ".config/nvim", language = "lua", plugin_manager = "lazy.nvim" }
+zed = { name = "Zed", config_dir = ".config/zed", config_file = "settings.json", supports_extensions = true }
+vscode = { name = "Visual Studio Code", config_dir = ".config/Code/User", config_file = "settings.json" }
+
+[shells]
+zsh = { name = "Zsh", config_file = ".zshrc", completion_dir = ".config/zsh/completions" }
+bash = { name = "Bash", config_file = ".bashrc", profile_file = ".bash_profile" }
+nushell = { name = "Nushell", config_dir = ".config/nushell", config_file = "config.nu" }
+
+[development_tools]
+git = { config_file = ".gitconfig", global_ignore = ".gitignore_global" }
+docker = { config_dir = ".docker", compose_file = "docker-compose.yml" }
+kubernetes = { config_dir = ".kube", config_file = "config" }
+
+[package_managers]
+homebrew = { taps_file = "Brewfile", bundle_command = "brew bundle" }
+cargo = { config_dir = ".cargo", config_file = "config.toml" }
+npm = { config_file = ".npmrc", global_dir = "node_modules" }

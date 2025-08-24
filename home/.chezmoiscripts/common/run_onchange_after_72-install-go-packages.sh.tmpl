@@ -1,10 +1,12 @@
 {{/* vim: set filetype=bash: */}}
+{{- if and (hasKey .packages "go") .packages.go.binaries }}
 #!/usr/bin/env bash
 # -----------------------------------------------------------------------------
 # Script: run_onchange_install-go-packages.sh.tmpl
 # Purpose: Install Go packages when packages.toml changes
 # Docs: https://www.chezmoi.io/user-guide/advanced/install-packages-declaratively/
 # Dependencies: Go
+# Hash based on: {{ .packages.go.binaries | join "," }}
 # -----------------------------------------------------------------------------
 
 set -euo pipefail
@@ -184,3 +186,8 @@ log_info "🔧 Next steps:"
 log_info "  • Ensure \$GOBIN ($GOBIN) is in your PATH"
 log_info "  • Update packages with: go install package@latest"
 log_info "  • Configure installed tools as needed"
+{{- else }}
+#!/usr/bin/env bash
+# Go packages list is empty - skipping Go package installation
+exit 0
+{{- end }}

@@ -1,0 +1,34 @@
+# Static directory and path configuration
+# This file contains standard directory structures and path mappings
+# that are consistent across different systems
+
+[xdg_dirs]
+config_home = ".config"
+data_home = ".local/share"
+cache_home = ".cache"
+state_home = ".local/state"
+
+[common_config_dirs]
+scripts = ".local/bin"
+dotfiles = "dotfiles"
+backup = ".local/backup"
+temp = ".local/tmp"
+
+[development_dirs]
+projects = "projects"
+repositories = "repositories"
+workspace = "workspace"
+
+[config_subdirs]
+shell = ".config/shell"
+editor = ".config/editor"
+terminal = ".config/terminal"
+git = ".config/git"
+fonts = ".local/share/fonts"
+
+# Common file extensions and their purposes
+[file_types]
+config = [".toml", ".yaml", ".yml", ".json", ".conf"]
+scripts = [".sh", ".bash", ".zsh", ".fish"]
+docs = [".md", ".txt", ".rst", ".org"]
+data = [".csv", ".json", ".xml", ".sql"]

@@ -80,26 +80,32 @@ install-homebrew:
         echo "Installing Homebrew..."
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         {{- if eq .chezmoi.os "darwin" }}
-        echo 'eval "$({{ .paths.brew_bin }} shellenv)"' >> ~/.zprofile
-        {{- else if eq .chezmoi.os "linux" }}
-        echo 'eval "$({{ .paths.brew_bin }} shellenv)"' >> ~/.bashrc
+        {{- if eq .chezmoi.arch "arm64" }}
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+        {{- else }}
+        echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
+        eval "$(/usr/local/bin/brew shellenv)"
         {{- end }}
-        eval "$({{ .paths.brew_bin }} shellenv)"
+        {{- else if eq .chezmoi.os "linux" }}
+        echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        {{- end }}
     else
         echo "✅ Homebrew already installed"
     fi
 
 # 📦 Install packages from Brewfile
 brew-install: install-homebrew
-    {{ .paths.brew_bin }} bundle --file="{{ `{{ BREWFILE }}` }}"
+    {{ `{{ BREW_BIN }}` }} bundle --file="{{ `{{ BREWFILE }}` }}"
 
 # 🔄 Update Homebrew and packages
 brew-update:
-    {{ .paths.brew_bin }} update && {{ .paths.brew_bin }} upgrade
+    {{ `{{ BREW_BIN }}` }} update && {{ `{{ BREW_BIN }}` }} upgrade
 
 # 🧹 Clean up Homebrew
 brew-cleanup:
-    {{ .paths.brew_bin }} cleanup && {{ .paths.brew_bin }} autoremove
+    {{ `{{ BREW_BIN }}` }} cleanup && {{ `{{ BREW_BIN }}` }} autoremove
 
 # -------------------------------------------------------- #
 #                      Rust Commands                       #

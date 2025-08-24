@@ -83,7 +83,7 @@ log_info ""
 
 # Show total managed packages
 {{- if eq .chezmoi.os "darwin" }}
-log_info "📊 Currently managing {{ add (len .packages.darwin.taps) (len .packages.darwin.brews) (len .packages.darwin.casks) (len .packages.darwin.mas) (len .packages.darwin.vscode) }}+ macOS packages"
+log_info "📊 Currently managing {{ add (len .packages.darwin.taps) (len .packages.darwin.brews) (len .packages.darwin.casks) (len .packages.darwin.mas) (len .packages.darwin.mas.vscode) }}+ macOS packages"
 {{- else if eq .chezmoi.os "linux" }}
 log_info "📊 Currently managing {{ add (len .packages.linux.flatpak) (len .packages.linux.apt) (len .packages.linux.snap) }}+ Linux packages"
 {{- end }}
