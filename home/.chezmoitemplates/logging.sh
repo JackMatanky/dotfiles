@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 # Template: logging.sh
 # Purpose: Shared logging functions for package installation scripts
-# Usage: Include via {{ template "logging.sh" . }}
+# Usage: Include via {{`{{`}} template "logging.sh" . {{`}}`}}
 # -----------------------------------------------------------------------------
 
 # Colors for output

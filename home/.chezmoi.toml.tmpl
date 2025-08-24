@@ -57,11 +57,6 @@
 
 # Environment variables for scripts
 [scriptEnv]
-    # Platform information
-    CHEZMOI_OS = "{{ .chezmoi.os }}"
-    CHEZMOI_ARCH = "{{ .chezmoi.arch }}"
-    CHEZMOI_HOSTNAME = "{{ .chezmoi.hostname }}"
-    
     # Paths
     HOME = "{{ .chezmoi.homeDir }}"
     CONFIG_DIR = "{{ .chezmoi.homeDir }}/.config"
@@ -119,8 +114,8 @@
     # Package manager configuration
     [data.packages]
         use_homebrew = true
-        use_cargo = {{ .data.dev.use_rust }}
-        use_npm = {{ .data.dev.use_node }}
+        use_cargo = {{ lookPath "rustc" | not | not }}
+        use_npm = {{ lookPath "node" | not | not }}
 {{- if eq .chezmoi.os "linux" }}
         use_flatpak = true
 {{- else }}
