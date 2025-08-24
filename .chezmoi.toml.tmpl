@@ -1,0 +1,170 @@
+# Chezmoi configuration file template
+# Documentation: https://www.chezmoi.io/reference/configuration-file/
+# This file is processed as a template and generates the actual .chezmoi.toml
+
+{{- /* Editor configuration: $editor=nvim (terminal), $visual=zed (GUI) */ -}}
+{{- $editor := "nvim" -}}
+{{- $visual := "zed" -}}
+{{- $terminal := "ghostty" -}}
+
+{{- /* Platform-specific adjustments */ -}}
+{{- if eq .chezmoi.os "linux" -}}
+{{-   $visual = "code" -}}  {{/* Fallback to VS Code on Linux if Zed not available */ -}}
+{{- end -}}
+
+# Working tree settings - use visual editor for file editing in chezmoi
+[edit]
+    command = "{{ $visual }}"
+    args = ["--wait"]
+
+# Git integration
+[git]
+    # Auto-add files when they change
+    autoAdd = true
+    # Auto-commit changes with descriptive messages
+    autoCommit = true
+    # Don't auto-push (safer for review)
+    autoPush = false
+    # Custom commit message template
+    commitMessageTemplate = "chezmoi: {{ range .chezmoi.args }}{{ . }} {{ end }}"
+
+# Merge conflict resolution - use visual editor for complex merges
+[merge]
+    command = "{{ $visual }}"
+{{- if eq $visual "zed" }}
+    args = ["--wait", "--merge", "{{ `{{ .Destination }}` }}", "{{ `{{ .Source }}` }}", "{{ `{{ .Target }}` }}"]
+{{- else if eq $visual "code" }}
+    args = ["--wait", "--merge", "{{ `{{ .Destination }}` }}", "{{ `{{ .Source }}` }}", "{{ `{{ .Target }}` }}"]
+{{- else }}
+    args = ["--wait", "{{ `{{ .Destination }}` }}", "{{ `{{ .Source }}` }}", "{{ `{{ .Target }}` }}"]
+{{- end }}
+
+# Diff settings
+[diff]
+{{- if lookPath "delta" }}
+    command = "delta"
+    args = ["{{ `{{ .Destination }}` }}", "{{ `{{ .Target }}` }}"]
+{{- else }}
+    # Fallback to system diff
+    command = "diff"
+    args = ["-u", "{{ `{{ .Destination }}` }}", "{{ `{{ .Target }}` }}"]
+{{- end }}
+
+# Template processing options
+[template]
+    # Strict template processing - fail on missing variables
+    options = ["missingkey=error"]
+
+# Environment variables for scripts
+[scriptEnv]
+    # Platform information
+    CHEZMOI_OS = "{{ .chezmoi.os }}"
+    CHEZMOI_ARCH = "{{ .chezmoi.arch }}"
+    CHEZMOI_HOSTNAME = "{{ .chezmoi.hostname }}"
+    
+    # Paths
+    HOME = "{{ .chezmoi.homeDir }}"
+    CONFIG_DIR = "{{ .chezmoi.homeDir }}/.config"
+    
+    # Platform-specific paths
+{{- if eq .chezmoi.os "darwin" }}
+    {{- if eq .chezmoi.arch "arm64" }}
+    HOMEBREW_PREFIX = "/opt/homebrew"
+    HOMEBREW_BIN = "/opt/homebrew/bin/brew"
+    {{- else }}
+    HOMEBREW_PREFIX = "/usr/local"
+    HOMEBREW_BIN = "/usr/local/bin/brew"
+    {{- end }}
+{{- else if eq .chezmoi.os "linux" }}
+    HOMEBREW_PREFIX = "/home/linuxbrew/.linuxbrew"
+    HOMEBREW_BIN = "/home/linuxbrew/.linuxbrew/bin/brew"
+{{- end }}
+
+# Data available to all templates
+[data]
+    # Personal information (can be overridden by ~/.config/chezmoi/chezmoi.toml)
+    name = "Jack Matanky"
+    email = "JackMatanky@gmail.com"
+    github_username = "JackMatanky"
+    
+    # Editor preferences - $editor for terminal, $visual for GUI
+    [data.preferences]
+        shell = "zsh"
+        # Terminal editor for command-line editing and scripting
+        editor = "{{ $editor }}"
+        # Visual editor for GUI operations (file editing, merges)
+        visual = "{{ $visual }}"
+        terminal = "{{ $terminal }}"
+        browser = {{ if eq .chezmoi.os "darwin" }}"firefox"{{ else }}"firefox"{{ end }}
+    
+    # Theme configuration
+    [data.theme]
+        colorscheme = "catppuccin_latte"
+        variant = {{ if eq .chezmoi.os "darwin" }}"latte"{{ else }}"macchiato"{{ end }}
+        primary_color = "#1e66f5"
+        secondary_color = "#7287fd"
+        accent_color = "#40a02b"
+    
+    # Development tools configuration
+    [data.dev]
+        use_docker = {{ lookPath "docker" | not | not }}
+        use_kubernetes = {{ lookPath "kubectl" | not | not }}
+        use_python = true
+        use_node = {{ lookPath "node" | not | not }}
+        use_rust = {{ lookPath "rustc" | not | not }}
+        use_go = {{ lookPath "go" | not | not }}
+        use_ai_tools = true
+        use_helix = false
+    
+    # Package manager configuration
+    [data.packages]
+        use_homebrew = true
+        use_cargo = {{ .data.dev.use_rust }}
+        use_npm = {{ .data.dev.use_node }}
+{{- if eq .chezmoi.os "linux" }}
+        use_flatpak = true
+{{- else }}
+        use_flatpak = false
+{{- end }}
+    
+    # Platform-specific data
+    [data.platform]
+{{- if eq .chezmoi.os "darwin" }}
+        os = "macos"
+        package_manager = "brew"
+        {{- if eq .chezmoi.arch "arm64" }}
+        homebrew_prefix = "/opt/homebrew"
+        {{- else }}
+        homebrew_prefix = "/usr/local"
+        {{- end }}
+{{- else if eq .chezmoi.os "linux" }}
+        os = "linux"
+        package_manager = "apt"  # Default, can be overridden
+        homebrew_prefix = "/home/linuxbrew/.linuxbrew"
+{{- end }}
+
+# Hooks - scripts that run at various stages
+{{- if stat (joinPath .chezmoi.sourceDir "home/.chezmoiscripts/check-deps.sh") }}
+[hooks.read-source-state.pre]
+    command = "{{ .chezmoi.sourceDir }}/home/.chezmoiscripts/check-deps.sh"
+{{- end }}
+
+# Age encryption (if age is available)
+{{- if lookPath "age" }}
+[age]
+    # Uncomment and configure if using encrypted files
+    # identity = "~/.config/chezmoi/key.txt"
+    # recipient = "age1..."
+{{- end }}
+
+# File mode and permissions
+umask = 0o022
+
+# Interpreter settings for different file types
+[interpreters.sh]
+    command = "bash"
+
+{{- if lookPath "python3" }}
+[interpreters.py]
+    command = "python3"
+{{- end }}

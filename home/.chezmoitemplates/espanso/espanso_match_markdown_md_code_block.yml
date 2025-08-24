@@ -13,6 +13,6 @@ matches:
 
     - regex: code:(?P<language>.*)\s
       replace: |-
-          ```{{language}}
-          {{clipboard}}
+          ```{{ `{{language}}` }}
+          {{ `{{clipboard}}` }}
           ```

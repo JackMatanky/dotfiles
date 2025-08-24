@@ -8,7 +8,7 @@ matches:
     # Date
     # Print today's date
     - trigger: ":today"
-      replace: "{{date_var}}"
+      replace: "{{ `{{date_var}}` }}"
       vars:
           - name: date_var
             type: date
@@ -16,7 +16,7 @@ matches:
                 format: "%F"
 
     - trigger: ":tomorrow"
-      replace: "{{date_var}}"
+      replace: "{{ `{{date_var}}` }}"
       label: Insert tomorrow's date, such as 5-Jan-2022
       vars:
           - name: date_var
@@ -26,7 +26,7 @@ matches:
                 offset: 86400
 
     - trigger: ":yesterday"
-      replace: "{{date_var}}"
+      replace: "{{ `{{date_var}}` }}"
       label: Insert yesterday's date, such as 5-Jan-2022
       vars:
           - name: "date_var"
@@ -38,7 +38,7 @@ matches:
       # Time
       # Print the current time
     - trigger: ":now"
-      replace: "{{time_var}}"
+      replace: "{{ `{{time_var}}` }}"
       vars:
           - name: time_var
             type: date

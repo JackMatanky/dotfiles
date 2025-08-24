@@ -21,11 +21,11 @@ global_vars:
     - name: my_full_name
       type: echo
       params:
-          echo: "{{my_first_name}} {{my_last_name}}"
+          echo: "{{ `{{my_first_name}} {{my_last_name}}` }}"
     - name: my_email
       type: echo
       params:
-          echo: "{{my_first_name}}{{my_last_name}}@gmail.com"
+          echo: "{{ `{{my_first_name}}{{my_last_name}}` }}@gmail.com"
 
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
@@ -36,7 +36,7 @@ matches:
 
     # Print the output of a shell command
     - trigger: ":shell"
-      replace: "{{output}}"
+      replace: "{{ `{{output}}` }}"
       vars:
           - name: output
             type: shell
@@ -44,25 +44,25 @@ matches:
                 cmd: "echo 'Hello from your shell'"
 
     - trigger: ":fullname"
-      replace: "{{my_full_name}}"
+      replace: "{{ `{{my_full_name}}` }}"
 
     - trigger: ":phone"
       replace: "058-555-3200"
 
     - trigger: ":emlp"
-      replace: "{{my_first_name}}{{my_last_name}}@gmail.com"
+      replace: "{{ `{{my_first_name}}{{my_last_name}}` }}@gmail.com"
 
     - trigger: ":emls"
-      replace: "{{my_first_name}}{{my_last_name}}@mail.huji.ac.il"
+      replace: "{{ `{{my_first_name}}{{my_last_name}}` }}@mail.huji.ac.il"
 
     - trigger: ":emlw"
-      replace: "{{my_first_name}}_M@hiveurban.com"
+      replace: "{{ `{{my_first_name}}` }}_M@hiveurban.com"
 
     - trigger: ":atb"
-      replace: "All the best,\n{{my_full_name}}"
+      replace: "All the best,\n{{ `{{my_full_name}}` }}"
 
     - trigger: ":bty"
-      replace: "Thank you,\n{{my_full_name}}"
+      replace: "Thank you,\n{{ `{{my_full_name}}` }}"
 
     # trigger match if surrounded by word separators ( such as spaces, commas and newlines).
     # - trigger: ther
