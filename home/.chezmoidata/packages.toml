@@ -3,7 +3,7 @@
 # Purpose: Declarative package list consumed by chezmoi run_onchange script(s).
 # Docs: https://www.chezmoi.io/user-guide/advanced/install-packages-declaratively/
 # Reference: https://www.chezmoi.io/reference/special-directories/chezmoidata/
-# 
+#
 # Structure:
 # - [packages.common.*] - Cross-platform packages available on most systems
 # - [packages.darwin.*] - macOS specific packages (Homebrew, Casks, MAS)
@@ -13,9 +13,9 @@
 # - [packages.python.*] - Python packages (pip install)
 # -----------------------------------------------------------------------------
 
-# ============================================================================ #
-#                              COMMON PACKAGES                                #
-# ============================================================================ #
+# ------------------------------------------------------------ #
+#                        COMMON PACKAGES                       #
+# ------------------------------------------------------------ #
 # Cross-platform packages that work on both macOS and Linux
 
 [packages.common]
@@ -48,9 +48,9 @@ editors = [
   # "helix" - available on some platforms
 ]
 
-# ============================================================================ #
-#                                MACOS PACKAGES                               #
-# ============================================================================ #
+# ------------------------------------------------------------ #
+#                        MACOS PACKAGES                        #
+# ------------------------------------------------------------ #
 
 [packages]
 
@@ -59,7 +59,7 @@ editors = [
 # split cross-platform formulae accordingly.
 [packages.darwin]
 
-# ----------------------- Homebrew taps -----------------------
+# ----------------------- Homebrew Taps ---------------------- #
 taps = [
   "homebrew/bundle",
   "homebrew/services",
@@ -69,7 +69,7 @@ taps = [
   "jesseduffield/lazygit"
 ]
 
-# ------------------------- Brew (CLI) ------------------------
+# ------------------------ Brew (CLI) ------------------------ #
 brews = [
   # Shells
   "bash",
@@ -207,7 +207,7 @@ brews = [
   "mas"
 ]
 
-# --------------- Services: restart on change (advisory) ---------------
+# ---------- Services: Restart on Change (Advisory) ---------- #
 # Your script can use this to conditionally (re)start services when the
 # package list changes, e.g.:
 #   for p in ${services_restart_on_change[@]}; do brew services restart "$p"; done
@@ -217,7 +217,7 @@ services_restart_on_change = [
   "postgresql@17"
 ]
 
-# -------------------------- Brew casks --------------------------
+# ------------------------ Brew Casks ------------------------ #
 casks = [
   # Terminal emulators
   "ghostty",
@@ -291,7 +291,7 @@ casks = [
   "zathura-pdf-mupdf"
 ]
 
-# ---------------------- Mac App Store (mas) ----------------------
+# -------------------- Mac App Store (mas) ------------------- #
 # Keys are the visible app names; values are numeric MAS IDs.
 # (Underscores are allowed as digit separators in TOML numbers.)
 [packages.darwin.mas]
@@ -314,7 +314,7 @@ Mailbutler              = 1_313_355_438
 OneTab                  = 1_540_160_809
 # darker                = 1_637_413_102  # commented in Brewfile
 
-# --------------------- VS Code Extensions ---------------------
+# -------------------- VS Code Extensions -------------------- #
 # Install via `code --install-extension ...`
 vscode = [
   # UI & themes
@@ -462,9 +462,9 @@ vscode = [
   "tomoki1207.pdf"
 ]
 
-# ============================================================================ #
-#                               LINUX PACKAGES                                #
-# ============================================================================ #
+# ------------------------------------------------------------ #
+#                        LINUX PACKAGES                        #
+# ------------------------------------------------------------ #
 
 [packages.linux]
 
@@ -477,7 +477,7 @@ apt = [
   "git",
   "vim",
   "neovim",
-  
+
   # Shell and terminal tools
   "zsh",
   "tmux",
@@ -485,24 +485,24 @@ apt = [
   "tree",
   "unzip",
   "zip",
-  
+
   # Languages and runtimes
   "nodejs",
   "npm",
   "python3",
   "python3-pip",
   "python3-venv",
-  
+
   # Additional utilities (if available in repos)
   "ripgrep",
   "fd-find",
   "bat",
   "exa",  # or "eza" on newer systems
-  
+
   # Development tools
   "shellcheck",
   "jq",
-  
+
   # System utilities
   "software-properties-common",
   "apt-transport-https",
@@ -540,9 +540,9 @@ snap = [
   # "helm"
 ]
 
-# ============================================================================ #
-#                           LANGUAGE-SPECIFIC PACKAGES                        #
-# ============================================================================ #
+# ------------------------------------------------------------ #
+#                  LANGUAGE-SPECIFIC PACKAGES                  #
+# ------------------------------------------------------------ #
 
 # Rust packages (cargo install)
 [packages.cargo]
@@ -550,14 +550,14 @@ crates = [
   # Core utilities (faster alternatives to standard tools)
   "ripgrep",          # rg - faster grep
   "fd-find",          # fd - faster find
-  "exa",              # Modern ls replacement (or "eza" for newer version)
+  "eza",              # Modern ls replacement
   "bat",              # Better cat with syntax highlighting
   "zoxide",           # Smart cd replacement
   "tokei",            # Count code, quickly
   "hyperfine",        # Command-line benchmarking tool
   "dust",             # More intuitive version of du
   "procs",            # Modern replacement for ps
-  
+
   # Development tools
   "cargo-update",     # Update installed cargo packages
   "cargo-edit",       # Add/remove dependencies from command line
@@ -567,7 +567,7 @@ crates = [
   "cargo-outdated",   # Display outdated dependencies
   "cargo-tree",       # Visualize dependency graphs
   "cargo-bloat",      # Find what takes most space in the executable
-  
+
   # Productivity tools
   "starship",         # Cross-shell prompt
   "navi",             # Interactive cheatsheet tool
@@ -577,18 +577,18 @@ crates = [
   "bandwhich",        # Terminal bandwidth utilization tool
   "lsd",              # Next gen ls command
   "tealdeer",         # Fast tldr client (tldr command)
-  
+
   # Text processing
   "sd",               # Intuitive find & replace CLI
   "choose",           # Human-friendly cut alternative
   "htmlq",            # jq but for HTML
-  
+
   # System utilities
   "grex",             # Generate regular expressions from test cases
   "skim",             # Fuzzy finder (sk command)
   "mcfly",            # Smart command history search
   "zellij",           # Terminal workspace
-  
+
   # Fun/experimental
   "onefetch",         # Git repository summary (like neofetch for git)
   "commitizen",       # Conventional commit tool
@@ -606,44 +606,44 @@ global = [
   "prettier",
   "nodemon",
   "concurrently",
-  
+
   # Build tools
   "webpack",
   "webpack-cli",
   "vite",
   "rollup",
   "parcel",
-  
+
   # Testing
   "jest",
   "mocha",
   "cypress",
   "playwright",
-  
+
   # Utilities
   "http-server",
   "json-server",
   "serve",
   "npm-check-updates",
   "npm-check",
-  
+
   # Documentation
   "mermaid-cli",      # Diagram generation
   "@marp-team/marp-cli", # Markdown presentations
-  
+
   # Productivity
   "fkill-cli",        # Kill processes
   "speed-test",       # Internet speed test
   "gtop",             # System monitoring
   "tldr",             # Simplified man pages
-  
+
   # Development servers
   "live-server",
   "browser-sync",
-  
+
   # API tools
   "newman",           # Postman CLI
-  
+
   # Package management
   "yarn",
   "pnpm"
@@ -653,40 +653,40 @@ global = [
 [packages.python]
 global = [
   # Development tools
-  "black",             # Code formatter
+  "black",            # Code formatter
   "flake8",           # Linter
   "mypy",             # Type checker
   "isort",            # Import sorter
   "autopep8",         # PEP8 formatter
   "bandit",           # Security linter
   "pre-commit",       # Git hooks
-  
+
   # Testing
   "pytest",
   "pytest-cov",
   "coverage",
-  
+
   # Jupyter ecosystem
   "jupyter",
   "jupyterlab",
   "notebook",
   "ipython",
   "ipykernel",
-  
+
   # Data science (optional, heavy dependencies)
   # "numpy",
   # "pandas",
   # "matplotlib",
   # "seaborn",
   # "scikit-learn",
-  
+
   # Web development
   "flask",
   "fastapi",
   "uvicorn",
   "requests",
   "httpx",
-  
+
   # Utilities
   "pipenv",           # Virtual environment management
   "poetry",           # Dependency management
@@ -694,11 +694,11 @@ global = [
   "rich",             # Rich text library for terminal
   "click",            # Command line interface creation
   "typer",            # Modern CLI framework
-  
+
   # System utilities
   "psutil",           # System monitoring
   "python-dotenv",    # Environment variable management
-  
+
   # Documentation
   "mkdocs",
   "mkdocs-material",
@@ -732,9 +732,9 @@ binaries = [
   "github.com/golangci/golangci-lint/cmd/golangci-lint@latest", # Linter
 ]
 
-# ============================================================================ #
-#                                 ALTERNATIVES                                #
-# ============================================================================ #
+# ------------------------------------------------------------ #
+#                         ALTERNATIVES                         #
+# ------------------------------------------------------------ #
 # Alternative installation methods for packages that might not be available
 # in primary repositories
 

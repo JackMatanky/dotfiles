@@ -1,0 +1,11 @@
+{
+  "theme": "Default",
+  "selectedAuthType": "oauth-personal",
+  "preferredEditor": "neovim",
+  "vimMode": true,
+  "checkpointing": true,
+  "show_memory_usage": true,
+  "telemetry": false,
+  "yolo": false,
+  "contextFileName": "AGENTS.md"
+}

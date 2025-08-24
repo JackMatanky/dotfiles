@@ -1,5 +1,7 @@
+# vim filetype:zsh
+
 # -----------------------------------------------------------------------------
-# Filename: ~/.config/zsh/.zshrc
+# Filename: ~/.zshrc
 # Description: Interactive Zsh configuration for macOS and Linux.
 #              Loads modular CLI environment, initializes completions, plugins,
 #              shell behavior, and interactive tools (e.g., starship, direnv).
@@ -84,7 +86,6 @@ fi
 
 # ------------------ ZSH Syntax Highlighting ----------------- #
 ZSH_SYNTAX_HIGHLIGHTING_RELATIVE="share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
 
 if [[ -f "$HOMEBREW/$ZSH_SYNTAX_HIGHLIGHTING_RELATIVE" ]]; then
     source "$HOMEBREW/$ZSH_SYNTAX_HIGHLIGHTING_RELATIVE"

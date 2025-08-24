@@ -1,7 +1,8 @@
-{{/* vim: set filetype=bash: */}}
+# vim: filetype=bash
 # shellcheck shell=bash
+
 # -----------------------------------------------------------------------------
-# Filename: ~/.bash_profile (managed by chezmoi)
+# Filename: ~/.bash_profile
 # Description: Bash login shell configuration for macOS and Linux.
 #              Sources .bashrc, initializes SSH agent via keychain, and exports
 #              SSH_AUTH_SOCK to GUI apps on macOS.
@@ -24,14 +25,14 @@ readonly BASHRC="{{ .chezmoi.homeDir }}/.bashrc"
 # Initialize SSH agent via keychain for secure key management
 readonly SSH_KEY="{{ .chezmoi.homeDir }}/.ssh/id_ed25519"
 if [[ -f "$SSH_KEY" ]] && command -v keychain >/dev/null 2>&1; then
-    eval "$(keychain --eval --quiet --nogui "$SSH_KEY")"
+  eval "$(keychain --eval --quiet --nogui "$SSH_KEY")"
 fi
 
 {{- if eq .chezmoi.os "darwin" }}
 # ------- Export SSH_AUTH_SOCK to GUI Apps (macOS Only) ------ #
 # Make SSH agent available to GUI applications via launchd
 if [[ -n "${SSH_AUTH_SOCK:-}" ]]; then
-    launchctl setenv SSH_AUTH_SOCK "$SSH_AUTH_SOCK"
+  launchctl setenv SSH_AUTH_SOCK "$SSH_AUTH_SOCK"
 fi
 {{- end }}
 
@@ -43,7 +44,7 @@ fi
 readonly HOMEBREW_PREFIX="{{ .paths.brew_prefix | default "/opt/homebrew" }}"
 readonly BASH_COMPLETION_SCRIPT="$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 if [[ -r "$BASH_COMPLETION_SCRIPT" ]]; then
-    # shellcheck source=/dev/null
-    source "$BASH_COMPLETION_SCRIPT"
+  # shellcheck source=/dev/null
+  source "$BASH_COMPLETION_SCRIPT"
 fi
 {{- end }}

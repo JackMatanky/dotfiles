@@ -1,5 +1,7 @@
+# vim: filetype=zsh
+
 # -----------------------------------------------------------------------------
-# Filename: ~/.config/zsh/.zprofile
+# Filename: ~/.zprofile
 # Description: Zsh login shell configuration for macOS.
 #              Sources .zshrc, initializes SSH agent via keychain,
 #              and exports SSH_AUTH_SOCK to GUI apps.
