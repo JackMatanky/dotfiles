@@ -97,3 +97,5 @@ __pycache__/
 *.bak
 *.backup
 *.old
+
+README.md
