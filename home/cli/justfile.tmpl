@@ -91,7 +91,7 @@ install-homebrew:
 
 # 📦 Install packages from Brewfile
 brew-install: install-homebrew
-    {{ .paths.brew_bin }} bundle --file="{{ BREWFILE }}"
+    {{ .paths.brew_bin }} bundle --file="{{ `{{ BREWFILE }}` }}"
 
 # 🔄 Update Homebrew and packages
 brew-update:
@@ -121,14 +121,14 @@ install-rust:
 cargo-install: install-rust
     #!/usr/bin/env bash
     set -euo pipefail
-    if [[ -f "{{ CARGO_PACKAGES }}" ]]; then
+    if [[ -f "{{ `{{ CARGO_PACKAGES }}` }}" ]]; then
         while IFS= read -r package; do
             [[ -z "$package" || "$package" =~ ^# ]] && continue
             echo "Installing cargo package: $package"
             cargo install "$package"
-        done < "{{ CARGO_PACKAGES }}"
+        done < "{{ `{{ CARGO_PACKAGES }}` }}"
     else
-        echo "⚠️  Cargo packages file not found: {{ CARGO_PACKAGES }}"
+        echo "⚠️  Cargo packages file not found: {{ `{{ CARGO_PACKAGES }}` }}"
     fi
 
 # 🔄 Update Cargo packages
@@ -144,13 +144,13 @@ cargo-update:
 flatpak-install:
     #!/usr/bin/env bash
     set -euo pipefail
-    if [[ -f "{{ FLATPAK_MANIFEST }}" ]]; then
-        jq -r '.apps[]' "{{ FLATPAK_MANIFEST }}" | while IFS= read -r app; do
+    if [[ -f "{{ `{{ FLATPAK_MANIFEST }}` }}" ]]; then
+        jq -r '.apps[]' "{{ `{{ FLATPAK_MANIFEST }}` }}" | while IFS= read -r app; do
             echo "Installing flatpak: $app"
             flatpak install flathub "$app" -y
         done
     else
-        echo "⚠️  Flatpak manifest not found: {{ FLATPAK_MANIFEST }}"
+        echo "⚠️  Flatpak manifest not found: {{ `{{ FLATPAK_MANIFEST }}` }}"
     fi
 
 # 🔄 Update Flatpak packages

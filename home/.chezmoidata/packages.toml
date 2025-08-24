@@ -1,0 +1,420 @@
+# -----------------------------------------------------------------------------
+# File: ~/.local/share/chezmoi/.chezmoidata/packages.toml
+# Purpose: Declarative package list consumed by chezmoi run_onchange script(s).
+# Docs: https://www.chezmoi.io/user-guide/advanced/install-packages-declaratively/
+# Notes:
+# - Keys and arrays are data-only. Your install script should implement the
+#   actual brew/mas code paths.
+# - services_restart_on_change is advisory: your script can call `brew services`
+#   to (re)start only when packages change.
+# -----------------------------------------------------------------------------
+
+[packages]
+
+# Everything here targets macOS (darwin). If you later support Linux,
+# add a parallel [packages.linux] (or [packages.common]) section and
+# split cross-platform formulae accordingly.
+[packages.darwin]
+
+# ----------------------- Homebrew taps -----------------------
+taps = [
+  "homebrew/bundle",
+  "homebrew/services",
+  "zegervdv/zathura",
+  "felixkratz/formulae",
+  "nikitabobko/tap",
+  "jesseduffield/lazygit"
+]
+
+# ------------------------- Brew (CLI) ------------------------
+brews = [
+  # Shells
+  "bash",
+  "nushell",
+
+  # Terminal environment
+  "zellij",
+  "tmux",
+  "tpm",
+
+  # Dotfiles managers
+  "stow",
+  "chezmoi",
+
+  # Environment management
+  "direnv",
+  "just",
+  "keychain",
+  # "sops",  # commented in Brewfile
+
+  # Scripting & development
+  "shellcheck",
+  "shfmt",
+
+  # Shell enhancements
+  "atuin",
+  "carapace",
+  "starship",
+  "yazi",
+
+  # Shell plugins
+  "bash-completion@2",
+  "zsh-autosuggestions",
+  "zsh-syntax-highlighting",
+
+  # CLI utilities
+  "eza",
+  "fzf",
+  "zoxide",
+  "fd",
+  "ripgrep",
+  "bat",
+  "sd",
+  "tlrc",
+  "jq",
+  "sourcemeta/apps/jsonschema",
+  # "mermaid-cli", # commented in Brewfile
+
+  # AI tools
+  "gemini-cli",
+  "ollama",
+
+  # Version control
+  "git",
+  "git-sizer",
+  "git-lfs",
+  "git-filter-repo",
+  "git-delta",
+  "gitleaks",
+  "jesseduffield/lazygit/lazygit",
+  "gh",
+
+  # Languages & runtimes
+  "go",
+  "lua",
+  "mysql",
+  "node",
+  "openjdk",
+  "postgresql@17",
+  "python@3.13",
+  "ruby",
+  # "rust",  # commented in Brewfile
+
+  # Language servers
+  "lua-language-server",
+  "marksman",
+  "basedpyright",
+  "rust-analyzer",
+  "solargraph",
+  "texlab",
+  "typescript-language-server",
+  "vscode-langservers-extracted",
+  "yaml-language-server",
+
+  # Python toolchain
+  "pyenv",
+  "pyenv-virtualenv",
+  "uv",
+  "ipython",
+  "jupyterlab",
+  "jupytext",
+
+  # Lua toolchain
+  "luajit",
+  "luarocks",
+
+  # Linters & formatters
+  "prettier",
+  "cspell",
+  "golangci-lint",
+  "markdownlint-cli2",
+  "ruff",
+  "sqlfluff",
+  "sql-formatter",
+  "stylua",
+
+  # Modal editors
+  "neovim",
+
+  # Document processing & viewing (CLI libs)
+  "pandoc",
+  "img2pdf",
+  "qpdf",
+  "poppler",
+
+  # OCR
+  "ocrmypdf",
+  "tesseract",
+
+  # Image processing
+  "imagemagick",
+  "webp",
+  "libavif",
+  "graphviz",
+
+  # Multimedia
+  "ffmpeg",
+
+  # macOS-specific CLI
+  "ical-buddy",
+  "switchaudio-osx",
+  "nowplaying-cli",
+
+  # Mac App Store helper
+  "mas"
+]
+
+# --------------- Services: restart on change (advisory) ---------------
+# Your script can use this to conditionally (re)start services when the
+# package list changes, e.g.:
+#   for p in ${services_restart_on_change[@]}; do brew services restart "$p"; done
+services_restart_on_change = [
+  "atuin",
+  "mysql",
+  "postgresql@17"
+]
+
+# -------------------------- Brew casks --------------------------
+casks = [
+  # Terminal emulators
+  "ghostty",
+  "warp",
+  # "wezterm",   # commented in Brewfile
+
+  # Neovim client
+  # "neovide",   # commented in Brewfile
+
+  # IDEs & editors
+  "zed",
+  "zed@preview",
+  "visual-studio-code",
+  # "vscodium",  # commented in Brewfile
+
+  # SQL clients
+  "mysqlworkbench",
+  "pgadmin4",
+
+  # PKM / knowledge tools
+  "obsidian",
+  "anki",
+  "calibre",
+  "zotero",
+  "xournal++",
+
+  # Office & document tools
+  "libreoffice",
+  "libreoffice-language-pack",
+  "sioyek",
+  "adobe-digital-editions",
+
+  # Productivity
+  "nikitabobko/tap/aerospace",
+  "displaylink",
+  "espanso",
+
+  # AI tools (desktop)
+  "chatgpt",
+  "claude",
+  "claude-code",
+  "lm-studio",
+  "ollama",  # note: also installed as brew formula above
+
+  # Cloud storage
+  "google-drive",
+  "onedrive",
+
+  # Media
+  "vlc",
+
+  # Communication
+  "slack",
+  "zoom",
+
+  # Misc
+  "kicad",
+  "qbittorrent",
+  "bitwarden",
+
+  # Fonts
+  "sf-symbols",
+  "font-fira-code-nerd-font",
+  "font-hack-nerd-font",
+  "font-jetbrains-mono-nerd-font",
+  "font-sf-mono",
+  "font-sf-pro",
+
+  # Zathura (PDF) stack from tap added above
+  "zathura",
+  "zathura-pdf-mupdf"
+]
+
+# ---------------------- Mac App Store (mas) ----------------------
+# Keys are the visible app names; values are numeric MAS IDs.
+# (Underscores are allowed as digit separators in TOML numbers.)
+[packages.darwin.mas]
+OneDrive = 823_766_827
+PDFgear  = 6_469_021_132
+
+# Apple built-ins (from MAS)
+iMovie  = 408_981_434
+Keynote = 409_183_694
+Numbers = 409_203_825
+Pages   = 409_201_541
+
+# Safari extensions
+AdBlock                 = 1_402_042_596
+Bitwarden               = 1_352_778_147
+"Documents Translator"  = 1_566_993_561
+"G App Launcher"        = 1_543_803_459
+Mailbutler              = 1_313_355_438
+"Obsidian Web Clipper"  = 6_720_708_363
+OneTab                  = 1_540_160_809
+# darker                = 1_637_413_102  # commented in Brewfile
+
+# --------------------- VS Code Extensions ---------------------
+# Install via `code --install-extension ...`
+vscode = [
+  # UI & themes
+  "catppuccin.catppuccin-vsc",
+  "ibm.output-colorizer",
+  "naumovs.color-highlight",
+  "oderwat.indent-rainbow",
+  "vscode-icons-team.vscode-icons",
+
+  # Code navigation & productivity
+  "alefragnani.project-manager",
+  "gruntfuggly.todo-tree",
+  # "usernamehw.errorlens",
+
+  # Productivity & AI utilities
+  # "patbenatar.advanced-new-file",
+  "albert.tabout",
+  "almenon.arepl",
+  "codeium.codeium",
+  "github.copilot",
+  "github.copilot-chat",
+  "ionutvmi.path-autocomplete",
+  "njpwerner.autodocstring",
+  "randomfractalsinc.snippets-viewer",
+
+  # Comments
+  "aaron-bond.better-comments",
+  "dnut.rewrap-revived",
+  "exodiusstudios.comment-anchors",
+  "polymermallard.box-comment",
+  "stackbreak.comment-divider",
+
+  # RegEx
+  "chrmarti.regex",
+  "louiswt.regexp-preview",
+
+  # Vim & modal editing
+  "asvetliakov.vscode-neovim",
+  "julianiaquinandi.nvim-ui-modifier",
+  "lancewilhelm.nvim-dashboard",
+  "vspacecode.whichkey",
+
+  # Linters & formatters
+  "esbenp.prettier-vscode",
+  "editorconfig.editorconfig",
+  "lacroixdavid1.vscode-format-context-menu",
+  "shardulm94.trailing-spaces",
+  "streetsidesoftware.code-spell-checker",
+  # "jkillian.custom-local-formatters",
+  # "jbockle.jbockle-format-files",
+
+  # Environment
+  "mikestead.dotenv",
+
+  # Shell utilities
+  "constneo.vscode-nushell-format",
+  "foxundermoon.shell-format",
+  "thenuprojectcontributors.vscode-nushell-lang",
+  "timonwong.shellcheck",
+
+  # Git & VCS
+  # "eamodio.gitlens",
+  "github.remotehub",
+  "github.vscode-github-actions",
+  "github.vscode-pull-request-github",
+  "gitlab.gitlab-workflow",
+  "mhutchie.git-graph",
+  "vivaxy.vscode-conventional-commits",
+  "vsls-contrib.gistfs",
+
+  # Remote repos
+  "ms-vscode-remote.remote-ssh",
+  "ms-vscode-remote.remote-ssh-edit",
+  "ms-vscode.azure-repos",
+  "ms-vscode.remote-explorer",
+  "ms-vscode.remote-repositories",
+
+  # Jupyter
+  "ms-toolsai.jupyter",
+  "ms-toolsai.jupyter-keymap",
+  "ms-toolsai.jupyter-renderers",
+  "ms-toolsai.vscode-jupyter-cell-tags",
+  "ms-toolsai.vscode-jupyter-slideshow",
+
+  # LSPs and friends
+  "nefrob.vscode-just-syntax",
+  "redhat.java",
+  "redhat.vscode-xml",
+  "redhat.vscode-yaml",
+  "sumneko.lua",
+  "tamasfe.even-better-toml",
+
+  # Python
+  "charliermarsh.ruff",
+  "detachhead.basedpyright",
+  "joshrmosier.streamlit-runner",
+  "kevinrose.vsc-python-indent",
+  "marimo-team.vscode-marimo",
+  "ms-python.black-formatter",
+  "ms-python.debugpy",
+  "ms-python.python",
+  "plotlydashsnippets.plotly-dash-snippets",
+
+  # JavaScript
+  "dbaeumer.vscode-eslint",
+  "ms-vscode.js-debug-nightly",
+
+  # HTML
+  "formulahendry.auto-close-tag",
+  "formulahendry.auto-complete-tag",
+  "formulahendry.auto-rename-tag",
+  "george-alisson.html-preview-vscode",
+  "mohd-akram.vscode-html-format",
+
+  # Markdown
+  "bierner.markdown-mermaid",
+  "bierner.markdown-yaml-preamble",
+  "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+  "darkriszty.markdown-table-prettify",
+  "davidanson.vscode-markdownlint",
+  "yzhang.markdown-all-in-one",
+  "felixzeller.markdown-oxide",
+  "marvhen.reflow-markdown",
+
+  # LaTeX
+  "james-yu.latex-workshop",
+
+  # SQL
+  "inferrinizzard.prettier-sql-vscode",
+
+  # CSV & spreadsheets
+  "grapecity.gc-excelviewer",
+  "mechatroner.rainbow-csv",
+  "ms-toolsai.datawrangler",
+  "janisdd.vscode-edit-csv",
+
+  # Data viewers
+  "randomfractalsinc.geo-data-viewer",
+  "randomfractalsinc.vscode-data-preview",
+
+  # Misc utilities
+  "spadin.zmk-tools",
+  "formulahendry.code-runner",
+  "techer.open-in-browser",
+  "tomoki1207.pdf"
+]

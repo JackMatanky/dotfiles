@@ -39,7 +39,7 @@ module completions {
 
   def "nu-complete uv groups" [] {
     let file = (find-pyproject-file)
-    open $file | get -i dependency-groups | columns
+    open $file | get -o dependency-groups | columns
   }
 
   # An extremely fast Python package manager.
