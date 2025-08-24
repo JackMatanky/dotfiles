@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# Filename: ~/dotfiles/espanso/match/markdown.yml
+# Filename: ~/.config/espanso/match/markdown.yml
 # Docs: https://espanso.org/docs/
 # Description: Organize all markdown related match configs in a single location.
 #              For more information on imports, see
@@ -7,6 +7,6 @@
 #------------------------------------------------------------------------------
 ---
 imports:
-  - "../match/markdown/md_code_block.yml"
-  - "../match/markdown/md_headings.yml"
-  - "../match/markdown/md_tables.yml"
+    - "../match/markdown/md_code_block.yml"
+    - "../match/markdown/md_headings.yml"
+    - "../match/markdown/md_tables.yml"

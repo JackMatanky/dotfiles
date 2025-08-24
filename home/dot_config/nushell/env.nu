@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# Filename: ~/dotfiles/nushell/env.nu
+# Filename: ~/.config/nushell/env.nu
 # Docs: https://www.nushell.sh/book/nu_as_a_shell.html
 # Acknowledgments: Omer Hammerman (omerxx)
 #                  https://github.com/omerxx/dotfiles/blob/master/nushell/env.nu

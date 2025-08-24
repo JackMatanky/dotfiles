@@ -1,4 +1,8 @@
-# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
+#  Filename: ~/.config/espanso/match/autocorrect/autocorrect_c.yml
+#  Docs: https://espanso.org/docs/
+#  Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
 matches:
     # ---------------------------------------------------- #
     #                          CA                          #
@@ -1921,6 +1925,10 @@ matches:
       propagate_case: true
       word: true
     - trigger: currenly
+      replace: currently
+      propagate_case: true
+      word: true
+    - trigger: curreently
       replace: currently
       propagate_case: true
       word: true

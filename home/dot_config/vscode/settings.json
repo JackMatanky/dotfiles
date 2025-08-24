@@ -217,13 +217,13 @@
     },
     {
       "name": "python_dictionary",
-      "path": "~/dotfiles/cspell/dictionaries/user_dictionary_python.txt",
+      "path": "~/.config/cspell/dictionaries/user_dictionary_python.txt",
       "addWords": true,
       "scope": "user"
     },
     {
       "name": "general_dictionary",
-      "path": "~/dotfiles/cspell/dictionaries/user_dictionary_eng.txt",
+      "path": "~/.config/cspell/dictionaries/user_dictionary_eng.txt",
       "addWords": true,
       "scope": "user"
     }
@@ -231,13 +231,13 @@
   // "cSpell.customDictionaries": {
   //   "user_dictionary_eng": {
   //     "name": "user_dictionary_eng",
-  //     "path": "~/dotfiles/cspell/dictionaries/user_dictionary_eng.txt",
+  //     "path": "~/.config/cspell/dictionaries/user_dictionary_eng.txt",
   //     "addWords": true,
   //     "scope": "user"
   //   },
   //   "user_dictionary_python": {
   //     "name": "user_dictionary_python",
-  //     "path": "~/dotfiles/cspell/dictionaries/user_dictionary_python.txt",
+  //     "path": "~/.config/cspell/dictionaries/user_dictionary_python.txt",
   //     "addWords": true,
   //     "scope": "user"
   //   }
@@ -245,11 +245,11 @@
   "cSpell.languageSettings": [
     {
       "languageId": "python",
-      "dictionaries": [ "python" ]
+      "dictionaries": ["python"]
     },
     {
       "languageId": "javascript",
-      "dictionaries": [ "typescript", "node" ]
+      "dictionaries": ["typescript", "node"]
     }
   ],
   "cSpell.dictionaries": [
@@ -286,14 +286,14 @@
   "spellright.addToSystemDictionary": true,
   "spellright.notificationClass": "warning",
   "spellright.configurationScope": "user",
-  "spellright.language": [ "en" ],
-  "spellright.documentTypes": [ "markdown", "latex" ],
+  "spellright.language": ["en"],
+  "spellright.documentTypes": ["markdown", "latex"],
   //!Section
 
   /* ------------------------------------------------------ */
   /*SECTION:           Formatter Settings                   */
   /* ------------------------------------------------------ */
-  "prettier.documentSelectors": [ "*/**.json" ],
+  "prettier.documentSelectors": ["*/**.json"],
   "prettier.endOfLine": "lf",
   "prettier.htmlWhitespaceSensitivity": "css",
   "prettier.semi": true,
@@ -317,7 +317,7 @@
   /* ------------------------------------------------------ */
   /*SECTION:           Comment Extensions                   */
   /* ------------------------------------------------------ */
-  "commentAnchors.tags.separators": [ " - ", ": ", " " ],
+  "commentAnchors.tags.separators": [" - ", ": ", " "],
   "commentAnchors.tagHighlights.enabled": true,
   "commentAnchors.tags.displayHierarchyInWorkspace": true,
   "commentAnchors.tags.displayInGutter": true,
@@ -490,13 +490,13 @@
   // Set subheader text transform style.
   "comment-divider.subheaderTransform": "titlecase",
   "comment-divider.languagesMap": {
-    "html": [ "<!--", "-->" ],
-    "just": [ "#", "#" ],
-    "justfie": [ "#", "#" ],
-    "nu": [ "#", "#" ],
-    "nushell": [ "#", "#" ],
-    "lua": [ "--", "--" ],
-    "py": [ "#", "#" ]
+    "html": ["<!--", "-->"],
+    "just": ["#", "#"],
+    "justfie": ["#", "#"],
+    "nu": ["#", "#"],
+    "nushell": ["#", "#"],
+    "lua": ["--", "--"],
+    "py": ["#", "#"]
   },
 
   //!SECTION
@@ -512,7 +512,7 @@
   //SEGMENT - Projects
   "projectManager.cacheProjectsBetweenSessions": true,
   "projectManager.openInCurrentWindowIfEmpty": "always",
-  // "projectManager.projectsLocation": "~/dotfiles/vscodium/projects.json",
+  // "projectManager.projectsLocation": "~/.config/vscodium/projects.json",
   "projectManager.sortList": "Name",
   // "projectManager.any.baseFolders": [
   // "/Users/jack/dotfiles"
@@ -548,10 +548,10 @@
   "python.terminal.activateEnvironment": true,
   "python.terminal.shellIntegration.enabled": true,
   "python.venvPath": ".venv",
-  "python.venvFolders": [ "envs", ".venv" ],
+  "python.venvFolders": ["envs", ".venv"],
 
   //SEGMENT - Ruff
-  "ruff.path": [ "/opt/homebrew/bin/ruff" ],
+  "ruff.path": ["/opt/homebrew/bin/ruff"],
   "ruff.lineLength": 80,
   "ruff.organizeImports": true,
   //!SEGMENT
@@ -1001,7 +1001,7 @@
     "no-space-in-links": true,
     // MD040 - Fenced code blocks should have a language specified
     "fenced-code-language": {
-      "allowed_languages": [ ]
+      "allowed_languages": []
     },
     // MD041 - First line in a file should be a top-level heading
     "first-line-heading": {
@@ -1011,7 +1011,7 @@
     "no-empty-links": true,
     // MD043 - Required heading structure
     "required-headings": {
-      "headings": [ "*" ],
+      "headings": ["*"],
       "match_case": false
     },
     // MD045 - Images should have alternate text (alt text)

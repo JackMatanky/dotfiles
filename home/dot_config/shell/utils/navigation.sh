@@ -2,7 +2,7 @@
 # shellcheck shell=bash
 
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/cli/lib/nav_helpers.sh
+# Filename: ~/.config/cli/lib/nav_helpers.sh
 # Dependencies: fd, fzf, bat, eza
 # Description: Helper functions for fuzzy file/directory selection and navigation.
 #              These are prefixed with `__` and are not meant for direct use.

@@ -1,4 +1,4 @@
-# Filename: ~/dotfiles/nushell/completions/load_completions.nu
+# Filename: ~/.config/nushell/completions/load_completions.nu
 
 # # Source all completion scripts from the completions directory
 # const completion_files = [

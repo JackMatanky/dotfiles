@@ -1,8 +1,12 @@
-# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
+#  Filename: ~/.config/espanso/match/autocorrect/autocorrect_u.yml
+#  Docs: https://espanso.org/docs/
+#  Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
 matches:
-    # ---------
-    # --- U ---
-    # ---------
+    # ---------------------------------------------------- #
+    #                          UB                          #
+    # ---------------------------------------------------- #
     - trigger: ubiquitious
       replace: ubiquitous
       propagate_case: true
@@ -23,6 +27,9 @@ matches:
       replace: ultimately
       propagate_case: true
       word: true
+    # ---------------------------------------------------- #
+    #                          UN                          #
+    # ---------------------------------------------------- #
     - trigger: unacompanied
       replace: unaccompanied
       propagate_case: true
@@ -399,6 +406,9 @@ matches:
       replace: unwieldy
       propagate_case: true
       word: true
+    # ---------------------------------------------------- #
+    #                          UP                          #
+    # ---------------------------------------------------- #
     - trigger: upcomming
       replace: upcoming
       propagate_case: true
@@ -411,6 +421,9 @@ matches:
       replace: "up\x20to"
       propagate_case: true
       word: true
+    # ---------------------------------------------------- #
+    #                          US                          #
+    # ---------------------------------------------------- #
     - trigger: usally
       replace: usually
       propagate_case: true

@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/.gitignore
+# Filename: ~/.config/nvim.gitignore
 # Description: Prevents Git from tracking system, environment, editor,
 #              and cache files
 # -----------------------------------------------------------------------------
@@ -68,5 +68,3 @@ htmlcov/
 .vscode/
 *.sublime-project
 *.sublime-workspace
-
-.github/copilot-instructions.md

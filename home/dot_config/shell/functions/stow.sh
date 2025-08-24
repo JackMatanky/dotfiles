@@ -2,7 +2,7 @@
 # shellcheck shell=bash
 
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/cli/cmd/stow_aliases.sh
+# Filename: ~/.config/cli/cmd/stow_aliases.sh
 # Description: Shortcuts for GNU Stow on ~/dotfiles
 # -----------------------------------------------------------------------------
 

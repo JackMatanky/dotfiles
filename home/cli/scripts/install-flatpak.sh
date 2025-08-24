@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/scripts/install-flatpak.sh
+# Filename: ~/.config/scripts/install-flatpak.sh
 # Docs: https://docs.flatpak.org/en/latest/
 # Description: Installs Flatpak (if not installed) and Flatpak applications.
 #   - Supports Ubuntu, Debian, Fedora, and Arch Linux.

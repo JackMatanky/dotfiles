@@ -7,6 +7,9 @@
 return {
   "folke/snacks.nvim",
   opts = {
+
+    -- ---------------------- LazyGit ----------------------- --
+    -- Docs: https://github.com/folke/snacks.nvim/blob/main/docs/lazygit.md
     lazygit = {
       enabled = true,
       title = "LazyGit",
@@ -15,8 +18,16 @@ return {
       icon = "",
       -- optionally restrict filetypes to show lazygit (can be omitted)
       filetype = { "gitcommit", "gitrebase", "lua", "markdown", "text" },
+      -- prevent Snacks/LazyVim from generating its own theme file
+      config = false, -- by default Snacks auto-themes LazyGit
+
+      -- point LazyGit at your global config
+      env = {
+        LG_CONFIG_FILE = vim.fn.expand("~/.config/lazygit/config.yml"),
+      },
     },
 
+    -- ----------------------- Images ----------------------- --
     image = {
       enabled = true,
       formats = {

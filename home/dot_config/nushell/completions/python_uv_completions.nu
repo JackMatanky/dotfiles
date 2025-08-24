@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-#  Filename: ~/dotfiles/nushell/completions/python_uv_completions.nu
+#  Filename: ~/.config/nushell/completions/python_uv_completions.nu
 #
 #  Source: https://github.com/nushell/nu_scripts/blob/main/custom-completions/uv/uv-completions.nu
 # -----------------------------------------------------------------------------

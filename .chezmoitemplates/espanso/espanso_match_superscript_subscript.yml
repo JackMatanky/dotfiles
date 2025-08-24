@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# Filename: ~/dotfiles/espanso/match/superscript_subscript.yml
+# Filename: ~/.config/espanso/match/superscript_subscript.yml
 # Docs: https://espanso.org/docs/
 # Description: Organize all superscript and subscript related match configs in a
 #              single location. For more information on imports, see
@@ -7,10 +7,10 @@
 #------------------------------------------------------------------------------
 ---
 imports:
-  - "../match/superscript_subscript/subscript_latin_lowercase.yml"
-  - "../match/superscript_subscript/subscript_numbers.yml"
-  - "../match/superscript_subscript/subscript_symbols.yml"
-  - "../match/superscript_subscript/superscript_fractions.yml"
-  - "../match/superscript_subscript/superscript_greek.yml"
-  - "../match/superscript_subscript/superscript_latin_lowercase.yml"
-  - "../match/superscript_subscript/superscript_latin_uppercase.yml"
+    - "../match/superscript_subscript/subscript_latin_lowercase.yml"
+    - "../match/superscript_subscript/subscript_numbers.yml"
+    - "../match/superscript_subscript/subscript_symbols.yml"
+    - "../match/superscript_subscript/superscript_fractions.yml"
+    - "../match/superscript_subscript/superscript_greek.yml"
+    - "../match/superscript_subscript/superscript_latin_lowercase.yml"
+    - "../match/superscript_subscript/superscript_latin_uppercase.yml"

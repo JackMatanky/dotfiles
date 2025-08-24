@@ -1,4 +1,8 @@
-# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
+#  Filename: ~/.config/espanso/match/autocorrect/autocorrect_s.yml
+#  Docs: https://espanso.org/docs/
+#  Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
 matches:
     # ---------------------------------------------------- #
     #                          SA                          #
@@ -116,6 +120,10 @@ matches:
     # ---------------------------------------------------- #
     - trigger: scaleable
       replace: scalable
+      propagate_case: true
+      word: true
+    - trigger: scalibility
+      replace: scalability
       propagate_case: true
       word: true
     - trigger: scandanavia

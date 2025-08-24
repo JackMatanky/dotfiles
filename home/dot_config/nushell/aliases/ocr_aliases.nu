@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/nushell/aliases/ocr_aliases.nu
+# Filename: ~/.config/nushell/aliases/ocr_aliases.nu
 # OCRmyPDF: https://github.com/ocrmypdf/OCRmyPDF
 # -----------------------------------------------------------------------------
 

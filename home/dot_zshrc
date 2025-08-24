@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/zsh/.zshrc
+# Filename: ~/.config/zsh/.zshrc
 # Description: Interactive Zsh configuration for macOS and Linux.
 #              Loads modular CLI environment, initializes completions, plugins,
 #              shell behavior, and interactive tools (e.g., starship, direnv).

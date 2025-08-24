@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/packages/Flatpakfile
+# Filename: ~/.config/packages/Flatpakfile
 # Source: https://universal-blue.discourse.group/t/brewfile-like-management-of-flatpaks/5423
 # Github: https://github.com/Homebrew/homebrew-core
 # Description: Homebrew core packages (cross-platform, Linux/macOS).

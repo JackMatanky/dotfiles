@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------
-//  Filename: ~/dotfiles/zellij/config.kdl
+//  Filename: ~/.config/zellij/config.kdl
 //  Zellij Docs: https://zellij.dev/documentation/configuration
 //  Zellij Github: https://github.com/zellij-org/zellij
 // --------------------------------------------------------------------
@@ -274,7 +274,7 @@ plugins {
     // --------------------------------------------------------------
 
     // zjstatus
-    zjstatus location="file:~/dotfiles/zellij/plugins/zjstatus/zjstatus.wasm" {
+    zjstatus location="file:~/.config/zellij/plugins/zjstatus/zjstatus.wasm" {
         first_start true // Enable navigation to the status bar
 
         // -- Catppuccin Macchiato --

@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/nushell/completions/zellij_completions.nu
+# Filename: ~/.config/nushell/completions/zellij_completions.nu
 #
 # Source: https://github.com/nushell/nu_scripts/blob/main/custom-completions/zellij/zellij-completions.nu
 # -----------------------------------------------------------------------------

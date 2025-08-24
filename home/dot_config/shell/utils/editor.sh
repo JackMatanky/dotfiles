@@ -23,7 +23,7 @@
 __open_in_editor() {
     local target="$1"
     local editor
-    
+
     # Determine which editor to use
     if [[ -n "${VISUAL:-}" ]] && command -v "$VISUAL" >/dev/null 2>&1; then
         editor="$VISUAL"
@@ -37,7 +37,7 @@ __open_in_editor() {
         echo "Error: No editor found. Please set \$EDITOR or \$VISUAL" >&2
         return 1
     fi
-    
+
     # Open the target
     if [[ -n "$target" ]]; then
         "$editor" "$target"

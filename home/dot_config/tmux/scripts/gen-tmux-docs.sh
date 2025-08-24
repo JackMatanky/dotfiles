@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/tmux/gen-tmux-docs.sh
+# Filename: ~/.config/tmux/gen-tmux-docs.sh
 # Description: Regenerate tmux keybinding cheatsheet and which-key YAML from
 #              live tmux keymap
 # Instructions:
-#   - Run `chmod +x ~/dotfiles/tmux/gen-tmux-docs.sh` to use the script.
-#   - Run `~/dotfiles/tmux/gen-tmux-docs.sh` to generate the cheat sheet and YAML.
+#   - Run `chmod +x ~/.config/tmux/gen-tmux-docs.sh` to use the script.
+#   - Run `~/.config/tmux/gen-tmux-docs.sh` to generate the cheat sheet and YAML.
 # -----------------------------------------------------------------------------
 
 DOTFILES=~/dotfiles

@@ -25,7 +25,7 @@
   // >>> Comment Diveder <<<
   {
     "label": "Insert Comment Divider: Main",
-    "command": "~/dotfiles/zed/scripts/comment-divider.sh --file $ZED_FILE --title '%%' --type main",
+    "command": "~/.config/zed/scripts/comment-divider.sh --file $ZED_FILE --title '%%' --type main",
     "prompt": {
       "input": {
         "placeholder": "Enter main header title",
@@ -48,7 +48,7 @@
   },
   {
     "label": "Insert Comment Divider: Sub",
-    "command": "~/dotfiles/zed/scripts/comment-divider.sh --file $ZED_FILE --title '%%' --type sub",
+    "command": "~/.config/zed/scripts/comment-divider.sh --file $ZED_FILE --title '%%' --type sub",
     "prompt": {
       "input": {
         "placeholder": "Enter subheader title",

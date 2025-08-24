@@ -1,21 +1,21 @@
 #------------------------------------------------------------------------------
-# Filename: ~/dotfiles/espanso/match/superscript_subscript/subscript_symbols.yml
+# Filename: ~/.config/espanso/match/superscript_subscript/subscript_symbols.yml
 #
 # Docs: https://espanso.org/docs/
 #------------------------------------------------------------------------------
 ---
 matches:
-  - trigger: ":_+:"
-    replace: "₊"
+    - trigger: ":_+:"
+      replace: "₊"
 
-  - trigger: ":_-:"
-    replace: "₋"
+    - trigger: ":_-:"
+      replace: "₋"
 
-  - trigger: ":_=:"
-    replace: "₌"
+    - trigger: ":_=:"
+      replace: "₌"
 
-  - trigger: ":_(:"
-    replace: "₍"
+    - trigger: ":_(:"
+      replace: "₍"
 
-  - trigger: ":_):"
-    replace: "₎"
+    - trigger: ":_):"
+      replace: "₎"

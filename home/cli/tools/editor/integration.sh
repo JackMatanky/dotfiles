@@ -75,7 +75,7 @@ fgv() {
     # Find git repositories (directories containing .git)
     repo=$(fd --type directory --hidden --exclude .git --exec test -d {}/.git \; --print |
         fzf --preview 'eza --tree --level=2 --color=always {}')
-    
+
     if [[ -n "$repo" ]]; then
         __open_in_editor "$repo"
     fi

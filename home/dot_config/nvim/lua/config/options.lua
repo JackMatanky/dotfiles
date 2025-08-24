@@ -1,5 +1,5 @@
 -- -----------------------------------------------------------------------------
---  Filename: ~/dotfiles/nvim/lua/config/options.lua
+--  Filename: ~/.config/nvim/lua/config/options.lua
 --  Docs: https://www.lazyvim.org/configuration/general
 --  Description: Override or extend LazyVim defaults
 -- -----------------------------------------------------------------------------
@@ -8,15 +8,19 @@
 --                      Lazyvim Defaults                      --
 -- ---------------------------------------------------------- --
 
+-- Sets the terminal to use with `vim.o.shell`
+-- and adds some additional configuration:
+LazyVim.terminal.setup("/opt/homebrew/bin/nu")
+
 -- Picker to use: "telescope", "fzf", or "auto"
 vim.g.lazyvim_picker = "snacks"
 
 -- Completion engine: "nvim-cmp", "blink.cmp", or "auto"
 vim.g.lazyvim_cmp = "blink.cmp"
 
--- Sets the terminal to use with `vim.o.shell`
--- and adds some additional configuration:
-LazyVim.terminal.setup("/opt/homebrew/bin/nu")
+-- set to `true` to follow the main branch
+-- A working rust toolchain is required to build the plugin in this case.
+vim.g.lazyvim_blink_main = false
 
 -- Introduced in version 10.x
 -- Docs: https://www.lazyvim.org/news#10x
@@ -30,6 +34,10 @@ vim.g.python3_host_prog = vim.fn.expand("~/.pyenv/versions/neovim/bin/python3")
 -- Introduced in version 10.x
 -- Docs: https://www.lazyvim.org/news#10x
 vim.g.lazyvim_python_lsp = "basedpyright"
+
+-- Python formatter preferences (Ruff CLI is much faster than Black)
+-- Use "ruff" (CLI) instead of "ruff_lsp" for formatting and linting
+vim.g.lazyvim_python_ruff = "ruff"
 
 -- ---------------------------------------------------------- --
 --                      Editor Behavior                       --

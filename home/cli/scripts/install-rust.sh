@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/scripts/install-rust.sh
+# Filename: ~/.config/scripts/install-rust.sh
 # Docs: https://doc.rust-lang.org/cargo/getting-started/installation.html
 # Github: https://github.com/rust-lang
 # Description: Installs Rust, Cargo, and Cargo packages from a package list.

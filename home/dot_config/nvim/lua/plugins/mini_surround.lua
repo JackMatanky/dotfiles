@@ -1,5 +1,5 @@
 -- --------------------------------------------------------------------
---  Filename: ~/dotfiles/nvim/lua/plugins/mini_surround.lua
+--  Filename: ~/.config/nvim/lua/plugins/mini_surround.lua
 --  LazyVim Docs: https://www.lazyvim.org/plugins/editor#flashnvim
 --  Mini Surround Docs: https://github.com/echasnovski/mini.surround
 -- --------------------------------------------------------------------

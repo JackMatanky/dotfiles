@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/scripts/install-homebrew.sh
+# Filename: ~/.config/scripts/install-homebrew.sh
 # Description:
 # This script installs Homebrew packages using a Brewfile.
 # - macOS: Ensures OpenJDK is properly symlinked after installation.

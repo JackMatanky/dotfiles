@@ -1,5 +1,5 @@
 -- --------------------------------------------------------------------
---  Filename: ~/dotfiles/yazi/plugins/auto-layout.yazi/main.lua
+--  Filename: ~/.config/yazi/plugins/auto-layout.yazi/main.lua
 --  Yazi Docs: https://yazi-rs.github.io/docs/quick-start
 --  ZIDE Github: https://github.com/josephschmitt/zide
 -- --------------------------------------------------------------------

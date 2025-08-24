@@ -1,5 +1,5 @@
 -- --------------------------------------------------------------------
---  Filename: ~/dotfiles/nvim/lua/config/lazy.lua
+--  Filename: ~/.config/nvim/lua/config/lazy.lua
 --  Docs: https://www.lazyvim.org/configuration/lazy.nvim
 -- --------------------------------------------------------------------
 

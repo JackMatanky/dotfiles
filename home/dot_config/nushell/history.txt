@@ -385,7 +385,7 @@ z data_template
 bash template_tests/test_bash.sh
 bash tests/test_bash.sh
 z python
-bash ~/dotfiles/_devtools/python/data_template/scripts/bash_render.sh
+bash ~/.config/_devtools/python/data_template/scripts/bash_render.sh
 z template_files
 za template_files
 z data_template
@@ -394,14 +394,14 @@ za template_files
 z template_files
 ll
 ltree
-bash ~/dotfiles/_devtools/python/data_template/scripts/bash_render.sh
+bash ~/.config/_devtools/python/data_template/scripts/bash_render.sh
 z py
-bash ~/dotfiles/_devtools/python/data_template/scripts/bash_render.sh
+bash ~/.config/_devtools/python/data_template/scripts/bash_render.sh
 cat template_files/README.md | sed "/\${STRUCTURE_BLOCK}/ {<\n>  r directory_structures/data_science.md<\n>  d<\n>}"
 z data_template
 cat template_files/README.md | sed "/\${STRUCTURE_BLOCK}/ {<\n>  r directory_structures/data_science.md<\n>  d<\n>}"
 z py
-bash ~/dotfiles/_devtools/python/data_template/scripts/bash_render.sh
+bash ~/.config/_devtools/python/data_template/scripts/bash_render.sh
 dot
 gaa
 gcam 'try fixing data template readme output, but did not work'
@@ -468,7 +468,7 @@ gcam 'revert to previous directory substitutions'
 gps
 stow_all
 z pkm
-z formal 
+z formal
 z formal_science
 f
 fcd
@@ -972,7 +972,7 @@ brew uninstall alfred
 brew bundle dump --vscode
 brew bundle dump --mas
 cd
-cp ~/.config/Code/User/settings.json ~/dotfiles/VSCodium/User/<\n>
+cp ~/.config/Code/User/settings.json ~/.config/VSCodium/User/<\n>
 brew install --cask vscodium
 gaa
 dot
@@ -982,8 +982,8 @@ gps
 stow_all
 code --list-extensions > vscode-extensions.txt
 code --list-extensions > vscode-extensions.txt && cat vscode-extensions.txt | xargs -L 1 codium --install-extension
-chmod +x ~/dotfiles/scripts/install_vscodium_extensions.sh
-~/dotfiles/scripts/install_vscodium_extensions.sh
+chmod +x ~/.config/scripts/install_vscodium_extensions.sh
+~/.config/scripts/install_vscodium_extensions.sh
 gcam 'add vscode marketplace settings to codium'
 gps
 stow_all
@@ -1082,7 +1082,7 @@ gb
 overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/projects/geo_engineering/.venv/bin/activate.nu ; clear
 gb
 gaa
-gcam 'add search interface, move interfaces to dedicated folder, break up index to index and search' 
+gcam 'add search interface, move interfaces to dedicated folder, break up index to index and search'
 gps
 overlay use /Users/jack/Documents/_dev_work/hive_urban_github/research/projects/geo_engineering/.venv/bin/activate.nu ; clear
 j update-brew-mac
@@ -1405,7 +1405,7 @@ exit
 gaa
 l
 ltree
-rm -rf ~/dotfiles/tmux/plugins
+rm -rf ~/.config/tmux/plugins
 gaa
 gcam 'update tmux conf with tpm path env var'
 gps

@@ -1,5 +1,5 @@
 -- ----------------------------------------------------------------------------
---  Filename: ~/dotfiles/nvim/lua/config/ui/vscode.lua
+--  Filename: ~/.config/nvim/lua/config/ui/vscode.lua
 --  Description: VSCode-specific theme notifications for UI mode states
 --  Source: https://github.com/cStralpt/lazycodium-starter-template/blob/main/init.lua
 -- ----------------------------------------------------------------------------

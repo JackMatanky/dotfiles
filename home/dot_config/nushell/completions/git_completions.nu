@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-#  Filename: ~/dotfiles/nushell/completions/eza_completions.nu
+#  Filename: ~/.config/nushell/completions/eza_completions.nu
 #
 #  Source: https://github.com/nushell/nu_scripts/blob/main/custom-completions/eza/eza-completions.nu
 # -----------------------------------------------------------------------------

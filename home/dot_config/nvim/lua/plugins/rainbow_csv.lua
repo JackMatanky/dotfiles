@@ -1,6 +1,6 @@
 
 -- --------------------------------------------------------------------
---  Filename: ~/dotfiles/nvim/lua/plugins/rainbow_csv.lua
+--  Filename: ~/.config/nvim/lua/plugins/rainbow_csv.lua
 --  Rainbow CSV Docs: https://github.com/cameron-wags/rainbow_csv.nvim
 -- --------------------------------------------------------------------
 

@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/packages/cargo-packages.txt
+# Filename: ~/.config/packages/cargo-packages.txt
 # Source: https://crates.io/
 # Github: https://github.com/rust-lang/cargo
 # Description: List of Cargo packages that should be installed using `cargo-binstall`.

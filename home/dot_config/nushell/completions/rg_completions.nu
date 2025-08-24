@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-#  Filename: ~/dotfiles/nushell/completions/rg_completions.nu
+#  Filename: ~/.config/nushell/completions/rg_completions.nu
 #
 #  Source: https://github.com/nushell/nu_scripts/blob/main/custom-completions/rg/rg-completions.nu
 # -----------------------------------------------------------------------------

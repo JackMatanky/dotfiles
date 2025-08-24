@@ -1,8 +1,12 @@
-# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
+#  Filename: ~/.config/espanso/match/autocorrect/autocorrect_h.yml
+#  Docs: https://espanso.org/docs/
+#  Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
 matches:
-    # ---------
-    # --- H ---
-    # ----------
+    # -------------------------------------------------------- #
+    #                            HA                            #
+    # -------------------------------------------------------- #
     - trigger: habaeus
       replace: habeas
       propagate_case: true

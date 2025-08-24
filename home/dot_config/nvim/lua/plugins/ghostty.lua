@@ -1,5 +1,5 @@
 -- ----------------------------------------------------------------------------
---  Filename: ~/dotfiles/nvim/lua/plugins/ghostty.lua
+--  Filename: ~/.config/nvim/lua/plugins/ghostty.lua
 --
 --  Description: Provides syntax highlighting for the ghostty config file; no
 --               additional dependencies required

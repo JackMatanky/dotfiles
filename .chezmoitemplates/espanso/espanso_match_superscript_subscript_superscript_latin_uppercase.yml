@@ -1,63 +1,63 @@
 #------------------------------------------------------------------------------
-# Filename: ~/dotfiles/espanso/match/superscript_subscript/superscript_latin_uppercase.yml
+# Filename: ~/.config/espanso/match/superscript_subscript/superscript_latin_uppercase.yml
 #
 # Docs: https://espanso.org/docs/
 #------------------------------------------------------------------------------
 ---
 matches:
-  - trigger: ":^A:"
-    replace: "ᴬ"
+    - trigger: ":^A:"
+      replace: "ᴬ"
 
-  - trigger: ":^B:"
-    replace: "ᴮ"
+    - trigger: ":^B:"
+      replace: "ᴮ"
 
-  - trigger: ":^D:"
-    replace: "ᴰ"
+    - trigger: ":^D:"
+      replace: "ᴰ"
 
-  - trigger: ":^E:"
-    replace: "ᴱ"
+    - trigger: ":^E:"
+      replace: "ᴱ"
 
-  - trigger: ":^G:"
-    replace: "ᴳ"
+    - trigger: ":^G:"
+      replace: "ᴳ"
 
-  - trigger: ":^H:"
-    replace: "ᴴ"
+    - trigger: ":^H:"
+      replace: "ᴴ"
 
-  - trigger: ":^I:"
-    replace: "ᴵ"
+    - trigger: ":^I:"
+      replace: "ᴵ"
 
-  - trigger: ":^J:"
-    replace: "ᴶ"
+    - trigger: ":^J:"
+      replace: "ᴶ"
 
-  - trigger: ":^K:"
-    replace: "ᴷ"
+    - trigger: ":^K:"
+      replace: "ᴷ"
 
-  - trigger: ":^L:"
-    replace: "ᴸ"
+    - trigger: ":^L:"
+      replace: "ᴸ"
 
-  - trigger: ":^M:"
-    replace: "ᴹ"
+    - trigger: ":^M:"
+      replace: "ᴹ"
 
-  - trigger: ":^N:"
-    replace: "ᴺ"
+    - trigger: ":^N:"
+      replace: "ᴺ"
 
-  - trigger: ":^O:"
-    replace: "ᴼ"
+    - trigger: ":^O:"
+      replace: "ᴼ"
 
-  - trigger: ":^P:"
-    replace: "ᴾ"
+    - trigger: ":^P:"
+      replace: "ᴾ"
 
-  - trigger: ":^R:"
-    replace: "ᴿ"
+    - trigger: ":^R:"
+      replace: "ᴿ"
 
-  - trigger: ":^T:"
-    replace: "ᵀ"
+    - trigger: ":^T:"
+      replace: "ᵀ"
 
-  - trigger: ":^U:"
-    replace: "ᵁ"
+    - trigger: ":^U:"
+      replace: "ᵁ"
 
-  - trigger: ":^V:"
-    replace: "ⱽ"
+    - trigger: ":^V:"
+      replace: "ⱽ"
 
-  - trigger: ":^W:"
-    replace: "ᵂ"
+    - trigger: ":^W:"
+      replace: "ᵂ"

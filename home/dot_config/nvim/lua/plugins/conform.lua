@@ -1,5 +1,5 @@
 -- --------------------------------------------------------------------
---  Filename: ~/dotfiles/nvim/lua/plugins/conform.lua
+--  Filename: ~/.config/nvim/lua/plugins/conform.lua
 --  LazyVim Docs: https://www.lazyvim.org/extras/coding/luasnip
 --  Conform Docs: https://github.com/stevearc/conform.nvim
 -- --------------------------------------------------------------------
@@ -16,7 +16,10 @@ return {
       "<leader>cF",
       function()
         -- Manually format injected languages
-        require("conform").format({ formatters = { "injected" }, timeout_ms = 3000 })
+        require("conform").format({
+          formatters = { "injected" },
+          timeout_ms = 3000,
+        })
       end,
       mode = { "n", "v" }, -- Available in Normal and Visual mode
       desc = "Format Injected Langs",
@@ -58,6 +61,7 @@ return {
       lua = { "stylua" }, -- Use `stylua` for Lua files
       fish = { "fish_indent" }, -- Use `fish_indent` for Fish shell scripts
       sh = { "shfmt" }, -- Use `shfmt` for shell scripts
+      python = { "ruff_format", "ruff_organize_imports" }, -- Use Ruff CLI for Python formatting and import organization
       markdown = { "prettier", "markdownlint-cli2", "markdown-toc" }, -- Markdown formatters
       ["markdown.mdx"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
     },
@@ -70,7 +74,9 @@ return {
       -- Only format Markdown files with a TOC (Table of Contents) when `<!-- toc -->` is present
       ["markdown-toc"] = {
         condition = function(_, ctx)
-          for _, line in ipairs(vim.api.nvim_buf_get_lines(ctx.buf, 0, -1, false)) do
+          for _, line in
+            ipairs(vim.api.nvim_buf_get_lines(ctx.buf, 0, -1, false))
+          do
             if line:find("<!%-%- toc %-%->") then
               return true -- Run formatter if TOC marker is found
             end
@@ -84,7 +90,7 @@ return {
         args = {
           "--fix",
           "--config",
-          os.getenv("HOME") .. "/.config/formatters/.markdownlint.jsonc", -- Config file for markdownlint
+          os.getenv("HOME") .. "/.config/.markdownlint.jsonc", -- Config file for markdownlint
           "--",
           "$FILENAME",
         },

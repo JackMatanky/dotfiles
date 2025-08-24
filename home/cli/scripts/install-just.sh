@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/scripts/install-just.sh
+# Filename: ~/.config/scripts/install-just.sh
 # Source: https://github.com/casey/just
 # Description: Installs `just`, a modern command runner, on macOS and Linux.
 # - Uses the official installation script for pre-built binaries.

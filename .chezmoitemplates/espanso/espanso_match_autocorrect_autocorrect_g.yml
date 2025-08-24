@@ -1,8 +1,12 @@
-# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
+#  Filename: ~/.config/espanso/match/autocorrect/autocorrect_g.yml
+#  Docs: https://espanso.org/docs/
+#  Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
 matches:
-    # ---------
-    # --- G ---
-    # ----------
+    # -------------------------------------------------------- #
+    #                            GA                            #
+    # -------------------------------------------------------- #
     - trigger: gae
       replace: "game\x2C\x20Gael\x2C\x20gale"
       propagate_case: true

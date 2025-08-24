@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-#  Filename: ~/dotfiles/nushell/completions/git_completions.nu
+#  Filename: ~/.config/nushell/completions/git_completions.nu
 #
 #  Source: https://github.com/nushell/nu_scripts/blob/main/custom-completions/git/git-completions.nu
 # -----------------------------------------------------------------------------

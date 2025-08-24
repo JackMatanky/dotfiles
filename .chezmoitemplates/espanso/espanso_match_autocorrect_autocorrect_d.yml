@@ -1,8 +1,12 @@
-# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
+#  Filename: ~/.config/espanso/match/autocorrect/autocorrect_d.yml
+#  Docs: https://espanso.org/docs/
+#  Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
 matches:
-    # ---------
-    # --- D ---
-    # ---------
+    # -------------------------------------------------------- #
+    #                            DA                            #
+    # -------------------------------------------------------- #
     - trigger: dacquiri
       replace: daiquiri
       propagate_case: true
@@ -268,6 +272,10 @@ matches:
       propagate_case: true
       word: true
     - trigger: descendands
+      replace: descendants
+      propagate_case: true
+      word: true
+    - trigger: descendents
       replace: descendants
       propagate_case: true
       word: true

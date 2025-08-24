@@ -99,7 +99,7 @@ Alternatively, link manually
 
 ```sh
 mkdir -p ~/.config/tmux
-ln -sf ~/dotfiles/tmux/tmux.conf ~/.config/tmux/tmux.conf
+ln -sf ~/.config/tmux/tmux.conf ~/.config/tmux/tmux.conf
 ```
 
 ### Step 3: Launch and Configure

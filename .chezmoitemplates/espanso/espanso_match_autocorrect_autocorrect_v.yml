@@ -1,8 +1,12 @@
-# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
+#  Filename: ~/.config/espanso/match/autocorrect/autocorrect_v.yml
+#  Docs: https://espanso.org/docs/
+#  Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
 matches:
-    # ---------
-    # --- V ---
-    # ---------
+    # ---------------------------------------------------- #
+    #                          VA                          #
+    # ---------------------------------------------------- #
     - trigger: vaccum
       replace: vacuum
       propagate_case: true
@@ -71,6 +75,9 @@ matches:
       replace: vassals
       propagate_case: true
       word: true
+    # ---------------------------------------------------- #
+    #                          VE                          #
+    # ---------------------------------------------------- #
     - trigger: vegatarian
       replace: vegetarian
       propagate_case: true
@@ -214,6 +221,9 @@ matches:
       replace: victories
       propagate_case: true
       word: true
+    # ---------------------------------------------------- #
+    #                          VO                          #
+    # ---------------------------------------------------- #
     - trigger: volcanoe
       replace: volcano
       propagate_case: true

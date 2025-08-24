@@ -1,24 +1,29 @@
 # shellcheck shell=bash
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/bash/.bashrc
+# Filename: ~/.bashrc
 # Description: Bash interactive shell configuration for macOS and Linux.
 #              Loads modular CLI environment, defines completions, history,
 #              and initializes interactive tooling (e.g., direnv, starship).
 # -----------------------------------------------------------------------------
-# Suppress "Last login" message
-touch ~/.hushlogin
+
+# Require HOME; exit with error if unset/empty
+: "${HOME:?HOME must be set}"
+
+# Silence "Last login" for interactive shells
+touch "${HOME}/.hushlogin"
 
 
 # ------------------------------------------------------------ #
-#                 Load Modular CLI Environment                 #
+#                Load Modular Shell Environment                #
 # ------------------------------------------------------------ #
-# Essential Shell Paths (XDG compliant)
-SHELL_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/shell"
-LIB_DIR="$SHELL_DIR/lib"
-SCRIPT_LOADER="$LIB_DIR/load_core.sh"
+# Essential Shell Paths (XDG compliant, default: ~/.config)
+: "${XDG_CONFIG_HOME:=${HOME}/.config}"
+readonly SHELL_DIR="${XDG_CONFIG_HOME}/shell"
+readonly LIB_DIR="${SHELL_DIR}/lib"
+readonly SCRIPT_LOADER="${LIB_DIR}/load_core.sh"
 
 # Extended CLI Ecosystem Path
-CLI_DIR="$HOME/cli"
+readonly CLI_DIR="${HOME}/cli"
 
 # Load core shell support modules (log, source_sh_files)
 # shellcheck source=/dev/null
@@ -26,22 +31,22 @@ CLI_DIR="$HOME/cli"
 
 # ------------------- Environment Variables ------------------ #
 # XDG paths, language setup, etc.
-source_sh_files "$SHELL_DIR/profile"
+source_sh_files "${SHELL_DIR}/profile"
 
 # ---------------------- Shell Commands ---------------------- #
 # Essential aliases, functions, completions
-source_sh_files "$SHELL_DIR/aliases"
-source_sh_files "$SHELL_DIR/functions"
+source_sh_files "${SHELL_DIR}/aliases"
+source_sh_files "${SHELL_DIR}/functions"
 
 # Extended CLI functionality
-source_sh_files "$CLI_DIR/cmd"
+# source_sh_files "${CLI_DIR}/cmd"
 
 
 # ------------------------------------------------------------ #
 #                     History Configuration                    #
 # ------------------------------------------------------------ #
 export HISTSIZE=10000
-export HISTFILE="$XDG_CONFIG_HOME/.bash_history"
+export HISTFILE="${XDG_CONFIG_HOME}/.bash_history"
 mkdir -p "$(dirname "$HISTFILE")"
 
 

@@ -1,57 +1,57 @@
 #------------------------------------------------------------------------------
-# Filename: ~/dotfiles/espanso/match/superscript_subscript/subscript_latin_lowercase.yml
+# Filename: ~/.config/espanso/match/superscript_subscript/subscript_latin_lowercase.yml
 #
 # Espanso Docs: https://espanso.org/docs/
 #------------------------------------------------------------------------------
 ---
 matches:
-  - trigger: ":_a:"
-    replace: "ₐ"
+    - trigger: ":_a:"
+      replace: "ₐ"
 
-  - trigger: ":_e:"
-    replace: "ₑ"
+    - trigger: ":_e:"
+      replace: "ₑ"
 
-  - trigger: ":_h:"
-    replace: "ₕ"
+    - trigger: ":_h:"
+      replace: "ₕ"
 
-  - trigger: ":_i:"
-    replace: "ᵢ"
+    - trigger: ":_i:"
+      replace: "ᵢ"
 
-  - trigger: ":_j:"
-    replace: "ⱼ"
+    - trigger: ":_j:"
+      replace: "ⱼ"
 
-  - trigger: ":_k:"
-    replace: "ₖ"
+    - trigger: ":_k:"
+      replace: "ₖ"
 
-  - trigger: ":_l:"
-    replace: "ₗ"
+    - trigger: ":_l:"
+      replace: "ₗ"
 
-  - trigger: ":_m:"
-    replace: "ₘ"
+    - trigger: ":_m:"
+      replace: "ₘ"
 
-  - trigger: ":_n:"
-    replace: "ₙ"
+    - trigger: ":_n:"
+      replace: "ₙ"
 
-  - trigger: ":_o:"
-    replace: "ₒ"
+    - trigger: ":_o:"
+      replace: "ₒ"
 
-  - trigger: ":_p:"
-    replace: "ₚ"
+    - trigger: ":_p:"
+      replace: "ₚ"
 
-  - trigger: ":_r:"
-    replace: "ᵣ"
+    - trigger: ":_r:"
+      replace: "ᵣ"
 
-  - trigger: ":_s:"
-    replace: "ₛ"
+    - trigger: ":_s:"
+      replace: "ₛ"
 
-  - trigger: ":_t:"
-    replace: "ₜ"
+    - trigger: ":_t:"
+      replace: "ₜ"
 
-  - trigger: ":_u:"
-    replace: "ᵤ"
+    - trigger: ":_u:"
+      replace: "ᵤ"
 
-  - trigger: ":_v:"
-    replace: "ᵥ"
+    - trigger: ":_v:"
+      replace: "ᵥ"
 
-  - trigger: ":_x:"
-    replace: "ₓ"
+    - trigger: ":_x:"
+      replace: "ₓ"

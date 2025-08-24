@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# Filename: ~/dotfiles/espanso/match/base.yml
+# Filename: ~/.config/espanso/match/base.yml
 #
 # Espanso Docs: https://espanso.org/docs/
 #------------------------------------------------------------------------------
@@ -10,72 +10,72 @@
 # that will be available in every application when using espanso.
 ---
 global_vars:
-  - name: my_first_name
-    type: echo
-    params:
-      echo: "Jack"
-  - name: my_last_name
-    type: echo
-    params:
-      echo: "Matanky"
-  - name: my_full_name
-    type: echo
-    params:
-      echo: "{{my_first_name}} {{my_last_name}}"
-  - name: my_email
-    type: echo
-    params:
-      echo: "{{my_first_name}}{{my_last_name}}@gmail.com"
+    - name: my_first_name
+      type: echo
+      params:
+          echo: "Jack"
+    - name: my_last_name
+      type: echo
+      params:
+          echo: "Matanky"
+    - name: my_full_name
+      type: echo
+      params:
+          echo: "{{my_first_name}} {{my_last_name}}"
+    - name: my_email
+      type: echo
+      params:
+          echo: "{{my_first_name}}{{my_last_name}}@gmail.com"
 
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
-  # Simple text replacement
-  - trigger: ":espanso"
-    replace: "Hi there!"
+    # Simple text replacement
+    - trigger: ":espanso"
+      replace: "Hi there!"
 
-  # Print the output of a shell command
-  - trigger: ":shell"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          cmd: "echo 'Hello from your shell'"
+    # Print the output of a shell command
+    - trigger: ":shell"
+      replace: "{{output}}"
+      vars:
+          - name: output
+            type: shell
+            params:
+                cmd: "echo 'Hello from your shell'"
 
-  - trigger: ":fullname"
-    replace: "{{my_full_name}}"
+    - trigger: ":fullname"
+      replace: "{{my_full_name}}"
 
-  - trigger: ":phone"
-    replace: "058-555-3200"
+    - trigger: ":phone"
+      replace: "058-555-3200"
 
-  - trigger: ":emlp"
-    replace: "{{my_first_name}}{{my_last_name}}@gmail.com"
+    - trigger: ":emlp"
+      replace: "{{my_first_name}}{{my_last_name}}@gmail.com"
 
-  - trigger: ":emls"
-    replace: "{{my_first_name}}{{my_last_name}}@mail.huji.ac.il"
+    - trigger: ":emls"
+      replace: "{{my_first_name}}{{my_last_name}}@mail.huji.ac.il"
 
-  - trigger: ":emlw"
-    replace: "{{my_first_name}}_M@hiveurban.com"
+    - trigger: ":emlw"
+      replace: "{{my_first_name}}_M@hiveurban.com"
 
-  - trigger: ":atb"
-    replace: "All the best,\n{{my_full_name}}"
+    - trigger: ":atb"
+      replace: "All the best,\n{{my_full_name}}"
 
-  - trigger: ":bty"
-    replace: "Thank you,\n{{my_full_name}}"
+    - trigger: ":bty"
+      replace: "Thank you,\n{{my_full_name}}"
 
-  # trigger match if surrounded by word separators ( such as spaces, commas and newlines).
-  # - trigger: ther
-  #   replace: there
-  #   word: true
+    # trigger match if surrounded by word separators ( such as spaces, commas and newlines).
+    # - trigger: ther
+    #   replace: there
+    #   word: true
 
-  #  propagate the case style to the match:
-  #  If you write alh, the match will be expanded to although.
-  #  If you write Alh, the match will be expanded to Although.
-  #  If you write ALH, the match will be expanded to ALTHOUGH.
-  #   - trigger: alh
-  #     replace: although
-  #     propagate_case: true
-  #     word: true
+    #  propagate the case style to the match:
+    #  If you write alh, the match will be expanded to although.
+    #  If you write Alh, the match will be expanded to Although.
+    #  If you write ALH, the match will be expanded to ALTHOUGH.
+    #   - trigger: alh
+    #     replace: although
+    #     propagate_case: true
+    #     word: true
 
-  # And much more! For more information, visit the docs: https://espanso.org/docs/
+    # And much more! For more information, visit the docs: https://espanso.org/docs/

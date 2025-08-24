@@ -1,5 +1,5 @@
 -- ----------------------------------------------------------------------------
---  Filename: ~/dotfiles/nvim/init.lua
+--  Filename: ~/.config/nvim/init.lua
 --  Description: Main Neovim entry point with environment-specific modules
 --  Source: https://github.com/cStralpt/lazycodium-starter-template/
 -- ----------------------------------------------------------------------------

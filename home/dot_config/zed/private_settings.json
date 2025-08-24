@@ -1,34 +1,34 @@
 // ----------------------------------------------------------------------------
-// Filepath: ~/dotfiles/zed/settings.json
-// Docs: https://zed.dev/docs/configuring-zed
+//  Filepath: ~/dotfiles/zed/settings.json
+//  Docs: https://zed.dev/docs/configuring-zed
+//  Default: https://github.com/zed-industries/zed/blob/main/assets/settings/default.json
 // ----------------------------------------------------------------------------
 {
-  "icon_theme": "VSCode Icons (Dark)",
+  /* -------------------------------------------------------- */
+  /*                      User Interface                      */
+  /* -------------------------------------------------------- */
+
+  /* ------------------------- Theme ------------------------ */
   "theme": {
     "mode": "system",
     "light": "One Light",
     "dark": "Catppuccin Macchiato" // "Gruvbox Dark"
   },
+
+  /* ------------------------- Icons ------------------------ */
+  "icon_theme": "Modern Icons (Dark)",
+
   /* ------------------------ UI Font ----------------------- */
-  "ui_font_size": 15,
+  "ui_font_size": 14,
   "ui_font_weight": 400,
   "ui_font_family": "Ubuntu", //"Zed Plex Sans",
   "ui_font_fallbacks": ["Fira Code", "JetBrains Mono", "Source Code Pro"],
   "ui_font_features": {
     // Disable ligatures:
-    "calt": false
-  },
-  "base_keymap": "VSCode",
-  "features": {
-    "edit_prediction_provider": "zed" // "supermaven"
-  },
-  "edit_predictions": {
-    "mode": "subtle"
+    "calt": true
   },
 
-  /* -------------------------------------------------------- */
-  /*                        Text Editor                       */
-  /* -------------------------------------------------------- */
+  /* ---------------------- Buffer Font --------------------- */
   "buffer_font_size": 16,
   "buffer_font_weight": 400,
   "buffer_font_family": "FiraCode Nerd Font",
@@ -40,69 +40,202 @@
   // Line height: "comfortable", "standard", {"custom": #}
   "buffer_line_height": "comfortable",
 
-  "drop_target_size": 0.2,
-
+  // https://zed.dev/docs/configuring-zed#unnecessary-code-fade
+  // The opacity at which to fade out unused code.
   "unnecessary_code_fade": 0.3,
+
+  /* ---------------------- Active Pane --------------------- */
+  // Styling settings applied to the active pane
+  // Source: https://zed.dev/docs/configuring-zed#active-pane-modifiers
+  "active_pane_modifiers": {
+    "border_size": 0.5,
+    "inactive_opacity": 1.0
+  },
   "active_pane_magnification": 1.0,
 
   "pane_split_direction_horizontal": "up",
   "pane_split_direction_vertical": "left",
 
-  // Centered layout related settings.
+  /* --------------------- Hover Popover -------------------- */
+  // Source: https://zed.dev/docs/configuring-zed#hover-popover-enabled
+  // Whether to show the informational hover box when moving the
+  // mouse over symbols in the editor.
+  "hover_popover_enabled": true,
+  "hover_popover_delay": 300,
+
+  /* ----------------------- Highlight ---------------------- */
+  // Source: https://zed.dev/docs/configuring-zed#current-line-highlight
+  // Options: "all" (default), "none", "gutter", "line"
+  "current_line_highlight": "gutter",
+
+  // Whether to highlight all occurrences of the selected text in
+  // an editor.
+  "selection_highlight": true,
+
+  // The debounce delay before querying highlights from the language
+  // server based on the current cursor location.
+  "lsp_highlight_debounce": 75,
+
+  /* --------------------- Line Wrapping -------------------- */
+  // Source: https://zed.dev/docs/configuring-zed#preferred-line-length
+  "preferred_line_length": 80,
+
+  // Source: https://zed.dev/docs/configuring-zed#soft-wrap
+  // Description: Whether or not to automatically wrap lines of text
+  // to fit editor / preferred width.
+  // Options: none (default), editor_width, preferred_line_length, bounded
+  "soft_wrap": "editor_width",
+
+  // Wrap guides (vertical rulers) in the editor.
+  "show_wrap_guides": true,
+  "wrap_guides": [80],
+
+  /* ------------------------- Tabs ------------------------- */
+  "tab_size": 4,
+  "hard_tabs": false,
+
+  /* -------------------- Centered Layout ------------------- */
+  // Source: https://zed.dev/docs/configuring-zed#centered-layout
+  // Configuration for the centered layout mode.
   "centered_layout": {
     "left_padding": 0.2,
     "right_padding": 0.2
   },
 
   /* -------------------------------------------------------- */
-  /*                            Vim                           */
+  /*                        Keybindings                       */
   /* -------------------------------------------------------- */
+
+  /* ---------------------- Base Keymap --------------------- */
+  "base_keymap": "VSCode",
+
+  /* ------------------- Modal Editor Mode ------------------ */
+  // Source: https://zed.dev/docs/configuring-zed#vim
   "vim_mode": true,
+
+  "helix_mode": false,
+
+  /* -------------------------- Vim ------------------------- */
+  // https://zed.dev/docs/vim#changing-vim-mode-settings
   "vim": {
     "use_system_clipboard": "always",
     "use_multiline_find": false,
     "use_smartcase_find": false,
     "toggle_relative_line_numbers": true,
     "highlight_on_yank_duration": 50,
-    "custom_digraphs": {}
+    "custom_digraphs": {},
+    // Options: "block", "bar", "underline", "hollow"
+    "cursor_shape": {
+      "normal": "block",
+      "insert": "bar",
+      "visual": "block",
+      "replace": "block"
+    }
   },
 
-  "hover_popover_enabled": true,
+  /* -------------------------------------------------------- */
+  /*                       Image Viewer                       */
+  /* -------------------------------------------------------- */
+  "image_viewer": {
+    // The unit for image file sizes.
+    // By default we're setting it to binary.
+    // The second option is decimal.
+    "unit": "binary"
+  },
+
+  /* -------------------------------------------------------- */
+  /*                Closing & Restoring Windows               */
+  /* -------------------------------------------------------- */
+  // Source: https://zed.dev/docs/configuring-zed#confirm-quit
   "confirm_quit": false,
+
+  // Source: https://zed.dev/docs/configuring-zed#restore-on-startup
   "restore_on_startup": "last_workspace", //"last_session",
 
-  // May take 3 values: "platform_default", "close_window", "keep_window_open",
+  "restore_on_file_reopen": true,
+
+  // Whether to automatically close files that have been deleted on disk.
+  // Source: https://zed.dev/docs/configuring-zed#close-on-file-delete
+  "close_on_file_delete": false,
+
+  "drop_target_size": 0.2,
+
+  // Options: "platform_default", "close_window", "keep_window_open",
   "when_closing_with_no_tabs": "platform_default",
+
+  "on_last_window_closed": "platform_default",
+
+  /* -------------------------------------------------------- */
+  /*                          Prompts                         */
+  /* -------------------------------------------------------- */
   // Whether to use the system provided dialogs for Open and Save As.
   // When set to false, Zed will use the built-in keyboard-first pickers.
   "use_system_path_prompts": true,
 
+  // Whether to use the system provided dialogs for prompts, such as
+  // confirmation prompts. When set to false, Zed will use its built-in
+  // prompts. Note that on Linux, this option is ignored and Zed will
+  // always use the built-in prompts.
+  "use_system_prompts": true,
+
   /* -------------------------------------------------------- */
   /*                          Cursor                          */
   /* -------------------------------------------------------- */
-  // Key for adding multiple cursors: "alt", "cmd_or_ctrl"
-  "multi_cursor_modifier": "alt",
+  // Source: https://zed.dev/docs/configuring-zed#cursor-blink
   "cursor_blink": true,
-  "cursor_shape": "bar", // "bar" (default), "block", "underline", "hollow"
-  "current_line_highlight": "gutter", // "none", "gutter", "line", "all" (default)
 
+  // Options: "bar" (default), "block", "underline", "hollow"
+  "cursor_shape": "bar",
+
+  // Options: "never", "on_typing", "on_typing_and_movement"
+  "hide_mouse": "on_typing",
+
+  // Key for adding multiple cursors: "alt", "cmd_or_ctrl"
+  // Source: https://zed.dev/docs/configuring-zed#multi-cursor-modifier
+  "multi_cursor_modifier": "alt",
+
+  /* -------------------------------------------------------- */
+  /*                     Code Completions                     */
+  /* -------------------------------------------------------- */
+  // Docs: https://zed.dev/docs/completions
+
+  // Source: https://zed.dev/docs/configuring-zed#snippet-sort-order
+  // Options: "inline" (default), "top", "bottom"
+  "snippet_sort_order": "top",
   "show_completions_on_input": true,
   "show_completion_documentation": true,
   "completion_documentation_secondary_query_debounce": 300,
-  "show_edit_predictions": false,
+
+  /* -------------------------------------------------------- */
+  /*                     Edit Predictions                     */
+  /* -------------------------------------------------------- */
+  "features": {
+    "edit_prediction_provider": "zed" // "copilot" "supermaven"
+  },
+
+  // Source: https://zed.dev/docs/configuring-zed#edit-predictions
   "edit_predictions": {
     // A list of globs representing files that inline completions should be disabled for.
-    "disabled_globs": [".env"]
+    "mode": "eager", // "subtle",
+    "disabled_globs": [
+      "**/.env*",
+      "**/*.pem",
+      "**/*.key",
+      "**/*.cert",
+      "**/*.crt",
+      "**/.dev.vars",
+      "**/secrets.yml"
+    ]
   },
+  "show_edit_predictions": true,
+  // Source: https://zed.dev/docs/configuring-zed#edit-predictions-disabled-in
+  // A list of language scopes in which edit predictions should be disabled.
+  "edit_predictions_disabled_in": ["comment"],
 
   // Show method signatures in the editor, when inside parentheses.
   "auto_signature_help": false,
   // If `auto_signature_help` is enabled, this setting will be treated as enabled also.
   "show_signature_help_after_edits": true,
-
-  // Wrap guides (vertical rulers) in the editor.
-  "show_wrap_guides": true,
-  "wrap_guides": [],
 
   /* -------------------------------------------------------- */
   /*                       Private Files                      */
@@ -136,30 +269,121 @@
   /* -------------------------------------------------------- */
   /*                           Calls                          */
   /* -------------------------------------------------------- */
+  // Source: https://zed.dev/docs/configuring-zed#calls
+  // Customize behavior when participating in a call.
   "calls": {
     "mute_on_join": false,
     "share_on_join": false
   },
 
   /* -------------------------------------------------------- */
-  /*                          Toolbar                         */
+  /*                      Window Titlebar                     */
   /* -------------------------------------------------------- */
-  "toolbar": {
-    "breadcrumbs": true,
-    "quick_actions": true,
-    "selections_menu": true
+  "title_bar": {
+    // Whether to show the branch icon beside branch switcher in the titlebar.
+    "show_branch_icon": false,
+    // Whether to show the branch name button in the titlebar.
+    "show_branch_name": true,
+    // Whether to show the project host and name in the titlebar.
+    "show_project_items": true,
+    // Whether to show onboarding banners in the titlebar.
+    "show_onboarding_banner": true,
+    // Whether to show user picture in the titlebar.
+    "show_user_picture": true,
+    // Whether to show the sign in button in the titlebar.
+    "show_sign_in": true
   },
 
   /* -------------------------------------------------------- */
-  /*                         Scrollbar                        */
+  /*                      Editor Toolbar                      */
   /* -------------------------------------------------------- */
+  // Source: https://zed.dev/docs/configuring-zed#editor-toolbar
+  // Whether or not to show various elements in the editor toolbar
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": true,
+    "selections_menu": true,
+    "agent_review": true,
+    "code_actions": false
+  },
+
+  /* -------------------------------------------------------- */
+  /*                     Editor Scrollbar                     */
+  /* -------------------------------------------------------- */
+  // Source: https://zed.dev/docs/configuring-zed#editor-scrollbar
   "scrollbar": {
-    "show": "auto", // "auto" (default), "system", "always", "never"
+    // Options: "auto" (default), "system", "always", "never"
+    "show": "auto",
     "cursors": true, // Show cursor positions.
     "git_diff": true, // Show git diff indicators.
     "search_results": true, // Show buffer search results.
     "selected_symbol": true, // Show selected symbol occurrences.
     "diagnostics": "all" // Show diagnostic indicators.
+  },
+
+  /* ------------------ Scrolling Behavior ------------------ */
+  // Whether the editor will scroll beyond the last line.
+  "scroll_beyond_last_line": "one_page",
+  // The number of lines to keep above/below the cursor when scrolling.
+  "vertical_scroll_margin": 3,
+  // Scroll sensitivity multiplier. This multiplier is applied
+  // to both the horizontal and vertical delta values while scrolling.
+  "scroll_sensitivity": 1.0,
+
+  /* -------------------------------------------------------- */
+  /*                      Editor Minimap                      */
+  /* -------------------------------------------------------- */
+  // Source: https://zed.dev/docs/configuring-zed#editor-minimap
+  // Settings related to the editor's minimap, which provides an
+  // overview of your document.
+  "minimap": {
+    // When to show the minimap in the editor.
+    // This setting can take three values:
+    // 1. Show the minimap if the editor's scrollbar is visible:
+    //    "auto"
+    // 2. Always show the minimap:
+    //    "always"
+    // 3. Never show the minimap:
+    //    "never" (default)
+    "show": "auto",
+    // Where to show the minimap in the editor.
+    // This setting can take two values:
+    // 1. Show the minimap on the focused editor only:
+    //    "active_editor" (default)
+    // 2. Show the minimap on all open editors:
+    //    "all_editors"
+    "display_in": "active_editor",
+    // When to show the minimap thumb.
+    // This setting can take two values:
+    // 1. Show the minimap thumb if the mouse is over the minimap:
+    //    "hover"
+    // 2. Always show the minimap thumb:
+    //    "always" (default)
+    "thumb": "always",
+    // How the minimap thumb border should look.
+    // This setting can take five values:
+    // 1. Display a border on all sides of the thumb:
+    //    "thumb_border": "full"
+    // 2. Display a border on all sides except the left side of the thumb:
+    //    "thumb_border": "left_open" (default)
+    // 3. Display a border on all sides except the right side of the thumb:
+    //    "thumb_border": "right_open"
+    // 4. Display a border only on the left side of the thumb:
+    //    "thumb_border": "left_only"
+    // 5. Display the thumb without any border:
+    //    "thumb_border": "none"
+    "thumb_border": "left_open",
+    // How to highlight the current line in the minimap.
+    // This setting can take the following values:
+    //
+    // 1. `null` to inherit the editor `current_line_highlight`
+    //    setting (default)
+    // 2. "line" or "all" to highlight the current line in the minimap.
+    // 3. "gutter" or "none" to not highlight the current line in the
+    //    minimap.
+    "current_line_highlight": null,
+    // Maximum number of columns to display in the minimap.
+    "max_width_columns": 80
   },
 
   // Enable middle-click paste on Linux.
@@ -183,19 +407,15 @@
   /* -------------------------------------------------------- */
   "indent_guides": {
     "enabled": true,
-    "line_width": 2, // Pixels, between 1 and 10.
-    "active_line_width": 3, // Pixels, between 1 and 10.
-    "coloring": "indent_aware", // "disabled", "fixed", "indent_aware"
-    "background_coloring": "disabled" // "disabled", "indent_aware"
+    // Pixels, between 1 and 10.
+    "line_width": 2,
+    // Pixels, between 1 and 10.
+    "active_line_width": 3,
+    // Options: "disabled", "fixed", "indent_aware"
+    "coloring": "indent_aware",
+    // "disabled", "indent_aware"
+    "background_coloring": "disabled"
   },
-
-  // Whether the editor will scroll beyond the last line.
-  "scroll_beyond_last_line": "one_page",
-  // The number of lines to keep above/below the cursor when scrolling.
-  "vertical_scroll_margin": 3,
-  // Scroll sensitivity multiplier. This multiplier is applied
-  // to both the horizontal and vertical delta values while scrolling.
-  "scroll_sensitivity": 1.0,
 
   /* -------------------------------------------------------- */
   /*                          Search                          */
@@ -223,6 +443,8 @@
   /* -------------------------------------------------------- */
   /*                        Inlay Hints                       */
   /* -------------------------------------------------------- */
+  // Source: https://zed.dev/docs/configuring-zed#inlay-hints
+  // Configuration for displaying extra text with hints in the editor.
   "inlay_hints": {
     "enabled": true,
     "show_type_hints": true,
@@ -241,41 +463,86 @@
   /* -------------------------------------------------------- */
 
   /* --------------------- Project Panel -------------------- */
+  // Source: https://zed.dev/docs/configuring-zed#project-panel
   "project_panel": {
     "button": true,
     "default_width": 240,
     "dock": "left",
-    "auto_fold_dirs": false,
     "folder_icons": true,
     "file_icons": true,
-    "git_status": true,
-    "auto_reveal_entries": true,
-    "scrollbar": {
-      "show": "auto" // "auto", "system", "always", "never"
-    },
+    // Options: "comfortable", "standard"
+    "entry_spacing": "comfortable",
     "indent_size": 20,
     "indent_guides": {
       "show": "always"
-    }
+    },
+    "git_status": true,
+    "hide_gitignore": false,
+    // Options: "all", "errors", "off"
+    "show_diagnostics": "errors",
+    "auto_reveal_entries": true,
+    "auto_fold_dirs": false,
+    "scrollbar": {
+      // Options: null (default), "auto", "system", "always", "never"
+      "show": null
+    },
+    // Whether to hide the root entry when only one folder is open
+    // in the window.
+    "hide_root": false
   },
 
   /* --------------------- Outline Panel -------------------- */
+  // Docs: https://zed.dev/docs/outline-panel
+  // Source: https://zed.dev/docs/configuring-zed#outline-panel
   "outline_panel": {
     "button": true,
     "default_width": 300,
     "dock": "left",
-    "auto_fold_dirs": true,
     "folder_icons": true,
     "file_icons": true,
     "git_status": true,
     "auto_reveal_entries": true,
+    "auto_fold_dirs": true,
     "indent_size": 20,
     "indent_guides": {
       "show": "always"
     }
   },
 
+  /* ----------------------- Git Panel ---------------------- */
+  // Docs: https://zed.dev/docs/git
+  // Source: https://zed.dev/docs/configuring-zed#git-panel
+  "git_panel": {
+    // Whether to show the git panel button in the status bar.
+    "button": true,
+    // Where to show the git panel. Can be 'left' or 'right'.
+    "dock": "left",
+    // Default width of the git panel.
+    "default_width": 360,
+    // Style of the git status indicator in the panel.
+    //
+    // Default: icon
+    "status_style": "icon",
+    // What branch name to use if init.defaultBranch
+    // is not set
+    //
+    // Default: main
+    "fallback_branch_name": "main",
+    // Whether to sort entries in the panel by path
+    // or by status (the default).
+    //
+    // Default: false
+    "sort_by_path": false,
+    "scrollbar": {
+      // When to show the scrollbar in the git panel.
+      //
+      // Default: inherits editor scrollbar settings
+      "show": null
+    }
+  },
+
   /* ------------------ Collaboration Panel ----------------- */
+  // Docs: https://zed.dev/docs/collaboration
   "collaboration_panel": {
     "button": true,
     "dock": "left",
@@ -303,17 +570,34 @@
 
   /* ---------------------- Agent Panel --------------------- */
   "agent": {
-    "version": "2",
+    "inline_assistant_model": {
+      "provider": "lmstudio",
+      "model": "qwen/qwen2.5-coder-14b"
+    },
+    "default_profile": "write",
     "enabled": true,
     "button": true,
     "dock": "right",
-    "default_width": 640,
-    "default_height": 320,
+    "default_width": 500,
+    "default_height": 350,
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "provider": "lmstudio",
+      "model": "deepseek/deepseek-r1-0528-qwen3-8b"
     }
+    // "inline_assistant_model": {
+    //   "provider": "lmstudio",
+    //   "model": "Qwen2.5-Coder-14B-Instruct"
+    // },
+    // "commit_message_model": {
+    //   "provider": "openai",
+    //   "model": "gpt-4o"
+    // },
+    // "thread_summary_model": {
+    //   "provider": "ollama",
+    //   "model": "qwen3:8b"
+    // }
   },
+  "agent_font_size": 16,
 
   /* -------------------------------------------------------- */
   /*                      Slash Commands                      */
@@ -338,6 +622,8 @@
   // For example, when editing opening <html> tag, the contents of the closing </html> tag will be edited as well.
   "linked_edits": true,
 
+  /* ----------------------- Autosave ----------------------- */
+  // Source: https://zed.dev/docs/configuring-zed#autosave
   // When to automatically save edited buffers.
   // "off", "on_window_change", "on_focus_change", { "after_delay": {"milliseconds": 500} },
   "autosave": "off",
@@ -392,8 +678,10 @@
     "metrics": true
   },
 
-  // Automatically update Zed. This setting may be ignored on Linux if
-  // installed through a package manager.
+  // Source: https://zed.dev/docs/configuring-zed#auto-update
+  // Whether or not to automatically check for updates. This
+  // setting may be ignored on Linux if installed through a
+  // package manager.
   "auto_update": true,
 
   // Diagnostics configuration.
@@ -417,6 +705,7 @@
   /* -------------------------------------------------------- */
   /*                        Git Gutter                        */
   /* -------------------------------------------------------- */
+  // Source: https://zed.dev/docs/configuring-zed#git
   "git": {
     "git_gutter": "tracked_files",
     "inline_blame": {
@@ -427,7 +716,12 @@
     }
   },
 
-  // Configuration for how direnv configuration should be loaded. May take 2 values:
+  /* -------------------------------------------------------- */
+  /*                    Direnv Integration                    */
+  /* -------------------------------------------------------- */
+  // Source: https://zed.dev/docs/configuring-zed#direnv-integration
+  // Configuration for how direnv configuration should be loaded.
+  // May take 2 values:
   // 1. Load direnv configuration using `direnv export json` directly.
   //    Use Case: You don't have shell hooks set up or use an unsupported shell
   //      "load_direnv": "direct"
@@ -466,7 +760,7 @@
     },
     "dock": "bottom", // `left`, `right`, `bottom`.
     "default_width": 640, // For side docking
-    "default_height": 320, // For bottom docking
+    "default_height": 250, // For bottom docking
     // What working directory to use when launching the terminal.
     // May take 4 values:
     // 1. Use the current file's project directory.  Will Fallback to the
@@ -514,7 +808,7 @@
     "line_height": "standard",
     "cursor_shape": "bar",
     "blinking": "terminal_controlled", // "on" to always blink the cursor
-    "font_size": 15, // Default to matching the buffer's font size
+    "font_size": 13.5, // Default to matching the buffer's font size
     "font_family": "JetBrainsMono Nerd Font", //"FiraCode Nerd Fonts"
     "font_fallbacks": ["FiraCode Nerd Fonts"]
     // Sets the maximum number of lines in the terminal's scrollback buffer.
@@ -528,25 +822,46 @@
   /*                          Tasks.                          */
   /* -------------------------------------------------------- */
   "tasks": {
-    "variables": {}
+    "enabled": true,
+    "variables": {},
+    // Use LSP tasks over Zed language extension ones.
+    // If no LSP tasks are returned due to error/timeout or regular execution,
+    // Zed language extension tasks will be used instead.
+    //
+    // Other Zed tasks will still be shown:
+    // * Zed task from either of the task config file
+    // * Zed task from history (e.g. one-off task was spawned before)
+    //
+    // Default: true
+    "prefer_lsp": true
   },
   "toolchain": { "name": "default", "path": "default" },
 
   /* -------------------------------------------------------- */
   /*                  File Type Associations                  */
   /* -------------------------------------------------------- */
+  // https://zed.dev/docs/configuring-zed#file-types
   "file_types": {
+    "Git Attributes": [".gitattributes"],
+    "Git Config": [".gitconfig", "**/git/config*", "**/git/**/config*"],
+    "Git Ignore": [
+      ".gitignore",
+      "**/git/.gitignore_global",
+      "**/git/**/.gitignore_global"
+    ],
     "JSON": ["flake.lock"],
     "JSONC": [
       "**/.zed/**/*.json",
       "**/zed/**/*.json",
       "**/Zed/**/*.json",
+      "**/.vscode/**/*.json",
       "tsconfig.json",
       "pyrightconfig.json",
       "cspell.json"
     ],
     "Plain Text": ["txt"],
     "Ruby": ["rb", "brewfile**"],
+    "Shell Script": [".env.*", "dot_bash**", "dot_zsh**"],
     "TOML": ["uv.lock", "pyproject.toml", ".editorconfig"]
   },
 
@@ -567,13 +882,52 @@
   "node": {},
 
   /* -------------------------------------------------------- */
+  /*                         Formatter                        */
+  /* -------------------------------------------------------- */
+  "format_on_save": "on",
+  // How to perform a buffer format. This setting can take 4 values:
+  //
+  // 1. Format code using the current language server:
+  //     "formatter": "language_server"
+  // 2. Format code using an external command:
+  //     "formatter": {
+  //       "external": {
+  //         "command": "prettier",
+  //         "arguments": ["--stdin-filepath", "{buffer_path}"]
+  //       }
+  //     }
+  // 3. Format code using Zed's Prettier integration:
+  //     "formatter": "prettier"
+  // 4. Default. Format files using Zed's Prettier integration (if applicable),
+  //    or falling back to formatting via language server:
+  //     "formatter": "auto"
+  "formatter": "auto",
+  // Zed's Prettier integration settings.
+  "prettier": {
+    // // Whether to consider prettier formatter or not when attempting to format a file.
+    // "allowed": false,
+    //
+    // // Use regular Prettier json configuration.
+    // // If Prettier is allowed, Zed will use this for its Prettier instance for any applicable file, if
+    // // the project has no other Prettier installed.
+    // "plugins": [],
+    //
+    // // Use regular Prettier json configuration.
+    // // If Prettier is allowed, Zed will use this for its Prettier instance for any applicable file, if
+    // // the project has no other Prettier installed.
+    // "trailingComma": "es5",
+    // "tabWidth": 4,
+    // "semi": false,
+    // "singleQuote": true
+  },
+
+  /* -------------------------------------------------------- */
   /*            Automatically Installed Extensions            */
   /* -------------------------------------------------------- */
+  // https://zed.dev/docs/configuring-zed#auto-install-extensions
   "auto_install_extensions": {
     // AsciiDoc: https://github.com/andreicek/zed-asciidoc
     "asciidoc": true,
-    // Base16 Theme: https://github.com/bswinnerton/base16-zed
-    "base16": true,
     // Bash: https://github.com/d1y/bash.zed
     "basher": true,
     // Basedpyright: https://github.com/m1guer/basedpyright-zed
@@ -620,8 +974,6 @@
     "nix": true,
     // Nushell: https://github.com/zed-extensions/nu
     "nu": true,
-    // Postgrs Context Server: https://github.com/rowillia/zed-postgres-context-server
-    "postgres-context-server": true,
     // Python Refactoring: https://github.com/rowillia/zed-python-refactoring
     "python-refactoring": true,
     // Python Requirements: https://github.com/rowillia/zed-python-requirements
@@ -649,63 +1001,6 @@
     // XML: https://github.com/sweetppro/zed-xml
     "xml": true
   },
-
-  /* -------------------------------------------------------- */
-  /*                         Formatter                        */
-  /* -------------------------------------------------------- */
-  "format_on_save": "on",
-  // How to perform a buffer format. This setting can take 4 values:
-  //
-  // 1. Format code using the current language server:
-  //     "formatter": "language_server"
-  // 2. Format code using an external command:
-  //     "formatter": {
-  //       "external": {
-  //         "command": "prettier",
-  //         "arguments": ["--stdin-filepath", "{buffer_path}"]
-  //       }
-  //     }
-  // 3. Format code using Zed's Prettier integration:
-  //     "formatter": "prettier"
-  // 4. Default. Format files using Zed's Prettier integration (if applicable),
-  //    or falling back to formatting via language server:
-  //     "formatter": "auto"
-  "formatter": "auto",
-  // Zed's Prettier integration settings.
-  "prettier": {
-    // // Whether to consider prettier formatter or not when attempting to format a file.
-    // "allowed": false,
-    //
-    // // Use regular Prettier json configuration.
-    // // If Prettier is allowed, Zed will use this for its Prettier instance for any applicable file, if
-    // // the project has no other Prettier installed.
-    // "plugins": [],
-    //
-    // // Use regular Prettier json configuration.
-    // // If Prettier is allowed, Zed will use this for its Prettier instance for any applicable file, if
-    // // the project has no other Prettier installed.
-    // "trailingComma": "es5",
-    // "tabWidth": 4,
-    // "semi": false,
-    // "singleQuote": true
-  },
-
-  // How to soft-wrap long lines of text.
-  // Possible values:
-  //
-  // 1. Prefer a single line generally, unless an overly long line is encountered.
-  //      "soft_wrap": "none",
-  //      "soft_wrap": "prefer_line", // (deprecated, same as "none")
-  // 2. Soft wrap lines that overflow the editor.
-  //      "soft_wrap": "editor_width",
-  // 3. Soft wrap lines at the preferred line length.
-  //      "soft_wrap": "preferred_line_length",
-  // 4. Soft wrap lines at the preferred line length or the editor width (whichever is smaller).
-  //      "soft_wrap": "bounded",
-  "soft_wrap": "editor_width",
-  "preferred_line_length": 80,
-  "hard_tabs": false,
-  "tab_size": 4,
 
   /* -------------------------------------------------------- */
   /*                     Language Settings                    */
@@ -821,7 +1116,7 @@
       }
     },
     "Python": {
-      "language_servers": ["basedpyright", "pylyzer", "ruff"], // pylsp, pyright
+      "language_servers": ["basedpyright", "pylyzer", "ruff"],
       "tab_size": 4,
       "format_on_save": "on",
       "formatter": [
@@ -1048,21 +1343,41 @@
   /* -------------------------------------------------------- */
   "language_models": {
     "anthropic": {
-      "version": "1",
       "api_url": "https://api.anthropic.com"
     },
     "google": {
       "api_url": "https://generativelanguage.googleapis.com"
     },
-    "ollama": {
-      "api_url": "http://localhost:11434",
-      "low_speed_timeout_in_seconds": 60
-    },
     "openai": {
-      "version": "1",
       "api_url": "https://api.openai.com/v1",
       "low_speed_timeout_in_seconds": 600
+    },
+    "ollama": {
+      "api_url": "http://localhost:11434",
+      "available_models": [
+        {
+          "name": "qwen3:8b",
+          "display_name": "Qwen3 8B",
+          "max_tokens": 40960,
+          "supports_tools": true,
+          "supports_thinking": true,
+          "supports_images": false
+        }
+      ]
     }
+    // "lmstudio": {
+    //   "api_url": "http://localhost:1234/v1",
+    //   "low_speed_timeout_in_seconds": 600
+    //   "available_models": [
+    //     {
+    //       "name": "Qwen2.5-Coder-14B-Instruct",
+    //       "display_name": "Qwen 2.5 Coder 14B",
+    //       "max_tokens": 128000,
+    //       "supports_tools": true,
+    //       "supports_thinking": true
+    //     }
+    //   ]
+    // }
   },
 
   "server_url": "https://zed.dev",

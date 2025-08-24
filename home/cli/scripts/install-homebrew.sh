@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/scripts/install-homebrew.sh
+# Filename: ~/.config/scripts/install-homebrew.sh
 # Description:
 # This script installs Homebrew and its required dependencies based on the OS.
 # - macOS: Ensures Xcode Command Line Tools are installed before Homebrew.

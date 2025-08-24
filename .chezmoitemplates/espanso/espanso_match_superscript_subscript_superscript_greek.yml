@@ -1,15 +1,15 @@
 #------------------------------------------------------------------------------
-# Filename: ~/dotfiles/espanso/match/superscript_subscript/superscript_greek.yml
+# Filename: ~/.config/espanso/match/superscript_subscript/superscript_greek.yml
 #
 # Docs: https://espanso.org/docs/
 #------------------------------------------------------------------------------
 ---
 matches:
-  - trigger: ":^alpha:"
-    replace: "ᵅ"
+    - trigger: ":^alpha:"
+      replace: "ᵅ"
 
-  - trigger: ":^beta:"
-    replace: "ᵝ"
+    - trigger: ":^beta:"
+      replace: "ᵝ"
 
-  - trigger: ":^gamma:"
-    replace: "ᵞ"
+    - trigger: ":^gamma:"
+      replace: "ᵞ"

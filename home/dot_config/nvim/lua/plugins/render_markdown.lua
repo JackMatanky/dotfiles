@@ -1,5 +1,5 @@
 -- --------------------------------------------------------------------
---  Filename: ~/dotfiles/nvim/lua/plugins/render_markdown.lua
+--  Filename: ~/.config/nvim/lua/plugins/render_markdown.lua
 --  LazyVim Docs: https://www.lazyvim.org/extras/lang/markdown#render-markdownnvim
 --  Render Markdown Docs: https://github.com/MeanderingProgrammer/render-markdown.nvim
 -- --------------------------------------------------------------------

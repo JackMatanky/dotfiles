@@ -1,5 +1,5 @@
 -- ----------------------------------------------------------------------------
---  Filename: ~/dotfiles/yazi/init.lua
+--  Filename: ~/.config/yazi/init.lua
 --  Yazi Docs: https://yazi-rs.github.io/docs/quick-start
 --  Yazi Github: https://github.com/sxyazi/yazi
 -- ----------------------------------------------------------------------------

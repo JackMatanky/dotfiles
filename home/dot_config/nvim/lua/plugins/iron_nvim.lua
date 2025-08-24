@@ -1,5 +1,5 @@
 -- --------------------------------------------------------------------
---  Filename: ~/dotfiles/nvim/lua/plugins/iron_nvim.lua
+--  Filename: ~/.config/nvim/lua/plugins/iron_nvim.lua
 --  iron.nvim Docs: https://github.com/Vigemus/iron.nvim
 -- --------------------------------------------------------------------
 

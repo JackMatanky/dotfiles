@@ -22,7 +22,7 @@ alias docs='cd ~/Documents'
 #                         Dotfiles                            #
 # ------------------------------------------------------------ #
 alias dot='cd ~/dotfiles'
-alias dot-nix='cd ~/dotfiles/nixos'
+alias dot-nix='cd ~/.config/nixos'
 
 # ------------------------------------------------------------ #
 #                      Obsidian Vault                         #

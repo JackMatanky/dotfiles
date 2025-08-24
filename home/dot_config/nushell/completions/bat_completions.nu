@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-#  Filename: ~/dotfiles/nushell/completions/bat_completions.nu
+#  Filename: ~/.config/nushell/completions/bat_completions.nu
 #
 #  Source: https://github.com/nushell/nu_scripts/blob/main/custom-completions/bat/bat-completions.nu
 # -----------------------------------------------------------------------------

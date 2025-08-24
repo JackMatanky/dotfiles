@@ -1,5 +1,5 @@
 -- --------------------------------------------------------------------
---  Filename: ~/dotfiles/nvim/lua/plugins/bufferline.lua
+--  Filename: ~/.config/nvim/lua/plugins/bufferline.lua
 --  LazyVim Docs: https://www.lazyvim.org/plugins/ui#lualinenvim
 --  Lualine Docs: https://github.com/nvim-lualine/lualine.nvim
 --  Description: A blazing fast and easy to configure Neovim statusline

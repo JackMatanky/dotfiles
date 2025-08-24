@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/cli/git/shrink_repo.sh
+# Filename: ~/.config/cli/git/shrink_repo.sh
 # Description: Interactively reduce Git repository size by removing selected
 #              files and paths from history using git-filter-repo.
 #              Includes optional backup and force-push prompts.

@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/nushell/aliases/git_aliases.nu
+# Filename: ~/.config/nushell/aliases/git_aliases.nu
 # Source: https://github.com/nushell/nu_scripts/blob/main/aliases/git/git-aliases.nu
 # -----------------------------------------------------------------------------
 # Lazygit

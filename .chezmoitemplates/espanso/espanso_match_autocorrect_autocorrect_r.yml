@@ -1,8 +1,12 @@
-# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
+#  Filename: ~/.config/espanso/match/autocorrect/autocorrect_r.yml
+#  Docs: https://espanso.org/docs/
+#  Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
 matches:
-    # ---------
-    # --- R ---
-    # ----------
+    # -------------------------------------------------------- #
+    #                            RA                            #
+    # -------------------------------------------------------- #
     - trigger: rabinnical
       replace: rabbinical
       propagate_case: true
@@ -27,6 +31,9 @@ matches:
       replace: rarefied
       propagate_case: true
       word: true
+    # -------------------------------------------------------- #
+    #                            RE                            #
+    # -------------------------------------------------------- #
     - trigger: reaccurring
       replace: recurring
       propagate_case: true
@@ -85,34 +92,6 @@ matches:
       word: true
     - trigger: reacll
       replace: recall
-      propagate_case: true
-      word: true
-    - trigger: reccomend
-      replace: recommend
-      propagate_case: true
-      word: true
-    - trigger: reccomendations
-      replace: recommendations
-      propagate_case: true
-      word: true
-    - trigger: reccomended
-      replace: recommended
-      propagate_case: true
-      word: true
-    - trigger: reccomending
-      replace: recommending
-      propagate_case: true
-      word: true
-    - trigger: reccommend
-      replace: recommend
-      propagate_case: true
-      word: true
-    - trigger: reccommended
-      replace: recommended
-      propagate_case: true
-      word: true
-    - trigger: reccommending
-      replace: recommending
       propagate_case: true
       word: true
     - trigger: reccuring
@@ -247,7 +226,31 @@ matches:
       replace: recommend
       propagate_case: true
       word: true
+    - trigger: reccomend
+      replace: recommend
+      propagate_case: true
+      word: true
+    - trigger: reccommend
+      replace: recommend
+      propagate_case: true
+      word: true
+    - trigger: recomends
+      replace: recommends
+      propagate_case: true
+      word: true
+    - trigger: recomends
+      replace: recommends
+      propagate_case: true
+      word: true
     - trigger: recomended
+      replace: recommended
+      propagate_case: true
+      word: true
+    - trigger: reccomended
+      replace: recommended
+      propagate_case: true
+      word: true
+    - trigger: reccommended
       replace: recommended
       propagate_case: true
       word: true
@@ -255,8 +258,40 @@ matches:
       replace: recommending
       propagate_case: true
       word: true
-    - trigger: recomends
-      replace: recommends
+    - trigger: reccomending
+      replace: recommending
+      propagate_case: true
+      word: true
+    - trigger: reccommending
+      replace: recommending
+      propagate_case: true
+      word: true
+    - trigger: recomendation
+      replace: recommendation
+      propagate_case: true
+      word: true
+    - trigger: reccomendation
+      replace: recommendation
+      propagate_case: true
+      word: true
+    - trigger: recomedation
+      replace: recommendation
+      propagate_case: true
+      word: true
+    - trigger: recommedation
+      replace: recommendation
+      propagate_case: true
+      word: true
+    - trigger: recomendations
+      replace: recommendations
+      propagate_case: true
+      word: true
+    - trigger: reccomendations
+      replace: recommendations
+      propagate_case: true
+      word: true
+    - trigger: recomedations
+      replace: recommendations
       propagate_case: true
       word: true
     - trigger: recommedations
@@ -267,16 +302,16 @@ matches:
       replace: recompense
       propagate_case: true
       word: true
-    - trigger: reconaissance
-      replace: reconnaissance
-      propagate_case: true
-      word: true
     - trigger: reconcilation
       replace: reconciliation
       propagate_case: true
       word: true
     - trigger: reconized
       replace: recognized
+      propagate_case: true
+      word: true
+    - trigger: reconaissance
+      replace: reconnaissance
       propagate_case: true
       word: true
     - trigger: reconnaisance
@@ -1047,6 +1082,9 @@ matches:
       replace: references
       propagate_case: true
       word: true
+    # -------------------------------------------------------- #
+    #                            RH                            #
+    # -------------------------------------------------------- #
     - trigger: rhymme
       replace: rhyme
       propagate_case: true
@@ -1063,6 +1101,9 @@ matches:
       replace: rhythmic
       propagate_case: true
       word: true
+    # -------------------------------------------------------- #
+    #                            RI                            #
+    # -------------------------------------------------------- #
     - trigger: rigeur
       replace: "rigueur\x2C\x20rigour\x2C\x20rigor"
       propagate_case: true
@@ -1079,6 +1120,9 @@ matches:
       replace: "raised\x2C\x20rose"
       propagate_case: true
       word: true
+    # -------------------------------------------------------- #
+    #                            RO                            #
+    # -------------------------------------------------------- #
     - trigger: Rockerfeller
       replace: Rockefeller
       propagate_case: true
@@ -1103,6 +1147,9 @@ matches:
       replace: recuperate
       propagate_case: true
       word: true
+    # -------------------------------------------------------- #
+    #                            RU                            #
+    # -------------------------------------------------------- #
     - trigger: rudimentatry
       replace: rudimentary
       propagate_case: true

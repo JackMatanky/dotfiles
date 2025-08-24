@@ -1,5 +1,5 @@
 -- ----------------------------------------------------------------------------
---  Filename: ~/dotfiles/nvim/lua/config/utils/comment_divider.lua
+--  Filename: ~/.config/nvim/lua/config/utils/comment_divider.lua
 --  Description: Enhanced comment-divider.nvim utilities.
 --               Uses current line (comment-stripped and title-cased) to
 --               auto-fill and execute divider titles using Lua API.

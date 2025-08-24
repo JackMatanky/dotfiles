@@ -1,5 +1,5 @@
 -- -----------------------------------------------------------------------------
---  Filename: ~/dotfiles/nvim/lua/config/utils/comment_divider.lua
+--  Filename: ~/.config/nvim/lua/config/utils/comment_divider.lua
 --  Description: Custom divider insertion logic for visual/normal modes.
 --               Includes centered title generation, dynamic comment symbols,
 --               and title casing with unicode-aware centering and spacing.

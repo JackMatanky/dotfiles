@@ -1,8 +1,12 @@
-# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
+#  Filename: ~/.config/espanso/match/autocorrect/autocorrect_f.yml
+#  Docs: https://espanso.org/docs/
+#  Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
 matches:
-    # ---------
-    # --- F ---
-    # ----------
+    # -------------------------------------------------------- #
+    #                            FA                            #
+    # -------------------------------------------------------- #
     - trigger: faciliate
       replace: facilitate
       propagate_case: true

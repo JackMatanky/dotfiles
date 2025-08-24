@@ -1,5 +1,5 @@
 -- --------------------------------------------------------------------
---  Filename: ~/dotfiles/nvim/lua/plugins/multicursors.lua
+--  Filename: ~/.config/nvim/lua/plugins/multicursors.lua
 --  multicursors.nvim Docs: https://github.com/jake-stewart/multicursor.nvim
 --  Description: The Multicursor Plugin for Neovim extends the native Neovim
 --               text editing capabilities, providing a more intuitive

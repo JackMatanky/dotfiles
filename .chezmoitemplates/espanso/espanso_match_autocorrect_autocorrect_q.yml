@@ -1,8 +1,12 @@
-# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
+#  Filename: ~/.config/espanso/match/autocorrect/autocorrect_q.yml
+#  Docs: https://espanso.org/docs/
+#  Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
 matches:
-    # ---------
-    # --- Q ---
-    # ----------
+    # -------------------------------------------------------- #
+    #                            QU                            #
+    # -------------------------------------------------------- #
     - trigger: qtuie
       replace: "quite\x2C\x20quiet"
       propagate_case: true

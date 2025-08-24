@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/zed/scripts/comment-divider.sh
+# Filename: ~/.config/zed/scripts/comment-divider.sh
 # Description: Generate language-aware comment dividers for main/sub headers,
 #              copy result to clipboard based on OS.
 # Usage: ./divider.sh --file filename.py --title "My Header" --type main

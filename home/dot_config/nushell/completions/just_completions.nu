@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-#  Filename: ~/dotfiles/nushell/completions/just_completions.nu
+#  Filename: ~/.config/nushell/completions/just_completions.nu
 #
 #  Source: https://github.com/nushell/nu_scripts/blob/main/custom-completions/just/just-completions.nu
 # -----------------------------------------------------------------------------

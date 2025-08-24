@@ -1,5 +1,5 @@
 -- ----------------------------------------------------------------------------
---  Filename: ~/dotfiles/nvim/lua/plugins/comment_divider.lua
+--  Filename: ~/.config/nvim/lua/plugins/comment_divider.lua
 --  Comment Divider: https://github.com/fangjunzhou/comment-divider.nvim
 --  Description: Plugin config with visual mode aware wrappers
 -- ----------------------------------------------------------------------------
@@ -21,6 +21,11 @@ return {
       lineEnd = "*/",
     },
     languageConfig = {
+      bash = {
+        lineStart = "#",
+        lineSeperator = "-",
+        lineEnd = "#",
+      },
       Brewfile = {
         lineStart = "#",
         lineSeperator = "-",
@@ -62,6 +67,11 @@ return {
         lineEnd = "#",
       },
       toml = {
+        lineStart = "#",
+        lineSeperator = "-",
+        lineEnd = "#",
+      },
+      sh = {
         lineStart = "#",
         lineSeperator = "-",
         lineEnd = "#",

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/themes/colorschemes/catppuccin-latte.sh
+# Filename: ~/.config/themes/colorschemes/catppuccin-latte.sh
 # Catppuccin Palette: https://catppuccin.com/palette
 # Description: Full Catppuccin Latte palette with semantic aliases and
 #              ANSI color mappings

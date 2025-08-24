@@ -1,7 +1,7 @@
 # shellcheck shell=bash
 
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/cli/lib/log.sh
+# Filename: ~/.config/cli/lib/log.sh
 # Function: log_info, log_warn, log_error
 # Usage: log_info "Message", log_warn "Warning", log_error "Failure
 # Description: Color-aware logging utilities for Bash/Zsh.

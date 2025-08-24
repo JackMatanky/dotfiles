@@ -1,8 +1,12 @@
-# Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
+#  Filename: ~/.config/espanso/match/autocorrect/autocorrect_o.yml
+#  Docs: https://espanso.org/docs/
+#  Source for commonly misspelled words: https://listed.to/p/nWcfB31ZTD
+# -----------------------------------------------------------------------------
 matches:
-    # ---------
-    # --- O ---
-    # ----------
+    # -------------------------------------------------------- #
+    #                            OB                            #
+    # -------------------------------------------------------- #
     - trigger: obediance
       replace: obedience
       propagate_case: true

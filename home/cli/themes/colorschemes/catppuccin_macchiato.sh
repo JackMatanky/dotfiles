@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/themes/colorschemes/catppuccin-macchiato.sh
+# Filename: ~/.config/themes/colorschemes/catppuccin-macchiato.sh
 # Catppuccin Palette: https://catppuccin.com/palette
 # Description: Full Catppuccin Macchiato palette with semantic aliases and
 #              ANSI color mappings

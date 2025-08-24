@@ -1,7 +1,7 @@
 # shellcheck shell=bash
 
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/cli/cmd/ocr_aliases.sh
+# Filename: ~/.config/cli/cmd/ocr_aliases.sh
 # Description: Aliases for OCR-related tasks
 # -----------------------------------------------------------------------------
 

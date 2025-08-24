@@ -26,7 +26,7 @@ Instead of symlinking this file (which is unsafe), we export/import it using mac
 To capture your current Terminal configuration:
 
 ```sh
-defaults export com.apple.Terminal ~/dotfiles/terminal/com.apple.Terminal.plist
+defaults export com.apple.Terminal ~/.config/terminal/com.apple.Terminal.plist
 ```
 
 This saves all Terminal settings to your dotfiles.
@@ -36,7 +36,7 @@ This saves all Terminal settings to your dotfiles.
 To import the settings from your dotfiles:
 
 ```sh
-cd ~/dotfiles/terminal
+cd ~/.config/terminal
 ./apply.sh
 ```
 
@@ -72,7 +72,7 @@ To make a profile default:
 Add this to your dotfiles bootstrap routine:
 
 ```sh
-~/dotfiles/terminal/apply_terminal_settings.sh
+~/.config/terminal/apply_terminal_settings.sh
 ```
 
 Or wrap it into a general `macos_bootstrap.sh` if you manage multiple app settings.
@@ -82,11 +82,11 @@ Or wrap it into a general `macos_bootstrap.sh` if you manage multiple app settin
 Before you can run the `apply.sh` script, make sure it’s executable:
 
 ```sh
-chmod +x ~/dotfiles/terminal/apply_terminal_settings.sh
+chmod +x ~/.config/terminal/apply_terminal_settings.sh
 ```
 
 You can then run it with:
 
 ```sh
-~/dotfiles/terminal/apply_terminal_settings.sh
+~/.config/terminal/apply_terminal_settings.sh
 ```

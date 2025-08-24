@@ -1,6 +1,6 @@
 # shellcheck shell=bash
 # -----------------------------------------------------------------------------
-# Filename: ~/dotfiles/bash/.bash_profile
+# Filename: ~/.bash_profile
 # Description: Bash login shell configuration for macOS.
 #              Sources .bashrc, initializes SSH agent via keychain,
 #              and exports SSH_AUTH_SOCK to GUI apps.
