@@ -14,16 +14,16 @@ alias tmx-src='tmux source-file "$HOME/.config/tmux/tmux.conf"'
 # Main tmux function - session manager using multiplexer utils
 tmx() {
     local session_info name dirpath
-    
+
     # Get session name and directory from helper
     session_info="$(__get_session_info "${1:-~/}")"
     name="${session_info%|*}"
     dirpath="${session_info#*|}"
-    
+
     # Start or attach to tmux session - inlined __tmux_session functionality
     # Change to target directory
     cd "$dirpath" || return 1
-    
+
     # Attach to existing session or create new one
     if tmux list-sessions 2>/dev/null | grep -xq "$name"; then
         tmux attach-session -t "$name"
@@ -33,7 +33,7 @@ tmx() {
 }
 
 # Interactive tmux session selection with fzf
-f-tmx() {
+f_tmx() {
     if [[ $# -eq 1 ]]; then
         # If session name provided, attach or create it
         tmux new-session -A -s "$1"
@@ -41,7 +41,7 @@ f-tmx() {
         # Interactive session selection
         local session
         session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --prompt="Select tmux session: " --height=~50% --layout=reverse --border)
-        
+
         if [[ -n "$session" ]]; then
             tmux attach-session -t "$session"
         else
@@ -58,22 +58,22 @@ f-tmx() {
 # Main zellij function - session manager using multiplexer utils
 zj() {
     local session_info name dirpath
-    
+
     # Get session name and directory from helper
     session_info="$(__get_session_info "${1:-~/}")"
     name="${session_info%|*}"
     dirpath="${session_info#*|}"
-    
+
     # Start or attach to zellij session - inlined __zellij_session functionality
     # Change to target directory
     cd "$dirpath" || return 1
-    
+
     # Start zellij (it handles session management automatically)
     zellij attach "$name" 2>/dev/null || zellij --session "$name"
 }
 
 # Interactive zellij session selection with fzf
-f-zj() {
+f_zj() {
     if [[ $# -eq 1 ]]; then
         # If session name provided, attach or create it
         zellij attach "$1" 2>/dev/null || zellij -s "$1"
@@ -81,7 +81,7 @@ f-zj() {
         # Interactive session selection using fzf
         local session
         session=$(zellij list-sessions --no-formatting 2>/dev/null | awk '{print $1}' | fzf --prompt="Select zellij session: " --height=~50% --layout=reverse --border)
-        
+
         if [[ -n "$session" ]]; then
             zellij attach "$session"
         else
@@ -97,27 +97,27 @@ zj_dot() {
     session_info="$(__get_session_info "dot")"
     name="${session_info%|*}"
     dirpath="${session_info#*|}"
-    
+
     # Start or attach to zellij session - inlined __zellij_session functionality
     # Change to target directory
     cd "$dirpath" || return 1
-    
+
     # Start zellij (it handles session management automatically)
     zellij attach "$name" 2>/dev/null || zellij --session "$name"
 }
 alias zj-dot='zj_dot'
 
-# Obsidian vault session  
+# Obsidian vault session
 zj_obsidian() {
     local session_info name dirpath
     session_info="$(__get_session_info "obsidian")"
     name="${session_info%|*}"
     dirpath="${session_info#*|}"
-    
+
     # Start or attach to zellij session - inlined __zellij_session functionality
     # Change to target directory
     cd "$dirpath" || return 1
-    
+
     # Start zellij (it handles session management automatically)
     zellij attach "$name" 2>/dev/null || zellij --session "$name"
 }

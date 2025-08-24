@@ -32,33 +32,32 @@ alias gapa='git add --patch'
 alias gau='git add --update'
 
 # -------------------------- Commit -------------------------- #
+# Allow direct use as: gc "message"
 alias gc='git commit --message'
 
-# Commit with a message.
-#
-# Usage:
-#   gcm "Your commit message"
+#######################################
+# Commit with a message (quoted).
+# Arguments:
+#   $1: Commit message (quoted).
+# Returns:
+#   0 on success; non-zero on error.
+#######################################
 gcm() {
-    local msg="${1:-}"
-    # Ensure a commit message was provided
-    if [ -z "$msg" ]; then
-        echo "Usage: gcm <message>" >&2
-        return 1
-    fi
+    local msg
+    msg="$(__git_require_message gcm "$1")" || return 1
     git commit --message "$msg"
 }
 
-# Commit all staged and unstaged changes with a message.
-#
-# Usage:
-#   gcam "Your commit message"
+#######################################
+# Commit all staged and unstaged changes with a message (quoted).
+# Arguments:
+#   $1: Commit message (quoted).
+# Returns:
+#   0 on success; non-zero on error.
+#######################################
 gcam() {
-    local msg="${1:-}"
-    # Ensure a commit message was provided
-    if [ -z "$msg" ]; then
-        echo "Usage: gcam <message>" >&2
-        return 1
-    fi
+    local msg
+    msg="$(__git_require_message gcam "$1")" || return 1
     git commit --all --message "$msg"
 }
 
@@ -67,18 +66,24 @@ alias gps='git push'
 alias gpso='git push origin'
 alias gpsod='git push origin --delete'
 
-# Delete remote branch for current branch.
-#
-# Usage:
-#   gpsodc
+#######################################
+# Delete remote branch corresponding to the current local branch.
+# Arguments:
+#   None
+# Returns:
+#   0 on success; non-zero on error.
+#######################################
 gpsodc() {
     git push origin --delete "$(__git_current_branch)"
 }
 
+#######################################
 # Push current branch and set upstream to origin.
-#
-# Usage:
-#   gpsup
+# Arguments:
+#   None
+# Returns:
+#   0 on success; non-zero on error.
+#######################################
 gpsup() {
     git push --set-upstream origin "$(__git_current_branch)"
 }
@@ -87,10 +92,13 @@ gpsup() {
 alias gpl='git pull'
 alias gplo='git pull origin'
 
-# Pull from upstream remote default branch.
-#
-# Usage:
-#   gplup
+#######################################
+# Pull from 'upstream' remote's default branch.
+# Arguments:
+#   None
+# Returns:
+#   0 on success; non-zero on error.
+#######################################
 gplup() {
     git pull upstream "$(__git_main_branch)"
 }
@@ -117,15 +125,17 @@ alias gswc='git switch --create'
 
 # ------------- Interactive Branch Switch/Create ------------- #
 
-# Prompt the user to select or enter a branch name using fzf, then switch
-# to the selected branch or create it if it does not exist.
-#
-# Usage:
-#   gbs
-#
+#######################################
+# Select or enter a branch using fzf, then switch to the selected branch or
+# create it if it does not exist.
+# Arguments:
+#   None
 # Output:
 #   Switches to the selected branch or creates it if it doesn't exist.
 #   Displays an error message if no branch is selected or entered.
+# Returns:
+#   0 on success; non-zero if no selection or on Git errors.
+#######################################
 gbs() {
     local branch
     branch=$(__git_select_branch)
@@ -163,10 +173,13 @@ alias gconf='git config --list'
 
 # --------------------- Remove .DS_Store --------------------- #
 
+#######################################
 # Remove cached .DS_Store files and commit the removal.
-#
-# Usage:
-#   grmds
+# Arguments:
+#   None
+# Returns:
+#   0 on success; non-zero on error.
+#######################################
 grmds() {
     git rm --cached '*.DS_Store'
     git commit --all --message 'Remove .DS_Store files'
