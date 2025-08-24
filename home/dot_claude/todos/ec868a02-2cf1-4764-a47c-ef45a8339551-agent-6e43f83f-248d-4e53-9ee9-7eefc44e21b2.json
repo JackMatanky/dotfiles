@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Search for all legacy import paths that need updating (catalogs.data → coordination.data_registry)",
+    "status": "completed",
+    "id": "refactor-1"
+  },
+  {
+    "content": "Update catalogs/__init__.py to import from coordination instead of data.py",
+    "status": "completed",
+    "id": "refactor-2"
+  },
+  {
+    "content": "Search and update all test files with legacy import paths",
+    "status": "completed",
+    "id": "refactor-3"
+  },
+  {
+    "content": "Update conftest.py files with legacy imports",
+    "status": "completed",
+    "id": "refactor-4"
+  },
+  {
+    "content": "Run basic import validation to ensure no immediate issues",
+    "status": "in_progress",
+    "id": "refactor-5"
+  },
+  {
+    "content": "Record import update results in status report",
+    "status": "pending",
+    "id": "refactor-6"
+  }
+]

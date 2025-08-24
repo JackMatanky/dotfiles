@@ -1,0 +1,14 @@
+[
+  {
+    "content": "Run comprehensive unit tests for ingestor and coordination packages",
+    "status": "in_progress"
+  },
+  {
+    "content": "Verify all tests pass with new coordinator integration",
+    "status": "pending"
+  },
+  {
+    "content": "Check for any remaining test failures or issues",
+    "status": "pending"
+  }
+]

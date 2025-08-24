@@ -1,0 +1,27 @@
+[
+  {
+    "content": "Update search adapters to inherit from BaseSearchAdapter",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Improve fuzzy search with vectorized filtering",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Update lookup adapters to inherit from BaseLookupAdapter",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Add hierarchy-based parent FK logic to lookup adapters",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Test and verify all adapters work correctly",
+    "status": "completed",
+    "id": "5"
+  }
+]

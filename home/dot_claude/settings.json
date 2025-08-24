@@ -1,0 +1,31 @@
+{
+  "cleanupPeriodDays": 30,
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "allow": [
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git add:*)",
+      "Bash(git log:*)",
+      "Bash(ls:*)",
+      "Bash(eza:*)",
+      "Bash(rg:*)",
+      "Bash(grep:*)",
+      "Bash(fd:*)",
+      "Bash(bat:*)",
+      "Bash(pwd)",
+      "Bash(pre-commit run:*)",
+      "Bash(ruff check:*)",
+      "Bash(ruff format:*)",
+      "Bash(pytest)"
+    ],
+    "ask": ["Bash(rm *)", "Bash(git commit:*)"],
+    "deny": ["Bash(sudo)", "Read(./secrets/**)"]
+  },
+  "env": {
+    "DISABLE_AUTOUPDATER": "1",
+    "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "1",
+    "DISABLE_TELEMETRY": "1",
+    "USE_BUILTIN_RIPGREP": "0"
+  }
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "content": "Analyze existing FileIngestorPort interface and architecture",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Examine geo_entity_registry structure and GeoEntityMetadata",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Review LogicalTable structure for metadata extraction",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Design RegistryAwareIngestorDecorator class implementing Decorator pattern",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Implement decorator with auto-registration and metadata extraction",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Add comprehensive error handling and logging",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Validate type checking with BasedPyright and code formatting",
+    "status": "completed",
+    "id": "7"
+  }
+]

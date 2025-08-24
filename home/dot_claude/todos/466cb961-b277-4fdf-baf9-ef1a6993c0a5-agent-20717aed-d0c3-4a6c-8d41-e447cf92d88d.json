@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Analyze the RegistryAwareIngestorDecorator implementation and dependencies",
+    "status": "completed",
+    "id": "analyze_implementation"
+  },
+  {
+    "content": "Create test_decorators_core.py for core decorator behavior and interface compliance",
+    "status": "completed",
+    "id": "create_test_core"
+  },
+  {
+    "content": "Create test_decorators_registry.py for registry integration and auto-registration logic",
+    "status": "completed",
+    "id": "create_test_registry"
+  },
+  {
+    "content": "Create test_decorators_error_handling.py for error scenarios and edge cases",
+    "status": "completed",
+    "id": "create_test_error_handling"
+  },
+  {
+    "content": "Create test_decorators_metadata.py for metadata extraction and entity type support",
+    "status": "completed",
+    "id": "create_test_metadata"
+  },
+  {
+    "content": "Run all tests with type checking, linting, and coverage validation",
+    "status": "in_progress",
+    "id": "validate_tests"
+  }
+]

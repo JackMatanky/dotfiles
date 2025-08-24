@@ -1,0 +1,42 @@
+[
+  {
+    "content": "Create test_file_type.py with FileType-specific tests (TestFileType class + related fixtures)",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Create test_table_type.py with TableType-specific tests (TestTableType class)",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Create test_scale_level.py with ScaleLevel-specific tests (TestScaleLevel class)",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Create test_context_key.py with ContextKey-specific tests (TestContextKey class)",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Create test_base_label.py with LabeledEnum base class tests (TestLabeledEnum class + SampleEnum)",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Create test_data_publisher.py with DataPublisher-specific tests (from parameterized tests)",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Remove consolidated test classes from original file while preserving shared fixtures",
+    "status": "completed",
+    "id": "7"
+  },
+  {
+    "content": "Run tests to validate functionality preservation after split",
+    "status": "completed",
+    "id": "8"
+  }
+]

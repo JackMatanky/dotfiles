@@ -1,0 +1,27 @@
+[
+  {
+    "content": "Analyze current architecture dependencies and identify circular dependency risks",
+    "status": "completed",
+    "id": "architecture_analysis"
+  },
+  {
+    "content": "Design DataCoordinator interface and dependency pattern to avoid circular dependencies",
+    "status": "completed",
+    "id": "datacoordinator_design"
+  },
+  {
+    "content": "Plan DI container configuration changes for DataCoordinator integration",
+    "status": "in_progress",
+    "id": "di_integration"
+  },
+  {
+    "content": "Plan query adapter refactoring to use DataCoordinator instead of hardcoded paths",
+    "status": "pending",
+    "id": "query_adapter_refactoring"
+  },
+  {
+    "content": "Document architectural risks and mitigation strategies",
+    "status": "pending",
+    "id": "risk_assessment"
+  }
+]

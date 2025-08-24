@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Refactor remaining adapters (Arrow and DuckDB lookup/search)",
+    "status": "in_progress",
+    "id": "1"
+  },
+  {
+    "content": "Reinstate logging throughout query package using platform/logs",
+    "status": "in_progress",
+    "id": "2"
+  },
+  {
+    "content": "Remove unnecessary to_arrow/to_pandas methods from DuckDB ops",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Optimize vectorized operations and eliminate unnecessary loops",
+    "status": "pending",
+    "id": "4"
+  },
+  {
+    "content": "Simplify complex methods by creating modular helper methods",
+    "status": "in_progress",
+    "id": "5"
+  },
+  {
+    "content": "Rename original adapters to backup files",
+    "status": "completed",
+    "id": "6"
+  }
+]

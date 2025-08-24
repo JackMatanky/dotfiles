@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Update property-based tests with executor health check suppression",
+    "status": "pending",
+    "id": "regression-fix-1"
+  },
+  {
+    "content": "Implement performance regression detection framework",
+    "status": "pending",
+    "id": "regression-fix-2"
+  },
+  {
+    "content": "Optimize test discovery performance",
+    "status": "pending",
+    "id": "regression-fix-3"
+  },
+  {
+    "content": "Create granular test markers",
+    "status": "pending",
+    "id": "regression-fix-4"
+  }
+]

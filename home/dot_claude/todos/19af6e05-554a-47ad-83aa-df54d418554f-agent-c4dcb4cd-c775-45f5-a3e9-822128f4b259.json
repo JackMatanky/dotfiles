@@ -1,0 +1,42 @@
+[
+  {
+    "content": "Complete module inventory and directory structure analysis of src/geo_data/core/",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Analyze public interfaces for all enums modules (8 modules)",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Analyze public interfaces for all ports modules (7 modules)",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Analyze public interfaces for shared_entities modules (2 modules)",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Validate core layer purity - check external dependencies",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Classify modules by complexity (Simple/Moderate/Complex)",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Document design patterns and architectural decisions",
+    "status": "completed",
+    "id": "7"
+  },
+  {
+    "content": "Generate comprehensive analysis report with findings",
+    "status": "completed",
+    "id": "8"
+  }
+]
