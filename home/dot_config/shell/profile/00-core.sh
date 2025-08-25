@@ -40,7 +40,7 @@ export GIT_CONFIG_GLOBAL="${XDG_CONFIG_HOME}/git/config"
 # ---------------- Cargo: Rust Package Manager --------------- #
 # Add Cargo bin to PATH safely (single directory argument).
 # Docs: https://doc.rust-lang.org/cargo/
-[[ -d "${HOME}/.cargo/bin" ]] && path_prepend "${HOME}/.cargo/bin"
+[[ -d "${HOME}/.cargo/bin" ]] && __path_prepend "${HOME}/.cargo/bin"
 
 # ------------------------------------------------------------ #
 #                   Tool Configuration Paths                   #

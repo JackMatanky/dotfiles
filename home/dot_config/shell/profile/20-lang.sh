@@ -17,7 +17,7 @@ export PYENV_ROOT="${PYENV_ROOT:-$HOME/.pyenv}"
 
 # Add pyenv bin directory if it exists
 PYENV_BIN="${PYENV_ROOT}/bin"
-[[ -d "${PYENV_BIN}" ]] && path_prepend "${PYENV_BIN}"
+[[ -d "${PYENV_BIN}" ]] && __path_prepend "${PYENV_BIN}"
 
 # Detect once whether pyenv and pyenv-virtualenv are available
 HAS_PYENV="$(command -v pyenv || true)"
@@ -53,7 +53,7 @@ fi
 if [[ -n "${JAVA_HOME_CANDIDATE}" ]]; then
   export JAVA_HOME="${JAVA_HOME_CANDIDATE}"
   JAVA_BIN="${JAVA_HOME}/bin"
-  [[ -d "${JAVA_BIN}" ]] && path_prepend "${JAVA_BIN}"
+  [[ -d "${JAVA_BIN}" ]] && __path_prepend "${JAVA_BIN}"
 fi
 
 # --------------------------- Ruby --------------------------- #
@@ -67,8 +67,8 @@ if [[ "$OS" == "Darwin" && -n "${BREW_OPT_DIR:-}" ]]; then
     RUBY_GEMS_BIN="${BREW_LIB_DIR:-${HOMEBREW}/lib}/ruby/gems/${RUBY_VERSION}/bin"
 
     # Prepend gems bin and Ruby bin to PATH
-    [[ -d "${RUBY_GEMS_BIN}" ]] && path_prepend "${RUBY_GEMS_BIN}"
-    path_prepend "${HOMEBREW_RUBY_BIN}"
+    [[ -d "${RUBY_GEMS_BIN}" ]] && __path_prepend "${RUBY_GEMS_BIN}"
+    __path_prepend "${HOMEBREW_RUBY_BIN}"
   fi
 fi
 

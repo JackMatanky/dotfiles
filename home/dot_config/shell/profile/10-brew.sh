@@ -38,26 +38,26 @@ export HOMEBREW
 [[ -n "${BREW_LIB_DIR:-}" ]] && export LDFLAGS="-L${BREW_LIB_DIR} ${LDFLAGS:-}"
 
 # ------------- Path Configuration (OS-Specific) ------------- #
-[[ -n "${BREW_BIN_DIR:-}" && -d "${BREW_BIN_DIR}" ]] && path_prepend "${BREW_BIN_DIR}"
-[[ -n "${BREW_SBIN_DIR:-}" && -d "${BREW_SBIN_DIR}" ]] && path_prepend "${BREW_SBIN_DIR}"
+[[ -n "${BREW_BIN_DIR:-}" && -d "${BREW_BIN_DIR}" ]] && __path_prepend "${BREW_BIN_DIR}"
+[[ -n "${BREW_SBIN_DIR:-}" && -d "${BREW_SBIN_DIR}" ]] && __path_prepend "${BREW_SBIN_DIR}"
 
 # Prefer Homebrew Bash ahead of system paths for `/usr/bin/env bash`
 # to resolve to Bash 5.x
 BREW_BASH_EXEC="${BREW_BIN_DIR:-}/bash"
-[[ -d "${BREW_BASH_DIR}" ]] && path_prepend "${BREW_BASH_EXEC}"
+[[ -d "${BREW_BASH_DIR}" ]] && __path_prepend "${BREW_BASH_EXEC}"
 
 # Homebrew (Linuxbrew), Neovim, OpenJDK
 if [[ "$OS" == "Darwin" ]]; then
     # macOS-specific paths
     [[ -n "${HOMEBREW:-}" ]] && OPENJDK_DIR="${HOMEBREW}/opt/openjdk/bin"
-    [[ -x "${OPENJDK_DIR}/java" ]] && path_prepend "${OPENJDK_DIR}"
+    [[ -x "${OPENJDK_DIR}/java" ]] && __path_prepend "${OPENJDK_DIR}"
 elif [[ "$OS" == "Linux" ]]; then
     # Linux-specific paths
     LINUX_NVIM="/usr/bin/nvim"
-    [[ -x "${LINUX_NVIM}" ]] && path_prepend "${LINUX_NVIM%/*}"
+    [[ -x "${LINUX_NVIM}" ]] && __path_prepend "${LINUX_NVIM%/*}"
 
     LINUX_JAVA_DIR="/usr/lib/jvm/java-17-openjdk-amd64/bin"
-    [[ -d "${LINUX_JAVA_DIR}" ]] && path_prepend "${LINUX_JAVA_DIR}"
+    [[ -d "${LINUX_JAVA_DIR}" ]] && __path_prepend "${LINUX_JAVA_DIR}"
 fi
 
 # ---------------------------- Cleanup ---------------------------------- #

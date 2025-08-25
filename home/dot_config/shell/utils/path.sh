@@ -63,7 +63,7 @@ __path_update() {
 #   0 if directory is prepended or already present.
 #   1 if argument is empty.
 # Example:
-#   path_prepend "/opt/homebrew/bin"
+#   __path_prepend "/opt/homebrew/bin"
 #######################################
 __path_prepend() {
     path_update prepend "$1"
@@ -81,7 +81,7 @@ __path_prepend() {
 #   0 if directory is appended or already present.
 #   1 if argument is empty.
 # Example:
-#   path_append "$HOME/.local/bin"
+#   __path_append "$HOME/.local/bin"
 #######################################
 __path_append() {
     path_update append "$1"
