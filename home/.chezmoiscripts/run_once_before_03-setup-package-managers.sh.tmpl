@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Set up non-Homebrew package managers (single responsibility)
+set -euo pipefail
+
+{{ template "logging.sh" . }}
+
+# Skip if existing system
+[[ -f "$HOME/.config/chezmoi-initial-setup-complete" ]] && exit 0
+
+{{ if eq .chezmoi.os "linux" -}}
+# Install Flatpak on Linux if not present
+if ! command -v flatpak &>/dev/null; then
+    log_info "Installing Flatpak..."
+    {{- if (eq .chezmoi.osRelease.id "ubuntu") or (eq .chezmoi.osRelease.id "debian") }}
+    sudo apt-get update && sudo apt-get install -y flatpak
+    {{- else if (eq .chezmoi.osRelease.id "fedora") or (eq .chezmoi.osRelease.id "rhel") or (eq .chezmoi.osRelease.id "centos") }}
+    sudo dnf install -y flatpak
+    {{- else if eq .chezmoi.osRelease.id "arch" }}
+    sudo pacman -S --noconfirm flatpak
+    {{- end }}
+    
+    # Add Flathub repository
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    log_success "Flatpak installed and configured"
+else
+    log_info "Flatpak already installed, skipping"
+fi
+{{- else }}
+log_info "Non-Linux system detected, skipping package manager setup"
+{{- end }}

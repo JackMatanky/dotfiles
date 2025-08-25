@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Check if this is an existing system and skip package installation if so
+set -euo pipefail
+
+{{ template "logging.sh" . }}
+
+# Check if this system already has many packages installed
+{{- if eq .chezmoi.os "darwin" }}
+if command -v brew &>/dev/null && [[ $(brew list 2>/dev/null | wc -l) -gt 50 ]]; then
+{{- else if eq .chezmoi.os "linux" }}
+if command -v apt &>/dev/null && [[ $(apt list --installed 2>/dev/null | wc -l) -gt 500 ]]; then
+{{- end }}
+    mkdir -p "$HOME/.config"
+    touch "$HOME/.config/chezmoi-initial-setup-complete"
+    log_success "Existing system detected - package installation will be skipped"
+fi

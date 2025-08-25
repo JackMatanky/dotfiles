@@ -1,52 +1,11 @@
 #!/usr/bin/env bash
-{{/* vim: set filetype=bash: */}}
-# -----------------------------------------------------------------------------
-# Script: run_once_after_99-setup-complete.sh.tmpl
-# Purpose: Mark initial setup as complete and provide summary (runs once)
-# When: Runs once after all package installation scripts complete
-# Dependencies: All other setup scripts
-# -----------------------------------------------------------------------------
-
+# Mark setup as complete
 set -euo pipefail
 
 {{ template "logging.sh" . }}
 
-log_header "✅ CHEZMOI INITIAL SETUP COMPLETE"
-
-# Create marker file to indicate initial setup is complete
-# This prevents upgrade scripts from running automatic updates on existing systems
+# Ensure marker file exists
 mkdir -p "$HOME/.config"
 touch "$HOME/.config/chezmoi-initial-setup-complete"
 
-log_success "Dotfiles configuration applied successfully!"
-log_info ""
-log_info "🔧 What was configured:"
-{{- if eq .chezmoi.os "darwin" }}
-log_info "  • Homebrew package manager and {{ len .packages.darwin.brews }} CLI tools"
-log_info "  • {{ len .packages.darwin.casks }} GUI applications via Homebrew casks"
-{{- if .packages.darwin.mas }}
-log_info "  • {{ len .packages.darwin.mas }} Mac App Store applications"
-{{- end }}
-{{- else if eq .chezmoi.os "linux" }}
-{{- if .packages.linux.flatpak }}
-log_info "  • {{ len .packages.linux.flatpak }} Flatpak applications"
-{{- end }}
-{{- if .packages.linux.apt }}
-log_info "  • {{ len .packages.linux.apt }} APT packages"
-{{- end }}
-{{- if .packages.linux.snap }}
-log_info "  • {{ len .packages.linux.snap }} Snap packages"
-{{- end }}
-{{- end }}
-{{- if .packages.cargo.crates }}
-log_info "  • {{ len .packages.cargo.crates }} Rust/Cargo packages"
-{{- end }}
-log_info "  • Shell environment (Zsh with Starship prompt)"
-log_info "  • Development tools and configuration"
-log_info ""
-log_info "📋 Next steps:"
-log_info "  • Restart your shell: exec \$SHELL"
-log_info "  • For package updates, use manual commands or justfile tasks"
-log_info "  • Configuration changes will be applied with: chezmoi apply"
-
-log_success "🎉 Welcome to your new development environment!"
+log_success "Setup complete - restart your shell to apply changes"

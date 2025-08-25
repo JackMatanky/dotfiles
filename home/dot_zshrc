@@ -14,23 +14,21 @@
 touch "${HOME}/.hushlogin"
 
 # -------------------- Path Configuration -------------------- #
+# Deduplicate Zsh arrays early (path-like arrays only)
 typeset -U path cdpath fpath manpath
-
 
 # ------------------------------------------------------------ #
 #                Load Modular Shell Environment                #
 # ------------------------------------------------------------ #
-# Essential Shell Paths (XDG compliant, default: ~/.config)
-: ${XDG_CONFIG_HOME:="${HOME}/.config"}
-: ${SHELL_DIR:="${XDG_CONFIG_HOME}/shell"}
-readonly SCRIPT_LOADER="${SHELL_DIR}/lib/load_core.sh"
+# Essential XDG and Shell Paths; Assign only if unset/empty
+: "${XDG_CONFIG_HOME:=${HOME}/.config}"
+: "${SHELL_DIR:=${XDG_CONFIG_HOME}/shell}"
+: "${SCRIPT_LOADER:=${SHELL_DIR}/lib/load_core.sh}"
 
-# Extended CLI Ecosystem Path
-# readonly CLI_DIR="${HOME}/cli"
-
-# Load core shell support modules (log, source_sh_files)
+# If SCRIPT_LOADER is a readable file (-r), source it and load core loader
+# (defines log/source helpers, loads path helpers)
 # shellcheck source=/dev/null
-[[ -f "$SCRIPT_LOADER" ]] && source "$SCRIPT_LOADER"
+[[ -r "$SCRIPT_LOADER" ]] && source "$SCRIPT_LOADER"
 
 # ------------------- Environment Variables ------------------ #
 # XDG paths, language setup, etc.
@@ -41,25 +39,16 @@ source_sh_files "${SHELL_DIR}/profile"
 source_sh_files "${SHELL_DIR}/utils"
 
 # Essential aliases, functions, completions
-source_sh_files "${SHELL_DIR}/aliases"
 source_sh_files "${SHELL_DIR}/functions"
-
-# ------------------------------------------------------------ #
-#                  Session & Completion Files                  #
-# ------------------------------------------------------------ #
-export ZSH_SESSION="${XDG_CONFIG_HOME}/.zsh_sessions"
-mkdir -p "$(dirname "${ZSH_SESSION}")"
-
-export ZCOMPFILE="${XDG_CONFIG_HOME}/.zcompdump"
-mkdir -p "$(dirname "${ZCOMPFILE}")"
-
+source_sh_files "${SHELL_DIR}/aliases"
 
 # ------------------------------------------------------------ #
 #                     History Configuration                    #
 # ------------------------------------------------------------ #
-export HISTSIZE=10000                           # Number of commands kept in memory
-export SAVEHIST=10000                           # Number of commands saved to the file
-export HISTFILE="${XDG_CONFIG_HOME}/.zsh_history" # Location of the history file
+# Number of commands kept in memory and saved to the file
+export HISTSIZE=10000
+export SAVEHIST=10000
+export HISTFILE="${XDG_CONFIG_HOME}/.zsh_history"
 mkdir -p "$(dirname "${HISTFILE}")"
 
 setopt HIST_FCNTL_LOCK               # Prevent simultaneous history writes
@@ -67,67 +56,79 @@ setopt HIST_IGNORE_DUPS              # Ignore consecutive duplicates
 setopt HIST_IGNORE_SPACE             # Ignore commands starting with a space
 setopt SHARE_HISTORY                 # Share history across Zsh instances
 
-
 # ------------------------------------------------------------ #
 #                    Tooling & Integrations                    #
 # ------------------------------------------------------------ #
+# Compute Homebrew prefix robustly (works even if HOMEBREW not exported yet)
+# If the given command is available (command -v) then initialize it
+BREW_PREFIX="${HOMEBREW:-$(command -v brew >/dev/null 2>&1 && brew --prefix 2>/dev/null)}"
+
+# ------------------ ZSH Session Management ------------------ #
+# Store Zsh session artifacts under XDG; ensure directory exists
+export ZSH_SESSION="${XDG_CONFIG_HOME}/.zsh_sessions"
+mkdir -p "$(dirname "${ZSH_SESSION}")"
 
 # ---------------- ZSH Auto-Completion System ---------------- #
+# Cache compdump under XDG for faster startup
+export ZCOMPFILE="${XDG_CONFIG_HOME}/.zcompdump"
+mkdir -p "$(dirname "${ZCOMPFILE}")"
 autoload -U compinit
-compinit
+compinit -d "$ZCOMPFILE"
 
 # -------------------- ZSH Autosuggestions ------------------- #
-ZSH_AUTOSUGGESTIONS_RELATIVE="share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+ZSH_AUTOSUGGESTIONS="share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-if [[ -f "${HOMEBREW}/${ZSH_AUTOSUGGESTIONS_RELATIVE}" ]]; then
-    source "${HOMEBREW}/${ZSH_AUTOSUGGESTIONS_RELATIVE}"
-elif [[ -f "/usr/${ZSH_AUTOSUGGESTIONS_RELATIVE}" ]]; then
-    source "/usr/${ZSH_AUTOSUGGESTIONS_RELATIVE}"
-# elif [[ -n "$(ls /nix/store/*zsh-autosuggestions*/zsh-autosuggestions.zsh 2>/dev/null)" ]]; then
-#     source "$(ls /nix/store/*zsh-autosuggestions*/zsh-autosuggestions.zsh 2>/dev/null)"
+# If BREW_PREFIX is a non-empty (-n) string and the path is a regular file (-f),
+# source the file from BREW_PREFIX
+if [[ -n $BREW_PREFIX && -f "${BREW_PREFIX}/${ZSH_AUTOSUGGESTIONS}" ]]; then
+  source "${BREW_PREFIX}/${ZSH_AUTOSUGGESTIONS}"
+# If path is a regular file (-f) perform the action below
+elif [[ -f "/usr/${ZSH_AUTOSUGGESTIONS}" ]]; then
+  source "/usr/${ZSH_AUTOSUGGESTIONS}"
 fi
 
 # ------------------ ZSH Syntax Highlighting ----------------- #
-ZSH_SYNTAX_HIGHLIGHTING_RELATIVE="share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+ZSH_SYNTAX_HIGHLIGHTING="share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-if [[ -f "${HOMEBREW}/${ZSH_SYNTAX_HIGHLIGHTING_RELATIVE}" ]]; then
-    source "${HOMEBREW}/${ZSH_SYNTAX_HIGHLIGHTING_RELATIVE}"
-elif [[ -f "/usr/${ZSH_SYNTAX_HIGHLIGHTING_RELATIVE}" ]]; then
-    source "/usr/${ZSH_SYNTAX_HIGHLIGHTING_RELATIVE}"
-# elif [[ -n "$(ls /nix/store/*zsh-syntax-highlighting*/zsh-syntax-highlighting.zsh 2>/dev/null)" ]]; then
-#     source "$(ls /nix/store/*zsh-syntax-highlighting*/zsh-syntax-highlighting.zsh 2>/dev/null)"
+if [[ -n $BREW_PREFIX && -f "${BREW_PREFIX}/${ZSH_SYNTAX_HIGHLIGHTING}" ]]; then
+    source "${BREW_PREFIX}/${ZSH_SYNTAX_HIGHLIGHTING}"
+elif [[ -f "/usr/${ZSH_SYNTAX_HIGHLIGHTING}" ]]; then
+    source "/usr/${ZSH_SYNTAX_HIGHLIGHTING}"
 fi
 
 # -------------------------- Direnv -------------------------- #
 # Docs: https://direnv.net
-# If direnv exists, initialize it for ZSH
-command -v direnv &>/dev/null && eval "$(direnv hook zsh)"
+# If the `direnv` command is available (command -v), then initialize `direnv`
+command -v direnv   >/dev/null 2>&1 && eval "$(direnv hook zsh)"
 
 # ---------------- Carapace: Shell Completion ---------------- #
 # Docs: https://carapace.sh
-# If `carapace` exists, run its ZSH completion script via process substitution
+# If the `carapace` command is available (command -v), then initialize `carapace`
 # shellcheck disable=SC1090
-command -v carapace &>/dev/null && source <(carapace _carapace zsh)
+command -v carapace >/dev/null 2>&1 && source <(carapace _carapace zsh)
 
 # ------------- Atuin: Shell History Replacement ------------- #
 # Docs: https://docs.atuin.sh
-# If `atuin` exists, evaluate its shell initialization output to hook into ZSH
-command -v atuin &>/dev/null && eval "$(atuin init zsh)"
+# If the `atuin` command is available (command -v), then initialize `atuin`
+command -v atuin    >/dev/null 2>&1 && eval "$(atuin init zsh)"
 
 # -------------------------- Zoxide -------------------------- #
 # Docs: https://github.com/ajeetdsouza/zoxide
-# If `zoxide` exists, evaluate its init output to define ZSH functions and aliases
-command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"
-
-# ---------------------- FD: File Finder --------------------- #
-# Docs: https://github.com/sharkdp/fd
-if command -v fd &>/dev/null; then
-    export FZF_DEFAULT_COMMAND='fd --type file --hidden --follow --color=always'
-    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-fi
+# If the `zoxide` command is available (command -v), then initialize `zoxide`
+command -v zoxide   >/dev/null 2>&1 && eval "$(zoxide init zsh)"
 
 # ------------------ FZF: Fuzzy File Finder ------------------ #
 # Docs: https://junegunn.github.io/fzf/
+# If BREW_OPT_DIR is empty or unset, fall back to /opt/homebrew by default
+FZF_DIR="${BREW_OPT_DIR:-${BREW_PREFIX:+${BREW_PREFIX}/opt}}/fzf/shell"
+
+# If path is a regular file (-f), source the fzf key bindings
+# shellcheck source=/dev/null
+[[ -f "${FZF_DIR}/key-bindings.zsh" ]] && source "${FZF_DIR}/key-bindings.zsh"
+# If path is a regular file (-f), source the fzf completions
+# shellcheck source=/dev/null
+[[ -f "${FZF_DIR}/completion.zsh"   ]] && source "${FZF_DIR}/completion.zsh"
+
 export FZF_DEFAULT_OPTS='
     --height=40%
     --layout=reverse
@@ -137,19 +138,19 @@ export FZF_DEFAULT_OPTS='
     --preview-window=right:60%
 '
 
-# If BREW_OPT_DIR is empty or unset, fall back to /opt/homebrew by default
-FZF_DIR="${BREW_OPT_DIR:-/opt/homebrew/opt}/fzf/shell"
-FZF_KEYBINDINGS="${FZF_DIR}/key-bindings.zsh"
-FZF_COMPLETIONS="${FZF_DIR}/completion.zsh"
-
-if command -v brew &>/dev/null; then
-  [[ -f "${FZF_KEYBINDINGS}" ]] && source "${FZF_KEYBINDINGS}"
-  [[ -f "${FZF_COMPLETIONS}" ]] && source "${FZF_COMPLETIONS}"
+# ---------------------- FD: File Finder --------------------- #
+# Docs: https://github.com/sharkdp/fd
+# If the `fd` command is available (command -v), then initialize `fd`
+# and improve fzf defaults
+if command -v fd >/dev/null 2>&1; then
+    export FZF_DEFAULT_COMMAND='fd --type file --hidden --follow --color=always'
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
 # ---------------------- Starship Prompt --------------------- #
 # Docs: https://starship.rs/config/
-if command -v starship &>/dev/null; then
+# If the `starship` command is available (command -v), then initialize starship
+if command -v starship >/dev/null 2>&1; then
     export STARSHIP_CONFIG="${XDG_CONFIG_HOME}/starship/starship.toml"
     eval "$(starship init zsh)"
 fi
