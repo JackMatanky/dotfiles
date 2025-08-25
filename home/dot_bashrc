@@ -47,7 +47,7 @@ source_sh_files "${SHELL_DIR}/functions"
 # ------------------------------------------------------------ #
 export HISTSIZE=10000
 export HISTFILE="${XDG_CONFIG_HOME}/.bash_history"
-mkdir -p "$(dirname "$HISTFILE")"
+mkdir -p "$(dirname "${HISTFILE}")"
 
 # ------------------------------------------------------------ #
 #                    Tooling & Integrations                    #
@@ -60,7 +60,7 @@ mkdir -p "$(dirname "$HISTFILE")"
 # Source Homebrew bash completion (v2) if installed
 # Homebrew recommends sourcing bash-completion from .bash_profile,
 # but it can be loaded here since .bash_profile sources .bashrc.
-BASH_COMPLETIONS="$HOMEBREW/etc/profile.d/bash_completion.sh"
+BASH_COMPLETIONS="${HOMEBREW}/etc/profile.d/bash_completion.sh"
 
 # shellcheck source=/dev/null
 [[ -r "$BASH_COMPLETIONS" ]] && source "$BASH_COMPLETIONS"
@@ -106,8 +106,8 @@ export FZF_DEFAULT_OPTS='
 
 # If BREW_OPT_DIR is empty or unset, fall back to /opt/homebrew by default
 FZF_DIR="${BREW_OPT_DIR:-/opt/homebrew/opt}/fzf/shell"
-FZF_KEYBINDINGS="$FZF_DIR/key-bindings.bash"
-FZF_COMPLETIONS="$FZF_DIR/completion.bash"
+FZF_KEYBINDINGS="${FZF_DIR}/key-bindings.bash"
+FZF_COMPLETIONS="${FZF_DIR}/completion.bash"
 
 if command -v brew &>/dev/null; then
   # shellcheck source=/dev/null

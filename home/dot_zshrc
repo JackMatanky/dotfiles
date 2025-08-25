@@ -6,23 +6,28 @@
 #              Loads modular CLI environment, initializes completions, plugins,
 #              shell behavior, and interactive tools (e.g., starship, direnv).
 # -----------------------------------------------------------------------------
-# Suppress "Last login" message
-touch ~/.hushlogin
+
+# Require HOME; exit with error if unset/empty
+: "${HOME:?HOME must be set}"
+
+# Silence "Last login" for interactive shells
+touch "${HOME}/.hushlogin"
 
 # -------------------- Path Configuration -------------------- #
 typeset -U path cdpath fpath manpath
 
 
 # ------------------------------------------------------------ #
-#                 Load Modular CLI Environment                 #
+#                Load Modular Shell Environment                #
 # ------------------------------------------------------------ #
-# Essential Shell Paths (XDG compliant)
-SHELL_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/shell"
-LIB_DIR="$SHELL_DIR/lib"
-SCRIPT_LOADER="$LIB_DIR/load_core.sh"
+# Essential Shell Paths (XDG compliant, default: ~/.config)
+: "${XDG_CONFIG_HOME:=${HOME}/.config}"
+readonly SHELL_DIR="${XDG_CONFIG_HOME}/shell"
+readonly LIB_DIR="${SHELL_DIR}/lib"
+readonly SCRIPT_LOADER="${LIB_DIR}/load_core.sh"
 
 # Extended CLI Ecosystem Path
-CLI_DIR="$HOME/cli"
+readonly CLI_DIR="${HOME}/cli"
 
 # Load core shell support modules (log, source_sh_files)
 # shellcheck source=/dev/null
@@ -30,25 +35,25 @@ CLI_DIR="$HOME/cli"
 
 # ------------------- Environment Variables ------------------ #
 # XDG paths, language setup, etc.
-source_sh_files "$SHELL_DIR/profile"
+source_sh_files "${SHELL_DIR}/profile"
 
 # ---------------------- Shell Commands ---------------------- #
 # Essential aliases, functions, completions
-source_sh_files "$SHELL_DIR/aliases"
-source_sh_files "$SHELL_DIR/functions"
+source_sh_files "${SHELL_DIR}/aliases"
+source_sh_files "${SHELL_DIR}/functions"
 
 # Extended CLI functionality
-source_sh_files "$CLI_DIR/cmd"
+# source_sh_files "${CLI_DIR}/cmd"
 
 
 # ------------------------------------------------------------ #
 #                  Session & Completion Files                  #
 # ------------------------------------------------------------ #
-export ZSH_SESSION="$XDG_CONFIG_HOME/.zsh_sessions"
-mkdir -p "$(dirname "$ZSH_SESSION")"
+export ZSH_SESSION="${XDG_CONFIG_HOME}/.zsh_sessions"
+mkdir -p "$(dirname "${ZSH_SESSION}")"
 
-export ZCOMPFILE="$XDG_CONFIG_HOME/.zcompdump"
-mkdir -p "$(dirname "$ZCOMPFILE")"
+export ZCOMPFILE="${XDG_CONFIG_HOME}/.zcompdump"
+mkdir -p "$(dirname "${ZCOMPFILE}")"
 
 
 # ------------------------------------------------------------ #
@@ -56,8 +61,8 @@ mkdir -p "$(dirname "$ZCOMPFILE")"
 # ------------------------------------------------------------ #
 export HISTSIZE=10000                           # Number of commands kept in memory
 export SAVEHIST=10000                           # Number of commands saved to the file
-export HISTFILE="$XDG_CONFIG_HOME/.zsh_history" # Location of the history file
-mkdir -p "$(dirname "$HISTFILE")"
+export HISTFILE="${XDG_CONFIG_HOME}/.zsh_history" # Location of the history file
+mkdir -p "$(dirname "${HISTFILE}")"
 
 setopt HIST_FCNTL_LOCK               # Prevent simultaneous history writes
 setopt HIST_IGNORE_DUPS              # Ignore consecutive duplicates
@@ -76,10 +81,10 @@ compinit
 # -------------------- ZSH Autosuggestions ------------------- #
 ZSH_AUTOSUGGESTIONS_RELATIVE="share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-if [[ -f "$HOMEBREW/$ZSH_AUTOSUGGESTIONS_RELATIVE" ]]; then
-    source "$HOMEBREW/$ZSH_AUTOSUGGESTIONS_RELATIVE"
-elif [[ -f "/usr/$ZSH_AUTOSUGGESTIONS_RELATIVE" ]]; then
-    source "/usr/$ZSH_AUTOSUGGESTIONS_RELATIVE"
+if [[ -f "${HOMEBREW}/${ZSH_AUTOSUGGESTIONS_RELATIVE}" ]]; then
+    source "${HOMEBREW}/${ZSH_AUTOSUGGESTIONS_RELATIVE}"
+elif [[ -f "/usr/${ZSH_AUTOSUGGESTIONS_RELATIVE}" ]]; then
+    source "/usr/${ZSH_AUTOSUGGESTIONS_RELATIVE}"
 # elif [[ -n "$(ls /nix/store/*zsh-autosuggestions*/zsh-autosuggestions.zsh 2>/dev/null)" ]]; then
 #     source "$(ls /nix/store/*zsh-autosuggestions*/zsh-autosuggestions.zsh 2>/dev/null)"
 fi
@@ -87,10 +92,10 @@ fi
 # ------------------ ZSH Syntax Highlighting ----------------- #
 ZSH_SYNTAX_HIGHLIGHTING_RELATIVE="share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-if [[ -f "$HOMEBREW/$ZSH_SYNTAX_HIGHLIGHTING_RELATIVE" ]]; then
-    source "$HOMEBREW/$ZSH_SYNTAX_HIGHLIGHTING_RELATIVE"
-elif [[ -f "/usr/$ZSH_SYNTAX_HIGHLIGHTING_RELATIVE" ]]; then
-    source "/usr/$ZSH_SYNTAX_HIGHLIGHTING_RELATIVE"
+if [[ -f "${HOMEBREW}/${ZSH_SYNTAX_HIGHLIGHTING_RELATIVE}" ]]; then
+    source "${HOMEBREW}/${ZSH_SYNTAX_HIGHLIGHTING_RELATIVE}"
+elif [[ -f "/usr/${ZSH_SYNTAX_HIGHLIGHTING_RELATIVE}" ]]; then
+    source "/usr/${ZSH_SYNTAX_HIGHLIGHTING_RELATIVE}"
 # elif [[ -n "$(ls /nix/store/*zsh-syntax-highlighting*/zsh-syntax-highlighting.zsh 2>/dev/null)" ]]; then
 #     source "$(ls /nix/store/*zsh-syntax-highlighting*/zsh-syntax-highlighting.zsh 2>/dev/null)"
 fi
@@ -136,18 +141,18 @@ export FZF_DEFAULT_OPTS='
 
 # If BREW_OPT_DIR is empty or unset, fall back to /opt/homebrew by default
 FZF_DIR="${BREW_OPT_DIR:-/opt/homebrew/opt}/fzf/shell"
-FZF_KEYBINDINGS="$FZF_DIR/key-bindings.zsh"
-FZF_COMPLETIONS="$FZF_DIR/completion.zsh"
+FZF_KEYBINDINGS="${FZF_DIR}/key-bindings.zsh"
+FZF_COMPLETIONS="${FZF_DIR}/completion.zsh"
 
 if command -v brew &>/dev/null; then
-  [[ -f "$FZF_KEYBINDINGS" ]] && source "$FZF_KEYBINDINGS"
-  [[ -f "$FZF_COMPLETIONS" ]] && source "$FZF_COMPLETIONS"
+  [[ -f "${FZF_KEYBINDINGS}" ]] && source "${FZF_KEYBINDINGS}"
+  [[ -f "${FZF_COMPLETIONS}" ]] && source "${FZF_COMPLETIONS}"
 fi
 
 # ---------------------- Starship Prompt --------------------- #
 # Docs: https://starship.rs/config/
 if command -v starship &>/dev/null; then
-    export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+    export STARSHIP_CONFIG="${XDG_CONFIG_HOME}/starship/starship.toml"
     eval "$(starship init zsh)"
 fi
 

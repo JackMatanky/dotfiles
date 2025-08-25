@@ -9,19 +9,27 @@ Personal configuration files managed with **[chezmoi](https://www.chezmoi.io/)**
   - [Quick Start](#quick-start)
     - [Fresh Installation](#fresh-installation)
     - [Existing Installation](#existing-installation)
-  - [Features](#features)
-    - [Configuration Management](#configuration-management)
-    - [Cross-Platform Support](#cross-platform-support)
-    - [Template-Driven Configuration](#template-driven-configuration)
-    - [Automated Setup Scripts](#automated-setup-scripts)
-    - [Declarative Package Management](#declarative-package-management)
+  - [System Architecture](#system-architecture)
+    - [Modular Design Philosophy](#modular-design-philosophy)
+    - [Data-Driven Configuration](#data-driven-configuration)
+    - [Template System](#template-system)
+    - [Automated Package Management](#automated-package-management)
   - [Repository Structure](#repository-structure)
   - [Configuration](#configuration)
     - [Personal Information](#personal-information)
     - [Development Environment](#development-environment)
     - [System Preferences](#system-preferences)
     - [Package Management](#package-management)
-  - [Package Management System](#package-management-system)
+  - [Static Configuration Data (.chezmoidata)](#static-configuration-data-chezmoidata)
+    - [Data Files Overview](#data-files-overview)
+    - [Package Definitions](#package-definitions)
+    - [Application Configurations](#application-configurations)
+    - [Path Management](#path-management)
+  - [Automated Package Management System (.chezmoiscripts)](#automated-package-management-system-chezmoiscripts)
+    - [Two-Phase Installation Pattern](#two-phase-installation-pattern)
+    - [Script Categories](#script-categories)
+    - [Hash-Based Detection](#hash-based-detection)
+    - [Cross-Platform Support](#cross-platform-support)
     - [Package Categories](#package-categories)
       - [Platform-Specific](#platform-specific)
       - [Language Ecosystems](#language-ecosystems)
@@ -31,6 +39,11 @@ Personal configuration files managed with **[chezmoi](https://www.chezmoi.io/)**
       - [Triggering Installation](#triggering-installation)
       - [Installing Everything on New Machine](#installing-everything-on-new-machine)
     - [Benefits](#benefits)
+  - [Template Library (.chezmoitemplates)](#template-library-chezmoitemplates)
+    - [Shared Templates](#shared-templates)
+    - [Logging Functions](#logging-functions)
+    - [Text Expansion Templates](#text-expansion-templates)
+    - [Template Best Practices](#template-best-practices)
   - [Core System Tools](#core-system-tools)
     - [Shells](#shells)
     - [Terminal Emulators](#terminal-emulators)
@@ -50,6 +63,44 @@ Personal configuration files managed with **[chezmoi](https://www.chezmoi.io/)**
     - [Making Changes](#making-changes)
     - [Template Variables](#template-variables)
   - [Troubleshooting](#troubleshooting)
+
+---
+
+## System Architecture
+
+### Modular Design Philosophy
+
+This chezmoi dotfiles repository follows a **modular, data-driven architecture** that emphasizes:
+
+- **Separation of Concerns**: Configuration data, installation scripts, and templates are cleanly separated
+- **Cross-Platform Compatibility**: Platform-specific logic isolated from shared functionality
+- **Template Reusability**: Shared templates reduce duplication across configurations
+- **Hash-Based Efficiency**: Only run installations when package definitions change
+- **Declarative Configuration**: Package management through centralized data files
+
+### Data-Driven Configuration
+
+**Static Configuration Data (`.chezmoidata/`)**
+- Central repository for all configuration data that doesn't change based on system environment
+- Package definitions, application settings, path mappings, and repository URLs
+- Structured data in TOML/JSON format for easy template consumption
+- Version-controlled alongside template changes
+
+### Template System
+
+**Shared Templates (`.chezmoitemplates/`)**
+- Reusable template components for common functionality
+- Consistent logging functions across all installation scripts
+- Text expansion rules and configurations
+- Template best practices and debugging utilities
+
+### Automated Package Management
+
+**Installation Scripts (`.chezmoiscripts/`)**
+- Two-phase pattern: `run_once_*` for initial installation, `run_onchange_*` for updates
+- Hash-based detection triggers scripts only when package configurations change
+- Platform-specific scripts for macOS, Linux, and cross-platform package managers
+- Shared logging and error handling across all scripts
 
 ---
 
@@ -216,16 +267,231 @@ use_flatpak = true
 
 ---
 
-## Package Management System
+## Static Configuration Data (.chezmoidata)
 
-This dotfiles repository includes a comprehensive declarative package management system using a centralized `~/.local/share/chezmoi/home/.chezmoidata/packages.toml` configuration file to manage **280+ packages** across all platforms and package managers.
+### Data Files Overview
+
+The `.chezmoidata/` directory contains static configuration data that is merged into chezmoi's template data dictionary. These files provide centralized, version-controlled configuration that remains consistent across different system environments.
+
+```
+.chezmoidata/
+├── applications.toml       # Static application configurations and paths
+├── defaults.json          # Default tool settings and preferences
+├── packages.toml          # Comprehensive package declarations
+├── paths.toml             # Directory structures and path mappings
+└── repositories.toml      # Repository URLs and external resources
+```
+
+### Package Definitions
+
+**`packages.toml`** - The central package definition file based on Brewfile architecture:
+
+```toml
+[packages.darwin]
+taps = ["homebrew/bundle", "homebrew/services"]
+brews = ["git", "zsh", "ripgrep", "fd", "bat", "eza"]
+casks = ["visual-studio-code", "ghostty", "zed"]
+mas = [1429033973]  # RunCat (App Store ID)
+vscode = ["ms-python.python", "rust-lang.rust-analyzer"]
+
+[packages.linux]
+flatpak = ["com.visualstudio.code", "org.zotero.Zotero"]
+apt = ["git", "zsh", "ripgrep", "fd-find", "bat"]
+snap = ["gh", "discord"]
+
+[packages.cargo]
+crates = ["cargo-update", "starship", "zoxide", "tokei"]
+
+[packages.npm]
+packages = ["typescript", "@typescript-eslint/eslint-plugin", "prettier"]
+
+[packages.python]
+packages = ["black", "ruff", "ipython", "jupyter"]
+
+[packages.go]
+binaries = ["github.com/junegunn/fzf@latest", "github.com/jesseduffield/lazygit@latest"]
+```
+
+**Benefits:**
+- **Brewfile compatibility**: macOS packages mirror the established Brewfile format
+- **Cross-platform mapping**: Linux equivalents automatically mapped from macOS packages
+- **Template integration**: Direct access via `{{ .packages.darwin.brews }}` in templates
+- **Hash-based triggering**: Changes automatically trigger relevant installation scripts
+
+### Application Configurations
+
+**`applications.toml`** - Static information about tools and their configurations:
+
+```toml
+[terminals.ghostty]
+name = "Ghostty"
+config_dir = "~/.config/ghostty"
+config_file = "config"
+
+[editors.nvim]
+name = "Neovim"
+config_dir = "~/.config/nvim"
+config_files = ["init.lua", "lua/config/"]
+
+[shells.zsh]
+name = "Zsh"
+config_files = [".zshrc", ".zprofile"]
+plugin_dir = "~/.config/zsh/plugins"
+```
+
+**Template Usage:**
+```bash
+# Access terminal configuration
+CONFIG_DIR="{{ .terminals.ghostty.config_dir }}"
+
+# Get editor settings  
+EDITOR_CONFIG="{{ .editors.nvim.config_dir }}"
+```
+
+### Path Management
+
+**`paths.toml`** - Standardized directory structures and path mappings:
+
+```toml
+[xdg_dirs]
+config_home = "~/.config"
+data_home = "~/.local/share"
+cache_home = "~/.cache"
+state_home = "~/.local/state"
+
+[common_config_dirs]
+scripts = "~/.config/scripts"
+themes = "~/.config/themes"
+shell = "~/.config/shell"
+
+[development_dirs]
+projects = "~/Documents/Development"
+repositories = "~/Documents/Repositories"
+workspace = "~/Workspace"
+```
+
+**Template Usage:**
+```bash
+CONFIG_HOME="{{ .xdg_dirs.config_home }}"
+SCRIPTS_DIR="{{ .common_config_dirs.scripts }}"
+PROJECTS_DIR="{{ .development_dirs.projects }}"
+```
+
+**Key Features:**
+- **XDG compliance**: Follows XDG Base Directory specification
+- **Consistent paths**: Same directory structure across all configurations
+- **Template simplification**: Eliminates hardcoded paths in templates
+- **Cross-platform compatibility**: Adapts to different operating systems
+
+---
+
+## Automated Package Management System (.chezmoiscripts)
+
+The `.chezmoiscripts/` directory contains a sophisticated package management system that automatically installs and maintains **280+ packages** across macOS, Linux, and cross-platform environments using a **two-phase, hash-based approach**.
+
+### Two-Phase Installation Pattern
+
+**Phase 1: Initial Installation (`run_once_*`)**
+- Installs packages **once** on first `chezmoi apply`
+- Essential dependencies, platform setup, initial package installation
+- Only runs on fresh setups or when script state is cleared
+
+**Phase 2: Update Management (`run_onchange_*`)**
+- Updates packages **only** when package lists change in `packages.toml`
+- Hash-based detection triggers scripts when configuration changes
+- Efficient upgrades without reinstalling everything
+
+**Benefits:**
+- ✅ **Performance**: No reinstalls on every `chezmoi apply`
+- ✅ **Efficiency**: Hash-based detection triggers upgrades only when needed
+- ✅ **Resource-friendly**: Reduces bandwidth and system load
+- ✅ **Predictable**: Clear separation between install and upgrade logic
+
+### Script Categories
+
+**Directory Structure:**
+```
+.chezmoiscripts/
+├── common/                    # Cross-platform package managers
+│   ├── run_once_after_70-install-cargo-packages.sh.tmpl
+│   ├── run_onchange_after_71-upgrade-cargo-packages.sh.tmpl
+│   ├── run_once_after_71-install-npm-packages.sh.tmpl
+│   ├── run_onchange_after_72-upgrade-npm-packages.sh.tmpl
+│   ├── run_once_after_72-install-go-packages.sh.tmpl
+│   └── run_once_after_73-install-python-packages.sh.tmpl
+├── darwin/                    # macOS-specific package managers
+│   ├── run_once_before_10-homebrew-setup.sh.tmpl
+│   ├── run_once_after_20-install-homebrew-taps.sh.tmpl
+│   ├── run_onchange_after_21-upgrade-homebrew-packages.sh.tmpl
+│   ├── run_once_after_30-install-homebrew-formulas.sh.tmpl
+│   ├── run_once_after_40-install-homebrew-casks.sh.tmpl
+│   ├── run_once_after_50-install-mas-apps.sh.tmpl
+│   └── run_once_after_60-install-vscode-extensions.sh.tmpl
+├── linux/                     # Linux-specific package managers
+│   ├── run_once_after_20-install-flatpak-apps.sh.tmpl
+│   ├── run_onchange_after_21-upgrade-linux-packages.sh.tmpl
+│   ├── run_once_after_30-install-apt-packages.sh.tmpl
+│   └── run_once_after_40-install-snap-packages.sh.tmpl
+├── run_once_before_00-install-essentials.sh.tmpl    # Essential dependencies
+└── run_after_configure-shell.sh.tmpl                # Post-installation setup
+```
+
+### Hash-Based Detection
+
+Each script embeds a hash of its relevant package configuration:
+
+```bash
+#!/usr/bin/env bash
+# Hash based on: {{ .packages.darwin.brews | join "," }}
+# Hash: af3b2c1d8e...
+
+{{ template "logging.sh" . }}
+log_header "🍺 HOMEBREW PACKAGES"
+
+# Installation logic...
+{{- range .packages.darwin.brews }}
+brew install "{{ . }}"
+{{- end }}
+```
+
+**How it works:**
+1. Package list changes in `packages.toml`
+2. Template hash changes when rendered
+3. Chezmoi detects hash change and runs the script
+4. Only affected package managers are triggered
+
+### Cross-Platform Support
+
+**Platform Detection:**
+```bash
+{{- if eq .chezmoi.os "darwin" }}
+# macOS-specific logic
+if command -v brew &> /dev/null; then
+    brew install {{ .package_name }}
+fi
+{{- else if eq .chezmoi.os "linux" }}
+# Linux-specific logic
+if command -v apt &> /dev/null; then
+    sudo apt install {{ .package_name }}
+fi
+{{- end }}
+```
+
+**Shared Logging System:**
+All scripts use consistent logging via `{{ template "logging.sh" . }}`:
+```bash
+log_info "Installing packages..."     # Blue [INFO]
+log_success "✅ Installation complete!" # Green [SUCCESS]
+log_warning "⚠️ Manual config needed"   # Yellow [WARNING]
+log_error "❌ Failed to install"       # Red [ERROR]
+log_header "🍺 HOMEBREW PACKAGES"      # Purple header
+```
 
 ### Package Categories
 
 #### Platform-Specific
 
 - **macOS (180+ packages)**
-
   - 🍺 Homebrew formulas (88 packages)
   - 📱 Homebrew casks (40 GUI apps)
   - 🏪 Mac App Store (14 apps)
@@ -247,20 +513,21 @@ This dotfiles repository includes a comprehensive declarative package management
 
 | Script                                         | Purpose          | Triggered By            |
 | ---------------------------------------------- | ---------------- | ----------------------- |
-| `run_onchange_darwin-install-packages.sh.tmpl` | macOS packages   | `packages.toml` changes |
-| `run_onchange_linux-install-packages.sh.tmpl`  | Linux packages   | `packages.toml` changes |
-| `run_onchange_install-cargo-packages.sh.tmpl`  | Rust packages    | `packages.toml` changes |
-| `run_onchange_install-npm-packages.sh.tmpl`    | Node.js packages | `packages.toml` changes |
-| `run_onchange_install-python-packages.sh.tmpl` | Python packages  | `packages.toml` changes |
-| `run_onchange_install-go-packages.sh.tmpl`     | Go packages      | `packages.toml` changes |
-| `run_onchange_install-all-packages.sh.tmpl`    | **All packages** | `packages.toml` changes |
+| `run_once_before_00-install-essentials`       | Essential tools  | First run only          |
+| `run_once_before_10-homebrew-setup`           | Homebrew setup   | First run only (macOS)  |
+| `run_once_after_20-install-homebrew-taps`     | Homebrew taps    | First run only          |
+| `run_onchange_after_21-upgrade-homebrew`      | Homebrew upgrade | `packages.toml` changes |
+| `run_once_after_30-install-homebrew-formulas` | CLI tools        | First run only          |
+| `run_once_after_40-install-homebrew-casks`    | GUI apps         | First run only          |
+| `run_once_after_70-install-cargo-packages`    | Rust packages    | First run only          |
+| `run_onchange_after_71-upgrade-cargo`         | Cargo upgrade    | `packages.toml` changes |
 
 ### Usage Examples
 
 #### Adding a New Package
 
 ```toml
-# Add to ~/.local/share/chezmoi/home/.chezmoidata/packages.toml
+# Edit ~/.local/share/chezmoi/home/.chezmoidata/packages.toml
 [packages.darwin.brews]
 brews = [
   # ... existing packages ...
@@ -275,14 +542,18 @@ brews = [
 chezmoi apply -v
 
 # Or run specific script manually
-chezmoi execute-template < ~/.local/share/chezmoi/home/.chezmoiscripts/run_onchange_install-cargo-packages.sh.tmpl | bash
+chezmoi execute-template < ~/.local/share/chezmoi/home/.chezmoiscripts/common/run_onchange_after_71-upgrade-cargo-packages.sh.tmpl | bash
 ```
 
 #### Installing Everything on New Machine
 
 ```bash
-# Run master installation script
-chezmoi apply  # Will run all scripts for changed packages.toml
+# Fresh installation - runs all `run_once_*` scripts
+chezmoi apply -v
+
+# Force reinstall by clearing script state
+chezmoi state delete-bucket --bucket=scriptState
+chezmoi apply -v
 ```
 
 ### Benefits
@@ -291,9 +562,231 @@ chezmoi apply  # Will run all scripts for changed packages.toml
 - **🔄 Idempotent**: Safe to run multiple times, only installs missing packages
 - **📊 Comprehensive**: Covers all major package managers and platforms
 - **🎨 Rich Feedback**: Color-coded output with progress indicators
-- **🔧 Maintainable**: Clean, well-documented scripts
-- **⚡ Efficient**: Smart detection avoids duplicate installations
+- **🔧 Maintainable**: Clean, well-documented scripts with shared templates
+- **⚡ Efficient**: Hash-based detection avoids unnecessary operations
 - **📈 Scalable**: Easy to add new packages or package managers
+- **🛡️ Error Handling**: Graceful degradation when package managers are missing
+
+---
+
+## Template Library (.chezmoitemplates)
+
+The `.chezmoitemplates/` directory contains reusable template components that provide common functionality across all configuration files and scripts. This shared template library ensures consistency, reduces code duplication, and simplifies maintenance.
+
+### Shared Templates
+
+**Directory Structure:**
+```
+.chezmoitemplates/
+├── logging.sh              # Shared logging functions for scripts
+└── espanso/               # Espanso text expansion templates
+    ├── espanso_match_*.yml # Various text expansion rule categories
+    └── ...                # Additional espanso configurations
+```
+
+**Key Benefits:**
+- **Code Reuse**: DRY principle across all templates and scripts
+- **Consistency**: Same behavior and formatting across configurations
+- **Maintainability**: Update shared logic in one place
+- **Modularity**: Include only needed functionality in each template
+
+### Logging Functions
+
+**`logging.sh`** - Comprehensive logging system for all installation scripts:
+
+```bash
+# Color definitions
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+NC='\033[0m' # No Color
+
+# Logging functions
+log_info() {
+    echo -e "${BLUE}[INFO]${NC} $1"
+}
+
+log_success() {
+    echo -e "${GREEN}[SUCCESS]${NC} $1"
+}
+
+log_warning() {
+    echo -e "${YELLOW}[WARNING]${NC} $1"
+}
+
+log_error() {
+    echo -e "${RED}[ERROR]${NC} $1"
+}
+
+log_header() {
+    echo -e "\n${PURPLE}$1${NC}"
+    echo -e "${PURPLE}$(printf '=%.0s' $(seq 1 ${#1}))${NC}\n"
+}
+```
+
+**Usage in Scripts:**
+```bash
+#!/usr/bin/env bash
+{{ template "logging.sh" . }}
+
+log_header "🍺 HOMEBREW PACKAGES"
+log_info "Installing packages..."
+log_success "✅ Installation completed!"
+log_warning "⚠️ Some packages may need manual configuration"
+log_error "❌ Failed to install package"
+```
+
+**Features:**
+- **Consistent formatting**: Same log format across all scripts
+- **Color coding**: Different colors for different message types
+- **Decorative headers**: Visual separation for script sections
+- **Shell compatibility**: Works with Bash and Zsh
+
+### Text Expansion Templates
+
+**Espanso Configuration Templates** - Automated text expansion rules:
+
+**Categories include:**
+- **Autocorrect rules**: 1000+ common spelling corrections
+- **Date/time expansions**: Quick date and time insertion
+- **Address expansions**: Personal address information
+- **Symbol expansions**: Mathematical symbols, Greek letters
+- **Superscript/subscript**: Scientific notation helpers
+- **Custom abbreviations**: Personal shortcuts and workflows
+
+**Example expansions:**
+```yaml
+# Date and time
+matches:
+  - trigger: ":date"
+    replace: "2025-01-25"
+  - trigger: ":time"
+    replace: "14:30:25"
+  - trigger: ":datetime"
+    replace: "2025-01-25 14:30:25"
+
+# Personal information
+  - trigger: ":email"
+    replace: "{{ .email }}"
+  - trigger: ":name"
+    replace: "{{ .name }}"
+
+# Mathematical symbols
+  - trigger: ":alpha"
+    replace: "α"
+  - trigger: ":beta"
+    replace: "β"
+  - trigger: ":sum"
+    replace: "∑"
+  - trigger: ":integral"
+    replace: "∫"
+
+# Common corrections
+  - trigger: "teh"
+    replace: "the"
+  - trigger: "recieve"
+    replace: "receive"
+  - trigger: "seperate"
+    replace: "separate"
+```
+
+**Template Integration:**
+Espanso templates are processed with personal data from chezmoi:
+
+```yaml
+# Using template variables in expansions
+matches:
+  - trigger: ":myemail"
+    replace: "{{ .email }}"
+  - trigger: ":myname"
+    replace: "{{ .name }}"
+  - trigger: ":github"
+    replace: "{{ .repositories.github }}"
+```
+
+### Template Best Practices
+
+**Including Templates:**
+```bash
+# Include at the top of any template file
+{{ template "logging.sh" . }}
+
+# Pass current context with the dot (.)
+{{ template "utility-functions.sh" . }}
+```
+
+**Template Development Guidelines:**
+
+1. **Make templates pure**: No side effects, return/output only
+2. **Use parameters**: Accept data through template context
+3. **Add error handling**: Check for required parameters
+4. **Document usage**: Add comments explaining how to use
+5. **Keep focused**: One template per logical function group
+
+**Example Template Structure:**
+```bash
+{{/* 
+Template: utility-functions.sh
+Purpose: Common utility functions for shell scripts
+Usage: {{ template "utility-functions.sh" . }}
+Requires: None
+*/}}
+
+# Check if command exists
+command_exists() {
+    command -v "$1" &> /dev/null
+}
+
+# Get OS type
+get_os() {
+    echo "{{ .chezmoi.os }}"
+}
+
+# Get architecture
+get_arch() {
+    echo "{{ .chezmoi.arch }}"
+}
+```
+
+**Template Debugging:**
+```bash
+# Test template rendering
+chezmoi execute-template < .chezmoitemplates/logging.sh
+
+# Test template with data context
+chezmoi execute-template '{{ template "logging.sh" . }}'
+
+# View all available template data
+chezmoi data
+```
+
+**Adding New Templates:**
+
+1. **Identify common patterns** across multiple files
+2. **Create template file** in `.chezmoitemplates/`
+3. **Use clear naming** that describes the template's purpose
+4. **Document parameters** and usage in comments
+5. **Test thoroughly** across different scenarios
+6. **Update existing files** to use the new shared template
+
+**Maintenance Workflow:**
+```bash
+# When updating shared templates:
+1. Edit template in .chezmoitemplates/
+2. Test with: chezmoi execute-template < .chezmoitemplates/template.sh
+3. Test all affected files
+4. Apply changes: chezmoi apply -v
+5. Commit changes with descriptive message
+```
+
+**Template Categories:**
+- **System utilities**: OS detection, command checking, path management
+- **Installation helpers**: Package manager detection, dependency verification
+- **Configuration generators**: Common config file patterns
+- **Text processing**: String manipulation, format conversion
+- **Error handling**: Consistent error reporting and recovery
 
 ---
 
