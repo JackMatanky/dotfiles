@@ -1,3 +1,4 @@
+{{ if eq .chezmoi.os "darwin" -}}
 #!/usr/bin/env bash
 # vim: filetype=bash
 
@@ -7,7 +8,6 @@
 # Dependencies: macOS
 # -----------------------------------------------------------------------------
 
-{{- if eq .chezmoi.os "darwin" }}
 
 set -euo pipefail
 

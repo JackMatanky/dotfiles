@@ -1,12 +1,13 @@
+{{ if eq .chezmoi.os "darwin" -}}
 #!/usr/bin/env bash
 # vim: filetype=bash
+
 # -----------------------------------------------------------------------------
 # Script: run_onchange_upgrade-homebrew-packages.sh.tmpl
 # Purpose: Upgrade Homebrew packages when package lists change
 # Dependencies: Homebrew
 # -----------------------------------------------------------------------------
 
-{{- if eq .chezmoi.os "darwin" }}
 
 set -euo pipefail
 

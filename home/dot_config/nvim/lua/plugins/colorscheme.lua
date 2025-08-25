@@ -25,18 +25,16 @@ return {
         navic = { enabled = true, custom_bg = "lualine" }, -- Custom background
       },
     },
-    specs = {
-      {
-        "akinsho/bufferline.nvim",
-        optional = true,
-        opts = function(_, opts)
-          if (vim.g.colors_name or ""):find("catppuccin") then
-            opts.highlights =
-              require("catppuccin.groups.integrations.bufferline").get_theme()
-          end
-        end,
-      },
-    },
+  },
+
+  -- Configure bufferline with Catppuccin theme
+  {
+    "akinsho/bufferline.nvim",
+    opts = function(_, opts)
+      if (vim.g.colors_name or ""):find("catppuccin") then
+        opts.highlights = require("catppuccin.groups.integrations.bufferline").get_theme()
+      end
+    end,
   },
 
   -- Configure LazyVim to load catppuccin
