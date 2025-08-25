@@ -21,9 +21,8 @@ typeset -U path cdpath fpath manpath
 #                Load Modular Shell Environment                #
 # ------------------------------------------------------------ #
 # Essential Shell Paths (XDG compliant, default: ~/.config)
-: "${XDG_CONFIG_HOME:=${HOME}/.config}"
-readonly SHELL_DIR="${XDG_CONFIG_HOME}/shell"
-# readonly LIB_DIR="${SHELL_DIR}/lib"
+: ${XDG_CONFIG_HOME:="${HOME}/.config"}
+: ${SHELL_DIR:="${XDG_CONFIG_HOME}/shell"}
 readonly SCRIPT_LOADER="${SHELL_DIR}/lib/load_core.sh"
 
 # Extended CLI Ecosystem Path
