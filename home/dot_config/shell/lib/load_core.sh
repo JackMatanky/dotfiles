@@ -9,7 +9,9 @@
 # -----------------------------------------------------------------------------
 
 # Determine library directory paths
-LIB_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/shell/lib"
+# Note: LIB_DIR is already set as readonly in the calling RC file
+# Only set if not already defined to avoid readonly conflicts
+: "${LIB_DIR:=${XDG_CONFIG_HOME:-$HOME/.config}/shell/lib}"
 UTILS_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/shell/utils"
 
 # Load logging functions (log_info, log_warn, log_error)
