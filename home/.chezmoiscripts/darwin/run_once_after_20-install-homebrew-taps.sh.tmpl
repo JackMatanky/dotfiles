@@ -1,3 +1,4 @@
+{{ if eq .chezmoi.os "darwin" -}}
 #!/usr/bin/env bash
 # vim: filetype=bash
 
@@ -6,8 +7,6 @@
 # Purpose: Install Homebrew taps (runs only when taps list changes)
 # Dependencies: Homebrew
 # -----------------------------------------------------------------------------
-
-{{- if eq .chezmoi.os "darwin" }}
 
 set -euo pipefail
 
