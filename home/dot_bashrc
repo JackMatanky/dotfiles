@@ -123,11 +123,24 @@ fi
 # Docs: https://starship.rs/config/
 # If the `starship` command is available (command -v), then initialize starship
 if command -v starship >/dev/null 2>&1; then
-  export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+  export STARSHIP_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/starship/starship.toml"
   eval "$(starship init bash)"
-  # If anything overwrote PROMPT_COMMAND, re-append starship cleanly
-  case ";$PROMPT_COMMAND;" in
-    *";_starship_precmd;"*) ;;  # already present
-    *) PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND; }_starship_precmd" ;;
-  esac
+
+  # Convert scalar PROMPT_COMMAND -> array (split on ';'), drop empties
+  if [[ ! $(declare -p PROMPT_COMMAND 2>/dev/null) =~ "declare -a" ]]; then
+    IFS=';' read -r -a _pc_parts <<<"${PROMPT_COMMAND-}"
+    PROMPT_COMMAND=()
+    for _pc in "${_pc_parts[@]}"; do
+      _pc="${_pc#"${_pc%%[![:space:]]*}"}"   # ltrim
+      _pc="${_pc%"${_pc##*[![:space:]]}"}"   # rtrim
+      [[ -n "$_pc" ]] && PROMPT_COMMAND+=("$_pc")
+    done
+    unset _pc_parts _pc
+  fi
+
+  # Append starship precmd if not already present
+  _have_starship=0
+  for f in "${PROMPT_COMMAND[@]}"; do [[ "$f" == "_starship_precmd" ]] && _have_starship=1; done
+  [[ $_have_starship -eq 0 ]] && PROMPT_COMMAND+=("_starship_precmd")
+  unset _have_starship
 fi

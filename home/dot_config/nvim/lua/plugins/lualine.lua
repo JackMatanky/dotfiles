@@ -47,7 +47,9 @@ return {
       options = {
         theme = "auto", -- Automatically adapt to colorscheme
         globalstatus = vim.o.laststatus == 3, -- Use global statusline if enabled
-        disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } }, -- Disable for UI components
+        disabled_filetypes = {
+            statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } -- Disable for UI components
+        },
       },
 
       -- Define Lualine sections
