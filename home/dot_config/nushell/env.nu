@@ -178,7 +178,9 @@ let user_paths = [
   ($env.CARGO_HOME | path join 'bin')
 ]
 
-let nixos_paths = if ($OS == 'Linux' and ('/run/current-system/sw/bin' | path exists)) {
+let nixos_paths = if (
+    $OS == 'Linux' and ('/run/current-system/sw/bin' | path exists)
+    ) {
   ['/run/current-system/sw/bin']
 } else {
   []
@@ -209,6 +211,14 @@ $env.PATH = (
 
 
 if ($OS == 'Darwin') {
+    $env.HOMEBREW_BASH = ($env.BREW_OPT_DIR | path join 'bash' 'bin')
+    if ($env.HOMEBREW_BASH | is-not-empty) {
+        $env.PATH = (
+          $env.PATH
+          | split row (char esep)
+          | prepend $env.HOMEBREW_BASH
+        )
+    }
     $env.HOMEBREW_RUBY = ($env.BREW_OPT_DIR | path join 'ruby' 'bin')
     if ($env.HOMEBREW_RUBY | is-not-empty) {
         $env.PATH = (
@@ -218,7 +228,6 @@ if ($OS == 'Darwin') {
           | prepend $env.HOMEBREW_RUBY
         )
     }
-
     $env.PATH = (
       $env.PATH
         | split row (char esep)
@@ -232,7 +241,10 @@ if ($OS == 'Darwin') {
 }
 
 if ($OS == 'Linux') {
-    $env.PATH = ($env.PATH | append /run/current-system/sw/bin)
+    $env.PATH = (
+        $env.PATH
+        | append /run/current-system/sw/bin
+    )
 }
 
 # To load from a custom file you can use:
