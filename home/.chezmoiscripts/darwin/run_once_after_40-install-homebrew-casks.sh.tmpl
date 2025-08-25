@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
-{{/* vim: set filetype=bash: */}}
-{{- if eq .chezmoi.os "darwin" }}
+# vim: filetype=bash
+
 # -----------------------------------------------------------------------------
 # Script: run_onchange_install-homebrew-casks.sh.tmpl
 # Purpose: Install Homebrew casks (runs only when cask list changes)
 # Dependencies: Homebrew
-# Hash based on: {{ .packages.darwin.casks | join "," }}
 # -----------------------------------------------------------------------------
+
+{{- if eq .chezmoi.os "darwin" }}
 
 set -euo pipefail
 

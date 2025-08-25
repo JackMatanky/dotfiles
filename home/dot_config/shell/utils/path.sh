@@ -1,4 +1,6 @@
+#!/usr/bin/env bash
 # shellcheck shell=bash
+
 # -----------------------------------------------------------------------------
 # Filename: ~/.config/shell/utils/path.sh
 # Description: Safe helpers for manipulating PATH (prepend/append without dupes).

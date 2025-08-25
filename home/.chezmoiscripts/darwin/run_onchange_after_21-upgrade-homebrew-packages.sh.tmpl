@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-{{/* vim: set filetype=bash: */}}
-{{- if eq .chezmoi.os "darwin" }}
+# vim: filetype=bash
 # -----------------------------------------------------------------------------
 # Script: run_onchange_upgrade-homebrew-packages.sh.tmpl
 # Purpose: Upgrade Homebrew packages when package lists change
 # Dependencies: Homebrew
-# Hash based on: {{ .packages.darwin.taps | join "," }},{{ .packages.darwin.brews | join "," }},{{ .packages.darwin.casks | join "," }}
 # -----------------------------------------------------------------------------
+
+{{- if eq .chezmoi.os "darwin" }}
 
 set -euo pipefail
 

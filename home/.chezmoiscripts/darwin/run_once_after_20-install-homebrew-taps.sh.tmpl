@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
-{{/* vim: set filetype=bash: */}}
-{{- if eq .chezmoi.os "darwin" }}
+# vim: filetype=bash
+
 # -----------------------------------------------------------------------------
 # Script: run_onchange_install-homebrew-taps.sh.tmpl
 # Purpose: Install Homebrew taps (runs only when taps list changes)
 # Dependencies: Homebrew
-# Hash based on: {{ .packages.darwin.taps | join "," }}
 # -----------------------------------------------------------------------------
+
+{{- if eq .chezmoi.os "darwin" }}
 
 set -euo pipefail
 
