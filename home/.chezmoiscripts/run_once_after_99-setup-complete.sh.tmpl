@@ -1,114 +1,52 @@
 #!/usr/bin/env bash
 {{/* vim: set filetype=bash: */}}
 # -----------------------------------------------------------------------------
-# Script: run_onchange_package-management-system.sh.tmpl
-# Purpose: Document the new modular package management system
-# Hash based on: modular-v1.0
+# Script: run_once_after_99-setup-complete.sh.tmpl
+# Purpose: Mark initial setup as complete and provide summary (runs once)
+# When: Runs once after all package installation scripts complete
+# Dependencies: All other setup scripts
 # -----------------------------------------------------------------------------
 
 set -euo pipefail
 
 {{ template "logging.sh" . }}
 
-log_header "🔧 Modular Package Management System"
-log_success "Package management has been modernized with efficient modular scripts!"
-log_info ""
-log_info "✨ New Organized Architecture:"
+log_header "✅ CHEZMOI INITIAL SETUP COMPLETE"
 
+# Create marker file to indicate initial setup is complete
+# This prevents upgrade scripts from running automatic updates on existing systems
+mkdir -p "$HOME/.config"
+touch "$HOME/.config/chezmoi-initial-setup-complete"
+
+log_success "Dotfiles configuration applied successfully!"
+log_info ""
+log_info "🔧 What was configured:"
 {{- if eq .chezmoi.os "darwin" }}
-log_info "  📁 darwin/ - macOS Package Scripts (Ordered):"
-log_info "    • run_once_before_10-homebrew-setup.sh.tmpl - Install/update Homebrew (once)"
-log_info "    • run_once_after_20-install-homebrew-taps.sh.tmpl - Install taps (once)"
-log_info "    • run_onchange_after_21-upgrade-homebrew-packages.sh.tmpl - Upgrade packages (hash-based)"
-log_info "    • run_once_after_30-install-homebrew-formulas.sh.tmpl - Install formulas (once)"
-log_info "    • run_once_after_40-install-homebrew-casks.sh.tmpl - Install casks (once)"
-log_info "    • run_once_after_50-install-mas-apps.sh.tmpl - Install MAS apps (once)"
-log_info "    • run_once_after_60-install-vscode-extensions.sh.tmpl - Install VS Code extensions (once)"
+log_info "  • Homebrew package manager and {{ len .packages.darwin.brews }} CLI tools"
+log_info "  • {{ len .packages.darwin.casks }} GUI applications via Homebrew casks"
+{{- if .packages.darwin.mas }}
+log_info "  • {{ len .packages.darwin.mas }} Mac App Store applications"
 {{- end }}
-
-log_info ""
-log_info "  📁 common/ - Cross-Platform Scripts (Ordered):"
-log_info "    • run_once_after_70-install-cargo-packages.sh.tmpl - Install Cargo packages (once)"
-log_info "    • run_onchange_after_71-upgrade-cargo-packages.sh.tmpl - Upgrade Cargo packages (hash-based)"
-log_info "    • run_once_after_71-install-npm-packages.sh.tmpl - Install NPM packages (once)"
-log_info "    • run_onchange_after_72-upgrade-npm-packages.sh.tmpl - Upgrade NPM packages (hash-based)"
-log_info "    • run_once_after_72-install-go-packages.sh.tmpl - Install Go packages (once)"
-log_info "    • run_once_after_73-install-python-packages.sh.tmpl - Install Python packages (once)"
-log_info "    • run_onchange_after_73-upgrade-python-packages.sh.tmpl - Upgrade Python packages (hash-based)"
-
-log_info ""
-{{- if eq .chezmoi.os "linux" }}
-log_info "  📁 linux/ - Linux Package Scripts (Ordered):"
-log_info "    • run_once_after_20-install-flatpak-apps.sh.tmpl - Install Flatpak apps (once)"
-log_info "    • run_onchange_after_21-upgrade-linux-packages.sh.tmpl - Upgrade all Linux packages (hash-based)"
-log_info "    • run_once_after_30-install-apt-packages.sh.tmpl - Install APT packages (once)"
-log_info "    • run_once_after_40-install-snap-packages.sh.tmpl - Install Snap packages (once)"
-{{- else }}
-log_info "  📁 linux/ - Linux Package Scripts:"
-log_info "    • Available for Linux systems (install once, upgrade on changes)"
-{{- end }}
-
-log_info ""
-log_info "  📁 windows/ - Windows Package Scripts:"
-log_info "    • (Available for future Windows package management)"
-
-log_info ""
-log_info "  🔄 Package Manager Priority:"
-log_info "    macOS: Homebrew (brews/casks) → MAS → Language-specific"
-log_info "    Linux: Flatpak → APT → Snap → Language-specific"
-log_info "    Cross-platform: Cargo, NPM, Python, Go (work everywhere)"
-log_info ""
-log_info "⚙️ Benefits:"
-log_info "  • Initial installation runs ONCE per package manager"
-log_info "  • Upgrades run ONLY when package lists change (hash-based)"
-log_info "  • Prevents unnecessary package reinstalls"
-log_info "  • Better logging with shared logging template"
-log_info "  • Modular design allows for targeted updates"
-log_info "  • Efficient resource usage and faster chezmoi apply"
-log_info "  • Proper execution order using chezmoi attributes"
-log_info ""
-log_info "🔄 Execution Order (using chezmoi attributes):"
-log_info "  1. run_once_before_00-install-essentials.sh.tmpl (Essential tools first)"
-{{- if eq .chezmoi.os "darwin" }}
-log_info "  2. run_once_before_10-homebrew-setup.sh.tmpl (Platform setup)"
-log_info "  3. run_once_after_20-60-* (Initial Darwin package installation)"
-log_info "  4. run_onchange_after_21-* (Darwin package upgrades when lists change)"
 {{- else if eq .chezmoi.os "linux" }}
-log_info "  2. Linux platform setup (via essentials script)"
-log_info "  3. run_once_after_20-40-* (Initial Linux package installation)"
-log_info "  4. run_onchange_after_21-* (Linux package upgrades when lists change)"
+{{- if .packages.linux.flatpak }}
+log_info "  • {{ len .packages.linux.flatpak }} Flatpak applications"
 {{- end }}
-log_info "  5. run_once_after_70-73-* (Initial cross-platform package installation)"
-log_info "  6. run_onchange_after_71-73-* (Cross-platform upgrades when lists change)"
-log_info "  7. run_after_configure-shell.sh.tmpl (Shell config after packages)"
-log_info "  8. run_onchange_after_99-* (Documentation/status)"
-log_info ""
-log_info "🎯 How it works:"
-log_info "  • Installation scripts (run_once_*) run only on first chezmoi apply"
-log_info "  • Upgrade scripts (run_onchange_*) embed package list hashes"
-log_info "  • When packages change, hash changes, triggering upgrade run"
-log_info "  • Unchanged lists = no execution, faster deployments"
-log_info "  • before_/after_ attributes control execution timing"
-log_info ""
-
-# Show total managed packages
-{{- if eq .chezmoi.os "darwin" }}
-log_info "📊 Currently managing {{ add (len .packages.darwin.taps) (len .packages.darwin.brews) (len .packages.darwin.casks) (len .packages.darwin.mas) (len .packages.darwin.mas.vscode) }}+ macOS packages"
-{{- else if eq .chezmoi.os "linux" }}
-log_info "📊 Currently managing {{ add (len .packages.linux.flatpak) (len .packages.linux.apt) (len .packages.linux.snap) }}+ Linux packages"
+{{- if .packages.linux.apt }}
+log_info "  • {{ len .packages.linux.apt }} APT packages"
 {{- end }}
-
+{{- if .packages.linux.snap }}
+log_info "  • {{ len .packages.linux.snap }} Snap packages"
+{{- end }}
+{{- end }}
 {{- if .packages.cargo.crates }}
-log_info "📊 Managing {{ len .packages.cargo.crates }} Rust/Cargo packages"
+log_info "  • {{ len .packages.cargo.crates }} Rust/Cargo packages"
 {{- end }}
-
-{{- if .packages.npm.global }}
-log_info "📊 Managing {{ len .packages.npm.global }} NPM global packages"
-{{- end }}
-
-{{- if .packages.python.global }}
-log_info "📊 Managing {{ len .packages.python.global }} Python packages"
-{{- end }}
-
+log_info "  • Shell environment (Zsh with Starship prompt)"
+log_info "  • Development tools and configuration"
 log_info ""
-log_success "System ready! Package management is now efficient and modular."
+log_info "📋 Next steps:"
+log_info "  • Restart your shell: exec \$SHELL"
+log_info "  • For package updates, use manual commands or justfile tasks"
+log_info "  • Configuration changes will be applied with: chezmoi apply"
+
+log_success "🎉 Welcome to your new development environment!"

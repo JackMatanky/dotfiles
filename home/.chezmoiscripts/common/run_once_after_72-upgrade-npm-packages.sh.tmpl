@@ -2,10 +2,11 @@
 {{/* vim: set filetype=bash: */}}
 {{- if .packages.npm.global }}
 # -----------------------------------------------------------------------------
-# Script: run_onchange_upgrade-npm-packages.sh.tmpl
-# Purpose: Upgrade NPM global packages when package list changes
+# Script: run_once_after_72-upgrade-npm-packages.sh.tmpl
+# Purpose: Initial NPM update and global package setup (runs once)
+# When: Runs once after NPM packages are installed
 # Dependencies: Node.js, NPM
-# Hash based on: {{ .packages.npm.global | join "," }}
+# Note: For regular updates, use: npm update -g
 # -----------------------------------------------------------------------------
 
 set -euo pipefail

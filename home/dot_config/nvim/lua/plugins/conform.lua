@@ -95,6 +95,13 @@ return {
           "$FILENAME",
         },
         condition = function(_, ctx)
+          -- Check if config file exists
+          local config_file = os.getenv("HOME")
+            .. "/.config/.markdownlint.jsonc"
+          if vim.fn.filereadable(config_file) == 0 then
+            return false
+          end
+
           -- Ensure markdownlint runs only if it has already detected linting issues
           local diag = vim.tbl_filter(function(d)
             return d.source == "markdownlint"

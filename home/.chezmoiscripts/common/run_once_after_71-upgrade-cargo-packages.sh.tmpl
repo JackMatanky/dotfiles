@@ -2,10 +2,11 @@
 {{/* vim: set filetype=bash: */}}
 {{- if .packages.cargo.crates }}
 # -----------------------------------------------------------------------------
-# Script: run_onchange_upgrade-cargo-packages.sh.tmpl
-# Purpose: Upgrade Rust/Cargo packages when package list changes
-# Dependencies: Rust, Cargo
-# Hash based on: {{ .packages.cargo.crates | join "," }}
+# Script: run_once_after_71-upgrade-cargo-packages.sh.tmpl
+# Purpose: Initial Rust toolchain update and Cargo package setup (runs once)
+# When: Runs once after Cargo packages are installed
+# Dependencies: Rust, Cargo, cargo-update
+# Note: For regular updates, use: cargo install-update --all
 # -----------------------------------------------------------------------------
 
 set -euo pipefail

@@ -1,0 +1,51 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+# vim: filetype=bash
+
+# -----------------------------------------------------------------------------
+# Script: run_once_after_21-install-homebrew-packages.sh.tmpl
+# Purpose: Initial Homebrew package update and cleanup (runs once after taps are added)
+# When: Runs once after taps are installed, ensures packages are current on first setup
+# Dependencies: Homebrew, taps
+# -----------------------------------------------------------------------------
+
+set -euo pipefail
+
+{{ template "logging.sh" . }}
+
+log_header "📦 HOMEBREW INITIAL PACKAGE UPDATE"
+
+# Ensure Homebrew is available
+if ! command -v brew &> /dev/null; then
+    log_error "Homebrew not found. Please run the Homebrew setup script first."
+    exit 1
+fi
+
+# Initial update to ensure package databases are current
+log_info "Updating Homebrew package database..."
+if brew update; then
+    log_success "Homebrew updated"
+else
+    log_warning "Homebrew update had issues"
+fi
+
+# Only upgrade packages if this is a fresh install
+# (skip upgrades on existing systems to avoid unexpected changes)
+if [[ ! -f "$HOME/.config/chezmoi-initial-setup-complete" ]]; then
+    log_info "Initial setup detected - upgrading existing packages..."
+    if brew upgrade; then
+        log_success "All packages upgraded"
+    else
+        log_warning "Some packages failed to upgrade"
+    fi
+    
+    # Clean up old versions
+    log_info "🧹 Cleaning up old versions..."
+    brew cleanup --prune=all || log_warning "Cleanup had issues"
+else
+    log_info "Existing setup detected - skipping package upgrades"
+    log_info "To upgrade packages manually, run: brew upgrade"
+fi
+
+log_success "✅ Homebrew package update completed!"
+{{- end }}

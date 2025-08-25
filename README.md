@@ -389,6 +389,10 @@ PROJECTS_DIR="{{ .development_dirs.projects }}"
 
 The `.chezmoiscripts/` directory contains a sophisticated package management system that automatically installs and maintains **280+ packages** across macOS, Linux, and cross-platform environments using a **two-phase, hash-based approach**.
 
+### 🎯 Key Principle
+
+**Package installation/upgrades only run during initial setup, never on subsequent `chezmoi apply` operations.**
+
 ### Two-Phase Installation Pattern
 
 **Phase 1: Initial Installation (`run_once_*`)**
@@ -396,16 +400,18 @@ The `.chezmoiscripts/` directory contains a sophisticated package management sys
 - Essential dependencies, platform setup, initial package installation
 - Only runs on fresh setups or when script state is cleared
 
-**Phase 2: Update Management (`run_onchange_*`)**
-- Updates packages **only** when package lists change in `packages.toml`
-- Hash-based detection triggers scripts when configuration changes
-- Efficient upgrades without reinstalling everything
+**Phase 2: Manual Updates (No automatic `run_onchange_*`)**
+- Package updates are **manual only** via `justfile` tasks or direct commands
+- ❌ **No automatic package updates** on configuration changes
+- ✅ **Explicit control** over when packages are updated
+- Uses smart detection to skip upgrades on existing systems
 
 **Benefits:**
-- ✅ **Performance**: No reinstalls on every `chezmoi apply`
-- ✅ **Efficiency**: Hash-based detection triggers upgrades only when needed
-- ✅ **Resource-friendly**: Reduces bandwidth and system load
-- ✅ **Predictable**: Clear separation between install and upgrade logic
+- ✅ **Fast `chezmoi apply`**: No unwanted package operations
+- ✅ **Predictable behavior**: Scripts only run when intended
+- ✅ **Explicit control**: Package updates require manual action
+- ✅ **Initial setup works**: New systems get everything installed
+- ✅ **Existing systems protected**: No unexpected changes
 
 ### Script Categories
 
@@ -1040,6 +1046,157 @@ Templates use Go template syntax with variables from `chezmoi.toml`:
 - [Chezmoi Documentation](https://www.chezmoi.io/)
 - [Chezmoi Quick Start](https://www.chezmoi.io/quick-start/)
 - [Go Template Documentation](https://pkg.go.dev/text/template)
+
+---
+
+---
+
+## Chezmoi Script Management Guidelines
+
+This section documents the current script management approach that ensures **package installer scripts never run automatically on changes**.
+
+### 🎯 Core Principles
+
+1. **Package installation/upgrades only run during initial setup**
+2. **Configuration scripts run every time to keep settings current**
+3. **Manual package updates via `justfile` tasks or direct commands**
+4. **No `run_onchange_*` prefixes for package management**
+
+### 📁 Current Script Categories
+
+#### ✅ **Hook Scripts** (Run Automatically)
+```bash
+run_after_configure-shell.sh.tmpl     # Shell configuration (runs every time)
+```
+
+#### 🏗️ **Setup Scripts** (Run Once Only)
+```bash
+# Essential setup
+run_once_before_00-install-essentials.sh.tmpl
+
+# Platform-specific (Darwin)
+run_once_before_10-homebrew-setup.sh.tmpl
+run_once_after_20-install-homebrew-taps.sh.tmpl
+run_once_after_21-install-homebrew-packages.sh.tmpl    # Initial update only
+run_once_after_30-install-homebrew-formulas.sh.tmpl
+run_once_after_40-install-homebrew-casks.sh.tmpl
+run_once_after_50-install-mas-apps.sh.tmpl
+run_once_after_60-install-vscode-extensions.sh.tmpl
+
+# Platform-specific (Linux)
+run_once_after_20-install-flatpak-apps.sh.tmpl
+run_once_after_21-upgrade-linux-packages.sh.tmpl       # Initial update only
+run_once_after_30-install-apt-packages.sh.tmpl
+run_once_after_40-install-snap-packages.sh.tmpl
+
+# Cross-platform packages
+run_once_after_70-install-cargo-packages.sh.tmpl
+run_once_after_71-upgrade-cargo-packages.sh.tmpl       # Initial toolchain update
+run_once_after_71-install-npm-packages.sh.tmpl
+run_once_after_72-upgrade-npm-packages.sh.tmpl         # Initial NPM update
+run_once_after_72-install-go-packages.sh.tmpl
+run_once_after_73-install-python-packages.sh.tmpl
+run_once_after_73-upgrade-python-packages.sh.tmpl      # Initial Python update
+
+# Setup completion
+run_once_after_99-setup-complete.sh.tmpl               # Creates marker file
+```
+
+### ⚙️ Smart Script Behavior
+
+**Initial Setup Detection**: Scripts check for `$HOME/.config/chezmoi-initial-setup-complete`:
+- **File missing**: Initial setup → run installations and upgrades
+- **File exists**: Existing system → skip automatic upgrades, show manual commands
+
+**Example Smart Logic**:
+```bash
+if [[ ! -f "$HOME/.config/chezmoi-initial-setup-complete" ]]; then
+    log_info "Initial setup detected - installing packages..."
+    # Run package installations/upgrades
+else
+    log_info "Existing setup detected - skipping automatic upgrades"
+    log_info "To upgrade packages manually, run: brew upgrade"
+fi
+```
+
+### 📦 Manual Package Management
+
+**Using justfile tasks** (recommended):
+```bash
+just update-packages           # Update all packages for current OS
+just update-packages-macos     # macOS-specific updates
+just update-packages-linux     # Linux-specific updates
+just update-packages-common    # Cross-platform packages
+```
+
+**Direct commands**:
+```bash
+# macOS
+brew update && brew upgrade && brew cleanup
+mas upgrade
+
+# Linux
+sudo apt update && apt upgrade
+flatpak update
+sudo snap refresh
+
+# Cross-platform
+cargo install-update --all    # Rust packages
+npm update -g                  # NPM packages
+pip3 install --user --upgrade <package>  # Python packages
+```
+
+### 🔧 Adding New Scripts
+
+#### For Configuration Changes (Always Run)
+```bash
+# Use run_after_ prefix - runs every chezmoi apply
+run_after_new-config.sh.tmpl
+```
+
+#### For Package Installation (Run Once)
+```bash
+# Use run_once_ prefix with smart upgrade logic
+run_once_after_XX-install-new-package.sh.tmpl
+```
+
+#### ❌ Never Use These Patterns
+```bash
+# These would run on every package list change:
+run_onchange_*-upgrade-*.sh.tmpl    # ❌ BAD
+run_onchange_*-install-*.sh.tmpl    # ❌ BAD
+```
+
+### 🧪 Testing & Verification
+
+```bash
+# Verify no scripts run on existing systems
+chezmoi apply --dry-run    # Should show no script execution
+
+# Test all scripts manually
+just re-run-scripts
+
+# Reset for fresh testing
+just clean-apply
+```
+
+### 🎉 Benefits of This Approach
+
+- ✅ **Fast `chezmoi apply`** - No unwanted package operations
+- ✅ **Predictable behavior** - Scripts only run when intended
+- ✅ **Explicit control** - Package updates require manual action
+- ✅ **Initial setup works** - New systems get everything installed
+- ✅ **Existing systems protected** - No unexpected changes
+
+### 🚨 Migration Notes
+
+**Previous Issues Fixed**:
+- Removed all `run_onchange_*` prefixes from package scripts
+- Added smart upgrade detection logic
+- Enhanced script headers with clear purpose documentation
+- Added manual package update tasks to `justfile`
+
+**Current State**: All package installer scripts now use `run_once_*` prefixes and will only run during initial setup or when explicitly re-executed.
 
 ---
 

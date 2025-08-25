@@ -2,54 +2,66 @@
 {{/* vim: set filetype=bash: */}}
 {{- if eq .chezmoi.os "linux" }}
 # -----------------------------------------------------------------------------
-# Script: run_onchange_upgrade-linux-packages.sh.tmpl
-# Purpose: Upgrade Linux packages when package lists change
+# Script: run_once_after_21-upgrade-linux-packages.sh.tmpl
+# Purpose: Initial Linux package update and cleanup (runs once)
+# When: Runs once after Linux packages are installed
 # Dependencies: Package managers (APT, Flatpak, Snap)
-# Hash based on: {{ .packages.linux.flatpak | join "," }},{{ .packages.linux.apt | join "," }},{{ .packages.linux.snap | join "," }}
+# Note: For regular updates, use: sudo apt upgrade && flatpak update && sudo snap refresh
 # -----------------------------------------------------------------------------
 
 set -euo pipefail
 
 {{ template "logging.sh" . }}
 
-log_header "🔄 LINUX PACKAGE UPGRADES"
+log_header "📦 LINUX INITIAL PACKAGE UPDATE"
 
-# Upgrade APT packages
-if command -v apt &> /dev/null; then
-    log_info "🔄 Updating APT packages..."
-    if sudo apt update && sudo apt upgrade -y; then
-        log_success "APT packages updated"
-        
-        # Clean up
-        log_info "🧹 Cleaning up APT..."
-        sudo apt autoremove -y || log_warning "APT autoremove had issues"
-        sudo apt autoclean || log_warning "APT autoclean had issues"
-    else
-        log_warning "APT upgrade had issues"
+# Only do upgrades on fresh install to avoid unexpected changes
+if [[ ! -f "$HOME/.config/chezmoi-initial-setup-complete" ]]; then
+    log_info "Initial setup detected - updating all package managers..."
+    
+    # Update APT packages
+    if command -v apt &> /dev/null; then
+        log_info "🔄 Updating APT packages..."
+        if sudo apt update && sudo apt upgrade -y; then
+            log_success "APT packages updated"
+            
+            # Clean up
+            log_info "🧹 Cleaning up APT..."
+            sudo apt autoremove -y || log_warning "APT autoremove had issues"
+            sudo apt autoclean || log_warning "APT autoclean had issues"
+        else
+            log_warning "APT upgrade had issues"
+        fi
     fi
+    
+    # Update Flatpak packages
+    if command -v flatpak &> /dev/null; then
+        log_info "🔄 Updating Flatpak applications..."
+        if flatpak update -y; then
+            log_success "Flatpak applications updated"
+        else
+            log_warning "Flatpak update had issues"
+        fi
+    fi
+    
+    # Update Snap packages
+    if command -v snap &> /dev/null; then
+        log_info "🔄 Refreshing Snap packages..."
+        if sudo snap refresh; then
+            log_success "Snap packages refreshed"
+        else
+            log_warning "Snap refresh had issues"
+        fi
+    fi
+else
+    log_info "Existing setup detected - skipping package upgrades"
+    log_info "To upgrade packages manually, run:"
+    log_info "  • sudo apt update && sudo apt upgrade"
+    log_info "  • flatpak update"
+    log_info "  • sudo snap refresh"
 fi
 
-# Upgrade Flatpak packages
-if command -v flatpak &> /dev/null; then
-    log_info "🔄 Updating Flatpak applications..."
-    if flatpak update -y; then
-        log_success "Flatpak applications updated"
-    else
-        log_warning "Flatpak update had issues"
-    fi
-fi
-
-# Upgrade Snap packages
-if command -v snap &> /dev/null; then
-    log_info "🔄 Refreshing Snap packages..."
-    if sudo snap refresh; then
-        log_success "Snap packages refreshed"
-    else
-        log_warning "Snap refresh had issues"
-    fi
-fi
-
-log_success "✅ Linux package upgrades completed!"
+log_success "✅ Linux package update completed!"
 {{- else }}
 #!/usr/bin/env bash
 # Not on Linux - skipping Linux package upgrades

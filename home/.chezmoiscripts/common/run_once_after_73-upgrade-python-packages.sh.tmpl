@@ -2,10 +2,11 @@
 {{/* vim: set filetype=bash: */}}
 {{- if .packages.python.global }}
 # -----------------------------------------------------------------------------
-# Script: run_onchange_upgrade-python-packages.sh.tmpl
-# Purpose: Upgrade Python packages when package list changes
-# Dependencies: Python, pip
-# Hash based on: {{ .packages.python.global | join "," }}
+# Script: run_once_after_73-upgrade-python-packages.sh.tmpl
+# Purpose: Initial Python package update and setup (runs once)
+# When: Runs once after Python packages are installed
+# Dependencies: Python, pip, uv (preferred)
+# Note: For regular updates, use: pip install --upgrade <package> or uv pip upgrade
 # -----------------------------------------------------------------------------
 
 set -euo pipefail
