@@ -15,46 +15,14 @@ return {
     priority = 1000,
     name = "catppuccin",
     opts = {
-      flavour = "macchiato",
-      transparent_background = true,
-      dim_inactive = {
-        enabled = false, -- dims the background color of inactive window
-        shade = "dark",
-        percentage = 0.15, -- percentage of the shade to apply to the inactive window
-      },
+      flavour = "macchiato", -- Custom: Default is "mocha"
+      transparent_background = true, -- Custom: Enable transparency
+      -- Most integrations are enabled by default, so we only need to specify
+      -- integrations that differ from defaults or have custom configurations
       integrations = {
-        aerial = true,
-        alpha = true,
-        cmp = true,
-        dashboard = true,
-        flash = true,
-        gitsigns = true,
-        headlines = true,
-        illuminate = true,
-        indent_blankline = { enabled = true },
-        leap = true,
-        lsp_trouble = true,
-        mason = true,
-        markdown = true,
-        mini = true,
-        native_lsp = {
-          enabled = true,
-          underlines = {
-            errors = { "undercurl" },
-            hints = { "undercurl" },
-            warnings = { "undercurl" },
-            information = { "undercurl" },
-          },
-        },
-        navic = { enabled = true, custom_bg = "lualine" },
-        neotest = true,
-        neotree = true,
-        noice = true,
-        semantic_tokens = true,
-        telescope = true,
-        treesitter = true,
-        treesitter_context = true,
-        which_key = true,
+        -- All the listed integrations are already enabled by default in LazyVim
+        -- We only need to specify those with custom configurations
+        navic = { enabled = true, custom_bg = "lualine" }, -- Custom background
       },
     },
     specs = {

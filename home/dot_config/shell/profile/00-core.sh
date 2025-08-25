@@ -25,7 +25,7 @@ export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 
 # ---------------- Internal Path Constants ------------------- #
 # Readability helpers (not exported).
-readonly SHELL_DIR="${XDG_CONFIG_HOME}/shell"
+: ${SHELL_DIR:="${XDG_CONFIG_HOME:-$HOME/.config}/shell"}
 readonly UTILS_DIR="${SHELL_DIR}/utils"
 readonly PATH_UTILS="${UTILS_DIR}/path.sh"
 

@@ -20,11 +20,11 @@ touch "${HOME}/.hushlogin"
 # Essential Shell Paths (XDG compliant, default: ~/.config)
 : "${XDG_CONFIG_HOME:=${HOME}/.config}"
 readonly SHELL_DIR="${XDG_CONFIG_HOME}/shell"
-readonly LIB_DIR="${SHELL_DIR}/lib"
-readonly SCRIPT_LOADER="${LIB_DIR}/load_core.sh"
+# readonly LIB_DIR="${SHELL_DIR}/lib"
+readonly SCRIPT_LOADER="${SHELL_DIR}/lib/load_core.sh"
 
 # Extended CLI Ecosystem Path
-readonly CLI_DIR="${HOME}/cli"
+# readonly CLI_DIR="${HOME}/cli"
 
 # Load core shell support modules (log, source_sh_files)
 # shellcheck source=/dev/null
@@ -35,12 +35,12 @@ readonly CLI_DIR="${HOME}/cli"
 source_sh_files "${SHELL_DIR}/profile"
 
 # ---------------------- Shell Commands ---------------------- #
+# Load all utility helpers (navigation, clipboard, editor, session, git, etc.)
+source_sh_files "${SHELL_DIR}/utils"
+
 # Essential aliases, functions, completions
 source_sh_files "${SHELL_DIR}/aliases"
 source_sh_files "${SHELL_DIR}/functions"
-
-# Extended CLI functionality
-# source_sh_files "${CLI_DIR}/cmd"
 
 # ------------------------------------------------------------ #
 #                     History Configuration                    #
