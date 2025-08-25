@@ -66,7 +66,7 @@ __path_update() {
 #   __path_prepend "/opt/homebrew/bin"
 #######################################
 __path_prepend() {
-    path_update prepend "$1"
+    __path_update prepend "$1"
 }
 
 #######################################
@@ -84,5 +84,5 @@ __path_prepend() {
 #   __path_append "$HOME/.local/bin"
 #######################################
 __path_append() {
-    path_update append "$1"
+    __path_update append "$1"
 }
