@@ -17,5 +17,5 @@ fi
 # ------------------------------------------------------------ #
 
 # Basic editor aliases (will use $VISUAL or $EDITOR via helper)
-alias v='__open_in_editor'
+alias v='nvim'
 alias vdiff='nvim -d'  # diff mode still requires nvim specifically
