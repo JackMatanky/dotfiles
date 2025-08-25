@@ -17,27 +17,35 @@ touch "${HOME}/.hushlogin"
 # ------------------------------------------------------------ #
 #                Load Modular Shell Environment                #
 # ------------------------------------------------------------ #
-# Essential XDG and Shell Paths; Assign only if unset/empty
-: "${XDG_CONFIG_HOME:=${HOME}/.config}"
-: "${SHELL_DIR:=${XDG_CONFIG_HOME}/shell}"
-: "${SCRIPT_LOADER:=${SHELL_DIR}/lib/load_core.sh}"
+# # Essential XDG and Shell Paths; Assign only if unset/empty
+# : "${XDG_CONFIG_HOME:=${HOME}/.config}"
+# : "${SHELL_DIR:=${XDG_CONFIG_HOME}/shell}"
+# : "${SCRIPT_LOADER:=${SHELL_DIR}/lib/load_core.sh}"
 
-# If SCRIPT_LOADER is a readable file (-r), source it and load core loader
-# (defines log/source helpers, loads path helpers)
+# # If SCRIPT_LOADER is a readable file (-r), source it and load core loader
+# # (defines log/source helpers, loads path helpers)
+# # shellcheck source=/dev/null
+# [[ -r "$SCRIPT_LOADER" ]] && source "$SCRIPT_LOADER"
+
+# # ------------------- Environment Variables ------------------ #
+# # XDG paths, language setup, etc.
+# source_sh_files "${SHELL_DIR}/profile"
+
+# # ---------------------- Shell Commands ---------------------- #
+# # Load all utility helpers (navigation, clipboard, editor, session, git, etc.)
+# source_sh_files "${SHELL_DIR}/utils"
+
+# # Essential aliases, functions, completions
+# source_sh_files "${SHELL_DIR}/functions"
+# source_sh_files "${SHELL_DIR}/aliases"
+# ------------------------------------------------------------ #
+#                    Load Shell Environment                    #
+# ------------------------------------------------------------ #
+# Source the master shell initialization file
+# This loads all profile, utils, functions, and aliases
+SHELL_INIT="${XDG_CONFIG_HOME:-$HOME/.config}/shell/init.sh"
 # shellcheck source=/dev/null
-[[ -r "$SCRIPT_LOADER" ]] && source "$SCRIPT_LOADER"
-
-# ------------------- Environment Variables ------------------ #
-# XDG paths, language setup, etc.
-source_sh_files "${SHELL_DIR}/profile"
-
-# ---------------------- Shell Commands ---------------------- #
-# Load all utility helpers (navigation, clipboard, editor, session, git, etc.)
-source_sh_files "${SHELL_DIR}/utils"
-
-# Essential aliases, functions, completions
-source_sh_files "${SHELL_DIR}/functions"
-source_sh_files "${SHELL_DIR}/aliases"
+[[ -r "$SHELL_INIT" ]] && source "$SHELL_INIT"
 
 # ------------------------------------------------------------ #
 #                     History Configuration                    #
