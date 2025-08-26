@@ -18,8 +18,7 @@ dot_claude/
 
 ## 🤖 Core Configuration
 
-### `settings.json`
-**Main Claude desktop application configuration**
+### `settings.json`: Main Claude desktop application configuration
 
 **Key settings:**
 - **Theme preferences**: Dark/light mode and visual customization
@@ -324,3 +323,14 @@ Brief description of the agent's primary function
 3. **Update system prompt**: Make targeted modifications
 4. **Test changes**: Validate improvements don't break existing functionality
 5. **Update documentation**: Reflect changes in usage guidelines
+
+## References and Resources
+
+- **Claude API**: [Official Documentation](https://docs.claude.ai/)
+- **Best Practices**: [Prompt Engineering Guide](https://www.promptingguide.ai/)
+- **Safety Guidelines**: [Responsible AI Usage](https://www.responsibleai.org/)
+
+### Claude Code Kiro Spec-Driven Development Implementation
+
+- [Claude Code Spec Commands - GitHub](https://github.com/gotalab/claude-code-spec)
+- [Claude Code Settings - GitHub](https://github.com/feiskyer/claude-code-settings)
