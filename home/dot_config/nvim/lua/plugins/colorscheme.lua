@@ -22,8 +22,18 @@ return {
       integrations = {
         -- All the listed integrations are already enabled by default in LazyVim
         -- We only need to specify those with custom configurations
-        navic = { enabled = true, custom_bg = "lualine" }, -- Custom background
       },
+    },
+    -- TODO: temporary fix for bufferline integration
+    -- https://github.com/LazyVim/LazyVim/pull/6354
+    spec = {
+      "akinsho/bufferline.nvim",
+      init = function()
+        local bufline = require("catppuccin.groups.integrations.bufferline")
+        function bufline.get()
+          return bufline.get_theme()
+        end
+      end,
     },
   },
 
