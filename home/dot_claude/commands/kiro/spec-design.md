@@ -20,6 +20,7 @@ Create comprehensive technical design for feature: **$ARGUMENTS**
 ## Context Analysis
 
 ### Requirements Foundation
+
 **CRITICAL**: Design must be built upon approved requirements document.
 
 - **Requirements document**: @ai/specs/$ARGUMENTS/requirements.md
@@ -30,12 +31,14 @@ Create comprehensive technical design for feature: **$ARGUMENTS**
 **Verification Required**: Ensure requirements.md exists and is approved before proceeding.
 
 ### Steering Context
+
 - Current architecture: @ai/steering/structure.md
 - Technology stack: @ai/steering/tech.md
 - Product constraints: @ai/steering/product.md
 - Custom steering: Load "Always" mode and design-pattern matching "Conditional" mode files
 
 ### Current Spec Context
+
 - Current design: @ai/specs/$ARGUMENTS/design.md
 - Spec metadata: @ai/specs/$ARGUMENTS/spec.json
 
@@ -48,12 +51,14 @@ Create comprehensive technical design for feature: **$ARGUMENTS**
 **MANDATORY**: Conduct research and investigation during the design process:
 
 1. **Technology Research**
+
    - Research current best practices for the technology stack
    - Investigate security considerations and latest standards
    - Review performance benchmarks and scaling approaches
    - Examine integration patterns with existing architecture
 
 2. **Context Building**
+
    - Build up research context in the conversation thread
    - Document key findings that inform design decisions
    - Cite sources and include relevant links for reference
@@ -70,24 +75,30 @@ Create comprehensive technical design for feature: **$ARGUMENTS**
 Generate comprehensive design document in the language specified in spec.json, incorporating research findings:
 
 ### 1. Design Document Structure
+
 Create design.md in the language specified in spec.json (check `@ai/specs/$ARGUMENTS/spec.json` for "language" field):
 
-```markdown
+````markdown
 # Technical Design
 
 ## Overview
+
 [Technical overview of the implementation approach, referencing key requirements from requirements.md]
 
 ## Requirements Mapping
 
 ### Design Component Traceability
+
 Each design component addresses specific requirements:
+
 - **[Component 1]** → X.X: [EARS requirement reference]
 - **[Component 2]** → Y.Y: [EARS requirement reference]
 - **[Integration Layer]** → Z.Z: [EARS requirement reference]
 
 ### User Story Coverage
+
 [Ensure all user stories from requirements.md are addressed]
+
 - User Story 1: [How design addresses this story]
 - User Story 2: [Technical approach for this story]
 
@@ -100,8 +111,10 @@ graph TB
     C --> D[Data Layer]
     D --> E[Database]
 ```
+````
 
 ### Technology Stack
+
 [Based on research findings and requirements analysis]
 
 - **Frontend**: [React/Vue/Next.js] + [TypeScript]
@@ -112,6 +125,7 @@ graph TB
 - **Deployment**: [Docker/Vercel/AWS/GCP]
 
 ### Architecture Decision Rationale
+
 [Document reasoning behind key technology choices based on research]
 
 - **Why [Frontend Framework]**: [Research-based justification]
@@ -120,12 +134,15 @@ graph TB
 - **Why [Authentication Method]**: [Security requirements, integration capabilities, user experience]
 
 ### Screen Transitions (if applicable)
+
 [Use a diagram for major navigation and state transitions]
 
 ### Data Flow
+
 [Description of how data flows through the system]
 
 #### Primary User Flows
+
 Include sequence diagrams for the top 1-3 user flows:
 
 ```mermaid
@@ -144,10 +161,13 @@ sequenceDiagram
 ```
 
 ## Components and Interfaces
+
 Generate a comprehensive component breakdown.
 
 ### Backend Services & Method Signatures
+
 For each service identified in requirements, list public methods with concise doc-strings. Example (Python):
+
 ```python
 class InvoiceService:
     def create_invoice(self, data: InvoiceData) -> Invoice:  # create & persist
@@ -155,26 +175,30 @@ class InvoiceService:
 ```
 
 ### Frontend Components
+
 Provide a table: Component name │ Responsibility │ Props/state summary.
 
 ### API Endpoints
+
 Provide a detailed API endpoint table:
 
-| Method | Route | Purpose | Auth | Status Codes |
-|--------|-------|---------|------|--------------|
-| GET    | /api/[resource] | List resources | Required | 200, 401, 500 |
-| POST   | /api/[resource] | Create resource | Required | 201, 400, 401, 500 |
+| Method | Route               | Purpose         | Auth     | Status Codes            |
+| ------ | ------------------- | --------------- | -------- | ----------------------- |
+| GET    | /api/[resource]     | List resources  | Required | 200, 401, 500           |
+| POST   | /api/[resource]     | Create resource | Required | 201, 400, 401, 500      |
 | PUT    | /api/[resource]/:id | Update resource | Required | 200, 400, 401, 404, 500 |
-| DELETE | /api/[resource]/:id | Delete resource | Required | 204, 401, 404, 500 |
+| DELETE | /api/[resource]/:id | Delete resource | Required | 204, 401, 404, 500      |
 
 ## Data Models
 
 ### Domain Entities
+
 1. **[Entity1]**: [Brief description]
 2. **[Entity2]**: [Brief description]
 3. **[Entity3]**: [Brief description]
 
 ### Entity Relationships
+
 ```mermaid
 erDiagram
     USER ||--o{ PROJECT : "owns"
@@ -183,6 +207,7 @@ erDiagram
 ```
 
 ### Data Model Definitions
+
 Provide language-specific models (TypeScript interfaces and/or Python dataclasses):
 
 ```typescript
@@ -204,6 +229,7 @@ class [ModelName]:
 ```
 
 ### Database Schema
+
 [SQL schema or NoSQL document structure]
 
 If using a relational (SQL) database, include a minimal schema snippet as a starting point:
@@ -220,43 +246,48 @@ CREATE TABLE users (
 - Add foreign keys and additional constraints/indexes as needed.
 
 ### Migration Strategy (if applicable)
+
 - Migration approach for schema changes
 - Backward compatibility considerations
 - Data transformation requirements
 - Indexing strategy for performance
 
 ## Error Handling
+
 [Comprehensive error handling strategy]
 
 ## Security Considerations (if applicable)
+
 [Security considerations briefly]
+
 - Implement JWT-based authentication with role-based authorization and input validation
 - Apply OWASP security practices including rate limiting, CORS, and data encryption
-
 
 ## Performance & Scalability (if applicable)
 
 ### Performance Targets
-| Metric | Target | Measurement |
-|--------|--------|-------------|
-| Response Time (p95) | < 200ms | API endpoints |
-| Response Time (p99) | < 500ms | API endpoints |
-| Throughput | > 1000 req/sec | Load testing |
-| Database Query (p99) | < 50ms | Query monitoring |
-| Concurrent Users | > 10,000 | System capacity |
+
+| Metric               | Target         | Measurement      |
+| -------------------- | -------------- | ---------------- |
+| Response Time (p95)  | < 200ms        | API endpoints    |
+| Response Time (p99)  | < 500ms        | API endpoints    |
+| Throughput           | > 1000 req/sec | Load testing     |
+| Database Query (p99) | < 50ms         | Query monitoring |
+| Concurrent Users     | > 10,000       | System capacity  |
 
 ### Caching Strategy
+
 - **Browser Cache**: Static assets, API responses
 - **CDN**: Media files, static content
 - **Application Cache**: Redis/Memcached for session data
 - **Database Cache**: Query result caching
 
 ### Scalability Approach
+
 - Horizontal scaling for application servers
 - Read replicas for database
 - Background job queue for async processing
 - Auto-scaling based on load metrics
-
 
 ## Testing Strategy
 
@@ -264,32 +295,37 @@ CREATE TABLE users (
 - Use: Keep only applicable rows; remove others (do not mark N/A)
 
 ### Risk Matrix
-| Area | Risk | Must | Optional | Ref |
-|---|---|---|---|---|
-| AuthN/Z | [H/M/L] | Unit, Contract, E2E | Security | [X.X] |
-| External API | [H/M/L] | Contract, Integration | Resilience | [X.X] |
-| Data Integrity | [H/M/L] | Unit, Property | Integration | [X.X] |
-| Critical UX Flows | [H/M/L] | E2E (≤3) | A11y | [X.X] |
-| Performance | [H/M/L] | Perf smoke | Load/Stress | [SLO/Perf table] |
+
+| Area              | Risk    | Must                  | Optional    | Ref              |
+| ----------------- | ------- | --------------------- | ----------- | ---------------- |
+| AuthN/Z           | [H/M/L] | Unit, Contract, E2E   | Security    | [X.X]            |
+| External API      | [H/M/L] | Contract, Integration | Resilience  | [X.X]            |
+| Data Integrity    | [H/M/L] | Unit, Property        | Integration | [X.X]            |
+| Critical UX Flows | [H/M/L] | E2E (≤3)              | A11y        | [X.X]            |
+| Performance       | [H/M/L] | Perf smoke            | Load/Stress | [SLO/Perf table] |
 
 ### Minimal by Layer
+
 - Unit: boundary/exception cases of core business logic
 - Contract (API): provider/consumer contracts fixed
 - Integration: DB/external dependency integration
 - E2E (≤3): main user flows, happy + edge
 
 ### CI Gates
-| Stage | Run | Gate | SLA |
-|---|---|---|---|
-| PR | Unit + Contract | Fail = block | ≤Xm |
-| Staging | Integration + E2E | Fail = block | ≤Ym |
-| Nightly (if) | Performance/Resilience | Regression → issue | - |
+
+| Stage        | Run                    | Gate               | SLA |
+| ------------ | ---------------------- | ------------------ | --- |
+| PR           | Unit + Contract        | Fail = block       | ≤Xm |
+| Staging      | Integration + E2E      | Fail = block       | ≤Ym |
+| Nightly (if) | Performance/Resilience | Regression → issue | -   |
 
 ### Exit
+
 - Sev1/Sev2 = 0
 - All gates passed
 - Non-functional targets met (exceptions require recorded approval)
-```
+
+````
 
 ### 2. Document Generation
 Generate the design document content ONLY. Do not include any review or approval instructions in the actual document file.
@@ -311,7 +347,7 @@ Update spec.json with:
   },
   "updated_at": "current_timestamp"
 }
-```
+````
 
 ---
 
@@ -320,6 +356,7 @@ Update spec.json with:
 The following is for Claude Code conversation only - NOT for the generated document:
 
 ### Interactive Approval Process
+
 ## Next Phase: Interactive Approval
 
 After generating design.md, review the design and choose:
@@ -332,7 +369,8 @@ Request changes, then re-run this command after modifications
 
 The `-y` flag auto-approves design and generates tasks directly, streamlining the workflow while maintaining review enforcement.
 
-### Review Checklist (for user reference):
+### Review Checklist (for user reference)
+
 - [ ] Technical design is comprehensive and clear
 - [ ] Architecture aligns with existing system
 - [ ] Technology choices are appropriate
