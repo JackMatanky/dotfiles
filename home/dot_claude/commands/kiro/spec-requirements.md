@@ -12,16 +12,16 @@ Generate comprehensive requirements for feature: **$ARGUMENTS**
 
 ### Steering Context
 
-- Architecture context: @.kiro/steering/structure.md
-- Technical constraints: @.kiro/steering/tech.md
-- Product context: @.kiro/steering/product.md
-- Custom steering: Load all "Always" mode custom steering files from .kiro/steering/
+- Architecture context: @ai/steering/structure.md
+- Technical constraints: @ai/steering/tech.md
+- Product context: @ai/steering/product.md
+- Custom steering: Load all "Always" mode custom steering files from ai/steering/
 
 ### Existing Spec Context
 
-- Current spec directory: !`ls -la .kiro/specs/$ARGUMENTS/`
-- Current requirements: @.kiro/specs/$ARGUMENTS/requirements.md
-- Spec metadata: @.kiro/specs/$ARGUMENTS/spec.json
+- Current spec directory: !`ls -la ai/specs/$ARGUMENTS/`
+- Current requirements: @ai/specs/$ARGUMENTS/requirements.md
+- Spec metadata: @ai/specs/$ARGUMENTS/spec.json
 
 ## Task: Generate Initial Requirements
 
@@ -54,7 +54,7 @@ Don't focus on code exploration in this phase. Instead, just focus on writing re
 
 ### 2. Requirements Document Structure
 
-Generate requirements.md in the language specified in spec.json (check `@.kiro/specs/$ARGUMENTS/spec.json` for "language" field):
+Generate requirements.md in the language specified in spec.json (check `@ai/specs/$ARGUMENTS/spec.json` for "language" field):
 
 ```markdown
 # Requirements Document

@@ -12,7 +12,7 @@ Execute implementation tasks from spec using Kent Beck's Test-Driven Development
 
 ## Current Specs
 
-Available specs: !`ls .kiro/specs/ 2>/dev/null || echo "No specs found"`
+Available specs: !`ls ai/specs/ 2>/dev/null || echo "No specs found"`
 
 ## Instructions
 
@@ -35,10 +35,10 @@ Feature name: !`echo "$ARGUMENTS" | awk '{print $1}'`
 
 Validate required files exist:
 
-- Requirements: !`FEATURE=$(echo "$ARGUMENTS" | awk '{print $1}'); [ -n "$FEATURE" ] && [ -f ".kiro/specs/$FEATURE/requirements.md" ] && echo "Found" || echo "Missing"`
-- Design: !`FEATURE=$(echo "$ARGUMENTS" | awk '{print $1}'); [ -n "$FEATURE" ] && [ -f ".kiro/specs/$FEATURE/design.md" ] && echo "Found" || echo "Missing"`
-- Tasks: !`FEATURE=$(echo "$ARGUMENTS" | awk '{print $1}'); [ -n "$FEATURE" ] && [ -f ".kiro/specs/$FEATURE/tasks.md" ] && echo "Found" || echo "Missing"`
-- Metadata: !`FEATURE=$(echo "$ARGUMENTS" | awk '{print $1}'); [ -n "$FEATURE" ] && [ -f ".kiro/specs/$FEATURE/spec.json" ] && echo "Found" || echo "Missing"`
+- Requirements: !`FEATURE=$(echo "$ARGUMENTS" | awk '{print $1}'); [ -n "$FEATURE" ] && [ -f "ai/specs/$FEATURE/requirements.md" ] && echo "Found" || echo "Missing"`
+- Design: !`FEATURE=$(echo "$ARGUMENTS" | awk '{print $1}'); [ -n "$FEATURE" ] && [ -f "ai/specs/$FEATURE/design.md" ] && echo "Found" || echo "Missing"`
+- Tasks: !`FEATURE=$(echo "$ARGUMENTS" | awk '{print $1}'); [ -n "$FEATURE" ] && [ -f "ai/specs/$FEATURE/tasks.md" ] && echo "Found" || echo "Missing"`
+- Metadata: !`FEATURE=$(echo "$ARGUMENTS" | awk '{print $1}'); [ -n "$FEATURE" ] && [ -f "ai/specs/$FEATURE/spec.json" ] && echo "Found" || echo "Missing"`
 
 ### Context Loading
 
@@ -46,19 +46,19 @@ Validate required files exist:
 
 **Core Steering:**
 
-- Structure: @.kiro/steering/structure.md
-- Tech Stack: @.kiro/steering/tech.md
-- Product: @.kiro/steering/product.md
+- Structure: @ai/steering/structure.md
+- Tech Stack: @ai/steering/tech.md
+- Product: @ai/steering/product.md
 
 **Custom Steering:**
-!`find .kiro/steering -name "*.md" ! -name "structure.md" ! -name "tech.md" ! -name "product.md" 2>/dev/null | while read file; do echo "- @$file"; done`
+!`find ai/steering -name "*.md" ! -name "structure.md" ! -name "tech.md" ! -name "product.md" 2>/dev/null | while read file; do echo "- @$file"; done`
 
 **Spec Documents:**
 Feature directory: !`echo "$ARGUMENTS" | awk '{print $1}'`
 
-- Requirements: @.kiro/specs/[FEATURE]/requirements.md
-- Design: @.kiro/specs/[FEATURE]/design.md
-- Tasks: @.kiro/specs/[FEATURE]/tasks.md
+- Requirements: @ai/specs/[FEATURE]/requirements.md
+- Design: @ai/specs/[FEATURE]/design.md
+- Tasks: @ai/specs/[FEATURE]/tasks.md
 
 **Note**: [FEATURE] will be replaced with actual feature name during execution
 
@@ -66,7 +66,7 @@ Feature directory: !`echo "$ARGUMENTS" | awk '{print $1}'`
 
 1. **Parse feature name and task numbers** from arguments
 2. **Load all context** (steering + spec documents)
-3. **Extract checkboxes** from tasks.md: !`FEATURE=$(echo "$ARGUMENTS" | awk '{print $1}'); [ -n "$FEATURE" ] && grep -n "^- \\[ \\]\\|^- \\[x\\]" .kiro/specs/$FEATURE/tasks.md || echo "No feature specified"`
+3. **Extract checkboxes** from tasks.md: !`FEATURE=$(echo "$ARGUMENTS" | awk '{print $1}'); [ -n "$FEATURE" ] && grep -n "^- \\[ \\]\\|^- \\[x\\]" ai/specs/$FEATURE/tasks.md || echo "No feature specified"`
 4. **Execute each checkbox** using TDD methodology directly
 
 ### For Each Task Checkbox
@@ -76,14 +76,14 @@ Execute using TDD methodology directly:
 **Implementation Steps:**
 
 1. **Load Project Context** (read these files first):
-    - Structure: .kiro/steering/structure.md
-    - Tech Stack: .kiro/steering/tech.md
-    - Product: .kiro/steering/product.md
-    - Custom steering files: !`find .kiro/steering -name "*.md" ! -name "structure.md" ! -name "tech.md" ! -name "product.md" 2>/dev/null | while read file; do echo "   - @$file"; done`
-    - Spec Metadata: .kiro/specs/[FEATURE]/spec.json
-    - Requirements: .kiro/specs/[FEATURE]/requirements.md
-    - Design: .kiro/specs/[FEATURE]/design.md
-    - All Tasks: .kiro/specs/[FEATURE]/tasks.md
+    - Structure: ai/steering/structure.md
+    - Tech Stack: ai/steering/tech.md
+    - Product: ai/steering/product.md
+    - Custom steering files: !`find ai/steering -name "*.md" ! -name "structure.md" ! -name "tech.md" ! -name "product.md" 2>/dev/null | while read file; do echo "   - @$file"; done`
+    - Spec Metadata: ai/specs/[FEATURE]/spec.json
+    - Requirements: ai/specs/[FEATURE]/requirements.md
+    - Design: ai/specs/[FEATURE]/design.md
+    - All Tasks: ai/specs/[FEATURE]/tasks.md
 
 2. **TDD Implementation** for each specific task:
     - **RED**: Write failing tests first
@@ -92,7 +92,7 @@ Execute using TDD methodology directly:
 
 3. **Task Completion**:
     - Verify all tests pass
-    - Update checkbox from `- [ ]` to `- [x]` in .kiro/specs/[FEATURE]/tasks.md
+    - Update checkbox from `- [ ]` to `- [x]` in ai/specs/[FEATURE]/tasks.md
     - Ensure no regressions in existing tests
 
 **For each task:**

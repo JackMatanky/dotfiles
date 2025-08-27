@@ -3,15 +3,15 @@ description = "Create or update Kiro steering documents intelligently based on p
 prompt = """
 # Kiro Steering Management
 
-Intelligently create or update steering documents in `.kiro/steering/` to maintain accurate project knowledge for spec-driven development. This command detects existing documents and handles them appropriately.
+Intelligently create or update steering documents in `ai/steering/` to maintain accurate project knowledge for spec-driven development. This command detects existing documents and handles them appropriately.
 
 ## Existing Files Check
 
 ### Current steering documents status
-- Product overview: !{[ -f ".kiro/steering/product.md" ] && echo "✅ EXISTS - Will be updated preserving custom content" || echo "📝 Not found - Will be created"}
-- Technology stack: !{[ -f ".kiro/steering/tech.md" ] && echo "✅ EXISTS - Will be updated preserving custom content" || echo "📝 Not found - Will be created"}
-- Project structure: !{[ -f ".kiro/steering/structure.md" ] && echo "✅ EXISTS - Will be updated preserving custom content" || echo "📝 Not found - Will be created"}
-- Custom steering files: !{find .kiro/steering -maxdepth 1 -name '*.md' ! -name 'product.md' ! -name 'tech.md' ! -name 'structure.md' 2>/dev/null && echo "🔧 Custom files found - Will be preserved" || echo "📋 No custom files"}
+- Product overview: !{[ -f "ai/steering/product.md" ] && echo "✅ EXISTS - Will be updated preserving custom content" || echo "📝 Not found - Will be created"}
+- Technology stack: !{[ -f "ai/steering/tech.md" ] && echo "✅ EXISTS - Will be updated preserving custom content" || echo "📝 Not found - Will be created"}
+- Project structure: !{[ -f "ai/steering/structure.md" ] && echo "✅ EXISTS - Will be updated preserving custom content" || echo "📝 Not found - Will be created"}
+- Custom steering files: !{find ai/steering -maxdepth 1 -name '*.md' ! -name 'product.md' ! -name 'tech.md' ! -name 'structure.md' 2>/dev/null && echo "🔧 Custom files found - Will be preserved" || echo "📋 No custom files"}
 
 ## Project Analysis
 
@@ -21,7 +21,7 @@ Intelligently create or update steering documents in `.kiro/steering/` to mainta
 - Documentation: !{find . -maxdepth 3 -name "README*" -o -name "CHANGELOG*" -o -name "LICENSE*" -o -name "*.md" 2>/dev/null || echo "No documentation files found"}
 
 ### Recent Changes (if updating)
-- Last steering update: !{git log -1 --oneline -- .kiro/steering/ 2>/dev/null || echo "No previous steering commits"}
+- Last steering update: !{git log -1 --oneline -- ai/steering/ 2>/dev/null || echo "No previous steering commits"}
 - Commits since last steering update: !{git log --oneline --max-count=20 2>/dev/null || echo "Not a git repository"}
 - Working tree status: !{git status --porcelain 2>/dev/null || echo "Not a git repository"}
 
@@ -52,7 +52,7 @@ The three core steering files (product.md, tech.md, structure.md) are designed t
 
 ### Understanding Inclusion Modes
 - **Always Included (Default for core files)**: Loaded in every interaction - ensures consistent project knowledge
-- **Conditional**: Loaded only when working with matching file patterns (mainly for custom steering)  
+- **Conditional**: Loaded only when working with matching file patterns (mainly for custom steering)
 - **Manual**: Referenced on-demand with @filename syntax (for specialized contexts)
 
 ### Core Files Strategy
@@ -126,11 +126,11 @@ If custom steering files exist:
 
 ## Instructions
 
-1. **Create `.kiro/steering/` directory** if it doesn't exist
+1. **Create `ai/steering/` directory** if it doesn't exist
 2. **Check existing files** to determine create vs update mode
 3. **Analyze the codebase** using native tools
 4. **For NEW files**: Generate comprehensive initial documentation
-5. **For EXISTING files**: 
+5. **For EXISTING files**:
    - Read current content first
    - Preserve user customizations and comments
    - Update only factual/technical information
@@ -147,7 +147,7 @@ If custom steering files exist:
 - **Review before commit**: Always review steering content before version control
 - **Team sharing consideration**: Remember steering files are shared with all project collaborators
 
-### Content Quality Guidelines  
+### Content Quality Guidelines
 - **Single domain focus**: Each steering file should cover one specific area
 - **Clear, descriptive content**: Provide concrete examples and rationale for decisions
 - **Regular maintenance**: Review and update steering files after major project changes

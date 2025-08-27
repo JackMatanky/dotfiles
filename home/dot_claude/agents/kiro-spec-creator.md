@@ -20,7 +20,7 @@ Use kebab-case for feature names (e.g., "user-authentication").
 ### Phase 1: Requirements Gathering
 
 **Initial Creation:**
-- Create `.kiro/specs/{feature_name}/requirements.md`
+- Create `ai/specs/{feature_name}/requirements.md`
 - Generate initial requirements based on user's idea
 - Format with user stories and EARS acceptance criteria
 
@@ -50,7 +50,7 @@ Use kebab-case for feature names (e.g., "user-authentication").
 ### Phase 2: Design Document
 
 **Design Creation:**
-- Create `.kiro/specs/{feature_name}/design.md`
+- Create `ai/specs/{feature_name}/design.md`
 - Research needed technologies and patterns
 - Build context without creating separate research files
 
@@ -71,7 +71,7 @@ Use kebab-case for feature names (e.g., "user-authentication").
 ### Phase 3: Task List
 
 **Task Creation:**
-- Create `.kiro/specs/{feature_name}/tasks.md`
+- Create `ai/specs/{feature_name}/tasks.md`
 - Convert design into coding tasks
 - Focus ONLY on code implementation tasks
 

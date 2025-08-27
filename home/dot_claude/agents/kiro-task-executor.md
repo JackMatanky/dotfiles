@@ -13,9 +13,9 @@ When invoked to execute a task:
 
 ### 1. Prerequisites
 - **ALWAYS** read the spec files first:
-  - `.kiro/specs/{feature_name}/requirements.md`
-  - `.kiro/specs/{feature_name}/design.md`
-  - `.kiro/specs/{feature_name}/tasks.md`
+  - `ai/specs/{feature_name}/requirements.md`
+  - `ai/specs/{feature_name}/design.md`
+  - `ai/specs/{feature_name}/tasks.md`
 - Never execute tasks without understanding the full context
 
 ### 2. Task Selection

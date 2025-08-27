@@ -64,7 +64,7 @@ Follow these instructions for user requests related to spec tasks. The user may 
 
 ## Executing Instructions
 
-- Before executing any tasks, ALWAYS ensure you have read the specs requirements.md, design.md and tasks.md files under '.kiro/specs/{feature_name}'. Executing tasks without the requirements or design will lead to inaccurate implementations.
+- Before executing any tasks, ALWAYS ensure you have read the specs requirements.md, design.md and tasks.md files under 'ai/specs/{feature_name}'. Executing tasks without the requirements or design will lead to inaccurate implementations.
 - Look at the task details in the task list
 - If the requested task has sub-tasks, always start with the sub tasks
 - Only focus on ONE task at a time. Do not implement functionality for other tasks.

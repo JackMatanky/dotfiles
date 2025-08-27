@@ -17,11 +17,11 @@ Initialize a new specification based on the provided project description:
 ### 1. Generate Feature Name
 
 Create a concise, descriptive feature name from the project description ($ARGUMENTS).
-**Check existing `.kiro/specs/` directory to ensure the generated feature name is unique. If a conflict exists, append a number suffix (e.g., feature-name-2).**
+**Check existing `ai/specs/` directory to ensure the generated feature name is unique. If a conflict exists, append a number suffix (e.g., feature-name-2).**
 
 ### 2. Create Spec Directory
 
-Create `.kiro/specs/{generated-feature-name}/` directory with template files:
+Create `ai/specs/{generated-feature-name}/` directory with template files:
 
 - `requirements.md` - Empty template for user stories
 - `design.md` - Empty template for technical design

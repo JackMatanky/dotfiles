@@ -12,9 +12,9 @@ Generate detailed implementation tasks for feature: **$ARGUMENTS**
 
 **CRITICAL**: Tasks can only be generated after both requirements and design are reviewed and approved.
 
-- Requirements document: @.kiro/specs/$ARGUMENTS/requirements.md
-- Design document: @.kiro/specs/$ARGUMENTS/design.md
-- Spec metadata: @.kiro/specs/$ARGUMENTS/spec.json
+- Requirements document: @ai/specs/$ARGUMENTS/requirements.md
+- Design document: @ai/specs/$ARGUMENTS/design.md
+- Spec metadata: @ai/specs/$ARGUMENTS/spec.json
 
 **Note**: If this command was called with `-y` flag, both requirements and design are auto-approved (spec.json updated to set requirements.approved=true and design.approved=true). Otherwise, both phases must be approved first via their respective commands followed by `/kiro:spec-tasks $ARGUMENTS -y`.
 
@@ -22,16 +22,16 @@ Generate detailed implementation tasks for feature: **$ARGUMENTS**
 
 ### Complete Spec Context (APPROVED)
 
-- Requirements: @.kiro/specs/$ARGUMENTS/requirements.md
-- Design: @.kiro/specs/$ARGUMENTS/design.md
-- Current tasks: @.kiro/specs/$ARGUMENTS/tasks.md
-- Spec metadata: @.kiro/specs/$ARGUMENTS/spec.json
+- Requirements: @ai/specs/$ARGUMENTS/requirements.md
+- Design: @ai/specs/$ARGUMENTS/design.md
+- Current tasks: @ai/specs/$ARGUMENTS/tasks.md
+- Spec metadata: @ai/specs/$ARGUMENTS/spec.json
 
 ### Steering Context
 
-- Architecture patterns: @.kiro/steering/structure.md
-- Development practices: @.kiro/steering/tech.md
-- Product constraints: @.kiro/steering/product.md
+- Architecture patterns: @ai/steering/structure.md
+- Development practices: @ai/steering/tech.md
+- Product constraints: @ai/steering/product.md
 - Custom steering: Load "Always" mode and task-related "Conditional" mode files
 
 ## Task: Generate Code-Generation Prompts
@@ -44,7 +44,7 @@ Create implementation plan in the language specified in spec.json:
 
 ### 1. Code-Generation Tasks Structure
 
-Create tasks.md in the language specified in spec.json (check `@.kiro/specs/$ARGUMENTS/spec.json` for "language" field):
+Create tasks.md in the language specified in spec.json (check `@ai/specs/$ARGUMENTS/spec.json` for "language" field):
 
 **Note**: The example below is for format reference only. Actual content should be based on the specific requirements and design documents for your project.
 
@@ -159,7 +159,7 @@ Tasks represent the final planning phase - implementation can begin once tasks a
 
 ```
 📋 Tasks review completed. Ready for implementation.
-📄 Generated: .kiro/specs/feature-name/tasks.md
+📄 Generated: ai/specs/feature-name/tasks.md
 ✅ All phases approved. Implementation can now begin.
 ```
 

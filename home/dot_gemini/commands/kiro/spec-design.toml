@@ -9,8 +9,8 @@ Create comprehensive technical design for feature: **{{args}}**
 
 **CRITICAL**: Design can only be generated after requirements are reviewed and approved.
 
-- Requirements document: @.kiro/specs/{{args}}/requirements.md
-- Spec metadata: @.kiro/specs/{{args}}/spec.json
+- Requirements document: @ai/specs/{{args}}/requirements.md
+- Spec metadata: @ai/specs/{{args}}/spec.json
 
 **Note**: If this command was called with `-y` flag, requirements are auto-approved (spec.json updated to set requirements.approved=true). Otherwise, requirements must be approved first via `/kiro:spec-requirements {{args}}` followed by `/kiro:spec-design {{args}} -y`.
 
@@ -19,7 +19,7 @@ Create comprehensive technical design for feature: **{{args}}**
 ### Requirements Foundation
 **CRITICAL**: Design must be built upon approved requirements document.
 
-- **Requirements document**: @.kiro/specs/{{args}}/requirements.md
+- **Requirements document**: @ai/specs/{{args}}/requirements.md
 - **EARS format requirements**: Each requirement with acceptance criteria
 - **User stories mapping**: Design components must address specific user stories
 - **Constraints and acceptance criteria**: Must be reflected in technical decisions
@@ -27,14 +27,14 @@ Create comprehensive technical design for feature: **{{args}}**
 **Verification Required**: Ensure requirements.md exists and is approved before proceeding.
 
 ### Steering Context
-- Current architecture: @.kiro/steering/structure.md
-- Technology stack: @.kiro/steering/tech.md
-- Product constraints: @.kiro/steering/product.md
+- Current architecture: @ai/steering/structure.md
+- Technology stack: @ai/steering/tech.md
+- Product constraints: @ai/steering/product.md
 - Custom steering: Load "Always" mode and design-pattern matching "Conditional" mode files
 
 ### Current Spec Context
-- Current design: @.kiro/specs/{{args}}/design.md
-- Spec metadata: @.kiro/specs/{{args}}/spec.json
+- Current design: @ai/specs/{{args}}/design.md
+- Spec metadata: @ai/specs/{{args}}/spec.json
 
 ## Task: Create Technical Design
 
@@ -67,7 +67,7 @@ Create comprehensive technical design for feature: **{{args}}**
 Generate comprehensive design document in the language specified in spec.json, incorporating research findings:
 
 ### 1. Design Document Structure
-Create design.md in the language specified in spec.json (check `@.kiro/specs/{{args}}/spec.json` for "language" field):
+Create design.md in the language specified in spec.json (check `@ai/specs/{{args}}/spec.json` for "language" field):
 
 ```markdown
 # Technical Design
@@ -102,7 +102,7 @@ graph TB
 [Based on research findings and requirements analysis]
 
 - **Frontend**: [React/Vue/Next.js] + [TypeScript]
-- **Backend**: [FastAPI/Express/Django] + [Language] 
+- **Backend**: [FastAPI/Express/Django] + [Language]
 - **Database**: [PostgreSQL/MySQL/MongoDB]
 - **Authentication**: [JWT/OAuth/Auth0]
 - **Testing**: [Jest/pytest] + [Testing Library/Playwright]
@@ -131,7 +131,7 @@ sequenceDiagram
     participant Frontend
     participant API
     participant DB
-    
+
     User->>Frontend: action
     Frontend->>API: request
     API->>DB: query

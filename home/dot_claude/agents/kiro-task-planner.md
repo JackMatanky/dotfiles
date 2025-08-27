@@ -12,13 +12,13 @@ You are a task planning specialist who creates actionable implementation plans f
 When invoked to create a task list:
 
 ### 1. Prerequisites
-- Verify design document exists at `.kiro/specs/{feature_name}/design.md`
-- Verify requirements document exists at `.kiro/specs/{feature_name}/requirements.md`
+- Verify design document exists at `ai/specs/{feature_name}/design.md`
+- Verify requirements document exists at `ai/specs/{feature_name}/requirements.md`
 - Read both documents thoroughly before creating tasks
 
 ### 2. Task Creation Guidelines
 
-Create `.kiro/specs/{feature_name}/tasks.md` following these principles:
+Create `ai/specs/{feature_name}/tasks.md` following these principles:
 
 **Core Instructions:**
 Convert the feature design into a series of prompts for a code-generation LLM that will implement each step in a test-driven manner. Prioritize best practices, incremental progress, and early testing, ensuring no big jumps in complexity at any stage.

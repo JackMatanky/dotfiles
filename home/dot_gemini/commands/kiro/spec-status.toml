@@ -8,19 +8,19 @@ Show current status and progress for feature: **{{args}}**
 ## Spec Context
 
 ### Spec Files
-- Spec directory: !{ls -la .kiro/specs/{{args}}/}
-- Spec metadata: @.kiro/specs/{{args}}/spec.json
-- Requirements: @.kiro/specs/{{args}}/requirements.md
-- Design: @.kiro/specs/{{args}}/design.md
-- Tasks: @.kiro/specs/{{args}}/tasks.md
+- Spec directory: !{ls -la ai/specs/{{args}}/}
+- Spec metadata: @ai/specs/{{args}}/spec.json
+- Requirements: @ai/specs/{{args}}/requirements.md
+- Design: @ai/specs/{{args}}/design.md
+- Tasks: @ai/specs/{{args}}/tasks.md
 
 ### All Specs Overview
-- Available specs: !{ls -la .kiro/specs/}
-- Active specs: !{find .kiro/specs/ -name "spec.json" -exec grep -l "implementation_ready.*true" {} +}
+- Available specs: !{ls -la ai/specs/}
+- Active specs: !{find ai/specs/ -name "spec.json" -exec grep -l "implementation_ready.*true" {} +}
 
 ## Task: Generate Status Report
 
-Create comprehensive status report for the specification in the language specified in spec.json (check `@.kiro/specs/{{args}}/spec.json` for "language" field):
+Create comprehensive status report for the specification in the language specified in spec.json (check `@ai/specs/{{args}}/spec.json` for "language" field):
 
 ### 1. Specification Overview
 Display:

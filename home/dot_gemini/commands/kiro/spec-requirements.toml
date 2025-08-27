@@ -8,15 +8,15 @@ Generate comprehensive requirements for feature: **{{args}}**
 ## Context Validation
 
 ### Steering Context
-- Architecture context: @.kiro/steering/structure.md
-- Technical constraints: @.kiro/steering/tech.md
-- Product context: @.kiro/steering/product.md
-- Custom steering: Load all "Always" mode custom steering files from .kiro/steering/
+- Architecture context: @ai/steering/structure.md
+- Technical constraints: @ai/steering/tech.md
+- Product context: @ai/steering/product.md
+- Custom steering: Load all "Always" mode custom steering files from ai/steering/
 
 ### Existing Spec Context
-- Current spec directory: !{ls -la .kiro/specs/{{args}}/}
-- Current requirements: @.kiro/specs/{{args}}/requirements.md
-- Spec metadata: @.kiro/specs/{{args}}/spec.json
+- Current spec directory: !{ls -la ai/specs/{{args}}/}
+- Current requirements: @ai/specs/{{args}}/requirements.md
+- Spec metadata: @ai/specs/{{args}}/spec.json
 
 ## Task: Generate Initial Requirements
 
@@ -45,7 +45,7 @@ Don't focus on code exploration in this phase. Instead, just focus on writing re
 - IF [condition] AND [additional condition] THEN [system] SHALL [response]
 
 ### 2. Requirements Document Structure
-Generate requirements.md in the language specified in spec.json (check `@.kiro/specs/{{args}}/spec.json` for "language" field):
+Generate requirements.md in the language specified in spec.json (check `@ai/specs/{{args}}/spec.json` for "language" field):
 
 ```markdown
 # Requirements Document

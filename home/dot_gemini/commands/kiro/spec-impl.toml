@@ -8,7 +8,7 @@ Execute implementation tasks from spec using Kent Beck's Test-Driven Development
 ## Arguments: {{args}}
 
 ## Current Specs
-Available specs: !{ls .kiro/specs/ 2>/dev/null || echo "No specs found"}
+Available specs: !{ls ai/specs/ 2>/dev/null || echo "No specs found"}
 
 ## Instructions
 
@@ -27,10 +27,10 @@ Examples:
 Feature name: **{{args}}** (first argument will be parsed as feature name)
 
 Validate required files exist:
-- Requirements: Check if .kiro/specs/[FEATURE]/requirements.md exists
-- Design: Check if .kiro/specs/[FEATURE]/design.md exists  
-- Tasks: Check if .kiro/specs/[FEATURE]/tasks.md exists
-- Metadata: Check if .kiro/specs/[FEATURE]/spec.json exists
+- Requirements: Check if ai/specs/[FEATURE]/requirements.md exists
+- Design: Check if ai/specs/[FEATURE]/design.md exists
+- Tasks: Check if ai/specs/[FEATURE]/tasks.md exists
+- Metadata: Check if ai/specs/[FEATURE]/spec.json exists
 
 **Note**: Replace [FEATURE] with the first argument from {{args}}
 
@@ -38,18 +38,18 @@ Validate required files exist:
 **Load all required content before execution:**
 
 **Core Steering:**
-- Structure: @.kiro/steering/structure.md
-- Tech Stack: @.kiro/steering/tech.md  
-- Product: @.kiro/steering/product.md
+- Structure: @ai/steering/structure.md
+- Tech Stack: @ai/steering/tech.md
+- Product: @ai/steering/product.md
 
 **Custom Steering:**
-Additional files: !{find .kiro/steering -name "*.md" ! -name "structure.md" ! -name "tech.md" ! -name "product.md" 2>/dev/null || echo "None"}
+Additional files: !{find ai/steering -name "*.md" ! -name "structure.md" ! -name "tech.md" ! -name "product.md" 2>/dev/null || echo "None"}
 
 **Spec Documents:**
 Feature directory: **{{args}}** (first argument)
-- Requirements: @.kiro/specs/[FEATURE]/requirements.md
-- Design: @.kiro/specs/[FEATURE]/design.md
-- Tasks: @.kiro/specs/[FEATURE]/tasks.md
+- Requirements: @ai/specs/[FEATURE]/requirements.md
+- Design: @ai/specs/[FEATURE]/design.md
+- Tasks: @ai/specs/[FEATURE]/tasks.md
 
 **Note**: [FEATURE] will be replaced with actual feature name during execution
 
@@ -64,14 +64,14 @@ Execute using TDD methodology directly:
 
 **Implementation Steps:**
 1. **Load Project Context** (read these files first):
-   - Structure: .kiro/steering/structure.md  
-   - Tech Stack: .kiro/steering/tech.md
-   - Product: .kiro/steering/product.md
-   - Custom steering files: !{find .kiro/steering -name "*.md" ! -name "structure.md" ! -name "tech.md" ! -name "product.md" 2>/dev/null || echo "None"}
-   - Spec Metadata: .kiro/specs/[FEATURE]/spec.json
-   - Requirements: .kiro/specs/[FEATURE]/requirements.md
-   - Design: .kiro/specs/[FEATURE]/design.md
-   - All Tasks: .kiro/specs/[FEATURE]/tasks.md
+   - Structure: ai/steering/structure.md
+   - Tech Stack: ai/steering/tech.md
+   - Product: ai/steering/product.md
+   - Custom steering files: !{find ai/steering -name "*.md" ! -name "structure.md" ! -name "tech.md" ! -name "product.md" 2>/dev/null || echo "None"}
+   - Spec Metadata: ai/specs/[FEATURE]/spec.json
+   - Requirements: ai/specs/[FEATURE]/requirements.md
+   - Design: ai/specs/[FEATURE]/design.md
+   - All Tasks: ai/specs/[FEATURE]/tasks.md
 
 2. **TDD Implementation** for each specific task:
    - **RED**: Write failing tests first
@@ -80,7 +80,7 @@ Execute using TDD methodology directly:
 
 3. **Task Completion**:
    - Verify all tests pass
-   - Update checkbox from `- [ ]` to `- [x]` in .kiro/specs/[FEATURE]/tasks.md
+   - Update checkbox from `- [ ]` to `- [x]` in ai/specs/[FEATURE]/tasks.md
    - Ensure no regressions in existing tests
 
 **For each task:**

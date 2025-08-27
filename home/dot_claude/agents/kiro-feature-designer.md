@@ -12,7 +12,7 @@ You are a feature design specialist who creates comprehensive design documents b
 When invoked to create a feature design:
 
 ### 1. Prerequisites Check
-- Ensure requirements document exists at `.kiro/specs/{feature_name}/requirements.md`
+- Ensure requirements document exists at `ai/specs/{feature_name}/requirements.md`
 - If missing, help create requirements first before proceeding with design
 
 ### 2. Research Phase
@@ -24,7 +24,7 @@ When invoked to create a feature design:
 
 ### 3. Design Document Creation
 
-Create `.kiro/specs/{feature_name}/design.md` with these sections:
+Create `ai/specs/{feature_name}/design.md` with these sections:
 
 **Overview**
 - High-level description of the design approach

@@ -5,16 +5,16 @@ allowed-tools: Bash, Read, Write, Edit, MultiEdit, Glob, Grep, LS
 
 # Kiro Steering Management
 
-Intelligently create or update steering documents in `.kiro/steering/` to maintain accurate project knowledge for spec-driven development. This command detects existing documents and handles them appropriately.
+Intelligently create or update steering documents in `ai/steering/` to maintain accurate project knowledge for spec-driven development. This command detects existing documents and handles them appropriately.
 
 ## Existing Files Check
 
 ### Current steering documents status
 
-- Product overview: !`[ -f ".kiro/steering/product.md" ] && echo "✅ EXISTS - Will be updated preserving custom content" || echo "📝 Not found - Will be created"`
-- Technology stack: !`[ -f ".kiro/steering/tech.md" ] && echo "✅ EXISTS - Will be updated preserving custom content" || echo "📝 Not found - Will be created"`
-- Project structure: !`[ -f ".kiro/steering/structure.md" ] && echo "✅ EXISTS - Will be updated preserving custom content" || echo "📝 Not found - Will be created"`
-- Custom steering files: !`if [ -d ".kiro/steering" ]; then count=$(find .kiro/steering -maxdepth 1 -type f -name '*.md' ! -name 'product.md' ! -name 'tech.md' ! -name 'structure.md' | grep -c .); if [ "$count" -gt 0 ]; then echo "🔧 $count custom file(s) found - Will be preserved"; else echo "📋 No custom files"; fi; else echo "📋 No steering directory yet"; fi`
+- Product overview: !`[ -f "ai/steering/product.md" ] && echo "✅ EXISTS - Will be updated preserving custom content" || echo "📝 Not found - Will be created"`
+- Technology stack: !`[ -f "ai/steering/tech.md" ] && echo "✅ EXISTS - Will be updated preserving custom content" || echo "📝 Not found - Will be created"`
+- Project structure: !`[ -f "ai/steering/structure.md" ] && echo "✅ EXISTS - Will be updated preserving custom content" || echo "📝 Not found - Will be created"`
+- Custom steering files: !`if [ -d "ai/steering" ]; then count=$(find ai/steering -maxdepth 1 -type f -name '*.md' ! -name 'product.md' ! -name 'tech.md' ! -name 'structure.md' | grep -c .); if [ "$count" -gt 0 ]; then echo "🔧 $count custom file(s) found - Will be preserved"; else echo "📋 No custom files"; fi; else echo "📋 No steering directory yet"; fi`
 
 ## Project Analysis
 
@@ -26,8 +26,8 @@ Intelligently create or update steering documents in `.kiro/steering/` to mainta
 
 ### Recent Changes (if updating)
 
-- Last steering update: !`git log -1 --oneline -- .kiro/steering/ 2>/dev/null || echo "No previous steering commits"`
-- Commits since last steering update: !`LAST_COMMIT=$(git log -1 --format=%H -- .kiro/steering/ 2>/dev/null); if [ -n "$LAST_COMMIT" ]; then git log --oneline ${LAST_COMMIT}..HEAD --max-count=20 2>/dev/null || echo "Not a git repository"; else echo "No previous steering update found"; fi`
+- Last steering update: !`git log -1 --oneline -- ai/steering/ 2>/dev/null || echo "No previous steering commits"`
+- Commits since last steering update: !`LAST_COMMIT=$(git log -1 --format=%H -- ai/steering/ 2>/dev/null); if [ -n "$LAST_COMMIT" ]; then git log --oneline ${LAST_COMMIT}..HEAD --max-count=20 2>/dev/null || echo "Not a git repository"; else echo "No previous steering update found"; fi`
 - Working tree status: !`git status --porcelain 2>/dev/null || echo "Not a git repository"`
 
 ### Existing Documentation
@@ -42,11 +42,11 @@ Intelligently create or update steering documents in `.kiro/steering/` to mainta
 
 Based on the existing files check above, this command will:
 
-### For NEW files (showing "📝 Not found"):
+### For NEW files (showing "📝 Not found")
 
 Generate comprehensive initial content covering all aspects of the project.
 
-### For EXISTING files (showing "✅ EXISTS"):
+### For EXISTING files (showing "✅ EXISTS")
 
 1. **Preserve user customizations** - Any manual edits or custom sections
 2. **Update factual information** - Dependencies, file structures, commands
@@ -74,7 +74,7 @@ The three core steering files (product.md, tech.md, structure.md) are designed t
 
 ### 1. Product Overview (`product.md`)
 
-#### For NEW file:
+#### For NEW file
 
 Generate comprehensive product overview including:
 
@@ -83,7 +83,7 @@ Generate comprehensive product overview including:
 - **Target Use Case**: Specific scenarios the product addresses
 - **Key Value Proposition**: Unique benefits and differentiators
 
-#### For EXISTING file:
+#### For EXISTING file
 
 Update only if there are:
 
@@ -94,7 +94,7 @@ Update only if there are:
 
 ### 2. Technology Stack (`tech.md`)
 
-#### For NEW file:
+#### For NEW file
 
 Document the complete technology landscape:
 
@@ -106,7 +106,7 @@ Document the complete technology landscape:
 - **Environment Variables**: Key configuration variables
 - **Port Configuration**: Standard ports used by services
 
-#### For EXISTING file:
+#### For EXISTING file
 
 Check for changes in:
 
@@ -119,7 +119,7 @@ Check for changes in:
 
 ### 3. Project Structure (`structure.md`)
 
-#### For NEW file:
+#### For NEW file
 
 Outline the codebase organization:
 
@@ -130,7 +130,7 @@ Outline the codebase organization:
 - **Import Organization**: How imports/dependencies are organized
 - **Key Architectural Principles**: Core design decisions and patterns
 
-#### For EXISTING file:
+#### For EXISTING file
 
 Look for changes in:
 
@@ -150,15 +150,15 @@ If custom steering files exist:
 
 ## Instructions
 
-1. **Create `.kiro/steering/` directory** if it doesn't exist
+1. **Create `ai/steering/` directory** if it doesn't exist
 2. **Check existing files** to determine create vs update mode
 3. **Analyze the codebase** using native tools (Glob, Grep, LS)
 4. **For NEW files**: Generate comprehensive initial documentation
 5. **For EXISTING files**:
-    - Read current content first
-    - Preserve user customizations and comments
-    - Update only factual/technical information
-    - Maintain existing structure and style
+   - Read current content first
+   - Preserve user customizations and comments
+   - Update only factual/technical information
+   - Maintain existing structure and style
 6. **Use clear markdown formatting** with proper headers and sections
 7. **Include concrete examples** where helpful for understanding
 8. **Focus on facts over assumptions** - document what exists

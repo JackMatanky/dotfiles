@@ -5,14 +5,14 @@ allowed-tools: Bash, Read, Write, Edit, MultiEdit, Glob, Grep, LS
 
 # Kiro Custom Steering Creation
 
-Create custom steering documents in `.kiro/steering/` for specialized contexts beyond the three foundational files (product.md, tech.md, structure.md).
+Create custom steering documents in `ai/steering/` for specialized contexts beyond the three foundational files (product.md, tech.md, structure.md).
 
 ## Current Steering Status
 
 ### Existing Steering Documents
 
-- Core steering files: !`ls -la .kiro/steering/*.md 2>/dev/null || echo "No steering directory found"`
-- Custom steering count: !`if [ -d ".kiro/steering" ]; then count=0; for f in .kiro/steering/*.md; do if [ -f "$f" ] && [ "$f" != ".kiro/steering/product.md" ] && [ "$f" != ".kiro/steering/tech.md" ] && [ "$f" != ".kiro/steering/structure.md" ]; then count=$((count + 1)); fi; done; echo "$count"; else echo "0"; fi`
+- Core steering files: !`ls -la ai/steering/*.md 2>/dev/null || echo "No steering directory found"`
+- Custom steering count: !`if [ -d "ai/steering" ]; then count=0; for f in ai/steering/*.md; do if [ -f "$f" ] && [ "$f" != "ai/steering/product.md" ] && [ "$f" != "ai/steering/tech.md" ] && [ "$f" != "ai/steering/structure.md" ]; then count=$((count + 1)); fi; done; echo "$count"; else echo "0"; fi`
 
 ### Project Analysis
 
@@ -142,7 +142,7 @@ Create the custom steering document with:
     - Inclusion mode preference
     - Specific patterns for conditional inclusion (if applicable)
 
-2. **Create the document** in `.kiro/steering/` with:
+2. **Create the document** in `ai/steering/` with:
     - Clear, focused content (2-3 minute read)
     - Practical examples
     - Consistent formatting with other steering files
