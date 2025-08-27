@@ -59,7 +59,7 @@ return {
     -- Mapping of formatters to specific file types
     formatters_by_ft = {
       fish = { "fish_indent" },
-      go = { "goimports", "gofumpt" },
+      go = { "goimports", "gofmt" },
       justfile = { "just" },
       lua = { "stylua" },
       markdown = { "prettier", "markdownlint-cli2", "markdown-toc" },
