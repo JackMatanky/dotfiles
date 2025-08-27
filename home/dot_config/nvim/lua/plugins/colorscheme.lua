@@ -20,20 +20,38 @@ return {
       -- Most integrations are enabled by default, so we only need to specify
       -- integrations that differ from defaults or have custom configurations
       integrations = {
-        -- All the listed integrations are already enabled by default in LazyVim
-        -- We only need to specify those with custom configurations
+        cmp = true,
+        dashboard = true,
+        grug_far = true,
+        gitsigns = true,
+        headlines = true,
+        illuminate = true,
+        indent_blankline = { enabled = true },
+        lsp_trouble = true,
+        mason = true,
+        markdown = true,
+        mini = true,
+        native_lsp = {
+          enabled = true,
+          underlines = {
+            errors = { "undercurl" },
+            hints = { "undercurl" },
+            warnings = { "undercurl" },
+            information = { "undercurl" },
+          },
+        },
+        navic = { enabled = true, custom_bg = "lualine" },
+        neotest = true,
+        neotree = true,
+        noice = true,
+        notify = true,
+        semantic_tokens = true,
+        snacks = true,
+        telescope = true,
+        treesitter = true,
+        treesitter_context = true,
+        which_key = true,
       },
-    },
-    -- TODO: temporary fix for bufferline integration
-    -- https://github.com/LazyVim/LazyVim/pull/6354
-    spec = {
-      "akinsho/bufferline.nvim",
-      init = function()
-        local bufline = require("catppuccin.groups.integrations.bufferline")
-        function bufline.get()
-          return bufline.get_theme()
-        end
-      end,
     },
   },
 
