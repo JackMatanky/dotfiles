@@ -58,19 +58,21 @@ return {
 
     -- Mapping of formatters to specific file types
     formatters_by_ft = {
-      lua = { "stylua" },
       fish = { "fish_indent" },
-      sh = { "shfmt" },
-      python = { "ruff_format", "ruff_organize_imports" },
+      go = { "goimports", "gofumpt" },
+      justfile = { "just" },
+      lua = { "stylua" },
       markdown = { "prettier", "markdownlint-cli2", "markdown-toc" },
       ["markdown.mdx"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
+      python = { "ruff_format", "ruff_organize_imports" },
+      sh = { "shfmt" },
     },
 
     -- Custom formatter configurations
     formatters = {
       -- Ensure injected languages inside markdown, HTML, etc., are formatted without errors
       injected = {
-          options = { ignore_errors = true },
+        options = { ignore_errors = true },
       },
 
       -- Only format Markdown files with a TOC (Table of Contents) when `<!-- toc -->` is present
