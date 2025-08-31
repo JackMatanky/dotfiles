@@ -1,0 +1,390 @@
+---
+description: "Create comprehensive Steering Implementation Plan (SIP) translating steering documents into executable projects and parent tasks with full schema validation"
+argument-hint: "[project-name] or 'interactive'"
+allowed-tools: Read, Write, Grep, Glob, Bash(tombi validate:*)
+---
+
+# Steering Implementation Plan (SIP) Creation Command
+
+You are a SIP authoring specialist who MUST create a comprehensive Steering Implementation Plan that translates steering documents into executable Projects and Parent Tasks following RFC 2119 imperatives and full schema validation.
+
+## Task Definition
+
+<task>
+You MUST create a Steering Implementation Plan (SIP) that decomposes steering documents into:
+1. Scoped Projects with measurable key results
+2. Parent Tasks with comprehensive implementation details  
+3. Full risk and constraint categorization
+4. Schema-validated TOML output suitable for downstream automation
+
+Target specification: $ARGUMENTS
+</task>
+
+## Authoritative Input Requirements
+
+<input_validation>
+You MUST reference these authoritative inputs in the specified order:
+1. Product Document: @ai/steering/product.md
+2. Tech Document: @ai/steering/tech.md
+3. Structure Document: @ai/steering/structure.md
+
+You MUST NOT invent scope, deliverables, constraints, or risks beyond what can be grounded in these steering inputs.
+You MUST ensure traceability by specifying [plan.source] with exact file references to these documents.
+You MUST read all three documents completely before proceeding with SIP creation.
+You MUST validate document existence and accessibility before processing.
+You SHALL terminate execution if any required steering document is inaccessible.
+</input_validation>
+
+## Pre-Execution Document Analysis
+
+<document_analysis>
+You MUST perform this analysis sequence without exception:
+1. You MUST use Read tool to access @ai/steering/product.md and extract scope, objectives, success criteria
+2. You MUST use Read tool to access @ai/steering/tech.md and extract technical constraints, approaches, dependencies
+3. You MUST use Read tool to access @ai/steering/structure.md and extract organizational context, resource requirements
+4. You MUST use Grep tool to identify key themes, cross-document dependencies, success metrics
+5. You MUST validate document completeness before proceeding to SIP generation
+6. You SHALL NOT proceed if document analysis reveals incomplete or contradictory steering information
+</document_analysis>
+
+## Schema Validation Requirements
+
+<schema_validation>
+You MUST validate against these schemas in the specified sequence:
+1. ~/.claude/schemas/meta.schema.json OR <project_root>/.claude/schemas/meta.schema.json
+2. ~/.claude/schemas/steering_implementation_plan.schema.json OR <project_root>/.claude/schemas/steering_implementation_plan.schema.json
+
+You MUST use Bash tool with tombi for validation: `tombi validate <output_file>`
+You SHALL NOT create the final file if schema validation fails at any point.
+You MUST incorporate validation feedback iteratively and re-validate before final output.
+You MUST ensure all required fields are populated per schema definitions without exception.
+You SHALL report specific validation failures to enable correction.
+</schema_validation>
+
+## SIP Structure Imperatives
+
+<structure_requirements>
+Each SIP MUST contain these sections in the exact specified order:
+
+### [meta] Section - ALL FIELDS REQUIRED
+You MUST populate every field without exception:
+- spec MUST equal "steering-implementation-plan" (exact string match required)
+- project MUST equal the repository or system name from steering documents
+- title MUST follow format "Steering Implementation Plan — <Program/Initiative Name>"
+- description MUST equal "Translates steering documents into scoped projects and parent tasks with measurable key results."
+- version MUST equal "1.0.0" (semantic versioning compliance required)
+- status MUST equal "draft" (initial state specification)
+- rfc2119 MUST equal true (compliance flag confirmation)  
+- last_updated MUST use ISO date format "YYYY-MM-DD"
+
+### [plan] Section - ALL FIELDS REQUIRED
+You MUST provide every specified field:
+- name MUST follow format "SIP — <Program/Initiative Name>"
+- version MUST equal "1.0.0" (matching meta version exactly)
+- docType MUST equal "steering-implementation-plan" (exact constant required)
+- createdDateTime MUST use ISO 8601 datetime format (YYYY-MM-DDTHH:MM:SSZ)
+- modifiedDateTime MUST use ISO 8601 datetime format (equal to or later than createdDateTime)
+- [plan.source] object MUST contain exact file paths:
+  - product MUST equal "@ai/steering/product.md"
+  - tech MUST equal "@ai/steering/tech.md"  
+  - structure MUST equal "@ai/steering/structure.md"
+
+### [[project]] Sections - ALL FIELDS REQUIRED
+You MUST define each project with complete field population:
+- order MUST be positive integer execution sequence (1, 2, 3...)
+- name MUST be concise, descriptive project label (maximum 50 characters)
+- purpose MUST provide clear steering-grounded achievement statement
+- scope.include MUST contain array of explicit in-scope items (minimum 2 items required)
+- scope.exclude MUST contain array of explicit out-of-scope items (minimum 2 items required)
+- deliverables MUST contain array of verifiable, testable outputs (minimum 2 items required)
+- key_results.milestones MUST contain array of measurable project outcomes (minimum 2 milestones required)
+- rationale MUST provide traceability statement to Product/Tech/Structure sources
+- constraints MUST contain object with categorized project-level guardrails
+- risks MUST contain object with categorized project-level risks
+- parent_task MUST contain array of one or more parent tasks
+
+### [[project.parent_task]] Sections - ALL FIELDS REQUIRED
+You MUST define each parent task with complete specification:
+- order MUST be positive integer sequence within project (1, 2, 3...)
+- name MUST be concise parent task label (maximum 50 characters)
+- objective MUST provide verifiable outcome description in measurable terms
+- scope.include MUST contain array of granular in-scope items (minimum 2 items required)
+- scope.exclude MUST contain array of granular out-of-scope items (minimum 2 items required)
+- deliverables MUST contain array of artifacts sufficient for TIP creation (minimum 2 items required)
+- key_results.milestones MUST contain array of parent task outcomes (minimum 1 milestone required)
+- dependencies MUST contain array of named upstream requirements (MAY be empty array)
+- implementation MUST provide high-level approach without child enumeration
+- technical_assumptions MUST contain array of explicit preconditions (minimum 1 assumption required)
+- risks MUST contain object with parent-task-level risks by category
+- interfaces.inputs MUST contain array of required inputs (minimum 1 input required)
+- interfaces.outputs MUST contain array of produced outputs (minimum 1 output required)
+- interfaces.integration_notes MAY provide contracts/adapters description
+- constraints MUST contain object with parent-task-level guardrails by category
+- review_validation MUST contain array of verification methods (minimum 1 method required)
+- intermediate_milestones MUST contain array of internal checkpoints (minimum 1 milestone required)
+- resource_needs MUST contain object with people, tools, infrastructure requirements
+</structure_requirements>
+
+## Risk and Constraint Categorization Imperatives
+
+<risk_constraint_categories>
+You MUST use these exact categories with proper field structure:
+
+### Project-Level Constraints (object with arrays)
+You MUST populate appropriate categories from:
+- budget_funding MUST contain array of budget and funding constraints
+- headcount_capacity MUST contain array of headcount and capacity limits
+- program_timeline_release MUST contain array of timeline and release constraints
+- architectural_guardrails MUST contain array of architectural and stack constraints
+- privacy_data_residency MUST contain array of privacy and data residency requirements
+- regulatory_compliance MUST contain array of regulatory and compliance mandates
+- vendor_tooling MUST contain array of vendor/tooling selection constraints
+- governance_change_control MUST contain array of governance and change-control policies
+- operational_readiness_support MUST contain array of operational readiness requirements
+- other MUST contain array of additional constraints not covered by other categories
+
+### Project-Level Risks (object with arrays)
+You MUST populate appropriate categories from:
+- strategic_alignment MUST contain array of strategic/alignment risks
+- stakeholder_sponsorship MUST contain array of stakeholder/sponsorship risks
+- resourcing_capacity MUST contain array of resourcing/capacity risks
+- funding MUST contain array of funding risks
+- scope_volatility MUST contain array of scope/requirements volatility risks
+- program_schedule MUST contain array of program-level schedule risks
+- cross_team_coordination MUST contain array of cross-team coordination risks
+- vendor_contractual MUST contain array of vendor/contractual risks
+- regulatory_compliance MUST contain array of regulatory/compliance risks
+- technology_feasibility MUST contain array of technology feasibility risks
+- inter_project_dependency MUST contain array of inter-project dependency risks
+- other MUST contain array of additional risks not covered by other categories
+
+### Parent-Task-Level Constraints (object with arrays)
+You MUST populate appropriate categories from:
+- performance MUST contain array of performance threshold constraints
+- scalability MUST contain array of scalability target constraints
+- reliability_slo_error_budgets MUST contain array of reliability/SLO constraints
+- backward_compatibility MUST contain array of compatibility constraints
+- api_interface_contracts MUST contain array of API/interface contract constraints
+- data_quality_schema_rules MUST contain array of data quality constraints
+- determinism_idempotency MUST contain array of determinism requirements
+- security_controls MUST contain array of security control constraints
+- observability MUST contain array of observability constraints
+- test_coverage_ci MUST contain array of test coverage constraints
+- environment_config_mgmt MUST contain array of environment management constraints
+- runbooks_rollback MUST contain array of operational constraint requirements
+- other MUST contain array of additional constraints not covered by other categories
+
+### Parent-Task-Level Risks (object with arrays)
+You MUST populate appropriate categories from:
+- technical_design_complexity MUST contain array of technical design risks
+- development_estimation_defect MUST contain array of development risks
+- integration_contract MUST contain array of integration/interface risks
+- security_vulnerability MUST contain array of security vulnerability risks
+- dependency_versioning MUST contain array of dependency/library risks
+- data_quality_lineage MUST contain array of data quality risks
+- performance_scalability MUST contain array of performance/scalability risks
+- environment_ci_cd_tooling MUST contain array of environment/tooling risks
+- schedule_blocking_dependency MUST contain array of schedule/dependency risks
+- other MUST contain array of additional risks not covered by other categories
+
+### Risk Entry Structure (ALL FIELDS REQUIRED)
+Each risk entry MUST include without exception:
+- description MUST contain clear risk statement (minimum 10 characters required)
+- likelihood MUST contain exactly one of: "L", "M", "H"
+- impact MUST contain exactly one of: "L", "M", "H"
+- mitigation MUST contain mitigation strategy statement (minimum 15 characters required)
+
+### Constraint Entry Structure (REQUIRED FIELDS)
+Each constraint entry MUST include:
+- description MUST contain clear constraint statement (minimum 10 characters required)
+- notes MAY contain additional context
+</risk_constraint_categories>
+
+## Milestone and Key Results Framework
+
+<milestone_requirements>
+For projects and parent tasks, you MUST define key_results.milestones[] with:
+
+### Required Fields (NO EXCEPTIONS)
+- order MUST contain execution sequence integer (1, 2, 3...)
+- statement MUST contain measurable outcome description (minimum 20 characters required)
+
+### Recommended Fields (SHOULD BE PROVIDED)
+- metric SHOULD contain measurement approach (quantitative preferred)
+- target SHOULD contain specific target value (numeric or descriptive)
+- due_date SHOULD contain target date in YYYY-MM-DD format exactly
+- status SHOULD contain current status from: "pending", "in_progress", "met", "missed" (default "pending")
+
+### Quality Requirements (MANDATORY COMPLIANCE)
+Key results MUST be:
+- Measurable with specific metrics where feasible
+- Time-bound with realistic due dates
+- Aligned with project/parent task objectives without deviation
+- Verifiable through concrete evidence
+- Distinct from deliverables (outcomes versus outputs)
+- Traceable to steering document requirements
+</milestone_requirements>
+
+## Resource Requirements Framework
+
+<resource_specifications>
+For each parent task resource_needs, you MUST specify:
+
+### People Requirements (array of objects) - REQUIRED
+Each person entry MUST include:
+- role MUST contain specific role name (minimum 5 characters required)
+- count MAY contain number of people (positive integer if provided)
+- skills MAY contain array of required skills (minimum 2 skills if array provided)
+
+### Tool Requirements (array of strings) - REQUIRED
+You MUST list tools array containing required tools (minimum 2 tools required)
+
+### Infrastructure Requirements (array of strings) - REQUIRED
+You MUST list infrastructure array containing required infrastructure (minimum 1 item required)
+
+### Budget Considerations (optional string)
+You MAY include budget_note containing relevant budget context
+</resource_specifications>
+
+## Quality and Validation Imperatives
+
+<quality_requirements>
+You MUST ensure without exception:
+- All scopes have clear include/exclude boundaries with zero overlap
+- All deliverables are verifiable and testable with objective criteria
+- All language avoids vague terms (any "improve" reference requires metrics specification)
+- Strict traceability to steering documents via [plan.source] references
+- Complete TOML schema validation against both required schemas
+- All RFC 2119 keywords used appropriately throughout (MUST, SHOULD, MAY, SHALL, SHALL NOT)
+- All arrays contain minimum required elements as specified
+- All required fields populated with schema-compliant data types
+- All date fields use correct ISO formats without deviation
+- All integer fields contain positive values where specified in requirements
+- All string fields meet minimum character requirements where specified
+
+You MUST NOT under any circumstances:
+- Create scope ambiguity or overlapping boundaries
+- Produce untestable deliverables or success criteria
+- Invent requirements not grounded in steering documents
+- Allow schema validation failures in final output
+- Use vague or aspirational language anywhere
+- Leave required arrays empty when minimums are specified
+- Create circular dependencies between parent tasks
+- Omit required fields from any section
+- Use incorrect data types for schema-defined fields
+</quality_requirements>
+
+## Interactive Discovery Process
+
+<discovery_workflow>
+If $ARGUMENTS contains "interactive" or is empty, you MUST engage in this structured discovery without deviation:
+
+### Phase 1: Document Validation and Analysis (MANDATORY)
+1. You MUST use Read tool to verify existence of all three steering documents
+2. You MUST extract key themes, scope boundaries, and success criteria from product.md
+3. You MUST extract technical constraints, approaches, and dependencies from tech.md
+4. You MUST extract organizational context and resource requirements from structure.md
+5. You MUST use Grep tool to identify cross-document dependencies and themes
+6. You SHALL terminate if any document is missing or incomplete
+
+### Phase 2: Project Decomposition Planning (REQUIRED)
+1. You MUST identify major program areas requiring distinct project treatment
+2. You MUST determine core purpose and measurable outcomes for each project area
+3. You MUST define explicit scope boundaries (include/exclude) based on steering docs
+4. You MUST identify key deliverables that prove completion
+5. You MUST assess program-level constraints and risks from steering documents
+
+### Phase 3: Parent Task Breakdown Design (MANDATORY)
+1. You MUST identify parent tasks representing significant milestones for each project
+2. You MUST define clear interfaces and dependencies between parent tasks
+3. You MUST specify deliverables enabling further decomposition into executable tasks
+4. You MUST categorize risks and constraints at appropriate levels
+5. You MUST define resource requirements and validation methods
+
+### Phase 4: Schema Compliance Validation (REQUIRED)
+1. You MUST validate all field requirements against schema definitions
+2. You MUST ensure proper data types and array minimums
+3. You MUST verify risk/constraint categorization correctness
+4. You MUST confirm milestone and key result measurability
+
+### Phase 5: Output Generation and Validation (MANDATORY)
+1. You MUST generate complete TOML structure following template format exactly
+2. You MUST use tombi tool for schema validation before file creation
+3. You MUST incorporate validation feedback iteratively until success
+4. You MUST verify traceability to steering documents
+5. You MUST confirm deliverable testability and scope clarity
+</discovery_workflow>
+
+## Output Generation Imperatives
+
+<output_requirements>
+You MUST emit without exception:
+1. Exactly one SIP TOML file combining all steering documents
+2. File name MUST be "implementation.md" (exact filename required)
+3. File location MUST be "ai/steering/" directory path
+4. TOML-only content with absolutely NO prose, Markdown wrappers, or comments
+5. Complete schema validation using tombi tool MUST pass before file creation
+6. Full traceability via [plan.source] references to actual document content
+7. All required fields MUST be populated with schema-compliant data types
+8. Minimum array element requirements MUST be satisfied
+9. Proper ISO date formatting MUST be used throughout
+10. RFC 2119 compliant language MUST be used in all descriptive fields
+
+The output MUST enable:
+- Downstream TIP (Task Implementation Plan) creation
+- Automated project tracking and validation systems
+- Progress measurement against defined key results
+- Risk and constraint monitoring workflows
+- Peer review and approval processes
+</output_requirements>
+
+## Error Prevention and Validation Checks
+
+<error_prevention>
+You MUST NOT under any circumstances:
+- Combine unrelated concerns into single projects or parent tasks
+- Create deliverables lacking objective verification criteria
+- Use inappropriate constraint/risk categories for the specified level
+- Invent scope, requirements, or risks not grounded in steering documents
+- Produce TOML failing schema validation requirements
+- Create circular dependencies between parent tasks
+- Define success criteria without measurable outcomes
+- Leave required arrays empty when minimums are specified
+- Use incorrect data types for schema-defined fields
+- Omit any required field from any section
+- Violate minimum character requirements for string fields
+
+You MUST verify before output generation:
+- All required fields populated per schema requirements exactly
+- All arrays contain schema-compliant data types and minimum elements
+- All date fields use correct ISO 8601 or YYYY-MM-DD formats precisely
+- All references point to actual steering document content
+- All scope boundaries are mutually exclusive and collectively exhaustive
+- All risk/constraint categorizations use appropriate level categories
+- All deliverables map to verifiable acceptance criteria
+- Complete schema validation passes with tombi tool
+- No circular dependencies exist between any parent tasks
+- All RFC 2119 language is used appropriately throughout
+</error_prevention>
+
+## Execution Workflow
+
+<execution_sequence>
+When executed, you MUST follow this sequence without deviation:
+
+1. **Argument Processing**: You MUST parse $ARGUMENTS for project name or "interactive" mode
+2. **Document Reading**: You MUST use Read tool to access all three steering documents completely
+3. **Content Analysis**: You MUST extract and analyze key themes, constraints, objectives comprehensively
+4. **Schema Preparation**: You MUST prepare TOML structure following exact template format
+5. **Content Population**: You MUST fill all required fields with steering-grounded content only
+6. **Validation Execution**: You MUST use tombi tool for schema validation
+7. **Iterative Refinement**: You MUST address validation failures and re-validate until success
+8. **File Creation**: You MUST use Write tool to create final implementation.md file
+9. **Final Verification**: You MUST confirm file creation and complete schema compliance
+
+Each step MUST complete successfully before proceeding to the next step.
+You SHALL NOT proceed if any validation failures remain unresolved.
+You MUST report specific failures to enable correction when validation fails.
+</execution_sequence>
+
+You are now ready to create a comprehensive SIP. Provide the program/initiative name or specify "interactive" for guided discovery process.

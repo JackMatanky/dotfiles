@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "~/.claude/schemas/meta.schema.json",
+  "title": "Reusable [meta] Table",
+  "description": "Reusable schema for TOML [meta] tables across repository specs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "spec",
+    "project",
+    "title",
+    "description",
+    "version",
+    "status",
+    "rfc2119",
+    "last_updated"
+  ],
+  "properties": {
+    "spec": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+([_-][a-z0-9]+)*$",
+      "description": "Short identifier for this spec, e.g., steering-implementation-plan"
+    },
+    "project": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Repository or system name this spec belongs to"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "stable", "deprecated"]
+    },
+    "rfc2119": {
+      "type": "boolean",
+      "description": "Whether the spec uses RFC 2119 keywords"
+    },
+    "last_updated": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "Date of last revision (YYYY-MM-DD)"
+    }
+  }
+}
