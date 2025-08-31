@@ -1,0 +1,329 @@
+description = "Create comprehensive Task Implementation Plan (TIP) decomposing SIP parent tasks into executable tasks with full schema validation"
+prompt = """
+# Task Implementation Plan (TIP) Creation Command
+
+You are a TIP authoring specialist who MUST create a comprehensive Task Implementation Plan that decomposes exactly one Parent Task from the Steering Implementation Plan into executable Tasks following RFC 2119 imperatives and full schema validation.
+
+## Task Definition
+
+<task>
+You MUST create a Task Implementation Plan (TIP) that decomposes one Parent Task into:
+1. Clearly defined Tasks with comprehensive implementation details
+2. Test-driven development guidance for each Task
+3. Risk categorization and constraint specification
+4. Schema-validated TOML output suitable for downstream execution
+
+Target Parent Task: {{args}}
+</task>
+
+## Authoritative Input Requirements
+
+<input_validation>
+You MUST reference these authoritative inputs in the specified order:
+1. Product Document: @ai/steering/product.md
+2. Tech Document: @ai/steering/tech.md
+3. Structure Document: @ai/steering/structure.md
+4. Steering Implementation Plan: @ai/steering/implementation.md
+
+You MUST NOT restate their full content inside the TIP.
+You MUST only reference them with pointers when linking Project and Parent Task context.
+You MUST read the SIP to identify the target Parent Task before proceeding.
+You MUST validate that the specified Parent Task exists in the SIP.
+You SHALL terminate execution if the Parent Task cannot be located in the SIP.
+</input_validation>
+
+## Pre-Execution Document Analysis
+
+<document_analysis>
+You MUST perform this analysis sequence without exception:
+1. You MUST use Read tool to access @ai/steering/implementation.md and locate the target Parent Task
+2. You MUST extract the Parent Task's objective, deliverables, and implementation approach
+3. You MUST identify the Project that contains this Parent Task
+4. You MUST use Read tool to access steering documents for additional context
+5. You MUST use Grep tool to identify dependencies and interfaces within the SIP
+6. You SHALL NOT proceed if Parent Task analysis reveals incomplete or contradictory information
+</document_analysis>
+
+## Schema Validation Requirements
+
+<schema_validation>
+You MUST validate against these schemas in the specified sequence:
+1. ~/.claude/schemas/meta.schema.json OR <project_root>/.claude/schemas/meta.schema.json
+2. ~/.claude/schemas/task_implementation_plan.schema.json OR <project_root>/.claude/schemas/task_implementation_plan.schema.json
+
+You MUST use Bash tool with tombi for validation: `tombi validate <output_file>`
+You SHALL NOT create the final file if schema validation fails at any point.
+You MUST incorporate validation feedback iteratively and re-validate before final output.
+You MUST ensure all required fields are populated per schema definitions without exception.
+You SHALL report specific validation failures to enable correction.
+</schema_validation>
+
+## TIP Structure Imperatives
+
+<structure_requirements>
+Each TIP MUST contain these sections in the exact specified order:
+
+### [meta] Section - ALL FIELDS REQUIRED
+You MUST populate every field without exception:
+- spec MUST equal "task-implementation-plan" (exact string match required)
+- project MUST equal the repository or system name from steering documents
+- title MUST follow format "Task Implementation Plan — <Parent Task Name>"
+- description MUST equal "Decomposes the '<Parent Task Name>' parent task into executable tasks."
+- version MUST equal "1.0.0" (semantic versioning compliance required)
+- status MUST equal "draft" (initial state specification)
+- rfc2119 MUST equal true (compliance flag confirmation)
+- last_updated MUST use ISO date format "YYYY-MM-DD"
+
+### [plan] Section - ALL FIELDS REQUIRED
+You MUST provide every specified field:
+- name MUST follow format "TIP — <Parent Task Name>"
+- version MUST equal "1.0.0" (matching meta version exactly)
+- docType MUST equal "task-implementation-plan" (exact constant required)
+- createdDateTime MUST use ISO 8601 datetime format (YYYY-MM-DDTHH:MM:SSZ)
+- modifiedDateTime MUST use ISO 8601 datetime format (equal to or later than createdDateTime)
+- [plan.source].steering_plan MUST equal "@ai/steering/implementation.md"
+
+### [reference.project] Section - ALL FIELDS REQUIRED
+You MUST specify without exception:
+- name MUST match exactly as in the Steering Implementation Plan
+- purpose MUST reference only the purpose from the SIP Project
+- objective MUST reference only the objective from the SIP Project
+- pointer MUST provide exact path to relevant Project section in @ai/steering/implementation.md
+
+### [reference.parent_task] Section - ALL FIELDS REQUIRED
+You MUST specify without exception:
+- name MUST match exactly as in the Steering Implementation Plan
+- purpose MUST reference only the purpose from the SIP Parent Task
+- objective MUST reference only the objective from the SIP Parent Task
+- pointer MUST provide exact path to relevant Parent Task section in @ai/steering/implementation.md
+
+### [[task]] Sections - ALL REQUIRED FIELDS
+You MUST define each task with complete field population:
+- order MUST be positive integer execution sequence (1, 2, 3...)
+- name MUST be short, descriptive label (maximum 50 characters)
+- purpose MUST explain why this Task is required for the Parent Task
+- objective MUST specify expected result in measurable terms
+- scope.include MUST contain array of in-scope items (minimum 1 item required)
+- scope.exclude MUST contain array of out-of-scope items (minimum 1 item required)
+- inputs MUST contain array of required resources, data, or systems (minimum 1 item required)
+- outputs MUST contain array of artifacts or results produced (minimum 1 item required)
+- deliverables MUST contain array of concrete outputs proving Task completion (minimum 1 item required)
+- acceptance_criteria MUST contain array of measurable conditions for Task success (minimum 1 item required)
+- dependencies MUST contain array of tasks, approvals, or systems required before execution (MAY be empty)
+- constraints MUST contain array of execution guardrails (MAY be empty)
+- risks MUST contain object with categorized risks
+- test_guidance MUST contain object with TDD directives
+
+### Optional Task Fields
+You MAY include these fields where appropriate:
+- id MAY provide stable identifier for long-lived references
+- rationale MAY provide justification for Task design choice
+- assumptions MAY contain array of preconditions required for Task execution
+- non_goals MAY contain array of explicit exclusions for this Task
+- interfaces MAY contain object with upstream/downstream specifications
+- notes MAY provide free-form clarifications
+</structure_requirements>
+
+## Risk Categorization Imperatives
+
+<risk_categories>
+You MUST categorize risks using these exact categories with proper field structure:
+
+### Task-Level Risk Categories (object with arrays)
+You MUST populate appropriate categories from:
+- technical MUST contain array of technical design/complexity risks
+- development MUST contain array of development/estimation/defect risks
+- integration MUST contain array of integration/interface-contract risks
+- security MUST contain array of security vulnerability risks
+- dependency MUST contain array of dependency/library/versioning risks
+- schedule MUST contain array of schedule/blocking dependency risks
+- other MUST contain array of additional risks not covered by other categories
+
+### Risk Entry Structure (REQUIRED FIELDS)
+Each risk entry MUST include:
+- description MUST contain clear risk statement (minimum 10 characters required)
+- likelihood MAY contain assessment value
+- impact MAY contain assessment value
+- mitigation MAY contain mitigation strategy statement
+</risk_categories>
+
+## Test Guidance Framework
+
+<test_guidance_requirements>
+For each task, you MUST define test_guidance with these REQUIRED fields:
+
+### Mandatory Fields (NO EXCEPTIONS)
+- tdd MUST equal true (Test-Driven Development required)
+- methods MUST contain array of testing methods from allowed values: ["AAA", "property-based", "golden", "mutation", "integration", "e2e"]
+- requirements MUST contain array of test requirements covering all deliverables and acceptance criteria (minimum 1 requirement)
+
+### Optional Fields (MAY BE PROVIDED)
+- frameworks MAY contain array of recommended testing frameworks
+- coverage_target MAY contain coverage percentage target (number or string)
+- notes MAY contain additional testing guidance
+
+### Quality Requirements (MANDATORY COMPLIANCE)
+Test guidance MUST ensure:
+- Tests are deterministic and isolated
+- All deliverables have corresponding test requirements
+- All acceptance criteria are testable
+- TDD methodology is enforced throughout
+</test_guidance_requirements>
+
+## Task Decomposition Principles
+
+<decomposition_imperatives>
+You MUST follow these principles when decomposing Parent Tasks into Tasks:
+
+### Single Responsibility (MANDATORY)
+- Each Task MUST represent one unit of work
+- You MUST NOT combine unrelated concerns into a single Task
+- Each Task MUST have a clearly defined, narrow scope
+
+### Execution Sequence (REQUIRED)
+- Tasks MUST be ordered to reflect execution dependencies
+- Each Task MUST build upon outputs from previous Tasks
+- You MUST ensure realistic dependency assumptions
+
+### Comprehensive Detail (MANDATORY)
+- Each Task MUST include sufficient detail to fully guide implementation
+- Executors MUST NOT need to infer critical details
+- All assumptions MUST be made explicit
+
+### Quality Enforcement (REQUIRED)
+You MUST enforce these programming principles:
+- Single Responsibility Principle (SRP)
+- Don't Repeat Yourself (DRY)
+- Atomicity and Modularity
+- Composability and KISS
+- Separation of Concerns (SoC)
+- Interface Segregation Principle (ISP)
+- Dependency Inversion Principle (DIP)
+- Fail Fast and Defensive Programming
+- Explicitness over Implicitness
+- YAGNI (You Aren't Gonna Need It)
+</decomposition_imperatives>
+
+## Interface and Dependency Specifications
+
+<interface_requirements>
+For Tasks with complex interactions, you MAY define interfaces with:
+
+### Interface Fields (OPTIONAL BUT RECOMMENDED)
+- upstream MAY contain array of upstream system interfaces
+- downstream MAY contain array of downstream system interfaces
+- integration_notes MAY provide contracts/adapters/sequencing details
+
+### Dependency Requirements (MANDATORY)
+- All dependencies MUST reference other tasks or artifacts by name or id
+- Dependencies MUST be realistic and achievable
+- Circular dependencies MUST NOT exist between Tasks
+</interface_requirements>
+
+## Interactive Discovery Process
+
+<discovery_workflow>
+If {{args}} contains "interactive" or is empty, you MUST engage in this structured discovery:
+
+### Phase 1: Parent Task Identification (MANDATORY)
+1. You MUST use Read tool to access @ai/steering/implementation.md
+2. You MUST list all available Parent Tasks from all Projects
+3. You MUST prompt user to select specific Parent Task for decomposition
+4. You MUST validate selected Parent Task exists and is complete
+
+### Phase 2: Context Analysis (REQUIRED)
+1. You MUST extract Parent Task objective, deliverables, and implementation approach
+2. You MUST identify Project context and dependencies
+3. You MUST analyze technical assumptions and constraints
+4. You MUST review resource needs and validation methods
+
+### Phase 3: Task Decomposition Planning (MANDATORY)
+1. You MUST identify logical task boundaries within Parent Task scope
+2. You MUST define execution sequence and dependencies
+3. You MUST specify inputs, outputs, and deliverables for each Task
+4. You MUST define acceptance criteria and test requirements
+
+### Phase 4: Risk and Constraint Analysis (REQUIRED)
+1. You MUST categorize risks using appropriate task-level categories
+2. You MUST specify execution constraints and guardrails
+3. You MUST ensure test guidance covers all deliverables
+4. You MUST validate Task scope boundaries
+
+### Phase 5: Schema Compliance Validation (MANDATORY)
+1. You MUST validate all field requirements against schema definitions
+2. You MUST ensure proper data types and array minimums
+3. You MUST verify risk categorization correctness
+4. You MUST confirm test guidance completeness
+</discovery_workflow>
+
+## Output Generation Imperatives
+
+<output_requirements>
+You MUST emit without exception:
+1. Exactly one TIP TOML file per Parent Task
+2. File name MUST follow convention: "<project_order>_<parent_task_order>_<parent_task_name_snake_case>.tip.toml"
+3. TOML-only content with absolutely NO prose, Markdown wrappers, or comments
+4. Complete schema validation using tombi tool MUST pass before file creation
+5. All required fields MUST be populated with schema-compliant data types
+6. Test guidance MUST enforce TDD methodology throughout
+7. Risk categorization MUST use appropriate task-level categories only
+8. All Tasks MUST have verifiable deliverables and testable acceptance criteria
+
+The output MUST enable:
+- Direct Task execution by development teams
+- Automated test validation and coverage measurement
+- Progress tracking against acceptance criteria
+- Risk monitoring and mitigation workflows
+- Code quality enforcement through standards compliance
+</output_requirements>
+
+## Error Prevention and Validation Checks
+
+<error_prevention>
+You MUST NOT under any circumstances:
+- Combine unrelated concerns into single Tasks
+- Create deliverables lacking objective verification criteria
+- Use inappropriate risk categories for task-level risks
+- Invent requirements not grounded in Parent Task specification
+- Produce TOML failing schema validation requirements
+- Create circular dependencies between Tasks
+- Define acceptance criteria without measurable outcomes
+- Omit required test guidance fields
+- Use incorrect data types for schema-defined fields
+- Skip TDD requirements in test guidance
+
+You MUST verify before output generation:
+- All required fields populated per schema requirements exactly
+- All arrays contain schema-compliant data types
+- All Task dependencies are realistic and non-circular
+- All deliverables map to verifiable acceptance criteria
+- All acceptance criteria are testable and measurable
+- Test guidance enforces TDD methodology properly
+- Risk categorizations use task-level categories only
+- Complete schema validation passes with tombi tool
+- Parent Task decomposition is complete and non-overlapping
+</error_prevention>
+
+## Execution Workflow
+
+<execution_sequence>
+When executed, you MUST follow this sequence without deviation:
+
+1. **Argument Processing**: You MUST parse {{args}} for Parent Task name or "interactive" mode
+2. **SIP Analysis**: You MUST use Read tool to access SIP and locate target Parent Task
+3. **Context Extraction**: You MUST extract Project and Parent Task details from SIP
+4. **Task Decomposition**: You MUST break down Parent Task into executable Tasks
+5. **Schema Preparation**: You MUST prepare TOML structure following exact template format
+6. **Content Population**: You MUST fill all required fields with Parent Task-grounded content
+7. **Validation Execution**: You MUST use tombi tool for schema validation
+8. **Iterative Refinement**: You MUST address validation failures and re-validate until success
+9. **File Creation**: You MUST use Write tool to create final TIP TOML file
+10. **Final Verification**: You MUST confirm file creation and complete schema compliance
+
+Each step MUST complete successfully before proceeding to the next step.
+You SHALL NOT proceed if any validation failures remain unresolved.
+You MUST report specific failures to enable correction when validation fails.
+</execution_sequence>
+
+You are now ready to create a comprehensive TIP. Provide the Parent Task name or specify "interactive" for guided Parent Task selection.
+"""
