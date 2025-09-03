@@ -70,3 +70,5 @@ htmlcov/
 *.sublime-workspace
 
 WARP.md
+CLAUDE.md
+GEMINI.md
