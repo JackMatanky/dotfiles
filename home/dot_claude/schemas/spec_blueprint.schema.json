@@ -1,0 +1,904 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/spec-blueprint.schema.json",
+  "title": "Feature Implementation Blueprint (blueprint.toml) — JSON Schema",
+  "description": "Schema for the spec-blueprint artifact (aka Feature Implementation Blueprint). This artifact MUST be a BRIDGE and a TRANSFORMER from a narrowly scoped portfolio feature to implementable detail. The schema encodes RFC 2119-style MUST/SHOULD requirements as structural constraints wherever feasible.",
+  "type": "object",
+  "unevaluatedProperties": false,
+  "required": [
+    "meta",
+    "linking",
+    "context",
+    "requirements_index",
+    "nfr_matrix",
+    "interfaces",
+    "data",
+    "design_transform",
+    "tasks_transform",
+    "acceptance",
+    "coverage",
+    "risks",
+    "test_guidance",
+    "provenance",
+    "confidence"
+  ],
+  "properties": {
+    "meta": {
+      "description": "MUST satisfy the shared meta schema; MUST include stable id, created/updated timestamps, and status.",
+      "$ref": "./meta.schema.json#/$defs/meta"
+    },
+    "linking": {
+      "type": "object",
+      "description": "MUST bind this blueprint to the upstream portfolio and steering sources.",
+      "unevaluatedProperties": false,
+      "required": [
+        "steering_feature_id",
+        "steering_source_reference",
+        "dependencies",
+        "upstream_feature_rationale",
+        "upstream_scope_ref"
+      ],
+      "properties": {
+        "steering_feature_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "MUST match features.toml feature id."
+        },
+        "steering_source_reference": {
+          "type": "array",
+          "description": "MUST list upstream steering anchors (file#anchor).",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "dependencies": {
+          "type": "array",
+          "description": "SHOULD list upstream feature/system dependencies.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "upstream_feature_rationale": {
+          "type": "string",
+          "description": "MUST summarize portfolio rationale without duplicating steering content."
+        },
+        "upstream_scope_ref": {
+          "type": "string",
+          "description": "MUST be a pointer to the feature scope in features.toml."
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "description": "MUST articulate the problem, outcomes, assumptions, constraints, and open questions.",
+      "unevaluatedProperties": false,
+      "required": [
+        "problem_statement",
+        "outcomes",
+        "assumptions",
+        "non_goals",
+        "constraints",
+        "open_questions"
+      ],
+      "properties": {
+        "problem_statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "outcomes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "non_goals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "open_questions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "requirements_index": {
+      "type": "array",
+      "description": "MUST seed stable requirement IDs and titles (basis for requirements.md).",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/requirement_seed"
+      }
+    },
+    "nfr_matrix": {
+      "type": "array",
+      "description": "MUST define NFRs with target, method, instrumentation, thresholds, and owner.",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/nfr"
+      }
+    },
+    "interfaces": {
+      "type": "object",
+      "description": "MUST capture interfaces required by steering and those proposed by the transform.",
+      "unevaluatedProperties": false,
+      "required": ["required", "proposed"],
+      "properties": {
+        "required": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/interface_required"
+          }
+        },
+        "proposed": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/interface_proposed"
+          }
+        }
+      }
+    },
+    "data": {
+      "type": "object",
+      "description": "MUST describe touched entities, schema/migration, and privacy/retention footprint.",
+      "unevaluatedProperties": false,
+      "required": ["touchpoints"],
+      "properties": {
+        "touchpoints": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/data_touchpoint"
+          }
+        }
+      }
+    },
+    "design_transform": {
+      "type": "object",
+      "description": "MUST provide design hypotheses (basis for design.md) with coverage mapping.",
+      "unevaluatedProperties": false,
+      "required": [
+        "summary",
+        "components_impacted",
+        "interfaces_proposed",
+        "data_contracts_touched",
+        "cross_cutting",
+        "nfr_targets",
+        "integration_points",
+        "rollout_strategy",
+        "design_risks",
+        "design_open_questions",
+        "coverage_plan"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string"
+        },
+        "components_impacted": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "interfaces_proposed": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "data_contracts_touched": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cross_cutting": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "nfr_targets": {
+          "type": "array",
+          "description": "SHOULD mirror high-value NFR targets usable by the design.",
+          "items": {
+            "type": "object",
+            "unevaluatedProperties": false,
+            "required": ["name", "target"],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "target": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "integration_points": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rollout_strategy": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "design_risks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "design_open_questions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "coverage_plan": {
+          "type": "object",
+          "description": "SHOULD map requirements to design refs (coarse).",
+          "unevaluatedProperties": false,
+          "required": ["rows"],
+          "properties": {
+            "rows": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "unevaluatedProperties": false,
+                "required": ["requirement_id", "design_refs"],
+                "properties": {
+                  "requirement_id": {
+                    "$ref": "#/$defs/requirement_id"
+                  },
+                  "design_refs": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "tasks_transform": {
+      "type": "object",
+      "description": "MUST provide a TIP-grade task scaffold (basis for tasks.md) as an acyclic DAG.",
+      "unevaluatedProperties": false,
+      "required": [
+        "milestones",
+        "nodes",
+        "edges",
+        "delivery_risks",
+        "env_prep",
+        "validation_strategy",
+        "rollback_plan"
+      ],
+      "properties": {
+        "milestones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/milestone"
+          }
+        },
+        "nodes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/task_node"
+          }
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/task_edge"
+          }
+        },
+        "delivery_risks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "env_prep": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "validation_strategy": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rollback_plan": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "acceptance": {
+      "type": "object",
+      "description": "MUST include acceptance criteria and success metrics.",
+      "unevaluatedProperties": false,
+      "required": ["acceptance_criteria", "success_metrics"],
+      "properties": {
+        "acceptance_criteria": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "success_metrics": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/success_metric"
+          }
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "description": "MUST ensure each requirement is mapped to a design reference and task reference (coarse coverage).",
+      "unevaluatedProperties": false,
+      "required": ["plan"],
+      "properties": {
+        "plan": {
+          "type": "object",
+          "unevaluatedProperties": false,
+          "required": ["by_requirement"],
+          "properties": {
+            "by_requirement": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/coverage_entry"
+              }
+            }
+          }
+        }
+      }
+    },
+    "risks": {
+      "type": "object",
+      "description": "MUST categorize risks using a TIP-style taxonomy.",
+      "unevaluatedProperties": false,
+      "required": [
+        "technical",
+        "development",
+        "integration",
+        "security",
+        "dependency",
+        "schedule",
+        "other"
+      ],
+      "properties": {
+        "technical": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/risk_item"
+          }
+        },
+        "development": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/risk_item"
+          }
+        },
+        "integration": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/risk_item"
+          }
+        },
+        "security": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/risk_item"
+          }
+        },
+        "dependency": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/risk_item"
+          }
+        },
+        "schedule": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/risk_item"
+          }
+        },
+        "other": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/risk_item"
+          }
+        }
+      }
+    },
+    "test_guidance": {
+      "type": "object",
+      "description": "MUST seed TDD rules for downstream artifacts.",
+      "unevaluatedProperties": false,
+      "required": [
+        "tdd",
+        "methods",
+        "requirements",
+        "frameworks",
+        "coverage_target"
+      ],
+      "properties": {
+        "tdd": {
+          "type": "boolean",
+          "const": true
+        },
+        "methods": {
+          "type": "array",
+          "description": "MUST be from the allowed set.",
+          "items": {
+            "type": "string",
+            "enum": ["AAA", "integration", "e2e"]
+          },
+          "minItems": 1
+        },
+        "requirements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "frameworks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "coverage_target": {
+          "type": "string",
+          "pattern": "^[><=]*\\s*\\d+%$"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "description": "MUST ground non-trivial claims. In stepwise execution, absence SHOULD fail if design proposals exist.",
+      "unevaluatedProperties": false,
+      "required": ["items"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              { "type": "string", "minLength": 1 },
+              {
+                "type": "object",
+                "unevaluatedProperties": false,
+                "required": ["source", "anchor", "line_span", "excerpt"],
+                "properties": {
+                  "source": {
+                    "type": "string"
+                  },
+                  "anchor": {
+                    "type": "string"
+                  },
+                  "line_span": {
+                    "type": "string"
+                  },
+                  "excerpt": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "confidence": {
+      "type": "object",
+      "description": "SHOULD quantify grounding quality and drivers.",
+      "unevaluatedProperties": false,
+      "required": ["score", "drivers"],
+      "properties": {
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "drivers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "requirement_id": {
+      "type": "string",
+      "pattern": "^R[1-9][0-9]*$",
+      "description": "MUST be stable within the feature context."
+    },
+    "requirement_seed": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": ["id", "title", "rationale", "source_refs"],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/requirement_id"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "nfr": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "name",
+        "target",
+        "method",
+        "instrumentation",
+        "thresholds",
+        "owner"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "instrumentation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "thresholds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "owner": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "interface_required": {
+      "type": "object",
+      "description": "Interfaces REQUIRED by steering constraints.",
+      "unevaluatedProperties": false,
+      "required": ["name", "type", "contract"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["HTTP", "gRPC", "PubSub", "Queue", "RPC", "DB"]
+        },
+        "contract": {
+          "type": "string"
+        },
+        "sla": {
+          "type": "string"
+        }
+      }
+    },
+    "interface_proposed": {
+      "type": "object",
+      "description": "Interfaces PROPOSED by the transformer; MUST be grounded or marked as assumption+risk at runtime.",
+      "unevaluatedProperties": false,
+      "required": ["name", "type", "contract"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["HTTP", "gRPC", "PubSub", "Queue", "RPC", "DB"]
+        },
+        "contract": {
+          "type": "string"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "versioning": {
+          "type": "string"
+        },
+        "timeouts": {
+          "type": "string"
+        },
+        "idempotency": {
+          "type": "string"
+        }
+      }
+    },
+    "data_touchpoint": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": ["entity", "operation"],
+      "properties": {
+        "entity": {
+          "type": "string"
+        },
+        "operation": {
+          "type": "string",
+          "enum": ["create", "read", "update", "delete", "query", "emit"]
+        },
+        "schema": {
+          "type": "string"
+        },
+        "pii": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "retention": {
+          "type": "string"
+        },
+        "privacy": {
+          "type": "string"
+        },
+        "migration": {
+          "type": "string"
+        }
+      }
+    },
+    "milestone": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": ["id", "goal", "exit_criteria"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "goal": {
+          "type": "string"
+        },
+        "entry_criteria": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "exit_criteria": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "task_node": {
+      "type": "object",
+      "description": "MUST include deliverables and acceptance_criteria; SHOULD include test_guidance.",
+      "unevaluatedProperties": false,
+      "required": [
+        "id",
+        "label",
+        "preconds",
+        "deliverables",
+        "acceptance_criteria"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact": {
+          "type": "string"
+        },
+        "preconds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "deliverables": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "acceptance_criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "risks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "test_guidance": {
+          "type": "object",
+          "unevaluatedProperties": false,
+          "required": ["tdd", "methods"],
+          "properties": {
+            "tdd": {
+              "type": "boolean"
+            },
+            "methods": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["AAA", "integration", "e2e"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "task_edge": {
+      "type": "object",
+      "description": "Edges MUST reference valid node ids; reason SHOULD be provided.",
+      "unevaluatedProperties": false,
+      "required": ["from", "to"],
+      "properties": {
+        "from": {
+          "type": "string",
+          "minLength": 1
+        },
+        "to": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
+    "success_metric": {
+      "type": "object",
+      "description": "MUST be measurable; unit and window SHOULD be provided when applicable.",
+      "unevaluatedProperties": false,
+      "required": ["name", "target"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unit": {
+          "type": "string"
+        },
+        "window": {
+          "type": "string"
+        }
+      }
+    },
+    "risk_item": {
+      "type": "object",
+      "description": "Risk entry SHOULD include likelihood and impact.",
+      "unevaluatedProperties": false,
+      "required": ["description"],
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "likelihood": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "impact": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "mitigation": {
+          "type": "string"
+        },
+        "trigger_signals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "owner": {
+          "type": "string"
+        }
+      }
+    },
+    "coverage_entry": {
+      "type": "object",
+      "description": "MUST link each requirement to at least one design and one task reference.",
+      "unevaluatedProperties": false,
+      "required": ["requirement_id", "design_refs", "task_refs"],
+      "properties": {
+        "requirement_id": {
+          "$ref": "#/$defs/requirement_id"
+        },
+        "design_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "task_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

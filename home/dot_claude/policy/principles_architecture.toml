@@ -1,0 +1,165 @@
+[meta]
+id = "7f5a1f27-3d2a-4b0f-9a5e-1f4b6a7a9c11"
+name = "principles_architecture"
+title = "Architecture Principles – PROJECT_NAME"
+project = "PROJECT_NAME"
+doc_type = "principles_architecture"
+version = "1.0.0"
+status = "draft"
+rfc2119 = true
+created_datetime = "2025-09-02T00:00:00Z"
+modified_datetime = "2025-09-02T00:00:00Z"
+description = "Canonical architecture principles that guide structural and system-level decisions."
+
+[[principles]]
+id = "DIP"
+name = "Dependency Inversion Principle"
+definition = "Depend on abstractions, not concretions."
+tags = ["architecture","flexibility","testability"]
+severity = "high"
+guidance = [
+  "Core layers MUST depend on abstract ports.",
+  "Adapters SHOULD be swappable without core changes."
+]
+anti_patterns = ["Core imports vendor SDK", "Business rules tied to framework classes"]
+opposites = [
+  "Core modules MUST depend on abstractions (ports).",
+  "Vendor-specific details MUST be confined to adapters."
+]
+examples = ["Hexagonal ports for email, payments, storage."]
+
+[[principles]]
+id = "EB"
+name = "Explicit Boundaries"
+definition = "Define clear, versioned interfaces between modules and layers."
+tags = ["architecture","contracts"]
+severity = "high"
+guidance = [
+  "Interfaces MUST be explicit and documented.",
+  "Contracts SHOULD be versioned and backward-compatible when feasible."
+]
+anti_patterns = ["Implicit coupling", "Hidden shared state"]
+opposites = [
+  "Cross-module interfaces MUST be explicit and documented.",
+  "Hidden cross-module state MUST NOT exist."
+]
+examples = ["Versioned APIs; typed schemas at boundaries."]
+
+[[principles]]
+id = "HCLC"
+name = "High Cohesion / Low Coupling"
+definition = "Group related responsibilities tightly; minimize inter-module dependencies."
+tags = ["architecture","modularity"]
+severity = "high"
+guidance = [
+  "Cohesion MUST be high within components.",
+  "Coupling SHOULD be minimized across components."
+]
+anti_patterns = ["Tangled dependencies", "Shotgun surgery across modules"]
+opposites = [
+  "Components MUST encapsulate related responsibilities.",
+  "Inter-component dependencies SHOULD be minimized and directional."
+]
+examples = ["Bounded contexts with clean interfaces."]
+
+[[principles]]
+id = "IOF"
+name = "Independence of Frameworks"
+definition = "The system should not be bound to external frameworks."
+tags = ["clean-architecture","independence"]
+severity = "high"
+guidance = [
+  "Frameworks MUST be treated as delivery details.",
+  "Core SHOULD compile/test without framework runtime."
+]
+anti_patterns = ["Core extends framework base classes", "Business logic in controllers"]
+opposites = [
+  "Core MUST NOT depend on framework base classes.",
+  "Framework code MUST be isolated to adapters."
+]
+examples = ["Ports/Adapters for web frameworks and drivers."]
+
+[[principles]]
+id = "IOUI"
+name = "Independence of UI"
+definition = "UI changes should not affect core business rules."
+tags = ["clean-architecture","ui-separation"]
+severity = "high"
+guidance = [
+  "Core MUST expose UI-agnostic use-cases.",
+  "UI layers SHOULD be replaceable without core changes."
+]
+anti_patterns = ["Rules embedded in view models", "Core returns UI widgets"]
+opposites = [
+  "Core MUST expose UI-neutral contracts.",
+  "UI changes MUST NOT require core changes."
+]
+examples = ["CLI/Web/Mobile driven by same application services."]
+
+[[principles]]
+id = "IODB"
+name = "Independence of Database"
+definition = "Data storage decisions should not impact business rules."
+tags = ["clean-architecture","persistence"]
+severity = "high"
+guidance = [
+  "Core MUST depend on repositories, not DB clients.",
+  "Migrations SHOULD NOT leak into domain logic."
+]
+anti_patterns = ["ORM entities = domain objects", "SQL in domain services"]
+opposites = [
+  "Core MUST depend on repository abstractions.",
+  "Schema details MUST NOT leak into domain logic."
+]
+examples = ["Domain separate from ORM entities."]
+
+[[principles]]
+id = "IOEA"
+name = "Independence of External Agencies"
+definition = "Core should be isolated from external services and tools."
+tags = ["clean-architecture","isolation"]
+severity = "high"
+guidance = [
+  "External services MUST be accessed via adapters/ports.",
+  "Failures SHOULD be handled at boundaries."
+]
+anti_patterns = ["Vendor SDK in core", "Global clients passed through domain"]
+opposites = [
+  "External services MUST be invoked via adapters.",
+  "Vendor specifics MUST NOT enter core types."
+]
+examples = ["Email/SMS/Payments behind adapter layer."]
+
+[[principles]]
+id = "DR"
+name = "Dependency Rule"
+definition = "Source dependencies point inward toward stable, abstract code."
+tags = ["clean-architecture","dependency-direction"]
+severity = "high"
+guidance = [
+  "Inner layers MUST NOT depend on outer layers.",
+  "Dependency direction SHOULD point to core."
+]
+anti_patterns = ["Domain imports UI/infra", "Inner layer depends on outer types"]
+opposites = [
+  "Inner layers MUST NOT depend on outer layers.",
+  "Dependencies MUST point inward."
+]
+examples = ["Domain depends on ports; adapters depend on domain."]
+
+[[principles]]
+id = "PRAG"
+name = "Pragmatism"
+definition = "Balance ideal design with delivery constraints and measurable outcomes."
+tags = ["tradeoffs","product-alignment"]
+severity = "medium"
+guidance = [
+  "Trade-offs MUST be documented with rationale.",
+  "Choices SHOULD optimize for measurable outcomes."
+]
+anti_patterns = ["Dogmatic pattern adherence", "Ignoring delivery constraints"]
+opposites = [
+  "Decisions MUST document trade-offs and outcomes.",
+  "Patterns SHOULD yield to measurable value when in conflict."
+]
+examples = ["Serverless for faster time-to-market despite cold starts."]

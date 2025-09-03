@@ -5,51 +5,101 @@
   "description": "Reusable schema for TOML [meta] tables across repository specs.",
   "type": "object",
   "additionalProperties": false,
+
   "required": [
-    "spec",
-    "project",
+    "id",
+    "name",
     "title",
-    "description",
+    "project",
+    "doc_type",
     "version",
     "status",
     "rfc2119",
-    "last_updated"
+    "created_datetime",
+    "modified_datetime",
+    "description"
   ],
+
   "properties": {
-    "spec": {
+    "id": {
       "type": "string",
-      "pattern": "^[a-z0-9]+([_-][a-z0-9]+)*$",
-      "description": "Short identifier for this spec, e.g., steering-implementation-plan"
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+      "description": "UUIDv4 immutable identifier for cross-references."
     },
+
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$",
+      "description": "Short snake_case name for this spec, e.g., steering_implementation_plan."
+    },
+
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human-readable document title."
+    },
+
     "project": {
       "type": "string",
       "minLength": 1,
-      "description": "Repository or system name this spec belongs to"
+      "description": "Repository or system name this spec belongs to."
     },
-    "title": {
+
+    "doc_type": {
       "type": "string",
-      "minLength": 1
+      "enum": [
+        "command",
+        "features",
+        "guide",
+        "policy",
+        "product",
+        "report",
+        "schema",
+        "spec",
+        "structure",
+        "tech",
+        "template",
+        "workflow",
+        "other"
+      ],
+      "description": "Primary document type for routing, templates, and validators."
     },
-    "description": {
-      "type": "string",
-      "minLength": 1
-    },
+
     "version": {
       "type": "string",
-      "minLength": 1
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$",
+      "description": "Document version in SemVer format (e.g., 1.2.0, 2.0.0-rc.1+build5)."
     },
+
     "status": {
       "type": "string",
-      "enum": ["draft", "stable", "deprecated"]
+      "enum": ["draft", "in_review", "approved", "active", "archived"],
+      "description": "Lifecycle: draft=work in progress; in_review=under review; approved=accepted but not yet live; active=current canonical version; archived=historical record only."
     },
+
     "rfc2119": {
       "type": "boolean",
-      "description": "Whether the spec uses RFC 2119 keywords"
+      "description": "Whether the document uses RFC 2119 keywords (MUST, SHOULD, etc.)."
     },
-    "last_updated": {
+
+    "created_datetime": {
       "type": "string",
-      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
-      "description": "Date of last revision (YYYY-MM-DD)"
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+\\-]\\d{2}:\\d{2})$",
+      "description": "ISO 8601 timestamp (e.g., 2025-09-01T08:37:00Z or 2025-09-01T11:37:00+03:00). MUST be immutable after initial set."
+    },
+
+    "modified_datetime": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+\\-]\\d{2}:\\d{2})$",
+      "description": "ISO 8601 timestamp of last modification. MUST be updated on any persisted change."
+    },
+
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "description": "One to four sentence summary suitable for listings and tooltips."
     }
   }
 }

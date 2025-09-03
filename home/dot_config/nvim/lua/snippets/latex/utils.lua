@@ -137,7 +137,7 @@ function M.in_math()
 end
 
 --- Determine whether the cursor is inside a display math environment.
---- Uses: (1) If vimtex says “not in math”, return false; (2) else scan for
+--- Uses: (1) If vimtex says "not in math", return false; (2) else scan for
 --- begin/end of known display envs or \[...\].
 --- @return boolean in_display
 function M.in_display_math()
@@ -261,7 +261,7 @@ function M._.build_ops(ops, extra)
 end
 
 --- Naively check whether a position `pos` in `str` sits inside the argument of
---- any “special” operator like \sum, \int, \prod.
+--- any "special" operator like \sum, \int, \prod.
 --- @param str string
 --- @param pos integer
 --- @param specials string[]|nil

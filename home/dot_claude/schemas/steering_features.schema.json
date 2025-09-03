@@ -1,0 +1,470 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "~/.claude/schemas/features.schema.json",
+  "title": "Features Definition Schema",
+  "description": "Schema for exhaustively describing narrowly scoped and clearly defined features derived strictly from steering documents with atomic decomposition and explicit scope boundaries.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["meta", "feature"],
+  "properties": {
+    "meta": {
+      "$ref": "~/.claude/schemas/meta.schema.json"
+    },
+    "feature": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "order": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Implementation sequence number for planning progression (1, 2, 3...)."
+          },
+          "decomposition_matrix": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["who", "what", "where", "when", "why", "how"],
+            "properties": {
+              "who": {
+                "type": "string",
+                "minLength": 10,
+                "description": "Specific user type/role that benefits (single role only)."
+              },
+              "what": {
+                "type": "string",
+                "minLength": 10,
+                "description": "Exact action/outcome enabled (single action only)."
+              },
+              "where": {
+                "type": "string",
+                "minLength": 10,
+                "description": "Specific context/system component (single component only)."
+              },
+              "when": {
+                "type": "string",
+                "minLength": 10,
+                "description": "Specific trigger/event (single trigger only)."
+              },
+              "why": {
+                "type": "string",
+                "minLength": 10,
+                "description": "Specific problem solved (single problem only)."
+              },
+              "how": {
+                "type": "string",
+                "minLength": 10,
+                "description": "Specific mechanism used (single mechanism only)."
+              }
+            }
+          },
+          "boundary_definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "input_boundaries",
+              "output_boundaries",
+              "process_boundaries",
+              "ui_boundaries",
+              "data_boundaries",
+              "integration_boundaries"
+            ],
+            "properties": {
+              "input_boundaries": {
+                "type": "string",
+                "minLength": 20,
+                "description": "Specific data/events that trigger this feature with examples."
+              },
+              "output_boundaries": {
+                "type": "string",
+                "minLength": 20,
+                "description": "Specific results/states this feature produces with examples."
+              },
+              "process_boundaries": {
+                "type": "string",
+                "minLength": 20,
+                "description": "Explicit list of steps included in this feature's scope."
+              },
+              "ui_boundaries": {
+                "type": "string",
+                "minLength": 10,
+                "description": "Specific UI elements/interactions included with exact specifications."
+              },
+              "data_boundaries": {
+                "type": "string",
+                "minLength": 10,
+                "description": "Specific data entities this feature operates on by name."
+              },
+              "integration_boundaries": {
+                "type": "string",
+                "minLength": 10,
+                "description": "Specific external systems this feature interacts with precisely identified."
+              }
+            }
+          },
+          "measurability_framework": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "performance_metrics": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 20
+                },
+                "description": "Response time, throughput, resource usage targets with specific measurement methods."
+              },
+              "quality_metrics": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 20
+                },
+                "description": "Error rates, accuracy, completeness targets with measurement approaches."
+              },
+              "user_metrics": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 20
+                },
+                "description": "Task completion, user satisfaction, adoption targets with measurement methods."
+              },
+              "business_metrics": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 20
+                },
+                "description": "Efficiency gains, cost reduction, revenue impact with measurement approaches."
+              },
+              "technical_metrics": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 20
+                },
+                "description": "Code coverage, security compliance, maintainability with measurement tools."
+              }
+            }
+          },
+          "name": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 80,
+            "description": "Short, descriptive, unique human-readable title that clearly communicates the specific capability without ambiguity."
+          },
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$|^[0-9a-fA-F-]{36}$",
+            "description": "Globally unique kebab-case or UUID identifier that reflects the exact scope (e.g., 'user-login' not 'user-management')."
+          },
+          "category": {
+            "type": "string",
+            "enum": ["product", "tech", "structure"],
+            "description": "Primary domain classification aligned to steering docs - must reflect the feature's main area of impact."
+          },
+          "description": {
+            "type": "string",
+            "minLength": 60,
+            "description": "Comprehensive purpose, scope, and context with explicit boundaries using 'includes X but excludes Y' language sufficient for downstream spec work."
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 30,
+            "description": "Why the feature exists and justification for the specific narrow scope chosen; alignment to steering document goals/constraints."
+          },
+          "source_reference": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^(product\\.md|tech\\.md|structure\\.md) §[0-9]+(\\.[0-9]+)*$"
+            },
+            "description": "One or more exact citations to steering docs (file + section) that directly justify this feature."
+          },
+          "acceptance_criteria": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 10
+            },
+            "description": "Independently testable statements that verify ONLY the defined scope with no scope creep - each feature must have one primary acceptance criterion."
+          },
+          "dependencies": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "description": "System/service name or 'feature:<feature-id>' reference to other atomic features or well-defined external services."
+            },
+            "uniqueItems": true,
+            "description": "External systems or other atomic features required - must reference stable identifiers with no circular dependencies."
+          },
+          "risks": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 10
+            },
+            "description": "Condition → consequence statements of notable risks specific to this atomic feature's implementation."
+          },
+          "success_metrics": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 5
+            },
+            "description": "Quantitative or qualitative indicators that measure ONLY the specific capability's direct effectiveness and impact."
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["high", "medium", "low"],
+            "description": "Relative urgency/importance based on the feature's direct contribution to steering document goals."
+          },
+          "status": {
+            "type": "string",
+            "enum": ["proposed", "approved", "deferred", "deprecated"],
+            "description": "Current lifecycle state of this atomic feature."
+          },
+          "notes": {
+            "type": "string",
+            "description": "Clarifications, constraints, open questions, and scope boundary explanations; MUST NOT contradict steering docs or introduce scope creep."
+          },
+          "scope": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["includes", "excludes", "boundaries"],
+            "properties": {
+              "includes": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 5,
+                "items": {
+                  "type": "string",
+                  "minLength": 10
+                },
+                "description": "Specific capabilities that are explicitly in scope for this atomic feature."
+              },
+              "excludes": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 5,
+                "items": {
+                  "type": "string",
+                  "minLength": 10
+                },
+                "description": "Related capabilities that are explicitly out of scope for this atomic feature."
+              },
+              "boundaries": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["input", "output", "process", "component"],
+                "properties": {
+                  "input": {
+                    "type": "string",
+                    "minLength": 10,
+                    "description": "Specific data/events that trigger this feature."
+                  },
+                  "output": {
+                    "type": "string",
+                    "minLength": 10,
+                    "description": "Specific results/states this feature produces."
+                  },
+                  "process": {
+                    "type": "string",
+                    "minLength": 10,
+                    "description": "Specific steps this feature executes."
+                  },
+                  "component": {
+                    "type": "string",
+                    "minLength": 10,
+                    "description": "Specific system component this operates within."
+                  }
+                }
+              }
+            }
+          },
+          "assumptions": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "items": {
+              "type": "string",
+              "minLength": 10
+            },
+            "description": "Preconditions required for feature execution to maintain atomic scope."
+          },
+          "user_impact": {
+            "type": "string",
+            "minLength": 20,
+            "description": "Specific user benefit in measurable terms for this atomic feature."
+          },
+          "technical_complexity": {
+            "type": "string",
+            "enum": ["trivial", "simple", "moderate", "complex"],
+            "description": "Implementation difficulty assessment to ensure feature atomicity."
+          },
+          "integration_points": {
+            "type": "array",
+            "maxItems": 3,
+            "items": {
+              "type": "string",
+              "minLength": 5
+            },
+            "description": "Required system interactions (limited to maintain atomicity)."
+          },
+          "test_scenarios": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "unit_tests",
+              "integration_tests",
+              "end_to_end_tests",
+              "negative_tests"
+            ],
+            "properties": {
+              "unit_tests": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 5,
+                "items": {
+                  "type": "string",
+                  "minLength": 20
+                },
+                "description": "Specific test cases for core logic of this atomic feature."
+              },
+              "integration_tests": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 3,
+                "items": {
+                  "type": "string",
+                  "minLength": 20
+                },
+                "description": "Specific test cases for system interactions."
+              },
+              "end_to_end_tests": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 2,
+                "items": {
+                  "type": "string",
+                  "minLength": 20
+                },
+                "description": "Complete user workflow test scenarios."
+              },
+              "negative_tests": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 3,
+                "items": {
+                  "type": "string",
+                  "minLength": 20
+                },
+                "description": "Error condition test scenarios."
+              },
+              "performance_tests": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 20
+                },
+                "description": "Performance requirement verification tests (where applicable)."
+              }
+            }
+          },
+          "boundaries": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data_entities": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 5
+                },
+                "description": "Specific data types this feature operates on."
+              },
+              "user_interfaces": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 5
+                },
+                "description": "Specific UI elements this feature uses."
+              },
+              "api_endpoints": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 5
+                },
+                "description": "Specific APIs this feature exposes/consumes."
+              },
+              "external_systems": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 5
+                },
+                "description": "Specific external systems this feature integrates with."
+              }
+            }
+          }
+        },
+        "required": [
+          "order",
+          "name",
+          "id",
+          "category",
+          "description",
+          "rationale",
+          "source_reference",
+          "acceptance_criteria",
+          "success_metrics",
+          "priority",
+          "status",
+          "scope",
+          "assumptions",
+          "user_impact",
+          "technical_complexity",
+          "test_scenarios",
+          "decomposition_matrix",
+          "boundary_definition",
+          "measurability_framework"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["feature"],
+  "additionalProperties": false,
+  "definitions": {
+    "atomicFeatureValidation": {
+      "description": "Additional validation rules to ensure proper atomic feature decomposition",
+      "properties": {
+        "singleResponsibilityTest": {
+          "description": "Each feature must pass: covers exactly one responsibility with explicit scope boundaries"
+        },
+        "singleSprintTest": {
+          "description": "Each feature must pass: implementable by one team in one development cycle"
+        },
+        "independentValueTest": {
+          "description": "Each feature must pass: provides value without requiring other features"
+        },
+        "clearBoundaryTest": {
+          "description": "Each feature must pass: explainable in one sentence what it does and does NOT do"
+        },
+        "nonOverlappingTest": {
+          "description": "Each feature must pass: zero scope overlap with any other feature"
+        },
+        "implementationClarityTest": {
+          "description": "Each feature must pass: developer can start implementing without understanding other features"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,660 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "~/.claude/schemas/steering_product.schema.json",
+  "title": "Product Steering Document Schema",
+  "description": "Comprehensive schema for product steering documents in TOML format. Defines product vision, problems, outcomes, users, and constraints for spec-driven development workflows.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["meta", "product"],
+
+  "properties": {
+    "meta": {
+      "$ref": "~/.claude/schemas/meta.schema.json"
+    },
+
+    "product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "definition",
+        "value_proposition",
+        "problems",
+        "outcomes",
+        "success_metrics",
+        "users",
+        "personas",
+        "scope",
+        "acceptance_criteria",
+        "traceability"
+      ],
+      "properties": {
+        "definition": {
+          "type": "string",
+          "minLength": 20,
+          "maxLength": 300,
+          "description": "One-sentence definition stating what the product is, who it's for, and why it's valuable. Must be complete and clear."
+        },
+
+        "value_proposition": {
+          "type": "string",
+          "minLength": 20,
+          "maxLength": 500,
+          "description": "Primary value statement explaining the core benefit to users in plain, compelling language."
+        },
+
+        "problems": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 25,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "statement", "user_impact", "business_impact"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^P([1-9]|[1-9][0-9]|100)$",
+                "description": "Unique problem identifier: P1, P2, ..., P100"
+              },
+              "statement": {
+                "type": "string",
+                "minLength": 20,
+                "maxLength": 600,
+                "description": "Clear, specific description of the problem in language users would recognize."
+              },
+              "user_impact": {
+                "type": "string",
+                "minLength": 15,
+                "maxLength": 400,
+                "description": "Concrete description of how this problem affects users' daily work or life."
+              },
+              "business_impact": {
+                "type": "string",
+                "minLength": 15,
+                "maxLength": 400,
+                "description": "Measurable or observable impact this problem has on business operations, revenue, or goals."
+              }
+            }
+          }
+        },
+
+        "outcomes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 20,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "problem_ids",
+              "user_outcome",
+              "business_outcome"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^O([1-9]|[1-9][0-9]|100)$",
+                "description": "Unique outcome identifier: O1, O2, ..., O100"
+              },
+              "problem_ids": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 5,
+                "items": {
+                  "type": "string",
+                  "pattern": "^P([1-9]|[1-9][0-9]|100)$"
+                },
+                "description": "Array of problem IDs this outcome addresses. Must reference existing problems."
+              },
+              "user_outcome": {
+                "type": "string",
+                "minLength": 20,
+                "maxLength": 500,
+                "description": "Specific, observable improvement users will experience when this outcome is achieved."
+              },
+              "business_outcome": {
+                "type": "string",
+                "minLength": 20,
+                "maxLength": 500,
+                "description": "Measurable business improvement that will result from achieving this outcome."
+              }
+            }
+          }
+        },
+
+        "success_metrics": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 15,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "outcome_ids",
+              "metric",
+              "target",
+              "measurement_method"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^M([1-9]|[1-9][0-9]|100)$",
+                "description": "Unique metric identifier: M1, M2, ..., M100"
+              },
+              "outcome_ids": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 3,
+                "items": {
+                  "type": "string",
+                  "pattern": "^O([1-9]|[1-9][0-9]|100)$"
+                },
+                "description": "Array of outcome IDs this metric measures. Must reference existing outcomes."
+              },
+              "metric": {
+                "type": "string",
+                "minLength": 8,
+                "maxLength": 120,
+                "description": "Clear name of the measurable indicator (e.g., 'User task completion rate')."
+              },
+              "target": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 150,
+                "description": "Specific target value or threshold (e.g., '85%', 'Under 2 seconds', 'Reduce by 50%')."
+              },
+              "measurement_method": {
+                "type": "string",
+                "minLength": 15,
+                "maxLength": 400,
+                "description": "Detailed explanation of how this metric will be measured and tracked."
+              }
+            }
+          }
+        },
+
+        "users": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "group", "actions", "priority"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^U([1-9]|[1-9][0-9]|100)$",
+                "description": "Unique user group identifier: U1, U2, ..., U100"
+              },
+              "group": {
+                "type": "string",
+                "minLength": 5,
+                "maxLength": 80,
+                "description": "Descriptive name of the user group (e.g., 'Data Analysts', 'Small Business Owners')."
+              },
+              "actions": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 6,
+                "items": {
+                  "type": "string",
+                  "minLength": 8,
+                  "maxLength": 120,
+                  "pattern": "^[a-z]",
+                  "description": "Action starting with lowercase verb (e.g., 'track expenses', 'generate reports')."
+                },
+                "description": "Primary actions this user group wants to perform, starting with verbs."
+              },
+              "priority": {
+                "type": "string",
+                "enum": ["primary", "secondary"],
+                "description": "Priority level: 'primary' for main target users, 'secondary' for supporting users."
+              }
+            }
+          }
+        },
+
+        "personas": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "user_id",
+              "role",
+              "main_need",
+              "current_frustration"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^PE([1-9]|[1-9][0-9]|100)$",
+                "description": "Unique persona identifier: PE1, PE2, ..., PE100"
+              },
+              "user_id": {
+                "type": "string",
+                "pattern": "^U([1-9]|[1-9][0-9]|100)$",
+                "description": "Reference to user group this persona represents. Must be valid user ID."
+              },
+              "role": {
+                "type": "string",
+                "minLength": 8,
+                "maxLength": 120,
+                "description": "Job title, role, or position of this persona in clear, specific terms."
+              },
+              "main_need": {
+                "type": "string",
+                "minLength": 20,
+                "maxLength": 250,
+                "description": "Primary need, goal, or motivation that drives this persona to use the product."
+              },
+              "current_frustration": {
+                "type": "string",
+                "minLength": 20,
+                "maxLength": 350,
+                "description": "Specific problem or pain point this persona experiences with current solutions."
+              }
+            }
+          }
+        },
+
+        "scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["include", "exclude"],
+          "properties": {
+            "include": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 20,
+              "items": {
+                "type": "string",
+                "minLength": 10,
+                "maxLength": 250
+              },
+              "description": "Explicit inclusions - specific features, capabilities, or areas the product WILL cover."
+            },
+            "exclude": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 20,
+              "items": {
+                "type": "string",
+                "minLength": 10,
+                "maxLength": 250
+              },
+              "description": "Explicit exclusions - specific features, capabilities, or areas the product will NOT cover."
+            }
+          }
+        },
+
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["type", "description", "impact"],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "regulatory",
+                  "technical",
+                  "business",
+                  "legal",
+                  "compliance",
+                  "budget",
+                  "timeline",
+                  "resource",
+                  "security",
+                  "privacy",
+                  "accessibility",
+                  "performance",
+                  "integration",
+                  "other"
+                ],
+                "description": "Category of constraint that limits product development or capabilities."
+              },
+              "description": {
+                "type": "string",
+                "minLength": 20,
+                "maxLength": 500,
+                "description": "Detailed description of the constraint using RFC 2119 keywords where appropriate."
+              },
+              "impact": {
+                "type": "string",
+                "minLength": 20,
+                "maxLength": 400,
+                "description": "Specific explanation of how this constraint affects product design, features, or implementation."
+              }
+            }
+          }
+        },
+
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["type", "name", "description", "criticality"],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "system",
+                  "service",
+                  "data",
+                  "integration",
+                  "vendor",
+                  "team",
+                  "infrastructure",
+                  "api",
+                  "database",
+                  "authentication",
+                  "payment",
+                  "other"
+                ],
+                "description": "Category of dependency the product requires."
+              },
+              "name": {
+                "type": "string",
+                "minLength": 3,
+                "maxLength": 120,
+                "description": "Specific name or identifier of the dependency."
+              },
+              "description": {
+                "type": "string",
+                "minLength": 20,
+                "maxLength": 400,
+                "description": "Clear explanation of what this dependency provides and why it's needed."
+              },
+              "criticality": {
+                "type": "string",
+                "enum": ["critical", "important", "nice-to-have"],
+                "description": "Impact level if this dependency is unavailable or fails."
+              }
+            }
+          }
+        },
+
+        "acceptance_criteria": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 25,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "outcome_ids",
+              "criterion",
+              "verification_method"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^AC([1-9]|[1-9][0-9]|100)$",
+                "description": "Unique acceptance criterion identifier: AC1, AC2, ..., AC100"
+              },
+              "outcome_ids": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 3,
+                "items": {
+                  "type": "string",
+                  "pattern": "^O([1-9]|[1-9][0-9]|100)$"
+                },
+                "description": "Array of outcome IDs this criterion validates. Must reference existing outcomes."
+              },
+              "criterion": {
+                "type": "string",
+                "minLength": 20,
+                "maxLength": 500,
+                "description": "Measurable, testable acceptance criterion using RFC 2119 keywords (MUST, SHOULD, MAY) where appropriate."
+              },
+              "verification_method": {
+                "type": "string",
+                "minLength": 15,
+                "maxLength": 300,
+                "description": "Specific method, test, or process used to verify this criterion is met."
+              }
+            }
+          }
+        },
+
+        "risks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "description",
+              "likelihood",
+              "impact",
+              "mitigation"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^R([1-9]|[1-9][0-9]|100)$",
+                "description": "Unique risk identifier: R1, R2, ..., R100"
+              },
+              "description": {
+                "type": "string",
+                "minLength": 25,
+                "maxLength": 600,
+                "description": "Detailed description of the risk, preferably in IF/THEN format for clarity."
+              },
+              "likelihood": {
+                "type": "string",
+                "enum": ["low", "medium", "high"],
+                "description": "Probability assessment of the risk occurring during product development or operation."
+              },
+              "impact": {
+                "type": "string",
+                "enum": ["low", "medium", "high"],
+                "description": "Severity assessment of consequences if this risk occurs."
+              },
+              "mitigation": {
+                "type": "string",
+                "minLength": 20,
+                "maxLength": 500,
+                "description": "Specific strategy, actions, or controls to prevent or minimize this risk."
+              }
+            }
+          }
+        },
+
+        "assumptions": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 20,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "statement", "validation_method"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^A([1-9]|[1-9][0-9]|100)$",
+                "description": "Unique assumption identifier: A1, A2, ..., A100"
+              },
+              "statement": {
+                "type": "string",
+                "minLength": 20,
+                "maxLength": 400,
+                "description": "Clear, specific statement of what is being assumed about users, market, technology, or business conditions."
+              },
+              "validation_method": {
+                "type": "string",
+                "minLength": 15,
+                "maxLength": 300,
+                "description": "Method, research, or testing approach that will validate whether this assumption is correct."
+              }
+            }
+          }
+        },
+
+        "non_goals": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["items"],
+          "properties": {
+            "items": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 15,
+              "items": {
+                "type": "string",
+                "minLength": 15,
+                "maxLength": 300
+              },
+              "description": "Explicit non-goals to prevent scope creep and clarify what the product will NOT attempt to do."
+            }
+          }
+        },
+
+        "future_directions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["items"],
+          "properties": {
+            "items": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 12,
+              "items": {
+                "type": "string",
+                "minLength": 20,
+                "maxLength": 400
+              },
+              "description": "Plausible future evolutions, extensions, or versions of the product beyond initial scope."
+            }
+          }
+        },
+
+        "glossary": {
+          "type": "object",
+          "patternProperties": {
+            "^[a-zA-Z][a-zA-Z0-9_-]{1,49}$": {
+              "type": "string",
+              "minLength": 15,
+              "maxLength": 300,
+              "description": "Definition of domain-specific term, acronym, or concept."
+            }
+          },
+          "additionalProperties": false,
+          "maxProperties": 25,
+          "description": "Optional glossary for domain-specific terms. Include only when specialized terminology is used."
+        },
+
+        "traceability": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mappings"],
+          "properties": {
+            "mappings": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "problem_id",
+                  "outcome_id",
+                  "metric_id",
+                  "acceptance_criterion_id"
+                ],
+                "properties": {
+                  "problem_id": {
+                    "type": "string",
+                    "pattern": "^P([1-9]|[1-9][0-9]|100)$",
+                    "description": "Problem ID in this traceability mapping. Must reference existing problem."
+                  },
+                  "outcome_id": {
+                    "type": "string",
+                    "pattern": "^O([1-9]|[1-9][0-9]|100)$",
+                    "description": "Outcome ID in this traceability mapping. Must reference existing outcome."
+                  },
+                  "metric_id": {
+                    "type": "string",
+                    "pattern": "^M([1-9]|[1-9][0-9]|100)$",
+                    "description": "Success metric ID in this traceability mapping. Must reference existing metric."
+                  },
+                  "acceptance_criterion_id": {
+                    "type": "string",
+                    "pattern": "^AC([1-9]|[1-9][0-9]|100)$",
+                    "description": "Acceptance criterion ID in this traceability mapping. Must reference existing criterion."
+                  }
+                }
+              },
+              "description": "Complete traceability mappings ensuring every problem connects to outcomes, metrics, and acceptance criteria. Enables verification that all problems are addressed with measurable criteria."
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "definitions": {
+    "identifier_pattern": {
+      "type": "string",
+      "description": "Common pattern for all document identifiers"
+    }
+  },
+
+  "additionalValidation": {
+    "description": "Additional validation rules that should be checked programmatically",
+    "crossReferenceRules": [
+      "All problem_ids referenced in outcomes must exist in the problems array",
+      "All outcome_ids referenced in metrics must exist in the outcomes array", 
+      "All user_ids referenced in personas must exist in the users array",
+      "All outcome_ids referenced in acceptance_criteria must exist in the outcomes array",
+      "All traceability mappings must reference existing IDs from their respective arrays"
+    ],
+    "completenessRules": [
+      "Every problem must be referenced by at least one outcome",
+      "Every outcome must be referenced by at least one metric and one acceptance criterion",
+      "Each problem should appear in at least one traceability mapping",
+      "Each outcome should appear in at least one traceability mapping"
+    ],
+    "businessRules": [
+      "At least one user group must have priority='primary'",
+      "Each user group should have at least one corresponding persona",
+      "Metric targets should be specific and measurable",
+      "User actions should start with verbs and be actionable",
+      "Acceptance criteria should use RFC 2119 keywords appropriately",
+      "Risk descriptions should be specific and actionable in IF/THEN format",
+      "Assumption validation methods should be practical and achievable",
+      "Product definition must contain what the product is, who it serves, and why it is valuable",
+      "Scope include array must not be empty if exclude array is populated",
+      "Traceability mappings must form complete chains from problems to acceptance criteria"
+    ],
+    "dataQualityRules": [
+      "All constraint and dependency types must be from the allowed enum values",
+      "All risk likelihood and impact values must be from allowed enum values",
+      "All ID patterns must follow the specified regex patterns",
+      "String field lengths must meet minimum and maximum requirements",
+      "Array field item counts must respect minItems and maxItems constraints",
+      "User priority distribution should have at least one primary user group",
+      "Dependencies with 'critical' criticality should have detailed mitigation plans",
+      "High-impact or high-likelihood risks should have comprehensive mitigation strategies"
+    ],
+    "integrityRules": [
+      "No duplicate IDs within any array of the same type",
+      "All referenced IDs must exist in their respective arrays",
+      "Circular references between elements should be avoided",
+      "Each traceability mapping should represent a valid problem→outcome→metric→criterion chain",
+      "User personas should align with their corresponding user group actions and priorities",
+      "Success metrics should be measurable and align with their linked outcomes",
+      "Acceptance criteria should be testable and verifiable using specified methods"
+    ]
+  }
+}

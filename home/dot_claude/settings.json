@@ -19,7 +19,7 @@
       "Bash(ruff format:*)",
       "Bash(pytest)"
     ],
-    "ask": ["Bash(rm *)", "Bash(git commit:*)"],
+    "ask": ["Bash(rm:*)", "Bash(git commit:*)"],
     "deny": ["Bash(sudo)", "Read(./secrets/**)"]
   },
   "env": {

@@ -1,0 +1,148 @@
+[meta]
+id = "b0a2f3b5-6c1a-4e91-8f4c-5f0d2a9b7e33"
+name = "principles_programming"
+title = "Programming Principles – PROJECT_NAME"
+project = "PROJECT_NAME"
+doc_type = "principles_programming"
+version = "1.0.0"
+status = "draft"
+rfc2119 = true
+created_datetime = "2025-09-02T00:00:00Z"
+modified_datetime = "2025-09-02T00:00:00Z"
+description = "Canonical programming principles that guide code-level design and implementation decisions."
+
+[[principles]]
+id = "SRP"
+name = "Single Responsibility Principle"
+definition = "A module should have one, and only one, reason to change."
+tags = ["modularity","maintainability","design"]
+severity = "high"
+guidance = [
+  "Modules MUST encapsulate one responsibility.",
+  "Changes SHOULD NOT ripple across unrelated responsibilities."
+]
+anti_patterns = ["God class", "Kitchen-sink service"]
+opposites = [
+  "Modules MUST have exactly one clear reason to change.",
+  "Responsibilities SHOULD be split rather than accreted."
+]
+examples = ["Separate ingestion vs transformation services."]
+
+[[principles]]
+id = "OCP"
+name = "Open/Closed Principle"
+definition = "Entities are open for extension, closed for modification."
+tags = ["extensibility","stability"]
+severity = "high"
+guidance = [
+  "Extension points MUST be explicit.",
+  "Behavioral changes SHOULD prefer composition/configuration."
+]
+anti_patterns = ["Editing core for each variant", "Ad-hoc forks"]
+opposites = [
+  "New behavior SHOULD be introduced via extension.",
+  "Stable modules MUST NOT be modified for variants."
+]
+examples = ["Strategy pattern for pricing."]
+
+[[principles]]
+id = "LSP"
+name = "Liskov Substitution Principle"
+definition = "Subtypes must be substitutable for base types without altering correctness."
+tags = ["correctness","type-safety"]
+severity = "medium"
+guidance = [
+  "Subtypes MUST honor base contracts.",
+  "Pre/post-conditions SHOULD NOT be strengthened/weakened improperly."
+]
+anti_patterns = ["Subtype narrows inputs", "Violates invariants"]
+opposites = [
+  "Subtypes MUST NOT strengthen preconditions nor weaken postconditions.",
+  "Contracts MUST remain valid under substitution."
+]
+examples = ["Interchangeable repository implementations."]
+
+[[principles]]
+id = "ISP"
+name = "Interface Segregation Principle"
+definition = "No client should depend on methods it does not use."
+tags = ["api","contract","composition"]
+severity = "high"
+guidance = [
+  "Interfaces MUST be narrowly focused.",
+  "Clients SHOULD depend only on what they use."
+]
+anti_patterns = ["Fat interfaces", "Mega-DTOs"]
+opposites = [
+  "Interfaces MUST be split to remove unused methods.",
+  "Clients SHOULD depend on minimal, purpose-built contracts."
+]
+examples = ["Separate IFetch/IStore instead of IStorageDoEverything."]
+
+[[principles]]
+id = "DRY"
+name = "Don’t Repeat Yourself"
+definition = "Each piece of knowledge has one authoritative representation."
+tags = ["quality","maintainability"]
+severity = "medium"
+guidance = [
+  "Duplication MUST be eliminated or centralized.",
+  "Shared utilities SHOULD be extracted."
+]
+anti_patterns = ["Copy-paste logic", "Parallel configs out of sync"]
+opposites = [
+  "Shared logic MUST reside in one place.",
+  "Configuration SHOULD be single-sourced."
+]
+examples = ["Common validation library."]
+
+[[principles]]
+id = "KISS"
+name = "Keep It Simple"
+definition = "Prefer the simplest design that works."
+tags = ["simplicity","delivery"]
+severity = "medium"
+guidance = [
+  "Complexity MUST be justified by requirements.",
+  "Simpler approaches SHOULD be preferred when equivalent."
+]
+anti_patterns = ["Unnecessary abstraction layers", "Premature over-engineering"]
+opposites = [
+  "Solutions SHOULD minimize moving parts.",
+  "Abstractions MUST NOT exceed actual needs."
+]
+examples = ["Use a monolith for MVP."]
+
+[[principles]]
+id = "COI"
+name = "Composition Over Inheritance"
+definition = "Compose behavior from small units rather than deep inheritance."
+tags = ["design","flexibility"]
+severity = "medium"
+guidance = [
+  "Behavior MUST be composed via small units.",
+  "Inheritance SHOULD be shallow and justified."
+]
+anti_patterns = ["Deep inheritance chains", "Stateful base classes used everywhere"]
+opposites = [
+  "Reusable behavior SHOULD be provided via composition.",
+  "Inheritance MUST be minimal and purpose-driven."
+]
+examples = ["Middleware pipelines; decorators."]
+
+[[principles]]
+id = "YAGNI"
+name = "You Aren’t Gonna Need It"
+definition = "Implement only what is necessary now; defer speculative features."
+tags = ["delivery","scope-control"]
+severity = "medium"
+guidance = [
+  "Speculative features MUST NOT be built.",
+  "Deferred capabilities SHOULD be documented as future work."
+]
+anti_patterns = ["Gold-plating", "Feature toggles for hypotheticals"]
+opposites = [
+  "Only required functionality MUST be implemented.",
+  "Future work SHOULD be recorded, not built."
+]
+examples = ["Defer sharding until metrics justify."]

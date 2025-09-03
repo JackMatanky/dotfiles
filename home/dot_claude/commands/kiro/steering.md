@@ -34,7 +34,7 @@ Intelligently create or update steering documents in `ai/steering/` to maintain 
 
 - Main README: @README.md
 - Package configuration: @package.json
-- Python requirements: @requirements.txt
+- Python requirements: @pyproject.toml
 - TypeScript config: @tsconfig.json
 - Project documentation: @docs/
 

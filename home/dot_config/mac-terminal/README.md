@@ -65,7 +65,7 @@ open ./profiles/SolarizedDark.terminal
 ```
 
 To make a profile default:
-- Go to Terminal → Settings → General → “On startup, open…” and select your desired profile.
+- Go to Terminal → Settings → General → "On startup, open…" and select your desired profile.
 
 ## 📦 Automation
 
