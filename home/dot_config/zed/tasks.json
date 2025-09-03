@@ -5,7 +5,7 @@
   // Replaces all curly single and double quotes in the current file with ASCII equivalents.
   {
     "label": "Replace Non-Standard Quotes",
-    "command": "open $ZED_FILE | str replace --all '‘' '\"' | str replace --all '’' '\"' | str replace --all '"' '\"' | str replace --all '"' '\"' | save --force $ZED_FILE",
+    "command": "open $ZED_FILE | str replace --all '‘' '\"' | str replace --all '’' '\"' | str replace --all '\"' '\"' | str replace --all '\"' '\"' | save --force $ZED_FILE",
     "shell": {
       "with_arguments": {
         "program": "nu",
