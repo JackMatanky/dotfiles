@@ -1,11 +1,43 @@
 {
-  "theme": "Default",
-  "selectedAuthType": "oauth-personal",
-  "preferredEditor": "neovim",
-  "vimMode": true,
-  "checkpointing": true,
-  "show_memory_usage": true,
-  "telemetry": false,
-  "yolo": false,
-  "contextFileName": "AGENTS.md"
+  "general": {
+    "preferredEditor": "neovim",
+    "vimMode": true,
+    "checkpointing": {
+      "enabled": true
+    }
+  },
+  "ui": {
+    "theme": "Default",
+    "showMemoryUsage": true
+  },
+  "privacy": {
+    "usageStatisticsEnabled": false
+  },
+  "context": {
+    "fileName": ["GEMINI.md", "AGENTS.md"]
+  },
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  },
+  "mcpServers": {
+    "context7": {
+      "httpUrl": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "ctx7sk-5e6ebe3c-4d87-4162-bc7d-90ab92c88cc9"
+      }
+    },
+    "sequentialThinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking@latest"]
+    }
+  },
+  "ide": {
+    "enabled": false,
+    "hasSeenNudge": true
+  },
+  "telemetry": {
+    "enabled": false
+  }
 }

@@ -1,33 +1,37 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "~/.claude/schemas/steering_structure.schema.json", 
+  "$id": "~/.claude/schemas/steering_structure.schema.json",
   "title": "Structure Steering Document Schema",
   "description": "Schema for structure steering documents in TOML format, defining operational delivery structures for spec-driven development.",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "meta",
-    "purpose_scope", 
+    "purpose_scope",
     "traceability_matrix",
     "repository_strategy",
     "agentic_roles",
     "branching_workflow",
     "cicd_pipeline",
-    "environment_matrix", 
+    "environment_matrix",
     "governance_workflow",
     "scenarios",
     "update_policy"
   ],
-  
+
   "properties": {
     "meta": {
       "$ref": "~/.claude/schemas/meta.schema.json"
     },
-    
+
     "purpose_scope": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["execution_scope", "links_to_product_outcomes", "links_to_tech_components"],
+      "required": [
+        "execution_scope",
+        "links_to_product_outcomes",
+        "links_to_tech_components"
+      ],
       "properties": {
         "execution_scope": {
           "type": "string",
@@ -37,43 +41,58 @@
         },
         "links_to_product_outcomes": {
           "type": "array",
-          "items": { "type": "string", "pattern": "^O([1-9]|[1-9][0-9]|100)$" },
+          "items": {
+            "type": "string",
+            "pattern": "^O([1-9]|[1-9][0-9]|100)$"
+          },
           "minItems": 1,
           "maxItems": 20,
           "description": "Product outcome IDs this structure supports"
         },
         "links_to_tech_components": {
-          "type": "array", 
-          "items": { "type": "string", "minLength": 2, "maxLength": 80 },
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 80
+          },
           "minItems": 1,
           "maxItems": 50,
           "description": "Technical components this structure organizes"
         }
       }
     },
-    
-    "scope_boundaries": {
+
+    "scope": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["in_scope", "out_scope"],
+      "required": ["include", "exclude"],
       "properties": {
-        "in_scope": {
+        "include": {
           "type": "array",
-          "items": { "type": "string", "minLength": 15, "maxLength": 150 },
+          "items": {
+            "type": "string",
+            "minLength": 15,
+            "maxLength": 150
+          },
           "minItems": 4,
           "maxItems": 20,
           "description": "Explicit structural scope inclusions"
         },
-        "out_scope": {
+        "exclude": {
           "type": "array",
-          "items": { "type": "string", "minLength": 15, "maxLength": 150 },
+          "items": {
+            "type": "string",
+            "minLength": 15,
+            "maxLength": 150
+          },
           "minItems": 3,
           "maxItems": 15,
           "description": "Explicit structural scope exclusions"
         }
       }
     },
-    
+
     "traceability_matrix": {
       "type": "object",
       "additionalProperties": false,
@@ -89,57 +108,57 @@
             "required": [
               "problem_id",
               "outcome_id",
-              "tech_component", 
+              "tech_component",
               "repo_directory",
               "agentic_role",
               "acceptance_test"
             ],
             "properties": {
-              "problem_id": { 
-                "type": "string", 
+              "problem_id": {
+                "type": "string",
                 "pattern": "^P([1-9]|[1-9][0-9]|100)$",
                 "description": "Product problem ID"
               },
-              "outcome_id": { 
-                "type": "string", 
+              "outcome_id": {
+                "type": "string",
                 "pattern": "^O([1-9]|[1-9][0-9]|100)$",
                 "description": "Product outcome ID"
               },
-              "tech_component": { 
-                "type": "string", 
-                "minLength": 2, 
+              "tech_component": {
+                "type": "string",
+                "minLength": 2,
                 "maxLength": 80,
-                "description": "Technical component name" 
+                "description": "Technical component name"
               },
-              "repo_directory": { 
-                "type": "string", 
-                "minLength": 3, 
+              "repo_directory": {
+                "type": "string",
+                "minLength": 3,
                 "maxLength": 200,
-                "description": "Repository and directory path" 
+                "description": "Repository and directory path"
               },
-              "agentic_role": { 
-                "type": "string", 
+              "agentic_role": {
+                "type": "string",
                 "enum": [
-                  "code_generation", 
-                  "testing", 
-                  "refactoring", 
-                  "infrastructure_orchestration", 
+                  "code_generation",
+                  "testing",
+                  "refactoring",
+                  "infrastructure_orchestration",
                   "documentation_generation"
                 ],
-                "description": "AI capability assigned" 
+                "description": "AI capability assigned"
               },
-              "acceptance_test": { 
-                "type": "string", 
-                "minLength": 10, 
+              "acceptance_test": {
+                "type": "string",
+                "minLength": 10,
                 "maxLength": 300,
-                "description": "Acceptance test description" 
+                "description": "Acceptance test description"
               }
             }
           }
         }
       }
     },
-    
+
     "repository_strategy": {
       "type": "object",
       "additionalProperties": false,
@@ -150,104 +169,112 @@
           "enum": ["monorepo", "polyrepo"],
           "description": "Repository organization approach"
         },
-        "rationale": { 
-          "type": "string", 
-          "minLength": 30, 
+        "rationale": {
+          "type": "string",
+          "minLength": 30,
           "maxLength": 500,
-          "description": "Why this approach was chosen with context reference" 
+          "description": "Why this approach was chosen with context reference"
         },
-        "pros": { 
-          "type": "array", 
-          "items": { "type": "string", "minLength": 10, "maxLength": 150 },
+        "pros": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 150
+          },
           "minItems": 2,
           "maxItems": 8,
           "description": "Advantages of this approach"
         },
-        "cons": { 
-          "type": "array", 
-          "items": { "type": "string", "minLength": 10, "maxLength": 150 },
+        "cons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 150
+          },
           "minItems": 1,
           "maxItems": 8,
           "description": "Disadvantages of this approach"
         }
       }
     },
-    
+
     "directory_standards": {
       "type": "object",
       "additionalProperties": false,
       "required": ["python_structure", "go_structure", "javascript_structure"],
       "properties": {
-        "python_structure": { 
-          "type": "string", 
-          "minLength": 10, 
+        "python_structure": {
+          "type": "string",
+          "minLength": 10,
           "maxLength": 100,
-          "description": "Python directory structure standard" 
+          "description": "Python directory structure standard"
         },
-        "go_structure": { 
-          "type": "string", 
-          "minLength": 10, 
+        "go_structure": {
+          "type": "string",
+          "minLength": 10,
           "maxLength": 100,
-          "description": "Go directory structure standard" 
+          "description": "Go directory structure standard"
         },
-        "javascript_structure": { 
-          "type": "string", 
-          "minLength": 10, 
+        "javascript_structure": {
+          "type": "string",
+          "minLength": 10,
           "maxLength": 100,
-          "description": "JavaScript directory structure standard" 
+          "description": "JavaScript directory structure standard"
         },
-        "typescript_structure": { 
-          "type": "string", 
-          "minLength": 10, 
+        "typescript_structure": {
+          "type": "string",
+          "minLength": 10,
           "maxLength": 100,
-          "description": "TypeScript directory structure standard" 
+          "description": "TypeScript directory structure standard"
         },
-        "rust_structure": { 
-          "type": "string", 
-          "minLength": 10, 
+        "rust_structure": {
+          "type": "string",
+          "minLength": 10,
           "maxLength": 100,
-          "description": "Rust directory structure standard" 
+          "description": "Rust directory structure standard"
         },
-        "java_structure": { 
-          "type": "string", 
-          "minLength": 10, 
+        "java_structure": {
+          "type": "string",
+          "minLength": 10,
           "maxLength": 100,
-          "description": "Java directory structure standard" 
+          "description": "Java directory structure standard"
         }
       }
     },
-    
+
     "naming_conventions": {
       "type": "object",
       "additionalProperties": false,
       "required": ["directories", "files", "branches", "commits"],
       "properties": {
-        "directories": { 
-          "type": "string", 
+        "directories": {
+          "type": "string",
           "enum": ["snake_case", "kebab-case", "camelCase"],
           "description": "Directory naming convention"
         },
-        "files": { 
-          "type": "string", 
-          "minLength": 10, 
+        "files": {
+          "type": "string",
+          "minLength": 10,
           "maxLength": 100,
-          "description": "File naming convention" 
+          "description": "File naming convention"
         },
-        "branches": { 
-          "type": "string", 
-          "minLength": 15, 
+        "branches": {
+          "type": "string",
+          "minLength": 15,
           "maxLength": 100,
-          "description": "Branch naming convention" 
+          "description": "Branch naming convention"
         },
-        "commits": { 
-          "type": "string", 
-          "minLength": 15, 
+        "commits": {
+          "type": "string",
+          "minLength": 15,
           "maxLength": 100,
-          "description": "Commit message convention" 
+          "description": "Commit message convention"
         }
       }
     },
-    
+
     "component_mappings": {
       "type": "array",
       "minItems": 1,
@@ -255,32 +282,45 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["tech_component", "repo_path", "language_standard", "agentic_capability"],
+        "required": [
+          "tech_component",
+          "repo_path",
+          "language_standard",
+          "agentic_capability"
+        ],
         "properties": {
-          "tech_component": { 
-            "type": "string", 
-            "minLength": 2, 
+          "tech_component": {
+            "type": "string",
+            "minLength": 2,
             "maxLength": 80,
-            "description": "Technical component name" 
+            "description": "Technical component name"
           },
-          "repo_path": { 
-            "type": "string", 
-            "minLength": 3, 
+          "repo_path": {
+            "type": "string",
+            "minLength": 3,
             "maxLength": 200,
-            "description": "Repository path for component" 
+            "description": "Repository path for component"
           },
-          "language_standard": { 
-            "type": "string", 
-            "enum": ["python", "go", "javascript", "typescript", "rust", "java", "other"],
-            "description": "Programming language standard"
-          },
-          "agentic_capability": { 
+          "language_standard": {
             "type": "string",
             "enum": [
-              "code_generation", 
-              "testing", 
-              "refactoring", 
-              "infrastructure_orchestration", 
+              "python",
+              "go",
+              "javascript",
+              "typescript",
+              "rust",
+              "java",
+              "other"
+            ],
+            "description": "Programming language standard"
+          },
+          "agentic_capability": {
+            "type": "string",
+            "enum": [
+              "code_generation",
+              "testing",
+              "refactoring",
+              "infrastructure_orchestration",
               "documentation_generation"
             ],
             "description": "AI capability assigned to this component"
@@ -288,7 +328,7 @@
         }
       }
     },
-    
+
     "agentic_roles": {
       "type": "object",
       "additionalProperties": false,
@@ -301,35 +341,48 @@
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["name", "responsibility", "assigned_repos", "tools_used"],
+            "required": [
+              "name",
+              "responsibility",
+              "assigned_repos",
+              "tools_used"
+            ],
             "properties": {
-              "name": { 
+              "name": {
                 "type": "string",
                 "enum": [
                   "code_generation",
-                  "testing", 
+                  "testing",
                   "refactoring",
                   "infrastructure_orchestration",
                   "documentation_generation"
                 ],
                 "description": "AI capability name"
               },
-              "responsibility": { 
-                "type": "string", 
-                "minLength": 20, 
+              "responsibility": {
+                "type": "string",
+                "minLength": 20,
                 "maxLength": 200,
-                "description": "Capability responsibility" 
+                "description": "Capability responsibility"
               },
               "assigned_repos": {
                 "type": "array",
-                "items": { "type": "string", "minLength": 1, "maxLength": 100 },
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                },
                 "minItems": 1,
                 "maxItems": 20,
                 "description": "Repositories this capability is assigned to"
               },
               "tools_used": {
                 "type": "array",
-                "items": { "type": "string", "minLength": 2, "maxLength": 50 },
+                "items": {
+                  "type": "string",
+                  "minLength": 2,
+                  "maxLength": 50
+                },
                 "minItems": 1,
                 "maxItems": 15,
                 "description": "Tools used by this capability"
@@ -339,9 +392,9 @@
         }
       }
     },
-    
+
     "branching_workflow": {
-      "type": "object", 
+      "type": "object",
       "additionalProperties": false,
       "required": [
         "model",
@@ -350,55 +403,70 @@
         "merge_strategy"
       ],
       "properties": {
-        "model": { 
-          "type": "string", 
+        "model": {
+          "type": "string",
           "pattern": ".*[Gg]it worktree.*",
           "minLength": 15,
           "maxLength": 100,
           "description": "Branching model - Git worktree required"
         },
-        "main_branch": { 
-          "type": "string", 
+        "main_branch": {
+          "type": "string",
           "enum": ["main", "master"],
-          "description": "Main branch name" 
+          "description": "Main branch name"
         },
         "protected_branches": {
           "type": "array",
-          "items": { "type": "string", "minLength": 1, "maxLength": 50 },
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50
+          },
           "minItems": 1,
           "maxItems": 10,
           "description": "Protected branch names"
         },
-        "merge_strategy": { 
-          "type": "string", 
-          "minLength": 15, 
+        "merge_strategy": {
+          "type": "string",
+          "minLength": 15,
           "maxLength": 150,
-          "description": "Merge strategy requirements" 
+          "description": "Merge strategy requirements"
         }
       }
     },
-    
+
     "conventional_commits": {
       "type": "object",
       "additionalProperties": false,
       "required": ["required", "format", "types"],
       "properties": {
-        "required": { 
-          "type": "boolean", 
+        "required": {
+          "type": "boolean",
           "enum": [true],
           "description": "Conventional commits are required"
         },
-        "format": { 
-          "type": "string", 
-          "minLength": 10, 
+        "format": {
+          "type": "string",
+          "minLength": 10,
           "maxLength": 100,
-          "description": "Commit message format" 
+          "description": "Commit message format"
         },
         "types": {
           "type": "array",
-          "items": { 
+          "items": {
             "type": "string",
-            "enum": ["feat", "fix", "docs", "style", "refactor", "test", "chore", "ci", "build", "perf"]
+            "enum": [
+              "feat",
+              "fix",
+              "docs",
+              "style",
+              "refactor",
+              "test",
+              "chore",
+              "ci",
+              "build",
+              "perf"
+            ]
           },
           "minItems": 5,
           "maxItems": 15,
@@ -406,75 +474,79 @@
         },
         "examples": {
           "type": "array",
-          "items": { "type": "string", "minLength": 15, "maxLength": 100 },
+          "items": {
+            "type": "string",
+            "minLength": 15,
+            "maxLength": 100
+          },
           "minItems": 3,
           "maxItems": 10,
           "description": "Example commit messages"
         }
       }
     },
-    
+
     "git_worktree_lifecycle": {
       "type": "object",
       "additionalProperties": false,
       "required": [
         "create_command",
         "develop_process",
-        "commit_requirements", 
+        "commit_requirements",
         "pr_process",
         "review_requirements",
         "merge_process",
         "cleanup_command"
       ],
       "properties": {
-        "create_command": { 
-          "type": "string", 
-          "minLength": 20, 
+        "create_command": {
+          "type": "string",
+          "minLength": 20,
           "maxLength": 150,
-          "description": "Command to create worktree" 
+          "description": "Command to create worktree"
         },
-        "develop_process": { 
-          "type": "string", 
-          "minLength": 15, 
+        "develop_process": {
+          "type": "string",
+          "minLength": 15,
           "maxLength": 150,
-          "description": "Development process in worktree" 
+          "description": "Development process in worktree"
         },
-        "commit_requirements": { 
-          "type": "string", 
-          "minLength": 15, 
+        "commit_requirements": {
+          "type": "string",
+          "minLength": 15,
           "maxLength": 150,
-          "description": "Requirements for commits" 
+          "description": "Requirements for commits"
         },
-        "pr_process": { 
-          "type": "string", 
-          "minLength": 15, 
+        "pr_process": {
+          "type": "string",
+          "minLength": 15,
           "maxLength": 150,
-          "description": "Pull request creation process" 
+          "description": "Pull request creation process"
         },
-        "review_requirements": { 
-          "type": "string", 
-          "minLength": 15, 
+        "review_requirements": {
+          "type": "string",
+          "minLength": 15,
           "maxLength": 150,
-          "description": "Code review requirements" 
+          "description": "Code review requirements"
         },
-        "merge_process": { 
-          "type": "string", 
-          "minLength": 15, 
+        "merge_process": {
+          "type": "string",
+          "minLength": 15,
           "maxLength": 150,
-          "description": "Merge process" 
+          "description": "Merge process"
         },
-        "cleanup_command": { 
-          "type": "string", 
-          "minLength": 20, 
+        "cleanup_command": {
+          "type": "string",
+          "minLength": 20,
           "maxLength": 150,
-          "description": "Command to cleanup worktree" 
+          "description": "Command to cleanup worktree"
         }
       }
     },
-    
+
     "cicd_pipeline": {
       "type": "object",
-      "additionalProperties": false, 
+      "additionalProperties": false,
       "required": [
         "required_stages",
         "justfile_integration",
@@ -485,96 +557,127 @@
       "properties": {
         "required_stages": {
           "type": "array",
-          "items": { 
+          "items": {
             "type": "string",
-            "enum": ["lint", "format", "test", "coverage", "build", "deploy", "security", "performance"]
+            "enum": [
+              "lint",
+              "format",
+              "test",
+              "coverage",
+              "build",
+              "deploy",
+              "security",
+              "performance"
+            ]
           },
           "minItems": 6,
           "maxItems": 8,
           "uniqueItems": true,
           "description": "Required pipeline stages"
         },
-        "justfile_integration": { 
-          "type": "boolean", 
+        "justfile_integration": {
+          "type": "boolean",
           "enum": [true],
           "description": "Justfile integration is required"
         },
-        "pre_commit_hooks": { 
-          "type": "boolean", 
+        "pre_commit_hooks": {
+          "type": "boolean",
           "enum": [true],
           "description": "Pre-commit hooks are required"
         },
-        "pre_commit_parity": { 
-          "type": "string", 
-          "minLength": 20, 
+        "pre_commit_parity": {
+          "type": "string",
+          "minLength": 20,
           "maxLength": 200,
-          "description": "CI/CD and pre-commit parity requirements" 
+          "description": "CI/CD and pre-commit parity requirements"
         },
         "pipeline_stages": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["lint_stage", "format_stage", "test_stage", "coverage_stage", "build_stage"],
+          "required": [
+            "lint_stage",
+            "format_stage",
+            "test_stage",
+            "coverage_stage",
+            "build_stage"
+          ],
           "properties": {
-            "lint_stage": { 
-              "type": "string", 
-              "minLength": 15, 
+            "lint_stage": {
+              "type": "string",
+              "minLength": 15,
               "maxLength": 150,
-              "description": "Lint stage definition" 
+              "description": "Lint stage definition"
             },
-            "format_stage": { 
-              "type": "string", 
-              "minLength": 15, 
+            "format_stage": {
+              "type": "string",
+              "minLength": 15,
               "maxLength": 150,
-              "description": "Format stage definition" 
+              "description": "Format stage definition"
             },
-            "test_stage": { 
-              "type": "string", 
-              "minLength": 15, 
+            "test_stage": {
+              "type": "string",
+              "minLength": 15,
               "maxLength": 150,
-              "description": "Test stage definition" 
+              "description": "Test stage definition"
             },
-            "coverage_stage": { 
-              "type": "string", 
-              "minLength": 15, 
+            "coverage_stage": {
+              "type": "string",
+              "minLength": 15,
               "maxLength": 150,
-              "description": "Coverage stage definition" 
+              "description": "Coverage stage definition"
             },
-            "build_stage": { 
-              "type": "string", 
-              "minLength": 15, 
+            "build_stage": {
+              "type": "string",
+              "minLength": 15,
               "maxLength": 150,
-              "description": "Build stage definition" 
+              "description": "Build stage definition"
             },
-            "deploy_stage": { 
-              "type": "string", 
-              "minLength": 15, 
+            "deploy_stage": {
+              "type": "string",
+              "minLength": 15,
               "maxLength": 150,
-              "description": "Deploy stage definition" 
+              "description": "Deploy stage definition"
             }
           }
         },
         "promotion_gates": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["dev_requirements", "staging_requirements", "prod_requirements"],
+          "required": [
+            "dev_requirements",
+            "staging_requirements",
+            "prod_requirements"
+          ],
           "properties": {
             "dev_requirements": {
               "type": "array",
-              "items": { "type": "string", "minLength": 5, "maxLength": 100 },
+              "items": {
+                "type": "string",
+                "minLength": 5,
+                "maxLength": 100
+              },
               "minItems": 2,
               "maxItems": 10,
               "description": "Requirements for dev environment promotion"
             },
             "staging_requirements": {
-              "type": "array", 
-              "items": { "type": "string", "minLength": 5, "maxLength": 100 },
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 5,
+                "maxLength": 100
+              },
               "minItems": 3,
               "maxItems": 15,
               "description": "Requirements for staging environment promotion"
             },
             "prod_requirements": {
               "type": "array",
-              "items": { "type": "string", "minLength": 5, "maxLength": 100 },
+              "items": {
+                "type": "string",
+                "minLength": 5,
+                "maxLength": 100
+              },
               "minItems": 4,
               "maxItems": 20,
               "description": "Requirements for production environment promotion"
@@ -583,7 +686,7 @@
         }
       }
     },
-    
+
     "environment_matrix": {
       "type": "object",
       "additionalProperties": false,
@@ -596,49 +699,55 @@
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["name", "purpose", "owner", "config_differences", "promotion_rules"],
+            "required": [
+              "name",
+              "purpose",
+              "owner",
+              "config_differences",
+              "promotion_rules"
+            ],
             "properties": {
-              "name": { 
+              "name": {
                 "type": "string",
                 "enum": ["local", "dev", "staging", "prod"],
                 "description": "Environment name"
               },
-              "purpose": { 
-                "type": "string", 
-                "minLength": 20, 
+              "purpose": {
+                "type": "string",
+                "minLength": 20,
                 "maxLength": 200,
-                "description": "Environment purpose" 
+                "description": "Environment purpose"
               },
-              "owner": { 
-                "type": "string", 
-                "minLength": 5, 
+              "owner": {
+                "type": "string",
+                "minLength": 5,
                 "maxLength": 100,
-                "description": "Environment owner" 
+                "description": "Environment owner"
               },
-              "config_differences": { 
-                "type": "string", 
-                "minLength": 15, 
+              "config_differences": {
+                "type": "string",
+                "minLength": 15,
                 "maxLength": 200,
-                "description": "Configuration differences from other environments" 
+                "description": "Configuration differences from other environments"
               },
-              "promotion_rules": { 
-                "type": "string", 
-                "minLength": 10, 
+              "promotion_rules": {
+                "type": "string",
+                "minLength": 10,
                 "maxLength": 200,
-                "description": "Rules for promoting to this environment" 
+                "description": "Rules for promoting to this environment"
               },
-              "monitoring": { 
-                "type": "string", 
-                "minLength": 10, 
+              "monitoring": {
+                "type": "string",
+                "minLength": 10,
                 "maxLength": 200,
-                "description": "Monitoring approach for this environment" 
+                "description": "Monitoring approach for this environment"
               }
             }
           }
         }
       }
     },
-    
+
     "governance_workflow": {
       "type": "object",
       "additionalProperties": false,
@@ -650,24 +759,24 @@
         "decision_states"
       ],
       "properties": {
-        "decision_process": { 
-          "type": "string", 
-          "minLength": 15, 
+        "decision_process": {
+          "type": "string",
+          "minLength": 15,
           "maxLength": 100,
-          "description": "Decision-making process steps" 
+          "description": "Decision-making process steps"
         },
-        "ai_drafts": { 
-          "type": "boolean", 
+        "ai_drafts": {
+          "type": "boolean",
           "enum": [true],
           "description": "AI drafts decisions"
         },
-        "human_approval_required": { 
-          "type": "boolean", 
+        "human_approval_required": {
+          "type": "boolean",
           "enum": [true],
           "description": "Human approval is required"
         },
-        "user_interaction_minimized": { 
-          "type": "boolean", 
+        "user_interaction_minimized": {
+          "type": "boolean",
           "enum": [true],
           "description": "User interaction is minimized"
         },
@@ -678,30 +787,43 @@
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["state", "description", "required_actions", "next_states"],
+            "required": [
+              "state",
+              "description",
+              "required_actions",
+              "next_states"
+            ],
             "properties": {
-              "state": { 
-                "type": "string", 
-                "minLength": 3, 
+              "state": {
+                "type": "string",
+                "minLength": 3,
                 "maxLength": 50,
-                "description": "Decision state name" 
+                "description": "Decision state name"
               },
-              "description": { 
-                "type": "string", 
-                "minLength": 15, 
+              "description": {
+                "type": "string",
+                "minLength": 15,
                 "maxLength": 200,
-                "description": "State description" 
+                "description": "State description"
               },
               "required_actions": {
                 "type": "array",
-                "items": { "type": "string", "minLength": 5, "maxLength": 100 },
+                "items": {
+                  "type": "string",
+                  "minLength": 5,
+                  "maxLength": 100
+                },
                 "minItems": 1,
                 "maxItems": 8,
                 "description": "Actions required in this state"
               },
               "next_states": {
                 "type": "array",
-                "items": { "type": "string", "minLength": 3, "maxLength": 50 },
+                "items": {
+                  "type": "string",
+                  "minLength": 3,
+                  "maxLength": 50
+                },
                 "minItems": 1,
                 "maxItems": 5,
                 "description": "Possible next states"
@@ -711,7 +833,7 @@
         }
       }
     },
-    
+
     "scenarios": {
       "type": "array",
       "minItems": 2,
@@ -728,108 +850,112 @@
           "trade_offs"
         ],
         "properties": {
-          "scenario": { 
-            "type": "string", 
-            "minLength": 15, 
+          "scenario": {
+            "type": "string",
+            "minLength": 15,
             "maxLength": 150,
-            "description": "Scenario description" 
+            "description": "Scenario description"
           },
-          "structural_impact": { 
-            "type": "string", 
-            "minLength": 20, 
+          "structural_impact": {
+            "type": "string",
+            "minLength": 20,
             "maxLength": 200,
-            "description": "Impact on structure" 
+            "description": "Impact on structure"
           },
-          "repo_changes": { 
-            "type": "string", 
-            "minLength": 15, 
+          "repo_changes": {
+            "type": "string",
+            "minLength": 15,
             "maxLength": 200,
-            "description": "Required repository changes" 
+            "description": "Required repository changes"
           },
-          "team_changes": { 
-            "type": "string", 
-            "minLength": 15, 
+          "team_changes": {
+            "type": "string",
+            "minLength": 15,
             "maxLength": 200,
-            "description": "Required team/role changes" 
+            "description": "Required team/role changes"
           },
-          "workflow_changes": { 
-            "type": "string", 
-            "minLength": 15, 
+          "workflow_changes": {
+            "type": "string",
+            "minLength": 15,
             "maxLength": 200,
-            "description": "Required workflow changes" 
+            "description": "Required workflow changes"
           },
-          "trade_offs": { 
-            "type": "string", 
-            "minLength": 15, 
+          "trade_offs": {
+            "type": "string",
+            "minLength": 15,
             "maxLength": 200,
-            "description": "Trade-offs involved" 
+            "description": "Trade-offs involved"
           }
         }
       }
     },
-    
+
     "update_policy": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["default_approach", "deprecation_required", "version_tracking"],
+      "required": [
+        "default_approach",
+        "deprecation_required",
+        "version_tracking"
+      ],
       "properties": {
-        "default_approach": { 
-          "type": "string", 
+        "default_approach": {
+          "type": "string",
           "enum": ["additive"],
           "description": "Default update approach"
         },
-        "deprecation_required": { 
-          "type": "boolean", 
+        "deprecation_required": {
+          "type": "boolean",
           "enum": [true],
           "description": "Deprecation tracking is required"
         },
-        "version_tracking": { 
-          "type": "boolean", 
+        "version_tracking": {
+          "type": "boolean",
           "enum": [true],
           "description": "Version tracking is required"
         }
       }
     },
-    
+
     "deprecation_format": {
       "type": "object",
       "additionalProperties": false,
       "required": ["version", "rationale", "replacement", "timeline"],
       "properties": {
-        "version": { 
-          "type": "string", 
-          "minLength": 10, 
+        "version": {
+          "type": "string",
+          "minLength": 10,
           "maxLength": 100,
-          "description": "Version context for deprecation" 
+          "description": "Version context for deprecation"
         },
-        "rationale": { 
-          "type": "string", 
-          "minLength": 15, 
+        "rationale": {
+          "type": "string",
+          "minLength": 15,
           "maxLength": 200,
-          "description": "Reason for deprecation" 
+          "description": "Reason for deprecation"
         },
-        "replacement": { 
-          "type": "string", 
-          "minLength": 10, 
+        "replacement": {
+          "type": "string",
+          "minLength": 10,
           "maxLength": 150,
-          "description": "Replacement guidance" 
+          "description": "Replacement guidance"
         },
-        "timeline": { 
-          "type": "string", 
-          "minLength": 10, 
+        "timeline": {
+          "type": "string",
+          "minLength": 10,
           "maxLength": 100,
-          "description": "Deprecation timeline" 
+          "description": "Deprecation timeline"
         }
       }
     }
   },
-  
+
   "additionalValidation": {
     "description": "Additional validation rules that should be checked programmatically",
     "crossReferenceRules": [
       "All problem_ids in traceability_matrix must exist in the product document",
       "All outcome_ids in traceability_matrix must exist in the product document",
-      "All links_to_product_outcomes must reference valid product outcome IDs", 
+      "All links_to_product_outcomes must reference valid product outcome IDs",
       "All links_to_tech_components must reference valid tech component names",
       "All tech_component references in traceability_matrix must exist in component_mappings",
       "All agentic_role references must be defined in agentic_roles.capabilities"
