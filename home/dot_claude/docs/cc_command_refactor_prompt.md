@@ -69,13 +69,13 @@ Commands MUST be compatible with Claude Code's slash command system:
 **Bash Usage Policy (MANDATORY)**:
 - Commands MUST use bash **sparingly**: short, focused invocations that add determinism, clarity, or guardrails for the AI agent
 - Commands MAY use bash beyond data extraction and system validation when they provide clear, defensible benefits
-- **Permitted patterns** (illustrative): 
+- **Permitted patterns** (illustrative):
   - `tombi to-json | jq ...` (schema inspection)
-  - `rg ...` (content search)  
+  - `rg ...` (content search)
   - `awk -F... '{print $1}'` (field extraction)
   - `test -f file && echo "EXISTS" || echo "MISSING"` (existence checks)
   - `git rev-parse --show-toplevel` (context detection)
-- **Prohibited patterns**: 
+- **Prohibited patterns**:
   - Multi-page inline shell scripts
   - Nested loops and complex control flow
   - Fragile parsing when structured alternatives exist
@@ -261,7 +261,7 @@ Commands MUST be compatible with Claude Code's slash command system:
 
 **For Steering Commands**:
 - Emphasize comprehensive extraction from foundational files
-- Focus interpretation aligned to steering scope and responsibilities  
+- Focus interpretation aligned to steering scope and responsibilities
 - Ensure schema alignment for complex nested structures
 - Allow targeted one-liners for driver/constraint/principle ID surfacing
 
@@ -289,7 +289,7 @@ Before finalizing any reviewed/edited command, verify:
 - [ ] Extract → Interpret → Expand sequences present and scoped
 - [ ] Schema awareness demonstrated via proper tool usage
 - [ ] Bash usage follows sparing policy (<20% of content)
-- [ ] Error handling comprehensive with rollback mechanisms  
+- [ ] Error handling comprehensive with rollback mechanisms
 - [ ] User interaction patterns support both stepwise/oneshot modes
 - [ ] Integration with Claude Code slash command system
 - [ ] Platform compatibility (macOS/darwin/zsh)

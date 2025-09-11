@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# Filename: ~/.config/nvim.gitignore
+# Filename: ~/.local/share/chezmoi/.gitignore
 # Description: Prevents Git from tracking system, environment, editor,
 #              and cache files
 # -----------------------------------------------------------------------------
@@ -7,7 +7,6 @@
 # -------------------------------------------------------- #
 #           Environments And Dependency Managers           #
 # -------------------------------------------------------- #
-
 ENV/
 env/
 .env

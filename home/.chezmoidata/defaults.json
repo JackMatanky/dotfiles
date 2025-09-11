@@ -12,7 +12,7 @@
   },
   "git": {
     "default_branch": "main",
-    "pull_strategy": "rebase", 
+    "pull_strategy": "rebase",
     "auto_crlf": false,
     "core_editor": "nvim"
   },

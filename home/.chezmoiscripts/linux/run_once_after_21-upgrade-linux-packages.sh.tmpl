@@ -18,13 +18,13 @@ log_header "📦 LINUX INITIAL PACKAGE UPDATE"
 # Only do upgrades on fresh install to avoid unexpected changes
 if [[ ! -f "$HOME/.config/chezmoi-initial-setup-complete" ]]; then
     log_info "Initial setup detected - updating all package managers..."
-    
+
     # Update APT packages
     if command -v apt &> /dev/null; then
         log_info "🔄 Updating APT packages..."
         if sudo apt update && sudo apt upgrade -y; then
             log_success "APT packages updated"
-            
+
             # Clean up
             log_info "🧹 Cleaning up APT..."
             sudo apt autoremove -y || log_warning "APT autoremove had issues"
@@ -33,7 +33,7 @@ if [[ ! -f "$HOME/.config/chezmoi-initial-setup-complete" ]]; then
             log_warning "APT upgrade had issues"
         fi
     fi
-    
+
     # Update Flatpak packages
     if command -v flatpak &> /dev/null; then
         log_info "🔄 Updating Flatpak applications..."
@@ -43,7 +43,7 @@ if [[ ! -f "$HOME/.config/chezmoi-initial-setup-complete" ]]; then
             log_warning "Flatpak update had issues"
         fi
     fi
-    
+
     # Update Snap packages
     if command -v snap &> /dev/null; then
         log_info "🔄 Refreshing Snap packages..."

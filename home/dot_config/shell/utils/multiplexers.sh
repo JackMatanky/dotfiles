@@ -23,7 +23,7 @@
 __get_session_info() {
     local key="${1:-~/}"
     local name dirpath
-    
+
     case "$key" in
         dot)
             name="dotfiles"
@@ -51,7 +51,7 @@ __get_session_info() {
             dirpath="$key"
             ;;
     esac
-    
+
     printf '%s|%s' "$name" "$dirpath"
 }
 
@@ -69,10 +69,10 @@ __get_session_info() {
 __tmux_session() {
     local name="$1"
     local dirpath="$2"
-    
+
     # Change to target directory
     cd "$dirpath" || return 1
-    
+
     # Attach to existing session or create new one
     if tmux list-sessions 2>/dev/null | grep -xq "$name"; then
         tmux attach-session -t "$name"
@@ -95,10 +95,10 @@ __tmux_session() {
 __zellij_session() {
     local name="$1"
     local dirpath="$2"
-    
+
     # Change to target directory
     cd "$dirpath" || return 1
-    
+
     # Start zellij (it handles session management automatically)
     zellij attach "$name" 2>/dev/null || zellij --session "$name"
 }

@@ -38,7 +38,7 @@ You SHALL terminate execution if any required steering document is inaccessible.
 <document_analysis>
 You MUST perform this analysis sequence without exception:
 1. You MUST use Read tool to access @ai/steering/product.md completely
-2. You MUST use Read tool to access @ai/steering/tech.md completely  
+2. You MUST use Read tool to access @ai/steering/tech.md completely
 3. You MUST use Read tool to access @ai/steering/structure.md completely
 4. You MUST use Grep tool to identify all capability areas across all documents, including:
    - User-facing features and workflows
@@ -104,11 +104,11 @@ For each steering document, you MUST extract features using this systematic appr
 
 #### Step 1: Capability Identification
 1. You MUST identify explicit user capabilities mentioned in document
-2. You MUST identify system behaviors described in document  
+2. You MUST identify system behaviors described in document
 3. You MUST identify technical services required by document
 4. You MUST identify infrastructure capabilities required by document, including:
    - **Deployment infrastructure**: Container orchestration, CI/CD pipelines, environment provisioning
-   - **Monitoring infrastructure**: Logging systems, metrics collection, alerting mechanisms  
+   - **Monitoring infrastructure**: Logging systems, metrics collection, alerting mechanisms
    - **Security infrastructure**: Authentication systems, authorization frameworks, encryption services
    - **Data infrastructure**: Database systems, data pipelines, backup/recovery mechanisms
    - **Network infrastructure**: Load balancers, API gateways, service mesh configurations
@@ -165,7 +165,7 @@ You MUST apply these decomposition strategies to ensure proper feature atomicity
 
 ### Horizontal Decomposition (MANDATORY)
 - If a feature has multiple CRUD operations, you MUST split by operation (e.g., "create-document" vs "edit-document" vs "delete-document")
-- If a feature has multiple data types, you MUST split by type (e.g., "import-user-data" vs "import-product-data")  
+- If a feature has multiple data types, you MUST split by type (e.g., "import-user-data" vs "import-product-data")
 - If a feature has multiple integration points, you MUST split by integration (e.g., "export-to-s3" vs "export-to-database")
 
 ### Temporal Decomposition (REQUIRED)
@@ -313,7 +313,7 @@ You MUST structure feature documentation using these TOML objects that can be sc
 [feature.scope]
 includes = [
   "specific capability 1",
-  "specific capability 2", 
+  "specific capability 2",
   "specific capability 3"
 ]
 excludes = [
@@ -323,7 +323,7 @@ excludes = [
 ]
 boundaries = {
   input = "specific data/events that trigger this feature",
-  output = "specific results/states this feature produces", 
+  output = "specific results/states this feature produces",
   process = "specific steps this feature executes",
   component = "specific system component this operates within"
 }
@@ -406,7 +406,7 @@ Each acceptance_criteria entry MUST follow this structured format:
 "GIVEN [specific precondition] WHEN [specific action] THEN [specific outcome] WITHIN [performance constraint]"
 ```
 
-### Risk Structure (MANDATORY)  
+### Risk Structure (MANDATORY)
 Each risks entry MUST follow this structured format:
 ```
 "IF [condition with likelihood] THEN [consequence with impact] MITIGATED BY [specific action plan]"
@@ -467,7 +467,7 @@ Each feature MUST include:
 - All source_reference entries MUST point to actual sections in steering docs
 - All features MUST be directly justifiable from steering document content
 
-### Atomicity Verification (REQUIRED)  
+### Atomicity Verification (REQUIRED)
 - Each feature MUST cover exactly one responsibility with explicit scope boundaries defined
 - Each feature MUST pass the Single Sprint Test (implementable by one team in one development cycle)
 - Each feature MUST pass the Independent Value Test (provides value without requiring other features)
@@ -480,7 +480,7 @@ Each feature MUST include:
 
 ### Uniqueness Verification (REQUIRED)
 - No duplicate name values MUST exist
-- No duplicate id values MUST exist  
+- No duplicate id values MUST exist
 - All id values MUST be globally unique within the file
 
 ### Format Consistency (MANDATORY)
@@ -597,7 +597,7 @@ When executed, you MUST follow this sequence without deviation:
 
 1. **Directory Processing**: You MUST determine output directory from $ARGUMENTS (default to "ai/steering/" if not specified or empty)
 2. **Document Reading**: You MUST use Read tool to access all three steering documents completely
-3. **Content Analysis**: You MUST analyze and extract all capability information comprehensively  
+3. **Content Analysis**: You MUST analyze and extract all capability information comprehensively
 4. **Feature Generation**: You MUST create atomic features following all specified requirements
 5. **Quality Validation**: You MUST verify all quality gates and resolve any issues
 6. **TOML Generation**: You MUST create valid TOML file with all required feature definitions conforming to predefined schema

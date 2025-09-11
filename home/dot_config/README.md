@@ -9,7 +9,7 @@ dot_config/
 ├── README.md              # This documentation
 ├── git/                   # Git version control configuration
 ├── zed/                   # Zed editor configuration
-├── nvim/                  # Neovim editor configuration  
+├── nvim/                  # Neovim editor configuration
 ├── starship/              # Starship shell prompt configuration
 ├── zsh/                   # Zsh shell configuration
 ├── tmux/                  # Tmux terminal multiplexer configuration

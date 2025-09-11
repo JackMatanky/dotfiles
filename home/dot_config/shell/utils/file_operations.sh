@@ -21,7 +21,7 @@
 #######################################
 __select_files_for_move() {
     local source_dir="${1:-.}"
-    
+
     fd --type f . "$source_dir" | fzf --multi \
         --prompt="Select file(s) to move: " \
         --preview="bat --style=plain --color=always --line-range :40 {}"
@@ -65,12 +65,12 @@ __move_file_with_options() {
     local target_dir="$2"
     local dry_run="$3"
     local confirm="$4"
-    
+
     if [[ "$dry_run" == true ]]; then
         echo "Would move: $file -> $target_dir/"
         return 0
     fi
-    
+
     if [[ "$confirm" == true ]]; then
         echo -n "Move $file to $target_dir? [y/N] "
         read -r response

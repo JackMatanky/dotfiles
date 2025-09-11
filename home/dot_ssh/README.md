@@ -61,7 +61,7 @@ Host github.com
     AddKeysToAgent yes
     UseKeychain yes
 
-# GitLab configuration  
+# GitLab configuration
 Host gitlab.com
     HostName gitlab.com
     User git
@@ -89,7 +89,7 @@ Host *
 # Keepalive settings
     ServerAliveInterval 60
     ServerAliveCountMax 3
-    
+
 # Compression for slow connections
     Compression yes
 ```
@@ -159,7 +159,7 @@ Host aws-bastion
     HostName bastion.aws.company.com
     User ec2-user
     IdentityFile ~/.ssh/aws_bastion.pem
-    
+
 # Jump host configuration
 Host private-server
     HostName 10.0.1.100
@@ -180,7 +180,7 @@ Host github-personal
 
 Host github-work
     HostName github.com
-    User git  
+    User git
     IdentityFile ~/.ssh/github_work_ed25519
 ```
 
@@ -383,7 +383,7 @@ ssh-add -l
 # SSH with specific config
 alias ssh-prod='ssh -F ~/.ssh/config.prod'
 
-# Tunnel shortcuts  
+# Tunnel shortcuts
 alias db-tunnel='ssh -L 5432:localhost:5432 db-server'
 
 # Quick server access

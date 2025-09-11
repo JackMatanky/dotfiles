@@ -14,7 +14,7 @@ model: claude-sonnet-4-20250514
   2. ai/steering/principles_architecture.toml and ai/steering/principles_programming.toml.
 - RFC 2119 keywords MUST be used for normative requirements.
 </intent_alignment>
-  
+
 <arguments_and_environment>
 - $1 (mode) MUST be create or update if provided.
 - If $1 is absent, mode MUST be auto-detected by presence of @ai/steering/tech.toml (EXISTS→update, MISSING→create).

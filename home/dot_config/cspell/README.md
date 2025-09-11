@@ -1,6 +1,6 @@
 # CSpell Dictionary Setup
 
-This file documents the external dictionaries configured in `cspell.json`.  
+This file documents the external dictionaries configured in `cspell.json`.
 Since JSON does not support comments, the following installation notes were removed from the config and preserved here.
 
 ## 🧩 Installed Dictionaries

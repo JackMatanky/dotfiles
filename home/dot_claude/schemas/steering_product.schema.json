@@ -614,7 +614,7 @@
     "description": "Additional validation rules that should be checked programmatically",
     "crossReferenceRules": [
       "All problem_ids referenced in outcomes must exist in the problems array",
-      "All outcome_ids referenced in metrics must exist in the outcomes array", 
+      "All outcome_ids referenced in metrics must exist in the outcomes array",
       "All user_ids referenced in personas must exist in the users array",
       "All outcome_ids referenced in acceptance_criteria must exist in the outcomes array",
       "All traceability mappings must reference existing IDs from their respective arrays"

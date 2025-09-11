@@ -94,7 +94,7 @@ OUT=${OUT}
 generate_principle_score() {
   local principles="$1"
   local context_type="$2"
-  
+
   # Weight by severity: high=2.0, medium=1.0, low=0.5
   case "$context_type" in
     "architecture") echo 2.0 ;;
@@ -109,7 +109,7 @@ generate_principle_score() {
 generate_options() {
   local question_type="$1"
   local options="$2"
-  
+
   echo "GENERATING OPTIONS FOR: $question_type"
   # Implementation will be expanded in the interactive sections
 }`
@@ -440,7 +440,7 @@ decision_rationale = "$ARCHITECTURE_RATIONALE"
 [[architecture_decision.options]]
 option = "$SELECTED_ARCHITECTURE"
 benefits = ["Aligns with product constraints", "Supports identified outcomes", "Enables evolution"]
-risks = ["Complexity overhead", "Learning curve", "Initial setup cost"]  
+risks = ["Complexity overhead", "Learning curve", "Initial setup cost"]
 impact_on_outcomes = [$(echo "$O_IDS" | sed 's/,/", "/g' | sed 's/^/"/; s/$/"/')]
 alignment_with_constraints = [$(echo "$CONSTRAINTS" | sed 's/,/", "/g' | sed 's/^/"/; s/$/"/')]
 operational_overhead = "medium"
@@ -455,13 +455,13 @@ TOML`
 <generate_components_section>
 !`for component_data in "${COMPONENTS[@]}"; do
     IFS='|' read -r name resp patterns personas outcomes principles <<< "$component_data"
-    
+
     # Convert comma-separated values to TOML arrays
     patterns_array="[$(echo "$patterns" | sed 's/,/", "/g' | sed 's/^/"/; s/$/"/')]"
     personas_array="[$(echo "$personas" | sed 's/,/", "/g' | sed 's/^/"/; s/$/"/')]"
     outcomes_array="[$(echo "$outcomes" | sed 's/,/", "/g' | sed 's/^/"/; s/$/"/')]"
     principles_array="[$(echo "$principles" | sed 's/,/", "/g' | sed 's/^/"/; s/$/"/')]"
-    
+
     cat >> "$TMP_TOML" <<TOML
 [[components]]
 name = "$name"
@@ -479,7 +479,7 @@ TOML
 <generate_integrations_section>
 !`for integration_data in "${INTEGRATIONS[@]}"; do
     IFS='|' read -r name type maps_to ownership <<< "$integration_data"
-    
+
     cat >> "$TMP_TOML" <<TOML
 [[integrations]]
 name = "$name"
@@ -609,13 +609,13 @@ TOML
 i=1
 for component_data in "${COMPONENTS[@]}"; do
   IFS='|' read -r name resp patterns personas outcomes principles <<< "$component_data"
-  
+
   # Map to first available problem/outcome/acceptance criteria
   problem_id=$(echo "$P_IDS" | cut -d',' -f$i)
   outcome_id=$(echo "$O_IDS" | cut -d',' -f$i)
   ac_id=$(echo "$AC_IDS" | cut -d',' -f$i)
   principle_array="[$(echo "$principles" | sed 's/,/", "/g' | sed 's/^/"/; s/$/"/')]"
-  
+
   cat >> "$TMP_TOML" <<TOML
 [[traceability.mappings]]
 problem_id = "$problem_id"
@@ -635,7 +635,7 @@ done`
 !`validate_section() {
     local section_name="$1"
     echo "=== VALIDATING $section_name SECTION ==="
-    
+
     if [ "$STYLE" = "stepwise" ]; then
       echo "✅ Validation Status for $section_name: Generated successfully"
       echo "Approve this section? (approve/revise/reject)"
@@ -672,7 +672,7 @@ done`
 </basic_counts>
 
 <principle_membership_validation>
-!`ALL_PRINCIPLE_IDS_JSON="$(echo "$ALL_PRINCIPLES" | tr ',' '\n' | jq -R . | jq -s .)"` 
+!`ALL_PRINCIPLE_IDS_JSON="$(echo "$ALL_PRINCIPLES" | tr ',' '\n' | jq -R . | jq -s .)"`
 !`MISSING_PRIN="$($JQ --argjson ALL "$ALL_PRINCIPLE_IDS_JSON" '
     [ ( [.technical_vision.principle_ids[]?] // []) +
       ( [.architecture_decision.options[]?.principle_ids[]?] // []) +
@@ -689,9 +689,9 @@ done`
 </principle_membership_validation>
 
 <traceability_validity>
-!`P_IDS_JSON="$(echo "$P_IDS" | tr ',' '\n' | jq -R . | jq -s .)"` 
-!`O_IDS_JSON="$(echo "$O_IDS" | tr ',' '\n' | jq -R . | jq -s .)"` 
-!`AC_IDS_JSON="$(echo "$AC_IDS" | tr ',' '\n' | jq -R . | jq -s .)"` 
+!`P_IDS_JSON="$(echo "$P_IDS" | tr ',' '\n' | jq -R . | jq -s .)"`
+!`O_IDS_JSON="$(echo "$O_IDS" | tr ',' '\n' | jq -R . | jq -s .)"`
+!`AC_IDS_JSON="$(echo "$AC_IDS" | tr ',' '\n' | jq -R . | jq -s .)"`
 
 !`BAD_TRACE="$($JQ --argjson P "$P_IDS_JSON" --argjson O "$O_IDS_JSON" --argjson AC "$AC_IDS_JSON" '
     [.traceability.mappings[]? |
@@ -707,7 +707,7 @@ done`
 </traceability_validity>
 
 <component_references_validation>
-!`PE_IDS_JSON="$(echo "$PE_IDS" | tr ',' '\n' | jq -R . | jq -s .)"` 
+!`PE_IDS_JSON="$(echo "$PE_IDS" | tr ',' '\n' | jq -R . | jq -s .)"`
 !`BAD_COMP="$($JQ --argjson O "$O_IDS_JSON" --argjson PE "$PE_IDS_JSON" '
     [.components[]? |
       select( (([.maps_to_outcomes[]?] // []) | any(. as $v | ($O | index($v)) | not)) or
@@ -716,7 +716,7 @@ done`
 </component_references_validation>
 
 <integrations_references_validation>
-!`DEP_NAMES_JSON="$(echo "$DEP_NAMES" | tr ',' '\n' | jq -R . | jq -s .)"` 
+!`DEP_NAMES_JSON="$(echo "$DEP_NAMES" | tr ',' '\n' | jq -R . | jq -s .)"`
 !`if [ ${#INTEGRATIONS[@]} -gt 0 ]; then
     BAD_INT="$($JQ --argjson DEP "$DEP_NAMES_JSON" '
       [.integrations[]? |
@@ -752,9 +752,9 @@ done`
 !`# Final validation before write
 test -s "$TMP_TOML" || { echo "ERROR: Generated TOML file is empty"; exit 1; }`
 
-!`# Check for overwrite protection  
-if [ -f "$OUT" ] && [ "$MODE" = "create" ]; then 
-    echo "ERROR: $OUT exists; creation refused to avoid overwrite. Use MODE=update."; exit 1; 
+!`# Check for overwrite protection
+if [ -f "$OUT" ] && [ "$MODE" = "create" ]; then
+    echo "ERROR: $OUT exists; creation refused to avoid overwrite. Use MODE=update."; exit 1;
   fi`
 
 !`# Copy temporary file to final location

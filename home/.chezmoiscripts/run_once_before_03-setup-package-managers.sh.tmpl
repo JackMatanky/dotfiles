@@ -18,7 +18,7 @@ if ! command -v flatpak &>/dev/null; then
     {{- else if eq .chezmoi.osRelease.id "arch" }}
     sudo pacman -S --noconfirm flatpak
     {{- end }}
-    
+
     # Add Flathub repository
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     log_success "Flatpak installed and configured"

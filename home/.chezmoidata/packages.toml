@@ -34,6 +34,7 @@ brews = [
   "direnv",
   "just",
   "keychain",
+  "bitwarden-cli",
 
   # Scripting & Development
   "shellcheck",
@@ -75,6 +76,7 @@ brews = [
   "gitleaks",
   "jesseduffield/lazygit/lazygit",
   "gh",
+  "pre-commit",
 
   # Languages & Runtimes
   "go",
@@ -414,7 +416,7 @@ flatpak = [
   # Productivity Tools (cask equivalents)
   "org.espanso.Espanso",             # espanso
 
-  # AI Tools (cask equivalents)  
+  # AI Tools (cask equivalents)
   "io.github.lmstudio.LMStudio",     # lm-studio
 
   # Media Players (cask equivalents)
@@ -436,7 +438,7 @@ apt = [
   # Core brew equivalents
   "bash",
   "git",
-  "git-lfs", 
+  "git-lfs",
   "neovim",
   "tmux",
   "zsh",
@@ -464,12 +466,12 @@ apt = [
 snap = [
   # Development Tools (from Brewfile)
   "gh",                      # GitHub CLI (brew 'gh')
-  
+
   # Modern CLI Tools (from Brewfile, if not in APT)
   "ripgrep",                 # brew 'ripgrep'
-  "fd",                      # brew 'fd' 
+  "fd",                      # brew 'fd'
   "bat",                     # brew 'bat'
-  
+
   # Languages & Runtimes (if APT versions too old)
   "node",                    # brew 'node'
   "go",                      # brew 'go'
@@ -491,7 +493,7 @@ global = [
   # Empty - prettier available via brew
 ]
 
-# Only if black not available via brew/apt  
+# Only if black not available via brew/apt
 [packages.python]
 global = [
   # Empty - black available via brew (ruff includes black functionality)

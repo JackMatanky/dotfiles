@@ -6,12 +6,12 @@ This directory contains command-line automation tools, task runners, and install
 
 ```
 cli/
-├── README.md              # This documentation  
+├── README.md              # This documentation
 ├── justfile.tmpl          # Task automation with Just
 └── scripts/               # Standalone installation scripts
     ├── executable_setup.sh.tmpl       # Enhanced system setup script
     ├── install-homebrew.sh            # Homebrew installation
-    ├── install-just.sh                 # Just task runner installation  
+    ├── install-just.sh                 # Just task runner installation
     ├── install-rust.sh                 # Rust toolchain installation
     └── ...                            # Additional utility scripts
 ```
@@ -73,7 +73,7 @@ just apply-dotfiles      # Apply chezmoi configurations
 - **Path configuration**: Sets up proper shell integration
 - **Idempotent**: Safe to run multiple times
 
-#### `install-just.sh` 
+#### `install-just.sh`
 **Just task runner installation script**
 
 **Features:**
@@ -152,7 +152,7 @@ Automatic adaptation to different platforms:
 {{- if eq .chezmoi.os "darwin" }}
 # macOS-specific commands
 {{- else if eq .chezmoi.os "linux" }}
-# Linux-specific commands  
+# Linux-specific commands
 {{- end }}
 ```
 
@@ -165,7 +165,7 @@ just brew-install
 
 # Linux: Uses multiple managers in priority order
 just flatpak-install  # GUI apps
-just apt-install      # CLI tools  
+just apt-install      # CLI tools
 just snap-install     # Fallback packages
 ```
 
@@ -183,7 +183,7 @@ just snap-install     # Fallback packages
 - `just brew-cleanup` - Clean up Homebrew caches
 
 ### **Language-Specific**
-- `just install-rust` - Install Rust if not present  
+- `just install-rust` - Install Rust if not present
 - `just cargo-install` - Install Cargo packages
 - `just cargo-update` - Update Cargo packages
 
@@ -226,7 +226,7 @@ fi
 - **Architecture**: ARM64 (Apple Silicon) and Intel support
 - **Integration**: Seamless integration with macOS-specific tools
 
-### **Linux**  
+### **Linux**
 - **Package managers**: APT, Flatpak, Snap support
 - **Distributions**: Debian/Ubuntu focus, with Arch/Fedora support
 - **Homebrew**: Linux Homebrew support for consistency

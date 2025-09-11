@@ -22,7 +22,7 @@ dot_warp/
 **Theme features:**
 - **Warm color palette**: Soothing, low-contrast colors optimized for extended use
 - **Syntax highlighting**: Carefully chosen colors for code readability
-- **Terminal colors**: 16-color ANSI palette plus true color support  
+- **Terminal colors**: 16-color ANSI palette plus true color support
 - **UI integration**: Consistent theming across terminal and UI elements
 - **Dark theme**: Eye-friendly for low-light environments
 
@@ -47,7 +47,7 @@ colors:
   background: "#1e1e2e"
   foreground: "#cdd6f4"
   cursor: "#f38ba8"
-  
+
   # ANSI colors
   black: "#45475a"
   red: "#f38ba8"
@@ -78,13 +78,13 @@ keybindings:
     action: "new_tab"
   - key: "Cmd+W"
     action: "close_tab"
-    
+
   # AI features
   - key: "Cmd+K"
     action: "open_command_palette"
   - key: "Cmd+Shift+I"
     action: "ask_warp_ai"
-    
+
   # Custom commands
   - key: "Ctrl+Shift+L"
     action: "run_command"
@@ -132,16 +132,16 @@ description: "Full-stack development environment"
 settings:
   working_directory: "~/projects/current"
   shell: "/bin/zsh"
-  
+
 environment:
   NODE_ENV: "development"
   EDITOR: "code"
-  
+
 startup_commands:
   - "nvm use node"
   - "git status"
   - "npm start"
-  
+
 window:
   width: 120
   height: 40
@@ -236,7 +236,7 @@ development:
 **Configuration for DevOps and sysadmin tasks**
 
 ```yaml
-# System administration setup  
+# System administration setup
 sysadmin:
   working_directory: "~"
   environment:
@@ -268,7 +268,7 @@ datascience:
 **Tracking terminal usage patterns and performance**
 
 **Metrics to monitor:**
-- **Command frequency**: Most used commands and patterns  
+- **Command frequency**: Most used commands and patterns
 - **Session duration**: How long terminal sessions typically last
 - **Performance metrics**: Startup time, memory usage, responsiveness
 - **Error patterns**: Common errors and their frequencies
@@ -346,7 +346,7 @@ datascience:
 **Optimization techniques:**
 - **Minimal startup**: Keep launch configurations lightweight
 - **Efficient themes**: Choose themes optimized for performance
-- **Selective AI**: Use AI features judiciously to avoid overhead  
+- **Selective AI**: Use AI features judiciously to avoid overhead
 - **Resource monitoring**: Track memory and CPU usage patterns
 - **Regular maintenance**: Periodic configuration review and cleanup
 

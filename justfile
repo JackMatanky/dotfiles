@@ -69,7 +69,7 @@ update-packages-macos:
     brew update && brew upgrade
     brew cleanup --prune=all
     mas upgrade
-    
+
 # Update all packages (Linux)
 update-packages-linux:
     #!/usr/bin/env bash
@@ -77,7 +77,7 @@ update-packages-linux:
     sudo apt update && sudo apt upgrade -y
     flatpak update -y
     sudo snap refresh
-    
+
 # Update cross-platform packages
 update-packages-common:
     #!/usr/bin/env bash
@@ -92,7 +92,7 @@ update-packages-common:
     if command -v npm &> /dev/null; then
         npm update -g
     fi
-    # Python packages  
+    # Python packages
     if command -v pip3 &> /dev/null; then
         pip3 list --user --outdated | tail -n +3 | awk '{print $1}' | xargs -r pip3 install --user --upgrade
     fi

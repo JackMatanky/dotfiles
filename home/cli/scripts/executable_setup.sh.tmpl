@@ -83,7 +83,7 @@ fi
 # Install System Dependencies
 install_system_dependencies() {
     log_info "Installing system dependencies..."
-    
+
     {{- if eq .chezmoi.os "darwin" }}
     # macOS: Install Xcode Command Line Tools
     if ! xcode-select -p &>/dev/null; then
@@ -118,17 +118,17 @@ install_homebrew() {
         log_success "Homebrew already installed"
         return
     fi
-    
+
     log_info "Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    
+
     # Add Homebrew to PATH
     {{- if eq .chezmoi.os "darwin" }}
     echo 'eval "$($BREW_PATH shellenv)"' >> "$HOME_DIR/.zprofile"
     {{- else if eq .chezmoi.os "linux" }}
     echo 'eval "$($BREW_PATH shellenv)"' >> "$HOME_DIR/.bashrc"
     {{- end }}
-    
+
     eval "$($BREW_PATH shellenv)"
     log_success "Homebrew installed successfully"
 }
@@ -184,7 +184,7 @@ install_rust_packages() {
 # Configure shell
 configure_shell() {
     log_info "Configuring shell environment..."
-    
+
     # Set default shell to preferred choice
     {{- if eq .preferences.shell "zsh" }}
     if [[ "$SHELL" != *"zsh"* ]] && command -v zsh &> /dev/null; then
@@ -202,41 +202,41 @@ configure_shell() {
         log_success "Default shell changed to Bash"
     fi
     {{- end }}
-    
+
     # Create shell cache directories
     mkdir -p "$CONFIG_DIR/zsh/cache"
     mkdir -p "$CONFIG_DIR/bash"
-    
+
     log_success "Shell environment configured"
 }
 
 # Main setup function
 main() {
-    log_info "=== Enhanced Dotfiles Setup ===" 
+    log_info "=== Enhanced Dotfiles Setup ==="
     log_info "Platform: $OS ($ARCH)"
     log_info "Target: $HOME_DIR"
-    
+
     install_system_dependencies
     install_homebrew
     install_brew_packages
-    
+
     {{- if and (eq .chezmoi.os "linux") (.packages.use_flatpak) }}
     install_flatpak_packages
     {{- end }}
-    
+
     {{- if .dev.use_rust }}
     install_rust_packages
     {{- end }}
-    
+
     configure_shell
-    
+
     log_success "=== Setup Complete! ==="
     log_info "Please restart your shell or run 'exec \$SHELL' to apply all changes"
-    
+
     {{- if .preferences.editor }}
     log_info "Your configured editor is: {{ .preferences.editor }}"
     {{- end }}
-    
+
     {{- if .preferences.terminal }}
     log_info "Your configured terminal is: {{ .preferences.terminal }}"
     {{- end }}

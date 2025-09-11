@@ -80,7 +80,7 @@ You MUST execute this Extract → Interpret → Expand sequence for comprehensiv
 <interpret_phase>
 You MUST interpret extracted materials through atomic feature lens:
 - You MUST map each user action to potential user-facing features
-- You MUST map each tech component to potential technical service features  
+- You MUST map each tech component to potential technical service features
 - You MUST map each agentic capability to potential automation features
 - You MUST map each integration to potential integration features
 - You MUST map each CI/CD stage to potential infrastructure features
@@ -138,9 +138,9 @@ When MODE="create", you MUST ask ONLY this single question:
 
 You MUST ask: "Based on the extracted context, should any specific features be prioritized differently or excluded from initial generation?"
 
-You MUST provide context: 
+You MUST provide context:
 - "Identified user actions: $USER_ACTIONS"
-- "Tech components: $TECH_COMPONENTS" 
+- "Tech components: $TECH_COMPONENTS"
 - "Agentic capabilities: $AGENTIC_CAPABILITIES"
 
 You MAY accept responses like:
@@ -479,7 +479,7 @@ You MUST perform comprehensive validation before finalizing the document.
 !`echo "  ✅ Traceability (direct steering document references)"`
 !`echo ""`
 !`echo "All steering documents complete:"`
-!`echo "→ product.toml (what & why)"  
+!`echo "→ product.toml (what & why)"
 !`echo "→ tech.toml (how)"`
 !`echo "→ structure.toml (execution)"`
 !`echo "→ features.toml (atomic capabilities)"`

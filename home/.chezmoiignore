@@ -105,6 +105,6 @@ __pycache__/
 *.bak
 *.backup
 *.old
-_old/
+**/_old/
 
 README.md

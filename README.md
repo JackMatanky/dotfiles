@@ -344,7 +344,7 @@ plugin_dir = "~/.config/zsh/plugins"
 # Access terminal configuration
 CONFIG_DIR="{{ .terminals.ghostty.config_dir }}"
 
-# Get editor settings  
+# Get editor settings
 EDITOR_CONFIG="{{ .editors.nvim.config_dir }}"
 ```
 
@@ -733,7 +733,7 @@ matches:
 
 **Example Template Structure:**
 ```bash
-{{/* 
+{{/*
 Template: utility-functions.sh
 Purpose: Common utility functions for shell scripts
 Usage: {{ template "utility-functions.sh" . }}

@@ -94,7 +94,7 @@ You MUST specify without exception:
 - objective MUST reference only the objective from the SIP Project
 - pointer MUST provide exact path to relevant Project section in @ai/steering/implementation.md
 
-### [reference.parent_task] Section - ALL FIELDS REQUIRED  
+### [reference.parent_task] Section - ALL FIELDS REQUIRED
 You MUST specify without exception:
 - name MUST match exactly as in the Steering Implementation Plan
 - purpose MUST reference only the purpose from the SIP Parent Task
@@ -215,7 +215,7 @@ For Tasks with complex interactions, you MAY define interfaces with:
 
 ### Interface Fields (OPTIONAL BUT RECOMMENDED)
 - upstream MAY contain array of upstream system interfaces
-- downstream MAY contain array of downstream system interfaces  
+- downstream MAY contain array of downstream system interfaces
 - integration_notes MAY provide contracts/adapters/sequencing details
 
 ### Dependency Requirements (MANDATORY)
@@ -275,7 +275,7 @@ You MUST emit without exception:
 
 The output MUST enable:
 - Direct Task execution by development teams
-- Automated test validation and coverage measurement  
+- Automated test validation and coverage measurement
 - Progress tracking against acceptance criteria
 - Risk monitoring and mitigation workflows
 - Code quality enforcement through standards compliance

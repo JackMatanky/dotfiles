@@ -1,5 +1,5 @@
 ---
-description: Create or update Structure Steering document (structure.toml) defining operational delivery structures for consistent, scalable execution aligned to product and technical steering. 
+description: Create or update Structure Steering document (structure.toml) defining operational delivery structures for consistent, scalable execution aligned to product and technical steering.
 argument-hint: <create|update> [project-name] [stepwise|oneshot]
 allowed-tools: Read, Write, Edit, MultiEdit, Glob, Bash(git:*), Bash(fd:*), Bash(rg:*), Bash(tombi:*), Bash(jq:*), Bash(tomli-cli:*), Bash(uuidgen:*)
 model: claude-sonnet-4-20250514
@@ -73,7 +73,7 @@ You MUST execute this Extract → Interpret → Expand sequence for foundational
 <interpret_phase>
 You MUST interpret extracted materials through structural delivery lens:
 - You MUST map product outcomes to operational delivery requirements
-- You MUST translate tech components into repository and workflow organization needs  
+- You MUST translate tech components into repository and workflow organization needs
 - You MUST identify agentic role assignments based on component complexity and team size
 - You MUST assess constraint impacts on delivery structure decisions
 - You MUST evaluate architecture approach implications for repository strategy
@@ -120,7 +120,7 @@ You MUST apply these standardized best practices without user input:
 <repository_strategy_determination>
 You MUST determine repository strategy based on extracted context:
 - IF TECH_COMPONENTS count ≤ 5 AND TEAM_SIZE_INDICATOR ≤ 3: You MUST recommend "monorepo"
-- IF TECH_COMPONENTS count > 5 OR TEAM_SIZE_INDICATOR > 3: You MUST recommend "polyrepo" 
+- IF TECH_COMPONENTS count > 5 OR TEAM_SIZE_INDICATOR > 3: You MUST recommend "polyrepo"
 - You MUST document rationale referencing specific component count and team size indicators
 - You MUST include standard pros/cons for the selected approach
 </repository_strategy_determination>
@@ -160,7 +160,7 @@ You MUST assign capabilities to repositories based on component mappings
 You MUST apply standard governance workflow:
 - decision_process: "RFC → Review → Decision → ADR"
 - ai_drafts: true (AI generates initial drafts)
-- human_approval_required: true (humans make final decisions)  
+- human_approval_required: true (humans make final decisions)
 - user_interaction_minimized: true (reduce cognitive overhead)
 You MUST define standard decision states: [proposal, review, decision] with appropriate transitions
 </governance_standardization>
@@ -208,7 +208,7 @@ When MODE="update", you MUST ask these minimal questions:
 
 You MUST ask: "What structural aspect needs updating?"
 - Repository organization
-- Agentic role assignments  
+- Agentic role assignments
 - Environment configuration
 - Compliance/governance requirements
 - Other (specify)
@@ -241,7 +241,7 @@ You MUST generate [meta] section with all required fields:
 ```toml
 [meta]
 id = "$DOC_ID"
-name = "structure_steering" 
+name = "structure_steering"
 title = "Structure Steering Document - $PROJECT"
 project = "$PROJECT"
 doc_type = "structure"
@@ -249,7 +249,7 @@ version = "1.0.0"
 status = "draft"
 rfc2119 = true
 created_datetime = "$CREATED_TIMESTAMP"
-modified_datetime = "$TIMESTAMP" 
+modified_datetime = "$TIMESTAMP"
 description = "Operational delivery structures for consistent, scalable, and reliable execution."
 ```
 Validation: You MUST verify all required meta fields are present with correct types.
@@ -266,7 +266,7 @@ links_to_tech_components = [$TECH_COMPONENTS_ARRAY]
 [scope_boundaries]
 in_scope = [
     "Repository organization and directory standards",
-    "Agentic workflow automation and AI-agent capabilities", 
+    "Agentic workflow automation and AI-agent capabilities",
     "CI/CD automation and promotion rules",
     "Environment configuration and responsibilities",
     "Governance and decision-making processes",
@@ -276,7 +276,7 @@ in_scope = [
 ]
 out_scope = [
     "Product feature definitions",
-    "Technical architecture decisions", 
+    "Technical architecture decisions",
     "Business strategy and market analysis",
     "Individual performance management"
 ]
@@ -292,7 +292,7 @@ You MUST generate traceability mappings connecting foundational context:
 # Generate one mapping per problem-outcome pair from extracted context
 [[traceability_matrix.mappings]]
 problem_id = "P1" # from extracted P_IDS
-outcome_id = "O1" # from extracted O_IDS  
+outcome_id = "O1" # from extracted O_IDS
 tech_component = "COMPONENT_NAME" # from extracted TECH_COMPONENTS
 repo_directory = "src/component-name" # standardized path
 agentic_role = "code_generation" # appropriate AI capability
@@ -314,14 +314,14 @@ You MUST generate repository strategy based on algorithmic determination:
 !`if [ "$COMPONENT_COUNT" -le 5 ] && [ "$TEAM_SIZE_INDICATOR" -le 3 ]; then REPO_APPROACH="monorepo"; else REPO_APPROACH="polyrepo"; fi`
 
 ```toml
-[repository_strategy]  
+[repository_strategy]
 approach = "$REPO_APPROACH"
 rationale = "Selected based on $COMPONENT_COUNT components and $TEAM_SIZE_INDICATOR user groups from foundational context analysis"
 pros = [
     # Standard pros for selected approach
 ]
 cons = [
-    # Standard cons for selected approach  
+    # Standard cons for selected approach
 ]
 ```
 You MUST include standard pros/cons based on approach:
@@ -337,7 +337,7 @@ You MUST generate language-specific directory standards based on extracted tech 
 ```toml
 [directory_standards]
 python_structure = "src/ tests/ docs/ scripts/"
-go_structure = "cmd/ pkg/ internal/ api/ docs/"  
+go_structure = "cmd/ pkg/ internal/ api/ docs/"
 javascript_structure = "src/ __tests__/ docs/ scripts/"
 typescript_structure = "src/ __tests__/ types/ docs/"
 ```
@@ -383,7 +383,7 @@ responsibility = "Generate application code following patterns and standards"
 assigned_repos = ["src", "components"]
 tools_used = ["IDE extensions", "linters", "formatters"]
 
-[[agentic_roles.capabilities]]  
+[[agentic_roles.capabilities]]
 name = "testing"
 responsibility = "Create and maintain test suites with coverage requirements"
 assigned_repos = ["ALL"]
@@ -409,7 +409,7 @@ You MUST generate standardized Git worktree-based workflow:
 [branching_workflow]
 model = "Git worktree per feature"
 main_branch = "main"
-protected_branches = ["main", "develop"]  
+protected_branches = ["main", "develop"]
 merge_strategy = "PR only, no direct pushes"
 
 [conventional_commits]
@@ -418,7 +418,7 @@ format = "type(scope): description"
 types = ["feat", "fix", "docs", "style", "refactor", "test", "chore"]
 examples = [
     "feat(auth): add OAuth2 integration",
-    "fix(api): resolve timeout issues", 
+    "fix(api): resolve timeout issues",
     "docs(readme): update installation steps"
 ]
 
@@ -453,7 +453,7 @@ pre_commit_parity = "CI/CD MUST run same checks as pre-commit hooks"
 
 [pipeline_stages]
 lint_stage = "just lint - run all configured linters"
-format_stage = "just format - apply code formatting"  
+format_stage = "just format - apply code formatting"
 test_stage = "just test - run full test suite"
 coverage_stage = "just coverage - generate and check coverage thresholds"
 build_stage = "just build - create deployment artifacts"
@@ -488,7 +488,7 @@ promotion_rules = "N/A - development only"
 monitoring = "IDE debugging, local logs, development tools"
 
 [[environment_matrix.environments]]
-name = "dev" 
+name = "dev"
 purpose = "Integration testing and early validation"
 owner = "development_team"
 config_differences = "Shared test database, staging external services"
@@ -550,7 +550,7 @@ required_actions = ["stakeholder_feedback", "impact_assessment"]
 next_states = ["decision", "request_changes"]
 
 [[governance_workflow.decision_states]]
-state = "decision"  
+state = "decision"
 description = "Decision made and ADR created"
 required_actions = ["adr_creation", "communication"]
 next_states = ["implemented", "deprecated"]
@@ -569,7 +569,7 @@ formats = ["markdown", "openapi", "adr"]
 
 [required_documentation]
 onboarding_guide = "docs/ONBOARDING.md"
-contribution_guide = "docs/CONTRIBUTING.md" 
+contribution_guide = "docs/CONTRIBUTING.md"
 pr_template = ".github/pull_request_template.md"
 runbooks = "docs/runbooks/"
 api_documentation = "docs/api/"
@@ -604,7 +604,7 @@ trade_offs = "Increased operational complexity vs horizontal scalability"
 
 [[scenarios]]
 scenario = "Critical dependency service failure"
-structural_impact = "Service degradation, manual intervention procedures"  
+structural_impact = "Service degradation, manual intervention procedures"
 repo_changes = "Circuit breaker patterns, fallback implementations, resilience testing"
 team_changes = "Incident response agentic capabilities, on-call procedures"
 workflow_changes = "Emergency deployment procedures, rollback automation"
@@ -632,7 +632,7 @@ version_tracking = true
 
 [deprecation_format]
 version = "MUST include version when deprecated"
-rationale = "MUST include reason for deprecation"  
+rationale = "MUST include reason for deprecation"
 replacement = "SHOULD include replacement guidance"
 timeline = "MUST include deprecation timeline"
 
@@ -659,7 +659,7 @@ You MUST perform comprehensive validation before finalizing the document.
 
 <cross_reference_validation>
 - You MUST validate all problem IDs in traceability exist in extracted product context
-- You MUST validate all outcome IDs in traceability exist in extracted product context  
+- You MUST validate all outcome IDs in traceability exist in extracted product context
 - You MUST validate all tech component references exist in extracted tech context
 - You MUST validate all agentic capability assignments have corresponding repository mappings
 - You MUST validate environment matrix includes exactly four required environments
@@ -677,7 +677,7 @@ You MUST perform comprehensive validation before finalizing the document.
 
 <standardization_validation>
 - You MUST verify conventional commits are required (required = true)
-- You MUST verify pre-commit hooks are required (pre_commit_hooks = true)  
+- You MUST verify pre-commit hooks are required (pre_commit_hooks = true)
 - You MUST verify governance minimizes user interaction (user_interaction_minimized = true)
 - You MUST verify additive updates are default (default_approach = "additive")
 - You MUST verify deprecation tracking is required (deprecation_required = true)
@@ -688,7 +688,7 @@ You MUST perform comprehensive validation before finalizing the document.
 <output_requirements>
 - You MUST write final TOML to ai/steering/structure.toml: !`cp "$TMP_TOML" ai/steering/structure.toml || { echo "ERROR: Failed to write final output"; exit 1; }`
 - You MUST NOT overwrite existing files in create mode without confirmation
-- You MUST preserve existing metadata (ID, created timestamp) in update mode  
+- You MUST preserve existing metadata (ID, created timestamp) in update mode
 - You MUST provide comprehensive completion summary including:
   - File path and size: !`ls -lh ai/steering/structure.toml`
   - Mode, project, and style used
@@ -716,7 +716,7 @@ You MUST perform comprehensive validation before finalizing the document.
 !`echo ""`
 !`echo "✅ Schema validation: PASSED"`
 !`echo "✅ Cross-reference validation: PASSED"`
-!`echo "✅ Business rule validation: PASSED"`  
+!`echo "✅ Business rule validation: PASSED"`
 !`echo "✅ Standardization validation: PASSED"`
 !`echo "✅ Complete traceability: product → tech → structure"`
 !`echo ""`
@@ -730,7 +730,7 @@ You MUST perform comprehensive validation before finalizing the document.
 !`echo "  ✅ Governance workflow (minimized interaction)"`
 !`echo ""`
 !`echo "All three steering documents now complete:"`
-!`echo "→ product.toml (what & why)"  
+!`echo "→ product.toml (what & why)"
 !`echo "→ tech.toml (how)"`
 !`echo "→ structure.toml (execution)"`
 !`echo ""`
@@ -739,7 +739,7 @@ You MUST perform comprehensive validation before finalizing the document.
 
 <error_handling_requirements>
 - You MUST provide structured error messages with specific remediation guidance
-- You MUST clean up temporary files on both success and failure: 
+- You MUST clean up temporary files on both success and failure:
   !`cleanup() { rm -f "$TMP_TOML" "$PROD_JSON" "$TECH_JSON" "$STRUCT_JSON" "$SCHEMA_JSON" 2>/dev/null || true; }; trap cleanup EXIT`
 - You MUST preserve partial work as draft files when encountering fatal errors:
   !`if [ -s "$TMP_TOML" ]; then cp "$TMP_TOML" "ai/steering/structure.toml.draft"; echo "Draft saved to structure.toml.draft"; fi`
@@ -749,7 +749,7 @@ You MUST perform comprehensive validation before finalizing the document.
 
 <guardrails_and_constraints>
 - You MUST mirror the structure steering process defined by the schema
-- You MUST ensure user interaction follows minimal interaction protocol  
+- You MUST ensure user interaction follows minimal interaction protocol
 - You MUST preserve traceability chain integrity from product through tech to structure
 - You MUST default to stepwise mode when style is not specified
 - You MUST extract foundational context before applying standardized best practices

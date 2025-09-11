@@ -6,12 +6,12 @@
   "type": "object",
   "additionalProperties": false,
   "required": ["meta", "technical_vision", "clean_architecture_principles", "guiding_principles", "architecture_decision", "components", "technology_stack", "operational_concerns", "traceability"],
-  
+
   "properties": {
     "meta": {
       "$ref": "~/.claude/schemas/meta.schema.json"
     },
-    
+
     "technical_vision": {
       "type": "object",
       "additionalProperties": false,
@@ -30,13 +30,13 @@
         }
       }
     },
-    
+
     "clean_architecture_principles": {
       "type": "object",
       "additionalProperties": false,
       "required": [
         "independence_of_frameworks",
-        "testability", 
+        "testability",
         "independence_of_ui",
         "independence_of_database",
         "independence_of_external_agencies",
@@ -81,13 +81,13 @@
         }
       }
     },
-    
+
     "guiding_principles": {
       "type": "object",
       "additionalProperties": false,
       "required": [
         "single_responsibility",
-        "open_closed", 
+        "open_closed",
         "liskov_substitution",
         "interface_segregation",
         "dependency_inversion",
@@ -100,81 +100,81 @@
         "pragmatism"
       ],
       "properties": {
-        "single_responsibility": { 
-          "type": "string", 
+        "single_responsibility": {
+          "type": "string",
           "minLength": 15,
           "maxLength": 250,
-          "description": "Project-specific application of Single Responsibility Principle" 
+          "description": "Project-specific application of Single Responsibility Principle"
         },
-        "open_closed": { 
-          "type": "string", 
+        "open_closed": {
+          "type": "string",
           "minLength": 15,
           "maxLength": 250,
-          "description": "Project-specific application of Open/Closed Principle" 
+          "description": "Project-specific application of Open/Closed Principle"
         },
-        "liskov_substitution": { 
-          "type": "string", 
+        "liskov_substitution": {
+          "type": "string",
           "minLength": 15,
           "maxLength": 250,
-          "description": "Project-specific application of Liskov Substitution Principle" 
+          "description": "Project-specific application of Liskov Substitution Principle"
         },
-        "interface_segregation": { 
-          "type": "string", 
+        "interface_segregation": {
+          "type": "string",
           "minLength": 15,
           "maxLength": 250,
-          "description": "Project-specific application of Interface Segregation Principle" 
+          "description": "Project-specific application of Interface Segregation Principle"
         },
-        "dependency_inversion": { 
-          "type": "string", 
+        "dependency_inversion": {
+          "type": "string",
           "minLength": 15,
           "maxLength": 250,
-          "description": "Project-specific application of Dependency Inversion Principle" 
+          "description": "Project-specific application of Dependency Inversion Principle"
         },
-        "dry": { 
-          "type": "string", 
+        "dry": {
+          "type": "string",
           "minLength": 15,
           "maxLength": 250,
-          "description": "Project-specific application of Don't Repeat Yourself principle" 
+          "description": "Project-specific application of Don't Repeat Yourself principle"
         },
-        "kiss": { 
-          "type": "string", 
+        "kiss": {
+          "type": "string",
           "minLength": 15,
           "maxLength": 250,
-          "description": "Project-specific application of Keep It Simple principle" 
+          "description": "Project-specific application of Keep It Simple principle"
         },
-        "composition_over_inheritance": { 
-          "type": "string", 
+        "composition_over_inheritance": {
+          "type": "string",
           "minLength": 15,
           "maxLength": 250,
-          "description": "Project-specific approach to composition over inheritance" 
+          "description": "Project-specific approach to composition over inheritance"
         },
-        "high_cohesion_low_coupling": { 
-          "type": "string", 
+        "high_cohesion_low_coupling": {
+          "type": "string",
           "minLength": 15,
           "maxLength": 250,
-          "description": "Project-specific approach to cohesion and coupling" 
+          "description": "Project-specific approach to cohesion and coupling"
         },
-        "yagni": { 
-          "type": "string", 
+        "yagni": {
+          "type": "string",
           "minLength": 15,
           "maxLength": 250,
-          "description": "Project-specific application of You Aren't Gonna Need It" 
+          "description": "Project-specific application of You Aren't Gonna Need It"
         },
-        "explicit_boundaries": { 
-          "type": "string", 
+        "explicit_boundaries": {
+          "type": "string",
           "minLength": 15,
           "maxLength": 250,
-          "description": "Project-specific approach to defining clear interfaces" 
+          "description": "Project-specific approach to defining clear interfaces"
         },
-        "pragmatism": { 
-          "type": "string", 
+        "pragmatism": {
+          "type": "string",
           "minLength": 15,
           "maxLength": 250,
-          "description": "Project-specific balance of best practices with delivery trade-offs" 
+          "description": "Project-specific balance of best practices with delivery trade-offs"
         }
       }
     },
-    
+
     "architecture_decision": {
       "type": "object",
       "additionalProperties": false,
@@ -204,7 +204,7 @@
               "benefits",
               "risks",
               "impact_on_outcomes",
-              "alignment_with_constraints", 
+              "alignment_with_constraints",
               "operational_overhead",
               "time_to_market",
               "cost_efficiency",
@@ -212,15 +212,15 @@
               "recommendation_score"
             ],
             "properties": {
-              "option": { 
-                "type": "string", 
+              "option": {
+                "type": "string",
                 "minLength": 3,
                 "maxLength": 50,
-                "description": "Architecture option name" 
+                "description": "Architecture option name"
               },
-              "benefits": { 
-                "type": "array", 
-                "items": { 
+              "benefits": {
+                "type": "array",
+                "items": {
                   "type": "string",
                   "minLength": 5,
                   "maxLength": 150
@@ -231,7 +231,7 @@
               },
               "risks": {
                 "type": "array",
-                "items": { 
+                "items": {
                   "type": "string",
                   "minLength": 5,
                   "maxLength": 150
@@ -240,7 +240,7 @@
                 "maxItems": 8,
                 "description": "Architecture risks"
               },
-              "impact_on_outcomes": { 
+              "impact_on_outcomes": {
                 "type": "array",
                 "items": {
                   "type": "string",
@@ -248,7 +248,7 @@
                 },
                 "description": "Product outcome IDs this option affects"
               },
-              "alignment_with_constraints": { 
+              "alignment_with_constraints": {
                 "type": "array",
                 "items": {
                   "type": "string",
@@ -256,28 +256,28 @@
                 },
                 "description": "Product constraint types this option aligns with"
               },
-              "operational_overhead": { 
-                "type": "string", 
+              "operational_overhead": {
+                "type": "string",
                 "enum": ["low", "medium", "high"],
                 "description": "Operational complexity level"
               },
-              "time_to_market": { 
-                "type": "string", 
+              "time_to_market": {
+                "type": "string",
                 "enum": ["fast", "moderate", "slow"],
                 "description": "Speed to market impact"
               },
-              "cost_efficiency": { 
-                "type": "string", 
+              "cost_efficiency": {
+                "type": "string",
                 "enum": ["low", "medium", "high"],
                 "description": "Cost efficiency rating"
               },
-              "evolutionary_flexibility": { 
-                "type": "string", 
+              "evolutionary_flexibility": {
+                "type": "string",
                 "enum": ["low", "medium", "high"],
                 "description": "Ability to adapt and scale"
               },
-              "recommendation_score": { 
-                "type": "string", 
+              "recommendation_score": {
+                "type": "string",
                 "enum": ["high", "medium", "low"],
                 "description": "Overall recommendation level"
               }
@@ -286,7 +286,7 @@
         }
       }
     },
-    
+
     "components": {
       "type": "array",
       "minItems": 1,
@@ -303,18 +303,18 @@
             "description": "Component name"
           },
           "responsibility": {
-            "type": "string", 
+            "type": "string",
             "minLength": 15,
             "maxLength": 300,
             "description": "Single clear responsibility"
           },
           "design_patterns": {
             "type": "array",
-            "items": { 
+            "items": {
               "type": "string",
               "enum": [
-                "Repository", "DAO", "Adapter", "Gateway", "Strategy", 
-                "Template Method", "Observer", "Pub/Sub", "Factory", 
+                "Repository", "DAO", "Adapter", "Gateway", "Strategy",
+                "Template Method", "Observer", "Pub/Sub", "Factory",
                 "Builder", "Decorator", "Proxy", "Chain of Responsibility",
                 "Command", "Facade", "Singleton", "MVC", "MVP", "MVVM"
               ]
@@ -331,7 +331,7 @@
             "description": "Product personas this component serves"
           },
           "maps_to_outcomes": {
-            "type": "array", 
+            "type": "array",
             "items": { "type": "string", "pattern": "^O([1-9]|[1-9][0-9]|100)$" },
             "minItems": 1,
             "maxItems": 10,
@@ -352,7 +352,7 @@
         }
       }
     },
-    
+
     "integrations": {
       "type": "array",
       "items": {
@@ -360,7 +360,7 @@
         "additionalProperties": false,
         "required": [
           "name",
-          "type", 
+          "type",
           "maps_to_product_dependency",
           "ownership",
           "contract_schema",
@@ -369,46 +369,46 @@
           "error_handling"
         ],
         "properties": {
-          "name": { 
-            "type": "string", 
+          "name": {
+            "type": "string",
             "minLength": 3,
             "maxLength": 80,
-            "description": "Integration name" 
+            "description": "Integration name"
           },
-          "type": { 
-            "type": "string", 
+          "type": {
+            "type": "string",
             "enum": ["API", "Service", "Database", "External"],
             "description": "Integration type"
           },
-          "maps_to_product_dependency": { 
+          "maps_to_product_dependency": {
             "type": "string",
             "minLength": 2,
             "maxLength": 100,
             "description": "Product dependency this integration fulfills"
           },
-          "ownership": { 
-            "type": "string", 
+          "ownership": {
+            "type": "string",
             "enum": ["internal", "external", "shared"],
             "description": "Integration ownership"
           },
-          "contract_schema": { 
-            "type": "string", 
+          "contract_schema": {
+            "type": "string",
             "minLength": 5,
             "maxLength": 500,
             "description": "Schema definition or reference"
           },
-          "versioning_strategy": { 
-            "type": "string", 
+          "versioning_strategy": {
+            "type": "string",
             "enum": ["semantic", "date", "hash"],
             "description": "Versioning approach"
           },
-          "backward_compatibility": { 
-            "type": "string", 
+          "backward_compatibility": {
+            "type": "string",
             "enum": ["required", "optional", "none"],
             "description": "Backward compatibility requirements"
           },
-          "error_handling": { 
-            "type": "string", 
+          "error_handling": {
+            "type": "string",
             "minLength": 10,
             "maxLength": 300,
             "description": "Error handling approach"
@@ -422,20 +422,20 @@
         }
       }
     },
-    
+
     "data_strategy": {
       "type": "object",
       "additionalProperties": false,
       "required": ["persistence_approach", "data_lifecycle", "entities"],
       "properties": {
-        "persistence_approach": { 
-          "type": "string", 
+        "persistence_approach": {
+          "type": "string",
           "minLength": 10,
           "maxLength": 200,
           "description": "Chosen persistence pattern"
         },
-        "data_lifecycle": { 
-          "type": "string", 
+        "data_lifecycle": {
+          "type": "string",
           "minLength": 10,
           "maxLength": 200,
           "description": "Data lifecycle management approach"
@@ -449,32 +449,32 @@
             "additionalProperties": false,
             "required": ["name", "purpose", "persistence_layer"],
             "properties": {
-              "name": { 
-                "type": "string", 
+              "name": {
+                "type": "string",
                 "minLength": 3,
                 "maxLength": 80,
-                "description": "Entity name" 
+                "description": "Entity name"
               },
-              "purpose": { 
-                "type": "string", 
+              "purpose": {
+                "type": "string",
                 "minLength": 10,
                 "maxLength": 200,
-                "description": "Business purpose" 
+                "description": "Business purpose"
               },
-              "persistence_layer": { 
-                "type": "string", 
+              "persistence_layer": {
+                "type": "string",
                 "enum": ["DATABASE", "FILE", "MEMORY", "CACHE"],
                 "description": "Persistence layer"
               },
-              "migration_strategy": { 
-                "type": "string", 
+              "migration_strategy": {
+                "type": "string",
                 "minLength": 5,
                 "maxLength": 200,
-                "description": "Migration approach" 
+                "description": "Migration approach"
               },
               "governance_rules": {
                 "type": "array",
-                "items": { 
+                "items": {
                   "type": "string",
                   "minLength": 5,
                   "maxLength": 150
@@ -483,8 +483,8 @@
                 "description": "Data governance rules"
               },
               "quality_metrics": {
-                "type": "array", 
-                "items": { 
+                "type": "array",
+                "items": {
                   "type": "string",
                   "minLength": 5,
                   "maxLength": 150
@@ -497,7 +497,7 @@
         }
       }
     },
-    
+
     "security_compliance": {
       "type": "object",
       "additionalProperties": false,
@@ -505,7 +505,7 @@
       "properties": {
         "selected_techniques": {
           "type": "array",
-          "items": { 
+          "items": {
             "type": "string",
             "minLength": 3,
             "maxLength": 100
@@ -526,15 +526,15 @@
             "additionalProperties": false,
             "required": ["technique", "pros", "cons", "applicability_to_product", "implementation_effort"],
             "properties": {
-              "technique": { 
-                "type": "string", 
+              "technique": {
+                "type": "string",
                 "minLength": 3,
                 "maxLength": 100,
-                "description": "Security technique name" 
+                "description": "Security technique name"
               },
-              "pros": { 
-                "type": "array", 
-                "items": { 
+              "pros": {
+                "type": "array",
+                "items": {
                   "type": "string",
                   "minLength": 5,
                   "maxLength": 150
@@ -542,9 +542,9 @@
                 "minItems": 1,
                 "maxItems": 8
               },
-              "cons": { 
-                "type": "array", 
-                "items": { 
+              "cons": {
+                "type": "array",
+                "items": {
                   "type": "string",
                   "minLength": 5,
                   "maxLength": 150
@@ -552,14 +552,14 @@
                 "minItems": 1,
                 "maxItems": 8
               },
-              "applicability_to_product": { 
-                "type": "string", 
+              "applicability_to_product": {
+                "type": "string",
                 "minLength": 15,
                 "maxLength": 300,
                 "description": "Why relevant to product constraints"
               },
-              "implementation_effort": { 
-                "type": "string", 
+              "implementation_effort": {
+                "type": "string",
                 "enum": ["low", "medium", "high"],
                 "description": "Implementation effort level"
               }
@@ -568,32 +568,32 @@
         }
       }
     },
-    
+
     "performance_targets": {
       "type": "object",
       "additionalProperties": false,
       "required": ["latency_target", "throughput_target", "maps_to_success_metrics"],
       "properties": {
-        "latency_target": { 
-          "type": "string", 
+        "latency_target": {
+          "type": "string",
           "minLength": 5,
           "maxLength": 50,
           "description": "Target response time with measurement percentile"
         },
-        "throughput_target": { 
-          "type": "string", 
+        "throughput_target": {
+          "type": "string",
           "minLength": 5,
           "maxLength": 50,
           "description": "Requests per second target"
         },
-        "concurrency_target": { 
-          "type": "string", 
+        "concurrency_target": {
+          "type": "string",
           "minLength": 5,
           "maxLength": 50,
           "description": "Concurrent users target"
         },
-        "load_thresholds": { 
-          "type": "string", 
+        "load_thresholds": {
+          "type": "string",
           "minLength": 10,
           "maxLength": 200,
           "description": "Breaking point metrics and degradation thresholds"
@@ -607,7 +607,7 @@
         }
       }
     },
-    
+
     "technology_stack": {
       "type": "object",
       "additionalProperties": false,
@@ -621,7 +621,7 @@
       "properties": {
         "primary_languages": {
           "type": "array",
-          "items": { 
+          "items": {
             "type": "string",
             "minLength": 2,
             "maxLength": 30
@@ -632,7 +632,7 @@
         },
         "frameworks": {
           "type": "array",
-          "items": { 
+          "items": {
             "type": "string",
             "minLength": 2,
             "maxLength": 50
@@ -640,20 +640,20 @@
           "maxItems": 20,
           "description": "Selected frameworks"
         },
-        "testing_approach": { 
-          "type": "string", 
+        "testing_approach": {
+          "type": "string",
           "pattern": ".*TDD.*",
           "minLength": 10,
           "maxLength": 100,
           "description": "Testing approach - TDD is mandatory"
         },
-        "justfile_required": { 
-          "type": "boolean", 
+        "justfile_required": {
+          "type": "boolean",
           "enum": [true],
           "description": "Justfile is required"
         },
-        "editorconfig_required": { 
-          "type": "boolean", 
+        "editorconfig_required": {
+          "type": "boolean",
           "enum": [true],
           "description": "EditorConfig is required"
         },
@@ -672,39 +672,39 @@
               "coverage_threshold"
             ],
             "properties": {
-              "language": { 
-                "type": "string", 
+              "language": {
+                "type": "string",
                 "minLength": 2,
                 "maxLength": 30,
-                "description": "Programming language" 
+                "description": "Programming language"
               },
-              "testing_framework": { 
-                "type": "string", 
+              "testing_framework": {
+                "type": "string",
                 "minLength": 2,
                 "maxLength": 50,
-                "description": "Testing framework for this language" 
+                "description": "Testing framework for this language"
               },
-              "linter": { 
-                "type": "string", 
+              "linter": {
+                "type": "string",
                 "minLength": 2,
                 "maxLength": 50,
-                "description": "Linter tool for this language" 
+                "description": "Linter tool for this language"
               },
-              "formatter": { 
-                "type": "string", 
+              "formatter": {
+                "type": "string",
                 "minLength": 2,
                 "maxLength": 50,
-                "description": "Code formatter for this language" 
+                "description": "Code formatter for this language"
               },
-              "type_checker": { 
-                "type": "string", 
+              "type_checker": {
+                "type": "string",
                 "minLength": 2,
                 "maxLength": 50,
-                "description": "Type checker (if applicable)" 
+                "description": "Type checker (if applicable)"
               },
-              "coverage_threshold": { 
-                "type": "integer", 
-                "minimum": 70, 
+              "coverage_threshold": {
+                "type": "integer",
+                "minimum": 70,
                 "maximum": 100,
                 "description": "Required test coverage percentage"
               }
@@ -713,7 +713,7 @@
         }
       }
     },
-    
+
     "operational_concerns": {
       "type": "object",
       "additionalProperties": false,
@@ -724,32 +724,32 @@
           "additionalProperties": false,
           "required": ["containerization", "infrastructure_as_code", "secrets_management"],
           "properties": {
-            "containerization": { 
-              "type": "string", 
+            "containerization": {
+              "type": "string",
               "enum": ["Docker", "Podman", "None"],
               "description": "Containerization approach"
             },
-            "orchestration": { 
-              "type": "string", 
+            "orchestration": {
+              "type": "string",
               "enum": ["Kubernetes", "Docker Compose", "None"],
               "description": "Container orchestration"
             },
-            "infrastructure_as_code": { 
-              "type": "string", 
+            "infrastructure_as_code": {
+              "type": "string",
               "enum": ["Terraform", "Pulumi", "CloudFormation", "CDK"],
               "description": "Infrastructure as code tool"
             },
-            "secrets_management": { 
-              "type": "string", 
+            "secrets_management": {
+              "type": "string",
               "minLength": 5,
               "maxLength": 200,
-              "description": "Secrets management approach" 
+              "description": "Secrets management approach"
             },
-            "disaster_recovery": { 
-              "type": "string", 
+            "disaster_recovery": {
+              "type": "string",
               "minLength": 10,
               "maxLength": 300,
-              "description": "Disaster recovery strategy" 
+              "description": "Disaster recovery strategy"
             }
           }
         },
@@ -760,8 +760,8 @@
           "properties": {
             "environments": {
               "type": "array",
-              "items": { 
-                "type": "string", 
+              "items": {
+                "type": "string",
                 "enum": ["local", "dev", "staging", "prod"]
               },
               "minItems": 4,
@@ -769,29 +769,29 @@
               "uniqueItems": true,
               "description": "Required environments"
             },
-            "configuration_management": { 
-              "type": "string", 
+            "configuration_management": {
+              "type": "string",
               "minLength": 10,
               "maxLength": 200,
-              "description": "How configs are managed" 
+              "description": "How configs are managed"
             },
-            "monitoring_approach": { 
-              "type": "string", 
+            "monitoring_approach": {
+              "type": "string",
               "minLength": 10,
               "maxLength": 200,
-              "description": "Monitoring and observability tools" 
+              "description": "Monitoring and observability tools"
             },
-            "feature_toggles": { 
-              "type": "string", 
+            "feature_toggles": {
+              "type": "string",
               "minLength": 10,
               "maxLength": 200,
-              "description": "Feature flag strategy" 
+              "description": "Feature flag strategy"
             }
           }
         }
       }
     },
-    
+
     "traceability": {
       "type": "object",
       "additionalProperties": false,
@@ -802,40 +802,40 @@
           "minItems": 1,
           "maxItems": 100,
           "items": {
-            "type": "object", 
+            "type": "object",
             "additionalProperties": false,
             "required": [
               "problem_id",
-              "outcome_id", 
+              "outcome_id",
               "tech_component",
               "test_coverage",
               "acceptance_mapping"
             ],
             "properties": {
-              "problem_id": { 
-                "type": "string", 
+              "problem_id": {
+                "type": "string",
                 "pattern": "^P([1-9]|[1-9][0-9]|100)$",
                 "description": "Product problem ID"
               },
-              "outcome_id": { 
-                "type": "string", 
+              "outcome_id": {
+                "type": "string",
                 "pattern": "^O([1-9]|[1-9][0-9]|100)$",
                 "description": "Product outcome ID"
               },
-              "tech_component": { 
-                "type": "string", 
+              "tech_component": {
+                "type": "string",
                 "minLength": 3,
                 "maxLength": 80,
-                "description": "Technical component name" 
+                "description": "Technical component name"
               },
-              "test_coverage": { 
-                "type": "string", 
+              "test_coverage": {
+                "type": "string",
                 "minLength": 15,
                 "maxLength": 400,
-                "description": "Test coverage description" 
+                "description": "Test coverage description"
               },
-              "acceptance_mapping": { 
-                "type": "string", 
+              "acceptance_mapping": {
+                "type": "string",
                 "pattern": "^AC([1-9]|[1-9][0-9]|100)$",
                 "description": "Acceptance criteria ID"
               }
@@ -844,7 +844,7 @@
         }
       }
     },
-    
+
     "risk_register": {
       "type": "object",
       "additionalProperties": false,
@@ -856,34 +856,34 @@
             "additionalProperties": false,
             "required": ["risk_id", "description", "probability", "impact", "mitigation"],
             "properties": {
-              "risk_id": { 
-                "type": "string", 
+              "risk_id": {
+                "type": "string",
                 "pattern": "^TR([1-9]|[1-9][0-9]|100)$",
                 "description": "Technical risk ID"
               },
-              "description": { 
-                "type": "string", 
+              "description": {
+                "type": "string",
                 "minLength": 20,
                 "maxLength": 500,
-                "description": "Risk description" 
+                "description": "Risk description"
               },
-              "probability": { 
-                "type": "string", 
+              "probability": {
+                "type": "string",
                 "enum": ["low", "medium", "high"],
                 "description": "Risk probability"
               },
-              "impact": { 
-                "type": "string", 
-                "enum": ["low", "medium", "high"], 
+              "impact": {
+                "type": "string",
+                "enum": ["low", "medium", "high"],
                 "description": "Risk impact"
               },
-              "mitigation": { 
-                "type": "string", 
+              "mitigation": {
+                "type": "string",
                 "minLength": 15,
                 "maxLength": 400,
-                "description": "Mitigation strategy" 
+                "description": "Mitigation strategy"
               },
-              "maps_to_product_risk": { 
+              "maps_to_product_risk": {
                 "type": "string",
                 "pattern": "^R([1-9]|[1-9][0-9]|100)$",
                 "description": "Related product risk ID"
@@ -893,7 +893,7 @@
         }
       }
     },
-    
+
     "decision_log": {
       "type": "object",
       "additionalProperties": false,
@@ -905,32 +905,32 @@
             "additionalProperties": false,
             "required": ["adr_id", "title", "decision", "rationale"],
             "properties": {
-              "adr_id": { 
-                "type": "string", 
+              "adr_id": {
+                "type": "string",
                 "pattern": "^ADR([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|1000)$",
                 "description": "ADR identifier"
               },
-              "title": { 
-                "type": "string", 
+              "title": {
+                "type": "string",
                 "minLength": 5,
                 "maxLength": 150,
-                "description": "Decision title" 
+                "description": "Decision title"
               },
-              "decision": { 
-                "type": "string", 
+              "decision": {
+                "type": "string",
                 "minLength": 10,
                 "maxLength": 400,
-                "description": "The decision made" 
+                "description": "The decision made"
               },
-              "rationale": { 
-                "type": "string", 
+              "rationale": {
+                "type": "string",
                 "minLength": 20,
                 "maxLength": 600,
-                "description": "Why this decision was made" 
+                "description": "Why this decision was made"
               },
               "product_references": {
                 "type": "array",
-                "items": { 
+                "items": {
                   "type": "string",
                   "minLength": 3,
                   "maxLength": 100
@@ -938,11 +938,11 @@
                 "maxItems": 10,
                 "description": "References to product.toml elements"
               },
-              "version_context": { 
-                "type": "string", 
+              "version_context": {
+                "type": "string",
                 "minLength": 10,
                 "maxLength": 200,
-                "description": "Version and timeline context" 
+                "description": "Version and timeline context"
               }
             }
           }
@@ -950,12 +950,12 @@
       }
     }
   },
-  
+
   "additionalValidation": {
     "description": "Additional validation rules that should be checked programmatically",
     "crossReferenceRules": [
       "All problem_ids in traceability must exist in the product document",
-      "All outcome_ids in traceability must exist in the product document", 
+      "All outcome_ids in traceability must exist in the product document",
       "All acceptance_mapping IDs must exist in the product document",
       "All serves_personas references must exist in the product document",
       "All maps_to_outcomes references must exist in the product document",

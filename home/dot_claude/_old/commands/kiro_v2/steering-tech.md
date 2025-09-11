@@ -71,7 +71,7 @@ You MUST provide intelligent, context-driven recommendations throughout the data
 <architecture_selection_recommendations>
 - You MUST analyze product outcomes to determine architectural complexity needs:
   - Simple CRUD operations → Layered or Monolithic architectures
-  - Complex business rules → Hexagonal or Domain-Driven architectures  
+  - Complex business rules → Hexagonal or Domain-Driven architectures
   - Real-time requirements → Event-Driven architectures
   - Scale requirements → Microservices or Serverless architectures
   - Integration-heavy → Hybrid architectures
@@ -116,7 +116,7 @@ You MUST provide intelligent, context-driven recommendations throughout the data
   - Nice-to-have dependencies → Fire-and-forget integration
 - You MUST recommend integration types based on dependency characteristics:
   - Real-time data → API integration
-  - Batch data → Service integration  
+  - Batch data → Service integration
   - Persistent data → Database integration
   - Third-party services → External integration
 - You MUST suggest versioning strategies based on dependency stability:
@@ -195,7 +195,7 @@ You MUST provide intelligent, context-driven recommendations throughout the data
   - Cost constraints → Simplified infrastructure
 - You MUST recommend monitoring strategies based on system complexity:
   - Monolithic → Application-level monitoring
-  - Distributed → Service mesh monitoring  
+  - Distributed → Service mesh monitoring
   - Event-driven → Message flow monitoring
 - You MUST ensure environment strategy supports the software development lifecycle.
 </operational_concerns_guidance>
@@ -375,7 +375,7 @@ You MUST collect comprehensive input data through systematic questioning. You MU
 - You MUST collect at least one primary programming language.
 - You MUST collect language standards for each primary language including:
   - Testing framework specification
-  - Linter tool specification  
+  - Linter tool specification
   - Code formatter specification
   - Type checker specification (when applicable)
   - Coverage threshold (70-100% range)
@@ -430,7 +430,7 @@ You MUST generate project-specific applications of clean architecture principles
 <guiding_principles_generation>
 You MUST generate project-specific applications of programming principles. You MUST reference principle IDs from external files but write project-specific application descriptions. You MUST NOT copy generic definitions. You MUST explain how each principle applies specifically to this project:
 - single_responsibility: Project-specific SRP application
-- open_closed: Project-specific OCP application  
+- open_closed: Project-specific OCP application
 - liskov_substitution: Project-specific LSP application
 - interface_segregation: Project-specific ISP application
 - dependency_inversion: Project-specific DIP application
@@ -463,7 +463,7 @@ You MUST generate an architecture decision section that includes:
 <traceability_generation>
 You MUST generate complete traceability mappings. You MUST ensure each mapping contains:
 - A valid problem ID from the extracted product context
-- A valid outcome ID from the extracted product context  
+- A valid outcome ID from the extracted product context
 - A tech component name that exists in the components section
 - A comprehensive test coverage description (15-400 characters)
 - A valid acceptance mapping ID from the extracted product context
@@ -485,7 +485,7 @@ You MUST perform comprehensive validation before finalizing the document.
 - You MUST validate all problem IDs in traceability exist in the product context.
 - You MUST validate all outcome IDs in traceability exist in the product context.
 - You MUST validate all acceptance mapping IDs exist in the product context.
-- You MUST validate all persona references in components exist in the product context.  
+- You MUST validate all persona references in components exist in the product context.
 - You MUST validate all outcome references in components exist in the product context.
 - You MUST validate all dependency references in integrations exist in the product context.
 - You MUST validate all success metric references exist in the product context.

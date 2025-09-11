@@ -67,19 +67,19 @@ _warn_if_missing() {
 # Helper function for conditional module loading with comprehensive error handling
 # Encapsulates the complete logic: directory testing → file sourcing → warning
 # Usage: _try_source_module "Module Name" "/path/to/module/dir"
-# 
+#
 # Behavior:
 #   - If directory exists: calls source_sh_files to load all .sh files
 #   - If directory missing: issues warning via _warn_if_missing
 #   - If source_sh_files unavailable: returns error
-# 
+#
 # Examples:
 #   _try_source_module "Profile" "${SHELL_DIR}/profile"
 #   _try_source_module "Utils" "${SHELL_DIR}/utils"
 _try_source_module() {
     local module_name="$1"
     local module_path="$2"
-    
+
     if [[ -d "$module_path" ]]; then
         if command -v source_sh_files >/dev/null 2>&1; then
             source_sh_files "$module_path"

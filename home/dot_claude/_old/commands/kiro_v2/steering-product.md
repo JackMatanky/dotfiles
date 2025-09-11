@@ -276,7 +276,7 @@ PERSONA_FRUSTRATIONS=()`
     read -r PERSONA_NEED
     echo "What is their current frustration?"
     read -r PERSONA_FRUSTRATION
-    
+
     USER_GROUPS+=("$USER_GROUP")
     USER_PRIORITIES+=("$USER_PRIORITY")
     USER_ACTIONS+=("$USER_ACTION_LIST")
@@ -517,7 +517,7 @@ TOML
       ACTION_TOML="$ACTION_TOML\"$(echo $action | xargs)\", "
     done
     ACTION_TOML="[${ACTION_TOML%%, }]"
-    
+
     cat >> "$TMP_TOML" <<TOML
 [[product.users]]
 id = "$USER_ID"
@@ -693,7 +693,7 @@ TOML
     local section_content="$2"
     echo "=== VALIDATING $section_name SECTION ==="
     echo "$section_content"
-    
+
     if [ "$STYLE" = "stepwise" ]; then
       echo "✅ Validation Status for $section_name:"
       echo "Approve this section? (approve/revise/reject)"
@@ -779,8 +779,8 @@ INVALID_RISK_LIKELIHOODS=$($JQ '[.product.risks[].likelihood] - ["low","medium",
 test -s "$TMP_TOML" || { echo "ERROR: Generated TOML file is empty"; exit 1; }`
 
 !`# Check for overwrite protection
-if [ -f "$OUT" ] && [ "$MODE" = "create" ]; then 
-    echo "ERROR: $OUT exists; creation refused to avoid overwrite. Use MODE=update."; exit 1; 
+if [ -f "$OUT" ] && [ "$MODE" = "create" ]; then
+    echo "ERROR: $OUT exists; creation refused to avoid overwrite. Use MODE=update."; exit 1;
   fi`
 
 !`# Copy temporary file to final location

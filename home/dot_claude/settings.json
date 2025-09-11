@@ -3,21 +3,23 @@
   "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
-      "Bash(git status:*)",
-      "Bash(git diff:*)",
-      "Bash(git add:*)",
-      "Bash(git log:*)",
+      "Bash(pwd)",
       "Bash(ls:*)",
       "Bash(eza:*)",
       "Bash(rg:*)",
       "Bash(grep:*)",
       "Bash(fd:*)",
+      "Bash(find:*)",
       "Bash(bat:*)",
-      "Bash(pwd)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git add:*)",
+      "Bash(git log:*)",
       "Bash(pre-commit run:*)",
       "Bash(ruff check:*)",
       "Bash(ruff format:*)",
-      "Bash(pytest)"
+      "Bash(pytest)",
+      "Bash(md-tree explode:*)"
     ],
     "ask": ["Bash(rm:*)", "Bash(git commit:*)"],
     "deny": ["Bash(sudo)", "Read(./secrets/**)"]

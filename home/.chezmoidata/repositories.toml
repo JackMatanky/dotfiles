@@ -6,7 +6,7 @@
 github = "https://github.com/JackMatanky/dotfiles.git"
 description = "Personal dotfiles and system configuration"
 
-[repositories.obsidian]  
+[repositories.obsidian]
 gitlab = "https://gitlab.com/JackMatanky/obsidian_vault.git"
 description = "Personal knowledge base and notes"
 

@@ -849,6 +849,7 @@
       "**/git/.gitignore_global",
       "**/git/**/.gitignore_global"
     ],
+    "Go": ["chezmoi/**/*.tmpl"],
     "JSON": ["flake.lock"],
     "JSONC": [
       "**/.zed/**/*.json",
